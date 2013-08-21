@@ -1,3 +1,26 @@
+po4a (0.45-1) unstable; urgency=low
+
+  * New upstream release.
+    - Closes: #564245
+      clash of $master in splitted mode
+    - Closes: #684137
+      Incorrect handling of <beginpage> in docbook, should be inline?
+    - Closes: #693266
+      Couldn't determine the input document's charset
+    - Closes: #696992
+      [ini] Include key/parameter as PO comments
+    - Closes: #696997
+      po4a-gettextize doesn't work with localised ini
+    - Closes: #710695
+      po4a-gettextize: wrong timezone in POT-Creation-Date
+    - Closes: #718675
+      Uninformative error message when '<' is left alone in a HTML file
+
+  [ Updated program translations ]
+  * Brazilian Portuguese, by Rafael Ferreira (Closes: #706591)
+
+ -- Denis Barbier <barbier@debian.org>  Wed, 21 Aug 2013 20:02:52 +0200
+
 po4a (0.44-1) experimental; urgency=low
 
   * New upstream release.
