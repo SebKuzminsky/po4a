@@ -18,8 +18,8 @@ Build-Depends-Indep: perl-modules, docbook-xml, docbook-xsl, xsltproc,
  texlive-binaries
 Build-Depends: debhelper (>= 8)
 Homepage: http://po4a.alioth.debian.org/
-Vcs-Svn: svn://svn.debian.org/svn/po4a/trunk
-Vcs-Browser: http://svn.debian.org/wsvn/po4a/trunk/
+Vcs-Svn: https://alioth.debian.org/anonscm/git/collab-maint/po4a.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/po4a.git
 
 Package: po4a
 Architecture: all
