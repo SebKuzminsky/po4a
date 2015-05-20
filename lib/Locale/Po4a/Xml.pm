@@ -63,7 +63,7 @@ use Carp qw(croak);
 use File::Basename;
 use File::Spec;
 
-#It will mantain the path from the root tag to the current one
+#It will maintain the path from the root tag to the current one
 my @path;
 
 #It will contain a list of external entities and their attached paths
@@ -82,52 +82,52 @@ sub shiftline {
     if ($self->{options}{'includeexternal'}) {
         my $tmp;
 
-    for my $k (keys %entities) {
-        if ($line =~ m/^(.*?)&$k;(.*)$/s) {
-            my ($before, $after) = ($1, $2);
-            my $linenum=0;
-            my @textentries;
+        for my $k (keys %entities) {
+            if ($line =~ m/^(.*?)&$k;(.*)$/s) {
+                my ($before, $after) = ($1, $2);
+                my $linenum=0;
+                my @textentries;
 
-            $tmp = $before;
-            my $tmp_in_comment = 0;
-            if ($_shiftline_in_comment) {
-                if ($before =~ m/^.*?-->(.*)$/s) {
-                    $tmp = $1;
-                    $tmp_in_comment = 0;
-                } else {
-                    $tmp_in_comment = 1;
+                $tmp = $before;
+                my $tmp_in_comment = 0;
+                if ($_shiftline_in_comment) {
+                    if ($before =~ m/^.*?-->(.*)$/s) {
+                        $tmp = $1;
+                        $tmp_in_comment = 0;
+                    } else {
+                        $tmp_in_comment = 1;
+                    }
                 }
-            }
-            if ($tmp_in_comment == 0) {
-                while ($tmp =~ m/^.*?<!--.*?-->(.*)$/s) {
-                    $tmp = $1;
+                if ($tmp_in_comment == 0) {
+                    while ($tmp =~ m/^.*?<!--.*?-->(.*)$/s) {
+                        $tmp = $1;
+                    }
+                    if ($tmp =~ m/<!--/s) {
+                        $tmp_in_comment = 1;
+                    }
                 }
-                if ($tmp =~ m/<!--/s) {
-                    $tmp_in_comment = 1;
-                }
-            }
-            next if ($tmp_in_comment);
+                next if ($tmp_in_comment);
 
-            open (my $in, $entities{$k})
-                or croak wrap_mod("po4a::xml",
-                                  dgettext("po4a", "Can't read from %s: %s"),
-                                  $entities{$k}, $!);
-            while (defined (my $textline = <$in>)) {
-                $linenum++;
-                my $textref=$entities{$k}.":$linenum";
-                push @textentries, ($textline,$textref);
-            }
-            close $in
-                or croak wrap_mod("po4a::xml",
-                          dgettext("po4a", "Can't close %s after reading: %s"),
-                                  $entities{$k}, $!);
+                open (my $in, $entities{$k})
+                    or croak wrap_mod("po4a::xml",
+                                      dgettext("po4a", "Can't read from %s: %s"),
+                                      $entities{$k}, $!);
+                while (defined (my $textline = <$in>)) {
+                    $linenum++;
+                    my $textref=$entities{$k}.":$linenum";
+                    push @textentries, ($textline,$textref);
+                }
+                close $in
+                    or croak wrap_mod("po4a::xml",
+                              dgettext("po4a", "Can't close %s after reading: %s"),
+                                      $entities{$k}, $!);
 
-            push @textentries, ($after, $ref);
-            $line = $before.(shift @textentries);
-            $ref .= " ".(shift @textentries);
-            $self->unshiftline(@textentries);
+                push @textentries, ($after, $ref);
+                $line = $before.(shift @textentries);
+                $ref .= " ".(shift @textentries);
+                $self->unshiftline(@textentries);
+            }
         }
-    }
 
         $tmp = $line;
         if ($_shiftline_in_comment) {
@@ -167,20 +167,20 @@ sub parse {
 # paragraph         is a reference to an array (see paragraph in the
 #                   treat_content() subroutine) of strings followed by
 #                   references.  It contains the @paragraph array as it was
-#                   before the processing was interrupted by a tag instroducing
+#                   before the processing was interrupted by a tag introducing
 #                   a placeholder.
 # translation       is the translation of this level up to now
 # sub_translations  is a reference to an array of strings containing the
 #                   translations which must replace the placeholders.
 # open              is the tag which opened the placeholder.
 # close             is the tag which closed the placeholder.
-# folded_attributes is an hash of tags with their attributes (<tag attrs=...>
+# folded_attributes is a hash of tags with their attributes (<tag attrs=...>
 #                   strings), referenced by the folded tag id, which should
 #                   replace the <tag po4a-id=id> strings in the current
 #                   translation.
 #
 # If @save_holders only has 1 holder, then we are not processing the
-# content of an holder, we are translating the document.
+# content of a holder, we are translating the document.
 my @save_holders;
 
 
@@ -269,7 +269,7 @@ Prevents it to strip the spaces around the extracted strings.
 
 =item B<wrap>
 
-Canonizes the string to translate, considering that whitespaces are not
+Canonicalizes the string to translate, considering that whitespaces are not
 important, and wraps the translated document. This option can be overridden
 by custom tag options. See the "tags" option below.
 
@@ -287,7 +287,7 @@ documents.
 
 =item B<ontagerror>
 
-This option defines the behavior of the module when it encounter a invalid
+This option defines the behavior of the module when it encounters invalid
 XML syntax (a closing tag which does not match the last opening tag, or a
 tag's attribute without value).
 It can take the following values:
@@ -353,9 +353,9 @@ You should use the B<translated> and B<untranslated> options instead.
 Space-separated list of tag's attributes you want to translate.  You can
 specify the attributes by their name (for example, "lang"), but you can
 prefix it with a tag hierarchy, to specify that this attribute will only be
-translated when it's into the specified tag. For example: E<lt>bbbE<gt>E<lt>aaaE<gt>lang
-specifies that the lang attribute will only be translated if it's into an
-E<lt>aaaE<gt> tag, and it's into a E<lt>bbbE<gt> tag.
+translated when it's in the specified tag. For example: E<lt>bbbE<gt>E<lt>aaaE<gt>lang
+specifies that the lang attribute will only be translated if it's in an
+E<lt>aaaE<gt> tag, and it's in a E<lt>bbbE<gt> tag.
 
 =item B<foldattributes>
 
@@ -377,7 +377,7 @@ By default, all tags break the sequence.
 
 The tags must be in the form <aaa>, but you can join some
 (<bbb><aaa>), if a tag (<aaa>) should only be considered
-when it's into another tag (<bbb>).
+when it's within another tag (<bbb>).
 
 =item B<inline>
 
@@ -386,7 +386,7 @@ By default, all tags break the sequence.
 
 The tags must be in the form <aaa>, but you can join some
 (<bbb><aaa>), if a tag (<aaa>) should only be considered
-when it's into another tag (<bbb>).
+when it's within another tag (<bbb>).
 
 =item B<placeholder>
 
@@ -401,7 +401,7 @@ similar to:
 
 The tags must be in the form <aaa>, but you can join some
 (<bbb><aaa>), if a tag (<aaa>) should only be considered
-when it's into another tag (<bbb>).
+when it's within another tag (<bbb>).
 
 =item B<nodefault>
 
@@ -426,7 +426,7 @@ Space-separated list of tags you want to translate.
 
 The tags must be in the form <aaa>, but you can join some
 (<bbb><aaa>), if a tag (<aaa>) should only be considered
-when it's into another tag (<bbb>).
+when it's within another tag (<bbb>).
 
 You can also specify some tag options by putting some characters in front of
 the tag hierarchy. For example, you can put 'w' (wrap) or 'W' (don't wrap)
@@ -440,7 +440,7 @@ Space-separated list of tags you do not want to translate.
 
 The tags must be in the form <aaa>, but you can join some
 (<bbb><aaa>), if a tag (<aaa>) should only be considered
-when it's into another tag (<bbb>).
+when it's within another tag (<bbb>).
 
 =item B<defaulttranslateoption>
 
@@ -661,7 +661,7 @@ sub found_string {
 =head2 MODIFYING TAG TYPES (TODO)
 
 This is a more complex one, but it enables a (almost) total customization.
-It's based in a list of hashes, each one defining a tag type's behavior. The
+It's based on a list of hashes, each one defining a tag type's behavior. The
 list should be sorted so that the most general tags are after the most
 concrete ones (sorted first by the beginning and then by the end keys). To
 define a tag type you'll have to make a hash with the following keys:
@@ -1305,7 +1305,7 @@ sub get_translate_options {
 
 # TODO: a less precise set of tags should not override a more precise one
     # The tags and tagsonly options are deprecated.
-    # The translated and untranslated options have an higher priority.
+    # The translated and untranslated options have a higher priority.
     $tag = $self->get_tag_from_list($path, $self->{translated});
     if (defined $tag) {
         $usedefault = 0;
@@ -1342,7 +1342,7 @@ sub get_translate_options {
     $tag = $self->get_tag_from_list($path, $self->{customtag});
     if (defined $tag) {
         $usedefault = 0;
-        $options = "in"; # This erase any other setting
+        $options = "in"; # This erases any other setting
     }
 
     if ($usedefault) {

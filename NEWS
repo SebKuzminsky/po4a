@@ -2,6 +2,27 @@ po4a NEWS
 
 =======================================================================
 
+* Major changes in release 0.46 (2015-05-21)
+
+Man:
+ * Fix handling of preprocessor lines (Debian's #744366)
+   Thanks to Robert Luberda for the patch.
+ * Fix handling of tbl's textblocks (Debian's #748601)
+   Thanks to Robert Luberda for the patch.
+
+Sgml:
+ * Silence a warning about useless greediness modifier (Debian's #779435)
+
+Translations:
+ * Update Dutch, thanks to Frans Spiesschaert (Debian's #782393)
+ * Update Vietnamese, thanks to Trần Ngọc Quân (Debian's #776896)
+ * Update Brazilian Portuguese, thanks to Rafael Ferreira (Debian's #735644)
+ 
+Documentation:
+ * Update Brazilian Portuguese, thanks to Rafael Ferreira (Debian's #735644)
+
+=======================================================================
+
 * Major changes in release 0.45 (2013-08-21)
 
 po4a:
