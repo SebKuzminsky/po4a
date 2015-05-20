@@ -1,5 +1,19 @@
-po4a (0.45-2) UNRELEASED; urgency=medium
+po4a (0.46-1) UNRELEASED; urgency=medium
 
+  * New upstream release. 
+    This is a long awaited release after almost 2 years!
+    The most impressive is not the release content, but the fact that
+    I'm back up to speed to maintain and release the po4a project.
+    More releases should follow soon.
+
+    - Closes: #744366 (man module mangles preprocessor line)
+      Thanks to Robert Luberda for the patch.
+    - Closes: #748601 (Man module splits tbl's textblocks into separate lines)
+      Thanks to Robert Luberda for the patch.
+    - Closes: #779435 (Useless use of greediness modifier)
+    - Closes: #782393 (Dutch po file for the po4a package)
+    - Closes: #735644 (Brazilian Portuguese PO translation of bin, pod and web)
+    - Closes: #776896 (Update Vietnamese program translation)
   * d/control: update VCS fields now that we moved the package to git.
 
  -- Martin Quinson <mquinson@debian.org>  Thu, 19 Jun 2014 08:42:08 +0200
