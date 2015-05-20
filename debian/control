@@ -7,7 +7,7 @@ Uploaders: Martin Quinson <mquinson@debian.org>,
  Jonas Smedegaard <dr@jones.dk>,
  Simon Paillard <spaillard@debian.org>,
  Denis Barbier <barbier@debian.org>
-Standards-Version: 3.9.3
+Standards-Version: 3.9.6
 Build-Depends-Indep: perl-modules, docbook-xml, docbook-xsl, xsltproc,
  libterm-readkey-perl,
 # unit tests

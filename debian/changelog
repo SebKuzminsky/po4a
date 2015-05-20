@@ -15,6 +15,7 @@ po4a (0.46-1) UNRELEASED; urgency=medium
     - Closes: #735644 (Brazilian Portuguese PO translation of bin, pod and web)
     - Closes: #776896 (Update Vietnamese program translation)
   * d/control: update VCS fields now that we moved the package to git.
+  * d/control: bump the Standards-Version to 3.9.6. No change needed.
 
  -- Martin Quinson <mquinson@debian.org>  Thu, 19 Jun 2014 08:42:08 +0200
 
