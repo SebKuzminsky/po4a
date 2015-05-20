@@ -96,14 +96,17 @@ Locale::Po4a::Chooser - manage po4a modules
 
 Locale::Po4a::Chooser is a module to manage po4a modules. Previously, all po4a
 binaries used to know all po4a modules (pod, man, sgml, etc). This made the
-addition of a new module boring, to make sure the documentation is synchronized
+addition of a new module boring, because you had to make sure that the documentation is synchronized
 in all modules, and that each of them can access the new module.
 
 Now, you just have to call the Locale::Po4a::Chooser::new() function,
 passing the name of module as argument.
 
-You also have the Locale::Po4a::Chooser::list() function which lists the
-available formats and exits on the value passed as argument.
+The function Locale::Po4a::Chooser::list() lists the available
+formats, and exits with the value passed as argument. So, we call
+Locale::Po4a::Chooser::list(0) when requested for the list of
+formats, and Locale::Po4a::Chooser::list(1) when passed an invalid
+format name.
 
 =head1 SEE ALSO
 
@@ -144,7 +147,7 @@ L<Locale::Po4a::Wml(3pm)>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002,2003,2004,2005 by SPI, inc.
+Copyright 2002,2003,2004,2005,2014 by SPI, inc.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
