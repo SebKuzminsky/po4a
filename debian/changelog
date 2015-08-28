@@ -1,11 +1,11 @@
-po4a (0.47-1) UNRELEASED; urgency=medium
+po4a (0.47-1) unstable; urgency=medium
 
   * New upstream release: Three months are gone already.
     - Fix: don't add supirious lines around \# lines (Closes: #786642)
     - Doc fix: poref is a command line option (Closes: #775707)
     - Port our regex to Perl 5.22 (Closes: #788706)
 
- -- Martin Quinson <mquinson@debian.org>  Fri, 28 Aug 2015 19:07:45 +0200
+ -- Martin Quinson <mquinson@debian.org>  Fri, 28 Aug 2015 19:17:23 +0200
 
 po4a (0.46-2) unstable; urgency=medium
 
