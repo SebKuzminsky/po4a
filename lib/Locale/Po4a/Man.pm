@@ -686,8 +686,8 @@ NEW_LINE:
 
         if ($line =~ m/^[.']*$/) {
             if ($c !~ m/^\s+$/) {
-                # This commentted line may be comment for the next paragraph
-                push @next_comments, [substr($line,0,1),$c];
+                # This commented line may be comment for the next paragraph
+                push @next_comments, [$line ? substr($line,0,1) : '.', $c];
             }
             if ($line =~ m/^[.']+$/) {
                 # those lines are ignored
@@ -2230,7 +2230,7 @@ $macro{'TS'}=sub {
             # Lines are continued on \ at the end of line
             $buffer .= $line;
         } else {
-            if ($line =~ s/\s*T{\s*$//) { # start of text block
+            if ($line =~ s/\s*T\{\s*$//) { # start of text block
               $in_textblock = 1;
               $postline = $&; # save the `T{' to be outputed below
             } elsif ($buffer eq "" && $line ne ""){ # single line data
