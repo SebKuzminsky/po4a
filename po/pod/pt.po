@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.43\n"
 "Report-Msgid-Bugs-To: po4a-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2015-05-20 23:34+0200\n"
+"POT-Creation-Date: 2015-08-28 19:05+0200\n"
 "PO-Revision-Date: 2012-10-14 18:56+0300\n"
 "Last-Translator: António Moreira <antoniocostamoreira@gmail.com>\n"
 "Language-Team: Portuguese-Traduz <traduz@debianpt.org>\n"
@@ -1846,7 +1846,9 @@ msgstr "OPÇÕES QUE MODIFICAM O CABEÇALHO POT"
 
 #. type: =item
 #: po4a:141 po4a-updatepo:38 lib/Locale/Po4a/Po.pm:14
-msgid "B<porefs> I<type>[,B<wrap>|B<nowrap>]"
+#, fuzzy
+#| msgid "B<porefs> I<type>[,B<wrap>|B<nowrap>]"
+msgid "B<--porefs> I<type>[,B<wrap>|B<nowrap>]"
 msgstr "B<porefs> I<type>[,B<wrap>|B<nowrap>]"
 
 #. type: textblock
