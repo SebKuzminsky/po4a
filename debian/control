@@ -14,7 +14,7 @@ Build-Depends-Indep: perl-modules, libmodule-build-perl,
 # unit tests
  gettext, libunicode-linebreak-perl,
 #   SGML
- sp, docbook, libsgmls-perl,
+ opensp, docbook, libsgmls-perl,
 #   TeX
  texlive-binaries
 Build-Depends: debhelper (>= 8)
@@ -25,7 +25,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/po4a.git
 Package: po4a
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${perl:Depends}, gettext, perl-modules, libsgmls-perl, sp
+Depends: ${misc:Depends}, ${perl:Depends}, gettext, perl-modules, libsgmls-perl, opensp
 Recommends: libtext-wrapi18n-perl, libterm-readkey-perl, liblocale-gettext-perl, libunicode-linebreak-perl
 Description: tools for helping translation of documentation
  The po4a (PO for anything) project goal is to ease translations (and
