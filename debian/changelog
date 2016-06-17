@@ -2,7 +2,8 @@ po4a (0.48-1) UNRELEASED; urgency=medium
 
   * New upstream release:
     - Integrate Debian's patch for opensp
-    - New Japanese translation, thanks to Takuma Yamada (Closes: #826292, #818949)
+    - New Japanese translation, thanks to Takuma Yamada
+      (Closes: #826292, #818949)
 
  -- Martin Quinson <mquinson@debian.org>  Fri, 17 Jun 2016 11:07:12 +0200
 
