@@ -7,8 +7,8 @@ Uploaders: Martin Quinson <mquinson@debian.org>,
  Jonas Smedegaard <dr@jones.dk>,
  Simon Paillard <spaillard@debian.org>,
  Denis Barbier <barbier@debian.org>
-Standards-Version: 3.9.6
-Build-Depends-Indep: perl-modules, libmodule-build-perl, 
+Standards-Version: 3.9.8
+Build-Depends-Indep: perl, libmodule-build-perl, 
  docbook-xml, docbook-xsl, xsltproc,
  libterm-readkey-perl,
 # unit tests
@@ -25,7 +25,7 @@ Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/po4a.git
 Package: po4a
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${perl:Depends}, gettext, perl-modules, libsgmls-perl, opensp
+Depends: ${misc:Depends}, ${perl:Depends}, gettext, libsgmls-perl, opensp
 Recommends: libtext-wrapi18n-perl, libterm-readkey-perl, liblocale-gettext-perl, libunicode-linebreak-perl
 Description: tools for helping translation of documentation
  The po4a (PO for anything) project goal is to ease translations (and
