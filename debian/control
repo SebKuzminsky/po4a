@@ -3,7 +3,6 @@ Section: text
 Priority: optional
 Maintainer: Nicolas FRANCOIS (Nekral) <nicolas.francois@centraliens.net>
 Uploaders: Martin Quinson <mquinson@debian.org>,
- Neil Williams <codehelp@debian.org>,
  Jonas Smedegaard <dr@jones.dk>,
  Simon Paillard <spaillard@debian.org>,
  Denis Barbier <barbier@debian.org>
