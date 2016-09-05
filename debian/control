@@ -1,9 +1,8 @@
 Source: po4a
 Section: text
 Priority: optional
-Maintainer: Nicolas FRANCOIS (Nekral) <nicolas.francois@centraliens.net>
-Uploaders: Martin Quinson <mquinson@debian.org>,
- Jonas Smedegaard <dr@jones.dk>,
+Maintainer: Martin Quinson <mquinson@debian.org>
+Uploaders:  Jonas Smedegaard <dr@jones.dk>,
  Simon Paillard <spaillard@debian.org>,
  Denis Barbier <barbier@debian.org>
 Standards-Version: 3.9.8
