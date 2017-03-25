@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a\n"
 "Report-Msgid-Bugs-To: po4a-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2016-06-17 11:02+0200\n"
-"PO-Revision-Date: 2016-05-17 12:47+0900\n"
+"POT-Creation-Date: 2016-09-05 14:50+0200\n"
+"PO-Revision-Date: 2016-08-21 22:22+0200\n"
 "Last-Translator: Takuma Yamada <tyamada@takumayamada.com>\n"
 "Language-Team: Japanese <debian-japanese@lists.debian.org>\n"
 "Language: ja\n"
@@ -5893,15 +5893,6 @@ msgstr ""
 
 #. type: textblock
 #: doc/po4a.7.pod:224
-#, fuzzy
-#| msgid ""
-#| "At the first glance, gettext doesn't seem to be adapted to all kind of "
-#| "translations.  For example, it didn't seemed adapted to debconf, the "
-#| "interface all Debian packages use for their interaction with the user "
-#| "during installation. In that case, the texts to translate were pretty "
-#| "short (a dozen lines for each package), and it was difficult to put the "
-#| "translation in a specialized file since it has to be available before the "
-#| "package installation."
 msgid ""
 "At the first glance, gettext doesn't seem to be adapted to all kind of "
 "translations.  For example, it didn't seem adapted to debconf, the interface "
@@ -6073,11 +6064,6 @@ msgstr ""
 
 #. type: textblock
 #: doc/po4a.7.pod:242
-#, fuzzy
-#| msgid ""
-#| "It can only handle XML, and only a particular DTD. I'm quite unhappy with "
-#| "the handling of lists, which end in one big msgid. When the list become "
-#| "big, the chunk becomes harder to shallow."
 msgid ""
 "It can only handle XML, and only a particular DTD. I'm quite unhappy with "
 "the handling of lists, which end in one big msgid. When the list become big, "
@@ -9499,17 +9485,12 @@ msgstr ""
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:6
-#, fuzzy
-#| msgid ""
-#| "This module uses B<nsgmls>(1) to parse the SGML files. Make sure it is "
-#| "installed.  Also make sure that the DTD of the SGML files are installed "
-#| "in the system."
 msgid ""
 "This module uses B<onsgmls>(1) to parse the SGML files. Make sure it is "
 "installed.  Also make sure that the DTD of the SGML files are installed in "
 "the system."
 msgstr ""
-"このモジュールは SGML ファイルのパースに B<nsgmls>(1) を利用します。必ずイン"
+"このモジュールは SGML ファイルのパースに B<onsgmls>(1) を利用します。必ずイン"
 "ストールしてください。また、SGML ファイルの DTD を、システムに必ずインストー"
 "ルしてください。"
 
@@ -9653,15 +9634,11 @@ msgstr "B<force>"
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:29
-#, fuzzy
-#| msgid ""
-#| "Proceed even if the DTD is unknown or if nsgmls finds errors in the input "
-#| "file."
 msgid ""
 "Proceed even if the DTD is unknown or if onsgmls finds errors in the input "
 "file."
 msgstr ""
-"DTD が分からない場合や nsgmls が入力ファイルでエラーを検出する場合のいずれで"
+"DTD が分からない場合や onsgmls が入力ファイルでエラーを検出する場合のいずれで"
 "も処理します。"
 
 #. type: =item
@@ -9690,18 +9667,13 @@ msgstr "B<ignore-inclusion>"
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:33
-#, fuzzy
-#| msgid ""
-#| "Space separated list of entities that won't be inlined.  Use this option "
-#| "with caution: it may cause nsgmls (used internally) to add tags and "
-#| "render the output document invalid."
 msgid ""
 "Space separated list of entities that won't be inlined.  Use this option "
 "with caution: it may cause onsgmls (used internally) to add tags and render "
 "the output document invalid."
 msgstr ""
 "インラインにしたくないエンティティの空白区切りリストです。このオプションは注"
-"意して使用してください。nsgmls (内部で使用) がタグを追加し、無効な出力ドキュ"
+"意して使用してください。onsgmls (内部で使用) がタグを追加し、無効な出力ドキュ"
 "メントを表示する原因になる可能性があります。"
 
 #. type: textblock
@@ -9715,35 +9687,24 @@ msgstr ""
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:37
-#, fuzzy
-#| msgid ""
-#| "The error output of nsgmls is redirected to /dev/null, which is clearly "
-#| "bad. I don't know how to avoid that."
 msgid ""
 "The error output of onsgmls is redirected to /dev/null, which is clearly "
 "bad. I don't know how to avoid that."
 msgstr ""
-"nsgmls のエラー出力を /dev/null にリダイレクトしています。明らかにまずいので"
+"onsgmls のエラー出力を /dev/null にリダイレクトしています。明らかにまずいので"
 "すが、どのように回避したらよいのかがわかりません。"
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:38
-#, fuzzy
-#| msgid ""
-#| "The problem is that I have to \"protect\" the conditional inclusions (i."
-#| "e. the C<E<lt>! [ %foo [> and C<]]E<gt>> stuff) from nsgmls. Otherwise "
-#| "nsgmls eats them, and I don't know how to restore them in the final "
-#| "document. To prevent that, I rewrite them to C<{PO4A-beg-foo}> and "
-#| "C<{PO4A-end}>."
 msgid ""
 "The problem is that I have to \"protect\" the conditional inclusions (i.e. "
 "the C<E<lt>! [ %foo [> and C<]]E<gt>> stuff) from onsgmls. Otherwise onsgmls "
 "eats them, and I don't know how to restore them in the final document. To "
 "prevent that, I rewrite them to C<{PO4A-beg-foo}> and C<{PO4A-end}>."
 msgstr ""
-"問題は、nsgmls から条件付き取り込み (つまり C<E<lt>! [ %foo [> and "
+"問題は、onsgmls から条件付き取り込み (つまり C<E<lt>! [ %foo [> and "
 "C<]]E<gt>> のようなもの) を \"保護\" しなければならないということです。そうし"
-"ないと、nsgmls が展開してしまい、最終ドキュメントで復元する方法がわかりませ"
+"ないと、onsgmls が展開してしまい、最終ドキュメントで復元する方法がわかりませ"
 "ん。これを防ぐために、私は C<{PO4A-beg-foo}> と C<{PO4A-end}> に書き直しまし"
 "た。"
 
@@ -9758,15 +9719,11 @@ msgstr ""
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:40
-#, fuzzy
-#| msgid ""
-#| "Everything works well with nsgmls's output redirected that way, but it "
-#| "will prevent us from detecting that the document is badly formatted."
 msgid ""
 "Everything works well with onsgmls's output redirected that way, but it will "
 "prevent us from detecting that the document is badly formatted."
 msgstr ""
-"nsgmls の出力を前述の方法でリダイレクトしてしまえば、すべてうまくいきますが、"
+"onsgmls の出力を前述の方法でリダイレクトしてしまえば、すべてうまくいきますが、"
 "それによって、ドキュメントのフォーマットが間違っていることを検出できなくなっ"
 "てしまいます。"
 
@@ -9835,13 +9792,6 @@ msgstr ""
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:50
-#, fuzzy
-#| msgid ""
-#| "This is because I preprocess the file to protect the conditional "
-#| "inclusion (i.e. the C<E<lt>! [ %foo [> and C<]]E<gt>> stuff) and some "
-#| "entities (like &version;) from nsgmls because I want them verbatim to the "
-#| "generated document. For that, I make a temp copy of the input file and do "
-#| "all the changes I want to this before passing it to nsgmls for parsing."
 msgid ""
 "This is because I preprocess the file to protect the conditional inclusion "
 "(i.e. the C<E<lt>! [ %foo [> and C<]]E<gt>> stuff) and some entities (like "
@@ -9851,8 +9801,8 @@ msgid ""
 msgstr ""
 "これにより、生成したドキュメントでは、条件付き取り込み (例; the C<E<lt>! "
 "[ %foo [> and C<]]E<gt>> など) やいくつかのエンティティ (&version; のような) "
-"がそのまま扱われてほしいので、nsgmls から保護するため前処理を行うことになりま"
-"す。そこで、入力ファイルの一時コピーを作成し、nsgmls に渡してパースする前に、"
+"がそのまま扱われてほしいので、onsgmls から保護するため前処理を行うことになりま"
+"す。そこで、入力ファイルの一時コピーを作成し、onsgmls に渡してパースする前に、"
 "それらすべてを変更します。"
 
 #. type: textblock
@@ -9871,15 +9821,11 @@ msgstr ""
 
 #. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:53
-#, fuzzy
-#| msgid ""
-#| "This module is an adapted version of sgmlspl (SGML postprocessor for the "
-#| "SGMLS and NSGMLS parsers) which was:"
 msgid ""
 "This module is an adapted version of sgmlspl (SGML postprocessor for the "
 "ONSGMLS parser) which was:"
 msgstr ""
-"このモジュールは、以下の方による sgmlspl (SGMLS パーサや NSGMLS パーサの "
+"このモジュールは、以下の方による sgmlspl (SGMLS パーサや ONSGMLS パーサの "
 "SGML ポストプロセッサ) の適合版です:"
 
 #. type: verbatim
@@ -13030,128 +12976,3 @@ msgstr ""
 " Copyright (c) 2004 by Jordi Vilalta  <jvprat@gmail.com>\n"
 " Copyright (c) 2008-2009 by Nicolas François <nicolas.francois@centraliens.net>\n"
 "\n"
-
-#~ msgid ""
-#~ "You also have the Locale::Po4a::Chooser::list() function which lists the "
-#~ "available formats and exits on the value passed as argument."
-#~ msgstr ""
-#~ "また、有効なフォーマットの一覧し、引数で渡す値を返す Locale::Po4a::"
-#~ "Chooser::list() 関数もあります。"
-
-#~ msgid "Locale::Po4a::Debconf - convert debconf templates from/to PO files"
-#~ msgstr "Locale::Po4a::Debconf - PO ファイルと debconf テンプレートの変換"
-
-#~ msgid ""
-#~ "Locale::Po4a::Debconf is a module to help the translation of the debconf "
-#~ "templates into other [human] languages."
-#~ msgstr ""
-#~ "Locale::Po4a::Debconf は、debconf テンプレートを他の [自然] 言語へ翻訳する"
-#~ "のを助けるモジュールです。"
-
-#~ msgid "Not tested."
-#~ msgstr "未テストです。"
-
-#~ msgid ""
-#~ "DO NOT USE THIS MODULE TO PRODUCE TEMPLATES. It's only good to extract "
-#~ "data."
-#~ msgstr ""
-#~ "「テンプレートを提供するためにこのモジュールを使用しないでください」抽出用"
-#~ "にのみ使用するのがよいです。"
-
-#~ msgid ""
-#~ "This module is loosely inspired from both po-debconf and debconf code. "
-#~ "The adaptation for po4a was done by:"
-#~ msgstr ""
-#~ "このモジュールは po-debconf と debconf のコードから漠然とひらめいたもので"
-#~ "す。po4a への適合は以下のメンバーが行いました。"
-
-#~ msgid ""
-#~ " Martin Quinson (mquinson#debian.org)\n"
-#~ "\n"
-#~ msgstr ""
-#~ " Martin Quinson (mquinson#debian.org)\n"
-#~ "\n"
-
-#~ msgid "Locale::Po4a::Html - convert HTML documents from/to PO files"
-#~ msgstr "Locale::Po4a::Html - PO ファイルと HTML ドキュメントの変換"
-
-#~ msgid ""
-#~ "Locale::Po4a::Html is a module to help the translation of documentation "
-#~ "in the HTML format into other [human] languages."
-#~ msgstr ""
-#~ "Locale::Po4a::Html は、HTML フォーマットのドキュメントを他の [自然] 言語へ"
-#~ "翻訳するのを助けるモジュールです。"
-
-#~ msgid ""
-#~ "Please note that this module is not distributed with the main po4a "
-#~ "archive because we don't feel it mature enough for that. If you insist on "
-#~ "using it anyway, check it from the CVS out."
-#~ msgstr ""
-#~ "このモジュールは、まだ十分成熟していないため、メインの po4a アーカイブでは"
-#~ "配布していません。どうしても試したければ、CVS からチェックアウトしてくださ"
-#~ "い。"
-
-#~ msgid ""
-#~ " Laurent Hausermann <laurent@hausermann.org>\n"
-#~ "\n"
-#~ msgstr ""
-#~ " Laurent Hausermann <laurent@hausermann.org>\n"
-#~ "\n"
-
-#~ msgid "Laurent Hausermann <laurent@hausermann.org>"
-#~ msgstr "Laurent Hausermann <laurent@hausermann.org>"
-
-#~ msgid ""
-#~ "Locale::Po4a::NewsDebian - convert NEWS.Debian documents from/to PO files"
-#~ msgstr ""
-#~ "Locale::Po4a::NewsDebian - PO ファイルと NEWS.Debian ドキュメントの変換"
-
-#~ msgid ""
-#~ "Locale::Po4a::NewsDebian is a module to help the translation of the NEWS."
-#~ "Debian files into other [human] languages. Those files are where "
-#~ "maintainer are supposed to write the important news about their package."
-#~ msgstr ""
-#~ "Locale::Po4a::NewsDebian は、NEWS.Debian ファイルを他の [自然] 言語へ翻訳"
-#~ "するのを助けるモジュールです。メンテナが自分のパッケージに関する重要な"
-#~ "ニュースをこのファイルに書きます。"
-
-#~ msgid ""
-#~ "A finer split of the entries may be preferable (search for /^ */, for "
-#~ "example), but this version is more robust and NEWS.Debian entries are not "
-#~ "supposed to change that often."
-#~ msgstr ""
-#~ "エントリをもっとよく分割できれば望ましいのですが (例えば /^ */ を探すな"
-#~ "ど)、このバージョンはもっと頑健で、NEWS.Debian のエントリは頻繁に変わらな"
-#~ "いことを想定しています。"
-
-#~ msgid ""
-#~ "This module is loosely inspired from /usr/lib/dpkg/parsechangelog/debian, "
-#~ "which is:"
-#~ msgstr ""
-#~ "このモジュールは、以下のような /usr/lib/dpkg/parsechangelog/debian から漠"
-#~ "然とひらめいたものです。"
-
-#~ msgid ""
-#~ " Copyright (C) 1996 Ian Jackson.  This is free software; see the GNU\n"
-#~ " General Public Licence version 2 or later for copying conditions.  "
-#~ "There\n"
-#~ " is NO warranty.\n"
-#~ "\n"
-#~ msgstr ""
-#~ " Copyright (C) 1996 Ian Jackson.  This is free software; see the GNU\n"
-#~ " General Public Licence version 2 or later for copying conditions.  "
-#~ "There\n"
-#~ " is NO warranty.\n"
-#~ "\n"
-
-#~ msgid ""
-#~ " Copyright (c) 1996 by Ian Jackson.\n"
-#~ " Copyright 2005 by SPI, inc.\n"
-#~ "\n"
-#~ msgstr ""
-#~ " Copyright (c) 1996 by Ian Jackson.\n"
-#~ " Copyright 2005 by SPI, inc.\n"
-#~ "\n"
-
-#~ msgid "B<porefs>"
-#~ msgstr "B<porefs>"

@@ -257,12 +257,12 @@ BEGIN {
     my $UnicodeGCString_available = 0;
     $UnicodeGCString_available = 1 if (eval { require Unicode::GCString });
     eval {
-        sub columns($$$) {
+        sub chars($$$) {
             my $text = shift;
             my $encoder = shift;
             $text = $encoder->decode($text) if (defined($encoder) && $encoder->name ne "ascii");
             if ($UnicodeGCString_available) {
-                return Unicode::GCString->new($text)->columns();
+                return Unicode::GCString->new($text)->chars();
             } else {
                 $text =~ s/\n$//s;
                 return length($text) if !(defined($encoder) && $encoder->name ne "ascii");
@@ -291,6 +291,7 @@ sub parse {
         }
 
         chomp($line);
+	# print STDERR "Seen $ref $line\n";
         $self->{ref}="$ref";
         if ((defined $self->{verbatim}) and ($self->{verbatim} == 3)) {
             # Untranslated blocks
@@ -318,7 +319,9 @@ sub parse {
                  ($line =~ m/^(={2,}|-{2,}|~{2,}|\^{2,}|\+{2,})$/) and
                  (defined($paragraph) )and
                  ($paragraph =~ m/^[^\n]*\n$/s) and
-                 (columns($paragraph, $self->{TT}{po_in}{encoder}, $ref) == (length($line)))) {
+                 # subtract one because chars includes the newline on the paragraph
+                 ((chars($paragraph, $self->{TT}{po_in}{encoder}, $ref) - 1) == (length($line)))) {
+
             # Found title
             $wrapped_mode = 0;
             my $level = $line;
@@ -333,7 +336,7 @@ sub parse {
             $paragraph="";
             @comments=();
             $wrapped_mode = 1;
-            $self->pushline(($level x (columns($t, $self->{TT}{po_in}{encoder}, $ref)))."\n");
+            $self->pushline(($level x (chars($t, $self->{TT}{po_in}{encoder}, $ref)))."\n");
         } elsif ($line =~ m/^(={1,5})( +)(.*?)( +\1)?$/) {
             my $titlelevel1 = $1;
             my $titlespaces = $2;
@@ -580,12 +583,20 @@ sub parse {
                  (defined $self->{bullet} and $line =~ m/^(\s+)(.*)$/)) {
             my $indent = $1;
             my $text = $2;
+	    if ($paragraph eq "" && length($self->{bullet}) && length($indent)) {
+		# starting a paragraph with a bullet (not an enum or so), and indented.
+		# Thus a literal paragraph in a list.
+		$wrapped_mode = 0;
+	    }
             if (not defined $self->{indent}) {
+		# No indent level before => Starting a paragraph?
                 $paragraph .= $text."\n";
                 $self->{indent} = $indent;
             } elsif (length($paragraph) and (length($self->{bullet}) + length($self->{indent}) == length($indent))) {
+		# same indent level as before: append
                 $paragraph .= $text."\n";
             } else {
+		# not the same indent level: start a new translated paragraph
                 do_paragraph($self,$paragraph,$wrapped_mode);
                 $paragraph = $text."\n";
                 $self->{indent} = $indent;
@@ -771,6 +782,8 @@ sub split_attributelist {
        | [^\W\d][-\w]*=\S+                  # invalid, but accept it anyway
        | "(?:[^"\\]++|\\.)*+"               # quoted attribute
        |  (?:[^,\\]++|\\.)++                # unquoted attribute
+       | ^$                                 # Empty attribute list allowed
+
          )(?:,\s*+)?/gx) {
         print STDERR "  -> $1\n" if $debug{split_attributelist};
         push @attributes, $1;
