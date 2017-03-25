@@ -7,7 +7,7 @@ po4a (0.49-1) UNRELEASED; urgency=medium
     * Man:
       * Add support for the tab(<character>) global option inside .TS/.TE.
         Also tidy up trailing newline handling in text blocks: Since that
-        trailing newling must be there, no need to translate it explicitely.
+        trailing newling must be there, no need to translate it explicitly.
         Many thanks to Colin Watson for the report, patch and tests.
         (Closes: #847754).
       * WARNING: this will fuzz your existing translations, but unfuzzing
