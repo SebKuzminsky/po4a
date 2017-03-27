@@ -150,6 +150,14 @@ A comma-separated list of tags to be translated can be provided.
 
 my %control = ();
 
+=item B<neverwrap>
+
+Prevent po4a from wrapping lines.
+
+=cut
+
+my $neverwrap = 0;
+
 my $parse_func = \&parse_fallback;
 
 my @comments = ();
@@ -172,6 +180,7 @@ sub initialize {
     $self->{options}{'nobullets'} = 1;
     $self->{options}{'tabs'} = 1;
     $self->{options}{'verbose'} = 1;
+    $self->{options}{'neverwrap'} = 1;
 
     foreach my $opt (keys %options) {
         die wrap_mod("po4a::text",
@@ -190,6 +199,10 @@ sub initialize {
 
     if (defined $options{'breaks'}) {
         $breaks = $options{'breaks'};
+    }
+
+    if (defined $options{'neverwrap'}) {
+        $neverwrap = 1;
     }
 
     if (defined $options{'debianchangelog'}) {
@@ -289,7 +302,7 @@ sub parse_debianchangelog {
         $paragraph="";
         $self->pushline("$line\n");
         $expect_header=0;
-    } elsif ($line =~ m/^ \-\- (.*) <(.*)>  ((\w+\,\s*)?\d{1,2}\s+\w+\s+\d{4}\s+\d{1,2}:\d\d:\d\d\s+[-+]\d{4}(\s+\([^\\\(\)]\))?)$/) {
+    } elsif ($line =~ m/^ \-\- (.*) <(.*)>  ((\w+\,\s*)?\d{1,2}\s+\w+\s+\d{4}\s+\d{1,2}:\d\d:\d\d\s+[-+]\d{4}(\s+\([^\\\(\)]\))+)$/) {
         # Found trailer
         do_paragraph($self,$paragraph,$wrapped_mode);
         $paragraph="";
@@ -837,6 +850,8 @@ sub do_paragraph {
     my ($self, $paragraph, $wrap) = (shift, shift, shift);
     my $type = shift || $self->{type} || "Plain text";
     return if ($paragraph eq "");
+
+	$wrap = 0 if $neverwrap;
 
 # DEBUG
 #    my $b;
