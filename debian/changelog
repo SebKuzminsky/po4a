@@ -1,24 +1,43 @@
-po4a (0.49-1) UNRELEASED; urgency=medium
+po4a (0.50-1) UNRELEASED; urgency=medium
 
-  * New upstream release:
+  * New upstream 0.49 release:
     * AsciiDoc:
-      * Fix various bugs, thanks to Brian Exelbierd (GitHub's #1, #2).
-      * Correctly handle list literal paragraph (GitHub's #9).
+      - Fix various bugs, thanks to Brian Exelbierd (GitHub's #1, #2).
+      - Correctly handle list literal paragraph (GitHub's #9).
     * Man:
-      * Add support for the tab(<character>) global option inside .TS/.TE.
+      - Add support for the tab(<character>) global option inside .TS/.TE.
         Also tidy up trailing newline handling in text blocks: Since that
         trailing newling must be there, no need to translate it explicitly.
         Many thanks to Colin Watson for the report, patch and tests.
         (Closes: #847754).
-      * WARNING: this will fuzz your existing translations, but unfuzzing
+      - WARNING: this will fuzz your existing translations, but unfuzzing
         will be rather easy so I push this change anyway.
     * Translations:
-      * Update Italian, thanks to Marco Ciampa.
-      * Update Indonesian, thanks to Izharul Haq (Closes: #835050).
-      * Update Japanese, thanks to Takuma Yamada (Closes: #818949).
-      * Update French, thanks Alban Vidal (Closes: #856188).
+      - Update Italian, thanks to Marco Ciampa.
+      - Update Indonesian, thanks to Izharul Haq (Closes: #835050).
+      - Update Japanese, thanks to Takuma Yamada (Closes: #818949).
+      - Update French, thanks Alban Vidal (Closes: #856188).
     * Other:
-      * Ensure that files in the archive are writable (Closes: #728602)
+      - Ensure that files in the archive are writable (Closes: #728602)
+  * New upstream 0.50 release:
+    * AsciiDoc:
+      - Further bug fixing to handle the git documentation (GitHub's #9).
+        - Before, we did not mark enough list blocks as verbatim.
+        - Now, we may mark a few too much of them. 
+        - This should not do any harm, beyond some fuzzy translation.
+      - Fix some bugs, around style macros (Alioth's #314919)
+        Thanks to Alexander Golubev for the patch.
+    * XML:
+      - Add an option to not wrap attributes (GitHub's #6)
+        Contributed by Ineiev, commited by dbarbier, thanks.
+    * Text:
+      - debianchangelog: Accept timezone names on multiple chars
+        (Closes: #792416)
+      - Add a neverwrap option to prevent any wrapping 
+        (Closes: #824753)
+    * po4a:
+      - Check the validity of po files before using them (Closes: #855431)
+      
   * Take over the package again, as Nicolas resigned from Debian 
     (Closes: #832382). Thanks Nicolas for you work all these years!
   * Remove Neil Williams from the uploaders, as he asked.
