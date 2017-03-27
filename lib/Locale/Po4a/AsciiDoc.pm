@@ -113,7 +113,8 @@ they are not translated.
 my @comments = ();
 
 my %debug=('split_attributelist' => 0,
-           'join_attributelist'  => 0
+           'join_attributelist'  => 0,
+           'parse'               => 0,
            );
 
 sub initialize {
@@ -291,7 +292,8 @@ sub parse {
         }
 
         chomp($line);
-	# print STDERR "Seen $ref $line\n";
+        print STDERR "Seen $ref $line\n" 
+	    if ($debug{parse});
         $self->{ref}="$ref";
         if ((defined $self->{verbatim}) and ($self->{verbatim} == 3)) {
             # Untranslated blocks
@@ -314,7 +316,9 @@ sub parse {
             # List Item Continuation or List Block
             do_paragraph($self,$paragraph,$wrapped_mode);
             $paragraph="";
+	    $wrapped_mode = 1 unless defined($self->{verbatim});
             $self->pushline($line."\n");
+            # TODO: add support for Open blocks
         } elsif ((not defined($self->{verbatim})) and
                  ($line =~ m/^(={2,}|-{2,}|~{2,}|\^{2,}|\+{2,})$/) and
                  (defined($paragraph) )and
@@ -393,6 +397,7 @@ sub parse {
                             and ($self->{type} eq "verse")) {
                             $wrapped_mode = 0;
                             $self->{verbatim} = 1;
+			    print STDERR "QuoteBlock verse\n" if $debug{parse};
                         } else {
                             $wrapped_mode = 1;
                         }
@@ -459,8 +464,11 @@ sub parse {
             @comments=();
             $wrapped_mode = 1;
             if ($line =~ m/^\[(['"]?)(verse|quote)\1,/) {
-                $wrapped_mode = 0 if $2 eq 'verse';
                 $self->{type} = $2;
+		if ($self->{type} eq 'verse') {
+		    $wrapped_mode = 0;
+		}
+		print STDERR "Starting verse\n" if $debug{parse};
             }
             undef $self->{bullet};
             undef $self->{indent};
@@ -598,12 +606,18 @@ sub parse {
             } else {
 		# not the same indent level: start a new translated paragraph
                 do_paragraph($self,$paragraph,$wrapped_mode);
+		if (length($self->{indent})>0 && length($self->{indent}) < length($indent)) {
+		    # increase indentation: the new block must not be wrapped
+		    $wrapped_mode = 0;
+		}
                 $paragraph = $text."\n";
                 $self->{indent} = $indent;
                 $self->{bullet} = "";
             }
         } elsif ($line =~ /^\s*$/) {
             # Break paragraphs on lines containing only spaces
+	    print STDERR "Empty new line. Wrap: ".(defined($self->{verbatim})?"yes. ":"no. ")."\n" 
+		if $debug{parse};
             do_paragraph($self,$paragraph,$wrapped_mode);
             $paragraph="";
             $wrapped_mode = 1 unless defined($self->{verbatim});
@@ -631,7 +645,7 @@ sub parse {
             }
             undef $self->{bullet};
             undef $self->{indent};
-    # TODO: comments
+            # TODO: comments
             $paragraph .= $line."\n";
         }
         # paragraphs starting by a bullet, or numbered
@@ -755,7 +769,9 @@ sub parse_macro {
                          "wrap" => 0);
         return $t;
     }
-    my @attributes = $self->split_attributelist($macroparam);
+    my @attributes = ();
+    @attributes = $self->split_attributelist($macroparam) unless $macroparam eq "";
+
     unshift @attributes, $macroname;
     my @translated_attributes = $self->join_attributelist("macro", @attributes);
     shift @translated_attributes;
@@ -798,7 +814,12 @@ sub join_attributelist {
     my ($self, $type) = (shift, shift);
     my @attributes = @_;
     my $command = shift(@attributes);
-    my $position = 1;
+    my $position;
+    if ($type eq 'macro') {
+        $position = 0; # macroname is passed through the first attribute
+    } else {
+        $position = 1;
+    }
     my @text = ($command);
     if ($command =~ m/=/) {
         my $attr = $command;
@@ -887,6 +908,7 @@ Tested successfully on simple AsciiDoc files.
 
  Copyright 2005-2008 by Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.
  Copyright 2012 by Denis BARBIER <barbier@linuxfr.org>.
+ Copyright 2017 by Martin Quinson <mquinson#debian.org>.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).

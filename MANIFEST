@@ -88,6 +88,7 @@ po4a-gettextize
 po4a-normalize
 po4a-translate
 po4a-updatepo
+Po4aBuilder.pm
 README
 README.maintainers
 README.tests
@@ -192,6 +193,11 @@ t/data-05/test5.conf
 t/data-05/test6.err
 t/data-05/test7.err
 t/data-05/test8.conf
+t/data-05/test9.1
+t/data-05/test9.conf
+t/data-05/test9.en.po
+t/data-05/test9.err
+t/data-05/test9.pot
 t/data-06/addendum1
 t/data-06/addendum123.list
 t/data-06/addendum123.list2
@@ -416,6 +422,9 @@ t/data-30/Lists.po
 t/data-30/Paragraphs.asciidoc
 t/data-30/Paragraphs.out
 t/data-30/Paragraphs.po
+t/data-30/StyleMacro.asciidoc
+t/data-30/StyleMacro.out
+t/data-30/StyleMacro.po
 t/data-30/Tables.asciidoc
 t/data-30/Tables.out
 t/data-30/Tables.po
