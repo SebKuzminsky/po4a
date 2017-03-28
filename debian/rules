@@ -10,6 +10,16 @@ override_dh_auto_build:
 	[ "x$$pkgver" = "x$$libver" ]
 	dh_auto_build
 
+override_dh_install:
+	dh_install
+	# install the manpages to the right location, damn Module::Build
+	mv debian/po4a/usr/share/man/man3/man3 tempdir
+	rmdir debian/po4a/usr/share/man/fr/man1/
+	rmdir debian/po4a/usr/share/man/fr/
+	mv debian/po4a/usr/share/man/man3/* debian/po4a/usr/share/man/
+	mv tempdir/* debian/po4a/usr/share/man/man3/
+	rmdir tempdir
+
 %:
 	dh $@ --verbose
 
