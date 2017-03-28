@@ -1,3 +1,19 @@
+po4a (0.51-1) UNRELEASED; urgency=medium
+
+  * New upstream release:
+    * XML:
+      - Add an option to escape all quotes, for android.
+        Thanks to Josh Dubois for the patch (Alioth's #315353).
+    * po4a:
+      - Checking po file is fine. Failing if the file does not exist isn't.
+        It makes apt to FTBFS! (Closes: #858934)
+    * other:
+      - Third attempt at installing the manpages to the right location.
+      
+  * d/changelog: fix some spelling errors reported by lintian.
+
+ -- Martin Quinson <mquinson@debian.org>  Tue, 28 Mar 2017 23:12:35 +0200
+
 po4a (0.50-1) unstable; urgency=medium
 
   * New upstream 0.49 release:
