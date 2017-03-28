@@ -1,4 +1,4 @@
-po4a (0.51-1) UNRELEASED; urgency=medium
+po4a (0.51-1) unstable; urgency=medium
 
   * New upstream release:
     * XML:
@@ -12,7 +12,7 @@ po4a (0.51-1) UNRELEASED; urgency=medium
       
   * d/changelog: fix some spelling errors reported by lintian.
 
- -- Martin Quinson <mquinson@debian.org>  Tue, 28 Mar 2017 23:12:35 +0200
+ -- Martin Quinson <mquinson@debian.org>  Tue, 28 Mar 2017 23:22:25 +0200
 
 po4a (0.50-1) unstable; urgency=medium
 
