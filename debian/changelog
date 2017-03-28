@@ -29,7 +29,7 @@ po4a (0.50-1) unstable; urgency=medium
         Thanks to Alexander Golubev for the patch.
     * XML:
       - Add an option to not wrap attributes (GitHub's #6)
-        Contributed by Ineiev, commited by dbarbier, thanks.
+        Contributed by Ineiev, committed by dbarbier, thanks.
     * Text:
       - debianchangelog: Accept timezone names on multiple chars
         (Closes: #792416)

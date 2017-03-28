@@ -15,7 +15,7 @@ Build-Depends-Indep: perl, libmodule-build-perl,
  opensp, docbook, libsgmls-perl,
 #   TeX
  texlive-binaries
-Build-Depends: debhelper (>= 8)
+Build-Depends: debhelper (>= 10)
 Homepage: http://po4a.alioth.debian.org/
 Vcs-Git: git://anonscm.debian.org/collab-maint/po4a.git
 Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/po4a.git
