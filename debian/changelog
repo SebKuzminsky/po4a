@@ -23,7 +23,7 @@ po4a (0.50-1) unstable; urgency=medium
     * AsciiDoc:
       - Further bug fixing to handle the git documentation (GitHub's #9).
         - Before, we did not mark enough list blocks as verbatim.
-        - Now, we may mark a few too much of them. 
+        - Now, we may mark a few too much of them.
         - This should not do any harm, beyond some fuzzy translation.
       - Fix some bugs, around style macros (Alioth's #314919)
         Thanks to Alexander Golubev for the patch.
@@ -65,7 +65,7 @@ po4a (0.47-2) unstable; urgency=medium
     - lib/Locale/Po4a/Sgml.pm: Changed nsgmls to onsgmls.
 
   [ Martin Quinson ]
-  * po/pod/pt.po: Fix a formating error in /usr/share/man/pt/man7/po4a.7.gz
+  * po/pod/pt.po: Fix a formatting error in /usr/share/man/pt/man7/po4a.7.gz
     (Thanks Lintian for noticing)
 
  -- Martin Quinson <mquinson@debian.org>  Tue, 05 Jan 2016 17:46:23 +0100
@@ -475,7 +475,7 @@ po4a (0.35-1) experimental; urgency=low
       + <option> moved to the inline section. Closes: #494607
       + <code> moved to the inline section. Closes: #513708
       + <footnote> moved to the placeholder section. (see #513716)
-    - Fix typos and formating in the Locale:Po4a:XML man page. Closes: #494626
+    - Fix typos and formatting in the Locale:Po4a:XML man page. Closes: #494626
     - Updated dependency on perl-modules (>= 5.10.0-16) because the utf8
       option of Pod::Man is needed.
     - Xml has support for placeholders and the conflicts handling was
