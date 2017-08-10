@@ -4,9 +4,10 @@ Priority: optional
 Maintainer: Martin Quinson <mquinson@debian.org>
 Uploaders:  Jonas Smedegaard <dr@jones.dk>,
  Simon Paillard <spaillard@debian.org>,
- Denis Barbier <barbier@debian.org>
+ Denis Barbier <barbier@debian.org>,
+ Dr. Tobias Quathamer <toddy@debian.org>
 Standards-Version: 3.9.8
-Build-Depends-Indep: perl, libmodule-build-perl, 
+Build-Depends-Indep: perl, libmodule-build-perl,
  docbook-xml, docbook-xsl, xsltproc,
  libterm-readkey-perl,
 # unit tests
