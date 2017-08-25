@@ -53,11 +53,10 @@ from this.
 
 =item B<--porefs> I<type>[,B<wrap>|B<nowrap>]
 
-Specify the reference format. Argument I<type> can be one of B<none> to not
-produce any reference, B<noline> to not specify the line number (more
-accurately all line numbers are replaced by 1), B<counter> to replace line
-number by an increasing counter, and B<full> to include complete
-references.
+Specify the reference format. Argument I<type> can be one of B<never>
+to not produce any reference, B<file> to only specify the file
+without the line number, B<counter> to replace line number by an
+increasing counter, and B<full> to include complete references (default: full).
 
 Argument can be followed by a comma and either B<wrap> or B<nowrap> keyword.
 References are written by default on a single line.  The B<wrap> option wraps
@@ -90,7 +89,6 @@ Set the package version for the POT header. The default is "VERSION".
 
 use IO::File;
 
-
 require Exporter;
 
 package Locale::Po4a::Po;
@@ -120,6 +118,7 @@ use POSIX qw(strftime floor);
 use Time::Local;
 
 use Encode;
+use Config;
 
 my @known_flags=qw(wrap no-wrap c-format fuzzy);
 
@@ -190,12 +189,14 @@ sub initialize {
             $self->{options}{$opt} = $options->{$opt};
         }
     }
-    $self->{options}{'porefs'} =~ /^(full|counter|noline|none)(,(no)?wrap)?$/ ||
+    $self->{options}{'porefs'} =~ /^(full|counter|noline|file|none|never)(,(no)?wrap)?$/ ||
         die wrap_mod("po4a::po",
                      dgettext ("po4a",
                                "Invalid value for option 'porefs' ('%s' is ".
-                               "not one of 'full', 'counter', 'noline' or 'none')"),
+                               "not one of 'full', 'counter', 'file' or 'never')"),
                      $self->{options}{'porefs'});
+    $self->{options}{'porefs'} =~ s/noline/file/; # backward compat. 'file' used to be called 'noline'.
+    $self->{options}{'porefs'} =~ s/none/never/; # backward compat. 'never' used to be called 'none'.
     if ($self->{options}{'porefs'} =~ m/^counter/) {
         $self->{counter} = {};
     }
@@ -249,12 +250,16 @@ sub read {
     my $self=shift;
     my $filename=shift
         or croak wrap_mod("po4a::po",
-                          dgettext("po4a",
-                                   "Please provide a non-null filename"));
+                          dgettext("po4a", "Please provide a non-null filename"));
 
     my $lang = basename($filename);
     $lang =~ s/\.po$//;
     $self->{lang} = $lang;
+
+    my $cmd = "LC_ALL=C msgfmt".$Config{_exe}." --check-format --check-domain -o /dev/null ".$filename;
+    my $out = qx/$cmd 2>&1/;
+    die wrap_msg(dgettext("po4a","Invalid po file %s:\n%s"), $filename, $out)
+      unless ($? == 0);
 
     my $fh;
     if ($filename eq '-') {
@@ -1258,7 +1263,7 @@ sub push_raw {
         return;
     }
 
-    if ($self->{options}{'porefs'} =~ m/^none/) {
+    if ($self->{options}{'porefs'} =~ m/^never/) {
         $reference = "";
     } elsif ($self->{options}{'porefs'} =~ m/^counter/) {
         if ($reference =~ m/^(.+?)(?=\S+:\d+)/g) {
@@ -1273,8 +1278,8 @@ sub push_raw {
             }gex && pos($reference);
             $reference = $new_ref;
         }
-    } elsif ($self->{options}{'porefs'} =~ m/^noline/) {
-        $reference =~ s/:\d+/:1/g;
+    } elsif ($self->{options}{'porefs'} =~ m/^file/) {
+        $reference =~ s/:\d+//g;
     }
 
     if (defined($self->{po}{$msgid})) {
@@ -1396,6 +1401,30 @@ in the document, it will be counted multiple times
 sub count_entries_doc($) {
     my $self=shift;
     return $self->{count_doc};
+}
+
+=item equals_msgid(po)
+
+Returns ($uptodate, $diagnostic) with $uptodate indicating whether all msgid of the current po file are also present in the one passed as parameter
+(all other fields are ignored in the file comparison).
+Informally, if $uptodate returns false, then the po files would be changed when going through B<po4a-updatepo>.
+
+If $uptodate is false, then $diagnostic contains a diagnostic of why this is so.
+
+=cut
+
+sub equals_msgid($$) {
+    my ($self, $other) = (shift, shift);
+
+    unless ($self->count_entries() == $other->count_entries()) {
+	return (0, "The amount of entries differ between files: ".$self->count_entries()." is not ".$other->count_entries()."\n");
+    }
+    foreach my $msgid ( keys %{$self->{po}} ) {
+	unless (defined($self->{po}{$msgid}) && defined($other->{po}{$msgid})) {
+	    return (0, "msgid declared in one file only: $msgid\n");
+	}
+    }
+    return (1, "");
 }
 
 =item msgid($)

@@ -2,6 +2,55 @@ This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
 =======================================================================
+        ___   ____ ____
+__   __/ _ \ | ___|___ \
+\ \ / / | | ||___ \ __) |  Thanks for the patches, dudes.
+ \ V /| |_| | ___) / __/
+  \_/  \___(_)____/_____|      (released 2017-08-26)
+
+Core:
+ * po4a-translate complains if the input po file is outdated
+   Thanks to Martin Schauer for the bug report (Debian's #637288).
+ * teach po4a-updatepo about the --porefs options that was already documented.
+   Thanks to Guillem Jover for the bug report.
+ * rename --porefs values after msgmerge option's name: noline->file
+   and none->never. Both variantes are accepted; the later is documented.
+   Thanks to Guillem Jover for the initial patch (Debian's #775708).
+
+po4a:
+ * New option --no-update to not touch the po files. (Debian's #599179)
+
+AsciiDoc:
+ * Properly deal with item text missing its leading indent (GitHub's #14)
+ * Allow empty attribute lists, by bexelbie (GitHub's #39)
+
+Text:
+ * Add an option to treat Key/Value pairs as verbatim (GitHub's #8, #25)
+
+RubyDoc:
+ * New module by Francesco Poli (Debian's #827936)
+ 
+Wml:
+ * Make title translatable, by yangfl (GitHub's #40).
+
+Documentation:
+ * Various fixups by Alexander Golubev.
+
+Translations:
+ * Setup WebLate to ease the life of translators.
+ * Update Brazilian Portuguese, thanks to Luiz Fernando Ranghetti.
+ * Update Czech, thanks to Michal Čihař.
+ * Update Dutch, thanks to Frans Spiesschaert (Debian's #862923)
+ * Update German, thanks to Helge Kreutzmann (Debian's #859029)
+ * Update Italian, thanks to Marco Ciampa.
+ * Update French, thanks to Alban Vidal (Debian's #860073) and to 
+   Jean-Baptiste on Weblate.
+ * New translation: Norwegian Bokmål, thanks to Petter Reinholdtsen.
+ * Update Russian, thanks to Alexander Golubev (GitHub's #24) and to
+   Igor on Weblate.
+ * Update Ukrainian, thanks to Yuri Chornoivan.
+
+=======================================================================
 
         ___   ____  _
 __   __/ _ \ | ___|/ |
@@ -32,18 +81,18 @@ __   __/ _ \ | ___| / _ \
 AsciiDoc:
  * Further bug fixing to handle the git documentation (GitHub's #9).
    - Before, we did not mark enough list blocks as verbatim.
-   - Now, we may mark a few too much of them. 
+   - Now, we may mark a few too much of them.
    - This should not do any harm, beyond some fuzzy translation.
  * Fix some bugs, around style macros (Alioth's #314919)
    Thanks to Alexander Golubev for the patch.
-   
+
 XML:
  * Add an option to not wrap attributes (GitHub's #6)
    Contributed by Ineiev, committed by dbarbier, thanks.
 
 Text:
  * debianchangelog: Accept timezone names on multiple chars (Debian's #792416)
- * Add a neverwrap option to prevent any wrapping 
+ * Add a neverwrap option to prevent any wrapping
    (Debian's #824753 and Alioth's #314748)
 
 po4a:
@@ -55,8 +104,8 @@ other:
    Thanks to John Hein for the patch (Alioth's #315040).
 
 =======================================================================
-        ___  _  _   ___  
-__   __/ _ \| || | / _ \ 
+        ___  _  _   ___
+__   __/ _ \| || | / _ \
 \ \ / / | | | || || (_) | I fixed a bug myself \o/
  \ V /| |_| |__   _\__, |
   \_/  \___(_) |_|   /_/       (released 2017-03-25)
@@ -103,13 +152,13 @@ Translations:
         ___  _  _ _____
 __   __/ _ \| || |___  |
 \ \ / / | | | || |_ / /  Three months are gone already
- \ V /| |_| |__   _/ /  
+ \ V /| |_| |__   _/ /
   \_/  \___(_) |_|/_/       (released 2015-08-28)
 
-Man: 
+Man:
  * Fix: don't add supirious lines around \# lines (Debian's 786642)
    Thanks to David Prévot (bug report) and to Robert Luberda (patch)
- 
+
 Documentation:
  * Bugfix: poref is a command line option (Debian's #775707)
    Thanks to Guillem Jover for the report and the patch.
@@ -129,7 +178,7 @@ Project resources:
 
 =======================================================================
         ___  _  _    __
-__   __/ _ \| || |  / /_  
+__   __/ _ \| || |  / /_
 \ \ / / | | | || |_| '_ \  Restarting the machine once again
  \ V /| |_| |__   _| (_) |
   \_/  \___(_) |_|  \___/      (released 2015-05-21)
@@ -147,14 +196,14 @@ Translations:
  * Update Dutch, thanks to Frans Spiesschaert (Debian's #782393)
  * Update Vietnamese, thanks to Trần Ngọc Quân (Debian's #776896)
  * Update Brazilian Portuguese, thanks to Rafael Ferreira (Debian's #735644)
- 
+
 Documentation:
  * Update Brazilian Portuguese, thanks to Rafael Ferreira (Debian's #735644)
 
 =======================================================================
-        ___  _  _  ____  
-__   __/ _ \| || || ___| 
-\ \ / / | | | || ||___ \ 
+        ___  _  _  ____
+__   __/ _ \| || || ___|
+\ \ / / | | | || ||___ \
  \ V /| |_| |__   _|__) |
   \_/  \___(_) |_||____/ (released 2013-08-21)
 
@@ -181,9 +230,9 @@ Sgml:
  * Fix failing tests with recent Docbook DTD.
 
 =======================================================================
-        ___  _  _   _  _   
-__   __/ _ \| || | | || |  
-\ \ / / | | | || |_| || |_ 
+        ___  _  _   _  _
+__   __/ _ \| || | | || |
+\ \ / / | | | || |_| || |_
  \ V /| |_| |__   _|__   _|
   \_/  \___(_) |_|    |_|  (released 2012-10-21)
 
@@ -191,9 +240,9 @@ translations:
  * Start of Portuguese translation
 
 =======================================================================
-        ___  _  _  _____ 
-__   __/ _ \| || ||___ / 
-\ \ / / | | | || |_ |_ \ 
+        ___  _  _  _____
+__   __/ _ \| || ||___ /
+\ \ / / | | | || |_ |_ \
  \ V /| |_| |__   _|__) |
   \_/  \___(_) |_||____/ (released 2012-10-17)
 
@@ -220,9 +269,9 @@ Text:
 
 =======================================================================
         ___  _  _  ____
-__   __/ _ \| || ||___ \ 
+__   __/ _ \| || ||___ \
 \ \ / / | | | || |_ __) |
- \ V /| |_| |__   _/ __/ 
+ \ V /| |_| |__   _/ __/
   \_/  \___(_) |_||_____| (released 2012-05-16)
 
 po4a:
@@ -242,7 +291,7 @@ documentation translations:
  * Updated Polish translations
 
 =======================================================================
-        ___  _  _   _ 
+        ___  _  _   _
 __   __/ _ \| || | / |
 \ \ / / | | | || |_| |
  \ V /| |_| |__   _| |
@@ -260,13 +309,13 @@ Text:
  * Remove trailing newline in titles from PO files
 
 Packaging:
- * Remove Makefile, all processing is performed by Build.PL 
+ * Remove Makefile, all processing is performed by Build.PL
 
 =======================================================================
-        ___  _  _    ___   ____  
-__   __/ _ \| || |  / _ \ |___ \ 
+        ___  _  _    ___   ____
+__   __/ _ \| || |  / _ \ |___ \
 \ \ / / | | | || |_| | | |  __) |
- \ V /| |_| |__   _| |_| | / __/ 
+ \ V /| |_| |__   _| |_| | / __/
   \_/  \___(_) |_|  \___(_)_____| (released 2010-11-30)
 
 documentation:
@@ -294,7 +343,7 @@ documentation translations:
  * Updated Polish translations
 
 =======================================================================
-        ___  _  _    ___   _ 
+        ___  _  _    ___   _
 __   __/ _ \| || |  / _ \ / |
 \ \ / / | | | || |_| | | || |
  \ V /| |_| |__   _| |_| || |
@@ -330,8 +379,8 @@ Project resources:
    top-level directory.
 
 =======================================================================
-        ___  _  _    ___  
-__   __/ _ \| || |  / _ \ 
+        ___  _  _    ___
+__   __/ _ \| || |  / _ \
 \ \ / / | | | || |_| | | |
  \ V /| |_| |__   _| |_| |
   \_/  \___(_) |_|  \___/  (released 2010-07-27)
@@ -347,8 +396,8 @@ Man:
  * Support font modifiers in the form \f(XX and \f[FONT-NAME]
 
 =======================================================================
-        ___   _____ ___  
-__   __/ _ \ |___ // _ \ 
+        ___   _____ ___
+__   __/ _ \ |___ // _ \
 \ \ / / | | |  |_ \ (_) |
  \ V /| |_| | ___) \__, |
   \_/  \___(_)____/  /_/  (released 2010-02-02)
@@ -357,9 +406,9 @@ po4a
  * New syntax for addenda, path may be preceded by modifiers.
 
 =======================================================================
-        ___   _____  ___  
-__   __/ _ \ |___ / ( _ ) 
-\ \ / / | | |  |_ \ / _ \ 
+        ___   _____  ___
+__   __/ _ \ |___ / ( _ )
+\ \ / / | | |  |_ \ / _ \
  \ V /| |_| | ___) | (_) |
   \_/  \___(_)____/ \___/  (released 2010-01-14)
 
@@ -379,7 +428,7 @@ Pod:
  * Detect the encoding based on the input's =encoding line.
 
 =======================================================================
-        ___   __________ _ 
+        ___   __________ _
 __   __/ _ \ |___ /___  / |
 \ \ / / | | |  |_ \  / /| |
  \ V /| |_| | ___) |/ /_| |
@@ -390,10 +439,10 @@ po4a-build:
  * Fix bug that caused translated manpages to be overwritten.
 
 =======================================================================
-        ___   __________ 
+        ___   __________
 __   __/ _ \ |___ /___  |
-\ \ / / | | |  |_ \  / / 
- \ V /| |_| | ___) |/ /  
+\ \ / / | | |  |_ \  / /
+ \ V /| |_| | ___) |/ /
   \_/  \___(_)____//_/   (released 2009-11-20)
 
 po4a-build:
@@ -404,9 +453,9 @@ translations:
  * Updated Spanish translations.
 
 ===============================================================================
-        ___   _____  __    __   
-__   __/ _ \ |___ / / /_  / /_  
-\ \ / / | | |  |_ \| '_ \| '_ \ 
+        ___   _____  __    __
+__   __/ _ \ |___ / / /_  / /_
+\ \ / / | | |  |_ \| '_ \| '_ \
  \ V /| |_| | ___) | (_) | (_) |
   \_/  \___(_)____/ \___(_)___/ (released 2009-11-07)
 
@@ -422,9 +471,9 @@ translations:
  * Updated Spanish translation of the documentation
 
 ===============================================================================
-        ___   _____  __    ____  
-__   __/ _ \ |___ / / /_  | ___| 
-\ \ / / | | |  |_ \| '_ \ |___ \ 
+        ___   _____  __    ____
+__   __/ _ \ |___ / / /_  | ___|
+\ \ / / | | |  |_ \| '_ \ |___ \
  \ V /| |_| | ___) | (_) | ___) |
   \_/  \___(_)____/ \___(_)____/ (released 2009-09-10)
 
@@ -436,9 +485,9 @@ translations:
  * Updated Portuguese translation
 
 ===============================================================================
-        ___   _____  __   _  _   
-__   __/ _ \ |___ / / /_ | || |  
-\ \ / / | | |  |_ \| '_ \| || |_ 
+        ___   _____  __   _  _
+__   __/ _ \ |___ / / /_ | || |
+\ \ / / | | |  |_ \| '_ \| || |_
  \ V /| |_| | ___) | (_) |__   _|
   \_/  \___(_)____/ \___(_) |_|  (released 2009-08-30)
 
@@ -462,8 +511,8 @@ translations:
  * Updated Swedish translation.
 
 ===============================================================================
-        ___   _____  __    _____ 
-__   __/ _ \ |___ / / /_  |___ / 
+        ___   _____  __    _____
+__   __/ _ \ |___ / / /_  |___ /
 \ \ / / | | |  |_ \| '_ \   |_ \   Bug fix release.
  \ V /| |_| | ___) | (_) | ___) |
   \_/  \___(_)____/ \___(_)____/ (released 2009-07-22)
@@ -471,10 +520,10 @@ __   __/ _ \ |___ / / /_  |___ /
 po4a-gettextize's new options were rejected by the modules.
 
 ===============================================================================
-        ___   _____  __    ____  
-__   __/ _ \ |___ / / /_  |___ \ 
+        ___   _____  __    ____
+__   __/ _ \ |___ / / /_  |___ \
 \ \ / / | | |  |_ \| '_ \   __) |
- \ V /| |_| | ___) | (_) | / __/ 
+ \ V /| |_| | ___) | (_) | / __/
   \_/  \___(_)____/ \___(_)_____| (released 2009-07-21)
 
 po4apod-display-po
@@ -493,7 +542,7 @@ Wml:
  * Fix handling of non ASCII input documents.
 
 ===============================================================================
-        ___   _____  __    _ 
+        ___   _____  __    _
 __   __/ _ \ |___ / / /_  / |
 \ \ / / | | |  |_ \| '_ \ | |
  \ V /| |_| | ___) | (_) || |
@@ -511,9 +560,9 @@ Pod:
  * Do not add an =encoding header if the encoding is empty.
 
 ===============================================================================
-        ___   _____  __   
-__   __/ _ \ |___ / / /_  
-\ \ / / | | |  |_ \| '_ \ 
+        ___   _____  __
+__   __/ _ \ |___ / / /_
+\ \ / / | | |  |_ \| '_ \
  \ V /| |_| | ___) | (_) |
   \_/  \___(_)____/ \___/  (released 2009-03-15)
 
@@ -541,9 +590,9 @@ TeX:
    directly.
 
 ===============================================================================
-        ___   _________  
-__   __/ _ \ |___ / ___| 
-\ \ / / | | |  |_ \___ \ 
+        ___   _________
+__   __/ _ \ |___ / ___|
+\ \ / / | | |  |_ \___ \
  \ V /| |_| | ___) |__) |
   \_/  \___(_)____/____/  (released 2009-02-10)
 
@@ -587,8 +636,8 @@ xml:
 
 ===============================================================================
         ___   _____ _  _
-__   __/ _ \ |___ /| || |  
-\ \ / / | | |  |_ \| || |_ 
+__   __/ _ \ |___ /| || |
+\ \ / / | | |  |_ \| || |_
  \ V /| |_| | ___) |__   _|
   \_/  \___(_)____/   |_|   (released 2008-07-20)
 
@@ -608,9 +657,9 @@ packaging:
  * Fix build failures with old versions of Module::Build.
 
 ===============================================================================
-        ___   __________  _____ 
-__   __/ _ \ |___ /___ / |___ / 
-\ \ / / | | |  |_ \ |_ \   |_ \ 
+        ___   __________  _____
+__   __/ _ \ |___ /___ / |___ /
+\ \ / / | | |  |_ \ |_ \   |_ \
  \ V /| |_| | ___) |__) | ___) |
   \_/  \___(_)____/____(_)____/  (released 2008-04-02)
 
@@ -622,10 +671,10 @@ translations:
  * Actually ship Japanese translations.
 
 ===============================================================================
-        ___   __________  ____  
-__   __/ _ \ |___ /___ / |___ \ 
+        ___   __________  ____
+__   __/ _ \ |___ /___ / |___ \
 \ \ / / | | |  |_ \ |_ \   __) |
- \ V /| |_| | ___) |__) | / __/ 
+ \ V /| |_| | ___) |__) | / __/
   \_/  \___(_)____/____(_)_____| (released 2008-04-01)
 
 text:
@@ -636,10 +685,10 @@ translations:
  * The manpages are generated in UTF-8.
 
 ===============================================================================
-        ___   __________  _ 
+        ___   __________  _
 __   __/ _ \ |___ /___ / / |
 \ \ / / | | |  |_ \ |_ \ | | This is a bug fix release.
- \ V /| |_| | ___) |__) || | 
+ \ V /| |_| | ___) |__) || |
   \_/  \___(_)____/____(_)_| (released 2008-03-16)
 
 
@@ -653,9 +702,9 @@ packaging:
  * Fix the installation path of manpages and .mo files.
 
 ===============================================================================
-        ___   __________ 
-__   __/ _ \ |___ /___ / 
-\ \ / / | | |  |_ \ |_ \ 
+        ___   __________
+__   __/ _ \ |___ /___ /
+\ \ / / | | |  |_ \ |_ \
  \ V /| |_| | ___) |__) |
   \_/  \___(_)____/____/  (released 2008-03-03)
 
@@ -696,10 +745,10 @@ cases in the testsuite.
   msguntypot: Fix handling of the comment of the PO header.
 
 ===============================================================================
-        ___   _________  
-__   __/ _ \ |___ /___ \ 
+        ___   _________
+__   __/ _ \ |___ /___ \
 \ \ / / | | |  |_ \ __) |
- \ V /| |_| | ___) / __/ 
+ \ V /| |_| | ___) / __/
   \_/  \___(_)____/_____| (released 2007-08-15)
 
 ** Security fix
@@ -737,7 +786,7 @@ __   __/ _ \ |___ /___ \
   many updates.
 
 ===============================================================================
-        ___   _____ _ 
+        ___   _____ _
 __   __/ _ \ |___ // |
 \ \ / / | | |  |_ \| |
  \ V /| |_| | ___) | |
@@ -785,8 +834,8 @@ __   __/ _ \ |___ // |
        opt:"..." parameters.
 
 ===============================================================================
-        ___   _____  ___  
-__   __/ _ \ |___ / / _ \ 
+        ___   _____  ___
+__   __/ _ \ |___ / / _ \
 \ \ / / | | |  |_ \| | | |
  \ V /| |_| | ___) | |_| |
   \_/  \___(_)____/ \___/  (released 2007-01-05)
@@ -823,8 +872,8 @@ __   __/ _ \ |___ / / _ \
   Updated Russian translation.
 
 ===============================================================================
-        ___   ____   ___  
-__   __/ _ \ |___ \ / _ \ 
+        ___   ____   ___
+__   __/ _ \ |___ \ / _ \
 \ \ / / | | |  __) | (_) |
  \ V /| |_| | / __/ \__, |
   \_/  \___(_)_____|  /_/  (released 2006-10-15)
@@ -870,9 +919,9 @@ __   __/ _ \ |___ \ / _ \
   encoded in UTF-8.
 
 ===============================================================================
-        ___   ____  ___  
-__   __/ _ \ |___ \( _ ) 
-\ \ / / | | |  __) / _ \ 
+        ___   ____  ___
+__   __/ _ \ |___ \( _ )
+\ \ / / | | |  __) / _ \
  \ V /| |_| | / __/ (_) |
   \_/  \___(_)_____\___/  (released 2006-08-17)
 
