@@ -1,3 +1,14 @@
+po4a (0.52-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+    - New module RubyDoc, by Francesco Poli (Closes: #827936)
+    - po4a-translate complains on outdated input po files (Closes: #637288)
+    - po4a: new option --no-update (Closes: #599179)
+    - Plus various small bug fixes and improvements
+    - Many translations updated (Closes: #862923, #859029, #860073)
+    
+ -- Martin Quinson <mquinson@debian.org>  Sat, 26 Aug 2017 01:02:02 +0200
+
 po4a (0.51-1) unstable; urgency=medium
 
   * New upstream release:
