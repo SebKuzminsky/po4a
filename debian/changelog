@@ -6,7 +6,10 @@ po4a (0.52-1) UNRELEASED; urgency=medium
     - po4a: new option --no-update (Closes: #599179)
     - Plus various small bug fixes and improvements
     - Many translations updated (Closes: #862923, #859029, #860073)
-    
+
+  * d/control: Remove Simon Paillard from uploaders. Thanks for the fish!
+    (Closes: #873268)
+
  -- Martin Quinson <mquinson@debian.org>  Sat, 26 Aug 2017 01:02:02 +0200
 
 po4a (0.51-1) unstable; urgency=medium
