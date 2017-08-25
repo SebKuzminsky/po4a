@@ -115,7 +115,7 @@ Output some debugging information.
 
 To add some extra content to the generated document beside what you
 translated (like the name of the translator, or a "About this translation"
-section), you should use the B<--addendum> option. 
+section), you should use the B<--addendum> option.
 
 The first line of the addendum must be a header indicating where to put
 it in the document (it can be before or after a given part of the
@@ -286,6 +286,13 @@ if ($percent<$threshold)  {
         }
     }
     $doc->write($outfile);
+}
+
+my ($ok, $msg) = $doc->is_po_uptodate();
+unless ($ok) {
+    warn wrap_msg(
+	gettext("Your input po file %s seems outdated (%s). Please consider running po4a-updatepo to refresh it."),
+	$po_filename, $msg);
 }
 
 1;

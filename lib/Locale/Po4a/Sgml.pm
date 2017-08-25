@@ -138,7 +138,7 @@ same. But there are still some problems:
 
 =item *
 
-The error output of onsgmls is redirected to /dev/null, which is clearly
+The error output of onsgmls is redirected to /dev/null by default, which is clearly
 bad. I don't know how to avoid that.
 
 The problem is that I have to "protect" the conditional inclusions (i.e. the
@@ -150,8 +150,9 @@ C<{PO4A-end}>.
 The problem with this is that the C<{PO4A-end}> and such I add are invalid in
 the document (not in a E<lt>pE<gt> tag or so).
 
-Everything works well with onsgmls's output redirected that way, but it will
-prevent us from detecting that the document is badly formatted.
+If you want to view the onsgmls output, just add the following to your command line (or po4a configuration line):
+
+  -o debug=onsgmls
 
 =item *
 
@@ -253,6 +254,8 @@ sub initialize {
     }
     if ($options{'debug'}) {
         foreach (split /\s+/, $options{'debug'}) {
+	    die wrap_mod("po4a::sgml", dgettext("po4a", "Unknown debug category: %s. Known categories:\n%s"), $_, join(" ",keys %debug))
+	      unless exists $debug{$_};
             $debug{$_} = 1;
         }
     }
@@ -281,14 +284,14 @@ sub translate {
     # don't translate entries composed of one entity
     if ( (($string =~ /^&[^;]*;$/) || ($options{'wrap'} && $string =~ /^\s*&[^;]*;\s*$/))
          && !($self->{options}{'include-all'}) ){
-        warn wrap_mod("po4a::sgml", dgettext("po4a", "msgid skipped to help translators (contains only an entity)"), $string)
+        warn wrap_mod("po4a::sgml", dgettext("po4a", "msgid skipped to help translators (contains only an entity)"))
             unless $self->verbose() <= 0;
         return $string.($options{'wrap'}?"\n":"");
     }
     # don't translate entries composed of tags only
     if ( $string =~ /^(((<[^>]*>)|\s)*)$/
          && !($self->{options}{'include-all'}) ) {
-        warn wrap_mod("po4a::sgml", dgettext("po4a", "msgid skipped to help translators (contains only tags)"), $string)
+        warn wrap_mod("po4a::sgml", dgettext("po4a", "msgid skipped to help translators (contains only tags)"))
                unless $self->verbose() <= 0;
         return $string.($options{'wrap'}?"\n":"");
     }
@@ -1182,14 +1185,20 @@ sub parse_file {
     # What to do after parsing
     $self->pushline($buffer);
     close(IN);
-    warn wrap_mod("po4a::sgml",
-                  dgettext("po4a","Warning: onsgmls produced some errors.  ".
-                  "This is usually caused by po4a, which modifies the input ".
-                  "and restores it afterwards, causing the input of onsgmls ".
-                  "to be invalid.  This is usually safe, but you may wish ".
-                  "to verify the generated document with onsgmls -wno-valid.  ".
-                  "Continuing..."))
-        if ($? != 0 and $self->verbose() > 0);
+    if ($? != 0 and $self->verbose() > 0) {
+	warn wrap_mod("po4a::sgml",
+	    dgettext("po4a","Warning: onsgmls produced some errors.  ".
+		"This is usually caused by po4a, which modifies the input ".
+		"and restores it afterwards, causing the input of onsgmls ".
+		"to be invalid.  This is usually safe, but you may wish ".
+		"to verify the generated document with onsgmls -wno-valid."));
+	unless ($debug{'onsgmls'}) {
+	  warn wrap_mod("po4a::sgml",
+	      dgettext("po4a", "To see the error message, ".
+		  "rerun po4a with this additional argument:\n".
+	          "   -o debug=onsgmls"))
+	}
+    }
     unlink ($tmpfile) unless ($debug{'refs'} or $debug{'onsgmls'});
 }
 

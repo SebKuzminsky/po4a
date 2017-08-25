@@ -23,35 +23,44 @@ push @tests, {
 
 {
   'run'  =>
-    'LC_ALL=C COLUMNS=80 perl ../po4a -f --porefs=noline data-12/test1.conf > tmp/err 2>&1',
+    'LC_ALL=C COLUMNS=80 perl ../po4a -f --porefs=file data-12/test1.conf > tmp/err 2>&1',
   'test' =>
     ["diff -u data-12/test1.err tmp/err",
-     "perl compare-po.pl data-12/noline.pot tmp/test1.pot",
-     "perl compare-po.pl data-12/noline.fr.po tmp/test1.fr.po",
-     "perl compare-po.pl data-12/noline.de.po tmp/test1.de.po"],
-  'doc'  => 'po4a --porefs=noline flag'
+     "perl compare-po.pl data-12/file.pot tmp/test1.pot",
+     "perl compare-po.pl data-12/file.fr.po tmp/test1.fr.po",
+     "perl compare-po.pl data-12/file.de.po tmp/test1.de.po"],
+  'doc'  => 'po4a --porefs=file flag'
 },
 
 {
   'run'  =>
-    'LC_ALL=C COLUMNS=80 perl ../po4a -f --porefs=noline,wrap data-12/test1.conf > tmp/err 2>&1',
+    'LC_ALL=C COLUMNS=80 perl ../po4a-updatepo --porefs=file -f man -m data-02/man -p tmp/updatepo-file.pot  > tmp/updatepo.err 2>&1',
   'test' =>
-    ["diff -u data-12/test1.err tmp/err",
-     "perl compare-po.pl data-12/noline_wrap.pot tmp/test1.pot",
-     "perl compare-po.pl data-12/noline_wrap.fr.po tmp/test1.fr.po",
-     "perl compare-po.pl data-12/noline_wrap.de.po tmp/test1.de.po"],
-  'doc'  => 'po4a --porefs=noline,wrap flag'
+    ["diff -u data-12/updatepo.err tmp/updatepo.err",
+     "perl compare-po.pl data-12/updatepo-file.pot tmp/updatepo-file.pot"],
+  'doc'  => 'po4a-updatepo --porefs=file flag'
 },
 
 {
   'run'  =>
-    'LC_ALL=C COLUMNS=80 perl ../po4a -f --porefs=noline,nowrap data-12/test1.conf > tmp/err 2>&1',
+    'LC_ALL=C COLUMNS=80 perl ../po4a -f --porefs=file,wrap data-12/test1.conf > tmp/err 2>&1',
   'test' =>
     ["diff -u data-12/test1.err tmp/err",
-     "perl compare-po.pl data-12/noline.pot tmp/test1.pot",
-     "perl compare-po.pl data-12/noline.fr.po tmp/test1.fr.po",
-     "perl compare-po.pl data-12/noline.de.po tmp/test1.de.po"],
-  'doc'  => 'po4a --porefs=noline,nowrap flag'
+     "perl compare-po.pl data-12/file_wrap.pot tmp/test1.pot",
+     "perl compare-po.pl data-12/file_wrap.fr.po tmp/test1.fr.po",
+     "perl compare-po.pl data-12/file_wrap.de.po tmp/test1.de.po"],
+  'doc'  => 'po4a --porefs=file,wrap flag'
+},
+
+{
+  'run'  =>
+    'LC_ALL=C COLUMNS=80 perl ../po4a -f --porefs=file,nowrap data-12/test1.conf > tmp/err 2>&1',
+  'test' =>
+    ["diff -u data-12/test1.err tmp/err",
+     "perl compare-po.pl data-12/file.pot tmp/test1.pot",
+     "perl compare-po.pl data-12/file.fr.po tmp/test1.fr.po",
+     "perl compare-po.pl data-12/file.de.po tmp/test1.de.po"],
+  'doc'  => 'po4a --porefs=file,nowrap flag'
 },
 
 {
@@ -109,12 +118,12 @@ push @tests, {
   'doc'  => 'po4a --porefs=full,nowrap flag'
 };
 
-use Test::More tests =>45;
+use Test::More tests =>48;
 
+system("rm -f t/tmp/* 2>&1");
 for (my $i=0; $i<scalar @tests; $i++) {
     chdir "t" || die "Can't chdir to my test directory";
 
-    system("rm -f tmp/* 2>&1");
 
     my ($val,$name);
 

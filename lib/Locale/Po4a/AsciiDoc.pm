@@ -292,7 +292,7 @@ sub parse {
         }
 
         chomp($line);
-        print STDERR "Seen $ref $line\n" 
+        print STDERR "Seen $ref $line\n"
 	    if ($debug{parse});
         $self->{ref}="$ref";
         if ((defined $self->{verbatim}) and ($self->{verbatim} == 3)) {
@@ -371,8 +371,12 @@ sub parse {
                     and ($self->{type} eq $type)) {
                     undef $self->{type};
                     undef $self->{verbatim};
+		    undef $self->{bullet};
+		    undef $self->{indent};
                     $wrapped_mode = 1;
+		    print STDERR "Closing $t block\n" if  $debug{parse};
                 } else {
+		    print STDERR "Begining $t block\n" if $debug{parse};
                     if ($t eq "\/") {
                         # CommentBlock, should not be treated
                         $self->{verbatim} = 2;
@@ -575,6 +579,7 @@ sub parse {
             my $indent = $1||"";
             my $bullet = $2;
             my $text = $3;
+	    print STDERR "Item (bullet: '$bullet')\n" if ($debug{parse});
             do_paragraph($self,$paragraph,$wrapped_mode);
             $paragraph = $text."\n";
             $self->{indent} = $indent;
@@ -587,10 +592,20 @@ sub parse {
             $paragraph = $text."\n";
             $self->{indent} = "";
             $self->{bullet} = $bullet;
+        } elsif ($line =~ /^\s*$/) {
+            # Break paragraphs on empty lines or lines containing only spaces
+	    print STDERR "Empty new line. Wrap: ".(defined($self->{verbatim})?"yes. ":"no. ")."\n"
+		if $debug{parse};
+            do_paragraph($self,$paragraph,$wrapped_mode);
+            $paragraph="";
+	    $wrapped_mode = 1 unless defined($self->{verbatim});
+            $self->pushline($line."\n");
         } elsif (not defined $self->{verbatim} and
                  (defined $self->{bullet} and $line =~ m/^(\s+)(.*)$/)) {
             my $indent = $1;
             my $text = $2;
+	    print STDERR "bullet (".($self->{bullet}).") starting with ".length($indent)." spaces\n"
+		if $debug{'parse'};
 	    if ($paragraph eq "" && length($self->{bullet}) && length($indent)) {
 		# starting a paragraph with a bullet (not an enum or so), and indented.
 		# Thus a literal paragraph in a list.
@@ -600,11 +615,13 @@ sub parse {
 		# No indent level before => Starting a paragraph?
                 $paragraph .= $text."\n";
                 $self->{indent} = $indent;
+		print STDERR "Starting a paragraph\n" if ($debug{parse});
             } elsif (length($paragraph) and (length($self->{bullet}) + length($self->{indent}) == length($indent))) {
 		# same indent level as before: append
                 $paragraph .= $text."\n";
             } else {
 		# not the same indent level: start a new translated paragraph
+		print STDERR "New paragraph (indent: '".($self->{indent})."')\n" if ($debug{parse});
                 do_paragraph($self,$paragraph,$wrapped_mode);
 		if (length($self->{indent})>0 && length($self->{indent}) < length($indent)) {
 		    # increase indentation: the new block must not be wrapped
@@ -614,15 +631,6 @@ sub parse {
                 $self->{indent} = $indent;
                 $self->{bullet} = "";
             }
-        } elsif ($line =~ /^\s*$/) {
-            # Break paragraphs on lines containing only spaces
-	    print STDERR "Empty new line. Wrap: ".(defined($self->{verbatim})?"yes. ":"no. ")."\n" 
-		if $debug{parse};
-            do_paragraph($self,$paragraph,$wrapped_mode);
-            $paragraph="";
-            $wrapped_mode = 1 unless defined($self->{verbatim});
-            $self->pushline($line."\n");
-            undef $self->{controlkey};
         } elsif ($line =~ /^-- $/) {
             # Break paragraphs on email signature hint
             do_paragraph($self,$paragraph,$wrapped_mode);
@@ -638,13 +646,27 @@ sub parse {
             $paragraph="";
             $wrapped_mode = 1;
         } else {
+	    # A stupid paragraph of text
+	    print STDERR "Regular line. ".
+		"Bullet: '".(defined($self->{bullet})?$self->{bullet}:'none')."'; ".
+		"Indent: '".(defined($self->{indent})?$self->{indent}:'none')."'\n"
+		if ($debug{parse});
+
             if ($line =~ /^\s/) {
                 # A line starting by a space indicates a non-wrap
                 # paragraph
                 $wrapped_mode = 0;
             }
-            undef $self->{bullet};
-            undef $self->{indent};
+
+	    if ($paragraph ne "" && $self->{bullet} && length($self->{indent}||"")==0) {
+		# Second line of an item block is not indented. It looks like a broken indentation
+		# I'd prefer not to accept it, but the formaters do. Damn specification
+		print STDERR "$ref: It seems that you are adding unindented content to an item.\n".
+		    "The \"standard\" allows this, but you may still want to fix your document.\n";
+	    } else {
+		undef $self->{bullet};
+		undef $self->{indent};
+	    }
             # TODO: comments
             $paragraph .= $line."\n";
         }
@@ -804,9 +826,6 @@ sub split_attributelist {
         print STDERR "  -> $1\n" if $debug{split_attributelist};
         push @attributes, $1;
     }
-    die wrap_mod("po4a::asciidoc",
-                 dgettext("po4a", "Unable to parse attribute list: [%s]"), $text)
-            unless scalar(@attributes);
     return @attributes;
 }
 
