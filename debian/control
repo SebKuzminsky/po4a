@@ -5,7 +5,7 @@ Maintainer: Martin Quinson <mquinson@debian.org>
 Uploaders:  Jonas Smedegaard <dr@jones.dk>,
  Denis Barbier <barbier@debian.org>,
  Dr. Tobias Quathamer <toddy@debian.org>
-Standards-Version: 3.9.8
+Standards-Version: 4.0.1
 Build-Depends-Indep: perl, libmodule-build-perl,
  docbook-xml, docbook-xsl, xsltproc,
  libterm-readkey-perl,

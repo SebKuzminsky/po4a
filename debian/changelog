@@ -9,6 +9,7 @@ po4a (0.52-1) UNRELEASED; urgency=medium
 
   * d/control: Remove Simon Paillard from uploaders. Thanks for the fish!
     (Closes: #873268)
+  * d/control: bump the Standards-Version to 4.0.1. No change needed.
 
  -- Martin Quinson <mquinson@debian.org>  Sat, 26 Aug 2017 01:02:02 +0200
 
