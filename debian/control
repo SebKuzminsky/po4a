@@ -41,5 +41,6 @@ Description: tools to ease the translation of documentation
    - Man: either roff or mdoc format.
    - POD: Perl documentation format.
    - SGML: either DebianDoc or DocBook DTD.
+   - RubyDoc: Ruby documentation format.
    - Texinfo: the info page format.
    - XML: very configurable (preconfigured for DocBook, XHTML, Guide, WML).
