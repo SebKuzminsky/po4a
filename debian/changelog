@@ -1,4 +1,4 @@
-po4a (0.52-1) UNRELEASED; urgency=medium
+po4a (0.52-1) unstable; urgency=medium
 
   * New upstream release.
     - New module RubyDoc, by Francesco Poli (Closes: #827936)
@@ -11,7 +11,7 @@ po4a (0.52-1) UNRELEASED; urgency=medium
     (Closes: #873268)
   * d/control: bump the Standards-Version to 4.0.1. No change needed.
 
- -- Martin Quinson <mquinson@debian.org>  Sat, 26 Aug 2017 01:02:02 +0200
+ -- Martin Quinson <mquinson@debian.org>  Sat, 26 Aug 2017 22:29:44 +0200
 
 po4a (0.51-1) unstable; urgency=medium
 
