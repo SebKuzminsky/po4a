@@ -16,9 +16,9 @@ Build-Depends-Indep: perl, libmodule-build-perl,
 #   TeX
  texlive-binaries
 Build-Depends: debhelper (>= 10)
-Homepage: http://po4a.alioth.debian.org/
+Homepage: https://po4a.org/
 Vcs-Git: https://salsa.debian.org/debian/po4a.git
-Vcs-Browser: https://salsa.debian.org/debian/po4a.git
+Vcs-Browser: https://salsa.debian.org/debian/po4a
 
 Package: po4a
 Architecture: all
