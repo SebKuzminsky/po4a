@@ -5,6 +5,7 @@ po4a (0.52-2) UNRELEASED; urgency=medium
 
   [ Dr. Tobias Quathamer ]
   * Update URL for homepage
+  * Update d/watch for new github location
 
  -- Martin Quinson <mquinson@debian.org>  Thu, 25 Jan 2018 06:17:40 +0100
 
@@ -34,7 +35,7 @@ po4a (0.51-1) unstable; urgency=medium
         It makes apt to FTBFS! (Closes: #858934)
     * other:
       - Third attempt at installing the manpages to the right location.
-      
+
   * d/changelog: fix some spelling errors reported by lintian.
 
  -- Martin Quinson <mquinson@debian.org>  Tue, 28 Mar 2017 23:22:25 +0200
@@ -74,12 +75,12 @@ po4a (0.50-1) unstable; urgency=medium
     * Text:
       - debianchangelog: Accept timezone names on multiple chars
         (Closes: #792416)
-      - Add a neverwrap option to prevent any wrapping 
+      - Add a neverwrap option to prevent any wrapping
         (Closes: #824753)
     * po4a:
       - Check the validity of po files before using them (Closes: #855431)
-      
-  * Take over the package again, as Nicolas resigned from Debian 
+
+  * Take over the package again, as Nicolas resigned from Debian
     (Closes: #832382). Thanks Nicolas for you work all these years!
   * Remove Neil Williams from the uploaders, as he asked.
   * Install upstream NEWS in the package.
@@ -123,14 +124,14 @@ po4a (0.47-1) unstable; urgency=medium
 po4a (0.46-2) unstable; urgency=medium
 
   * d/control: fix the git browse URL.
-  * d/control: Build-dep on libmodule-build-perl to fix a FTBFS 
+  * d/control: Build-dep on libmodule-build-perl to fix a FTBFS
     (Closes: #789639)
 
  -- Martin Quinson <mquinson@debian.org>  Sun, 28 Jun 2015 13:19:25 +0200
 
 po4a (0.46-1) unstable; urgency=medium
 
-  * New upstream release. 
+  * New upstream release.
     This is a long awaited release after almost 2 years!
     The most impressive is not the release content, but the fact that
     I'm back up to speed to maintain and release the po4a project.
@@ -236,7 +237,7 @@ po4a (0.42-1) unstable; urgency=low
   * debian/control:
     + Standards-Version bumped to 3.9.3.
     + Add Multi-Arch: foreign.
-    + Remove duplicate Build-Depends-Indep. 
+    + Remove duplicate Build-Depends-Indep.
   * debian/rules: Fix debian-rules-missing-recommended-target.
 
  -- David Prévot <taffit@debian.org>  Wed, 16 May 2012 20:37:49 -0400
@@ -288,7 +289,7 @@ po4a (0.40.2-1) unstable; urgency=low
   [ Simon Paillard ]
   * Picked from po4a 0.41, fix po4a-updatepo, this script did not call
     msgmerge with --previous flag.  Closes: #596525
-  * Add myself to uploaders. 
+  * Add myself to uploaders.
 
  -- Simon Paillard <spaillard@debian.org>  Sat, 04 Dec 2010 01:05:46 +0100
 
@@ -393,7 +394,7 @@ po4a (0.38-1) unstable; urgency=low
 
 po4a (0.37.1-1) unstable; urgency=low
 
-  * New upstream release. 
+  * New upstream release.
 
  -- Neil Williams <codehelp@debian.org>  Sun, 22 Nov 2009 13:02:27 +0000
 
@@ -529,7 +530,7 @@ po4a (0.35-1) experimental; urgency=low
 
 po4a (0.34-2) unstable; urgency=low
 
-  * debian/control: Bump Standards-Version to 3.8.0. No changes. 
+  * debian/control: Bump Standards-Version to 3.8.0. No changes.
 
  -- Nicolas FRANCOIS (Nekral) <nicolas.francois@centraliens.net>  Sun, 20 Jul 2008 23:05:29 +0200
 
@@ -649,7 +650,7 @@ po4a (0.30-1) unstable; urgency=low
 
 po4a (0.29-1) unstable; urgency=low
 
-  * New upstream release. 
+  * New upstream release.
   * Better rendering of <cmdsynopsis> with Sgml manpages. The cmdsynopsis
     sections will be verbatim. Closes: #369778
   * Convert UTF-8 strings to Perl's "logical character" before wrapping the
@@ -663,7 +664,7 @@ po4a (0.29-1) unstable; urgency=low
 
 po4a (0.28-1) unstable; urgency=low
 
-  * New upstream release. 
+  * New upstream release.
 
  -- Nicolas FRANCOIS (Nekral) <nicolas.francois@centraliens.net>  Thu, 17 Aug 2006 00:34:25 +0200
 
@@ -713,4 +714,3 @@ po4a (0.26-1) unstable; urgency=low
   * Updated Swedish translation. Thanks to Daniel Nylander. Closes: #374896
 
  -- Martin Quinson <mquinson@debian.org>  Sun, 25 Jun 2006 20:15:32 +0200
-
