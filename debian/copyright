@@ -11,6 +11,7 @@ Copyright: © 2002-2018 Martin Quinson <mquinson@debian.org>
            © 2005-2009 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
            © 2006 BitDefender
            © 2009 Neil Williams <linux@codehelp.co.uk>
+           © 2018 Zero King (https://github.com/l2dy)
 License: GPL-2.0+
 
 Files: lib/Locale/Po4a/RubyDoc.pm
