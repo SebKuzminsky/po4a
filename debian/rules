@@ -18,3 +18,10 @@ override_dh_auto_build:
 override_dh_auto_install:
 	dh_auto_install
 	sed -i -e "1 s,^.*perl.*$$,#!/usr/bin/perl," $(CURDIR)/debian/po4a/usr/bin/*
+
+# We need an empty file for the yaml test to pass,
+# but it cannot be created with d/patches, so
+# touch it before running the tests.
+override_dh_auto_test:
+	touch t/data-32/yamlutf8.err
+	dh_auto_test
