@@ -7,21 +7,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a\n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2017-08-26 00:50+0200\n"
-"PO-Revision-Date: 2012-10-15 11:50+0300\n"
-"Last-Translator: annikaennok <annikaennok@tilde.ee>\n"
-"Language-Team: Tilde Eesti OÜ\n"
+"POT-Creation-Date: 2018-02-09 21:56+0100\n"
+"PO-Revision-Date: 2018-02-17 10:24+0000\n"
+"Last-Translator: Kristjan Räts <kristjanrats@gmail.com>\n"
+"Language-Team: Estonian <https://hosted.weblate.org/projects/po4a/po4a/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.19\n"
 
 #: ../../lib/Locale/Po4a/AsciiDoc.pm:134 ../../lib/Locale/Po4a/Man.pm:491
 #: ../../lib/Locale/Po4a/Po.pm:187 ../../lib/Locale/Po4a/RubyDoc.pm:78
 #: ../../lib/Locale/Po4a/Sgml.pm:251 ../../lib/Locale/Po4a/TeX.pm:1636
 #: ../../lib/Locale/Po4a/Text.pm:199 ../../lib/Locale/Po4a/Xml.pm:537
+#: ../../lib/Locale/Po4a/Yaml.pm:39
 #, perl-format
 msgid "Unknown option: %s"
 msgstr "Tundmatu valik: %s"
@@ -29,7 +30,7 @@ msgstr "Tundmatu valik: %s"
 #: ../../lib/Locale/Po4a/AsciiDoc.pm:194
 #, perl-format
 msgid "Unable to parse macro definition: %s"
-msgstr ""
+msgstr "Makro definitsiooni parsimine nurjus: %s"
 
 #: ../../lib/Locale/Po4a/AsciiDoc.pm:241 ../../lib/Locale/Po4a/TeX.pm:1032
 #: ../../po4a:823 ../../po4a:1019 ../../po4a-translate:264
@@ -67,7 +68,7 @@ msgstr "Aktsepteeritud vormingute loend:"
 #. ."\n  - ".gettext("bibtex: BibTex bibliography format.")
 #: ../../lib/Locale/Po4a/Chooser.pm:64
 msgid "asciidoc: AsciiDoc format."
-msgstr ""
+msgstr "asciidoc: AsciiDoc vorming."
 
 #: ../../lib/Locale/Po4a/Chooser.pm:65
 msgid "dia: uncompressed Dia diagrams."
@@ -103,10 +104,8 @@ msgid "pod: Perl Online Documentation format."
 msgstr "pod: Perli veebidokumentatsiooni vorming."
 
 #: ../../lib/Locale/Po4a/Chooser.pm:74
-#, fuzzy
-#| msgid "pod: Perl Online Documentation format."
 msgid "rubydoc: Ruby Documentation (RD) format."
-msgstr "pod: Perli veebidokumentatsiooni vorming."
+msgstr "pubydoc: Ruby dokumentatsiooni (RD) vorming."
 
 #: ../../lib/Locale/Po4a/Chooser.pm:75
 msgid "sgml: either DebianDoc or DocBook DTD."
@@ -136,6 +135,10 @@ msgstr "xhtml: XHTML-dokumendid."
 msgid "xml: generic XML documents (see also docbook)."
 msgstr "xml: üldised XML-dokumendid (vt ka docbooki)."
 
+#: ../../lib/Locale/Po4a/Chooser.pm:82
+msgid "yaml: YAML documents."
+msgstr "yaml: YAML-dokumendid."
+
 #: ../../lib/Locale/Po4a/Common.pm:107
 #, perl-format
 msgid ""
@@ -155,7 +158,7 @@ msgstr ""
 "tingimuste jaoks. Sellele ei anta MINGIT garantiid; ka mitte\n"
 "KAUBANDUSLIKU KASUTUSE või KONKREETSEKS EESMÄRGIKS SOBILIKKUSE JAOKS."
 
-#: ../../lib/Locale/Po4a/Debconf.pm:170
+#: ../../lib/Locale/Po4a/Debconf.pm:171
 #, perl-format
 msgid "Translated field in master document: %s"
 msgstr "Tõlgitud väli peadokumendis: %s"
@@ -347,21 +350,18 @@ msgstr ""
 "See leht kasutab '%s' päringut. See päring on toetatud ainult siis, kui "
 "ühtegi argumenti pole määratud."
 
-#: ../../lib/Locale/Po4a/NewsDebian.pm:89
+#: ../../lib/Locale/Po4a/NewsDebian.pm:90
 msgid "Begin of a new entry before the end of previous one"
 msgstr "Uue sisestuse algus enne vana lõppu"
 
 #: ../../lib/Locale/Po4a/Po.pm:195
-#, fuzzy, perl-format
-#| msgid ""
-#| "Invalid value for option 'porefs' ('%s' is not one of 'full', 'counter', "
-#| "'noline' or 'none')"
+#, perl-format
 msgid ""
 "Invalid value for option 'porefs' ('%s' is not one of 'full', 'counter', "
 "'file' or 'never')"
 msgstr ""
-"Vigane väärtus valiku 'porefs' jaoks ['%s' ei ole 'full' (täis), "
-"'counter' (loendur), 'noline' (mitte ühtegi rida] ega 'none' (mitte midagi))"
+"Vigane väärtus valikule 'porefs' ('%s' ei ole ei 'full' (kõik), "
+"'counter' (loendur), 'noline' (mitte ühtegi rida) ega 'none' (mitte midagi))"
 
 #: ../../lib/Locale/Po4a/Po.pm:253
 msgid "Please provide a non-null filename"
@@ -373,10 +373,12 @@ msgid ""
 "Invalid po file %s:\n"
 "%s"
 msgstr ""
+"Vigane po fail %s:\n"
+"%s"
 
 #: ../../lib/Locale/Po4a/Po.pm:270 ../../lib/Locale/Po4a/TeX.pm:929
 #: ../../lib/Locale/Po4a/TransTractor.pm:413
-#: ../../lib/Locale/Po4a/TransTractor.pm:555 ../../lib/Locale/Po4a/Xhtml.pm:132
+#: ../../lib/Locale/Po4a/TransTractor.pm:555 ../../lib/Locale/Po4a/Xhtml.pm:133
 #: ../../lib/Locale/Po4a/Xml.pm:113
 #, perl-format
 msgid "Can't read from %s: %s"
@@ -427,13 +429,13 @@ msgid ""
 "task"
 msgstr ""
 "\n"
-"Protsess gettextization ebaõnnestus (veelkord). Ära loobu! Gettextization "
-"protsess on peen kunst, kuid see on vajalik läbi teha vaid üks kord, et "
-"konverteerida projekt po4a poolt tõlkidele pakutavaks suurepäraseks "
+"Protsess gettextistamine nurjust (järjekordselt). Ära anna alla! "
+"Gettextistamise protsess on peen kunst, kuid see on vajalik läbi teha vaid "
+"üks kord, et po4a konverteeriks projekti tõlkidele pakutavaks suurepäraseks "
 "luksuseks.\n"
 "Palun vaata po4a(7) dokumentatsiooni, osa \"HOWTO convert a pre-existing "
 "translation to po4a?\" (KUIDAS konverteerida eelnevalt olemas olevad tõlked "
-"po4a-sse?) sisaldab mitmeid soovitusi abiks su töö puhul."
+"po4a-sse?) sisaldab mitmeid soovitusi abiks su töös"
 
 #: ../../lib/Locale/Po4a/Po.pm:622
 #, perl-format
@@ -534,6 +536,8 @@ msgid ""
 "Unknown debug category: %s. Known categories:\n"
 "%s"
 msgstr ""
+"Tundmatu silumiskategooria: %s. Tuntud kategooriad:\n"
+"%s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:287
 msgid "msgid skipped to help translators (contains only an entity)"
@@ -557,15 +561,11 @@ msgid "Can't close tempfile: %s"
 msgstr "Ei saa sulgeda tempfaili: %s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:390
-#, fuzzy
-#| msgid ""
-#| "Error while running nsgmls -p.  Please check if nsgmls and the DTD are "
-#| "installed."
 msgid ""
 "Error while running onsgmls -p.  Please check if onsgmls and the DTD are "
 "installed."
 msgstr ""
-"Viga käsu nsgmls -p jooksutamisel. Palun kontrolli, kas nsgmls ja DTD on "
+"Viga käsu onsgmls -p jooksutamisel. Palun kontrolli, kas onsgmls ja DTD on "
 "installitud."
 
 #: ../../lib/Locale/Po4a/Sgml.pm:399
@@ -610,10 +610,9 @@ msgid "unrecognized prolog inclusion entity: %%%s;"
 msgstr "tundmatu proloogi sisaldav üksus: %%%s;"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:815
-#, fuzzy, perl-format
-#| msgid "Can't run nsgmls: %s"
+#, perl-format
 msgid "Can't run onsgmls: %s"
-msgstr "Ei saa jooksutada nsgmls'i: %s"
+msgstr "Ei saa käivitada onsgmls'i: %s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:930
 #, perl-format
@@ -636,28 +635,24 @@ msgid "Unknown SGML event type: %s"
 msgstr "Tundmatu SGML-i sündmuse tüüp: %s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:1190
-#, fuzzy
-#| msgid ""
-#| "Warning: nsgmls produced some errors.  This is usually caused by po4a, "
-#| "which modifies the input and restores it afterwards, causing the input of "
-#| "nsgmls to be invalid.  This is usually safe, but you may wish to verify "
-#| "the generated document with nsgmls -wno-valid.  Continuing..."
 msgid ""
 "Warning: onsgmls produced some errors.  This is usually caused by po4a, "
 "which modifies the input and restores it afterwards, causing the input of "
 "onsgmls to be invalid.  This is usually safe, but you may wish to verify the "
 "generated document with onsgmls -wno-valid."
 msgstr ""
-"Hoiatus: nsgmls lõi mõned vead.  Seda tekitab tavaliselt po4a, mis "
-"modifitseerib sisendit ja taastab seda pärast, mis muudabki nsgmlsi sisendi "
-"vigaseks.  Tavaliselt on see turvaline, kuid parem oleks saadud dokumenti "
-"käsuga nsgmls -wno-valid üle kontrollida. Jätkub..."
+"Hoiatus: onsgmls leidis mõned vead.  Selle põhjustab tavaliselt po4a, mis "
+"sisendit muudab ja hiljem taastab; viimane muudabki onsgmlsi sisendi "
+"vigaseks.  Tavaliselt on see turvaline, kuid parem oleks saadud dokument "
+"käsuga onsgmls -wno-valid üle kontrollida."
 
 #: ../../lib/Locale/Po4a/Sgml.pm:1197
 msgid ""
 "To see the error message, rerun po4a with this additional argument:\n"
 "   -o debug=onsgmls"
 msgstr ""
+"Veateate vaatamiseks käivita po4a selle täiendava argumendiga:\n"
+"   -o debug=onsgmls"
 
 #: ../../lib/Locale/Po4a/TeX.pm:503 ../../lib/Locale/Po4a/TeX.pm:583
 #, perl-format
@@ -684,7 +679,7 @@ msgid "Can't find %s with kpsewhich"
 msgstr "Ei leia %s' kpsewhich'i abil"
 
 #: ../../lib/Locale/Po4a/TeX.pm:996 ../../lib/Locale/Po4a/TransTractor.pm:435
-#: ../../lib/Locale/Po4a/Xhtml.pm:141 ../../lib/Locale/Po4a/Xml.pm:122
+#: ../../lib/Locale/Po4a/Xhtml.pm:142 ../../lib/Locale/Po4a/Xml.pm:122
 #, perl-format
 msgid "Can't close %s after reading: %s"
 msgstr "Ei saa sulgeda %s' peale lugemist: %s"
@@ -744,13 +739,12 @@ msgstr "Käsu \\begin esimene argument on kohustuslik."
 
 #: ../../lib/Locale/Po4a/Text.pm:242
 msgid "asciidoc option deprecated, use asciidoc format instead of text"
-msgstr ""
+msgstr "asciidoc valik on vananenud, kasuta teksti asemel asciidoc vormingut"
 
 #: ../../lib/Locale/Po4a/Text.pm:353
-#, fuzzy, perl-format
-#| msgid "Unrecognised command: $com"
+#, perl-format
 msgid "Unrecognized section: %s"
-msgstr "Tundmatu käsk: $com"
+msgstr "Tundmatu sektsioon: %s"
 
 #: ../../lib/Locale/Po4a/TransTractor.pm:470
 #, perl-format
@@ -803,7 +797,7 @@ msgstr ""
 
 #: ../../lib/Locale/Po4a/TransTractor.pm:631
 msgid "Can't apply addendum when not given the filename"
-msgstr "Ei saa lisa külge panna, kui failinime pole antud."
+msgstr "Lisa ei saa juurde panna, kui failinimi puudub"
 
 #: ../../lib/Locale/Po4a/TransTractor.pm:634
 #, perl-format
@@ -829,7 +823,7 @@ msgstr "Lisa '%s' pandud külge enne rida: %s"
 #: ../../lib/Locale/Po4a/TransTractor.pm:696
 #, perl-format
 msgid "Addendum '%s' applied after the line: %s."
-msgstr "Lisa '%s' pandud külge pärast rida: %s"
+msgstr "Lisa '%s' sisestati pärast rida %s."
 
 #: ../../lib/Locale/Po4a/TransTractor.pm:703
 #, perl-format
@@ -848,7 +842,7 @@ msgstr ""
 "Ei suutnud määrata sisenddokumendi märgistikku. Palun määrake see käsureal. "
 "(mitte-ASCII märgistik %s-s)"
 
-#: ../../lib/Locale/Po4a/Wml.pm:89
+#: ../../lib/Locale/Po4a/Wml.pm:90
 #, perl-format
 msgid "Can't create a temporary XML file: %s"
 msgstr "Ei saa luua ajutist XML-faili: %s"
@@ -918,7 +912,7 @@ msgid ""
 msgstr ""
 "Valik '%s' on ebasoovitav. Palun kasuta kategooriaid translated/untranslated "
 "(tõlgitud/tõlkimata) ja/või break/inline/placeholder (murra/reasisestus/"
-"muutuja)"
+"muutuja)."
 
 #: ../../lib/Locale/Po4a/Xml.pm:1896 ../../lib/Locale/Po4a/Xml.pm:1903
 #: ../../lib/Locale/Po4a/Xml.pm:1907 ../../lib/Locale/Po4a/Xml.pm:1911
@@ -1147,6 +1141,8 @@ msgid ""
 "Your input po file %s seems outdated (%s). Please consider running po4a-"
 "updatepo to refresh it."
 msgstr ""
+"Su sisend po-fail %s näib olevat vananenud (%s). Palun kaalu po4a-updatepo "
+"käivitamist, et teda värskendada."
 
 #: ../../po4a-updatepo:254
 msgid "po4a-updatepo can't take the input PO from stdin."

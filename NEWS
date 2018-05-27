@@ -2,6 +2,37 @@ This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
 =======================================================================
+        ___   ____ _____ 
+__   __/ _ \ | ___|___ / 
+\ \ / / | | ||___ \ |_ \   Ciao, alioth, and thanks for the fish.
+ \ V /| |_| | ___) |__) |
+  \_/  \___(_)____/____/       (released 2018-05-25)
+
+AsciiDoc:
+ * handle macros with empty target, thanks Martijn Thé (GitHub's #54)
+
+Yaml:
+ * New module, by Brian Exelbierd (GitHub's #66)
+
+Translations:
+ * New translation: Norwegian Bokmål, thanks Petter Reinholdtsen.
+ * Updated: Indonesian, thanks Hori75.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: French, Martin Quinson using weblate.
+ * Updated: Swedish, thanks Anders Jonsson using weblate.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Dutch, thanks Frans Spiesschaert (Debian's #877248) & weblate.
+ * Updated: Portuguese, thanks shshshwhs using weblate.
+   Fixed: xml tags in Portuguese, thanks Jean-Noël Avila.
+ * Updated: Estonian, thanks Kristjan Räts using weblate.
+ * Updated: Ukrainian, thanks Yuri Chornoivan using weblate.
+ * Updated: Russian, thanks Igor using weblate.
+
+Other:
+ * Move to GitHub as the Alioth hosting facility is shutting down.
+
+=======================================================================
         ___   ____ ____
 __   __/ _ \ | ___|___ \
 \ \ / / | | ||___ \ __) |  Thanks for the patches, dudes.
