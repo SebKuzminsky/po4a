@@ -1,54 +1,66 @@
-This package was first packaged by Martin Quinson mquinson#debian.org
-and Denis Barbier barbier@debian.org on Sat, 16 Nov 2002 19:28:48 +0200.
-It is now maintained by Nicolas François <nicolas.francois@centraliens.net>.
-
-Upstream Authors:
-	Martin Quinson mquinson#debian.org
-	Denis Barbier barbier@debian.org
-	Jordi Vilalta <jvprat@gmail.com>
-	Nicolas François <nicolas.francois@centraliens.net>
-	Noriada Kobayashi <nori1@dolphin.c.u-tokyo.ac.jp>
-	Neil Williams <linux@codehelp.co.uk>
-
-It was downloaded from https://po4a.org/
-
-Copyright:
-	Copyright (c) 2002-2004 by Martin Quinson (mquinson#debian.org)
-	Copyright (c) 2002-2017 by Software in the Public Interest, Inc.
-	Copyright (c) 1995 by David Megginson <dmeggins@aix1.uottawa.ca>
-	Copyright (c) 2004 by Jordi Vilalta  <jvprat@gmail.com>
-	Copyright (c) 2005-2009 by Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
-	Copyright (c) 2006 by BitDefender
-	Copyright (c) 2009 by Neil Williams <linux@codehelp.co.uk>
-    (for the Ruby module)
-        Copyright (c) 2016-2017 by Francesco Poli <invernomuto@paranoici.org>
-	Copyright (c) 2004 by MoonWolf <moonwolf@moonwolf.com>
-	Copyright (c) 2011-2012 by Youhei SASAKI <uwabami@gfd-dennou.org>
-
-
-Files: share/po4a-build
-Copyright: (c) 2009 Neil Williams <linux@codehelp.co.uk>
-Licence: GPL-3+
-
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License as published by
-  the Free Software Foundation; either version 3 of the License, or
-  (at your option) any later version.
-
-  This program is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-  GNU General Public License for more details.
-
-  You should have received a copy of the GNU General Public License
-  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-On Debian systems, the complete text of the GNU General Public
-License can be found in the file `/usr/share/common-licenses/GPL-3'.
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: po4a
+Upstream-Contact: Martin Quinson <mquinson@debian.org>
+Source: https://po4a.org
 
 Files: *
+Copyright: © 2002-2018 Martin Quinson <mquinson@debian.org>
+           © 2002-2018 Software in the Public Interest, Inc.
+           © 1995 David Megginson <dmeggins@aix1.uottawa.ca>
+           © 2004 Jordi Vilalta  <jvprat@gmail.com>
+           © 2005-2009 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
+           © 2006 BitDefender
+           © 2009 Neil Williams <linux@codehelp.co.uk>
+License: GPL-2.0+
 
-You are free to distribute this software under the terms of
-the GNU General Public License version 2 or later
-On Debian systems, the complete text of the GNU General Public
-License can be found in the file `/usr/share/common-licenses/GPL-2'.
+Files: lib/Locale/Po4a/RubyDoc.pm
+Copyright: © 2016-2017 Francesco Poli <invernomuto@paranoici.org>
+					 © 2004 MoonWolf <moonwolf@moonwolf.com>
+					 © 2011-2012 Youhei SASAKI <uwabami@gfd-dennou.org>
+License: GPL-2.0+
+
+Files: share/po4a-build
+Copyright: © 2006-2009 Neil Williams <linux@codehelp.co.uk>
+License: GPL-3.0+
+
+Files: debian/*
+Copyright: © 2002-2017 Martin Quinson <mquinson@debian.org>
+					 © 2005-2009 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
+					 © 2009 Neil Williams <linux@codehelp.co.uk>
+					 © 2003-2013 Denis Barbier <barbier@debian.org>
+					 © 2018 Dr. Tobias Quathamer <toddy@debian.org>
+License: GPL-2.0+
+
+License: GPL-2.0+
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+
+License: GPL-3.0+
+ This program is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <https://www.gnu.org/licenses/>.
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
