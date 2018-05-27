@@ -19,6 +19,10 @@ Copyright: © 2016-2017 Francesco Poli <invernomuto@paranoici.org>
 					 © 2011-2012 Youhei SASAKI <uwabami@gfd-dennou.org>
 License: GPL-2.0+
 
+Files: lib/Locale/Po4a/Yaml.pm
+Copyright: © 2018 Brian Exelbierd
+License: GPL-2.0+
+
 Files: share/po4a-build
 Copyright: © 2006-2009 Neil Williams <linux@codehelp.co.uk>
 License: GPL-3.0+
