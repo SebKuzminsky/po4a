@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a pod\n"
 "Report-Msgid-Bugs-To: po4a-devel@lists.alioth.debian.org\n"
-"POT-Creation-Date: 2017-08-14 00:55+0200\n"
+"POT-Creation-Date: 2018-02-26 16:50+0100\n"
 "PO-Revision-Date: 2017-04-02 07:44+0200\n"
 "Last-Translator: Jordi Vilalta <jvprat@gmail.com>\n"
 "Language-Team: CA\n"
@@ -262,21 +262,21 @@ msgstr ""
 #: share/doc/po4a-build.xml:38
 msgid ""
 "General includes the name and location of the po4a config file (probably "
-"best to leave this as <filename>po4a.config</filename>), the po directory "
-"containing the documentation PO files (often <filename>doc/po</filename>), "
-"the full name of the POT file used to create the translations, the BASEDIR "
-"for the generated output, whether the package contains manpages in section 3 "
-"rather than just section 1 and the names of the binary packages which are to "
-"contain the generated output."
+"best to leave this as <filename>po4a.config</filename>), the <filename>po</"
+"filename> directory containing the documentation PO files (often "
+"<filename>doc/po</filename>), the full name of the POT file used to create "
+"the translations, the BASEDIR for the generated output, whether the package "
+"contains manpages in section 3 rather than just section 1 and the names of "
+"the binary packages which are to contain the generated output."
 msgstr ""
 
 #. type: Content of: <refentry><refsect1><refsect2><para>
 #: share/doc/po4a-build.xml:39
 msgid ""
 "XML/XSL support includes specifying which of the binary packages use XSL "
-"support in the XMLPACKAGES variable, the top level DocBook file to pass to "
-"<command>xsltproc</command> and the location of the XML or DocBook files. "
-"The XSLFILE can be overridden, if necessary."
+"support in the <option>XMLPACKAGES</option> variable, the top level DocBook "
+"file to pass to <command>xsltproc</command> and the location of the XML or "
+"DocBook files. The <option>XSLFILE</option> can be overridden, if necessary."
 msgstr ""
 
 #. type: Content of: <refentry><refsect1><refsect2><para>
@@ -309,12 +309,13 @@ msgstr ""
 msgid ""
 "Only updates the POT file(s). <option>--pot-only</option> is intended to "
 "support packages including all POT files in the package source. Packages "
-"using Autotools can easily add the POT file via EXTRA_DIST but packages just "
-"using a Makefile or certain VCS build helpers can find it awkward to add the "
-"POT file (which is a generated file) without putting the POT file into the "
-"VCS. To avoid this ugly and unnecessary work, <command>po4a-build</command> "
-"can update the POT file(s) at the start of the build, so that <command>dpkg-"
-"source</command> includes them into the source tarball."
+"using Autotools can easily add the POT file via <option>EXTRA_DIST</option> "
+"but packages just using a Makefile or certain VCS build helpers can find it "
+"awkward to add the POT file (which is a generated file) without putting the "
+"POT file into the VCS. To avoid this ugly and unnecessary work, "
+"<command>po4a-build</command> can update the POT file(s) at the start of the "
+"build, so that <command>dpkg-source</command> includes them into the source "
+"tarball."
 msgstr ""
 
 #. type: Content of: <refentry><refsect1><variablelist><varlistentry><example><title>
@@ -854,8 +855,15 @@ msgstr ""
 
 #. type: textblock
 #: po4a:35
+#, fuzzy
+#| msgid ""
+#| "Comments in this files are noted by the char '#'. It comments everything "
+#| "until the end of the line. Lines can be continued by escaping the end of "
+#| "line.  All non blank lines must begin with a [] command, followed by its "
+#| "arguments.  (sound difficult said that way, but it is rather easy, I "
+#| "hope ;)"
 msgid ""
-"Comments in this files are noted by the char '#'. It comments everything "
+"Comments in these files are noted by the char '#'. It comments everything "
 "until the end of the line. Lines can be continued by escaping the end of "
 "line.  All non blank lines must begin with a [] command, followed by its "
 "arguments.  (sound difficult said that way, but it is rather easy, I hope ;)"
@@ -1099,7 +1107,7 @@ msgstr "B<@>"
 #. type: textblock
 #: po4a:66
 msgid ""
-"I<addendum_path> is not a regular addendum but a file containg a list of "
+"I<addendum_path> is not a regular addendum but a file containing a list of "
 "addenda, one by line.  Each addendum may be preceded by modifiers."
 msgstr ""
 
@@ -1158,12 +1166,13 @@ msgstr ""
 #. type: textblock
 #: po4a:75
 msgid ""
-"If you need a specific option for one of the document you want to translate, "
-"you can also specify it in the configuration file. Options are introduced by "
-"the B<opt> keyword. The argument of the B<opt> keyword must be quoted with "
-"double quotes if it contains a space (e.g. if you specify multiple options, "
-"or an option with an argument).  You can also specify options that will only "
-"apply to a specific language by using the B<opt_>I<lang> keyword."
+"If you need a specific option for one of the documents you want to "
+"translate, you can also specify it in the configuration file. Options are "
+"introduced by the B<opt> keyword. The argument of the B<opt> keyword must be "
+"quoted with double quotes if it contains a space (e.g. if you specify "
+"multiple options, or an option with an argument).  You can also specify "
+"options that will only apply to a specific language by using the "
+"B<opt_>I<lang> keyword."
 msgstr ""
 
 #. type: verbatim
@@ -1293,11 +1302,16 @@ msgid "B<-k>, B<--keep>"
 msgstr "B<-k>, B<--keep>"
 
 #. type: textblock
-#: po4a:95 po4a-translate:29
+#: po4a:95
+#, fuzzy
+#| msgid ""
+#| "Minimal threshold for translation percentage to keep (i.e. write) the "
+#| "resulting file (default: 80). I.e. by default, files have to be "
+#| "translated at at least 80% to get written."
 msgid ""
 "Minimal threshold for translation percentage to keep (i.e. write) the "
 "resulting file (default: 80). I.e. by default, files have to be translated "
-"at at least 80% to get written."
+"at least at 80% to get written."
 msgstr ""
 "Mínim llindar del percentatge de traducció per mantenir (és a dir, escriure) "
 "el fitxer resultant (per defecte: 80). És a dir, per defecte, els fitxers "
@@ -2200,6 +2214,17 @@ msgstr "Fitxer on s'haurà d'escriure el document localitzat (traduït)."
 msgid "File from which the message catalog should be read."
 msgstr "Fitxer del quan s'ha de llegir el catàleg de missatges."
 
+#. type: textblock
+#: po4a-translate:29
+msgid ""
+"Minimal threshold for translation percentage to keep (i.e. write) the "
+"resulting file (default: 80). I.e. by default, files have to be translated "
+"at at least 80% to get written."
+msgstr ""
+"Mínim llindar del percentatge de traducció per mantenir (és a dir, escriure) "
+"el fitxer resultant (per defecte: 80). És a dir, per defecte, els fitxers "
+"han d'estar traduïts com a mínim en un 80% per poder ser escrits."
+
 #. type: =item
 #: po4a-translate:30
 msgid "B<-w>, B<--width>"
@@ -2578,7 +2603,7 @@ msgid ""
 "single F<po4a-build.conf> configuration file and in a single call to C<po4a-"
 "build>. However, you can also choose to separate the F<po/> directories and "
 "have one configuration file for each run. (Call C<po4a-build -f FILE> for "
-"each one.)"
+"each one)."
 msgstr ""
 
 #. type: textblock
@@ -4574,9 +4599,9 @@ msgid ""
 "addition will fail. It is indeed better to report an error than inserting "
 "the addendum at the wrong location."
 msgstr ""
-"una expressió regular Perl. Es col·locarà l'apèndix prop de la línia que encaixi "
-"amb aquesta expressió regular. Tingui en compte que estem parlant del "
-"document traduït, no l'original. Si hi ha més d'una línia que encaixi (o "
+"una expressió regular Perl. Es col·locarà l'apèndix prop de la línia que "
+"encaixi amb aquesta expressió regular. Tingui en compte que estem parlant "
+"del document traduït, no l'original. Si hi ha més d'una línia que encaixi (o "
 "cap), l'addició fallarà. Sempre és millor donar un error que inserir "
 "l'apèndix en el lloc equivocat."
 
@@ -4955,10 +4980,15 @@ msgstr ""
 
 #. type: textblock
 #: doc/po4a.7.pod:167
+#, fuzzy
+#| msgid ""
+#| "Then, the following addendum will ensure that a section (in French) about "
+#| "the translator is added at the end of the file. (in French, \"TRADUCTEUR"
+#| "\" means \"TRANSLATOR\", and \"moi\" means \"me\")"
 msgid ""
 "Then, the following addendum will ensure that a section (in French) about "
-"the translator is added at the end of the file. (in French, \"TRADUCTEUR\" "
-"means \"TRANSLATOR\", and \"moi\" means \"me\")"
+"the translator is added at the end of the file (in French, \"TRADUCTEUR\" "
+"means \"TRANSLATOR\", and \"moi\" means \"me\")."
 msgstr ""
 "Llavors, el següent annexe s'assegurarà de que s'afegeix una secció (en "
 "català) sobre el traductor al final del fitxer."
@@ -5017,9 +5047,8 @@ msgid ""
 "This works because the next line matching the B<beginboundary> /^=head1/ "
 "after the section \"NAME\" (translated to \"NOM\" in French), is the one "
 "declaring the authors. So, the addendum will be put between both sections. "
-"Note that if later some other section will be added between NAME and AUTHOR "
-"sections, it will break this example making the addenda to be added before "
-"this newly added section."
+"Note that if another section is added between NAME and AUTHOR sections "
+"later, po4a will wrongfully put the addenda before the new section."
 msgstr ""
 "Això funciona perquè la següent línia que encaixa el B<beginboundary> /"
 "^=head1/ després de la secció \"NAME\" (traduït com a \"NOM\" en català), és "
@@ -5751,10 +5780,15 @@ msgstr ""
 
 #. type: textblock
 #: doc/po4a.7.pod:235
+#, fuzzy
+#| msgid ""
+#| "Moreover, such problems are hard to detect (i.e., only Korean readers "
+#| "will detect that the encoding of Korean is broken [because of the Russian "
+#| "translator])"
 msgid ""
 "Moreover, such problems are hard to detect (i.e., only Korean readers will "
 "detect that the encoding of Korean is broken [because of the Russian "
-"translator])"
+"translator])."
 msgstr ""
 "A més, aquests problemes són difícils de detectar (per exemple, només els "
 "lectors coreans detectaran que la codificació del coreà és incorrecta [per "
@@ -6345,7 +6379,7 @@ msgid ""
 "strings for both runtime and documentation translation, e.g.  using gettext "
 "functions for runtime and embedded POD content for documentation. So it is "
 "not a problem to have the same file listed in F<po/POTFILES.in> and F<doc/"
-"po4a-build.conf>"
+"po4a-build.conf>."
 msgstr ""
 
 #. type: =item
@@ -6383,8 +6417,8 @@ msgid ""
 "Copy this example file as F<po/Makefile> - it shouldn't need editing but you "
 "may want to keep it updated against F</usr/share/doc/po4a/examples/po4a-"
 "build.make> as it may need to be updated within po4a releases as the "
-"underlying intltool support changes. (The file itself was generated from "
-"another project using Autotools and intltool.)"
+"underlying intltool support changes (the file itself was generated from "
+"another project using Autotools and intltool)."
 msgstr ""
 
 #. type: =head1
@@ -6453,7 +6487,7 @@ msgstr ""
 msgid ""
 "Depending on how you prepare your source tarball, you may also need to list "
 "new PO files in the F<MANIFEST> file or add to the script(s) that prepare "
-"the tarball. (That also applies to F<po4a-build>.)"
+"the tarball (this also applies to F<po4a-build>)."
 msgstr ""
 
 #. type: textblock
@@ -6850,7 +6884,7 @@ msgid ""
 "L<Locale::Po4a::Sgml(3pm)>, L<Locale::Po4a::TeX(3pm)>, L<Locale::Po4a::"
 "Texinfo(3pm)>, L<Locale::Po4a::Text(3pm)>, L<Locale::Po4a::Wml(3pm)>.  "
 "L<Locale::Po4a::Xhtml(3pm)>, L<Locale::Po4a::Xml(3pm)>, L<Locale::Po4a::"
-"Wml(3pm)>."
+"Wml(3pm)>, L<Locale::Po4a::Yaml(3pm)>."
 msgstr ""
 "L<Locale::Po4a::Dia(3pm)>, L<Locale::Po4a::Docbook(3pm)>, L<Locale::Po4a::"
 "Guide(3pm)>, L<Locale::Po4a::Halibut(3pm)>, L<Locale::Po4a::Ini(3pm)>, "
@@ -6899,7 +6933,7 @@ msgstr ""
 #: lib/Locale/Po4a/Common.pm:5
 msgid ""
 "In order to use Locale::Po4a programatically, one may want to disable the "
-"use of Text::WrapI18N, by writing e.g."
+"use of Text::WrapI18N, by writing something like:"
 msgstr ""
 
 #. type: verbatim
@@ -8120,7 +8154,7 @@ msgstr ""
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:91
-msgid "(this will require the B<-o untranslated=als,IR_untranslated> option)"
+msgid "This will require the B<-o untranslated=als,IR_untranslated> option."
 msgstr ""
 
 #. type: =head2
@@ -8774,7 +8808,7 @@ msgstr "count_entries_doc()"
 #: lib/Locale/Po4a/Po.pm:86
 msgid ""
 "Returns the number of entries in document. If a string appears multiple "
-"times in the document, it will be counted multiple times"
+"times in the document, it will be counted multiple times."
 msgstr ""
 
 #. type: =item
@@ -10042,7 +10076,9 @@ msgstr "B<read>"
 
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:77
-msgid "Overload Transtractor's read"
+#, fuzzy
+#| msgid "Overload Transtractor's read"
+msgid "Overloads Transtractor's read()."
 msgstr "Sobrecarrega el read del Transtractor"
 
 #. type: =item

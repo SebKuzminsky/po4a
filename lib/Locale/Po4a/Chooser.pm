@@ -79,6 +79,7 @@ sub list {
         ."\n  - ".gettext("wml: WML documents.")
         ."\n  - ".gettext("xhtml: XHTML documents.")
         ."\n  - ".gettext("xml: generic XML documents (see also docbook).")
+        ."\n  - ".gettext("yaml: YAML documents.")
     );
     exit shift;
 }
@@ -140,7 +141,8 @@ L<Locale::Po4a::Text(3pm)>,
 L<Locale::Po4a::Wml(3pm)>.
 L<Locale::Po4a::Xhtml(3pm)>,
 L<Locale::Po4a::Xml(3pm)>,
-L<Locale::Po4a::Wml(3pm)>.
+L<Locale::Po4a::Wml(3pm)>,
+L<Locale::Po4a::Yaml(3pm)>.
 
 =back
 
