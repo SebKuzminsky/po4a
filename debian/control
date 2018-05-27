@@ -2,7 +2,7 @@ Source: po4a
 Section: text
 Priority: optional
 Maintainer: Martin Quinson <mquinson@debian.org>
-Uploaders:  Jonas Smedegaard <dr@jones.dk>,
+Uploaders: Jonas Smedegaard <dr@jones.dk>,
  Denis Barbier <barbier@debian.org>,
  Dr. Tobias Quathamer <toddy@debian.org>
 Standards-Version: 4.1.4
