@@ -45,3 +45,4 @@ Description: tools to ease the translation of documentation
    - RubyDoc: Ruby documentation format.
    - Texinfo: the info page format.
    - XML: very configurable (preconfigured for DocBook, XHTML, Guide, WML).
+   - Yaml: Yaml documents.
