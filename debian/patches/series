@@ -1,0 +1,7 @@
+0001-yaml-Fix-for-UTF-8-documents.patch
+0002-yaml-Add-test-for-UTF-8-document.patch
+0003-yaml-Add-references.patch
+0004-yaml-improve-the-test-a-bit.patch
+0005-yaml-Use-instead-in-references.patch
+0006-dedupplicate-the-references-in-the-PO-files.patch
+0007-yaml-Test-references.patch

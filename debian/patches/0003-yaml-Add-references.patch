@@ -1,0 +1,601 @@
+From: Zero King <l2dy@icloud.com>
+Date: Sat, 26 May 2018 09:06:49 +0000
+Subject: yaml: Add references
+
+Cherry-picked from upstream commit 29af81ab591e1a587d05a0c3c853ccf92eea3c45
+---
+ lib/Locale/Po4a/Yaml.pm      | 13 ++++++-----
+ t/data-32/yamlkeysoption1.po | 12 +++++++++-
+ t/data-32/yamlkeysoption2.po | 18 ++++++++++++++-
+ t/data-32/yamltest.po        | 55 +++++++++++++++++++++++++++++++++++++++++++-
+ t/data-32/yamlutf8.po        |  1 +
+ 5 files changed, 90 insertions(+), 9 deletions(-)
+
+diff --git a/lib/Locale/Po4a/Yaml.pm b/lib/Locale/Po4a/Yaml.pm
+index 294823e..2a5b0d7 100644
+--- a/lib/Locale/Po4a/Yaml.pm
++++ b/lib/Locale/Po4a/Yaml.pm
+@@ -64,7 +64,7 @@ sub parse_file {
+         || die "Couldn't read YAML file $filename : $!";
+ 
+     for my $i (0 .. $#{$yaml}) {
+-        &walk_yaml($self, $yaml->[$i]);
++        &walk_yaml($self, $yaml->[$i], "");
+     }
+     $self->pushline(Encode::encode_utf8($yaml->write_string()));
+ }
+@@ -72,16 +72,17 @@ sub parse_file {
+ sub walk_yaml {
+     my $self=shift;
+     my $el=shift;
++    my $reference=shift;
+ 
+ 
+     if (ref $el eq ref {}) {
+         print STDERR  "begin a hash\n" if $self->{'options'}{'debug'};
+         foreach my $key (sort keys %$el) {
+             if (ref $el->{$key} ne ref "") {
+-                &walk_yaml($self, $el->{$key});
++                &walk_yaml($self, $el->{$key}, "$reference:$key");
+             } else {
+                 next if (($self->{options}{keys} ne "") and (!exists $self->{keys}{lc($key)}));
+-                my $trans = $self->translate(Encode::encode_utf8($el->{$key}), "", "Hash Value - Key: $key", 'wrap' => 0);
++                my $trans = $self->translate(Encode::encode_utf8($el->{$key}), $reference, "Hash Value - Key: $key", 'wrap' => 0);
+                 $el->{$key} = Encode::decode_utf8($trans); # Save the translation
+             }
+         }
+@@ -90,16 +91,16 @@ sub walk_yaml {
+         print STDERR  "begin an array\n" if $self->{'options'}{'debug'};
+         for my $i (0 .. $#{$el}) {
+             if (ref $el->[$i] ne ref "") {
+-                &walk_yaml($self, $el->[$i]);
++                &walk_yaml($self, $el->[$i], "$reference:");
+             } else {
+-                my $trans = $self->translate(Encode::encode_utf8($el->[$i]), "", "Array Element", 'wrap' => 0);
++                my $trans = $self->translate(Encode::encode_utf8($el->[$i]), $reference, "Array Element", 'wrap' => 0);
+                 $el->[$i] = Encode::decode_utf8($trans); # Save the translation
+             }
+         }
+     }
+     else {
+         print STDERR  "got a string - this is unexpected in yaml\n" if $self->{'options'}{'debug'};
+-        my $trans = $self->translate(Encode::encode_utf8($$el), "", "String", 'wrap' => 0);
++        my $trans = $self->translate(Encode::encode_utf8($$el), $reference, "String", 'wrap' => 0);
+         $$el = Encode::decode_utf8($trans); # Save the translation
+     }
+ }
+diff --git a/t/data-32/yamlkeysoption1.po b/t/data-32/yamlkeysoption1.po
+index 78d7058..10f4565 100644
+--- a/t/data-32/yamlkeysoption1.po
++++ b/t/data-32/yamlkeysoption1.po
+@@ -7,7 +7,7 @@
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: PACKAGE VERSION\n"
+-"POT-Creation-Date: 2017-11-19 19:34+0200\n"
++"POT-Creation-Date: 2018-05-25 08:00+0000\n"
+ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+@@ -22,51 +22,61 @@ msgid "Fedora Installation Guide"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Book Information"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Preface"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Introduction"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Downloading Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Installing Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Preparing for Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Booting the Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Installing Using Anaconda"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "After the Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Troubleshooting"
+ msgstr ""
+diff --git a/t/data-32/yamlkeysoption2.po b/t/data-32/yamlkeysoption2.po
+index e0013a3..bbba37a 100644
+--- a/t/data-32/yamlkeysoption2.po
++++ b/t/data-32/yamlkeysoption2.po
+@@ -7,7 +7,7 @@
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: PACKAGE VERSION\n"
+-"POT-Creation-Date: 2017-11-19 19:34+0200\n"
++"POT-Creation-Date: 2018-05-25 08:00+0000\n"
+ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+@@ -22,81 +22,97 @@ msgid "Fedora Installation Guide"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics:
+ #, no-wrap
+ msgid "index"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Book Information"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics: :Topics:
+ #, no-wrap
+ msgid "Preface"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics: :Topics:
+ #, no-wrap
+ msgid "Introduction"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics:
+ #, no-wrap
+ msgid "Downloading_Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Downloading Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Installing Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Preparing_for_Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Preparing for Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Booting_the_Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Booting the Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Installing_Using_Anaconda"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Installing Using Anaconda"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "After_Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "After the Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics: :Topics::Topics:
+ #, no-wrap
+ msgid "Troubleshooting"
+ msgstr ""
+diff --git a/t/data-32/yamltest.po b/t/data-32/yamltest.po
+index 5af4c45..522658a 100644
+--- a/t/data-32/yamltest.po
++++ b/t/data-32/yamltest.po
+@@ -7,7 +7,7 @@
+ msgid ""
+ msgstr ""
+ "Project-Id-Version: PACKAGE VERSION\n"
+-"POT-Creation-Date: 2017-11-19 19:28+0200\n"
++"POT-Creation-Date: 2018-05-25 08:00+0000\n"
+ "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+ "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+@@ -27,206 +27,247 @@ msgid "Fedora Installation Guide"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics:
+ #, no-wrap
+ msgid "index"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Book Information"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics: :Topics:
+ #, no-wrap
+ msgid "Preface"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics: :Topics:
+ #, no-wrap
+ msgid "Introduction"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics:
+ #, no-wrap
+ msgid "Downloading_Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Downloading Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Dir
++#: :Topics:
+ #, no-wrap
+ msgid "install"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Installing Fedora"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Preparing_for_Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Preparing for Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Booting_the_Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Booting the Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Installing_Using_Anaconda"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Installing Using Anaconda"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "After_Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "After the Installation"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics: :Topics::Topics:
+ #, no-wrap
+ msgid "Troubleshooting"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Dir
++#: :Topics:
+ #, no-wrap
+ msgid "advanced"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Advanced Installation Options"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Boot_Options"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Boot Options"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Kickstart_Installations"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Automating the Installation with Kickstart"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Network_based_Installations"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Setting Up an Installation Server"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "VNC_Installations"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Installing Using VNC"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Upgrading_Your_Current_System"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Upgrading Your Current System"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Dir
++#: :Topics:
+ #, no-wrap
+ msgid "appendixes"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Technical Appendixes"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Kickstart_Syntax_Reference"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Kickstart Syntax Reference"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Disk_Partitions"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "An Introduction to Disk Partitions"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Understanding_LVM"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics::Topics:
+ #, no-wrap
+ msgid "Understanding LVM"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: File
++#: :Topics:
+ #, no-wrap
+ msgid "Revision_History"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: Name
++#: :Topics:
+ #, no-wrap
+ msgid "Revision History"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: city
++#: :bill-to:address
+ #, no-wrap
+ msgid "Royal Oak"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: lines
++#: :bill-to:address
+ #, no-wrap
+ msgid ""
+ "458 Walkman Dr.\n"
+@@ -234,21 +275,25 @@ msgid ""
+ msgstr ""
+ 
+ #. type: Hash Value - Key: postal
++#: :bill-to:address
+ #, no-wrap
+ msgid "48046"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: state
++#: :bill-to:address
+ #, no-wrap
+ msgid "MI"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: family
++#: :bill-to
+ #, no-wrap
+ msgid "Dumars"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: given
++#: :bill-to
+ #, no-wrap
+ msgid "Chris"
+ msgstr ""
+@@ -264,41 +309,49 @@ msgid "34843"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: description
++#: :product:
+ #, no-wrap
+ msgid "Basketball"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: price
++#: :product:
+ #, no-wrap
+ msgid "450.00"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: quantity
++#: :product:
+ #, no-wrap
+ msgid "4"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: sku
++#: :product:
+ #, no-wrap
+ msgid "BL394D"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: description
++#: :product:
+ #, no-wrap
+ msgid "Super Hoop"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: price
++#: :product:
+ #, no-wrap
+ msgid "2392.00"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: quantity
++#: :product:
+ #, no-wrap
+ msgid "1"
+ msgstr ""
+ 
+ #. type: Hash Value - Key: sku
++#: :product:
+ #, no-wrap
+ msgid "BL4438H"
+ msgstr ""
+diff --git a/t/data-32/yamlutf8.po b/t/data-32/yamlutf8.po
+index 32cd370..b61b419 100644
+--- a/t/data-32/yamlutf8.po
++++ b/t/data-32/yamlutf8.po
+@@ -17,6 +17,7 @@ msgstr ""
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #. type: Hash Value - Key: lang
++#: :meta
+ #, no-wrap
+ msgid "日本語"
+ msgstr ""
