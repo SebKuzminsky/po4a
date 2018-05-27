@@ -13,3 +13,8 @@ override_dh_auto_build:
 %:
 	dh $@
 
+# Replace the shebang line in perl scripts to
+# comply with Policy 10.4
+override_dh_auto_install:
+	dh_auto_install
+	sed -i -e "1 s,^.*perl.*$$,#!/usr/bin/perl," $(CURDIR)/debian/po4a/usr/bin/*
