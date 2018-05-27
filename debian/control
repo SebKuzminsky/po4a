@@ -9,6 +9,7 @@ Standards-Version: 4.0.1
 Build-Depends-Indep: perl, libmodule-build-perl,
  docbook-xml, docbook-xsl, xsltproc,
  libterm-readkey-perl,
+ libyaml-tiny-perl,
 # unit tests
  gettext, libunicode-linebreak-perl,
 #   SGML
@@ -23,7 +24,7 @@ Vcs-Browser: https://salsa.debian.org/debian/po4a
 Package: po4a
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${perl:Depends}, gettext, libsgmls-perl, opensp
+Depends: ${misc:Depends}, ${perl:Depends}, gettext, libsgmls-perl, libyaml-tiny-perl, opensp
 Recommends: libtext-wrapi18n-perl, libterm-readkey-perl, liblocale-gettext-perl, libunicode-linebreak-perl
 Description: tools to ease the translation of documentation
  po4a eases the translation of documentation and other textual document.
