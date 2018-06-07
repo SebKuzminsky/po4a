@@ -1,3 +1,9 @@
+po4a (0.53-2) unstable; urgency=medium
+
+  * Fix fortunes handling. (Closes: #900649)
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Thu, 07 Jun 2018 10:42:29 +0200
+
 po4a (0.53-1) unstable; urgency=medium
 
   [ Martin Quinson ]
