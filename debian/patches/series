@@ -5,3 +5,4 @@
 0005-yaml-Use-instead-in-references.patch
 0006-dedupplicate-the-references-in-the-PO-files.patch
 0007-yaml-Test-references.patch
+0008-Fix-fortunes-handling.patch
