@@ -3,19 +3,22 @@ Section: text
 Priority: optional
 Maintainer: Martin Quinson <mquinson@debian.org>
 Uploaders: Jonas Smedegaard <dr@jones.dk>,
- Denis Barbier <barbier@debian.org>,
- Dr. Tobias Quathamer <toddy@debian.org>
+           Denis Barbier <barbier@debian.org>,
+           Dr. Tobias Quathamer <toddy@debian.org>
 Standards-Version: 4.1.4
-Build-Depends-Indep: perl, libmodule-build-perl,
- docbook-xml, docbook-xsl, xsltproc,
- libterm-readkey-perl,
- libyaml-tiny-perl,
-# unit tests
- gettext, libunicode-linebreak-perl,
-#   SGML
- opensp, docbook, libsgmls-perl,
-#   TeX
- texlive-binaries
+Build-Depends-Indep: docbook,
+                     docbook-xml,
+                     docbook-xsl,
+                     gettext,
+                     libmodule-build-perl,
+                     libsgmls-perl,
+                     libterm-readkey-perl,
+                     libunicode-linebreak-perl,
+                     libyaml-tiny-perl,
+                     opensp,
+                     perl,
+                     texlive-binaries,
+                     xsltproc
 Build-Depends: debhelper (>= 11)
 Homepage: https://po4a.org/
 Vcs-Git: https://salsa.debian.org/debian/po4a.git
@@ -24,8 +27,16 @@ Vcs-Browser: https://salsa.debian.org/debian/po4a
 Package: po4a
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, ${perl:Depends}, gettext, libsgmls-perl, libyaml-tiny-perl, opensp
-Recommends: libtext-wrapi18n-perl, libterm-readkey-perl, liblocale-gettext-perl, libunicode-linebreak-perl
+Depends: gettext,
+         libsgmls-perl,
+         libyaml-tiny-perl,
+         opensp,
+         ${misc:Depends},
+         ${perl:Depends}
+Recommends: liblocale-gettext-perl,
+            libterm-readkey-perl,
+            libtext-wrapi18n-perl,
+            libunicode-linebreak-perl
 Description: tools to ease the translation of documentation
  po4a eases the translation of documentation and other textual document.
  Even more interestingly, it makes it easy to maintain these
