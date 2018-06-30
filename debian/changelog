@@ -1,3 +1,26 @@
+po4a (0.54-1) unstable; urgency=medium
+
+  * New upstream version 0.54
+    - Remove patches, all have been applied upstream
+    - Remove workaround in d/rules to create empty files
+    - Texinfo: Fix handling of spaces in menu descriptions
+      (Closes: #758851).
+    - Text: Support pandoc's bibliographic information (title, author, date)
+      at the beginning of a markdown file. Also fix a trailing newline
+      in some markdown titles (Closes: #894977).
+    - Man: Support .MT and .ME macros for e-mail address
+      markup (Closes: #900965).
+    - Text: Fix the parsing of fortunes files, which had been broken since
+      v0.43. The handling has changed a bit, all msgids are now marked as
+      "no-wrap", because the word wrap in fortunes files usually matters.
+      This upstream fix has already been cherry-picked for the
+      Debian upload of 0.53-2.
+  * Use wrap-and-sort
+  * Do not run failing HTML module test
+  * Remove some example files, no longer distributed
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Sat, 30 Jun 2018 11:42:00 +0200
+
 po4a (0.53-2) unstable; urgency=medium
 
   * Fix fortunes handling. (Closes: #900649)
