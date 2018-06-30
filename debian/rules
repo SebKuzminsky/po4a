@@ -8,13 +8,3 @@
 override_dh_auto_install:
 	dh_auto_install
 	sed -i -e "1 s,^.*perl.*$$,#!/usr/bin/perl," $(CURDIR)/debian/po4a/usr/bin/*
-
-# We need some empty files for the tests to pass,
-# but they cannot be created with d/patches, so
-# touch them before running the tests.
-override_dh_auto_test:
-	touch t/data-32/yamlutf8.err
-	touch t/data-33/MultipleLines.err
-	touch t/data-33/SeveralFortunes.err
-	touch t/data-33/SingleFortune.err
-	dh_auto_test
