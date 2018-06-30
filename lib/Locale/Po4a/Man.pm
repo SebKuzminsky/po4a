@@ -324,7 +324,7 @@ it's valid in nroff, but would complicate too much the parser to be
 handled.
 
 Of course, another possibility is to use another format, more translator
-friendly (like POD using po4a::pod, or one of the XML familly like SGML),
+friendly (like POD using po4a::pod, or one of the XML family like SGML),
 but thanks to po4a::man it isn't needed anymore. That being said, if the
 source format of your documentation is POD, or XML, it may be clever to
 translate the source format and not this generated one. In most cases,
@@ -338,7 +338,7 @@ In most cases, po4a::man will detect the problem and refuse to process the
 page, issuing an adapted message. In some rare cases, the program will
 complete without warning, but the output will be wrong. Such cases are
 called "bugs" ;) If you encounter such case, be sure to report this, along
-with a fix when possible...
+with a fix when possible…
 
 =head1 STATUS OF THIS MODULE
 
@@ -642,7 +642,7 @@ NEW_LINE:
     #     of the module (e.g. when searching for a font : \f, whe don't
     #     want to match \\f)
     $line =~ s/\\\\/\\e/g;
-    #   * \. is just a dot (this can even be use to introduce a macro)
+    #   * \. is just a dot (this can even be used to introduce a macro)
     $line =~ s/\\\././g;
 
     chomp $line;
@@ -1968,9 +1968,40 @@ $macro{'IP'}=sub {
 #         corresponding UE  command.
 #         When generating HTML this should translate into the HTML command
 #         <A  NAME="u" id="u">&nbsp;</A>
-$inline{'UR'}=1;
-$inline{'UE'}=1;
+#
+# E-Mail address Macros
+#  .MT m  Begins a mailto link to the adress m; it will end with
+#         the corresponding ME command. When generating HTML this should
+#         translate into the HTML command <A HREF="mailto:m">.
+#  .ME    Ends the corresponding MT command; when generating HTML this
+#         should translate into </A>.
+$inline{'UR'}=$inline{'MT'}=1;
+$inline{'UE'}=$inline{'ME'}=1;
 $macro{'UN'}=\&translate_joined;
+
+# Macros to describe command synopses
+#
+# These macros are a convenience for authors.  They also assist
+# automated translation tools and help browsers in recognizing command
+# synopses and treating them differently from running text.
+#
+# .OP key value
+#       Describe an optional command argument.  The arguments of this
+#       macro are set surrounded by option braces in the default Roman
+#       font; the first argument is printed with a bold face, while
+#       the second argument is typeset as italic.
+#
+# .SY command
+#       Begin synopsis.  Takes a single argument, the name of a
+#       command.  Text following, until closed by .YS, is set with a
+#       hanging indentation with the width of command plus a space.
+#       This produces the traditional look of a Unix command synopsis.
+#
+# .YS    This macro restores normal indentation at the end of a command
+#       synopsis.
+$macro{'OP'}=\&translate_each;
+$macro{'SY'}=\&translate_joined;
+$macro{'YS'}=\&noarg;
 
 # Miscellaneous Macros
 #  .DT      Reset tabs to default tab values (every 0.5 inches); does not

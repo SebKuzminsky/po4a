@@ -126,7 +126,7 @@ B<Note:> It is recommended to use B<[po_directory]> rather than B<[po4a_langs]>
 and B<[po4a_paths]>.
 See section B<Autodetection of the paths and languages> below.
 
-First, you have to specify where the translator input files (i.e. the files
+First, you have to specify where the translator input files (I.E. the files
 used by translators to do their job) are located. It can be done by such a line:
 
  [po4a_paths] doc/l10n/project.doc.pot \
@@ -234,7 +234,7 @@ You can also specify options that will only apply to a specific language
 by using the B<opt_>I<lang> keyword.
 
 Here is an example:
- [type:man] data-05/test2_man.1 $lang:tmp/test2_man.$lang.1 \
+ [type:man] t-05-config/test02_man.1 $lang:tmp/test02_man.$lang.1 \
             opt:"-k 75" opt_it:"-L UTF-8" opt_fr:-v
 
 Arguments may contain spaces if you use single quotes or escaped double
@@ -259,9 +259,9 @@ This defines a module alias named B<test>, based on the B<man> module, with
 the B<-k 21> applied to all the languages and with B<-o debug=splitargs>
 applied to the Spanish translation.
 
-This module alias can then be use like a regular module:
+This module alias can then be used like a regular module:
 
- [type:test] data-05/test2_man.1 $lang:tmp/test2_man.$lang.1 \
+ [type:test] t-05-config/test02_man.1 $lang:tmp/test02_man.$lang.1 \
             opt_it:"-L UTF-8" opt_fr:-v
 
 Note that you can specify additional options on a per file basis.
@@ -387,6 +387,18 @@ Do not generate the translated documents, only update the POT and PO files.
 =item B<--no-update>
 
 Do not change the POT and PO files, only the translation may be updated.
+
+=item B<--keep-translations>
+
+Keeps the existing translation files even if the translation doesn't meet the threshold specified by --keep.
+This option does not create new translation files with few content,
+but it will save existing translations which decay because of changes to the master files.
+
+WARNING: This flag changes the po4a behavior in a rather drastic way:
+your translated files will not get updated at all until the
+translation improves. Only use this flag if you prefer shipping an
+outdated translated documentation rather than only shipping an
+accurate untranslated documentation.
 
 =item B<--rm-translations>
 
@@ -530,7 +542,7 @@ following line in the B<build> target of the appropriate F<Makefile>:
 Once this is set up you don't need to touch the F<Makefile> when a new
 translation arrives, i.e. if the French team sends you F<fr.po> and F<fr.add>
 then you simply drop them respectively in F<man/po4a/po/> and
-F<man/po4a/add_fr/> and the next time the programm is build the
+F<man/po4a/add_fr/> and the next time the program is built the
 French translation is automatically build as well in F<man/translated/fr/>.
 
 Note that you still need an appropriate target to install localized manual
@@ -632,6 +644,7 @@ sub get_options {
         "quiet"           => 0,
         "no-translations" => 0,
         "no-update"       => 0,
+        "keep-translations" => 0,
         "rm-translations" => 0,
         "no-backups"      => 0,
         "rm-backups"      => 0,
@@ -668,6 +681,7 @@ sub get_options {
         'keep|k=s'              => \$opts{"threshold"},
         'no-translations'       => \$opts{"no-translations"},
         'no-update'             => \$opts{"no-update"},
+        'keep-translations'     => \$opts{"keep-translations"},
         'rm-translations'       => \$opts{"rm-translations"},
         'translate-only=s'      => \@{$opts{"partial"}},
         'no-backups'            => \$opts{"no-backups"},
@@ -1492,8 +1506,20 @@ if (not $po4a_opts{"no-translations"}) {
             $doc->{TT}{po_in} = $po;
             $doc->{TT}{po_in}->stats_clear();
 
+	    my $translation_out;
+	    if ($po4a_opts{"keep-translations"} &&
+		-e $document{$master}{$lang}) {
+	      (undef,$translation_out) =
+		    File::Temp::tempfile("$document{$master}{$lang}.new-XXXX",
+					 OPEN   => 0,
+					 UNLINK => 0);
+	    }
+	    else {
+	      $translation_out=$document{$master}{$lang};
+	    }
+
             $doc->process('file_in_name'  => \@file_in_name,
-                          'file_out_name' => $document{$master}{$lang},
+                          'file_out_name' => $translation_out,
                           'file_in_charset'  => $file_opts{"mastchar"},
                           'file_out_charset' => $file_opts{"locchar"},
                           'addendum_charset' => $file_opts{"addchar"},
@@ -1509,7 +1535,12 @@ if (not $po4a_opts{"no-translations"}) {
                     $percent, $file_opts{"threshold"});
                 chdir $po4a_opts{"destdir"}
                     if (defined $po4a_opts{"destdir"});
-                unlink($document{$master}{$lang}) if (-e $document{$master}{$lang});
+                unlink($document{$master}{$lang})
+		  if (! $po4a_opts{"keep-translations"} &&
+		      -e $document{$master}{$lang});
+                unlink($translation_out)
+		  if ($po4a_opts{"keep-translations"} &&
+		      -e $translation_out);
                 unless ($po4a_opts{"force"}) {
                     if ($po4a_opts{"stamp"}) {
                     touch($document{$master}{$lang}.".po4a-stamp");
@@ -1522,6 +1553,9 @@ if (not $po4a_opts{"no-translations"}) {
                     if (defined $po4a_opts{"destdir"});
                 next DOC;
             }
+	    else {
+	      rename ($translation_out, $document{$master}{$lang});
+	    }
             unless ($po4a_opts{"force"}) {
                 chdir $po4a_opts{"destdir"}
                     if (defined $po4a_opts{"destdir"});

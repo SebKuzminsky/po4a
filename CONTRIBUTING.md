@@ -81,6 +81,15 @@ ensure that bugs won't resurface in the future.
   perl-Test-Simple perl-Unicode-LineBreak perl-HTML-TokeParser-Simple
   docbook-dtds`
 
+When writing or improving a test, you probably want to select the test
+to run, and make it verbose. The tests are executed from the t/tmp
+directory.
+
+```
+  ./Build test --test_files t/32-yaml.t verbose=1
+```
+
+
 # Translating
 
 You can translate the runtime messages, the documentation and the
@@ -91,8 +100,7 @@ requests for that.
 On need, you can manually refresh the translation files as follows:
 ```sh
  perl Build.PL
- ./Build postats # Refresh the po files from the (unchanged) pot file
- ./Build         # Refresh everything, even the pot file
+ ./Build postats # Refresh the pot and po files (both doc and bin)
 ```
 
 The documentation is written using the PerlDoc format (pod), as
@@ -124,11 +132,32 @@ wlc commit
 wlc push
 # Merge the pull request on github
 # Do and commit your local changes
+perl Build.PL
 ./Build 
-git commit -m "update po files"
+git commit -m "update po files" po
 git push 
 wlc pull
 wlc unlock
+```
+
+Here is how to integrate a PR that fixes typos in english without
+fuzzying the translations (using msguntypot):
+```sh
+wlc lock && wlc commit && wlc push
+# Merge the weblate PR on github
+git pull
+# Merge the other PR on github
+git pull
+rm -rf po_orig ; cp -r po po_orig # Copy existing po files
+./Build postats # Refresh the pot and po files (both doc and bin)
+cp po_orig/bin/*.po po/bin # Restore po files; msguntypot will handle typos in msgids
+cp po_orig/pod/*.po po/pod
+msguntypot -o po_orig/bin/po4a.pot     -n po/bin/po4a.pot     po/bin/*.po
+msguntypot -o po_orig/pod/po4a-pod.pot -n po/pod/po4a-pod.pot po/pod/*.po
+rm -rf po_orig
+git commit -m "unfuzzy translations after the typo fixes in english" po
+git push
+wlc pull && wlc unlock
 ```
 
 ## Releasing po4a
@@ -149,9 +178,12 @@ Here is the checklist of things to remember when releasing po4a:
   - Interrupt it if the MANIFEST is out of sync, and then fix it by
     adding the missing files to MANIFEST (or MANIFEST.SKIP if they
     should not be released to the users)
+- Commit your changes, eg with commit log like "Releasing v0.XXX"
 - Tag the git and push it: `git tag v0.XXX && git push tags`
 - Edit the release on [GitHub](https://github.com/mquinson/po4a/releases).
-  Reuse the release name and paste the changelog of this release.
+  - Reuse the release name and paste the changelog of this release.
+  - Also upload the tarball to the github release: the file META.yml
+    is missing from the tarball generated automatically (see #115).
 - Announce the release on the Mailing List.
 
 - Put a template in NEWS (using `figlet v0.XXX`)
