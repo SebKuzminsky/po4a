@@ -144,14 +144,6 @@ Handle some special markup in Markdown-formatted texts.
 
 my $markdown = 0;
 
-=item B<asciidoc>
-
-Handle documents in the AsciiDoc format.
-
-=cut
-
-my $asciidoc = 0;
-
 =item B<control>[B<=>I<taglist>]
 
 Handle control files.
@@ -182,7 +174,6 @@ sub initialize {
     my %options = @_;
 
     $self->{options}{'control'} = "";
-    $self->{options}{'asciidoc'} = 1;
     $self->{options}{'breaks'} = 1;
     $self->{options}{'debianchangelog'} = 1;
     $self->{options}{'debug'} = 1;
@@ -233,13 +224,6 @@ sub initialize {
     if (defined $options{'markdown'}) {
         $parse_func = \&parse_markdown;
         $markdown=1;
-    }
-
-    if (defined $options{'asciidoc'}) {
-        $parse_func = \&parse_asciidoc;
-        $asciidoc=1;
-        warn wrap_mod("po4a::text",
-             dgettext("po4a", "asciidoc option deprecated, use asciidoc format instead of text"));
     }
 
     if (defined $options{'control'}) {
@@ -333,16 +317,38 @@ sub parse_debianchangelog {
 
 sub parse_fortunes {
     my ($self,$line,$ref,$paragraph,$wrapped_mode,$expect_header,$end_of_paragraph) = @_;
-    if ($line =~ m/^%%?\s*$/) {
-        # Found end of fortune
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $self->pushline("\n") unless (   $wrapped_mode == 0
-                                  or $paragraph eq "");
-        $paragraph="";
-        $wrapped_mode = 1;
-        $self->pushline("$line\n");
+    # Always include paragraphs in no-wrap mode,
+    # because the formatting of the fortunes
+    # is usually hand-crafted and matters.
+    $wrapped_mode = 0;
+    # Check if there are more lines in the file.
+    my $last_line_of_file = 0;
+    my ($nextline,$nextref) = $self->shiftline();
+    if (defined $nextline) {
+        # There is a next line, put it back.
+        $self->unshiftline($nextline, $nextref);
     } else {
-        $line =~ s/%%(.*)$//;
+        # Nope, no more lines available.
+        $last_line_of_file = 1;
+    }
+    # Is the line the end of a fortune or the last line of the file?
+    if ($line =~ m/^%%?\s*$/ or $last_line_of_file) {
+        # Add the last line to the paragraph
+        if ($last_line_of_file) {
+            $paragraph .= $line;
+        }
+        # Remove the last newline for the translation.
+        chomp($paragraph);
+        do_paragraph($self,$paragraph,$wrapped_mode);
+        $paragraph="";
+        # Add the last newline again for the output.
+        $self->pushline("\n");
+        # Also add the separator line, if this is not the end of the file.
+        if (!$last_line_of_file) {
+            $self->pushline("$line\n");
+        }
+    } else {
+        $paragraph .= $line."\n";
     }
     return ($paragraph,$wrapped_mode,$expect_header,$end_of_paragraph);
 }
@@ -402,346 +408,124 @@ sub parse_control {
     return ($paragraph,$wrapped_mode,$expect_header,$end_of_paragraph);
 }
 
-my $asciidoc_RE_SECTION_TEMPLATES = "sect1|sect2|sect3|sect4|preface|colophon|dedication|synopsis|index";
-my $asciidoc_RE_STYLE_ADMONITION = "TIP|NOTE|IMPORTANT|WARNING|CAUTION";
-my $asciidoc_RE_STYLE_PARAGRAPH = "normal|literal|verse|quote|listing|abstract|partintro|comment|example|sidebar|source|music|latex|graphviz";
-my $asciidoc_RE_STYLE_NUMBERING = "arabic|loweralpha|upperalpha|lowerroman|upperroman";
-my $asciidoc_RE_STYLE_LIST = "appendix|horizontal|qanda|glossary|bibliography";
-my $asciidoc_RE_STYLES = "$asciidoc_RE_SECTION_TEMPLATES|$asciidoc_RE_STYLE_ADMONITION|$asciidoc_RE_STYLE_PARAGRAPH|$asciidoc_RE_STYLE_NUMBERING|$asciidoc_RE_STYLE_LIST|float";
-
-BEGIN {
-    my $UnicodeGCString_available = 0;
-    $UnicodeGCString_available = 1 if (eval { require Unicode::GCString });
-    eval {
-        sub columns($$$) {
-            my $text = shift;
-            my $encoder = shift;
-            $text = $encoder->decode($text) if (defined($encoder) && $encoder->name ne "ascii");
-            if ($UnicodeGCString_available) {
-                return Unicode::GCString->new($text)->columns();
-            } else {
-                $text =~ s/\n$//s;
-                return length($text) if !(defined($encoder) && $encoder->name ne "ascii");
-                die wrap_mod("po4a::text",
-                    dgettext("po4a", "Detection of two line titles failed at %s\nInstall the Unicode::GCString module!"), shift)
-            }
-        }
-    };
-}
-
-sub parse_asciidoc {
-    my ($self,$line,$ref,$paragraph,$wrapped_mode,$expect_header,$end_of_paragraph) = @_;
-    if ((defined $self->{verbatim}) and ($self->{verbatim} == 3)) {
-        # Untranslated blocks
-        $self->pushline($line."\n");
-        if ($line =~ m/^~{4,}$/) {
-            undef $self->{verbatim};
-            undef $self->{type};
-            $wrapped_mode = 1;
-        }
-    } elsif ((defined $self->{verbatim}) and ($self->{verbatim} == 2)) {
-        # CommentBlock
-        if ($line =~ m/^\/{4,}$/) {
-            undef $self->{verbatim};
-            undef $self->{type};
-            $wrapped_mode = 1;
-        } else {
-            push @comments, $line;
-        }
-    } elsif ((not defined($self->{verbatim})) and ($line =~ m/^(\+|--)$/)) {
-        # List Item Continuation or List Block
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        $self->pushline($line."\n");
-    } elsif ((not defined($self->{verbatim})) and
-             ($line =~ m/^(={2,}|-{2,}|~{2,}|\^{2,}|\+{2,})$/) and
-             (defined($paragraph) )and
-             ($paragraph =~ m/^[^\n]*\n$/s) and
-             (columns($paragraph, $self->{TT}{po_in}{encoder}, $ref) == (length($line)))) {
-        # Found title
-        $wrapped_mode = 0;
-        my $level = $line;
-        $level =~ s/^(.).*$/$1/;
-        $paragraph =~ s/\n$//s;
-        my $t = $self->translate($paragraph,
-                                 $self->{ref},
-                                 "Title $level",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline($t."\n");
-        $paragraph="";
-        @comments=();
-        $wrapped_mode = 1;
-        $self->pushline(($level x (columns($t, $self->{TT}{po_in}{encoder}, $ref)))."\n");
-    } elsif ($line =~ m/^(={1,5})( +)(.*?)( +\1)?$/) {
-        my $titlelevel1 = $1;
-        my $titlespaces = $2;
-        my $title = $3;
-        my $titlelevel2 = $4||"";
-        # Found one line title
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $wrapped_mode = 0;
-        $paragraph="";
-        my $t = $self->translate($title,
-                                 $self->{ref},
-                                 "Title $titlelevel1",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline($titlelevel1.$titlespaces.$t.$titlelevel2."\n");
-        @comments=();
-        $wrapped_mode = 1;
-    } elsif ($line =~ m/^(\/{4,}|\+{4,}|-{4,}|\.{4,}|\*{4,}|_{4,}|={4,}|~{4,}|\|={4,})$/) {
-        # Found one delimited block
-        my $t = $line;
-        $t =~ s/^(.).*$/$1/;
-        my $type = "delimited block $t";
-        if (defined $self->{verbatim} and ($self->{type} ne $type)) {
-            $paragraph .= "$line\n";
-        } else {
-            do_paragraph($self,$paragraph,$wrapped_mode);
-            if (    (defined $self->{type})
-                and ($self->{type} eq $type)) {
-                undef $self->{type};
-                undef $self->{verbatim};
-                $wrapped_mode = 1;
-            } else {
-                if ($t eq "\/") {
-                    # CommentBlock, should not be treated
-                    $self->{verbatim} = 2;
-                } elsif ($t eq "+") {
-                    # PassthroughBlock
-                    $wrapped_mode = 0;
-                    $self->{verbatim} = 1;
-                } elsif ($t eq "-" or $t eq "|") {
-                    # ListingBlock
-                    $wrapped_mode = 0;
-                    $self->{verbatim} = 1;
-                } elsif ($t eq ".") {
-                    # LiteralBlock
-                    $wrapped_mode = 0;
-                    $self->{verbatim} = 1;
-                } elsif ($t eq "*") {
-                    # SidebarBlock
-                    $wrapped_mode = 1;
-                } elsif ($t eq "_") {
-                    # QuoteBlock
-                    if (    (defined $self->{type})
-                        and ($self->{type} eq "verse")) {
-                        $wrapped_mode = 0;
-                        $self->{verbatim} = 1;
-                    } else {
-                        $wrapped_mode = 1;
-                    }
-                } elsif ($t eq "=") {
-                    # ExampleBlock
-                    $wrapped_mode = 1;
-                } elsif ($t eq "~") {
-                    # Filter blocks, TBC: not translated
-                    $wrapped_mode = 0;
-                    $self->{verbatim} = 3;
-                }
-                $self->{type} = $type;
-            }
-            $paragraph="";
-            $self->pushline($line."\n") unless defined($self->{verbatim}) && $self->{verbatim} == 2;
-        }
-    } elsif ((not defined($self->{verbatim})) and ($line =~ m/^\/\/(.*)/)) {
-        # Comment line
-        push @comments, $1;
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^\[\[([^\]]*)\]\]$/)) {
-        # Found BlockId
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        $wrapped_mode = 1;
-        $self->pushline($line."\n");
-        undef $self->{bullet};
-        undef $self->{indent};
-    } elsif (not defined $self->{verbatim} and
-             ($paragraph eq "") and
-             ($line =~ m/^((?:$asciidoc_RE_STYLE_ADMONITION):\s+)(.*)$/)) {
-        my $type = $1;
-        my $text = $2;
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph=$text."\n";
-        $wrapped_mode = 1;
-        $self->pushline($type);
-        undef $self->{bullet};
-        undef $self->{indent};
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^\[($asciidoc_RE_STYLES)\]$/)) {
-        my $type = $1;
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        $wrapped_mode = 1;
-        $self->pushline($line."\n");
-        if ($type  eq "verse") {
-            $wrapped_mode = 0;
-        }
-        undef $self->{bullet};
-        undef $self->{indent};
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^\[(['"]?)(verse|quote)\1, +(.*)\]$/)) {
-        my $quote = $1 || '';
-        my $type = $2;
-        my $arg = $3;
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        my $t = $self->translate($arg,
-                                 $self->{ref},
-                                 "$type",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline("[$quote$type$quote, $t]\n");
-        @comments=();
-        $wrapped_mode = 1;
-        if ($type  eq "verse") {
-            $wrapped_mode = 0;
-        }
-        $self->{type} = $type;
-        undef $self->{bullet};
-        undef $self->{indent};
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^\[icon="(.*)"\]$/)) {
-        my $arg = $1;
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        my $t = $self->translate($arg,
-                                 $self->{ref},
-                                 "icon",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline("[icon=\"$t\"]\n");
-        @comments=();
-        $wrapped_mode = 1;
-        undef $self->{bullet};
-        undef $self->{indent};
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^\[icons=None, +caption="(.*)"\]$/)) {
-        my $arg = $1;
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        my $t = $self->translate($arg,
-                                 $self->{ref},
-                                 "caption",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline("[icons=None, caption=\"$t\"]\n");
-        @comments=();
-        $wrapped_mode = 1;
-        undef $self->{bullet};
-        undef $self->{indent};
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^(\s*)([*_+`'#[:alnum:]].*)((?:::|;;|\?\?|:-)(?: *\\)?)$/)) {
-        my $indent = $1;
-        my $label = $2;
-        my $labelend = $3;
-        # Found labeled list
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        $wrapped_mode = 1;
-        $self->{bullet} = "";
-        $self->{indent} = $indent;
-        my $t = $self->translate($label,
-                                 $self->{ref},
-                                 "Labeled list",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline("$indent$t$labelend\n");
-        @comments=();
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^(\s*)(\S.*)((?:::|;;)\s+)(.*)$/)) {
-        my $indent = $1;
-        my $label = $2;
-        my $labelend = $3;
-        my $labeltext = $4;
-        # Found Horizontal Labeled Lists
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph=$labeltext."\n";
-        $wrapped_mode = 1;
-        $self->{bullet} = "";
-        $self->{indent} = $indent;
-        my $t = $self->translate($label,
-                                 $self->{ref},
-                                 "Labeled list",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline("$indent$t$labelend");
-        @comments=();
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^\:(\S.*?)(:\s*)(.*)$/)) {
-        my $attrname = $1;
-        my $attrsep = $2;
-        my $attrvalue = $3;
-        # Found a Attribute entry
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        $wrapped_mode = 1;
-        undef $self->{bullet};
-        undef $self->{indent};
-        my $t = $self->translate($attrvalue,
-                                 $self->{ref},
-                                 "Attribute :$attrname:",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline(":$attrname$attrsep$t\n");
-        @comments=();
-    } elsif (not defined $self->{verbatim} and
-             ($line !~ m/^\.\./) and ($line =~ m/^\.(\S.*)$/)) {
+# Support pandoc's format of specifying bibliographic information.
+#
+# If the first line starts with a percent sign, the following
+# is considered to be title, author, and date.
+#
+# If the information spans multiple lines, the following
+# lines must be indented with space.
+# If information is omitted, it's just a percent sign
+# and a blank line.
+#
+# Examples with missing title resp. missing authors:
+#
+# %
+# % Author
+#
+# % My title
+# %
+# % June 14, 2018
+sub parse_markdown_bibliographic_information {
+    my ($self,$line,$ref) = @_;
+    my ($nextline, $nextref);
+    # The first match is always the title or an empty string (no title).
+    if ($line =~ /^%(.*)$/) {
         my $title = $1;
-        # Found block title
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph="";
-        $wrapped_mode = 1;
-        undef $self->{bullet};
-        undef $self->{indent};
-        my $t = $self->translate($title,
-                                 $self->{ref},
-                                 "Block title",
-                                 "comment" => join("\n", @comments),
-                                 "wrap" => 0);
-        $self->pushline(".$t\n");
-        @comments=();
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^(\s*)((?:[-*o+]|(?:[0-9]+[.\)])|(?:[a-z][.\)])|\([0-9]+\)|\.|\.\.)\s+)(.*)$/)) {
-        my $indent = $1||"";
-        my $bullet = $2;
-        my $text = $3;
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph = $text."\n";
-        $self->{indent} = $indent;
-        $self->{bullet} = $bullet;
-    } elsif (not defined $self->{verbatim} and
-             ($line =~ m/^((?:<?[0-9]+)?> +)(.*)$/)) {
-        my $bullet = $1;
-        my $text = $2;
-        do_paragraph($self,$paragraph,$wrapped_mode);
-        $paragraph = $text."\n";
-        $self->{indent} = "";
-        $self->{bullet} = $bullet;
-    } elsif (not defined $self->{verbatim} and
-             (defined $self->{bullet} and $line =~ m/^(\s+)(.*)$/)) {
-        my $indent = $1;
-        my $text = $2;
-        if (not defined $self->{indent}) {
-            $paragraph .= $text."\n";
-            $self->{indent} = $indent;
-        } elsif (length($paragraph) and (length($self->{bullet}) + length($self->{indent}) == length($indent))) {
-            $paragraph .= $text."\n";
-        } else {
-            do_paragraph($self,$paragraph,$wrapped_mode);
-            $paragraph = $text."\n";
-            $self->{indent} = $indent;
-            $self->{bullet} = "";
+        # Remove leading and trailing whitespace
+        $title =~ s/^\s+|\s+$//g;
+        # If there's some text, look for continuation lines
+        if (length($title)) {
+            ($nextline, $nextref) = $self->shiftline();
+            while ($nextline =~ /^\s+(.+)$/) {
+                $nextline = $1;
+                $nextline =~ s/^\s+|\s+$//g;
+                $title .= " " . $nextline;
+                ($nextline, $nextref) = $self->shiftline();
+            }
+            # Now the title should be complete, give it to translation.
+            my $t = $self->translate($title, $ref, "Pandoc title block", "wrap" => 1);
+            $t = Locale::Po4a::Po::wrap($t);
+            my $first_line = 1;
+            foreach my $translated_line (split /\n/, $t) {
+                if ($first_line) {
+                    $first_line = 0;
+                    $self->pushline("% " . $translated_line . "\n");
+                } else {
+                    $self->pushline("  " . $translated_line . "\n");
+                }
+            }
         }
-    } else {
-        return parse_fallback($self,$line,$ref,$paragraph,$wrapped_mode,$expect_header,$end_of_paragraph);
+        else {
+            # Title has been empty, fetch the next line
+            # if that are the authors.
+            $self->pushline("%\n");
+            ($nextline, $nextref) = $self->shiftline();
+        }
+        # The next line can contain the author or an empty string.
+        if ($nextline =~ /^%(.*)$/) {
+            my $author_ref = $nextref;
+            my $authors = $1;
+            # If there's some text, look for continuation lines
+            if (length($authors)) {
+                ($nextline, $nextref) = $self->shiftline();
+                while ($nextline =~ /^\s+(.+)$/) {
+                    $nextline = $1;
+                    $authors .= ";" . $nextline;
+                    ($nextline, $nextref) = $self->shiftline();
+                }
+                # Now the authors should be complete, split them by semicolon
+                my $first_line = 1;
+                foreach my $author (split /;/, $authors) {
+                    $author =~ s/^\s+|\s+$//g;
+                    # Skip empty authors
+                    next unless length($author);
+                    my $t = $self->translate($author, $author_ref, "Pandoc title block");
+                    if ($first_line) {
+                        $first_line = 0;
+                        $self->pushline("% " . $t . "\n");
+                    } else {
+                        $self->pushline("  " . $t . "\n");
+                    }
+                }
+            }
+            else {
+                # Authors has been empty, fetch the next line
+                # if that is the date.
+                $self->pushline("%\n");
+                ($nextline, $nextref) = $self->shiftline();
+            }
+            # The next line can contain the date.
+            if ($nextline =~ /^%(.*)$/) {
+                my $date = $1;
+                # Remove leading and trailing whitespace
+                $date =~ s/^\s+|\s+$//g;
+                my $t = $self->translate($date, $nextref, "Pandoc title block");
+                $self->pushline("% " . $t . "\n");
+                # Now we're done with the bibliographic information
+                return;
+            }
+        }
+        # The line did not start with a percent sign, to stop
+        # parsing bibliographic information and return the
+        # line to the normal parsing.
+        $self->unshiftline($nextline, $nextref);
+        return;
     }
-    return ($paragraph,$wrapped_mode,$expect_header,$end_of_paragraph);
 }
 
 sub parse_markdown {
     my ($self,$line,$ref,$paragraph,$wrapped_mode,$expect_header,$end_of_paragraph) = @_;
+    if ($expect_header) {
+        # Either we find and parse the bibliographic information,
+        # or there is no line with a percent sign.
+        # Anyway, stop expecting header information for the next run.
+        $expect_header = 0;
+        if ($line =~ /^%(.*)$/) {
+            parse_markdown_bibliographic_information($self, $line, $ref);
+            return ($paragraph,$wrapped_mode,$expect_header,$end_of_paragraph);
+        }
+    }
     if (($line =~ m/^(={4,}|-{4,})$/) and
         (defined($paragraph) ) and
         ($paragraph =~ m/^[^\n]*\n$/s) and
@@ -754,14 +538,17 @@ sub parse_markdown {
         $wrapped_mode = 0;
         my $level = $line;
         $level =~ s/^(.).*$/$1/;
+        # Remove the trailing newline from the title
+        chomp($paragraph);
         my $t = $self->translate($paragraph,
                                  $self->{ref},
                                  "Title $level",
                                  "wrap" => 0);
-        $self->pushline($t);
+        # Add the newline again for the output
+        $self->pushline($t . "\n");
         $paragraph="";
         $wrapped_mode = 1;
-        $self->pushline(($level x (length($t)-1))."\n");
+        $self->pushline(($level x length($t))."\n");
     } elsif ($line =~ m/^(#{1,6})( +)(.*?)( +\1)?$/) {
         my $titlelevel1 = $1;
         my $titlespaces = $2;

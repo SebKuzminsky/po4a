@@ -33,10 +33,6 @@ sub perl_scripts {
             'po4a-normalize', 'po4a', 'scripts/msguntypot');
 }
 
-sub shell_scripts {
-    return ('share/po4a-build');
-}
-
 # Update po/bin/*.po files
 sub ACTION_binpo {
     my $self = shift;
@@ -45,13 +41,11 @@ sub ACTION_binpo {
     $self->depends_on('code');
     $self->make_files_writable("po/bin");
 
-    my @perl_files = sort((perl_scripts(), @{$self->rscan_dir('lib',qr{\.pm$})}));
-    my @shell_files = sort(shell_scripts());
-    my @all_files = (@perl_files, @shell_files);
+    my @all_files = sort((perl_scripts(), @{$self->rscan_dir('lib',qr{\.pm$})}));
     unless ($self->up_to_date(\@all_files, "po/bin/po4a.pot")) {
-        print "XX Update po/bin/po4a-perl.pot\n";
+        print "XX Update po/bin/po4a.pot\n";
         chdir "po/bin";
-        $sources = join ("", map {" ../../".$_ } @perl_files);
+        $sources = join ("", map {" ../../".$_ } @all_files);
         $cmd = "xgettext ";
         $cmd .= "--from-code=utf-8 ";
         $cmd .= "-L Perl ";
@@ -60,29 +54,11 @@ sub ACTION_binpo {
         $cmd .= "--package-name po4a ";
         $cmd .= "--package-version ".$self->dist_version()." ";
         $cmd .= "$sources ";
-        $cmd .= "-o po4a-perl.pot";
+        $cmd .= "-o po4a.pot.new";
         system($cmd) && die;
-
-        print "XX Update po/bin/po4a-shell.pot\n";
-        $sources = join ("", map {" ../../".$_ } @shell_files);
-        $cmd = "xgettext ";
-        $cmd .= "--from-code=utf-8 ";
-        $cmd .= "-L shell ";
-        $cmd .= "--add-comments ";
-        $cmd .= "--msgid-bugs-address po4a\@packages.debian.org ";
-        $cmd .= "--package-name po4a ";
-        $cmd .= "--package-version ".$self->dist_version()." ";
-        $cmd .= "$sources ";
-        $cmd .= "-o po4a-shell.pot";
-        system($cmd) && die;
-
-        $cmd = "msgcat po4a-perl.pot po4a-shell.pot -o po4a.pot.new";
-        system($cmd) && die;
+	
         chdir "../..";
-
-        unlink "po/bin/po4a-perl.pot" || die;
-        unlink "po/bin/po4a-shell.pot" || die;
-
+	
         if ( -e "po/bin/po4a.pot") {
             $diff = qx(diff -q -I'#:' -I'POT-Creation-Date:' -I'PO-Revision-Date:' po/bin/po4a.pot po/bin/po4a.pot.new);
             if ( $diff eq "" ) {
@@ -154,7 +130,7 @@ sub ACTION_dist {
     $self->depends_on('distcheck');
     $self->depends_on('test');
     $self->depends_on('binpo');
-    $self->depends_on('manpo');
+    $self->depends_on('docpo');
     $self->depends_on('distdir');
 
     my $dist_dir = $self->dist_dir;
@@ -169,7 +145,7 @@ sub ACTION_dist {
     $self->delete_filetree($dist_dir);
 }
 
-sub ACTION_manpo {
+sub ACTION_docpo {
     my $self = shift;
     $self->depends_on('code');
     $self->make_files_writable("po/pod");
@@ -177,7 +153,7 @@ sub ACTION_manpo {
     my $cmd = "PERL5LIB=lib perl po4a "; # Use this version of po4a
     $cmd .= "--previous ";
     $cmd .= "--no-translations ";
-    $cmd .= "--msgid-bugs-address po4a-devel\@lists.alioth.debian.org ";
+    $cmd .= "--msgid-bugs-address devel\@lists.po4a.org ";
     $cmd .= "--package-name po4a ";
     $cmd .= "--package-version ".$self->dist_version()." ";
     $cmd .= $ENV{PO4AFLAGS}." " if defined($ENV{PO4AFLAGS});
@@ -188,7 +164,7 @@ sub ACTION_manpo {
 
 sub ACTION_man {
     my $self = shift;
-    $self->depends_on('manpo');
+    $self->depends_on('docpo');
 
     use Pod::Man;
     use Encode;
@@ -214,9 +190,7 @@ sub ACTION_man {
     File::Path::mkpath( $man3path, 0, oct(755) ) or die;
     File::Path::mkpath( $man5path, 0, oct(755) ) or die;
     File::Path::mkpath( $man7path, 0, oct(755) ) or die;
-    copy ( File::Spec->catdir("doc", "po4a-build.conf.5.pod"), $man5path) or die;
     copy ( File::Spec->catdir("doc", "po4a.7.pod"), $man7path) or die;
-    copy ( File::Spec->catdir("doc", "po4a-runtime.7.pod"), $man7path) or die;
     foreach $file (perl_scripts()) {
         $file =~ m,([^/]*)$,;
         copy($file, File::Spec->catdir($man1path, "$1.1p.pod")) or die;
@@ -264,7 +238,7 @@ sub ACTION_man {
     }
 
     # Install the manpages written in XML DocBook
-    foreach $file (qw(po4a-build.xml po4aman-display-po.xml po4apod-display-po.xml)) {
+    foreach $file (qw(po4aman-display-po.xml po4apod-display-po.xml)) {
         copy ( File::Spec->catdir("share", "doc", $file), $man1path) or die;
     }
     foreach $file (@{$self->rscan_dir($manpath, qr{\.xml$})}) {
@@ -280,6 +254,7 @@ sub ACTION_man {
 sub ACTION_postats {
     my $self = shift;
     $self->depends_on('binpo');
+    $self->depends_on('docpo');
     $self->postats( File::Spec->catdir("po", "bin"));
     $self->postats( File::Spec->catdir("po", "pod"));
     $self->postats( File::Spec->catdir("po", "www")) if -d File::Spec->catdir("po", "www");

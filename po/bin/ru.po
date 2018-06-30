@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.52-pre\n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2018-02-09 21:56+0100\n"
+"POT-Creation-Date: 2018-06-16 23:34+0200\n"
 "PO-Revision-Date: 2018-02-22 14:54+0000\n"
 "Last-Translator: Igor <f2404@yandex.ru>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/po4a/po4a/ru/>\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: ../../lib/Locale/Po4a/AsciiDoc.pm:134 ../../lib/Locale/Po4a/Man.pm:491
 #: ../../lib/Locale/Po4a/Po.pm:187 ../../lib/Locale/Po4a/RubyDoc.pm:78
 #: ../../lib/Locale/Po4a/Sgml.pm:251 ../../lib/Locale/Po4a/TeX.pm:1636
-#: ../../lib/Locale/Po4a/Text.pm:199 ../../lib/Locale/Po4a/Xml.pm:537
+#: ../../lib/Locale/Po4a/Text.pm:190 ../../lib/Locale/Po4a/Xml.pm:537
 #: ../../lib/Locale/Po4a/Yaml.pm:39
 #, perl-format
 msgid "Unknown option: %s"
@@ -36,12 +36,12 @@ msgid "Unable to parse macro definition: %s"
 msgstr "Не удалось разобрать макроопределение: %s"
 
 #: ../../lib/Locale/Po4a/AsciiDoc.pm:241 ../../lib/Locale/Po4a/TeX.pm:1032
-#: ../../po4a:823 ../../po4a:1019 ../../po4a-translate:264
+#: ../../po4a:837 ../../po4a:1033 ../../po4a-translate:264
 #, perl-format
 msgid "Can't open %s: %s"
 msgstr "Не удалось открыть %s: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:271 ../../lib/Locale/Po4a/Text.pm:426
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:271
 #, perl-format
 msgid ""
 "Detection of two line titles failed at %s\n"
@@ -317,7 +317,7 @@ msgstr "Невозможно разобрать аргументы команд�
 msgid "Unsupported font in: '%s'."
 msgstr "Неподдерживаемый шрифт в: «%s»."
 
-#: ../../lib/Locale/Po4a/Man.pm:2026
+#: ../../lib/Locale/Po4a/Man.pm:2057
 msgid ""
 "This page defines a new macro with '.de'. Since po4a is not a real groff "
 "parser, this is not supported."
@@ -325,11 +325,11 @@ msgstr ""
 "В этой странице определяется новый макрос с помощью «.de». Данная команда не "
 "поддерживается, так как po4a не является полноценным анализатором groff."
 
-#: ../../lib/Locale/Po4a/Man.pm:2092
+#: ../../lib/Locale/Po4a/Man.pm:2123
 msgid "The .ie macro must be followed by a .el macro."
 msgstr "После макроса .ie должен быть макрос .el."
 
-#: ../../lib/Locale/Po4a/Man.pm:2118
+#: ../../lib/Locale/Po4a/Man.pm:2149
 #, perl-format
 msgid ""
 "This page uses conditionals with '%s'. Since po4a is not a real groff "
@@ -338,7 +338,7 @@ msgstr ""
 "В этой странице используются условия «%s». Данная команда не поддерживается, "
 "так как po4a не является полноценным анализатором groff."
 
-#: ../../lib/Locale/Po4a/Man.pm:2159
+#: ../../lib/Locale/Po4a/Man.pm:2190
 #, perl-format
 msgid ""
 "This page includes another file with '%s'. Do not forget to translate this "
@@ -347,7 +347,7 @@ msgstr ""
 "В эту страницу включается другой файл с помощью «%s». Не забудьте его "
 "перевести («%s»)."
 
-#: ../../lib/Locale/Po4a/Man.pm:2323
+#: ../../lib/Locale/Po4a/Man.pm:2354
 #, perl-format
 msgid ""
 "This page uses the '%s' request with the number of lines in argument. This "
@@ -356,7 +356,7 @@ msgstr ""
 "В данной странице выполняется запрос «%s» с параметром, который содержит "
 "несколько строк. Это пока не поддерживается."
 
-#: ../../lib/Locale/Po4a/Man.pm:2338
+#: ../../lib/Locale/Po4a/Man.pm:2369
 #, perl-format
 msgid ""
 "This page uses the '%s' request. This request is only supported when no "
@@ -431,7 +431,7 @@ msgid "Can't unlink %s: %s."
 msgstr "Не удалось удалить %s: %s."
 
 #: ../../lib/Locale/Po4a/Po.pm:563 ../../lib/Locale/Po4a/Po.pm:568
-#: ../../po4a:1404
+#: ../../po4a:1418
 #, perl-format
 msgid "Can't move %s to %s: %s."
 msgstr "Не удалось переместить %s в %s: %s."
@@ -762,13 +762,7 @@ msgstr "register_generic_command: неподдерживаемый формат:
 msgid "The first argument of \\begin is mandatory."
 msgstr "Первый аргумент для \\begin обязателен."
 
-#: ../../lib/Locale/Po4a/Text.pm:242
-msgid "asciidoc option deprecated, use asciidoc format instead of text"
-msgstr ""
-"Параметр \"asciidoc\" устарел, используйте формат \"asciidoc\" вместо \"text"
-"\""
-
-#: ../../lib/Locale/Po4a/Text.pm:353
+#: ../../lib/Locale/Po4a/Text.pm:359
 #, perl-format
 msgid "Unrecognized section: %s"
 msgstr "Нераспознанная секция: %s"
@@ -951,98 +945,98 @@ msgstr ""
 msgid "Tag '%s' both in the %s and %s categories."
 msgstr "Тег «%s» одновременно входит в категории %s и %s."
 
-#: ../../po4a:719 ../../po4a:723
+#: ../../po4a:733 ../../po4a:737
 #, perl-format
 msgid "Invalid %s. Directory %s does not exist."
 msgstr "Неправильный %s. Каталог %s не существует."
 
-#: ../../po4a:756 ../../po4a:1001
+#: ../../po4a:770 ../../po4a:1015
 #, perl-format
 msgid "Unparsable argument '%s' (%s)."
 msgstr "Невозможно разобрать аргумент «%s» (%s)."
 
-#: ../../po4a:790
+#: ../../po4a:804
 #, perl-format
 msgid "failed to execute '%s': %s."
 msgstr "ошибка при выполнении «%s»: %s."
 
-#: ../../po4a:794
+#: ../../po4a:808
 #, perl-format
 msgid "'%s' died with signal %d, with coredump."
 msgstr "Работа «%s» завершилась по сигналу %d, создан coredump."
 
-#: ../../po4a:798
+#: ../../po4a:812
 #, perl-format
 msgid "'%s' died with signal %d, without coredump."
 msgstr "Работа «%s» завершилась по сигналу %d без создания coredump."
 
-#: ../../po4a:803
+#: ../../po4a:817
 #, perl-format
 msgid "'%s' exited with value %d."
 msgstr "Выполнение «%s» завершилось со значением %d."
 
-#: ../../po4a:807
+#: ../../po4a:821
 #, perl-format
 msgid "Error: %s"
 msgstr "Ошибка: %s"
 
 #. Check file existence
-#: ../../po4a:813 ../../po4a-gettextize:229 ../../po4a-normalize:155
+#: ../../po4a:827 ../../po4a-gettextize:229 ../../po4a-normalize:155
 #: ../../po4a-translate:208 ../../po4a-translate:209 ../../po4a-updatepo:253
 #: ../../scripts/msguntypot:164 ../../scripts/msguntypot:166
 #, perl-format
 msgid "File %s does not exist."
 msgstr "Файл %s не существует."
 
-#: ../../po4a:836 ../../po4a:1030
+#: ../../po4a:850 ../../po4a:1044
 #, perl-format
 msgid "Unknown variable: %s"
 msgstr "Неизвестная переменная: %s"
 
-#: ../../po4a:846
+#: ../../po4a:860
 #, perl-format
 msgid "Syntax error: %s"
 msgstr "Синтаксическая ошибка: %s"
 
-#: ../../po4a:874 ../../po4a:886
+#: ../../po4a:888 ../../po4a:900
 #, perl-format
 msgid "'%s' redeclared"
 msgstr "Повторное объявление «%s»"
 
-#: ../../po4a:879
+#: ../../po4a:893
 #, perl-format
 msgid "Unparsable argument '%s'."
 msgstr "Невозможно разобрать аргумент «%s»."
 
-#: ../../po4a:892
+#: ../../po4a:906
 msgid "The list of languages cannot be set twice."
 msgstr "Список языков не может быть задан дважды."
 
-#: ../../po4a:895
+#: ../../po4a:909
 msgid "The POT file cannot be set twice."
 msgstr "POT-файл не может задаваться дважды."
 
-#: ../../po4a:902
+#: ../../po4a:916
 #, perl-format
 msgid "'%s' is not a directory"
 msgstr "«%s» не является каталогом"
 
-#: ../../po4a:906
+#: ../../po4a:920
 #, perl-format
 msgid "Cannot list the '%s' directory"
 msgstr "Не удалось получить содержимое каталога «%s»"
 
-#: ../../po4a:917
+#: ../../po4a:931
 #, perl-format
 msgid "too many POT files: %s %s"
 msgstr "слишком много POT-файлов: %s %s"
 
-#: ../../po4a:927
+#: ../../po4a:941
 #, perl-format
 msgid "no PO files found in %s"
 msgstr "PO-файлы не найдены в %s"
 
-#: ../../po4a:938
+#: ../../po4a:952
 #, perl-format
 msgid ""
 "The '%s' master file was specified earlier in the configuration file.  This "
@@ -1051,107 +1045,107 @@ msgstr ""
 "Мастер-файл «%s» уже задан в конфигурационном файле. Это может вызвать "
 "проблемы с параметрами."
 
-#: ../../po4a:944
+#: ../../po4a:958
 #, perl-format
 msgid "The '%s' master file does not exist."
 msgstr "Мастер-файл «%s» не существует."
 
-#: ../../po4a:1005
+#: ../../po4a:1019
 msgid "The translated and master file are the same."
 msgstr "Мастер-файл и файл перевода один и тот же."
 
-#: ../../po4a:1045
+#: ../../po4a:1059
 #, perl-format
 msgid "Translation of %s in %s redefined"
 msgstr "Перевод %s в %s переопределён"
 
-#: ../../po4a:1073
+#: ../../po4a:1087
 #, perl-format
 msgid "Unparsable command '%s'."
 msgstr "Невозможно разобрать команду «%s»."
 
 #. don't care about error here
-#: ../../po4a:1079
+#: ../../po4a:1093
 msgid "po4a_paths not declared. Dunno where to find the POT and PO files"
 msgstr "Не объявлены пути для po4a. Неизвестно где искать POT и PO файлы"
 
-#: ../../po4a:1092
+#: ../../po4a:1106
 #, perl-format
 msgid "Cannot parse option line (missing >%s<?): %s"
 msgstr "Невозможно разобрать параметр в строке (отсутствует >%s<?): %s"
 
-#: ../../po4a:1121
+#: ../../po4a:1135
 msgid "Split mode, creating a temporary POT"
 msgstr "Раздельный режим, создание временного POT"
 
-#: ../../po4a:1124
+#: ../../po4a:1138
 msgid "Disabling --translate-only option, it is not supported in split mode"
 msgstr ""
 "Выключение параметра --translate-only, он не поддерживается в раздельном "
 "режиме"
 
-#: ../../po4a:1177 ../../po4a:1329 ../../po4a-updatepo:281
+#: ../../po4a:1191 ../../po4a:1343 ../../po4a-updatepo:281
 #, perl-format
 msgid "Updating %s:"
 msgstr "Обновление %s:"
 
-#: ../../po4a:1180 ../../po4a:1339 ../../po4a-updatepo:292
+#: ../../po4a:1194 ../../po4a:1353 ../../po4a-updatepo:292
 #, perl-format
 msgid "Creating %s:"
 msgstr "Создание %s:"
 
-#: ../../po4a:1238 ../../po4a:1268 ../../po4a:1368 ../../po4a-updatepo:263
+#: ../../po4a:1252 ../../po4a:1282 ../../po4a:1382 ../../po4a-updatepo:263
 #, perl-format
 msgid "Can't create a temporary POT file: %s"
 msgstr "Не удалось создать временный POT файл: %s"
 
-#: ../../po4a:1251
+#: ../../po4a:1265
 #, perl-format
 msgid " (%d entries)"
 msgstr " (%d записей)"
 
-#: ../../po4a:1277 ../../po4a:1394
+#: ../../po4a:1291 ../../po4a:1408
 #, perl-format
 msgid "Can't create directory '%s': %s"
 msgstr "Не удалось создать каталог «%s»: %s"
 
-#: ../../po4a:1299 ../../scripts/msguntypot:203
+#: ../../po4a:1313 ../../scripts/msguntypot:203
 #, perl-format
 msgid "Can't create a temporary PO file: %s"
 msgstr "Не удалось создать временный PO файл: %s"
 
-#: ../../po4a:1459
+#: ../../po4a:1473
 #, perl-format
 msgid "%s doesn't need to be updated."
 msgstr "%s не требует обновления."
 
-#: ../../po4a:1507
+#: ../../po4a:1533
 #, perl-format
 msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
 msgstr ""
 "Отброшено %s (%s из %s строк; переведено только %s%%; необходимо %s%%)."
 
-#: ../../po4a:1516
+#: ../../po4a:1547
 #, perl-format
 msgid "Timestamp %s created."
 msgstr "Создана временная метка %s."
 
-#: ../../po4a:1530
+#: ../../po4a:1564
 #, perl-format
 msgid "Timestamp %s removed."
 msgstr "Удалена временная метка %s."
 
-#: ../../po4a:1543
+#: ../../po4a:1577
 #, perl-format
 msgid "Addendum %s does NOT apply to %s (translation discarded)."
 msgstr "Дополнение %s НЕ применено к %s (перевод отброшен)."
 
-#: ../../po4a:1558
+#: ../../po4a:1592
 #, perl-format
 msgid "%s is %s%% translated (%s strings)."
 msgstr "%s переведено %s%% (%s строк)."
 
-#: ../../po4a:1561 ../../po4a-translate:240
+#: ../../po4a:1595 ../../po4a-translate:240
 #, perl-format
 msgid "%s is %s%% translated (%s of %s strings)."
 msgstr "%s переведено %s%% (%s из %s строк)."
@@ -1229,126 +1223,84 @@ msgstr "Обработка %s"
 msgid "Modified %d entries in %d files."
 msgstr "Изменено %d записей в %d файлах."
 
-#. print out help message
-#: ../../share/po4a-build:91
-#, sh-format
-msgid ""
-"\n"
-"po4a-build - po4a frontend\n"
-"\n"
-"Syntax: po4a-build\n"
-"        po4a-build --pot-only\n"
-"\n"
-"Commands:\n"
-"-?|-h|--help|--version:     print this help message and exit\n"
-"--pot-only:                 only create the POT file\n"
-"\n"
-"Options:\n"
-"-f|--file FILE:             po4a-build.conf config file path\n"
-"\n"
-msgstr ""
-"\n"
-"po4a-build - внешний интерфейс к po4a\n"
-"\n"
-"Синтаксис: po4a-build\n"
-"        po4a-build --pot-only\n"
-"\n"
-"Команды:\n"
-"-?|-h|--help|--version:     показать эту справку и закончить работу\n"
-"--pot-only:                 создать только файл POT\n"
-"\n"
-"Параметры:\n"
-"-f|--file ФАЙЛ:             путь к файлу настройки po4a-build.conf\n"
-"\n"
+#~ msgid "asciidoc option deprecated, use asciidoc format instead of text"
+#~ msgstr ""
+#~ "Параметр \"asciidoc\" устарел, используйте формат \"asciidoc\" вместо "
+#~ "\"text\""
 
-#: ../../share/po4a-build:124
-#, sh-format
-msgid "Unrecognised command: $com"
-msgstr "Нераспознанная команда: $com"
+#~ msgid ""
+#~ "\n"
+#~ "po4a-build - po4a frontend\n"
+#~ "\n"
+#~ "Syntax: po4a-build\n"
+#~ "        po4a-build --pot-only\n"
+#~ "\n"
+#~ "Commands:\n"
+#~ "-?|-h|--help|--version:     print this help message and exit\n"
+#~ "--pot-only:                 only create the POT file\n"
+#~ "\n"
+#~ "Options:\n"
+#~ "-f|--file FILE:             po4a-build.conf config file path\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "po4a-build - внешний интерфейс к po4a\n"
+#~ "\n"
+#~ "Синтаксис: po4a-build\n"
+#~ "        po4a-build --pot-only\n"
+#~ "\n"
+#~ "Команды:\n"
+#~ "-?|-h|--help|--version:     показать эту справку и закончить работу\n"
+#~ "--pot-only:                 создать только файл POT\n"
+#~ "\n"
+#~ "Параметры:\n"
+#~ "-f|--file ФАЙЛ:             путь к файлу настройки po4a-build.conf\n"
+#~ "\n"
 
-#. without config, there's nothing to do.
-#: ../../share/po4a-build:132
-#, sh-format
-msgid "Cannot find config file! '$FILE'"
-msgstr "Не удалось найти файл настройки! «$FILE»"
+#~ msgid "Unrecognised command: $com"
+#~ msgstr "Нераспознанная команда: $com"
 
-#. test
-#: ../../share/po4a-build:197 ../../share/po4a-build:247
-#, sh-format
-msgid "Internal po4a from $OURS being used instead of /usr/bin/"
-msgstr "Используется внутренний po4a из $OURS, а не из /usr/bin/"
+#~ msgid "Cannot find config file! '$FILE'"
+#~ msgstr "Не удалось найти файл настройки! «$FILE»"
 
-#. TRANSLATORS: $X contains the name of the manual page
-#: ../../share/po4a-build:258
-#, sh-format
-msgid "Processing untranslated files for $X (1). . ."
-msgstr "Обрабатываются непереведённые файлы для $X (1). . ."
+#~ msgid "Internal po4a from $OURS being used instead of /usr/bin/"
+#~ msgstr "Используется внутренний po4a из $OURS, а не из /usr/bin/"
 
-#. TRANSLATORS: $X3 contains the name of the manual page
-#: ../../share/po4a-build:265
-#, sh-format
-msgid "Processing untranslated files for $X3 (3). . ."
-msgstr "Обрабатываются непереведённые файлы для $X3 (3). . ."
+#~ msgid "Processing untranslated files for $X (1). . ."
+#~ msgstr "Обрабатываются непереведённые файлы для $X (1). . ."
 
-#. TRANSLATORS: $file contains the basename of the POD file
-#: ../../share/po4a-build:277
-#, sh-format
-msgid "Processing untranslated files for $file (1) . . ."
-msgstr "Обрабатываются непереведённые файлы для $file (1) . . ."
+#~ msgid "Processing untranslated files for $X3 (3). . ."
+#~ msgstr "Обрабатываются непереведённые файлы для $X3 (3). . ."
 
-#. TRANSLATORS: $name contains the Perl module name
-#: ../../share/po4a-build:285
-#, sh-format
-msgid "Processing untranslated files for $name (3) . . ."
-msgstr "Обрабатываются непереведённые файлы для $name (3) . . ."
+#~ msgid "Processing untranslated files for $file (1) . . ."
+#~ msgstr "Обрабатываются непереведённые файлы для $file (1) . . ."
 
-#. TRANSLATORS: $file contains the basename of the POD file
-#: ../../share/po4a-build:293
-#, sh-format
-msgid "Processing untranslated files for $file (5) . . ."
-msgstr "Обрабатываются непереведённые файлы для $file (5) . . ."
+#~ msgid "Processing untranslated files for $name (3) . . ."
+#~ msgstr "Обрабатываются непереведённые файлы для $name (3) . . ."
 
-#. TRANSLATORS: $file contains the basename of the POD file
-#: ../../share/po4a-build:307
-#, sh-format
-msgid "Processing untranslated files for $file (7) . . ."
-msgstr "Обрабатываются непереведённые файлы для $file (7) . . ."
+#~ msgid "Processing untranslated files for $file (5) . . ."
+#~ msgstr "Обрабатываются непереведённые файлы для $file (5) . . ."
 
-#. TRANSLATORS: $l contains language code, $X contains the name of the manual page
-#: ../../share/po4a-build:328
-#, sh-format
-msgid "Processing $l translations for $X (1). . ."
-msgstr "Обрабатываются переводы с кодом языка $l для $X (1). . ."
+#~ msgid "Processing untranslated files for $file (7) . . ."
+#~ msgstr "Обрабатываются непереведённые файлы для $file (7) . . ."
 
-#. TRANSLATORS: $l contains language code, $X3 contains the name of the manual page
-#: ../../share/po4a-build:337
-#, sh-format
-msgid "Processing $l translations for $X3 (3). . ."
-msgstr "Обрабатываются переводы с кодом языка $l для $X3 (3). . ."
+#~ msgid "Processing $l translations for $X (1). . ."
+#~ msgstr "Обрабатываются переводы с кодом языка $l для $X (1). . ."
 
-#. TRANSLATORS: $l contains language code, $file contains the basename of the POD file
-#: ../../share/po4a-build:351
-#, sh-format
-msgid "Processing $l translations for $file (1). . ."
-msgstr "Обрабатываются переводы с кодом языка $l для $file (1). . ."
+#~ msgid "Processing $l translations for $X3 (3). . ."
+#~ msgstr "Обрабатываются переводы с кодом языка $l для $X3 (3). . ."
 
-#. TRANSLATORS: $l contains language code, $name contains the Perl module name
-#: ../../share/po4a-build:362
-#, sh-format
-msgid "Processing $l translations for $name (3). . ."
-msgstr "Обрабатываются переводы с кодом языка $l для $name (3). . ."
+#~ msgid "Processing $l translations for $file (1). . ."
+#~ msgstr "Обрабатываются переводы с кодом языка $l для $file (1). . ."
 
-#. TRANSLATORS: $l contains language code, $file contains the basename of the POD file
-#: ../../share/po4a-build:372
-#, sh-format
-msgid "Processing $l translations for $file (5). . ."
-msgstr "Обрабатываются переводы с кодом языка $l для $file (5). . ."
+#~ msgid "Processing $l translations for $name (3). . ."
+#~ msgstr "Обрабатываются переводы с кодом языка $l для $name (3). . ."
 
-#. TRANSLATORS: $l contains language code, $file contains the basename of the POD file
-#: ../../share/po4a-build:388
-#, sh-format
-msgid "Processing $l translations for $file (7). . ."
-msgstr "Обрабатываются переводы с кодом языка $l для $file (7). . ."
+#~ msgid "Processing $l translations for $file (5). . ."
+#~ msgstr "Обрабатываются переводы с кодом языка $l для $file (5). . ."
+
+#~ msgid "Processing $l translations for $file (7). . ."
+#~ msgstr "Обрабатываются переводы с кодом языка $l для $file (7). . ."
 
 #~ msgid "Unable to parse attribute list: [%s]"
 #~ msgstr "Не удалось разобрать список атрибутов: [%s]"
