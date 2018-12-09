@@ -7,7 +7,7 @@
 # This code is an adapted version of sgmlspl (SGML postprocessor for the
 #   SGMLS and NSGMLS parsers) which was:
 #
-# Copyright (c) 1995 by David Megginson <dmeggins@aix1.uottawa.ca>
+# Copyright © 1995 David Megginson <dmeggins@aix1.uottawa.ca>
 #
 # The adaptation for po4a was done by Denis Barbier <barbier@linuxfr.org>,
 # Martin Quinson (mquinson#debian.org) and others.
@@ -563,7 +563,7 @@ sub parse_file {
     # Remove <![ IGNORE [ sections
     # FIXME: we don't support included PO4A-beg-
     my $tmp1 = $origfile;
-    while ($tmp1 =~ m/^(.*?)({PO4A-beg-\s*IGNORE\s*}(?:.+?)<po4aend>)(.*)$/s)
+    while ($tmp1 =~ m/^(.*?)(\{PO4A-beg-\s*IGNORE\s*}(?:.+?)<po4aend>)(.*)$/s)
     {
         my ($begin,$ignored,$end) = ($1, $2, $3);
         my @begin   = split(/\n/, $begin);
@@ -1266,7 +1266,7 @@ sub end_paragraph {
 This module is an adapted version of sgmlspl (SGML postprocessor for the
 ONSGMLS parser) which was:
 
- Copyright (c) 1995 by David Megginson <dmeggins@aix1.uottawa.ca>
+ Copyright © 1995 David Megginson <dmeggins@aix1.uottawa.ca>
 
 The adaptation for po4a was done by:
 
@@ -1275,8 +1275,8 @@ The adaptation for po4a was done by:
 
 =head1 COPYRIGHT AND LICENSE
 
- Copyright (c) 1995 by David Megginson <dmeggins@aix1.uottawa.ca>
- Copyright 2002, 2003, 2004, 2005 by SPI, inc.
+ Copyright © 1995 David Megginson <dmeggins@aix1.uottawa.ca>.
+ Copyright © 2002-2005 SPI, Inc.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).

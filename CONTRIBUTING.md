@@ -1,5 +1,9 @@
-This project welcomes contributions! And this file intend to get you
-at full speed as quickly as possible.
+# po4a welcomes contributions! 
+
+Even if you never contributed to any Open Source project in the past,
+you are welcome: we are willing to help and mentor you here. Check on 
+[First Timer](https://www.firsttimersonly.com/) to get started with 
+the basics of Open Source development and Social Coding!
 
 # Software Architecture
 
@@ -8,12 +12,12 @@ specific parsers in charge of separating the document structure from
 the translatable content, and to reinject the translated content back
 into the structure.
 
-You can learn more on TransTractors in 
+You can learn more on TransTractors in
 [their documentation](https://po4a.org/man/man3/Locale::Po4a::TransTractor.3pm.php),
-or by browsing the code of 
+or by browsing the code of
 [all existing ones](https://github.com/mquinson/po4a/tree/master/lib/Locale/Po4a).
 Also don't miss the [project overview](https://po4a.org/man/man7/po4a.7.php)
-if you did not read it yet. 
+if you did not read it yet.
 
 Several binaries are built around these TransTractors, each of them
 being dedicated to one step of the [translation workflow](https://po4a.org/man/man7/po4a.7.php#lbAJ)
@@ -31,17 +35,20 @@ files and translations on need.
 # Finding something to hack
 
 - Check the [GitHub issues](https://github.com/mquinson/po4a/issues).
-  Search in particular for the tasks are marked "new comer", as they
-  should be accessible even if you're just starting with the po4a
-  development.
+  Search in particular for the tasks are marked [beginner
+  friendly](https://github.com/mquinson/po4a/issues?q=is%3Aissue+is%3Aopen+label%3A%22beginner+friendly%22),
+  as they should be accessible even if you're just starting with the
+  po4a development.
 - Check the [Debian bug reports](https://bugs.debian.org/cgi-bin/pkgreport.cgi?src=po4a),
   since most of these reports are not related to Debian in any way.
   Actually, they should be forwarded to the GitHub issue tracker, but
-  it's easier to read them on Debian directly. 
+  it's easier to read them on Debian directly.
   [Some of them](https://bugs.debian.org/cgi-bin/pkgreport.cgi?src=po4a;tag=newcomer)
-  are tagged as "new comer".
-- Check the [TODO] file in the archive. This file often gets outdated,
-  but you may find some inspiring notes.
+  are tagged as "new comer" (this list may be currently empty when you
+  click it, though).
+- Check the [TODO](https://github.com/mquinson/po4a/blob/master/TODO)
+  file in the archive. This file often gets outdated, but you may find
+  some inspiring notes. 
 - Add support for a new format. The best is to add support for a
   format that you need yourself, or to convince some prospective users.
   There is no better testing to a new TransTractor than the
@@ -49,15 +56,12 @@ files and translations on need.
   forget to add all relevant tests to your format.
 - po4a comes with a fairly large amount of documentation. You are
   welcome to fix or report any typo or errors. It would be good to improve
-  this documentation, for example with the [Google documentation style
-  guide](https://developers.googleblog.com/2017/09/making-google-developers-documentation.html)
-  but remember that our documentation is translated is a dozen of
-  languages. Improve it as much as possible, but avoid superfluous
-  changes when possible.
+  this documentation to follow the [Best Practices](http://www.writethedocs.org/guide/) 
+  from WriteTheDocs, and many sections would need a full rewriting to
+  be in proper english. We should however refrain from superfluous
+  changes when possible to reduce the burden on our translators (hint:
+  rephrasing globish to english is NOT a superfluous change).
 
-Finally, we are playing with the idea of reimplementing po4a in Python
-to increase the amount of potential contributors. A proof of concept
-of the TransTractor design in Python would be welcome.
 
 # Testing your changes
 
@@ -82,13 +86,103 @@ ensure that bugs won't resurface in the future.
   docbook-dtds`
 
 When writing or improving a test, you probably want to select the test
-to run, and make it verbose. The tests are executed from the t/tmp
+to run, and make it verbose. The tests are executed from the "_t_"
 directory.
 
 ```
-  ./Build test --test_files t/32-yaml.t verbose=1
+  ./Build test --test_files t/25-yaml.t verbose=1
 ```
 
+## Writing a test
+
+In order to define a new test, you can use some convenience
+helpers. If you follow some conventions, you don't have to
+write much boilerplate code.
+
+Each test is defined using a perl hash with several keys.
+Every test needs to have the key "_doc_", which contains
+a short description of the test.
+
+If you need to test the output of a module, it should suffice
+to define a second key in the hash, named "_normalize_".
+This key points to a string which can be used for the
+script `po4a-normalize`. See for example the YAML tests
+for some easy test definitions.
+
+The "_normalize_" tests expect to find at least four files
+in the corresponding test directory:
+
+1. The master file used as input for po4a.
+2. The expected .pot file, using the same name as the master
+   file. The extension is changed to "_.pot_".
+3. The expected translated file, again using the same name
+   as the master file. The extension is changed to "_.out_".
+4. The expected messages on stderr, again using the same name
+   as the master file. The extension is changed to "_.err_".
+
+Here's an example. If you define the following hash:
+
+```
+push @tests,
+  {
+    'doc'       => "YAML UTF-8 test",
+    'normalize' => "-f yaml -M UTF-8 t-25-yaml/yamlutf8.yaml",
+  };
+```
+
+... you need to have at least the following four files:
+
+```
+t-25-yaml/yamlutf8.yaml
+t-25-yaml/yamlutf8.pot
+t-25-yaml/yamlutf8.out
+t-25-yaml/yamlutf8.err
+```
+
+You can also check that the translation works, using the file
+name of the master file, with the extension changed to
+"_.trans.po_". The actual language does not matter, the
+extension is always the same. Similarly to the above files,
+you also need to add the expected translated output and
+the expected messages from stderr:
+
+```
+t-25-yaml/yamlutf8.trans.po
+t-25-yaml/yamlutf8.trans.out
+t-25-yaml/yamlutf8.trans.err
+```
+
+If you need to have more control over your tests, you can
+use the "_run_" and "_test_" keys in the hash. The "_run_"
+key defines the commands to run; the "_test_" key has
+the commands to check the generated output.
+
+Last, not least, you can mark a test as TODO with the
+hash key "_todo_". Usually, it's best to write a short
+description or to add a link to the online bug report.
+
+Example:
+
+```
+push @tests,
+  {
+    'doc'       => 'WML normalisation test',
+    'normalize' => "-f wml t-22-wml/general.wml",
+    'todo'      => "https://github.com/mquinson/po4a/issues/138",
+  };
+```
+
+# Submitting Your Patch
+
+When submitting a patch, please use the Pull Request feature on GitHub.
+Your PR should be based on the latest code in the master branch.
+Please rebase your PR as needed.
+
+Finally, all PRs should include an update the the NEWS file. Please follow
+the format and briefly describe the change and provide a reference to
+the PR or issue. Please place your update at the bottom of the list
+in the appropriate section for the next, as yet unreleased, version.
+Please add sections as needed for various formats.
 
 # Translating
 
@@ -133,9 +227,9 @@ wlc push
 # Merge the pull request on github
 # Do and commit your local changes
 perl Build.PL
-./Build 
+./Build
 git commit -m "update po files" po
-git push 
+git push
 wlc pull
 wlc unlock
 ```
@@ -164,8 +258,8 @@ wlc pull && wlc unlock
 
 Here is the checklist of things to remember when releasing po4a:
 
-- Integrate all pending translations: 
-  - `wlc commit && wlc push` 
+- Integrate all pending translations:
+  - `wlc commit && wlc push`
   - merge the pull request
   - `git pull`
 - Bump the version number in lib/Locale/Po4a/TransTractor.pm and
@@ -180,10 +274,12 @@ Here is the checklist of things to remember when releasing po4a:
     should not be released to the users)
 - Commit your changes, eg with commit log like "Releasing v0.XXX"
 - Tag the git and push it: `git tag v0.XXX && git push tags`
-- Edit the release on [GitHub](https://github.com/mquinson/po4a/releases).
+- Edit the release on [GitHub](https://github.com/mquinson/po4a/releases ).
   - Reuse the release name and paste the changelog of this release.
   - Also upload the tarball to the github release: the file META.yml
     is missing from the tarball generated automatically (see #115).
 - Announce the release on the Mailing List.
+- Add a News entry to the website, rebuild it, and re-push it
 
 - Put a template in NEWS (using `figlet v0.XXX`)
+- Change the version in lib/Locale/Po4a/TransTractor.pm to 0.XX-alpha

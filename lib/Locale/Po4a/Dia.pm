@@ -7,7 +7,7 @@
 # This code extracts plain text from string tags on uncompressed Dia
 # diagrams.
 #
-# Copyright (c) 2004 by Jordi Vilalta  <jvprat@gmail.com>
+# Copyright © 2004 Jordi Vilalta  <jvprat@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -70,7 +70,7 @@ L<Locale::Po4a::TransTractor(3pm)>, L<Locale::Po4a::Xml(3pm)>, L<po4a(7)|po4a.7>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (c) 2004 by Jordi Vilalta  <jvprat@gmail.com>
+Copyright © 2004 Jordi Vilalta  <jvprat@gmail.com>
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
@@ -83,6 +83,7 @@ use 5.006;
 use strict;
 use warnings;
 
+use Locale::Po4a::Common;
 use Locale::Po4a::Xml;
 
 use vars qw(@ISA);
@@ -95,6 +96,7 @@ sub initialize {
     $self->SUPER::initialize(%options);
     $self->{options}{'nostrip'}=1;
     $self->{options}{'_default_translated'}.=' <dia:string>';
+    print wrap_mod("po4a::dia", dgettext("po4a", "Call treat_options")) if $self->{options}{'debug'};
     $self->treat_options;
 }
 

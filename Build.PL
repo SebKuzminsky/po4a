@@ -7,7 +7,7 @@ my $build = Po4aBuilder->new
   ( module_name => 'po4a',
       license => 'gpl',
       dist_version_from => 'lib/Locale/Po4a/TransTractor.pm', # finds $VERSION
-      requires => {},
+      requires => { 'Pod::Parser' => 0 },   # Used for building po4a itself
       configure_requires => { 'Module::Build' => 0.42 },
       recommends => {'Text::WrapI18N' => 0, # Only used for wrapping long
                                             # error/wraning lines.
@@ -23,6 +23,7 @@ my $build = Po4aBuilder->new
                      'Locale::gettext' => '1.01', # Only used for
                                                   # translating the
                                                   # po4a's messages.
+	             'YAML::Tiny' => 0, # Used by the Yaml module
                     },
       test_requires => {'SGMLS' => 0,             # Needed for the Sgml module.
                         'Unicode::GCString' => 0, # Used by the Text module (asciidoc)

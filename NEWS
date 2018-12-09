@@ -2,6 +2,67 @@ This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
 =======================================================================
+        ___   ____ ____
+__   __/ _ \ | ___| ___|
+\ \ / / | | ||___ \___ \   Happy Saint Nicholas Day (a bit late)
+ \ V /| |_| | ___) |__) |
+  \_/  \___(_)____/____/       (released 2018-12-9)
+
+AsciiDoc:
+ * Fix Asciidoc unindented lists (GitHub's #149)
+ * Make Asciidoc Tables nowrap and support current format (GitHub's #63)
+ * Do not include table fences in pot file (GitHub's #163)
+ * Add option to prevent translation of target of image blocks (GitHub's #164)
+
+Markdown:
+ * Improve markdown ruler parsing, and add test.
+ * Add markdown fenced code block parsing, and add test.
+
+Sgml:
+ * Avoid deprecated unescaped left brace in regex to get ready for Perl 5.32.
+   (Debian's #903735)
+
+TransTractor:
+ * Ensure to split lines before addendum operation without loss or addition of
+   newline.  With this change, addendum behavior is more intuitive.
+   (Debian's #518218, Github's #147, #153)
+
+Wml:
+ * Fix longstanding error regarding comments at the beginning of a file.
+   (Github's #138)
+
+Xml, Docbook:
+ * Document XML tag behavior customization with example to help use case
+   specific customization.  (Debian's #515763)
+ * Debug output enhancement to help people understand what exactly happening
+   inside po4a.
+ * Extensive POD and code comment additions and updates.
+
+po4a tool:
+ * Add pot_in feature to support the secondary master file for the base of
+   POT/PO file generation.
+
+Test:
+ * Add XML test cases with po4a including addendum, tag customization, and
+   pot_in feature.
+
+Translations:
+ * New translation to Chinese and Chinese Simplified, thanks Liu Guang.
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: Estonian, thanks Kristjan Räts.
+ * Updated: French, thanks Brandelune and ButterflyOfFire.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Norwegian Bokmål, thanks Petter Reinholdtsen.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle and Luiz
+   Fernando Ranghetti.
+ * Updated: Russian: thanks Igor.
+ * Updated: Spanish, thanks emma peel and Omar Campagne.
+ * Updated: Swedish, thanks Anders Jonsson.
+ * Updated: Ukrainian, thanks Yuri Chornoivan (українська).
+ * Updated: Vietnamese, thanks Trần Ngọc Quân.
+
+=======================================================================
         ___   ____  _  _
 __   __/ _ \ | ___|| || |
 \ \ / / | | ||___ \| || |_   Back on track. Again.

@@ -60,6 +60,10 @@ Space-separated list of macro definitions.
 
 Space-separated list of style definitions.
 
+=item B<noimagetargets>
+
+By default, the targets of block images are translatable to give opportunity to make the content point to translated images. This can be stopped by setting this option.
+
 =back
 
 =head1 INLINE CUSTOMIZATION
@@ -128,6 +132,7 @@ sub initialize {
     $self->{options}{'macro'}='';
     $self->{options}{'style'}='';
     $self->{options}{'definitions'}='';
+    $self->{options}{'noimagetargets'} = 0;
 
     foreach my $opt (keys %options) {
         die wrap_mod("po4a::asciidoc",
@@ -153,7 +158,7 @@ sub initialize {
     $self->register_attributelist('[icon]');
     $self->register_attributelist('[caption]');
     $self->register_attributelist('[-icons,caption]');
-    $self->register_macro('image_[1,alt,title,link]');
+    $self->register_macro('image_[1,alt,title,link]') unless $self->{options}{'noimagetargets'};
 
     if ($self->{options}{'definitions'}) {
         $self->parse_definition_file($self->{options}{'definitions'})
@@ -325,7 +330,6 @@ sub parse {
                  ($paragraph =~ m/^[^\n]*\n$/s) and
                  # subtract one because chars includes the newline on the paragraph
                  ((chars($paragraph, $self->{TT}{po_in}{encoder}, $ref) - 1) == (length($line)))) {
-
             # Found title
             $wrapped_mode = 0;
             my $level = $line;
@@ -358,7 +362,8 @@ sub parse {
             $self->pushline($titlelevel1.$titlespaces.$t.$titlelevel2."\n");
             @comments=();
             $wrapped_mode = 1;
-        } elsif ($line =~ m/^(\/{4,}|\+{4,}|-{4,}|\.{4,}|\*{4,}|_{4,}|={4,}|~{4,}|\|={3,})$/) {
+        } elsif (($line =~ m/^(\/{4,}|\+{4,}|-{4,}|\.{4,}|\*{4,}|_{4,}|={4,}|~{4,})$/)
+                and (!defined($self->{type}) or (defined($self->{type}) and ($self->{type} !~ /^Table/i)))) {
             # Found one delimited block
             my $t = $line;
             $t =~ s/^(.).*$/$1/;
@@ -548,16 +553,22 @@ sub parse {
             my $macrotarget = $3;
             my $macroparam = $4;
             # Found a macro
-            if ($macrotype eq '::') {
-                do_paragraph($self,$paragraph,$wrapped_mode);
-                $paragraph="";
-                $wrapped_mode = 1;
-                undef $self->{bullet};
-                undef $self->{indent};
+
+            # Don't process include macros in tables, pass them through
+            if (($macroname eq "include") and ($macrotype eq '::') and (defined($self->{type}) and ($self->{type} eq "Table"))) {
+                $paragraph .= $line."\n";
+            } else {
+                if ($macrotype eq '::') {
+                    do_paragraph($self,$paragraph,$wrapped_mode);
+                    $paragraph="";
+                    $wrapped_mode = 1;
+                    undef $self->{bullet};
+                    undef $self->{indent};
+                }
+                my $t = $self->parse_macro($macroname, $macrotype, $macrotarget, $macroparam);
+                $self->pushline("$t\n");
+                @comments=();
             }
-            my $t = $self->parse_macro($macroname, $macrotype, $macrotarget, $macroparam);
-            $self->pushline("$t\n");
-            @comments=();
         } elsif (not defined $self->{verbatim} and
                  ($line !~ m/^\.\./) and ($line =~ m/^\.(\S.*)$/)) {
             my $title = $1;
@@ -575,7 +586,7 @@ sub parse {
             $self->pushline(".$t\n");
             @comments=();
         } elsif (not defined $self->{verbatim} and
-                 ($line =~ m/^(\s*)((?:[-*o+]|(?:[0-9]+[.\)])|(?:[a-z][.\)])|\([0-9]+\)|\.|\.\.)\s+)(.*)$/)) {
+                 ($line =~ m/^(\s*)((?:[-*o+]+|(?:[0-9]+[.\)])|(?:[a-z][.\)])|\([0-9]+\)|\.|\.\.)\s+)(.*)$/)) {
             my $indent = $1||"";
             my $bullet = $2;
             my $text = $3;
@@ -592,8 +603,9 @@ sub parse {
             $paragraph = $text."\n";
             $self->{indent} = "";
             $self->{bullet} = $bullet;
-        } elsif ($line =~ /^\s*$/) {
+        } elsif (($line =~ /^\s*$/) and (!defined($self->{type}) or ($self->{type} ne "Table"))) {
             # Break paragraphs on empty lines or lines containing only spaces
+            # Except when we are in a table
 	    print STDERR "Empty new line. Wrap: ".(defined($self->{verbatim})?"yes. ":"no. ")."\n"
 		if $debug{parse};
             do_paragraph($self,$paragraph,$wrapped_mode);
@@ -645,6 +657,34 @@ sub parse {
             do_paragraph($self,$paragraph,$wrapped_mode);
             $paragraph="";
             $wrapped_mode = 1;
+        } elsif ($paragraph ne "" && $self->{bullet} && length($self->{indent}||"")==0 &&
+              ($line =~ m/^(\s*)((?:[-*o+]+|([0-9]+[.\)])|\([0-9]+\))\s+)/s)) {
+            # If the next line starts with a bullet, process this immediately and setup the next line
+            print STDERR "IM HERE\n";
+            do_paragraph($self,$paragraph,$wrapped_mode);
+            $paragraph="";
+            $wrapped_mode = 0;
+            $self->unshiftline($line,$ref);
+            $line="";
+		    undef $self->{bullet};
+		    undef $self->{indent};
+        } elsif ($line =~ /^\|===/) {
+            # This is a table, treat it as a non-wrapped paragraph
+            # TODO: Consider whether this should really try to deconstruct it by cell
+            print STDERR "Found Table delimiter\n" if ($debug{parse});
+            if (($paragraph eq "") or (defined($self->{type}) and ($self->{type} =~ /^delimited block/i))) {
+                # Start the table
+                $wrapped_mode = 0;
+                $self->{type} = "Table";
+            } else {
+                # End the Table
+                do_paragraph($self,$paragraph,$wrapped_mode);
+                undef $self->{verbatim};
+                undef $self->{type};
+                $wrapped_mode = 1;
+                $paragraph="";
+            }
+            $self->pushline($line."\n")
         } else {
 	    # A stupid paragraph of text
 	    print STDERR "Regular line. ".
@@ -659,10 +699,11 @@ sub parse {
             }
 
 	    if ($paragraph ne "" && $self->{bullet} && length($self->{indent}||"")==0) {
-		# Second line of an item block is not indented. It looks like a broken indentation
-		# I'd prefer not to accept it, but the formaters do. Damn specification
+		# Second line of an item block is not indented. It is unindented
+        # (and allowed) additional text or a new list item.
 		print STDERR "$ref: It seems that you are adding unindented content to an item.\n".
-		    "The \"standard\" allows this, but you may still want to fix your document.\n";
+		    "The standard allows this, but you may still want to change your document\n".
+		    "to use indented text to provide better visual clues to writers.\n";
 	    } else {
 		undef $self->{bullet};
 		undef $self->{indent};
@@ -925,9 +966,9 @@ Tested successfully on simple AsciiDoc files.
 
 =head1 COPYRIGHT AND LICENSE
 
- Copyright 2005-2008 by Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.
- Copyright 2012 by Denis BARBIER <barbier@linuxfr.org>.
- Copyright 2017 by Martin Quinson <mquinson#debian.org>.
+ Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.
+ Copyright © 2012 Denis BARBIER <barbier@linuxfr.org>.
+ Copyright © 2017 Martin Quinson <mquinson#debian.org>.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).

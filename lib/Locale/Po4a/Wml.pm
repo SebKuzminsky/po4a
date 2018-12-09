@@ -67,6 +67,7 @@ use vars qw(@ISA @EXPORT);
 @ISA = qw(Locale::Po4a::Xhtml);
 @EXPORT = qw();
 
+use Locale::Po4a::Common;
 use Locale::Po4a::Xhtml;
 use File::Temp;
 
@@ -76,6 +77,7 @@ sub initialize {
 
     $self->SUPER::initialize(%options);
 
+    print wrap_mod("po4a::wml", dgettext("po4a", "Call treat_options")) if $self->{options}{'debug'};
     $self->treat_options;
 }
 
@@ -109,9 +111,12 @@ sub read {
      while ($file =~ s|^#(.*)$|<!--PO4ASHARPBEGIN$1PO4ASHARPEND-->|m) {
          my $line = $1;
          print STDERR "PROTECT HEADER: $line\n"
-             if $self->debug();
+             if $self->{options}{'debug'};
+         # If the wml tag has a title attribute, use a fake
+         # <title> xml tag to enable the extraction
+         # for translation in the xml parser.
          if ($line =~ m/title="([^"]*)"/) {
-             $file = "<title>$1</title>" . $file;
+             $file = "<title>$1</title>\n" . $file;
          }
      }
 
@@ -197,7 +202,7 @@ sub parse {
 
 =head1 COPYRIGHT AND LICENSE
 
- Copyright 2005 by SPI, inc.
+ Copyright © 2005 SPI, Inc.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
