@@ -18,6 +18,7 @@ Build-Depends-Indep: docbook,
                      opensp,
                      perl,
                      texlive-binaries,
+                     texlive-latex-base,
                      xsltproc
 Build-Depends: debhelper (>= 11)
 Homepage: https://po4a.org/
