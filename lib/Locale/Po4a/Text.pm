@@ -564,11 +564,40 @@ sub parse_markdown {
                                  "wrap" => 0);
         $self->pushline($titlelevel1.$titlespaces.$t.$titlelevel2."\n");
         $wrapped_mode = 1;
-    } elsif (($paragraph eq "") and
-             ($line =~ /^((\*\s*){3,}|(-\s*){3,}|(_\s*){3,})$/)) {
+    } elsif ($line =~ /^[ ]{0,3}([*_-])\s*(?:\1\s*){2,}$/) {
         # Horizontal rule
-        $wrapped_mode = 1;
+        do_paragraph($self,$paragraph,$wrapped_mode);
         $self->pushline($line."\n");
+        $paragraph="";
+        $end_of_paragraph = 1;
+    } elsif ($line =~ /^([ ]{0,3})(([~`])\3{2,})(\s*)([^`]*)\s*$/) {
+        my $fence_space_before = $1;
+        my $fence = $2;
+        my $fencechar = $3;
+        my $fence_space_between = $4;
+        my $info_string = $5;
+        # fenced code block
+        do_paragraph($self,$paragraph,$wrapped_mode);
+        $wrapped_mode = 0;
+        $paragraph="";
+        my $s = "";
+        $s = $self->translate($info_string,
+                                 $self->{ref},
+                                 "Code fence info string",
+                                 "wrap" => 0)
+            if ($info_string);
+        $self->pushline($fence_space_before.$fence.$fence_space_between.$s."\n");
+        do_paragraph($self,$paragraph,$wrapped_mode);
+        $paragraph="";
+        my ($nextline, $nextref) = $self->shiftline();
+        while ($nextline !~ /^\s{0,3}$fence$fencechar*\s*$/) {
+            $paragraph .= "$nextline\n";
+            ($nextline, $nextref) = $self->shiftline();
+        }
+        do_paragraph($self,$paragraph,$wrapped_mode);
+        $self->pushline($nextline."\n");
+        $paragraph="";
+        $end_of_paragraph = 1;
     } elsif (   $line =~ /^\s*\[\[\!\S+\s*$/     # macro begin
              or $line =~ /^\s*"""\s*\]\]\s*$/) { # """ textblock inside macro end
         # Avoid translating Markdown lines containing only markup
@@ -576,8 +605,7 @@ sub parse_markdown {
         $paragraph="";
         $wrapped_mode = 1;
         $self->pushline("$line\n");
-    } elsif (    $line =~ /^#/            # headline
-              or $line =~ /^\s*\[\[\!\S[^\]]*\]\]\s*$/) { # sole macro
+    } elsif ($line =~ /^\s*\[\[\!\S[^\]]*\]\]\s*$/) { # sole macro
         # Preserve some Markdown markup as a single line
         do_paragraph($self,$paragraph,$wrapped_mode);
         $paragraph="$line\n";
@@ -748,7 +776,9 @@ Tested successfully on simple text files and NEWS.Debian files.
 
 =head1 COPYRIGHT AND LICENSE
 
- Copyright 2005-2008 by Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.
+ Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.
+
+ Copyright © 2008-2009, 2018 Jonas Smedegaard <dr@jones.dk>.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
