@@ -1,3 +1,21 @@
+po4a (0.55-1) unstable; urgency=medium
+
+  * New upstream version 0.55
+    - Failing HTML test has been removed upstream
+    - Sgml: Avoid deprecated unescaped left brace in regex to get ready
+      for Perl 5.32. (Closes: #903735)
+    - TransTractor: Ensure to split lines before addendum operation without
+      loss or addition of newline. With this change, addendum behavior is
+      more intuitive. (Closes: #518218)
+    - Xml, Docbook: Document XML tag behavior customization with example
+      to help use case specific customization. (Closes: #515763)
+  * Add texlive-latex-base to Build-Depends. The latex test needs the
+    file 'article.cls' which is included in that package.
+  * Add two more files to package's documentation
+  * Update Standards-Version to 4.2.1, no changes needed
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Sun, 09 Dec 2018 22:15:54 +0100
+
 po4a (0.54-1) unstable; urgency=medium
 
   * New upstream version 0.54
