@@ -7,17 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.51\n"
 "Report-Msgid-Bugs-To: devel@lists.po4a.org\n"
-"POT-Creation-Date: 2018-12-09 17:27+0100\n"
-"PO-Revision-Date: 2018-04-03 13:38+0000\n"
+"POT-Creation-Date: 2019-06-06 10:17+0200\n"
+"PO-Revision-Date: 2019-05-17 00:49+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/po4a/"
-"po4a-doc/nb/>\n"
+"po4a-doc/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.20-dev\n"
+"X-Generator: Weblate 3.7-dev\n"
 
 #. type: Attribute 'xml:lang' of: <refentry>
 #: share/doc/po4aman-display-po.xml:1 share/doc/po4apod-display-po.xml:1
@@ -48,17 +48,17 @@ msgstr ""
 #: share/doc/po4aman-display-po.xml:6 share/doc/po4aman-display-po.xml:7
 #: share/doc/po4apod-display-po.xml:6 share/doc/po4apod-display-po.xml:7
 msgid "Po4a Tools"
-msgstr ""
+msgstr "Po4a-verktøy"
 
 #. type: Content of: <refentry><refnamediv><refname>
 #: share/doc/po4aman-display-po.xml:8
 msgid "po4aman-display-po"
-msgstr ""
+msgstr "po4aman-display-po"
 
 #. type: Content of: <refentry><refnamediv><refpurpose>
 #: share/doc/po4aman-display-po.xml:9
 msgid "display a translated man page according to a PO"
-msgstr ""
+msgstr "vis en oversatt man-side, i henhold til en PO-fil"
 
 #. type: Content of: <refentry><refsynopsisdiv><cmdsynopsis>
 #: share/doc/po4aman-display-po.xml:10
@@ -70,6 +70,12 @@ msgid ""
 "choice='opt'><arg choice='plain'><option>-o</option> </arg><arg "
 "choice='plain'><replaceable>PO4A_OPT</replaceable></arg></arg>"
 msgstr ""
+"<command>po4aman-display-po</command> <arg choice='plain'><option>-p</"
+"option> </arg> <arg choice='plain'><replaceable>PO_FILE</replaceable></arg> "
+"<arg choice='opt'><arg choice='plain'><option>-m</option> </arg><arg "
+"choice='plain'><replaceable>MASTER_FILE</replaceable></arg></arg> <arg "
+"choice='opt'><arg choice='plain'><option>-o</option> </arg><arg "
+"choice='plain'><replaceable>PO4A_OPT</replaceable></arg></arg>"
 
 #. type: =head1
 #: share/doc/po4aman-display-po.xml:11 share/doc/po4apod-display-po.xml:11
@@ -94,6 +100,8 @@ msgid ""
 "<command>po4aman-display-po</command> can be used by a translator who wants "
 "to check how the man page being translated in a PO will be displayed."
 msgstr ""
+"<command>po4aman-display-po</command> kan brukes av en oversetter som ønsker "
+"å sjekke hvordan man-siden som blir oversatt til en PO-fil vil vises."
 
 #. type: Content of: <refentry><refsect1><para>
 #: share/doc/po4aman-display-po.xml:13
@@ -117,22 +125,22 @@ msgstr ""
 #: po4a:20 po4a:99 po4a-gettextize:13 po4a-normalize:9 po4a-translate:9
 #: po4a-updatepo:11
 msgid "OPTIONS"
-msgstr ""
+msgstr "VALG"
 
 #. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
 #: share/doc/po4aman-display-po.xml:16 share/doc/po4apod-display-po.xml:14
 msgid "<option>-p </option><replaceable>PO_FILE</replaceable>"
-msgstr ""
+msgstr "<option>-p </option><replaceable>PO_FILE</replaceable>"
 
 #. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
 #: share/doc/po4aman-display-po.xml:17 share/doc/po4apod-display-po.xml:15
 msgid "The PO file containing the translations."
-msgstr ""
+msgstr "PO-filen som inneholder oversettelsene."
 
 #. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
 #: share/doc/po4aman-display-po.xml:18
 msgid "<option>-m </option><replaceable>MASTER_FILE</replaceable>"
-msgstr ""
+msgstr "<option>-m </option><replaceable>MASTER_FILE</replaceable>"
 
 #.  .br 
 #. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
@@ -149,7 +157,7 @@ msgstr ""
 #. type: Content of: <refentry><refsect1><variablelist><varlistentry><term>
 #: share/doc/po4aman-display-po.xml:20 share/doc/po4apod-display-po.xml:18
 msgid "<option>-o </option><replaceable>PO4A_OPT</replaceable>"
-msgstr ""
+msgstr "<option>-o </option><replaceable>PO4A_OPT</replaceable>"
 
 #. type: Content of: <refentry><refsect1><variablelist><varlistentry><listitem><para>
 #: share/doc/po4aman-display-po.xml:21 share/doc/po4apod-display-po.xml:19
@@ -182,12 +190,12 @@ msgstr ""
 #. type: Content of: <refentry><refsect1><title>
 #: share/doc/po4aman-display-po.xml:24 share/doc/po4apod-display-po.xml:22
 msgid "AUTHOR"
-msgstr ""
+msgstr "UTVIKLER"
 
 #. type: Content of: <refentry><refsect1><para>
 #: share/doc/po4aman-display-po.xml:25
 msgid "Thomas Huriaux"
-msgstr ""
+msgstr "Thomas Huriaux"
 
 #. type: Content of: <refentry><refentryinfo>
 #: share/doc/po4apod-display-po.xml:2
@@ -212,7 +220,7 @@ msgstr ""
 #. type: Content of: <refentry><refnamediv><refpurpose>
 #: share/doc/po4apod-display-po.xml:9
 msgid "man display of a translated POD file according to a PO"
-msgstr ""
+msgstr "man-visning av oversatt POD-fil i henhold til en PO-fil"
 
 #. type: Content of: <refentry><refsynopsisdiv><cmdsynopsis>
 #: share/doc/po4apod-display-po.xml:10
@@ -270,7 +278,7 @@ msgstr ""
 #: lib/Locale/Po4a/TransTractor.pm:1 lib/Locale/Po4a/Wml.pm:1
 #: lib/Locale/Po4a/Xhtml.pm:1 lib/Locale/Po4a/Xml.pm:1
 msgid "NAME"
-msgstr ""
+msgstr "NAVN"
 
 #. type: textblock
 #: po4a:2
@@ -317,27 +325,27 @@ msgstr ""
 #. type: =head1
 #: po4a:8 doc/po4a.7.pod:5
 msgid "Table of content"
-msgstr ""
+msgstr "Innholdsfortegnelse"
 
 #. type: textblock
 #: po4a:9 doc/po4a.7.pod:6
 msgid "This document is organized as follow:"
-msgstr ""
+msgstr "Dette dokumentet er organisert som følger:"
 
 #. type: =head1
 #: po4a:11 po4a:26
 msgid "INTRODUCTION"
-msgstr ""
+msgstr "INTRODUKSJON"
 
 #. type: =head1
 #: po4a:12 po4a:38
 msgid "CONFIGURATION FILE SYNTAX"
-msgstr ""
+msgstr "OPPSETT AV FILSYNTAKS"
 
 #. type: =head2
 #: po4a:13 po4a:41
 msgid "Specifying the template languages"
-msgstr ""
+msgstr "Spesifisering av malspråkene"
 
 #. type: =head2
 #: po4a:14 po4a:46
@@ -372,7 +380,7 @@ msgstr ""
 #. type: =head2
 #: po4a:21 po4a:171
 msgid "EXAMPLE"
-msgstr ""
+msgstr "EKSEMPLER"
 
 #. type: =head1
 #: po4a:22 po4a:186
@@ -382,7 +390,7 @@ msgstr ""
 #. type: =head1
 #: po4a:24 po4a:191 po4a-gettextize:48 po4a-normalize:27 po4a-translate:49
 #: po4a-updatepo:51 scripts/msguntypot:32 doc/po4a.7.pod:282
-#: lib/Locale/Po4a/AsciiDoc.pm:34 lib/Locale/Po4a/BibTeX.pm:11
+#: lib/Locale/Po4a/AsciiDoc.pm:36 lib/Locale/Po4a/BibTeX.pm:11
 #: lib/Locale/Po4a/Chooser.pm:12 lib/Locale/Po4a/Common.pm:28
 #: lib/Locale/Po4a/Dia.pm:14 lib/Locale/Po4a/Docbook.pm:17
 #: lib/Locale/Po4a/Guide.pm:12 lib/Locale/Po4a/Halibut.pm:16
@@ -394,11 +402,11 @@ msgstr ""
 #: lib/Locale/Po4a/TransTractor.pm:157 lib/Locale/Po4a/Wml.pm:11
 #: lib/Locale/Po4a/Xhtml.pm:17 lib/Locale/Po4a/Xml.pm:180
 msgid "AUTHORS"
-msgstr ""
+msgstr "UTVIKLERE"
 
 #. type: =head1
 #: po4a:25 po4a:193 po4a-gettextize:50 po4a-normalize:29 po4a-translate:51
-#: po4a-updatepo:53 scripts/msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:36
+#: po4a-updatepo:53 scripts/msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:38
 #: lib/Locale/Po4a/BibTeX.pm:13 lib/Locale/Po4a/Chooser.pm:14
 #: lib/Locale/Po4a/Common.pm:30 lib/Locale/Po4a/Dia.pm:16
 #: lib/Locale/Po4a/Docbook.pm:19 lib/Locale/Po4a/Guide.pm:14
@@ -410,7 +418,7 @@ msgstr ""
 #: lib/Locale/Po4a/Wml.pm:13 lib/Locale/Po4a/Xhtml.pm:19
 #: lib/Locale/Po4a/Xml.pm:182
 msgid "COPYRIGHT AND LICENSE"
-msgstr ""
+msgstr "KOPIRETT OG LISENS"
 
 #. type: textblock
 #: po4a:27
@@ -1513,7 +1521,7 @@ msgstr ""
 
 #. type: textblock
 #: po4a:195 po4a-gettextize:52 po4a-normalize:31 po4a-translate:53
-#: po4a-updatepo:55 scripts/msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:38
+#: po4a-updatepo:55 scripts/msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:40
 #: lib/Locale/Po4a/BibTeX.pm:15 lib/Locale/Po4a/Chooser.pm:16
 #: lib/Locale/Po4a/Common.pm:32 lib/Locale/Po4a/Dia.pm:18
 #: lib/Locale/Po4a/Docbook.pm:21 lib/Locale/Po4a/Guide.pm:16
@@ -4256,13 +4264,26 @@ msgid ""
 "setting this option."
 msgstr ""
 
-#. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:19 lib/Locale/Po4a/TeX.pm:27
-msgid "INLINE CUSTOMIZATION"
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:19
+msgid "B<tablecells>"
 msgstr ""
 
 #. type: textblock
 #: lib/Locale/Po4a/AsciiDoc.pm:20
+msgid ""
+"This option is a flag that enables sub-table segmentation into cell "
+"content.  The segmentation is limited to cell content, without any parsing "
+"inside of it."
+msgstr ""
+
+#. type: =head1
+#: lib/Locale/Po4a/AsciiDoc.pm:21 lib/Locale/Po4a/TeX.pm:27
+msgid "INLINE CUSTOMIZATION"
+msgstr ""
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:22
 msgid ""
 "The AsciiDoc module can be customized with lines starting by B<//po4a:>.  "
 "These lines are interpreted as commands to the parser.  The following "
@@ -4270,12 +4291,12 @@ msgid ""
 msgstr ""
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:21
+#: lib/Locale/Po4a/AsciiDoc.pm:23
 msgid "B<//po4a: macro >I<name>B<[>I<attribute list>B<]>"
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:22
+#: lib/Locale/Po4a/AsciiDoc.pm:24
 msgid ""
 "This permits to describe in detail the parameters of a B<macro>; I<name> "
 "must be a valid macro name, and it ends with an underscore if the target "
@@ -4283,7 +4304,7 @@ msgid ""
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:23
+#: lib/Locale/Po4a/AsciiDoc.pm:25
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -4291,7 +4312,7 @@ msgid ""
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:24
+#: lib/Locale/Po4a/AsciiDoc.pm:26
 msgid ""
 "If a plus sign (B<+>) is prepended to I<name>, then the macro and its "
 "arguments are translated as a whole.  There is no need to define attribute "
@@ -4299,19 +4320,19 @@ msgid ""
 msgstr ""
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:25
+#: lib/Locale/Po4a/AsciiDoc.pm:27
 msgid "B<//po4a: style >B<[>I<attribute list>B<]>"
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:26
+#: lib/Locale/Po4a/AsciiDoc.pm:28
 msgid ""
 "This permits to describe in detail which attributes of a style must be "
 "translated."
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:27
+#: lib/Locale/Po4a/AsciiDoc.pm:29
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -4320,7 +4341,7 @@ msgid ""
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:28
+#: lib/Locale/Po4a/AsciiDoc.pm:30
 msgid ""
 "If a plus sign (B<+>) is prepended to the style name, then the attribute "
 "list is translated as a whole.  There is no need to define translatable "
@@ -4328,26 +4349,26 @@ msgid ""
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:29
+#: lib/Locale/Po4a/AsciiDoc.pm:31
 msgid ""
 "If a minus sign (B<->) is prepended to the style name, then this attribute "
 "is not translated."
 msgstr ""
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:30
+#: lib/Locale/Po4a/AsciiDoc.pm:32
 msgid "B<//po4a: entry >I<name>"
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:31
+#: lib/Locale/Po4a/AsciiDoc.pm:33
 msgid ""
 "This declares an attribute entry as being translatable.  By default, they "
 "are not translated."
 msgstr ""
 
 #. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:32 lib/Locale/Po4a/BibTeX.pm:9
+#: lib/Locale/Po4a/AsciiDoc.pm:34 lib/Locale/Po4a/BibTeX.pm:9
 #: lib/Locale/Po4a/Dia.pm:10 lib/Locale/Po4a/Docbook.pm:6
 #: lib/Locale/Po4a/Guide.pm:7 lib/Locale/Po4a/Halibut.pm:7
 #: lib/Locale/Po4a/KernelHelp.pm:5 lib/Locale/Po4a/Man.pm:96
@@ -4359,12 +4380,12 @@ msgid "STATUS OF THIS MODULE"
 msgstr ""
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:33
+#: lib/Locale/Po4a/AsciiDoc.pm:35
 msgid "Tested successfully on simple AsciiDoc files."
 msgstr ""
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:35
+#: lib/Locale/Po4a/AsciiDoc.pm:37
 #, no-wrap
 msgid ""
 " Nicolas François <nicolas.francois@centraliens.net>\n"
@@ -4373,7 +4394,7 @@ msgid ""
 msgstr ""
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:37
+#: lib/Locale/Po4a/AsciiDoc.pm:39
 #, no-wrap
 msgid ""
 " Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.\n"
