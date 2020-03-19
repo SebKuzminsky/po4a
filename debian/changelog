@@ -1,4 +1,4 @@
-po4a (0.57-1) UNRELEASED; urgency=medium
+po4a (0.57-1) unstable; urgency=medium
 
   * New upstream release version 0.57
     - Many new and updated translations.
@@ -7,7 +7,7 @@ po4a (0.57-1) UNRELEASED; urgency=medium
   * Update Standards-Version to 4.5.0, no changes needed
   * d/copyright: share/po4a-build was removed a few releases ago
 
- -- Martin Quinson <mquinson@debian.org>  Thu, 19 Mar 2020 22:01:12 +0100
+ -- Martin Quinson <mquinson@debian.org>  Fri, 20 Mar 2020 00:01:47 +0100
 
 po4a (0.55-1) unstable; urgency=medium
 
