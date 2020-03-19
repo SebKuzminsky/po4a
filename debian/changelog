@@ -1,3 +1,13 @@
+po4a (0.57-1) UNRELEASED; urgency=medium
+
+  * New upstream release version 0.57
+    - Many new and updated translations.
+    - Impove AsciiDoc support.
+  * Bump to debhelper 12
+  * d/copyright: share/po4a-build was removed a few releases ago
+
+ -- Martin Quinson <mquinson@debian.org>  Thu, 19 Mar 2020 22:01:12 +0100
+
 po4a (0.55-1) unstable; urgency=medium
 
   * New upstream version 0.55

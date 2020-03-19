@@ -24,10 +24,6 @@ Files: lib/Locale/Po4a/Yaml.pm
 Copyright: © 2018 Brian Exelbierd
 License: GPL-2.0+
 
-Files: share/po4a-build
-Copyright: © 2006-2009 Neil Williams <linux@codehelp.co.uk>
-License: GPL-3.0+
-
 Files: debian/*
 Copyright: © 2002-2017 Martin Quinson <mquinson@debian.org>
 					 © 2005-2009 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
