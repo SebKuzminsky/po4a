@@ -4,6 +4,7 @@ po4a (0.57-1) UNRELEASED; urgency=medium
     - Many new and updated translations.
     - Impove AsciiDoc support.
   * Bump to debhelper 12
+  * Update Standards-Version to 4.5.0, no changes needed
   * d/copyright: share/po4a-build was removed a few releases ago
 
  -- Martin Quinson <mquinson@debian.org>  Thu, 19 Mar 2020 22:01:12 +0100
