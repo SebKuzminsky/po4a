@@ -6,20 +6,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a bin\n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2018-11-06 11:45+0100\n"
-"PO-Revision-Date: 2018-11-06 19:41+0100\n"
-"Last-Translator: Petter Reinholdtsen <pere-weblate@hungry.com>\n"
+"POT-Creation-Date: 2019-09-08 21:28+0200\n"
+"PO-Revision-Date: 2019-08-01 05:12+0000\n"
+"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/po4a/"
-"po4a/nb/>\n"
+"po4a/nb_NO/>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.3-dev\n"
+"X-Generator: Weblate 3.8-dev\n"
 "X-Rosetta-Export-Date: 2007-08-12 16:08:19+0000\n"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:134 ../../lib/Locale/Po4a/Man.pm:491
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:147 ../../lib/Locale/Po4a/Man.pm:491
 #: ../../lib/Locale/Po4a/Po.pm:187 ../../lib/Locale/Po4a/RubyDoc.pm:78
 #: ../../lib/Locale/Po4a/Sgml.pm:251 ../../lib/Locale/Po4a/TeX.pm:1636
 #: ../../lib/Locale/Po4a/Text.pm:190 ../../lib/Locale/Po4a/Xml.pm:571
@@ -28,18 +28,18 @@ msgstr ""
 msgid "Unknown option: %s"
 msgstr "Ukjent tilvalg: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:194
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:207
 #, perl-format
 msgid "Unable to parse macro definition: %s"
 msgstr "Klarte ikke tolke makrodefinisjon: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:241 ../../lib/Locale/Po4a/TeX.pm:1032
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:254 ../../lib/Locale/Po4a/TeX.pm:1032
 #: ../../po4a:881 ../../po4a:1079 ../../po4a-translate:264
 #, perl-format
 msgid "Can't open %s: %s"
 msgstr "Kan ikke åpne %s: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:271
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:284
 #, perl-format
 msgid ""
 "Detection of two line titles failed at %s\n"
@@ -987,7 +987,7 @@ msgstr ""
 #, perl-format
 msgid ""
 "Unexpected closing tag </%s> found. The main document may be wrong.  "
-"Continuing..."
+"Continuing…"
 msgstr ""
 "Fant uventet avslutningsmerke </%s>.  Hoveddokumentet kan være feil.  "
 "Fortsetter…"
@@ -1008,18 +1008,18 @@ msgid ""
 "%s: attribute '%s' is not defined in module option 'attributes' and\n"
 "....  is not translated for the attribute path '%s'"
 msgstr ""
+"%s: attributt '%s' er ikke definert i modulvalget 'attributter' og\n"
+"…  er ikke oversatt for attributtstien '%s'"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1342
-#, fuzzy, perl-format
-#| msgid "Bad attribute syntax.  Continuing..."
-msgid "%s: Bad attribute syntax.  Continuing..."
-msgstr "Ugyldig attributtsyntaks.  Fortsetter…"
+#, perl-format
+msgid "%s: Bad attribute syntax.  Continuing…"
+msgstr "%s: Ugyldig attributtsyntaks.  Fortsetter…"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1344
-#, fuzzy, perl-format
-#| msgid "Bad attribute syntax"
+#, perl-format
 msgid "%s: Bad attribute syntax"
-msgstr "Ugyldig attributtsyntaks"
+msgstr "%s: Ugyldig attributtsyntaks"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1458
 #, perl-format
@@ -1028,11 +1028,15 @@ msgid ""
 " *** the original translation option is overridden here since parent "
 "path='%s' is untranslated,"
 msgstr ""
+"%s: Oversettelsesvalg='%s'.\n"
+" *** Det opprinnelige oversettelsesvalget overskrives, siden ovennevnt "
+"mappe='%s' er uoversatt,"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1467
 #, perl-format
 msgid "%s: foldattributes setting ignored since '%s' is not inline tag"
 msgstr ""
+"%s: Brettattributtinnstilling ignorert siden '%s' ikke er en innebygd tagg"
 
 #. if tag is <!--# ... --> or <!-- ... -->, remove this tag from the
 #. input stream and save its content to @comments for use by
@@ -1040,19 +1044,19 @@ msgstr ""
 #: ../../lib/Locale/Po4a/Xml.pm:1538
 #, perl-format
 msgid "%s: type='%s'"
-msgstr ""
+msgstr "%s: type='%s'"
 
 #. This tag should be translated
 #: ../../lib/Locale/Po4a/Xml.pm:1789
 #, perl-format
 msgid "%s: path='%s', translation option='%s'"
-msgstr ""
+msgstr "%s: sti='%s', oversettelsesvalg='%s'"
 
 #. Inform that this tag isn't translated in debug mode
 #: ../../lib/Locale/Po4a/Xml.pm:1800
 #, perl-format
 msgid "%s: path='%s', translation option='%s' (no translation)"
-msgstr ""
+msgstr "%s: path='%s', oversettelsesvalg='%s' (ingen oversettelse)"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1897 ../../lib/Locale/Po4a/Xml.pm:1907
 #, perl-format
@@ -1066,7 +1070,7 @@ msgstr ""
 #: ../../lib/Locale/Po4a/Xml.pm:2039
 #, perl-format
 msgid "%s: translation option='%s' (valid)"
-msgstr ""
+msgstr "%s: Oversettelsesvalg='%s' (gyldig)"
 
 #: ../../lib/Locale/Po4a/Xml.pm:2050 ../../lib/Locale/Po4a/Xml.pm:2057
 #: ../../lib/Locale/Po4a/Xml.pm:2061 ../../lib/Locale/Po4a/Xml.pm:2065
@@ -1303,8 +1307,8 @@ msgid "po4a-updatepo can't take the input PO from stdin."
 msgstr "po4a-updatepo kan ikke lese inn PO-filen fra stdin."
 
 #: ../../po4a-updatepo:266
-msgid "Parse input files... "
-msgstr "Tolker inndatafiler... "
+msgid "Parse input files… "
+msgstr "Tolker inndatafiler… "
 
 #: ../../po4a-updatepo:276
 msgid "done."
@@ -1345,7 +1349,7 @@ msgstr "Fant %d endrede oppføringer."
 msgid "Handling %s"
 msgstr "Håndterer %s"
 
-#: ../../scripts/msguntypot:233
+#: ../../scripts/msguntypot:234
 #, perl-format
 msgid "Modified %d entries in %d files."
 msgstr "Endret %d oppføringer i %d filer."
