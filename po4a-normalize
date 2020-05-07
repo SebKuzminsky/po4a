@@ -1,10 +1,10 @@
 #! /usr/bin/env perl
 eval 'exec perl -S $0 ${1+"$@"}'
-    if $running_under_some_shell;
+  if $running_under_some_shell;
 
 # po4a-normalize -- normalize documentation files
 #
-# Copyright 2002-2012 by SPI, inc.
+# Copyright 2002-2020 by SPI, inc.
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of GPL (see COPYING).
@@ -30,8 +30,8 @@ po4a don't change the document when it's not supposed to. Only use it if
 you're developing a new module, or if you doubt the sanity of the tools.
 
 The generated document will be written to F<po4a-normalize.output> while the
-generated PO file will be written to F<po4a-normalize.po>. No way to change
-that ;)
+generated POT file will be written to F<po4a-normalize.po> by default, but 
+you can use the B<--localized> and B<--pot> options to change that.
 
 =head1 OPTIONS
 
@@ -68,6 +68,14 @@ option to see the list of available formats.
 
 Charset of the file containing the document to translate.
 
+=item B<-l>, B<--localized>
+
+Name of the normalized file to produce (I<po4a-normalize.output> by default). 
+
+=item B<-p>, B<--pot>
+
+Pot file to produce (I<po4a-normalize.po> by default).
+
 =item B<-V>, B<--version>
 
 Display the version of the script and exit.
@@ -89,7 +97,7 @@ L<po4a(7)>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2002-2012 by SPI, inc.
+Copyright 2002-2020 by SPI, inc.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
@@ -115,67 +123,78 @@ sub show_version {
     exit 0;
 }
 
-my ($blank,$help_fmt,$help,$type,$debug,$verbose,@options);
+my ( $blank, $help_fmt, $help, $type, $debug, $verbose, $wrappo, @options );
 my ($mastchar);
-Getopt::Long::Configure('no_auto_abbrev','no_ignore_case');
+my ( $localized, $potfile ) = ( 'po4a-normalize.output', 'po4a-normalize.po' );
+Getopt::Long::Configure( 'no_auto_abbrev', 'no_ignore_case' );
 GetOptions(
-        'help|h'       => \$help,
-        'help-format'  => \$help_fmt,
-        'format|f=s'   => \$type,
+    'help|h'        => \$help,
+    'help-format'   => \$help_fmt,
+    'format|f=s'    => \$type,
+    'localized|l=s' => \$localized,
+    'pot|p=s'       => \$potfile,
 
-        'blank|b'      => \$blank,
+    'blank|b' => \$blank,
 
-        'master-charset|M=s'    => \$mastchar,
+    'master-charset|M=s' => \$mastchar,
 
-        'option|o=s'   => \@options,
+    'option|o=s' => \@options,
+    'wrap-po=s'  => \$wrappo,
 
-        'verbose|v'    => \$verbose,
-        'debug|d'      => \$debug,
-        'version|V'    => \&show_version
+    'verbose|v' => \$verbose,
+    'debug|d'   => \$debug,
+    'version|V' => \&show_version
 ) or pod2usage();
 
-$help && pod2usage (-verbose => 1, -exitval => 0);
+$help && pod2usage( -verbose => 1, -exitval => 0 );
 $help_fmt && Locale::Po4a::Chooser::list(0);
-pod2usage () unless scalar @ARGV == 1;
+pod2usage() unless scalar @ARGV == 1;
 
 my %options = (
     "verbose" => $verbose,
-    "debug" => $debug);
+    "debug"   => $debug
+);
 foreach (@options) {
     if (m/^([^=]*)=(.*)$/) {
-        $options{$1}="$2";
+        $options{$1} = "$2";
     } else {
-        $options{$_}=1;
+        $options{$_} = 1;
     }
 }
 
-my $parser=Locale::Po4a::Chooser::new($type,%options);
+my $parser = Locale::Po4a::Chooser::new( $type, %options );
+if ( length $mastchar && $mastchar !~ /ascii/i && $mastchar ne "CHARSET" ) {
+    $parser->{TT}{ascii_input} = 0;
+    $parser->detected_charset($mastchar);
+}
+$parser->{TT}{utf_mode}        = 1;
+$parser->{TT}{file_in_charset} = $mastchar;
 
 my $filename = shift || pod2usage(1);
-$filename eq '-' || -e $filename || die wrap_msg(gettext("File %s does not exist."), $filename);
+$filename eq '-' || -e $filename || die wrap_msg( gettext("File %s does not exist."), $filename );
 
-$parser->read($filename);
-$parser->{TT}{utf_mode} = 1;
-$parser->{TT}{file_in_charset} = $mastchar;
+$parser->read( $filename, $filename );
+my %pot_options = ( 'wrap-po' => $wrappo );
+$parser->setpoout( Locale::Po4a::Po->new( \%pot_options ) );
 $parser->parse();
 if ($blank) {
-    foreach my $msgid (keys %{$parser->{TT}{po_out}{po}}) {
-        if ($msgid =~ m/\n$/s) {
+    foreach my $msgid ( keys %{ $parser->{TT}{po_out}{po} } ) {
+        if ( $msgid =~ m/\n$/s ) {
             $parser->{TT}{po_out}{po}{$msgid}{'msgstr'} = "\n";
         } else {
             $parser->{TT}{po_out}{po}{$msgid}{'msgstr'} = " ";
         }
     }
     my $empty_po = $parser->{TT}{po_out};
-    $parser = Locale::Po4a::Chooser::new($type,%options);
+    $parser = Locale::Po4a::Chooser::new( $type, %options );
     $parser->{TT}{po_in} = $empty_po;
     $parser->read($filename);
-    $parser->{TT}{utf_mode} = 1;
+    $parser->{TT}{utf_mode}        = 1;
     $parser->{TT}{file_in_charset} = $mastchar;
     $parser->parse();
 }
-$parser->write('po4a-normalize.output');
-$parser->writepo('po4a-normalize.po');
+$parser->write($localized);
+$parser->writepo($potfile);
 
 __END__
 

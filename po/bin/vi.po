@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.45\n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2019-09-08 21:28+0200\n"
+"POT-Creation-Date: 2020-04-26 01:11+0200\n"
 "PO-Revision-Date: 2018-12-08 06:09+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/po4a/po4a/vi/"
@@ -21,27 +21,26 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 3.4-dev\n"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:147 ../../lib/Locale/Po4a/Man.pm:491
-#: ../../lib/Locale/Po4a/Po.pm:187 ../../lib/Locale/Po4a/RubyDoc.pm:78
-#: ../../lib/Locale/Po4a/Sgml.pm:251 ../../lib/Locale/Po4a/TeX.pm:1636
-#: ../../lib/Locale/Po4a/Text.pm:190 ../../lib/Locale/Po4a/Xml.pm:571
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:147 ../../lib/Locale/Po4a/Man.pm:496
+#: ../../lib/Locale/Po4a/Po.pm:235 ../../lib/Locale/Po4a/RubyDoc.pm:74
+#: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1663
+#: ../../lib/Locale/Po4a/Text.pm:211 ../../lib/Locale/Po4a/Xml.pm:590
 #: ../../lib/Locale/Po4a/Yaml.pm:39
 #, perl-format
 msgid "Unknown option: %s"
 msgstr "Không rõ tùy chọn: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:207
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:206
 #, perl-format
 msgid "Unable to parse macro definition: %s"
 msgstr "không thể phân tích phần định nghĩa vĩ lệnh: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:254 ../../lib/Locale/Po4a/TeX.pm:1032
-#: ../../po4a:881 ../../po4a:1079 ../../po4a-translate:264
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:253 ../../lib/Locale/Po4a/TeX.pm:1064
 #, perl-format
 msgid "Can't open %s: %s"
 msgstr "Không thể mở %s: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:284
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:287
 #, perl-format
 msgid ""
 "Detection of two line titles failed at %s\n"
@@ -50,104 +49,111 @@ msgstr ""
 "Gặp lỗi khi dò tìm hai dòng tiêu đề tại %s\n"
 "Hãy cài mô-đun Unicode::GCString!"
 
-#: ../../lib/Locale/Po4a/Chooser.pm:26
+#: ../../lib/Locale/Po4a/Chooser.pm:25
 msgid "Need to provide a module name"
 msgstr "Hãy cung cấp một tên mô-đun"
 
-#: ../../lib/Locale/Po4a/Chooser.pm:51
+#: ../../lib/Locale/Po4a/Chooser.pm:50
 #, perl-format
 msgid "Unknown format type: %s."
 msgstr "Không hiểu kiểu định dạng: %s."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:53
+#: ../../lib/Locale/Po4a/Chooser.pm:51
 #, perl-format
 msgid "Module loading error: %s"
 msgstr "Lỗi nạp mô-đun: %s"
 
-#: ../../lib/Locale/Po4a/Chooser.pm:62
+#: ../../lib/Locale/Po4a/Chooser.pm:61
 msgid "List of valid formats:"
 msgstr "Danh sách định dạng hợp lệ:"
 
-#. ."\n  - ".gettext("bibtex: BibTex bibliography format.")
-#: ../../lib/Locale/Po4a/Chooser.pm:64
+#: ../../lib/Locale/Po4a/Chooser.pm:65
 msgid "asciidoc: AsciiDoc format."
 msgstr "asciidoc: định dạng AsciiDoc."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:65
+#: ../../lib/Locale/Po4a/Chooser.pm:67
 msgid "dia: uncompressed Dia diagrams."
 msgstr "dia: sơ đồ Dia không nén."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:66
+#: ../../lib/Locale/Po4a/Chooser.pm:69
 msgid "docbook: DocBook XML."
 msgstr "docbook: DocBook XML."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:67
+#: ../../lib/Locale/Po4a/Chooser.pm:71
 msgid "guide: Gentoo Linux's XML documentation format."
 msgstr "guide: định dạng tài liệu hướng dẫn XML của Gentoo Linux."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:68
+#: ../../lib/Locale/Po4a/Chooser.pm:73
 msgid "ini: INI format."
 msgstr "ini: định dạng INI."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:69
+#: ../../lib/Locale/Po4a/Chooser.pm:75
 msgid "kernelhelp: Help messages of each kernel compilation option."
 msgstr "kernelhelp: thông điệp trợ giúp về mỗi tùy chọn biên dịch hạt nhân."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:70
+#: ../../lib/Locale/Po4a/Chooser.pm:77
 msgid "latex: LaTeX format."
 msgstr "latex: định dạng LaTeX."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:71
+#: ../../lib/Locale/Po4a/Chooser.pm:79
 msgid "man: Good old manual page format."
 msgstr "man: định dạng trang hướng dẫn “man” truyền thống."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:72
+#: ../../lib/Locale/Po4a/Chooser.pm:81
 msgid "pod: Perl Online Documentation format."
 msgstr "pod: định dạng Tài liệu Perl Trực tuyến."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:73
+#: ../../lib/Locale/Po4a/Chooser.pm:83
 msgid "rubydoc: Ruby Documentation (RD) format."
 msgstr "rubydoc: Định dạng Tài liệu Ruby (RD)."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:74
+#: ../../lib/Locale/Po4a/Chooser.pm:85
 msgid "sgml: either DebianDoc or DocBook DTD."
 msgstr "sgml: mã hoặc DebianDoc hoặc DocBook DTD."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:75
+#: ../../lib/Locale/Po4a/Chooser.pm:87
 msgid "texinfo: The info page format."
 msgstr "texinfo: định dạng trang info."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:76
+#: ../../lib/Locale/Po4a/Chooser.pm:89
 msgid "tex: generic TeX documents (see also latex)."
 msgstr "tex: tài liệu TeX giống loài (xem thêm latex)."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:77
+#: ../../lib/Locale/Po4a/Chooser.pm:91
 msgid "text: simple text document."
 msgstr "text: tài liệu dạng văn bản thường."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:78
+#: ../../lib/Locale/Po4a/Chooser.pm:93
 msgid "wml: WML documents."
 msgstr "wml: tài liệu mã WML."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:79
+#: ../../lib/Locale/Po4a/Chooser.pm:95
 msgid "xhtml: XHTML documents."
 msgstr "xhtml: tài liệu mã XHTML."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:80
+#: ../../lib/Locale/Po4a/Chooser.pm:97
 msgid "xml: generic XML documents (see also docbook)."
 msgstr "xml: tài liệu mã XML chung (xem thêm docbook)."
 
-#: ../../lib/Locale/Po4a/Chooser.pm:81
+#: ../../lib/Locale/Po4a/Chooser.pm:99
 msgid "yaml: YAML documents."
 msgstr "yaml: Tài liệu YAML."
 
-#: ../../lib/Locale/Po4a/Common.pm:107
-#, perl-format
+#: ../../lib/Locale/Po4a/Common.pm:108
+#, fuzzy, perl-format
+#| msgid ""
+#| "%s version %s.\n"
+#| "Written by Martin Quinson and Denis Barbier.\n"
+#| "\n"
+#| "Copyright © 2002-2018 Software in the Public Interest, Inc.\n"
+#| "This is free software; see source code for copying\n"
+#| "conditions. There is NO warranty; not even for\n"
+#| "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
 msgid ""
 "%s version %s.\n"
 "Written by Martin Quinson and Denis Barbier.\n"
 "\n"
-"Copyright © 2002-2018 Software in the Public Interest, Inc.\n"
+"Copyright © 2002-2020 Software in the Public Interest, Inc.\n"
 "This is free software; see source code for copying\n"
 "conditions. There is NO warranty; not even for\n"
 "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
@@ -160,13 +166,13 @@ msgstr ""
 "KHÔNG CÓ BẢO HÀNH GÌ CẢ, THẬM CHÍ KHÔNG CÓ BẢO ĐẢM ĐƯỢC NGỤ Ý\n"
 "KHẢ NĂNG BÁN HAY KHẢ NĂNG LÀM ĐƯỢC VIỆC DỨT KHOÁT."
 
-#: ../../lib/Locale/Po4a/Dia.pm:99 ../../lib/Locale/Po4a/Docbook.pm:2053
+#: ../../lib/Locale/Po4a/Dia.pm:99 ../../lib/Locale/Po4a/Docbook.pm:2054
 #: ../../lib/Locale/Po4a/Guide.pm:151 ../../lib/Locale/Po4a/Wml.pm:80
-#: ../../lib/Locale/Po4a/Xhtml.pm:224 ../../lib/Locale/Po4a/Xml.pm:603
+#: ../../lib/Locale/Po4a/Xhtml.pm:229 ../../lib/Locale/Po4a/Xml.pm:629
 msgid "Call treat_options"
 msgstr "Gọi treat_options"
 
-#: ../../lib/Locale/Po4a/InProgress/Debconf.pm:171
+#: ../../lib/Locale/Po4a/InProgress/Debconf.pm:178
 #, perl-format
 msgid "Translated field in master document: %s"
 msgstr "Trường được dịch trong tài liệu chủ: %s"
@@ -175,29 +181,29 @@ msgstr "Trường được dịch trong tài liệu chủ: %s"
 msgid "Begin of a new entry before the end of previous one"
 msgstr "Bắt đầu một mục mới đằng trước kết thúc mục cũ"
 
-#: ../../lib/Locale/Po4a/KernelHelp.pm:103
+#: ../../lib/Locale/Po4a/KernelHelp.pm:100
 msgid "Syntax error"
 msgstr "Lỗi cú pháp"
 
-#: ../../lib/Locale/Po4a/Man.pm:508
+#: ../../lib/Locale/Po4a/Man.pm:513
 msgid ""
 "Invalid 'groff_code' value. Must be one of 'fail', 'verbatim', 'translate'."
 msgstr ""
 "Sai đặt giá trị “groff_code”. Phải là một trong các giá trị “fail”, "
 "“verbatim”, “translate”."
 
-#: ../../lib/Locale/Po4a/Man.pm:555
+#: ../../lib/Locale/Po4a/Man.pm:561
 msgid ""
 "The no_wrap parameters must be a set of comma-separated begin:end couples.\n"
 msgstr ""
 "Tham số “no_wrap” (không cuộn dòng) phải là một tập hợp các cặp “đầu:"
 "cuối” (begin:end) định giới bằng dấu phẩy.\n"
 
-#: ../../lib/Locale/Po4a/Man.pm:601
+#: ../../lib/Locale/Po4a/Man.pm:608
 msgid "Invalid 'unknown_macros' value. Must be one of:\n"
 msgstr "Sai đặt giá trị “unknown_macros” (vĩ lệnh không rõ), chỉ nhận ra:\n"
 
-#: ../../lib/Locale/Po4a/Man.pm:655
+#: ../../lib/Locale/Po4a/Man.pm:674
 msgid ""
 "This file was generated with Pod::Man. Translate the POD file with the pod "
 "module of po4a."
@@ -205,7 +211,7 @@ msgstr ""
 "Tập tin này được tạo bằng hàm chuyển đổi Pod::Man. Hãy dịch tập tin POD dùng "
 "mô-đun pod của phần mềm po4a."
 
-#: ../../lib/Locale/Po4a/Man.pm:658
+#: ../../lib/Locale/Po4a/Man.pm:684
 msgid ""
 "This file was generated with help2man. Translate the source file with the "
 "regular gettext."
@@ -213,7 +219,7 @@ msgstr ""
 "Tập tin này được tạo bằng hàm chuyển đổi help2man. Hãy dịch tập tin nguồn "
 "dùng gettext tiêu chuẩn."
 
-#: ../../lib/Locale/Po4a/Man.pm:660
+#: ../../lib/Locale/Po4a/Man.pm:693
 msgid ""
 "This file was generated with docbook-to-man. Translate the source file with "
 "the sgml module of po4a."
@@ -221,7 +227,7 @@ msgstr ""
 "Tập tin này được tạo bằng hàm chuyển đổi docbook-to-man. Hãy dịch tập tin "
 "nguồn dùng mô-đun sgml của phần mềm po4a."
 
-#: ../../lib/Locale/Po4a/Man.pm:663
+#: ../../lib/Locale/Po4a/Man.pm:703
 msgid ""
 "This file was generated with docbook2man. Translate the source file with the "
 "sgml module of po4a."
@@ -229,7 +235,7 @@ msgstr ""
 "Tập tin này được tạo bằng hàm chuyển đổi docbook2man. Hãy dịch tập tin nguồn "
 "dùng mô-đun sgml của phần mềm po4a."
 
-#: ../../lib/Locale/Po4a/Man.pm:667 ../../lib/Locale/Po4a/Man.pm:675
+#: ../../lib/Locale/Po4a/Man.pm:713 ../../lib/Locale/Po4a/Man.pm:734
 #, perl-format
 msgid ""
 "This file was generated with %s. You should translate the source file, but "
@@ -237,7 +243,7 @@ msgid ""
 msgstr ""
 "Tập tin này được tạo bằng %s. Bạn nên dịch tập tin nguồn; vẫn đang tiếp tục."
 
-#: ../../lib/Locale/Po4a/Man.pm:671
+#: ../../lib/Locale/Po4a/Man.pm:724
 msgid ""
 "This file was generated with db2man.xsl. Translate the source file with the "
 "xml module of po4a."
@@ -245,7 +251,7 @@ msgstr ""
 "Tập tin này được tạo bằng hàm chuyển đổi db2man.xsl. Hãy dịch tập tin nguồn "
 "dùng mô-đun xml của phần mềm po4a."
 
-#: ../../lib/Locale/Po4a/Man.pm:681
+#: ../../lib/Locale/Po4a/Man.pm:748
 #, perl-format
 msgid ""
 "This file contains the line '%s'. You should translate the source file, but "
@@ -253,7 +259,7 @@ msgid ""
 msgstr ""
 "Tập tin này chứa dòng “%s”. Bạn nên dịch tập tin nguồn; vẫn đang tiếp tục."
 
-#: ../../lib/Locale/Po4a/Man.pm:743
+#: ../../lib/Locale/Po4a/Man.pm:821
 #, perl-format
 msgid ""
 "Font modifiers followed by a command may disturb po4a.  You should either "
@@ -264,7 +270,7 @@ msgstr ""
 "po4a. Bạn nên hoặc gỡ bỏ cờ sửa đổi phông chữ “%s”, hoặc hợp nhất một cờ sửa "
 "đổi phông chữ “\\f” trong câu lệnh theo sau (“%s”); vẫn đang tiếp tục."
 
-#: ../../lib/Locale/Po4a/Man.pm:848
+#: ../../lib/Locale/Po4a/Man.pm:941
 msgid ""
 "The unshiftline is not supported for the man module. Please send a bug "
 "report with the groff page that generated this error."
@@ -272,7 +278,7 @@ msgstr ""
 "unshiftline không được hỗ trợ đối với mô-đun man. Hãy gửi báo cáo lỗi chứa "
 "trang groff đã gây ra lỗi này."
 
-#: ../../lib/Locale/Po4a/Man.pm:891
+#: ../../lib/Locale/Po4a/Man.pm:1001
 #, perl-format
 msgid ""
 "macro %s called without arguments. Even if placing the macro arguments on "
@@ -283,28 +289,28 @@ msgstr ""
 "số vĩ lệnh trên dòng kế tiếp, quá phức tạp để phân tích cú pháp trong po4a. "
 "Hãy đơn giản để các đối số vĩ lệnh trên cùng một dòng."
 
-#: ../../lib/Locale/Po4a/Man.pm:919
+#: ../../lib/Locale/Po4a/Man.pm:1033
 msgid "Escape sequence \\c encountered. This is not completely handled yet."
 msgstr "Gặp dãy thoát “\\c”. Chưa xử lý hoàn toàn trường hợp này."
 
-#: ../../lib/Locale/Po4a/Man.pm:1085
+#: ../../lib/Locale/Po4a/Man.pm:1208
 #, perl-format
 msgid "Unbalanced '<' and '>' in font modifier. Faulty message: %s"
 msgstr ""
 "Gặp <ngoặc nhọn> không tương ứng trong cờ sửa đổi phông chữ. Thông điệp sai: "
 "%s"
 
-#: ../../lib/Locale/Po4a/Man.pm:1123
+#: ../../lib/Locale/Po4a/Man.pm:1249
 #, perl-format
 msgid "Unknown '<' or '>' sequence. Faulty message: %s"
 msgstr "Không nhận ra dãy chứa <ngoặc nhọn>. Thông điệp sai: %s"
 
-#: ../../lib/Locale/Po4a/Man.pm:1275
+#: ../../lib/Locale/Po4a/Man.pm:1403
 #, perl-format
 msgid "Unparsable line: %s"
 msgstr "Không thể phân tích cú pháp của dòng: %s"
 
-#: ../../lib/Locale/Po4a/Man.pm:1348
+#: ../../lib/Locale/Po4a/Man.pm:1486
 #, perl-format
 msgid ""
 "Unknown macro '%s'. Remove it from the document, or refer to the Locale::"
@@ -314,17 +320,17 @@ msgstr ""
 "trang hướng dẫn Locale::Po4a::Man để thấy po4a quản lý vĩ lệnh mới như thế "
 "nào."
 
-#: ../../lib/Locale/Po4a/Man.pm:1543
+#: ../../lib/Locale/Po4a/Man.pm:1694
 #, perl-format
 msgid "Cannot parse command arguments: %s"
 msgstr "Không thể phân tích cú pháp của đối số dòng lệnh: %s"
 
-#: ../../lib/Locale/Po4a/Man.pm:1667
+#: ../../lib/Locale/Po4a/Man.pm:1824
 #, perl-format
 msgid "Unsupported font in: '%s'."
 msgstr "Gặp phông chữ không được hỗ trợ trong: “%s”."
 
-#: ../../lib/Locale/Po4a/Man.pm:2057
+#: ../../lib/Locale/Po4a/Man.pm:2225
 msgid ""
 "This page defines a new macro with '.de'. Since po4a is not a real groff "
 "parser, this is not supported."
@@ -333,11 +339,11 @@ msgstr ""
 "cụ hoàn toàn để phân tích cú pháp của groff, trường hợp này không được hỗ "
 "trợ."
 
-#: ../../lib/Locale/Po4a/Man.pm:2123
+#: ../../lib/Locale/Po4a/Man.pm:2302
 msgid "The .ie macro must be followed by a .el macro."
 msgstr "Vĩ lệnh “-ie” phải có một vĩ lệnh “.el” theo sau."
 
-#: ../../lib/Locale/Po4a/Man.pm:2149
+#: ../../lib/Locale/Po4a/Man.pm:2330
 #, perl-format
 msgid ""
 "This page uses conditionals with '%s'. Since po4a is not a real groff "
@@ -347,7 +353,7 @@ msgstr ""
 "cụ hoàn toàn để phân tích cú pháp của groff, trường hợp này không được hỗ "
 "trợ."
 
-#: ../../lib/Locale/Po4a/Man.pm:2190
+#: ../../lib/Locale/Po4a/Man.pm:2380
 #, perl-format
 msgid ""
 "This page includes another file with '%s'. Do not forget to translate this "
@@ -356,7 +362,7 @@ msgstr ""
 "Trang này bao gồm một tập tin khác dùng “%s”. Đừng quên dịch tập tin này "
 "( “%s”)."
 
-#: ../../lib/Locale/Po4a/Man.pm:2354
+#: ../../lib/Locale/Po4a/Man.pm:2548
 #, perl-format
 msgid ""
 "This page uses the '%s' request with the number of lines in argument. This "
@@ -365,7 +371,7 @@ msgstr ""
 "Trang này sử dụng yêu cầu “%s” với số các dòng trong đối số. Tổ hợp này chưa "
 "được hỗ trợ."
 
-#: ../../lib/Locale/Po4a/Man.pm:2369
+#: ../../lib/Locale/Po4a/Man.pm:2568
 #, perl-format
 msgid ""
 "This page uses the '%s' request. This request is only supported when no "
@@ -374,20 +380,35 @@ msgstr ""
 "Trang này sử dụng yêu cầu “%s”. Yêu cầu này chỉ được hỗ trợ khi không đưa ra "
 "đối số."
 
-#: ../../lib/Locale/Po4a/Po.pm:195
-#, perl-format
+#: ../../lib/Locale/Po4a/Po.pm:243
+#, fuzzy, perl-format
+#| msgid ""
+#| "Invalid value for option 'porefs' ('%s' is not one of 'full', 'counter', "
+#| "'file' or 'never')"
 msgid ""
-"Invalid value for option 'porefs' ('%s' is not one of 'full', 'counter', "
-"'file' or 'never')"
+"Invalid value for option 'wrap-po' ('%s' is not 'no' nor 'newlines' nor a "
+"number)"
 msgstr ""
 "Giá trị cho tùy chọn “porefs” không đúng (“%s” phải là một trong các giá trị "
 "“full”, “counter”, “file” hoặc “never”)"
 
-#: ../../lib/Locale/Po4a/Po.pm:253
+#: ../../lib/Locale/Po4a/Po.pm:252
+#, fuzzy, perl-format
+#| msgid ""
+#| "Invalid value for option 'porefs' ('%s' is not one of 'full', 'counter', "
+#| "'file' or 'never')"
+msgid ""
+"Invalid value for option 'porefs' ('%s' is not one of 'full', 'counter', "
+"'noline', 'file' or 'never')"
+msgstr ""
+"Giá trị cho tùy chọn “porefs” không đúng (“%s” phải là một trong các giá trị "
+"“full”, “counter”, “file” hoặc “never”)"
+
+#: ../../lib/Locale/Po4a/Po.pm:319
 msgid "Please provide a non-null filename"
 msgstr "Hãy cung cấp một tên tập tin không trống"
 
-#: ../../lib/Locale/Po4a/Po.pm:264
+#: ../../lib/Locale/Po4a/Po.pm:332
 #, perl-format
 msgid ""
 "Invalid po file %s:\n"
@@ -396,48 +417,49 @@ msgstr ""
 "Tập tin po không hợp lệ %s:\n"
 "%s"
 
-#: ../../lib/Locale/Po4a/Po.pm:275 ../../lib/Locale/Po4a/TeX.pm:929
-#: ../../lib/Locale/Po4a/TransTractor.pm:425
-#: ../../lib/Locale/Po4a/TransTractor.pm:571 ../../lib/Locale/Po4a/Xhtml.pm:133
+#: ../../lib/Locale/Po4a/Po.pm:340 ../../lib/Locale/Po4a/TeX.pm:961
+#: ../../lib/Locale/Po4a/TransTractor.pm:446
+#: ../../lib/Locale/Po4a/TransTractor.pm:599 ../../lib/Locale/Po4a/Xhtml.pm:140
 #, perl-format
 msgid "Can't read from %s: %s"
 msgstr "Không thể đọc từ %s: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:350
+#: ../../lib/Locale/Po4a/Po.pm:417
 msgid "Messages with more than 2 plural forms are not supported."
 msgstr "Không hỗ trợ thông điệp chứa nhiều hơn 2 cách ở số nhiều."
 
-#: ../../lib/Locale/Po4a/Po.pm:359
-#, perl-format
-msgid "Strange line: -->%s<--"
+#: ../../lib/Locale/Po4a/Po.pm:425
+#, fuzzy, perl-format
+#| msgid "Strange line: -->%s<--"
+msgid "Parse error at: -->%s<--"
 msgstr "Dòng lạ: -->%s<--"
 
-#: ../../lib/Locale/Po4a/Po.pm:418 ../../lib/Locale/Po4a/Po.pm:581
-#: ../../lib/Locale/Po4a/TransTractor.pm:464
+#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:643
+#: ../../lib/Locale/Po4a/TransTractor.pm:488
 msgid "Can't write to a file without filename"
 msgstr "Không thể ghi vào tập tin mà không có tên tập tin"
 
-#: ../../lib/Locale/Po4a/Po.pm:435 ../../lib/Locale/Po4a/TransTractor.pm:479
+#: ../../lib/Locale/Po4a/Po.pm:507 ../../lib/Locale/Po4a/TransTractor.pm:504
 #, perl-format
 msgid "Can't write to %s: %s"
 msgstr "Không thể ghi vào %s: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:514
+#: ../../lib/Locale/Po4a/Po.pm:580
 msgid "Can't write PO files with more than two plural forms."
 msgstr "Không thể ghi tập tin PO chứa nhiều hơn hai dạng thức số nhiều."
 
-#: ../../lib/Locale/Po4a/Po.pm:561
+#: ../../lib/Locale/Po4a/Po.pm:625
 #, perl-format
 msgid "Can't unlink %s: %s."
 msgstr "Không thể bỏ liên kết %s: %s."
 
-#: ../../lib/Locale/Po4a/Po.pm:568 ../../lib/Locale/Po4a/Po.pm:573
-#: ../../po4a:1469
+#: ../../lib/Locale/Po4a/Po.pm:632 ../../lib/Locale/Po4a/Po.pm:636
+#: ../../po4a:1605
 #, perl-format
 msgid "Can't move %s to %s: %s."
 msgstr "Không thể di chuyển %s sang %s: %s."
 
-#: ../../lib/Locale/Po4a/Po.pm:614
+#: ../../lib/Locale/Po4a/Po.pm:678
 msgid ""
 "\n"
 "The gettextization failed (once again). Don't give up, gettextizing is a "
@@ -456,7 +478,7 @@ msgstr ""
 "sang po4a như thế nào?” (HOWTO convert a pre-existing translation to po4a?) "
 "sẽ giúp bạn làm công việc này"
 
-#: ../../lib/Locale/Po4a/Po.pm:627
+#: ../../lib/Locale/Po4a/Po.pm:694
 #, perl-format
 msgid ""
 "Original has more strings than the translation (%d>%d). Please fix it by "
@@ -465,7 +487,7 @@ msgstr ""
 "Bản gốc chứa nhiều chuỗi hơn bản dịch (%d>%d). Hãy giải quyết bằng cách thêm "
 "vào bản dịch một mục giả."
 
-#: ../../lib/Locale/Po4a/Po.pm:635
+#: ../../lib/Locale/Po4a/Po.pm:707
 #, perl-format
 msgid ""
 "Original has less strings than the translation (%d<%d). Please fix it by "
@@ -480,7 +502,7 @@ msgstr ""
 "xảy ra là hai chuỗi gốc trùng đã được dịch khác nhau. Chỉ cần gỡ bỏ một của "
 "hai chuỗi dịch này, và không còn có sao."
 
-#: ../../lib/Locale/Po4a/Po.pm:703
+#: ../../lib/Locale/Po4a/Po.pm:777
 #, perl-format
 msgid ""
 "po4a gettextization: Structure disparity between original and translated "
@@ -498,12 +520,12 @@ msgstr ""
 "Chuỗi dịch: %s\n"
 "(kết quả đến điểm này được đổ vào tập tin “gettextization.failed.po”)"
 
-#: ../../lib/Locale/Po4a/Po.pm:937
+#: ../../lib/Locale/Po4a/Po.pm:1021
 #, perl-format
 msgid "Eval failure: %s"
 msgstr "Lỗi ước lượng: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:1061
+#: ../../lib/Locale/Po4a/Po.pm:1151
 #, perl-format
 msgid ""
 "'%s' is the singular form of a message, po4a will use the msgstr[0] "
@@ -512,7 +534,7 @@ msgstr ""
 "“%s” là dạng số ít của một thông điệp: po4a sẽ sử dụng chuỗi dịch msgstr[0] "
 "(%s)."
 
-#: ../../lib/Locale/Po4a/Po.pm:1066
+#: ../../lib/Locale/Po4a/Po.pm:1161
 #, perl-format
 msgid ""
 "'%s' is the plural form of a message, po4a will use the msgstr[1] "
@@ -521,12 +543,12 @@ msgstr ""
 "“%s” là cách ở số nhiều của một thông điệp: po4a sẽ sử dụng chuỗi dịch "
 "msgstr[1] (%s)."
 
-#: ../../lib/Locale/Po4a/Po.pm:1292
+#: ../../lib/Locale/Po4a/Po.pm:1389
 #, perl-format
 msgid "msgid defined twice: %s"
 msgstr "msgid định nghĩa hai lần: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:1324
+#: ../../lib/Locale/Po4a/Po.pm:1423
 #, perl-format
 msgid ""
 "Translations don't match for:\n"
@@ -545,7 +567,7 @@ msgstr ""
 "%s\n"
 " Chuỗi dịch cũ bị hủy."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:217
+#: ../../lib/Locale/Po4a/Sgml.pm:220
 msgid ""
 "The needed module SGMLS.pm was not found and needs to be installed. It can "
 "be found on the CPAN, in package libsgmls-perl on debian, etc."
@@ -553,7 +575,7 @@ msgstr ""
 "Không tìm thấy mô-đun yêu cầu “SGMLS.pm” mà cần phải được cài đặt. Có thể "
 "tìm nó trong kho lưu Perl CPAN, trong gói libsgmls-perl trên Debian, v.v."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:257
+#: ../../lib/Locale/Po4a/Sgml.pm:265
 #, perl-format
 msgid ""
 "Unknown debug category: %s. Known categories:\n"
@@ -562,15 +584,15 @@ msgstr ""
 "Không hiểu thể loại gỡ lỗi: %s. Các thể loại đã biết:\n"
 "%s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:287
+#: ../../lib/Locale/Po4a/Sgml.pm:297
 msgid "msgid skipped to help translators (contains only an entity)"
 msgstr "msgid bị bỏ qua để giúp người dịch (chỉ chứa một thực thể)"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:294
+#: ../../lib/Locale/Po4a/Sgml.pm:306
 msgid "msgid skipped to help translators (contains only tags)"
 msgstr "msgid bị bỏ qua để giúp người dịch (chỉ chứa thẻ)"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:302
+#: ../../lib/Locale/Po4a/Sgml.pm:319
 msgid ""
 "msgid skipped to help translators (contains only opening or closing tags of "
 "marked sections)"
@@ -578,12 +600,12 @@ msgstr ""
 "msgid bị bỏ qua để giúp người dịch (chỉ chứa thẻ mở hay thẻ đóng của phần "
 "đánh dấu)"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:386 ../../lib/Locale/Po4a/Sgml.pm:809
+#: ../../lib/Locale/Po4a/Sgml.pm:407 ../../lib/Locale/Po4a/Sgml.pm:860
 #, perl-format
 msgid "Can't close tempfile: %s"
 msgstr "Không thể đóng tập tin tạm thời: %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:390
+#: ../../lib/Locale/Po4a/Sgml.pm:414
 msgid ""
 "Error while running onsgmls -p.  Please check if onsgmls and the DTD are "
 "installed."
@@ -591,7 +613,7 @@ msgstr ""
 "Gặp lỗi trong khi chạy “onsgmls -p”. Hãy kiểm tra nếu onsgmls và DTD đã được "
 "cài đặt chưa."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:399
+#: ../../lib/Locale/Po4a/Sgml.pm:427
 msgid ""
 "Trying to handle a XML document as a SGML one. Feel lucky if it works, help "
 "us implementing a proper XML backend if it does not."
@@ -599,7 +621,7 @@ msgstr ""
 "Đang thử xử lý một tài liệu XML như một tài liệu SGML. Xử lý được thì vận "
 "đỏ, không thì mời bạn giúp thực hiện một hậu phương XML đúng trong po4a."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:412
+#: ../../lib/Locale/Po4a/Sgml.pm:446
 msgid ""
 "This file is not a master SGML document (no DOCTYPE). It may be a file to be "
 "included by another one, in which case it should not be passed to po4a "
@@ -612,11 +634,11 @@ msgstr ""
 "các tập tin được bao gồm cũng được tách ra / dịch khi xử lý tập tin chủ có "
 "bao gồm."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:533
+#: ../../lib/Locale/Po4a/Sgml.pm:569
 msgid "DTD of this file is unknown, but proceeding as requested."
 msgstr "Không rõ DTD của tập tin này, nhưng mà vẫn tiếp tục như yêu cầu."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:537
+#: ../../lib/Locale/Po4a/Sgml.pm:573
 msgid ""
 "DTD of this file is unknown. (supported: DebianDoc, DocBook). The prolog "
 "follows:"
@@ -624,42 +646,42 @@ msgstr ""
 "Không rõ DTD của tập tin này (hỗ trợ: DebianDoc và DocBook). Đoạn mở đầu có "
 "theo đây:"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:631 ../../lib/Locale/Po4a/Sgml.pm:713
+#: ../../lib/Locale/Po4a/Sgml.pm:671 ../../lib/Locale/Po4a/Sgml.pm:755
 #, perl-format
 msgid "Can't open %s (content of entity %s%s;): %s"
 msgstr "Không thể mở %s (nội dung của thực thể %s%s): %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:684
+#: ../../lib/Locale/Po4a/Sgml.pm:726
 #, perl-format
 msgid "unrecognized prolog inclusion entity: %%%s;"
 msgstr "không nhận ra thực thể bao gồm đoạn mở đầu: %%%s;"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:815
+#: ../../lib/Locale/Po4a/Sgml.pm:865
 #, perl-format
 msgid "Can't run onsgmls: %s"
 msgstr "Không thể chạy onsgmls: %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:930
+#: ../../lib/Locale/Po4a/Sgml.pm:984
 #, perl-format
 msgid "Unknown tag %s"
 msgstr "Không rõ thẻ %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:964
+#: ../../lib/Locale/Po4a/Sgml.pm:1020
 #, perl-format
 msgid "bad translation '%s' for '%s' in '%s'"
 msgstr "bản dịch sai “%s” cho “%s” trong “%s”"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1019 ../../lib/Locale/Po4a/Sgml.pm:1097
+#: ../../lib/Locale/Po4a/Sgml.pm:1076 ../../lib/Locale/Po4a/Sgml.pm:1161
 #, perl-format
 msgid "Closing tag for a translation container missing before %s"
 msgstr "Thẻ đóng cho một bộ bao bọc bản dịch còn thiếu đằng trước %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1180
+#: ../../lib/Locale/Po4a/Sgml.pm:1246
 #, perl-format
 msgid "Unknown SGML event type: %s"
 msgstr "Không rõ kiểu sự kiện SGML: %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1190
+#: ../../lib/Locale/Po4a/Sgml.pm:1260
 msgid ""
 "Warning: onsgmls produced some errors.  This is usually caused by po4a, "
 "which modifies the input and restores it afterwards, causing the input of "
@@ -671,7 +693,7 @@ msgstr ""
 "lệ. Trường hợp này thường an toàn, nhưng bạn có thể muốn thẩm tra tài liệu "
 "được tạo dùng câu lệnh “onsgmls -wno-valid”."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1197
+#: ../../lib/Locale/Po4a/Sgml.pm:1272
 msgid ""
 "To see the error message, rerun po4a with this additional argument:\n"
 "   -o debug=onsgmls"
@@ -679,47 +701,47 @@ msgstr ""
 "Để xem thông báo lỗi, quay trở về chạy po4a với tham số bổ sung này:\n"
 "   -o debug=onsgmls"
 
-#: ../../lib/Locale/Po4a/TeX.pm:503 ../../lib/Locale/Po4a/TeX.pm:583
+#: ../../lib/Locale/Po4a/TeX.pm:521 ../../lib/Locale/Po4a/TeX.pm:605
 #, perl-format
 msgid "un-balanced %s in '%s'"
 msgstr "%s thừa hay thiếu trong “%s”"
 
-#: ../../lib/Locale/Po4a/TeX.pm:517 ../../lib/Locale/Po4a/TeX.pm:601
+#: ../../lib/Locale/Po4a/TeX.pm:536 ../../lib/Locale/Po4a/TeX.pm:624
 #, perl-format
 msgid "Error while checking the number of arguments of the '%s' command: %s"
 msgstr "Gặp lỗi trong khi kiểm tra số các đối số trong câu lệnh “%s”: %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:776 ../../lib/Locale/Po4a/TeX.pm:877
+#: ../../lib/Locale/Po4a/TeX.pm:810 ../../lib/Locale/Po4a/TeX.pm:912
 #, perl-format
 msgid "Unknown command: '%s'"
 msgstr "Không rõ câu lệnh: “%s”"
 
-#: ../../lib/Locale/Po4a/TeX.pm:923 ../../lib/Locale/Po4a/TransTractor.pm:421
+#: ../../lib/Locale/Po4a/TeX.pm:956
 msgid "Can't read from file without having a filename"
 msgstr "Không thể đọc từ tập tin mà không có tên tập tin"
 
-#: ../../lib/Locale/Po4a/TeX.pm:964
+#: ../../lib/Locale/Po4a/TeX.pm:999
 #, perl-format
 msgid "Can't find %s with kpsewhich"
 msgstr "Không tìm thấy %s dùng kpsewhich"
 
-#: ../../lib/Locale/Po4a/TeX.pm:996 ../../lib/Locale/Po4a/TransTractor.pm:447
-#: ../../lib/Locale/Po4a/Xhtml.pm:142
+#: ../../lib/Locale/Po4a/TeX.pm:1030 ../../lib/Locale/Po4a/TransTractor.pm:471
+#: ../../lib/Locale/Po4a/Xhtml.pm:147
 #, perl-format
 msgid "Can't close %s after reading: %s"
 msgstr "Không thể đóng %s sau khi đọc: %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1022
+#: ../../lib/Locale/Po4a/TeX.pm:1055
 #, perl-format
 msgid "kpsewhich cannot find %s"
 msgstr "kpsewhich không tìm thấy %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1070
+#: ../../lib/Locale/Po4a/TeX.pm:1101
 #, perl-format
 msgid "Cannot use an alias to the unknown command '%s'"
 msgstr "Không thể sử dụng một bí danh tới câu lệnh không rõ “%s”"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1076
+#: ../../lib/Locale/Po4a/TeX.pm:1109
 #, perl-format
 msgid ""
 "You are using the old definitions format (%s).  Please update this "
@@ -728,146 +750,85 @@ msgstr ""
 "Bạn đang sử dụng định dạng định nghĩa cũ (%s). Hãy cập nhật dòng định nghĩa "
 "này."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1280 ../../lib/Locale/Po4a/TeX.pm:1542
+#: ../../lib/Locale/Po4a/TeX.pm:1318 ../../lib/Locale/Po4a/TeX.pm:1571
 #, perl-format
 msgid "unknown environment: '%s'"
 msgstr "không nhận ra môi trường: “%s”"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1303
+#. a begin may have been hidden in the middle of a translated
+#. buffer. FIXME: Just warn for now.
+#: ../../lib/Locale/Po4a/TeX.pm:1341
 #, perl-format
 msgid "unmatched end of environment '%s'"
 msgstr "kết thúc môi trường không tương ứng “%s”"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1351 ../../lib/Locale/Po4a/TeX.pm:1466
+#: ../../lib/Locale/Po4a/TeX.pm:1391 ../../lib/Locale/Po4a/TeX.pm:1500
 #, perl-format
 msgid "Wrong number of arguments for the '%s' command."
 msgstr "Sai đặt số các đối số cho câu lệnh “%s”."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1364 ../../lib/Locale/Po4a/TeX.pm:1479
-#: ../../lib/Locale/Po4a/TeX.pm:1569
+#: ../../lib/Locale/Po4a/TeX.pm:1403 ../../lib/Locale/Po4a/TeX.pm:1512
+#: ../../lib/Locale/Po4a/TeX.pm:1598
 msgid "An optional argument was provided, but a mandatory one is expected."
 msgstr ""
 "Đã đưa ra một tham số tùy chọn, nhưng lại cần một đối số bắt buộc phải sử "
 "dụng."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1368 ../../lib/Locale/Po4a/TeX.pm:1483
+#: ../../lib/Locale/Po4a/TeX.pm:1404 ../../lib/Locale/Po4a/TeX.pm:1513
 #, perl-format
 msgid "Command '%s': %s"
 msgstr "Lệnh “%s”: %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1424
+#: ../../lib/Locale/Po4a/TeX.pm:1460
 #, perl-format
 msgid "register_generic_command: unsupported format: '%s'."
 msgstr "register_generic_command: không hỗ trợ định dạng: “%s”."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1536
+#: ../../lib/Locale/Po4a/TeX.pm:1566
 msgid "The first argument of \\begin is mandatory."
 msgstr "Bắt buộc phải cung cấp đối số đầu tiên của “\\begin”."
 
-#: ../../lib/Locale/Po4a/Text.pm:359
+#: ../../lib/Locale/Po4a/Text.pm:237
+#, perl-format
+msgid "Option %s is only valid when parsing markdown files."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Text.pm:399
 #, perl-format
 msgid "Unrecognized section: %s"
 msgstr "Không thừa nhận đoạn: %s"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:301
-#, perl-format
-msgid "Chdir %s (srcdir)"
-msgstr "Chdir %s (srcdir)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:304
-#, perl-format
-msgid "Call readpo(%s)"
-msgstr "Gọi readpo(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:306
-#, perl-format
-msgid "Done readpo(%s)"
-msgstr "Đã gọi xong readpo(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:309
-#, perl-format
-msgid "Call read(%s)"
-msgstr "Gọi read(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:311
-#, perl-format
-msgid "Done read(%s)"
-msgstr "Đã gọi xong read(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:313
-msgid "Call parse()"
-msgstr "Gọi parse()"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:315
-msgid "Done parse()"
-msgstr "Đã gọi xong parse()"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:317
-#, perl-format
-msgid "Call addendum(%s)"
-msgstr "Gọi addendum(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:319
-#, perl-format
-msgid "Done addendum(%s)"
-msgstr "Đã gọi xong addendum(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:324
-#, perl-format
-msgid "Call write(%s)"
-msgstr "Gọi write(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:326
-#, perl-format
-msgid "Done write(%s)"
-msgstr "Đã gọi xong write(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:331
-#, perl-format
-msgid "Call writepo(%s)"
-msgstr "Gọi writepo(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:333
-#, perl-format
-msgid "Done writepo(%s)"
-msgstr "Đã gọi xong writepo(%s)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:337
-#, perl-format
-msgid "Chdir %s (calldir)"
-msgstr "Chdir %s (calldir)"
-
-#: ../../lib/Locale/Po4a/TransTractor.pm:486
+#: ../../lib/Locale/Po4a/TransTractor.pm:511
 #, perl-format
 msgid "Can't close %s after writing: %s"
 msgstr "Không thể đóng %s sau khi ghi: %s"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:576
+#: ../../lib/Locale/Po4a/TransTractor.pm:604
 #, perl-format
 msgid "Can't read po4a header from %s."
 msgstr "Không thể đọc phần đầu po4a từ %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:581
+#: ../../lib/Locale/Po4a/TransTractor.pm:609
 #, perl-format
 msgid "First line of %s does not look like a po4a header."
 msgstr "Dòng đầu tiên của %s không có vẻ dạng phần đầu po4a."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:586
+#: ../../lib/Locale/Po4a/TransTractor.pm:614
 #, perl-format
 msgid "Syntax error in po4a header of %s, near \"%s\""
 msgstr "Gặp lỗi cú pháp trong phần đầu po4a của %s, ở gần “%s”"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:602
+#: ../../lib/Locale/Po4a/TransTractor.pm:630
 #, perl-format
 msgid "Invalid argument in the po4a header of %s: %s"
 msgstr "Đối số không hợp lệ trong phần đầu po4a của %s: %s"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:608
+#: ../../lib/Locale/Po4a/TransTractor.pm:636
 #, perl-format
 msgid "The po4a header of %s does not define the mode."
 msgstr "Phần đầu po4a của %s không định nghĩa chế độ."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:612
+#: ../../lib/Locale/Po4a/TransTractor.pm:641
 #, perl-format
 msgid ""
 "Mode invalid in the po4a header of %s: should be 'before' or 'after' not %s."
@@ -875,67 +836,65 @@ msgstr ""
 "Gặp chế độ không hợp lệ trong phần đầu po4a của %s: nên là “before” (đằng "
 "trước) hay “after” (đằng sau), không phải %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:617
+#: ../../lib/Locale/Po4a/TransTractor.pm:647
 #, perl-format
 msgid "The po4a header of %s does not define the position."
 msgstr "Phần đầu po4a của %s không định nghĩa vị trí."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:621
+#: ../../lib/Locale/Po4a/TransTractor.pm:651
 msgid "No ending boundary given in the po4a header, but mode=after."
 msgstr ""
 "Phần đầu po4a không đựa ra biên giới kết thúc, còn “mode=after” (chế độ = "
 "đằng sau)."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:644
+#: ../../lib/Locale/Po4a/TransTractor.pm:674
 #, perl-format
 msgid "Apply addendum: %s"
 msgstr "Áp dụng addendum: %s"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:647
+#: ../../lib/Locale/Po4a/TransTractor.pm:677
 msgid "Can't apply addendum when not given the filename"
 msgstr ""
 "Không thể áp dụng phần thêm vào (addendum) khi không đưa ra tên tập tin"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:650
+#: ../../lib/Locale/Po4a/TransTractor.pm:680
 #, perl-format
 msgid "Addendum %s does not exist."
 msgstr "Phần thêm vào (addendum) %s không tồn tại."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:694
+#: ../../lib/Locale/Po4a/TransTractor.pm:720
 #, perl-format
 msgid "No candidate position for the addendum %s."
 msgstr "Không có vị trí ứng cử cho phần thêm vào (addendum) %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:699
+#: ../../lib/Locale/Po4a/TransTractor.pm:724
 #, perl-format
 msgid "More than one candidate position found for the addendum %s."
 msgstr "Tìm thấy nhiều vị trí ứng cử cho phần thêm vào (addendum) %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:705
-#: ../../lib/Locale/Po4a/TransTractor.pm:728
+#: ../../lib/Locale/Po4a/TransTractor.pm:731
+#: ../../lib/Locale/Po4a/TransTractor.pm:753
 #, perl-format
 msgid "Addendum '%s' applied before this line: %s"
 msgstr "Phần thêm vào (addendum) “%s” được áp dụng đằng trước dòng này: %s"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:735
+#: ../../lib/Locale/Po4a/TransTractor.pm:759
 #, perl-format
 msgid "Addendum '%s' applied after the line: %s."
 msgstr "Phần thêm vào (addendum) “%s” được áp dụng sau dòng: %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:742
+#: ../../lib/Locale/Po4a/TransTractor.pm:766
 #, perl-format
 msgid "Addendum '%s' applied at the end of the file."
 msgstr "Phần thêm vào (addendum) “%s” được áp dụng ở kết thúc tập tin."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:750
+#: ../../lib/Locale/Po4a/TransTractor.pm:774
 #, perl-format
 msgid "Done addendum: %s"
 msgstr "Đã gọi xong addendum: %s"
 
-#. FYI, the document charset have to be determined *before* we see the first
-#. string to recode.
-#: ../../lib/Locale/Po4a/TransTractor.pm:914
-#: ../../lib/Locale/Po4a/TransTractor.pm:1101
+#: ../../lib/Locale/Po4a/TransTractor.pm:939
+#: ../../lib/Locale/Po4a/TransTractor.pm:1126
 #, perl-format
 msgid ""
 "Couldn't determine the input document's charset. Please specify it on the "
@@ -944,12 +903,12 @@ msgstr ""
 "Không thể nhận ra bộ ký tự của tài liệu đầu vào. Hãy ghi rõ nó trên dòng "
 "lệnh. (Gặp ký tự khác ASCII ở %s)"
 
-#: ../../lib/Locale/Po4a/Wml.pm:92
+#: ../../lib/Locale/Po4a/Wml.pm:93
 #, perl-format
 msgid "Can't create a temporary XML file: %s"
 msgstr "Không thể tạo một tập tin XML tạm thời: %s"
 
-#: ../../lib/Locale/Po4a/Xml.pm:118
+#: ../../lib/Locale/Po4a/Xml.pm:119
 #, perl-format
 msgid "%s: Can't read from %s: %s"
 msgstr "%s1: Không thể đọc từ %s: %s"
@@ -959,9 +918,7 @@ msgstr "%s1: Không thể đọc từ %s: %s"
 msgid "%s: Can't close %s after reading: %s"
 msgstr "%s: Không thể đóng %s sau khi đọc: %s"
 
-#. TODO: It will be hard to identify the location.
-#. => find a way to retrieve the reference.
-#: ../../lib/Locale/Po4a/Xml.pm:223
+#: ../../lib/Locale/Po4a/Xml.pm:229
 #, perl-format
 msgid ""
 "'po4a-id=%d' in the translation does not exist in the original string (or "
@@ -970,17 +927,17 @@ msgstr ""
 "“po4a-id=%d” trong chuỗi dịch mà không tồn tại trong chuỗi gốc (hoặc “po4a-"
 "id=%d” dùng hai lần trong chuỗi dịch)."
 
-#: ../../lib/Locale/Po4a/Xml.pm:258
+#: ../../lib/Locale/Po4a/Xml.pm:269
 #, perl-format
 msgid ">>> filename = '%s'"
 msgstr ">>> tên tập tin = '%s'"
 
-#: ../../lib/Locale/Po4a/Xml.pm:716
+#: ../../lib/Locale/Po4a/Xml.pm:742
 #, perl-format
 msgid "Internal error: unknown type identifier '%s'."
 msgstr "Lỗi nội bộ: không nhận ra kiểu nhận diện “%s”."
 
-#: ../../lib/Locale/Po4a/Xml.pm:888
+#: ../../lib/Locale/Po4a/Xml.pm:939
 #, perl-format
 msgid ""
 "Bad document type. '%s' expected. You can fix this warning with a -o doctype "
@@ -990,7 +947,7 @@ msgstr ""
 "dùng một tùy chọn “-o doctype”, hoặc bỏ qua sự kiểm tra này dùng “-o doctype="
 "\"\"”."
 
-#: ../../lib/Locale/Po4a/Xml.pm:966 ../../lib/Locale/Po4a/Xml.pm:1626
+#: ../../lib/Locale/Po4a/Xml.pm:1036 ../../lib/Locale/Po4a/Xml.pm:1773
 #, perl-format
 msgid ""
 "Unexpected closing tag </%s> found. The main document may be wrong.  "
@@ -998,17 +955,17 @@ msgid ""
 msgstr ""
 "Gặp thẻ đóng bất thường </%s>. Tài liệu chủ có thể không đúng. Đang tiếp tục…"
 
-#: ../../lib/Locale/Po4a/Xml.pm:968 ../../lib/Locale/Po4a/Xml.pm:1628
+#: ../../lib/Locale/Po4a/Xml.pm:1042 ../../lib/Locale/Po4a/Xml.pm:1782
 #, perl-format
 msgid "Unexpected closing tag </%s> found. The main document may be wrong."
 msgstr "Gặp thẻ đóng bất thường </%s>. Tài liệu chủ có thể không đúng."
 
-#: ../../lib/Locale/Po4a/Xml.pm:1222
+#: ../../lib/Locale/Po4a/Xml.pm:1305
 #, perl-format
 msgid "%s: type=%s <%s%s%s%s%s>"
 msgstr "%s: type=%s <%s%s%s%s%s>"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1330
+#: ../../lib/Locale/Po4a/Xml.pm:1425
 #, perl-format
 msgid ""
 "%s: attribute '%s' is not defined in module option 'attributes' and\n"
@@ -1018,17 +975,17 @@ msgstr ""
 "và\n"
 ".... không được dịch cho đường dẫn thuộc tính '%s'"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1342
+#: ../../lib/Locale/Po4a/Xml.pm:1444
 #, perl-format
 msgid "%s: Bad attribute syntax.  Continuing…"
 msgstr "%s1: Gặp cú pháp thuộc tính sai. Đang tiếp tục…"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1344
+#: ../../lib/Locale/Po4a/Xml.pm:1446
 #, perl-format
 msgid "%s: Bad attribute syntax"
 msgstr "%s: Gặp cú pháp thuộc tính sai"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1458
+#: ../../lib/Locale/Po4a/Xml.pm:1567
 #, perl-format
 msgid ""
 "%s: translation option='%s'.\n"
@@ -1039,7 +996,7 @@ msgstr ""
 " *** tùy chọn dịch gốc bị đè ở đây vì đường dẫn cha mẹ path='%s' là chưa "
 "được dịch,"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1467
+#: ../../lib/Locale/Po4a/Xml.pm:1581
 #, perl-format
 msgid "%s: foldattributes setting ignored since '%s' is not inline tag"
 msgstr ""
@@ -1048,24 +1005,22 @@ msgstr ""
 #. if tag is <!--# ... --> or <!-- ... -->, remove this tag from the
 #. input stream and save its content to @comments for use by
 #. translate_paragraph.
-#: ../../lib/Locale/Po4a/Xml.pm:1538
+#: ../../lib/Locale/Po4a/Xml.pm:1658
 #, perl-format
 msgid "%s: type='%s'"
 msgstr "%s: type='%s'"
 
-#. This tag should be translated
-#: ../../lib/Locale/Po4a/Xml.pm:1789
+#: ../../lib/Locale/Po4a/Xml.pm:1959
 #, perl-format
 msgid "%s: path='%s', translation option='%s'"
 msgstr "%s: đường dẫn='%s', tùy chọn dịch='%s'"
 
-#. Inform that this tag isn't translated in debug mode
-#: ../../lib/Locale/Po4a/Xml.pm:1800
+#: ../../lib/Locale/Po4a/Xml.pm:1978
 #, perl-format
 msgid "%s: path='%s', translation option='%s' (no translation)"
 msgstr "%s: đường dẫn='%s', tùy chọn dịch='%s' (không bản dịch)"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1897 ../../lib/Locale/Po4a/Xml.pm:1907
+#: ../../lib/Locale/Po4a/Xml.pm:2082 ../../lib/Locale/Po4a/Xml.pm:2097
 #, perl-format
 msgid ""
 "The '%s' option is deprecated. Please use the translated/untranslated and/or "
@@ -1074,275 +1029,34 @@ msgstr ""
 "Tùy chọn “%s” đã lạc hậu. Hãy sử dụng phân loại dịch/chưa dịch (translated/"
 "untranslated) và/hay ngắt/trực tiếp/giữ chỗ (break/inline/placeholder)."
 
-#: ../../lib/Locale/Po4a/Xml.pm:2039
+#: ../../lib/Locale/Po4a/Xml.pm:2240
 #, perl-format
 msgid "%s: translation option='%s' (valid)"
 msgstr "%s: tùy chọn dịch='%s' (hợp lệ)"
 
-#: ../../lib/Locale/Po4a/Xml.pm:2050 ../../lib/Locale/Po4a/Xml.pm:2057
-#: ../../lib/Locale/Po4a/Xml.pm:2061 ../../lib/Locale/Po4a/Xml.pm:2065
-#: ../../lib/Locale/Po4a/Xml.pm:2071 ../../lib/Locale/Po4a/Xml.pm:2075
-#: ../../lib/Locale/Po4a/Xml.pm:2081
+#: ../../lib/Locale/Po4a/Xml.pm:2251 ../../lib/Locale/Po4a/Xml.pm:2258
+#: ../../lib/Locale/Po4a/Xml.pm:2261 ../../lib/Locale/Po4a/Xml.pm:2264
+#: ../../lib/Locale/Po4a/Xml.pm:2269 ../../lib/Locale/Po4a/Xml.pm:2272
+#: ../../lib/Locale/Po4a/Xml.pm:2277
 #, perl-format
 msgid "Tag '%s' both in the %s and %s categories."
 msgstr "Thẻ “%s” nằm trong cả hai phân loại %s và %s."
 
-#: ../../po4a:777 ../../po4a:781
-#, perl-format
-msgid "Invalid %s. Directory %s does not exist."
-msgstr "%s không hợp lệ. Thư mục %s không tồn tại."
-
-#: ../../po4a:814 ../../po4a:1061
-#, perl-format
-msgid "Unparsable argument '%s' (%s)."
-msgstr "Gặp đối số không thể phân tích “%s” (%s)."
-
-#: ../../po4a:848
-#, perl-format
-msgid "failed to execute '%s': %s."
-msgstr "gặp lỗi khi thực thi “%s”: %s."
-
-#: ../../po4a:852
-#, perl-format
-msgid "'%s' died with signal %d, with coredump."
-msgstr "“%s” đã chết với tín hiệu %d, cũng đổ lõi."
-
-#: ../../po4a:856
-#, perl-format
-msgid "'%s' died with signal %d, without coredump."
-msgstr "“%s” đã chết với tín hiệu %d, không đổ lõi."
-
-#: ../../po4a:861
-#, perl-format
-msgid "'%s' exited with value %d."
-msgstr "“%s” đã thoát với giá trị %d."
-
-#: ../../po4a:865
-#, perl-format
-msgid "Error: %s"
-msgstr "Lỗi: %s"
-
-#. Check file existence
-#: ../../po4a:871 ../../po4a-gettextize:229 ../../po4a-normalize:155
-#: ../../po4a-translate:208 ../../po4a-translate:209 ../../po4a-updatepo:253
-#: ../../scripts/msguntypot:164 ../../scripts/msguntypot:166
-#, perl-format
-msgid "File %s does not exist."
-msgstr "Tập tin %s không tồn tại."
-
-#: ../../po4a:894 ../../po4a:1090
-#, perl-format
-msgid "Unknown variable: %s"
-msgstr "Không nhận ra biến: %s"
-
-#: ../../po4a:904
-#, perl-format
-msgid "Syntax error: %s"
-msgstr "Lỗi cú pháp: %s"
-
-#: ../../po4a:933 ../../po4a:945
-#, perl-format
-msgid "'%s' redeclared"
-msgstr "“%s” được khai báo lại"
-
-#: ../../po4a:938
-#, perl-format
-msgid "Unparsable argument '%s'."
-msgstr "Đối số không thể phân tích “%s”."
-
-#: ../../po4a:951
-msgid "The list of languages cannot be set twice."
-msgstr "Không thể đặt hai lần danh sách các ngôn ngữ."
-
-#: ../../po4a:954
-msgid "The POT file cannot be set twice."
-msgstr "Không thể đặt hai lần tập tin mẫu POT."
-
-#: ../../po4a:961
-#, perl-format
-msgid "'%s' is not a directory"
-msgstr "“%s” không phải một thư mục"
-
-#: ../../po4a:965
-#, perl-format
-msgid "Cannot list the '%s' directory"
-msgstr "Không thể liệt kê thư mục “%s”"
-
-#: ../../po4a:976
-#, perl-format
-msgid "too many POT files: %s %s"
-msgstr "quá nhiều tập tin mẫu POT: %s %s"
-
-#: ../../po4a:986
-#, perl-format
-msgid "no PO files found in %s"
-msgstr "không tìm thấy tập tin PO trong %s"
-
-#: ../../po4a:997
-#, perl-format
-msgid ""
-"The '%s' master file was specified earlier in the configuration file.  This "
-"may cause problems with options."
-msgstr ""
-"Tập tin chủ “%s” được ghi rõ trước trong tập tin cấu hình. Trường hợp này có "
-"thể gây ra vấn đề với tùy chọn."
-
-#: ../../po4a:1003
-#, perl-format
-msgid "The '%s' master file does not exist."
-msgstr "Tập tin chủ “%s” không tồn tại."
-
-#: ../../po4a:1065
-msgid "The translated and master file are the same."
-msgstr "Tập tin gốc và tập tin dịch vẫn trùng nhau."
-
-#: ../../po4a:1108
-#, perl-format
-msgid "Translation of %s in %s redefined"
-msgstr "Chuỗi dịch %s trong %s được định nghĩa lại"
-
-#: ../../po4a:1136
-#, perl-format
-msgid "Unparsable command '%s'."
-msgstr "Không thể phân tích cú pháp của câu lệnh “%s”."
-
-#. don't care about error here
-#: ../../po4a:1142
-msgid "po4a_paths not declared. Dunno where to find the POT and PO files"
-msgstr ""
-"po4a_paths (các đường dẫn po4a) chưa được khai báo. Vì thế không biết nên "
-"tìm tập tin POT và PO ở đâu"
-
-#: ../../po4a:1155
-#, perl-format
-msgid "Cannot parse option line (missing >%s<?): %s"
-msgstr "Không thể phân tích cú pháp của dòng tùy chọn (thiếu >%s< ?): %s"
-
-#: ../../po4a:1184
-msgid "Split mode, creating a temporary POT"
-msgstr "Chế độ chia tách, tạo một tập tin mẫu POT tạm thời"
-
-#: ../../po4a:1187
-msgid "Disabling --translate-only option, it is not supported in split mode"
-msgstr ""
-"Đang tắt tùy chọn “--translate-only” (chỉ dịch) mà không phải được hỗ trợ "
-"trong chế độ chia tách"
-
-#: ../../po4a:1241 ../../po4a:1394 ../../po4a-updatepo:281
-#, perl-format
-msgid "Updating %s:"
-msgstr "Đang cập nhật %s:"
-
-#: ../../po4a:1244 ../../po4a:1404 ../../po4a-updatepo:292
-#, perl-format
-msgid "Creating %s:"
-msgstr "Đang tạo %s:"
-
-#: ../../po4a:1303 ../../po4a:1333 ../../po4a:1433 ../../po4a-updatepo:263
-#, perl-format
-msgid "Can't create a temporary POT file: %s"
-msgstr "Không thể tạo một tập tin POT tạm thời: %s"
-
-#: ../../po4a:1316
-#, perl-format
-msgid " (%d entries)"
-msgstr " (%d mục)"
-
-#: ../../po4a:1342 ../../po4a:1459
-#, perl-format
-msgid "Can't create directory '%s': %s"
-msgstr "Không thể tạo thư mục “%s”: %s"
-
-#: ../../po4a:1364 ../../scripts/msguntypot:203
-#, perl-format
-msgid "Can't create a temporary PO file: %s"
-msgstr "Không thể tạo một tập tin PO tạm thời: %s"
-
-#: ../../po4a:1524
-#, perl-format
-msgid "%s doesn't need to be updated."
-msgstr "%s không cần cập nhật."
-
-#: ../../po4a:1584
-#, perl-format
-msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
-msgstr "Hủy %s (%s trên %s chuỗi; chỉ %s%% được dịch; cần %s%%)."
-
-#: ../../po4a:1598
-#, perl-format
-msgid "Timestamp %s created."
-msgstr "Nhãn thời gian %s được tạo."
-
-#: ../../po4a:1615
-#, perl-format
-msgid "Timestamp %s removed."
-msgstr "Nhãn thời gian %s bị gỡ bỏ."
-
-#: ../../po4a:1628
-#, perl-format
-msgid "Addendum %s does NOT apply to %s (translation discarded)."
-msgstr "Phầm thêm vào (addendum) %s KHÔNG áp dụng cho %s (bản dịch bị hủy)."
-
-#: ../../po4a:1643
-#, perl-format
-msgid "%s is %s%% translated (%s strings)."
-msgstr "%s được dịch %s%% (%s chuỗi)."
-
-#: ../../po4a:1646 ../../po4a-translate:240
-#, perl-format
-msgid "%s is %s%% translated (%s of %s strings)."
-msgstr "%s được dịch %s%% (%s trên %s chuỗi)."
-
-#: ../../po4a-translate:246
-#, perl-format
-msgid "Discard the translation of %s (only %s%% translated; need %s%%)."
-msgstr "Hủy bản dịch của %s (chỉ %s%% được dịch; cần %s%%)."
-
-#: ../../po4a-translate:284
-#, perl-format
-msgid "Discard the translation of %s (addendum %s does not apply)."
-msgstr "Hủy bản dịch của %s (phần thêm vào %s không áp dụng)."
-
-#: ../../po4a-translate:294
-#, perl-format
-msgid ""
-"Your input po file %s seems outdated (%s). Please consider running po4a-"
-"updatepo to refresh it."
-msgstr ""
-"Tập tin po đầu vào %s dường như đã lạc hậu (%s). Vui lòng cân nhắc chạy po4a-"
-"updatepo để làm mới nó."
-
-#: ../../po4a-updatepo:254
-msgid "po4a-updatepo can't take the input PO from stdin."
-msgstr ""
-"po4a-updatepo (cập nhật tập tin PO) không thể chấp nhận tập tin PO đầu vào "
-"từ đầu vào tiêu chuẩn."
-
-#: ../../po4a-updatepo:266
-msgid "Parse input files… "
-msgstr "Phân tích cú pháp của các tập tin đầu vào… "
-
-#: ../../po4a-updatepo:276
-msgid "done."
-msgstr "xong."
-
-#: ../../po4a-updatepo:287 ../../scripts/msguntypot:212
-#, perl-format
-msgid "Error while running msgmerge: %s"
-msgstr "Gặp lỗi trong khi chạy msgmerge: %s"
-
-#: ../../po4a-updatepo:295
-#, perl-format
-msgid "Error while copying the PO file: %s"
-msgstr "Gặp lỗi trong khi sao chép tập tin PO: %s"
-
 #. Argument checking
-#: ../../scripts/msguntypot:163 ../../scripts/msguntypot:165
+#: ../../msguntypot:163 ../../msguntypot:165
 #, perl-format
 msgid "Mandatory argument '%s' missing."
 msgstr "Thiếu đối số bắt buộc phải sử dụng “%s”."
 
-#: ../../scripts/msguntypot:174
+#. Check file existence
+#: ../../msguntypot:164 ../../msguntypot:166 ../../po4a:929
+#: ../../po4a-gettextize:385 ../../po4a-normalize:174 ../../po4a-translate:208
+#: ../../po4a-translate:209 ../../po4a-updatepo:273
+#, perl-format
+msgid "File %s does not exist."
+msgstr "Tập tin %s không tồn tại."
+
+#: ../../msguntypot:174
 #, perl-format
 msgid ""
 "The new and old POT files have different amount of strings (%d != %d). "
@@ -1351,20 +1065,379 @@ msgstr ""
 "Tập tin POT cũ và tập tin POT mới có số các chuỗi khác nhau (%d != %d). Ở "
 "đây có gì rất không ổn."
 
-#: ../../scripts/msguntypot:192
+#: ../../msguntypot:192
 #, perl-format
 msgid "Found %d modified entries."
 msgstr "Tìm thấy %d mục bị sửa đổi."
 
-#: ../../scripts/msguntypot:208
+#: ../../msguntypot:203 ../../po4a:1473
+#, perl-format
+msgid "Can't create a temporary PO file: %s"
+msgstr "Không thể tạo một tập tin PO tạm thời: %s"
+
+#: ../../msguntypot:208
 #, perl-format
 msgid "Handling %s"
 msgstr "Đang quản lý %s"
 
-#: ../../scripts/msguntypot:234
+#: ../../msguntypot:212 ../../po4a-updatepo:308
+#, perl-format
+msgid "Error while running msgmerge: %s"
+msgstr "Gặp lỗi trong khi chạy msgmerge: %s"
+
+#: ../../msguntypot:234
 #, perl-format
 msgid "Modified %d entries in %d files."
 msgstr "Đã sửa đổi %d mục trong %d tập tin."
+
+#: ../../po4a:812 ../../po4a:816
+#, fuzzy, perl-format
+#| msgid "Invalid %s. Directory %s does not exist."
+msgid "Option %s invalid. Directory %s does not exist (current directory: %s)."
+msgstr "%s không hợp lệ. Thư mục %s không tồn tại."
+
+#. TRANSLATOR: There is two chunks in the following:  opt:"--keep 20" opt:"-o nowrap"
+#: ../../po4a:852
+#, fuzzy, perl-format
+#| msgid "Unparsable argument '%s' (%s)."
+msgid "Unparsable option chunk '%s' (%s)."
+msgstr "Gặp đối số không thể phân tích “%s” (%s)."
+
+#: ../../po4a:861
+#, perl-format
+msgid "Skipping option chunk '%s'."
+msgstr ""
+
+#: ../../po4a:910
+#, perl-format
+msgid "failed to execute '%s': %s."
+msgstr "gặp lỗi khi thực thi “%s”: %s."
+
+#: ../../po4a:913
+#, perl-format
+msgid "'%s' died with signal %d, with coredump."
+msgstr "“%s” đã chết với tín hiệu %d, cũng đổ lõi."
+
+#: ../../po4a:915
+#, perl-format
+msgid "'%s' died with signal %d, without coredump."
+msgstr "“%s” đã chết với tín hiệu %d, không đổ lõi."
+
+#: ../../po4a:918
+#, perl-format
+msgid "'%s' exited with value %d."
+msgstr "“%s” đã thoát với giá trị %d."
+
+#: ../../po4a:921
+#, perl-format
+msgid "Error: %s"
+msgstr "Lỗi: %s"
+
+#: ../../po4a:941 ../../po4a:1014 ../../po4a:1166 ../../po4a-translate:267
+#, fuzzy, perl-format
+#| msgid "Can't open %s: %s"
+msgid "Cannot open %s: %s"
+msgstr "Không thể mở %s: %s"
+
+#: ../../po4a:954 ../../po4a:1023 ../../po4a:1176
+#, perl-format
+msgid "Unknown variable: %s"
+msgstr "Không nhận ra biến: %s"
+
+#: ../../po4a:964
+#, perl-format
+msgid "Syntax error: %s"
+msgstr "Lỗi cú pháp: %s"
+
+#: ../../po4a:995 ../../po4a:1041
+#, perl-format
+msgid "'%s' redeclared"
+msgstr "“%s” được khai báo lại"
+
+#: ../../po4a:999
+#, perl-format
+msgid "Unparsable argument '%s'."
+msgstr "Đối số không thể phân tích “%s”."
+
+#: ../../po4a:1046
+msgid "The list of languages cannot be set twice."
+msgstr "Không thể đặt hai lần danh sách các ngôn ngữ."
+
+#: ../../po4a:1048
+msgid "The POT file cannot be set twice."
+msgstr "Không thể đặt hai lần tập tin mẫu POT."
+
+#: ../../po4a:1052
+#, perl-format
+msgid "'%s' is not a directory"
+msgstr "“%s” không phải một thư mục"
+
+#: ../../po4a:1055
+#, perl-format
+msgid "Cannot list the '%s' directory"
+msgstr "Không thể liệt kê thư mục “%s”"
+
+#: ../../po4a:1065
+#, perl-format
+msgid "too many POT files: %s %s"
+msgstr "quá nhiều tập tin mẫu POT: %s %s"
+
+#: ../../po4a:1074
+#, perl-format
+msgid "no PO files found in %s"
+msgstr "không tìm thấy tập tin PO trong %s"
+
+#: ../../po4a:1084
+#, fuzzy, perl-format
+#| msgid ""
+#| "The '%s' master file was specified earlier in the configuration file.  "
+#| "This may cause problems with options."
+msgid ""
+"The master file '%s' was specified earlier in the configuration file. This "
+"may cause problems with options."
+msgstr ""
+"Tập tin chủ “%s” được ghi rõ trước trong tập tin cấu hình. Trường hợp này có "
+"thể gây ra vấn đề với tùy chọn."
+
+#: ../../po4a:1089
+#, fuzzy, perl-format
+#| msgid "The '%s' master file does not exist."
+msgid "The master file '%s' does not exist."
+msgstr "Tập tin chủ “%s” không tồn tại."
+
+#: ../../po4a:1148
+#, perl-format
+msgid "Unparsable argument '%s' (%s)."
+msgstr "Gặp đối số không thể phân tích “%s” (%s)."
+
+#: ../../po4a:1151
+msgid "The translated and master file are the same."
+msgstr "Tập tin gốc và tập tin dịch vẫn trùng nhau."
+
+#: ../../po4a:1193
+#, perl-format
+msgid "Translation of %s in %s redefined"
+msgstr "Chuỗi dịch %s trong %s được định nghĩa lại"
+
+#: ../../po4a:1213
+#, perl-format
+msgid "Unparsable command '%s'."
+msgstr "Không thể phân tích cú pháp của câu lệnh “%s”."
+
+#. don't care about error here
+#: ../../po4a:1219
+#, fuzzy
+#| msgid "po4a_paths not declared. Dunno where to find the POT and PO files"
+msgid ""
+"'po4a_paths' is not defined in the configuration file. Where are the POT and "
+"PO files?"
+msgstr ""
+"po4a_paths (các đường dẫn po4a) chưa được khai báo. Vì thế không biết nên "
+"tìm tập tin POT và PO ở đâu"
+
+#: ../../po4a:1235
+#, perl-format
+msgid "Cannot parse option line (missing >%s<?): %s"
+msgstr "Không thể phân tích cú pháp của dòng tùy chọn (thiếu >%s< ?): %s"
+
+#: ../../po4a:1266
+#, fuzzy, perl-format
+#| msgid "Split mode, creating a temporary POT"
+msgid "Split mode, creating a temporary POT:"
+msgstr "Chế độ chia tách, tạo một tập tin mẫu POT tạm thời"
+
+#: ../../po4a:1269
+msgid "Disabling --translate-only option, it is not supported in split mode"
+msgstr ""
+"Đang tắt tùy chọn “--translate-only” (chỉ dịch) mà không phải được hỗ trợ "
+"trong chế độ chia tách"
+
+#: ../../po4a:1325
+#, perl-format
+msgid "NOT updating %s as requested (--no-update)."
+msgstr ""
+
+#: ../../po4a:1329 ../../po4a:1526 ../../po4a-updatepo:301
+#, perl-format
+msgid "Updating %s:"
+msgstr "Đang cập nhật %s:"
+
+#: ../../po4a:1333
+#, perl-format
+msgid "NOT creating %s as requested (--no-update)."
+msgstr ""
+
+#: ../../po4a:1336 ../../po4a-updatepo:314
+#, perl-format
+msgid "Creating %s:"
+msgstr "Đang tạo %s:"
+
+#: ../../po4a:1408 ../../po4a:1441 ../../po4a:1563 ../../po4a-updatepo:283
+#, perl-format
+msgid "Can't create a temporary POT file: %s"
+msgstr "Không thể tạo một tập tin POT tạm thời: %s"
+
+#: ../../po4a:1418
+#, perl-format
+msgid " (%d entries)"
+msgstr " (%d mục)"
+
+#: ../../po4a:1421
+#, perl-format
+msgid "POT file %s already up to date."
+msgstr ""
+
+#: ../../po4a:1446 ../../po4a:1597
+#, perl-format
+msgid "Can't create directory '%s': %s"
+msgstr "Không thể tạo thư mục “%s”: %s"
+
+#: ../../po4a:1455
+#, perl-format
+msgid ""
+"msggrep did not create '%s'. Used command:\n"
+"  %s\n"
+"Please report that bug, along the information allowing to reproduce it.\n"
+msgstr ""
+
+#: ../../po4a:1484
+#, perl-format
+msgid ""
+"The translation of master file '%s' in language '%s' is missing (file: %s) "
+"-- skipping."
+msgstr ""
+
+#: ../../po4a:1524
+#, perl-format
+msgid "Updating the translation in language %s:"
+msgstr ""
+
+#: ../../po4a:1627
+#, perl-format
+msgid "PO file for language %s is missing -- skipping."
+msgstr ""
+
+#: ../../po4a:1629
+#, perl-format
+msgid "PO file %s for language %s is missing -- skipping."
+msgstr ""
+
+#: ../../po4a:1668
+#, perl-format
+msgid "%s doesn't need to be updated."
+msgstr "%s không cần cập nhật."
+
+#: ../../po4a:1724
+#, perl-format
+msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
+msgstr "Hủy %s (%s trên %s chuỗi; chỉ %s%% được dịch; cần %s%%)."
+
+#: ../../po4a:1734
+#, perl-format
+msgid "Timestamp %s created."
+msgstr "Nhãn thời gian %s được tạo."
+
+#: ../../po4a:1745
+#, perl-format
+msgid "Timestamp %s removed."
+msgstr "Nhãn thời gian %s bị gỡ bỏ."
+
+#: ../../po4a:1759
+#, perl-format
+msgid "Addendum %s does NOT apply to %s (translation discarded)."
+msgstr "Phầm thêm vào (addendum) %s KHÔNG áp dụng cho %s (bản dịch bị hủy)."
+
+#: ../../po4a:1768
+#, fuzzy, perl-format
+#| msgid "%s is %s%% translated (%s strings)."
+msgid "%s is 100%% translated (%s strings)."
+msgstr "%s được dịch %s%% (%s chuỗi)."
+
+#: ../../po4a:1772 ../../po4a-translate:244
+#, perl-format
+msgid "%s is %s%% translated (%s of %s strings)."
+msgstr "%s được dịch %s%% (%s trên %s chuỗi)."
+
+#: ../../po4a-translate:249
+#, perl-format
+msgid "Discard the translation of %s (only %s%% translated; need %s%%)."
+msgstr "Hủy bản dịch của %s (chỉ %s%% được dịch; cần %s%%)."
+
+#: ../../po4a-translate:287
+#, perl-format
+msgid "Discard the translation of %s (addendum %s does not apply)."
+msgstr "Hủy bản dịch của %s (phần thêm vào %s không áp dụng)."
+
+#: ../../po4a-translate:297
+#, perl-format
+msgid ""
+"Your input po file %s seems outdated (%s). Please consider running po4a-"
+"updatepo to refresh it."
+msgstr ""
+"Tập tin po đầu vào %s dường như đã lạc hậu (%s). Vui lòng cân nhắc chạy po4a-"
+"updatepo để làm mới nó."
+
+#: ../../po4a-updatepo:274
+msgid "po4a-updatepo can't take the input PO from stdin."
+msgstr ""
+"po4a-updatepo (cập nhật tập tin PO) không thể chấp nhận tập tin PO đầu vào "
+"từ đầu vào tiêu chuẩn."
+
+#: ../../po4a-updatepo:285
+msgid "Parse input files… "
+msgstr "Phân tích cú pháp của các tập tin đầu vào… "
+
+#: ../../po4a-updatepo:297
+msgid "done."
+msgstr "xong."
+
+#: ../../po4a-updatepo:317
+#, fuzzy, perl-format
+#| msgid "Error while copying the PO file: %s"
+msgid "Error while copying the PO file (%s -> %s): %s"
+msgstr "Gặp lỗi trong khi sao chép tập tin PO: %s"
+
+#~ msgid "Chdir %s (srcdir)"
+#~ msgstr "Chdir %s (srcdir)"
+
+#~ msgid "Call readpo(%s)"
+#~ msgstr "Gọi readpo(%s)"
+
+#~ msgid "Done readpo(%s)"
+#~ msgstr "Đã gọi xong readpo(%s)"
+
+#~ msgid "Call read(%s)"
+#~ msgstr "Gọi read(%s)"
+
+#~ msgid "Done read(%s)"
+#~ msgstr "Đã gọi xong read(%s)"
+
+#~ msgid "Call parse()"
+#~ msgstr "Gọi parse()"
+
+#~ msgid "Done parse()"
+#~ msgstr "Đã gọi xong parse()"
+
+#~ msgid "Call addendum(%s)"
+#~ msgstr "Gọi addendum(%s)"
+
+#~ msgid "Done addendum(%s)"
+#~ msgstr "Đã gọi xong addendum(%s)"
+
+#~ msgid "Call write(%s)"
+#~ msgstr "Gọi write(%s)"
+
+#~ msgid "Done write(%s)"
+#~ msgstr "Đã gọi xong write(%s)"
+
+#~ msgid "Call writepo(%s)"
+#~ msgstr "Gọi writepo(%s)"
+
+#~ msgid "Done writepo(%s)"
+#~ msgstr "Đã gọi xong writepo(%s)"
+
+#~ msgid "Chdir %s (calldir)"
+#~ msgstr "Chdir %s (calldir)"
 
 #~ msgid "Content of attribute %s excluded: %s"
 #~ msgstr "Nội dung của thuộc tính %s bị loại trừ: %s"

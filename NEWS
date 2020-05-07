@@ -2,6 +2,98 @@ This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
 =======================================================================
+        ___   ____   ___
+__   __/ _ \ | ___| ( _ )
+\ \ / / | | ||___ \ / _ \      The LockDown release.
+ \ V /| |_| | ___) | (_) |
+  \_/  \___(_)____/ \___/      (released 2020-05-04)
+
+AsciiDoc:
+ * Accept numbered list items beginning with any number of dots
+   (GitHub's #210)
+
+Markdown:
+ * Avoid translating Markdown fenced code block info string (GitHub's #194)
+ * List Markdown fenced code block info string as text type (GitHub's #195)
+ * Support YAML Front Matter (GitHub's #196). This requires YAML::Tiny.
+ * Introduce options yfm_keys and yfm_skip_array to respectively
+   specify which YAML keys should be translated, and that the array
+   content should not be translated.
+ * Work around a bug in YAML::Tiny that quotes numbers (GitHub's #217)
+ * Add gettext flag "markdown-text" for relevant entries (GitHub's #208)
+ 
+Text:
+ * Honor the (existing) --neverwrap option to handle every content verbatim.
+
+Texinfo:
+ * Add the comments starting with 'TRANSLATORS:' to the po file
+   (GitHub's #162)
+
+XHTML:
+ * Don't fail nor warn when a closing tag is missing, that's legit in HTML.
+   (GitHub's #179)
+
+XML and DocBook:
+ * Allow attributes with no value (GitHub's #178).
+ * Processing Instructions are handled as inline tags by default, but
+   you can change them back to breaking with '-o break-pi' (GitHub's #170)
+
+Yaml:
+ * Introduce option to skip array values. (GitHub's #187)
+ 
+po4a tool:
+ * Cleanups and fixups about options' parsing (now tested and documented)
+     _
+    / \  You may need to upgrage your po4a.conf if you were using
+   /_!_\ "unwanted features" (ie, bugs) of the previous implementation.
+
+ * Do not touch source dir when --destdir is provided (Debian #602387)
+ * Pass --add-location=file to msgmerge when receiving option porefs.
+   (requires gettext >= 0.19 -- June 2014)
+ * Option --master-charset sets the charset of the generated POT file.
+ * Option --master-language sets the language of the generated POT file.
+ * Add support for addendum path in po4a_paths (Debian #823189)
+ * Stop pretending that --porefs can control the wrapping of reference
+   comments, as the gettext tools used internally always rewrap them.
+
+Scripts:
+ * Rename po4aman-display-po to po4a-display-man
+ * Rename po4apod-display-po to po4a-display-pod
+
+Core:
+ * Use UTF-8 by default (the 20th century is over -- Debian #862460)
+   po4a used to prefer ascii unless it proved impossible. But the
+   underlying detection would fail, possibly for document containing
+   UTF-8 chars composed on printable ascii chars only.
+ * Add a --wrap-po option to control how the po file is wrapped, and
+   chose between either nicely wrapped files that tend to produce git 
+   conflicts, or ugly files that are easy to automatically deal with.
+
+Tests:
+ * Completely refactor most tests. They are now more reliable and the
+   error messages are much more useful to understand the issues.
+ * Many bugs to po4a and the core were ironed out in the process.
+ * PO files content are now tested too (GitHub's #67)
+
+Documentation:
+ * Various cleanups by Golubev Alexander (GitHub's #190 & #191)
+
+Translations:
+ * New translation: Serbian (cyrillic), thanks Ivan Pesic.
+ * Updated: Croatian, thanks Milo Ivir.
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: French, thanks Mattéo Rossillol‑‑Laruelle and Martin Quinson.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Hungarian, thanks Balázs Úr.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Japanese, thanks Shuuji TAKAHASHI.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: Russian, thanks Golubev Alexander and Artem.
+ * Updated: Spanish, thanks Omar Campagne.
+ * Updated: Swedish, thanks Mattias Münster.
+ * Updated: Ukrainian, thanks Yuri Chornoivan (українська).
+
+=======================================================================
         ___   ____ _____
 __   __/ _ \ | ___|___  |
 \ \ / / | | ||___ \  / /       The Diwali release.

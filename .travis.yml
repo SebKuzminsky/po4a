@@ -1,20 +1,21 @@
 language: perl
-dist: trusty
+dist: bionic
 addons:
   apt:
     packages:
       - liblocale-gettext-perl
-#      - libtext-wrapi18n-perl
-#      - libunicode-linebreak-perl
+      - libtext-wrapi18n-perl
+      - libunicode-linebreak-perl
+      - libtest-pod-perl
       - gettext
-      - docbook-xml 
-      - docbook-xsl
+#      - docbook-xml 
+#      - docbook-xsl
       - docbook
       - xsltproc
       - texlive-binaries
       - texlive-latex-base
       - opensp
-#      - libsgmls-perl Package disallowed by travis, unfortunately
+      - libsgmls-perl
       - docbook
 
 before_install:
@@ -27,7 +28,7 @@ install:
   - cpanm -v --installdeps --notest .  
 
 script:
-  - perl Build.PL; ./Build test
+  - perl Build.PL; ./Build test verbose=1
 
 notifications:
   email:

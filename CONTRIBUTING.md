@@ -78,8 +78,7 @@ ensure that bugs won't resurface in the future.
 
 *Test dependencies:*
 
-- On Debian:
-  `docbook-xml texlive-binaries libhtml-parser-perl libmodule-build-perl opensp docbook`
+- On Debian: check the .travis.yml file in the root directory for a full list.
 - On Fedora 24 (if you installed from the rpm po4a package):
   `perl-SGMLSpm perl-TermReadKey perl-Text-WrapI18N perl-Module-Build
   perl-Test-Simple perl-Unicode-LineBreak perl-HTML-TokeParser-Simple
@@ -91,6 +90,20 @@ directory.
 
 ```
   ./Build test --test_files t/25-yaml.t verbose=1
+```
+
+The PERL5LIB variable can be used to run your modified modules without
+reinstalling everything:
+
+```
+  PERL5LIB=../lib/ perl ../po4a-normalize -f text -o markdown t-20-text/PandocYamlFrontMatter.md
+```
+
+To the opposite, if you want to test the installed binaries instead of
+the local ones, simply set the AUTOPKGTEST_TMP variable:
+
+```
+  AUTOPKGTEST_TMP=1 ./Build test
 ```
 
 ## Writing a test
@@ -174,9 +187,19 @@ push @tests,
 
 # Submitting Your Patch
 
-When submitting a patch, please use the Pull Request feature on GitHub.
-Your PR should be based on the latest code in the master branch.
-Please rebase your PR as needed.
+Before all, please run ``tidyall -git`` to ensure that your changes
+stick to the project quality standards. You should also consider using
+a [git pre-commit hook](https://metacpan.org/pod/Code::TidyAll::Git::Precommit) 
+to that extend.
+
+When submitting a patch, please either fill a Pull Request on 
+[mquinson/po4a](https://github.com/mquinson/po4a) on GitHub or a Merge
+Request on [mquinson/po4a](https://salsa.debian.org/mquinson/po4a)
+salsa instance of GitLab. If you go for the salsa server, please do
+not fill your MR against the debian/po4a repository that is dedicated
+to the packaging of the software (unless, of course, your change is
+against the packaging). Your request should be based on the latest
+code in the master branch. Please rebase your work as needed.
 
 Finally, all PRs should include an update the the NEWS file. Please follow
 the format and briefly describe the change and provide a reference to
@@ -221,6 +244,7 @@ weblate, integrate the changes locally, push your changes to the git,
 pull them on weblate, and unlock it. You need to be a maintainer of
 the project on weblate for that.
 ```sh
+git pull salsa master ; git push # Get the German and Italian translations
 wlc lock
 wlc commit
 wlc push
@@ -231,6 +255,7 @@ perl Build.PL
 ./Build
 git commit -m "update po files" po
 git push
+git push salsa
 wlc pull
 wlc unlock
 ```
