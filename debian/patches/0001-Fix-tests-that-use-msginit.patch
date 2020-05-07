@@ -1,0 +1,31 @@
+From: Akinori Hattori <hattya@gentoo.org>
+Date: Wed, 6 May 2020 20:23:43 +0900
+Subject: Fix tests that use msginit
+
+The value of 'Project-Id-Version' depends on the root directory of po4a.
+---
+ t/Testhelper.pm | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/t/Testhelper.pm b/t/Testhelper.pm
+index 98cd5ce..ee60eee 100644
+--- a/t/Testhelper.pm
++++ b/t/Testhelper.pm
+@@ -95,7 +95,7 @@ $ENV{'COLUMNS'} = "80";
+ my $execpath = defined $ENV{AUTOPKGTEST_TMP} ? "/usr/bin" : "perl ..";
+ 
+ my $PODIFF =
+-  "-I'Copyright (C) 20.. Free Software Foundation, Inc.' -I'^# Automatically generated, 20...' -I'^\"POT-Creation-Date:' -I'^\"PO-Revision-Date:'";
++  "-I'Copyright (C) 20.. Free Software Foundation, Inc.' -I'^# Automatically generated, 20...' -I'^\"Project-Id-Version:' -I'^\"POT-Creation-Date:' -I'^\"PO-Revision-Date:'";
+ 
+ sub show_files {
+     my $basename = shift;
+@@ -121,7 +121,7 @@ sub system_failed {
+     $expected_exit_status //= 0;
+     my $exit_status = system($cmd);
+     $cmd =~
+-      s/diff -u -I'Copyright .C. 20.. Free Software Foundation, Inc.' -I'.. Automatically generated, 20...' -I'."POT-Creation-Date:' -I'."PO-Revision-Date:'/PODIFF/g;
++      s/diff -u -I'Copyright .C. 20.. Free Software Foundation, Inc.' -I'.. Automatically generated, 20...' -I'."Project-Id-Version:' -I'."POT-Creation-Date:' -I'."PO-Revision-Date:'/PODIFF/g;
+     $cmd =~ s{$root_dir/}{}g;
+     $cmd =~ s{t/../po4a}{po4a};
+ 
