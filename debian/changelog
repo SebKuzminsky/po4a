@@ -1,3 +1,20 @@
+po4a (0.58-1) unstable; urgency=medium
+
+  * New upstream version 0.58
+    - Do not touch source dir when --destdir is provided (Closes: #602387)
+    - Add support for addendum path in po4a_paths (Closes: #823189)
+    - Use UTF-8 by default (the 20th century is over)
+      po4a used to prefer ascii unless it proved impossible. But the
+      underlying detection would fail, possibly for document containing
+      UTF-8 chars composed on printable ascii chars only. (Closes: #862460)
+    - Add new patch to fix FTBFS.
+      Cherry-picked from upstream commit 5db0060.
+  * Update d/copyright
+  * d/copyright: Remove unneeded license paragraph for GPL-3.0+
+  * Use debhelper v13
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Thu, 07 May 2020 10:14:38 +0200
+
 po4a (0.57-2) unstable; urgency=medium
 
   * Source-only upload. Closes: #956544
