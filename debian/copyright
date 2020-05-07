@@ -4,8 +4,8 @@ Upstream-Contact: Martin Quinson <mquinson@debian.org>
 Source: https://po4a.org
 
 Files: *
-Copyright: © 2002-2018 Martin Quinson <mquinson@debian.org>
-           © 2002-2018 Software in the Public Interest, Inc.
+Copyright: © 2002-2020 Martin Quinson <mquinson@debian.org>
+           © 2002-2020 Software in the Public Interest, Inc.
            © 1995 David Megginson <dmeggins@aix1.uottawa.ca>
            © 2004 Jordi Vilalta  <jvprat@gmail.com>
            © 2005-2009 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
@@ -29,7 +29,7 @@ Copyright: © 2002-2017 Martin Quinson <mquinson@debian.org>
 					 © 2005-2009 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
 					 © 2009 Neil Williams <linux@codehelp.co.uk>
 					 © 2003-2013 Denis Barbier <barbier@debian.org>
-					 © 2018 Dr. Tobias Quathamer <toddy@debian.org>
+					 © 2018-2020 Dr. Tobias Quathamer <toddy@debian.org>
 License: GPL-2.0+
 
 License: GPL-2.0+
