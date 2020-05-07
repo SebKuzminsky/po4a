@@ -30,7 +30,7 @@ sub make_files_writable {
 
 sub perl_scripts {
     return ('po4a-gettextize', 'po4a-updatepo', 'po4a-translate',
-            'po4a-normalize', 'po4a', 'scripts/msguntypot');
+            'po4a-normalize', 'po4a', 'msguntypot');
 }
 
 # Update po/bin/*.po files
@@ -193,7 +193,7 @@ sub ACTION_man {
     copy ( File::Spec->catdir("doc", "po4a.7.pod"), $man7path) or die;
     foreach $file (perl_scripts()) {
         $file =~ m,([^/]*)$,;
-        copy($file, File::Spec->catdir($man1path, "$1.1p.pod")) or die;
+        copy($file, File::Spec->catdir($man1path, "$1.1p.pod")) or die "Cannot copy $file over";
     }
     foreach $file (@{$self->rscan_dir('lib',qr{\.pm$})}) {
         $file =~ m,([^/]*).pm$,;
@@ -238,7 +238,7 @@ sub ACTION_man {
     }
 
     # Install the manpages written in XML DocBook
-    foreach $file (qw(po4aman-display-po.xml po4apod-display-po.xml)) {
+    foreach $file (qw(po4a-display-man.xml po4a-display-pod.xml)) {
         copy ( File::Spec->catdir("share", "doc", $file), $man1path) or die;
     }
     foreach $file (@{$self->rscan_dir($manpath, qr{\.xml$})}) {
