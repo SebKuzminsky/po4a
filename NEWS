@@ -1,6 +1,32 @@
 This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
+        ___   ____   ___   _
+__   __/ _ \ | ___| ( _ ) / |
+\ \ / / | | ||___ \ / _ \ | |  The Release release.
+ \ V /| |_| | ___) | (_) || |
+  \_/  \___(_)____/ \___(_)_|  (released 2020-05-11)
+
+Documentation:
+ * Document an option of the XML parser (GitHub's #223).
+ * Small glitches found during the translations.
+
+Tests:
+ * Also ignore 'Project-Id-Version' when diffing PO files (GitHub's #224)
+ * asciidoc: reactivate tablecells tests
+ * asciidoc: fix management of images in tables (Github's #226)
+ * asciidoc: tolerate underline length variations in two lines titles
+   (Github's #212)
+
+Translations:
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Hungarian, thanks Balázs Úr.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: Russian, thanks Golubev Alexander and Andrei Stepanov.
+ * Updated: Ukrainian, thanks Yuri Chornoivan (українська).
+
 =======================================================================
         ___   ____   ___
 __   __/ _ \ | ___| ( _ )
