@@ -1,3 +1,10 @@
+po4a (0.58.1-1) unstable; urgency=medium
+
+  * New upstream version 0.58.1
+    - Remove patch, applied upstream
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Mon, 11 May 2020 15:09:50 +0200
+
 po4a (0.58-1) unstable; urgency=medium
 
   * New upstream version 0.58
