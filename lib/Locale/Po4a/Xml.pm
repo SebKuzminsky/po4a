@@ -452,6 +452,7 @@ when it's within another tag (<bbb>).
 
 By default, Processing Instructions (i.e., C<<? ... ?>> tags) are handled as inline tags.
 Pass this option if you want the PI to be handled as breaking tag.
+Note that unprocessed PHP tags are handled as Processing Instructions by the parser.
 
 =item B<nodefault>
 
@@ -2323,6 +2324,11 @@ This removes the returned stream from the input
 =item B<unquoted>
 
 This ensures that the searched text is outside any quotes
+
+=item B<regex>
+
+This denotes that the first argument is a regular expression rather than
+an plain string
 
 =back
 
