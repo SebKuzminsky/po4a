@@ -11,6 +11,7 @@ Build-Depends-Indep: docbook,
                      docbook-xsl,
                      gettext,
                      libmodule-build-perl,
+                     libpod-parser-perl,
                      libsgmls-perl,
                      libterm-readkey-perl,
                      libunicode-linebreak-perl,
@@ -30,6 +31,7 @@ Package: po4a
 Architecture: all
 Multi-Arch: foreign
 Depends: gettext,
+         libpod-parser-perl,
          libsgmls-perl,
          libyaml-tiny-perl,
          opensp,
