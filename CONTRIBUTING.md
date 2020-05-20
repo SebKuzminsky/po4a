@@ -269,6 +269,7 @@ git pull
 # Merge the other PR on github
 git pull
 rm -rf po_orig ; cp -r po po_orig # Copy existing po files
+# Fix the typo in the doc
 ./Build postats # Refresh the pot and po files (both doc and bin)
 cp po_orig/bin/*.po po/bin # Restore po files; msguntypot will handle typos in msgids
 cp po_orig/pod/*.po po/pod
@@ -287,13 +288,14 @@ Here is the checklist of things to remember when releasing po4a:
 - Integrate all pending translations:
   - `wlc commit && wlc push`
   - merge the pull request
-  - `git pull`
+  - `git pull && git pull salsa master`
 - Bump the version number in lib/Locale/Po4a/TransTractor.pm and
   regenerate the building script: `perl Build.PL`
 - Check that `./Build test` reports no error.
 - Check NEWS
   - It documents all recent changes found in git logs.
   - It contains a release name and a release date.
+  - It contains the translation statistics.
 - Build the archive: `./Build dist`
   - Interrupt it if the MANIFEST is out of sync, and then fix it by
     adding the missing files to MANIFEST (or MANIFEST.SKIP if they

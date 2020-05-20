@@ -223,8 +223,8 @@ Set the base directory for all input documents specified in the B<po4a>
 configuration file. 
 
 If both I<destdir> and I<srcdir> are specified, input files are
-searched in the following directories, in order: I<destdir>,
-I<srcdir> and the current directory. Output files are written to I<destdir> if
+searched in the following directories, in order: I<destdir>, the current
+directory and I<srcdir>. Output files are written to I<destdir> if
 specified, or to the current directory.
 
 =item B<--destdir> I<DESTDIR>
@@ -342,7 +342,7 @@ translation project as follows.
  [po_directory] man/po/
 
 The provided directory must contain a set of PO files, each named F<XX.po> with
-C<XX> the iso631 of the language used in this file. The directory must also
+C<XX> the ISO 639-1 of the language used in this file. The directory must also
 contain a single POT file, with the C<.pot> file extension.
 
 If you prefer, you can give the same information explicitly as follows:
@@ -364,9 +364,9 @@ list, reducing the risk of copy/paste error when a new language is added.
 
 By default, po4a produces one single PO file per target language, containing the
 whole content of your translation project. As your project grows, the size of
-these files may become problematic. When using weblate, it is possible to a
-specific priorities to the translations so that the important strings get
-translated first, but some translation teams still prefer to split the content
+these files may become problematic. When using weblate, it is possible to specify
+priorities for each translation segment (i.e., msgid) so that the important ones get
+translated first. Still, some translation teams prefer to split the content
 in several files.
 
 To have one PO file per master file, you simply have to use the string
@@ -875,8 +875,8 @@ sub find_input_file {
     my $filename = $_[0];
     my $debug    = $_[1];
     print STDERR "Search for input file $filename\n" if $debug;
-    return $filename if ( File::Spec->file_name_is_absolute($filename) );
-    foreach ( ( $destdir, $srcdir, $calldir ) ) {
+    return $filename                                 if ( File::Spec->file_name_is_absolute($filename) );
+    foreach ( ( $destdir, $calldir, $srcdir ) ) {
         next unless defined $_;
         my $p = File::Spec->catfile( $_, $filename );
         print STDERR "Test $p: " . ( -e $p ? "OK" : "nope" ) . "\n"
@@ -1054,11 +1054,13 @@ while (<CONFIG>) {
         opendir PO_DIR, find_input_file($po_directory)
           or die wrap_ref_mod( "$config_file:$nb", "", gettext("Cannot list the '%s' directory"), $po_directory );
 
-        foreach my $f ( readdir PO_DIR ) {
+        foreach my $f ( sort readdir PO_DIR ) {
             next unless -f find_input_file("$po_directory/$f");
             if ( $f =~ m/^(.*)\.po$/ ) {
                 push @langs, $1;
                 $po_filename{$1} = "$po_directory/$f";
+                print wrap_msg( gettext("Found language '%s' in the provided po_directory."), $1 )
+                  if $po4a_opts{"verbose"};
             }
             if ( $f =~ m/\.pot$/ ) {
                 if ( length $pot_filename ) {
@@ -1066,12 +1068,15 @@ while (<CONFIG>) {
                         $pot_filename, "$po_directory/$f" );
                 } else {
                     $pot_filename = "$po_directory/$f";
+                    print wrap_msg( gettext("Found POT file '%s' in the provided po_directory."), $pot_filename )
+                      if $po4a_opts{"verbose"};
                 }
             }
         }
 
         if ( not @langs ) {
-            warn wrap_ref_mod( "$config_file:$nb", "", gettext("no PO files found in %s"), $po_directory );
+            warn wrap_ref_mod( "$config_file:$nb", "", gettext("no PO files found in %s"),
+                find_input_file($po_directory) );
         }
 
     } elsif ( $cmd =~ m/type: *(.*)/ ) {
@@ -1405,7 +1410,7 @@ if ($update_pot_file) {
             SUFFIX => ".pot",
             OPEN   => 0,
             UNLINK => 0
-        ) or die wrap_msg( gettext("Can't create a temporary POT file: %s"), $! );
+        ) or die wrap_msg( gettext("Cannot create a temporary POT file: %s"), $! );
         $potfile->write($pot_filename);
     } else {
         if ( $po4a_opts{"force"} ) {
@@ -1438,12 +1443,12 @@ if ( $po4a_opts{"split"} ) {
                 SUFFIX => ".pot",
                 OPEN   => 0,
                 UNLINK => 0
-            ) or die wrap_msg( gettext("Can't create a temporary POT file: %s"), $! );
+            ) or die wrap_msg( gettext("Cannot create a temporary POT file: %s"), $! );
         }
 
         my $dir = dirname( find_output_file( $split_pot{$master} ) );
         if ( not -d $dir ) {
-            mkdir $dir or die wrap_msg( gettext("Can't create directory '%s': %s"), $dir, $! );
+            mkdir $dir or die wrap_msg( gettext("Cannot create directory '%s': %s"), $dir, $! );
         }
         my $outfile       = $po4a_opts{"force"} ? find_output_file( $split_pot{$master} ) : $tmp_file;
         my $searched_file = $document{$master}{'pot_in'} // $master;
@@ -1470,7 +1475,7 @@ if ( $po4a_opts{"split"} ) {
             SUFFIX => "-$lang.po",
             OPEN   => 0,
             UNLINK => 0
-        ) or die wrap_msg( gettext("Can't create a temporary PO file: %s"), $! );
+        ) or die wrap_msg( gettext("Cannot create a temporary PO file: %s"), $! );
         my $cmd_cat = "";
         foreach my $master ( sort keys %document ) {
             next if ( $master eq '' );
@@ -1505,9 +1510,13 @@ if ( not $po4a_opts{"no-update"} ) {
         foreach $lang ( sort keys %po_filename ) {
             my ( $infile, $outfile ) =
               ( find_input_file( $po_filename{$lang} ), find_output_file( $po_filename{$lang} ) );
-            my $updated_potfile = find_output_file($pot_filename);
+            my $updated_potfile = find_input_file($pot_filename);
 
             if ( -e $infile ) {
+                my $dir = dirname($outfile);
+                if ( not -d $dir ) {
+                    mkdir $dir or die wrap_msg( gettext("Cannot create directory '%s': %s"), $dir, $! );
+                }
 
                 my $msgmerge_opt = $po4a_opts{"msgmerge-opt"};
                 $msgmerge_opt =~ s/\$lang\b/$lang/g if scalar @langs;
@@ -1560,7 +1569,7 @@ if ( not $po4a_opts{"no-update"} ) {
                     SUFFIX => ".po",
                     OPEN   => 0,
                     UNLINK => 0
-                ) or die wrap_msg( gettext("Can't create a temporary POT file: %s"), $! );
+                ) or die wrap_msg( gettext("Cannot create a temporary POT file: %s"), $! );
 
                 my $cmd;
 
@@ -1594,7 +1603,7 @@ if ( not $po4a_opts{"no-update"} ) {
                 my $dir = dirname( $split_po{$lang}{$master} );
                 if ( not -d $dir ) {
                     mkdir $dir
-                      or die wrap_msg( gettext("Can't create directory '%s': %s"), $dir, $! );
+                      or die wrap_msg( gettext("Cannot create directory '%s': %s"), $dir, $! );
                 }
                 unless ( $po4a_opts{"force"} ) {
                     move_po_if_needed( $tmp_file, $split_po{$lang}{$master}, 0 );
@@ -1602,7 +1611,7 @@ if ( not $po4a_opts{"no-update"} ) {
                     move $tmp_file,
                       find_output_file( $split_po{$lang}{$master} )
                       or die wrap_msg(
-                        dgettext( "po4a", "Can't move %s to %s: %s." ), $tmp_file,
+                        dgettext( "po4a", "Cannot move %s to %s: %s." ), $tmp_file,
                         find_output_file( $split_po{$lang}{$master} ), $!
                       );
                 }
@@ -1808,8 +1817,8 @@ sub touch {
         utime undef, undef, $file;
     } else {
         sysopen( FH, $file, O_WRONLY | O_CREAT | O_NONBLOCK | O_NOCTTY )
-          or croak("Can't create $file : $!");
-        close FH or croak("Can't close $file : $!");
+          or croak("Cannot create $file : $!");
+        close FH or croak("Cannot close $file : $!");
     }
 }
 

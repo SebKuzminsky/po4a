@@ -11,7 +11,7 @@ use warnings;
 
 use subs qw(makespace);
 use vars qw($VERSION @ISA @EXPORT);
-$VERSION = "0.58.1";
+$VERSION = "0.59";
 @ISA     = qw(DynaLoader);
 @EXPORT  = qw(new process translate
   read write readpo writepo
@@ -445,7 +445,7 @@ sub read() {
     my $linenum = 0;
 
     open INPUT, "<$filename"
-      or croak wrap_msg( dgettext( "po4a", "Can't read from %s: %s" ), $filename, $! );
+      or croak wrap_msg( dgettext( "po4a", "Cannot read from %s: %s" ), $filename, $! );
     while ( defined( my $textline = <INPUT> ) ) {
         $linenum++;
         my $ref = "$refname:$linenum";
@@ -470,7 +470,7 @@ sub read() {
         }
     }
     close INPUT
-      or croak wrap_msg( dgettext( "po4a", "Can't close %s after reading: %s" ), $filename, $! );
+      or croak wrap_msg( dgettext( "po4a", "Cannot close %s after reading: %s" ), $filename, $! );
 
 }
 
@@ -487,7 +487,7 @@ This translated document data are provided by:
 sub write {
     my $self     = shift;
     my $filename = shift
-      or croak wrap_msg( dgettext( "po4a", "Can't write to a file without filename" ) );
+      or croak wrap_msg( dgettext( "po4a", "Cannot write to a file without filename" ) );
 
     my $fh;
     if ( $filename eq '-' ) {
@@ -503,14 +503,14 @@ sub write {
               if ( length($dir) && !-e $dir );
         }
         open $fh, ">$filename"
-          or croak wrap_msg( dgettext( "po4a", "Can't write to %s: %s" ), $filename, $! );
+          or croak wrap_msg( dgettext( "po4a", "Cannot write to %s: %s" ), $filename, $! );
     }
 
     map { print $fh $_ } $self->docheader();
     map { print $fh $_ } @{ $self->{TT}{doc_out} };
 
     if ( $filename ne '-' ) {
-        close $fh or croak wrap_msg( dgettext( "po4a", "Can't close %s after writing: %s" ), $filename, $! );
+        close $fh or croak wrap_msg( dgettext( "po4a", "Cannot close %s after writing: %s" ), $filename, $! );
     }
 
 }
@@ -598,12 +598,12 @@ sub addendum_parse {
     my ( $errcode, $mode, $position, $boundary, $bmode, $content ) = ( 1, "", "", "", "", "" );
 
     unless ( open( INS, "<$filename" ) ) {
-        warn wrap_msg( dgettext( "po4a", "Can't read from %s: %s" ), $filename, $! );
+        warn wrap_msg( dgettext( "po4a", "Cannot read from %s: %s" ), $filename, $! );
         goto END_PARSE_ADDFILE;
     }
 
     unless ( defined( $header = <INS> ) && $header ) {
-        warn wrap_msg( dgettext( "po4a", "Can't read po4a header from %s." ), $filename );
+        warn wrap_msg( dgettext( "po4a", "Cannot read po4a header from %s." ), $filename );
         goto END_PARSE_ADDFILE;
     }
 
@@ -638,19 +638,32 @@ sub addendum_parse {
         warn wrap_msg( dgettext( "po4a", "The po4a header of %s does not define the mode." ), $filename );
         goto END_PARSE_ADDFILE;
     }
-    unless ( $mode eq "before" || $mode eq "after" ) {
+    unless ( $mode eq "before" || $mode eq "after" || $mode eq "eof" ) {
         warn wrap_msg(
-            dgettext( "po4a", "Mode invalid in the po4a header of %s: should be 'before' or 'after' not %s." ),
-            $filename, $mode );
+            dgettext(
+                "po4a",
+                "Mode invalid in the po4a header of %s: should be 'before', 'after' or 'eof'. Instead, it is '%s'."
+            ),
+            $filename,
+            $mode
+        );
         goto END_PARSE_ADDFILE;
     }
 
-    unless ( length($position) ) {
+    unless ( length($position) || $mode eq "eof" ) {
         warn wrap_msg( dgettext( "po4a", "The po4a header of %s does not define the position." ), $filename );
         goto END_PARSE_ADDFILE;
     }
-    unless ( $mode eq "before" || length($boundary) ) {
+    if ( $mode eq "after" && length($boundary) == 0 ) {
         warn wrap_msg( dgettext( "po4a", "No ending boundary given in the po4a header, but mode=after." ) );
+        goto END_PARSE_ADDFILE;
+    }
+    if ( $mode eq "eof" && length($position) ) {
+        warn wrap_msg( dgettext( "po4a", "No position needed when mode=eof." ) );
+        goto END_PARSE_ADDFILE;
+    }
+    if ( $mode eq "eof" && length($boundary) ) {
+        warn wrap_msg( dgettext( "po4a", "No ending boundary needed when mode=eof." ) );
         goto END_PARSE_ADDFILE;
     }
 
@@ -673,10 +686,10 @@ sub mychomp {
 sub addendum {
     my ( $self, $filename ) = @_;
 
-    print STDERR wrap_mod( "po4a::transtractor::addendum", dgettext( "po4a", "Apply addendum: %s" ), $filename )
+    print STDERR wrap_mod( "po4a::transtractor::addendum", "Apply addendum %s", $filename )
       if $self->debug();
     unless ($filename) {
-        warn wrap_msg( dgettext( "po4a", "Can't apply addendum when not given the filename" ) );
+        warn wrap_msg( dgettext( "po4a", "Cannot apply addendum when not given the filename" ) );
         return 0;
     }
     die wrap_msg( dgettext( "po4a", "Addendum %s does not exist." ), $filename )
@@ -717,17 +730,22 @@ sub addendum {
         print STDERR "Start searching addendum insertion position...\n";
     }
 
-    my $found = scalar grep { /$position/ } @{ $self->{TT}{doc_out} };
-    if ( $found == 0 ) {
-        warn wrap_msg( dgettext( "po4a", "No candidate position for the addendum %s." ), $filename );
-        return 0;
-    }
-    if ( $found > 1 ) {
-        warn wrap_msg( dgettext( "po4a", "More than one candidate position found for the addendum %s." ), $filename );
-        return 0;
+    unless ( $mode eq 'eof' ) {
+        my $found = scalar grep { /$position/ } @{ $self->{TT}{doc_out} };
+        if ( $found == 0 ) {
+            warn wrap_msg( dgettext( "po4a", "No candidate position for the addendum %s." ), $filename );
+            return 0;
+        }
+        if ( $found > 1 ) {
+            warn wrap_msg( dgettext( "po4a", "More than one candidate position found for the addendum %s." ),
+                $filename );
+            return 0;
+        }
     }
 
-    if ( $mode eq "before" ) {
+    if ( $mode eq "eof" ) {
+        push @{ $self->{TT}{doc_out} }, $content;
+    } elsif ( $mode eq "before" ) {
         if ( $self->verbose() > 1 || $self->debug() ) {
             map {
                 print STDERR wrap_msg( dgettext( "po4a", "Addendum '%s' applied before this line: %s" ), $filename, $_ )
@@ -773,7 +791,7 @@ sub addendum {
         } while ( scalar @{ $self->{TT}{doc_out} } );
         @{ $self->{TT}{doc_out} } = @newres;
     }
-    print STDERR wrap_mod( "po4a::transtractor::addendum", dgettext( "po4a", "Done addendum: %s" ), $filename )
+    print STDERR wrap_mod( "po4a::transtractor::addendum", "Done with addendum %s", $filename )
       if $self->debug();
     return 1;
 }
