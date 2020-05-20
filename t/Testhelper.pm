@@ -122,7 +122,7 @@ sub system_failed {
     my $exit_status = system($cmd);
     $cmd =~
       s/diff -u -I'Copyright .C. 20.. Free Software Foundation, Inc.' -I'.. Automatically generated, 20...' -I'."Project-Id-Version:' -I'."POT-Creation-Date:' -I'."PO-Revision-Date:'/PODIFF/g;
-    $cmd =~ s{$root_dir/}{}g;
+    $cmd =~ s{$root_dir/}{BUILDPATH/}g;
     $cmd =~ s{t/../po4a}{po4a};
 
     if ( $exit_status == $expected_exit_status ) {
@@ -198,9 +198,9 @@ sub run_one_po4aconf {
     if ($closed_path) {
         push @setup,    "chmod -r-w-x " . $closed_path;    # Don't even look at the closed path
         push @teardown, "chmod +r+w+x " . $closed_path;    # Restore permissions
-        push @setup,    "chmod +r+x $path";                # Look into the path of this test
-        push @setup,    "chmod -w -R $path";               # But don't change any file in there
-        push @teardown, "chmod +w -R $path";               # Restore permissions
+        push @setup,    "chmod +r+x    $path";             # Look into the path of this test
+        push @setup,    "chmod -w   -R $path";             # But don't change any file in there
+        push @teardown, "chmod +w   -R $path";             # Restore permissions
     }
 
     my $cwd     = cwd();
@@ -220,8 +220,8 @@ sub run_one_po4aconf {
         $options = "--srcdir $path --destdir $tmppath $options";
     } elsif ( $mode eq 'curdir' ) {
         $tmppath .= '-cur';
-        push @setup, "cp $path/* $tmppath";
-        push @setup, "chmod +w $tmppath/*";
+        push @setup, "cp -r $path/* $tmppath";
+        push @setup, "chmod +w -R $tmppath";
         $run_from = $tmppath;
     } else {
         die "Malformed test: mode $mode unknown\n";
@@ -321,6 +321,8 @@ sub run_one_po4aconf {
         #        print STDERR "cmd: $tcmd\n";
         $tcmd =~ s/PATH/${execpath}/g;
         $tcmd =~ s/PODIFF/diff -u $PODIFF /g;
+        $tcmd =~ s/\$tmppath/$tmppath/g;
+        $tcmd =~ s/\$path/$path/g;
         if ( system_failed( "$tcmd 2>&1 > $tmppath/_cmd_output", "" ) ) {
             note("Command output:");
             open FH, "$tmppath/_cmd_output" || die "Cannot open output file that I just created, I'm puzzled";
@@ -393,7 +395,7 @@ sub run_one_format {
     # Normalize the document
     my $real_stderr = "$cwd/tmp/$path/$basename.norm.stderr";
     my $cmd =
-        "${execpath}/po4a-normalize -f $format "
+        "${execpath}/po4a-normalize -f $format --quiet "
       . "--pot $cwd/${tmpbase}.pot --localized $cwd/${tmpbase}.norm $options $basename.$ext"
       . " > $real_stderr 2>&1";
 
