@@ -1,3 +1,22 @@
+po4a (0.59-1) unstable; urgency=medium
+
+  [ Niko Tyni ]
+  * Add dependencies on libpod-parser-perl.
+    This anticipates changes in Perl 5.32: Pod::Parser has been removed
+    from the core distribution in the 5.31 series and is being packaged
+    separately for Debian.
+    The Perl 5.30 package in Debian already Provides libpod-parser-perl,
+    so the dependencies don't need to wait for the separate package.
+
+  [ Dr. Tobias Quathamer ]
+  * New upstream version 0.59
+    - po4a tool: Fix --srcdir handling. This bug was breaking the build
+      of several packages, including dpkg. (Closes: #960892)
+    - Addendum: New mode 'eof' to easily add at the end of the file
+      (Closes: #960949).
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Wed, 20 May 2020 10:23:43 +0200
+
 po4a (0.58.1-1) unstable; urgency=medium
 
   * New upstream version 0.58.1
