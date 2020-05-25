@@ -1,3 +1,18 @@
+po4a (0.59.1-1) unstable; urgency=medium
+
+  [ Martin Quinson ]
+  * gitlab-ci: disable job build-any
+
+  [ Dr. Tobias Quathamer ]
+  * New upstream version 0.59.1
+    - po4a tool: Really fix --srcdir and --destdir handling
+      (Closes: #960892 again). Even with the previous fix,
+      the aptitude package was still broken.
+    - Sgml: Sort the attributes. Without this, msgids are
+      randomly fuzzied. (Closes: #725931, #810988)
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Mon, 25 May 2020 19:09:59 +0200
+
 po4a (0.59-1) unstable; urgency=medium
 
   [ Niko Tyni ]
