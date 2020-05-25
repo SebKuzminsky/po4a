@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.58\n"
 "Report-Msgid-Bugs-To: devel@lists.po4a.org\n"
-"POT-Creation-Date: 2020-05-20 00:14+0200\n"
-"PO-Revision-Date: 2020-05-20 09:09+0200\n"
+"POT-Creation-Date: 2020-05-22 07:41+0200\n"
+"PO-Revision-Date: 2020-05-22 09:20+0200\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -594,15 +594,18 @@ msgstr "B<-o>, B<--option>"
 
 #. type: textblock
 #: po4a:35 po4a-gettextize:25 po4a-normalize:11 po4a-translate:27
+#: po4a-updatepo:21
 msgid ""
-"Extra option(s) to pass to the format plugin. Specify each option in the "
-"'I<name>B<=>I<value>' format. See the documentation of each plugin for more "
-"information about the valid options and their meanings."
+"Extra option(s) to pass to the format plugin. See the documentation of each "
+"plugin for more information about the valid options and their meanings. For "
+"example, you could pass '-o tablecells' to the AsciiDoc parser, while the "
+"text parser would accept '-o tabs=split'."
 msgstr ""
-"Extraoption(en), die an die Formaterweiterung übergeben werden soll. Geben "
-"Sie jede Option im Format »I<Name>B<=>I<Wert>« an. Lesen Sie die "
+"Extraoption(en), die an die Formaterweiterung übergeben werden soll. Lesen Sie die "
 "Dokumentation jeder Erweiterung für weitere Informationen über die gültigen "
-"Optionen und ihre Bedeutungen."
+"Optionen und ihre Bedeutungen. Beispielsweise könnten Sie dem AsciiDoc-"
+"Auswerter »-o tablecells« übergeben, während der Text-Auswerter »-o "
+"tabs=split« akzeptierte."
 
 #. type: =item
 #: po4a:36
@@ -843,13 +846,13 @@ msgstr ""
 #: po4a:65
 msgid ""
 "If both I<destdir> and I<srcdir> are specified, input files are searched in "
-"the following directories, in order: I<destdir>, I<srcdir> and the current "
-"directory. Output files are written to I<destdir> if specified, or to the "
+"the following directories, in order: I<destdir>, the current directory and "
+"I<srcdir>. Output files are written to I<destdir> if specified, or to the "
 "current directory."
 msgstr ""
 "Falls sowohl I<ZIELVERZ> als auch I<QUELLVERZ> festgelegt sind, wird in den "
 "folgenden Verzeichnissen, in dieser Reihenfolge, nach Eingabedateien "
-"gesucht: I<ZIELVERZ>, I<QUELLVERZ> und das aktuelle Verzeichnis. "
+"gesucht: I<ZIELVERZ>, das aktuelle Verzeichnis und I<QUELLVERZ>. "
 "Ausgabedateien werden in das I<ZIELVERZ>, falls angegeben, oder in das "
 "aktuelle Verzeichnis geschrieben."
 
@@ -1213,9 +1216,9 @@ msgstr ""
 "gesamten Inhalt Ihres Übersetzungsprojektes enthält. Mit dem Wachstum Ihres "
 "Projektes könnte die Größe der Dateien problematisch werden. Bei der "
 "Verwendung von Weblate ist es möglich, für jedes Übersetzungssegment (d.h., "
-"msgid) Prioritäten festzulegen, so dass wichtige zuerst übersetzt "
-"werden. Einige Übersetzungsteams bevorzugen es aber weiterhin, den Inhalt in "
-"mehrere Teile zu trennen."
+"msgid) Prioritäten festzulegen, so dass wichtige zuerst übersetzt werden. "
+"Einige Übersetzungsteams bevorzugen es aber weiterhin, den Inhalt in mehrere "
+"Teile zu trennen."
 
 #. type: textblock
 #: po4a:111
@@ -3030,19 +3033,6 @@ msgstr ""
 "werden sie mit B<po4a-updatepo> erstellt."
 
 #. type: textblock
-#: po4a-updatepo:21
-msgid ""
-"Extra option(s) to pass to the format plugin and other po4a internal "
-"modules.  Specify each option in the 'I<name>B<=>I<value>' format. See the "
-"documentation of each plugin for more information about the valid options "
-"and their meanings."
-msgstr ""
-"Extraoption(en), die an die Formaterweiterung und andere Po4a-interne Module "
-"übergeben werden soll. Geben Sie jede Option im Format »I<Name>B<=>I<Wert>« "
-"an. Lesen Sie die Dokumentation jeder Erweiterung für weitere Informationen "
-"über die gültigen Optionen und ihre Bedeutungen."
-
-#. type: textblock
 #: po4a-updatepo:54
 msgid ""
 "L<po4a-gettextize(1)>, L<po4a-normalize(1)>, L<po4a-translate(1)>, L<po4a(7)>"
@@ -4775,11 +4765,11 @@ msgstr ""
 msgid ""
 "This project provides an infrastructure for translating many manpages to "
 "different languages, ready for integration into several major distributions "
-"(ArchLinux, Debian and derivatives, Fedora)."
+"(Arch Linux, Debian and derivatives, Fedora)."
 msgstr ""
 "Dieses Projekt stellt die Infrastruktur zur Übersetzung vieler "
 "Handbuchseiten in verschiedene Sprachen bereit, mit Integration in viele "
-"große Distributionen (ArchLinux, Debian und abgeleitete, Fedora)."
+"große Distributionen (Arch Linux, Debian und abgeleitete, Fedora)."
 
 #. type: textblock
 #: doc/po4a.7.pod:125
@@ -12175,6 +12165,17 @@ msgstr ""
 " Copyright © 2004 Jordi Vilalta  <jvprat@gmail.com>\n"
 " Copyright © 2008-2009 Nicolas François <nicolas.francois@centraliens.net>\n"
 "\n"
+
+#~ msgid ""
+#~ "Extra option(s) to pass to the format plugin and other po4a internal "
+#~ "modules.  Specify each option in the 'I<name>B<=>I<value>' format. See "
+#~ "the documentation of each plugin for more information about the valid "
+#~ "options and their meanings."
+#~ msgstr ""
+#~ "Extraoption(en), die an die Formaterweiterung und andere Po4a-interne "
+#~ "Module übergeben werden soll. Geben Sie jede Option im Format "
+#~ "»I<Name>B<=>I<Wert>« an. Lesen Sie die Dokumentation jeder Erweiterung "
+#~ "für weitere Informationen über die gültigen Optionen und ihre Bedeutungen."
 
 #~ msgid ""
 #~ "<command>po4aman-display-po</command> can be used by a translator who "
