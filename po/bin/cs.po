@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.43-1\n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2020-05-22 00:39+0200\n"
+"POT-Creation-Date: 2020-07-10 15:02+0200\n"
 "PO-Revision-Date: 2019-09-29 10:55+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Czech <https://hosted.weblate.org/projects/po4a/po4a/cs/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Weblate 3.9-dev\n"
 "X-Rosetta-Export-Date: 2007-08-12 16:08:46+0000\n"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:149 ../../lib/Locale/Po4a/Man.pm:496
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:156 ../../lib/Locale/Po4a/Man.pm:496
 #: ../../lib/Locale/Po4a/Po.pm:235 ../../lib/Locale/Po4a/RubyDoc.pm:74
 #: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1662
 #: ../../lib/Locale/Po4a/Text.pm:211 ../../lib/Locale/Po4a/Xml.pm:598
@@ -28,19 +28,24 @@ msgstr ""
 msgid "Unknown option: %s"
 msgstr "Neznámá volba: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:208
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:163
+#, perl-format
+msgid "Invalid compatibility setting: '%s'. It must be either '%s' or '%s'."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:221
 #, perl-format
 msgid "Unable to parse macro definition: %s"
 msgstr "Nepodařilo se přečíst definici makra: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:255 ../../lib/Locale/Po4a/TeX.pm:1064
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:268 ../../lib/Locale/Po4a/TeX.pm:1064
 #: ../../po4a:942 ../../po4a:1015 ../../po4a:1242 ../../po4a-translate:298
 #, fuzzy, perl-format
 #| msgid "Can't open %s: %s"
 msgid "Cannot open %s: %s"
 msgstr "Nelze otevřít %s: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:290
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:303
 #, fuzzy, perl-format
 #| msgid ""
 #| "Detection of two line titles failed at %s\n"
@@ -52,7 +57,7 @@ msgstr ""
 "U %s selhalo rozpoznávání dvouřádkových nadpisů\n"
 "Nainstalujte modul Unicode::GCString!"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:414
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:427
 #, perl-format
 msgid ""
 "'%s' seems to be a two-lines title underlined with '%s', but the underlines "
@@ -60,7 +65,7 @@ msgid ""
 "your master document."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:871
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:886
 msgid ""
 "It seems that you are adding unindented content to an item. The standard "
 "allows this, but you may still want to change your document to use indented "
@@ -450,7 +455,7 @@ msgstr "Zprávy s více jak dvěma formami množného čísla nejsou podporován
 msgid "Parse error at: -->%s<--"
 msgstr "Nesrozumitelný řádek: -->%s<--"
 
-#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:643
+#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:642
 #: ../../lib/Locale/Po4a/TransTractor.pm:490
 #, fuzzy
 #| msgid "Can't write to a file without filename"
@@ -469,20 +474,20 @@ msgstr "Nelze zapisovat do %s: %s"
 msgid "Cannot write PO files with more than two plural forms."
 msgstr "Není možné ukládat soubory PO s více jak dvěma formami množného čísla."
 
-#: ../../lib/Locale/Po4a/Po.pm:625
+#: ../../lib/Locale/Po4a/Po.pm:624
 #, fuzzy, perl-format
 #| msgid "Can't unlink %s: %s."
 msgid "Cannot unlink %s: %s."
 msgstr "Není možné oddělit %s: %s."
 
-#: ../../lib/Locale/Po4a/Po.pm:632 ../../lib/Locale/Po4a/Po.pm:636
-#: ../../po4a:1685
+#: ../../lib/Locale/Po4a/Po.pm:631 ../../lib/Locale/Po4a/Po.pm:635
+#: ../../po4a:1681
 #, fuzzy, perl-format
 #| msgid "Can't move %s to %s: %s."
 msgid "Cannot move %s to %s: %s."
 msgstr "Nelze přesunout %s do %s: %s."
 
-#: ../../lib/Locale/Po4a/Po.pm:678
+#: ../../lib/Locale/Po4a/Po.pm:677
 msgid ""
 "\n"
 "The gettextization failed (once again). Don't give up, gettextizing is a "
@@ -499,7 +504,7 @@ msgstr ""
 "Podívejte se prosím do dokumentace po4a(7) na sekci \"HOWTO convert a pre-"
 "existing translation to po4a?\", která obsahuje rady, které vám s tím pomohou"
 
-#: ../../lib/Locale/Po4a/Po.pm:694
+#: ../../lib/Locale/Po4a/Po.pm:693
 #, perl-format
 msgid ""
 "Original has more strings than the translation (%d>%d). Please fix it by "
@@ -508,7 +513,7 @@ msgstr ""
 "Originál obsahuje více řetězců než překlad (%d>%d). Opravte to prosím tak, "
 "že upravíte přeloženou verzi a vložíte do ní nějaký fiktivní text."
 
-#: ../../lib/Locale/Po4a/Po.pm:707
+#: ../../lib/Locale/Po4a/Po.pm:706
 #, perl-format
 msgid ""
 "Original has less strings than the translation (%d<%d). Please fix it by "
@@ -523,7 +528,7 @@ msgstr ""
 "Možná příčina je v tom, že duplikovaný text v originále nebyl pokaždé "
 "přeložen stejně. Odstraňte jeden z překladů, a vše by mělo být v pořádku."
 
-#: ../../lib/Locale/Po4a/Po.pm:777
+#: ../../lib/Locale/Po4a/Po.pm:776
 #, perl-format
 msgid ""
 "po4a gettextization: Structure disparity between original and translated "
@@ -541,12 +546,12 @@ msgstr ""
 "Přeložený text: %s\n"
 "(částečný výsledek byl zapsán do gettextization.failed.po)"
 
-#: ../../lib/Locale/Po4a/Po.pm:1021
+#: ../../lib/Locale/Po4a/Po.pm:1020
 #, perl-format
 msgid "Evaluating the provided filter failed: %s"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:1151
+#: ../../lib/Locale/Po4a/Po.pm:1150
 #, perl-format
 msgid ""
 "'%s' is the singular form of a message, po4a will use the msgstr[0] "
@@ -554,7 +559,7 @@ msgid ""
 msgstr ""
 "'%s' je zpráva v jednotném čísle, po4a použije u překladu msgstr[0] (%s)."
 
-#: ../../lib/Locale/Po4a/Po.pm:1161
+#: ../../lib/Locale/Po4a/Po.pm:1160
 #, perl-format
 msgid ""
 "'%s' is the plural form of a message, po4a will use the msgstr[1] "
@@ -562,12 +567,12 @@ msgid ""
 msgstr ""
 "'%s' je zpráva v jednotném čísle, po4a použije u překladu msgstr[1] (%s)."
 
-#: ../../lib/Locale/Po4a/Po.pm:1389
+#: ../../lib/Locale/Po4a/Po.pm:1388
 #, perl-format
 msgid "msgid defined twice: %s"
 msgstr "msgid definováno dvakrát: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:1423
+#: ../../lib/Locale/Po4a/Po.pm:1422
 #, perl-format
 msgid ""
 "Translations don't match for:\n"
@@ -585,6 +590,17 @@ msgstr ""
 " Druhý překlad:\n"
 "%s\n"
 " Původní překlad zahozen."
+
+#: ../../lib/Locale/Po4a/Po.pm:1535
+#, perl-format
+msgid "The amount of entries differ between files: %d is not %d"
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Po.pm:1543
+#, fuzzy, perl-format
+#| msgid "msgid defined twice: %s"
+msgid "msgid declared in one file only: %s\n"
+msgstr "msgid definováno dvakrát: %s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:220
 msgid ""
@@ -689,22 +705,22 @@ msgstr "Nelze spustit nsgmls: %s"
 msgid "Unknown tag %s"
 msgstr "Neznámá značka %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1019
+#: ../../lib/Locale/Po4a/Sgml.pm:1021
 #, perl-format
 msgid "bad translation '%s' for '%s' in '%s'"
 msgstr "špatný překlad '%s' na '%s' v '%s'"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1075 ../../lib/Locale/Po4a/Sgml.pm:1160
+#: ../../lib/Locale/Po4a/Sgml.pm:1077 ../../lib/Locale/Po4a/Sgml.pm:1162
 #, perl-format
 msgid "Closing tag for a translation container missing before %s"
 msgstr "Před %s chybí ukončovací značka kontejneru překladu"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1245
+#: ../../lib/Locale/Po4a/Sgml.pm:1247
 #, perl-format
 msgid "Unknown SGML event type: %s"
 msgstr "Neznámý typ události SGML: %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1259
+#: ../../lib/Locale/Po4a/Sgml.pm:1261
 #, fuzzy
 #| msgid ""
 #| "Warning: nsgmls produced some errors.  This is usually caused by po4a, "
@@ -722,7 +738,7 @@ msgstr ""
 "je poškozený. Obvykle je to v pořádku, pro jistotu si vygenerovaný dokument "
 "můžete zkontrolovat příkazem nsgmls -wno-valid.  Pokračuji..."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1271
+#: ../../lib/Locale/Po4a/Sgml.pm:1273
 msgid ""
 "To see the error message, rerun po4a with this additional argument:\n"
 "   -o debug=onsgmls"
@@ -1030,7 +1046,17 @@ msgstr ""
 msgid "%s: foldattributes setting ignored since '%s' is not inline tag"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Xml.pm:2093 ../../lib/Locale/Po4a/Xml.pm:2108
+#: ../../lib/Locale/Po4a/Xml.pm:2015
+#, perl-format
+msgid ""
+"Invalid placeholder in the translation (the 'type' and 'id' must be present, "
+"in this order).\n"
+"%s\n"
+"\n"
+"Please fix your translation."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Xml.pm:2102 ../../lib/Locale/Po4a/Xml.pm:2117
 #, perl-format
 msgid ""
 "The '%s' option is deprecated. Please use the translated/untranslated and/or "
@@ -1039,10 +1065,10 @@ msgstr ""
 "Volba '%s' je zastaralá. Použijte prosím kategorie translated/untranslated "
 "and/or break/inline/placeholder."
 
-#: ../../lib/Locale/Po4a/Xml.pm:2271 ../../lib/Locale/Po4a/Xml.pm:2278
-#: ../../lib/Locale/Po4a/Xml.pm:2281 ../../lib/Locale/Po4a/Xml.pm:2284
-#: ../../lib/Locale/Po4a/Xml.pm:2289 ../../lib/Locale/Po4a/Xml.pm:2292
-#: ../../lib/Locale/Po4a/Xml.pm:2297
+#: ../../lib/Locale/Po4a/Xml.pm:2280 ../../lib/Locale/Po4a/Xml.pm:2287
+#: ../../lib/Locale/Po4a/Xml.pm:2290 ../../lib/Locale/Po4a/Xml.pm:2293
+#: ../../lib/Locale/Po4a/Xml.pm:2298 ../../lib/Locale/Po4a/Xml.pm:2301
+#: ../../lib/Locale/Po4a/Xml.pm:2306
 #, perl-format
 msgid "Tag '%s' both in the %s and %s categories."
 msgstr "Označit '%s' v obou (%s a %s) kategoriích."
@@ -1087,9 +1113,10 @@ msgid "Handling %s"
 msgstr "Zpracovávám %s"
 
 #: ../../msguntypot:212 ../../po4a-updatepo:309
-#, perl-format
-msgid "Error while running msgmerge: %s"
-msgstr "Chyba při vykonávání msgmerge: %s"
+#, fuzzy, perl-format
+#| msgid "Can't run nsgmls: %s"
+msgid "Could not run msgmerge: %s"
+msgstr "Nelze spustit nsgmls: %s"
 
 #: ../../msguntypot:234
 #, perl-format
@@ -1335,7 +1362,7 @@ msgstr ""
 msgid "Creating %s:"
 msgstr "Vytvářím %s:"
 
-#: ../../po4a:1484 ../../po4a:1517 ../../po4a:1643 ../../po4a-updatepo:284
+#: ../../po4a:1484 ../../po4a:1517 ../../po4a:1639 ../../po4a-updatepo:284
 #, fuzzy, perl-format
 #| msgid "Can't create a temporary POT file: %s"
 msgid "Cannot create a temporary POT file: %s"
@@ -1351,7 +1378,7 @@ msgstr " (%d položek)"
 msgid "POT file %s already up to date."
 msgstr ""
 
-#: ../../po4a:1522 ../../po4a:1589 ../../po4a:1677
+#: ../../po4a:1522 ../../po4a:1589 ../../po4a:1673
 #, fuzzy, perl-format
 #| msgid "Can't create directory '%s': %s"
 msgid "Cannot create directory '%s': %s"
@@ -1377,50 +1404,50 @@ msgstr ""
 msgid "Updating the translation in language %s:"
 msgstr ""
 
-#: ../../po4a:1707
+#: ../../po4a:1710
 #, perl-format
 msgid "PO file for language %s is missing -- skipping."
 msgstr ""
 
-#: ../../po4a:1709
+#: ../../po4a:1712
 #, perl-format
 msgid "PO file %s for language %s is missing -- skipping."
 msgstr ""
 
-#: ../../po4a:1748
+#: ../../po4a:1751
 #, perl-format
 msgid "%s doesn't need to be updated."
 msgstr "%s není třeba aktualizovat."
 
-#: ../../po4a:1804
+#: ../../po4a:1807
 #, perl-format
 msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
 msgstr ""
 "Zahazuji %s (%s z %s řetězců; přeloženo pouze %s%%; je potřeba přeložit %s"
 "%%)."
 
-#: ../../po4a:1814
+#: ../../po4a:1817
 #, perl-format
 msgid "Timestamp %s created."
 msgstr "Časový údaj %s vytvořen."
 
-#: ../../po4a:1825
+#: ../../po4a:1828
 #, perl-format
 msgid "Timestamp %s removed."
 msgstr "Časový údaj %s odstraněn."
 
-#: ../../po4a:1839
+#: ../../po4a:1842
 #, perl-format
 msgid "Addendum %s does NOT apply to %s (translation discarded)."
 msgstr "Dodatek %s se NEVZTAHUJE na %s (překlad zahozen)."
 
-#: ../../po4a:1848
+#: ../../po4a:1851
 #, fuzzy, perl-format
 #| msgid "%s is %s%% translated (%s strings)."
 msgid "%s is 100%% translated (%s strings)."
 msgstr "%s přeloženo je %s%% (%s řetězců)."
 
-#: ../../po4a:1852 ../../po4a-translate:275
+#: ../../po4a:1855 ../../po4a-translate:275
 #, perl-format
 msgid "%s is %s%% translated (%s of %s strings)."
 msgstr "%s přeloženo je %s%% (%s z %s řetězců)."
@@ -1472,8 +1499,11 @@ msgstr "dokončeno."
 #: ../../po4a-updatepo:318
 #, fuzzy, perl-format
 #| msgid "Error while copying the PO file: %s"
-msgid "Error while copying the PO file (%s -> %s): %s"
+msgid "Could not copy the PO file (%s → %s): %s"
 msgstr "Chyba při kopírování souboru PO: %s"
+
+#~ msgid "Error while running msgmerge: %s"
+#~ msgstr "Chyba při vykonávání msgmerge: %s"
 
 #~ msgid "Can't open %s: %s"
 #~ msgstr "Nelze otevřít %s: %s"
