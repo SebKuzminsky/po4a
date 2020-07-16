@@ -1,3 +1,9 @@
+po4a (0.60-1) unstable; urgency=medium
+
+  * New upstream version 0.60
+
+ -- Dr. Tobias Quathamer <toddy@debian.org>  Thu, 16 Jul 2020 10:26:59 +0200
+
 po4a (0.59.1-1) unstable; urgency=medium
 
   [ Martin Quinson ]
