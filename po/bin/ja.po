@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2020-05-22 00:39+0200\n"
+"POT-Creation-Date: 2020-07-10 15:02+0200\n"
 "PO-Revision-Date: 2020-05-03 19:11+0000\n"
 "Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Japanese <https://hosted.weblate.org/projects/po4a/po4a/ja/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.1-dev\n"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:149 ../../lib/Locale/Po4a/Man.pm:496
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:156 ../../lib/Locale/Po4a/Man.pm:496
 #: ../../lib/Locale/Po4a/Po.pm:235 ../../lib/Locale/Po4a/RubyDoc.pm:74
 #: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1662
 #: ../../lib/Locale/Po4a/Text.pm:211 ../../lib/Locale/Po4a/Xml.pm:598
@@ -23,19 +23,24 @@ msgstr ""
 msgid "Unknown option: %s"
 msgstr "不明なオプション: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:208
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:163
+#, perl-format
+msgid "Invalid compatibility setting: '%s'. It must be either '%s' or '%s'."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:221
 #, perl-format
 msgid "Unable to parse macro definition: %s"
 msgstr "マクロ定義をパースできません: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:255 ../../lib/Locale/Po4a/TeX.pm:1064
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:268 ../../lib/Locale/Po4a/TeX.pm:1064
 #: ../../po4a:942 ../../po4a:1015 ../../po4a:1242 ../../po4a-translate:298
 #, fuzzy, perl-format
 #| msgid "Can't open %s: %s"
 msgid "Cannot open %s: %s"
 msgstr "%s をオープンできません: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:290
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:303
 #, fuzzy, perl-format
 #| msgid ""
 #| "Detection of two line titles failed at %s\n"
@@ -47,7 +52,7 @@ msgstr ""
 "%s に 2 行になっているタイトルを検出しました\n"
 "Unicode::GCString モジュールをインストールしてください!"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:414
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:427
 #, perl-format
 msgid ""
 "'%s' seems to be a two-lines title underlined with '%s', but the underlines "
@@ -55,7 +60,7 @@ msgid ""
 "your master document."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:871
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:886
 msgid ""
 "It seems that you are adding unindented content to an item. The standard "
 "allows this, but you may still want to change your document to use indented "
@@ -428,7 +433,7 @@ msgstr "2 種類以上の複数形を持つメッセージはサポートして�
 msgid "Parse error at: -->%s<--"
 msgstr "パースエラー: -->%s<--"
 
-#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:643
+#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:642
 #: ../../lib/Locale/Po4a/TransTractor.pm:490
 #, fuzzy
 #| msgid "Can't write to a file without filename"
@@ -447,20 +452,20 @@ msgstr "%s へ書き込めません: %s"
 msgid "Cannot write PO files with more than two plural forms."
 msgstr "2 種類以上の複数形を持つ PO ファイルは書き込めません。"
 
-#: ../../lib/Locale/Po4a/Po.pm:625
+#: ../../lib/Locale/Po4a/Po.pm:624
 #, fuzzy, perl-format
 #| msgid "Can't unlink %s: %s."
 msgid "Cannot unlink %s: %s."
 msgstr "%s を削除(unlink)できません: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:632 ../../lib/Locale/Po4a/Po.pm:636
-#: ../../po4a:1685
+#: ../../lib/Locale/Po4a/Po.pm:631 ../../lib/Locale/Po4a/Po.pm:635
+#: ../../po4a:1681
 #, fuzzy, perl-format
 #| msgid "Can't move %s to %s: %s."
 msgid "Cannot move %s to %s: %s."
 msgstr "%s から %s にファイル名を変更できません: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:678
+#: ../../lib/Locale/Po4a/Po.pm:677
 msgid ""
 "\n"
 "The gettextization failed (once again). Don't give up, gettextizing is a "
@@ -477,7 +482,7 @@ msgstr ""
 "po4a(7)「既存の訳を po4a にコンバートするには?」セクションにある、ヒントを参"
 "照してください"
 
-#: ../../lib/Locale/Po4a/Po.pm:694
+#: ../../lib/Locale/Po4a/Po.pm:693
 #, perl-format
 msgid ""
 "Original has more strings than the translation (%d>%d). Please fix it by "
@@ -486,7 +491,7 @@ msgstr ""
 "オリジナルは翻訳よりも文字列が多いです (%d>%d)。翻訳版にダミーのエントリを追"
 "加してください。"
 
-#: ../../lib/Locale/Po4a/Po.pm:707
+#: ../../lib/Locale/Po4a/Po.pm:706
 #, perl-format
 msgid ""
 "Original has less strings than the translation (%d<%d). Please fix it by "
@@ -501,7 +506,7 @@ msgstr ""
 "キストがその都度翻訳されていないことがあります。翻訳版から削除するとよいで"
 "しょう。"
 
-#: ../../lib/Locale/Po4a/Po.pm:777
+#: ../../lib/Locale/Po4a/Po.pm:776
 #, perl-format
 msgid ""
 "po4a gettextization: Structure disparity between original and translated "
@@ -519,12 +524,12 @@ msgstr ""
 "翻訳テキスト: %s\n"
 "(ここまでの結果は gettextization.failed.po に出力しました)"
 
-#: ../../lib/Locale/Po4a/Po.pm:1021
+#: ../../lib/Locale/Po4a/Po.pm:1020
 #, perl-format
 msgid "Evaluating the provided filter failed: %s"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:1151
+#: ../../lib/Locale/Po4a/Po.pm:1150
 #, perl-format
 msgid ""
 "'%s' is the singular form of a message, po4a will use the msgstr[0] "
@@ -532,7 +537,7 @@ msgid ""
 msgstr ""
 "'%s' はメッセージの単数形です。po4a は 翻訳 (%s) に msgstr[0] を使用します。"
 
-#: ../../lib/Locale/Po4a/Po.pm:1161
+#: ../../lib/Locale/Po4a/Po.pm:1160
 #, perl-format
 msgid ""
 "'%s' is the plural form of a message, po4a will use the msgstr[1] "
@@ -540,12 +545,12 @@ msgid ""
 msgstr ""
 "'%s' はメッセージの複数形です。po4a は 翻訳 (%s) に msgstr[1] を使用します。"
 
-#: ../../lib/Locale/Po4a/Po.pm:1389
+#: ../../lib/Locale/Po4a/Po.pm:1388
 #, perl-format
 msgid "msgid defined twice: %s"
 msgstr "msgid が二度定義されています: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:1423
+#: ../../lib/Locale/Po4a/Po.pm:1422
 #, perl-format
 msgid ""
 "Translations don't match for:\n"
@@ -563,6 +568,17 @@ msgstr ""
 " 翻訳 2\n"
 "%s\n"
 " 古い翻訳を破棄しました。"
+
+#: ../../lib/Locale/Po4a/Po.pm:1535
+#, perl-format
+msgid "The amount of entries differ between files: %d is not %d"
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Po.pm:1543
+#, fuzzy, perl-format
+#| msgid "msgid defined twice: %s"
+msgid "msgid declared in one file only: %s\n"
+msgstr "msgid が二度定義されています: %s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:220
 msgid ""
@@ -665,22 +681,22 @@ msgstr "onsgmls を実行できません: %s"
 msgid "Unknown tag %s"
 msgstr "不明なタグ %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1019
+#: ../../lib/Locale/Po4a/Sgml.pm:1021
 #, perl-format
 msgid "bad translation '%s' for '%s' in '%s'"
 msgstr "翻訳 '%s' は '%s' に対して不適切です ('%s' 内)"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1075 ../../lib/Locale/Po4a/Sgml.pm:1160
+#: ../../lib/Locale/Po4a/Sgml.pm:1077 ../../lib/Locale/Po4a/Sgml.pm:1162
 #, perl-format
 msgid "Closing tag for a translation container missing before %s"
 msgstr "%s の前に翻訳コンテナの終了タグがありません"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1245
+#: ../../lib/Locale/Po4a/Sgml.pm:1247
 #, perl-format
 msgid "Unknown SGML event type: %s"
 msgstr "不明な SGML イベントタイプです: %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1259
+#: ../../lib/Locale/Po4a/Sgml.pm:1261
 msgid ""
 "Warning: onsgmls produced some errors.  This is usually caused by po4a, "
 "which modifies the input and restores it afterwards, causing the input of "
@@ -691,7 +707,7 @@ msgstr ""
 "po4a が入力を修正し、後で復元しますが、この処理が原因です。通常問題ありません"
 "が、生成したドキュメントを検証する場合 onsgmls -wno-valid としてください。"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1271
+#: ../../lib/Locale/Po4a/Sgml.pm:1273
 msgid ""
 "To see the error message, rerun po4a with this additional argument:\n"
 "   -o debug=onsgmls"
@@ -998,7 +1014,17 @@ msgstr ""
 msgid "%s: foldattributes setting ignored since '%s' is not inline tag"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Xml.pm:2093 ../../lib/Locale/Po4a/Xml.pm:2108
+#: ../../lib/Locale/Po4a/Xml.pm:2015
+#, perl-format
+msgid ""
+"Invalid placeholder in the translation (the 'type' and 'id' must be present, "
+"in this order).\n"
+"%s\n"
+"\n"
+"Please fix your translation."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Xml.pm:2102 ../../lib/Locale/Po4a/Xml.pm:2117
 #, perl-format
 msgid ""
 "The '%s' option is deprecated. Please use the translated/untranslated and/or "
@@ -1007,10 +1033,10 @@ msgstr ""
 "'%s' オプションは廃止予定です。translated/untranslated や break/inline/"
 "placeholder カテゴリを使用してください。"
 
-#: ../../lib/Locale/Po4a/Xml.pm:2271 ../../lib/Locale/Po4a/Xml.pm:2278
-#: ../../lib/Locale/Po4a/Xml.pm:2281 ../../lib/Locale/Po4a/Xml.pm:2284
-#: ../../lib/Locale/Po4a/Xml.pm:2289 ../../lib/Locale/Po4a/Xml.pm:2292
-#: ../../lib/Locale/Po4a/Xml.pm:2297
+#: ../../lib/Locale/Po4a/Xml.pm:2280 ../../lib/Locale/Po4a/Xml.pm:2287
+#: ../../lib/Locale/Po4a/Xml.pm:2290 ../../lib/Locale/Po4a/Xml.pm:2293
+#: ../../lib/Locale/Po4a/Xml.pm:2298 ../../lib/Locale/Po4a/Xml.pm:2301
+#: ../../lib/Locale/Po4a/Xml.pm:2306
 #, perl-format
 msgid "Tag '%s' both in the %s and %s categories."
 msgstr "タグ '%s' が %s カテゴリと %s カテゴリにあります。"
@@ -1055,9 +1081,10 @@ msgid "Handling %s"
 msgstr "%s を処理中"
 
 #: ../../msguntypot:212 ../../po4a-updatepo:309
-#, perl-format
-msgid "Error while running msgmerge: %s"
-msgstr "msgmerge の実行中にエラー: %s"
+#, fuzzy, perl-format
+#| msgid "Can't run onsgmls: %s"
+msgid "Could not run msgmerge: %s"
+msgstr "onsgmls を実行できません: %s"
 
 #: ../../msguntypot:234
 #, perl-format
@@ -1306,7 +1333,7 @@ msgstr ""
 msgid "Creating %s:"
 msgstr "%s の生成中:"
 
-#: ../../po4a:1484 ../../po4a:1517 ../../po4a:1643 ../../po4a-updatepo:284
+#: ../../po4a:1484 ../../po4a:1517 ../../po4a:1639 ../../po4a-updatepo:284
 #, fuzzy, perl-format
 #| msgid "Can't create a temporary POT file: %s"
 msgid "Cannot create a temporary POT file: %s"
@@ -1322,7 +1349,7 @@ msgstr " (%d エントリ)"
 msgid "POT file %s already up to date."
 msgstr ""
 
-#: ../../po4a:1522 ../../po4a:1589 ../../po4a:1677
+#: ../../po4a:1522 ../../po4a:1589 ../../po4a:1673
 #, fuzzy, perl-format
 #| msgid "Can't create directory '%s': %s"
 msgid "Cannot create directory '%s': %s"
@@ -1348,48 +1375,48 @@ msgstr ""
 msgid "Updating the translation in language %s:"
 msgstr ""
 
-#: ../../po4a:1707
+#: ../../po4a:1710
 #, perl-format
 msgid "PO file for language %s is missing -- skipping."
 msgstr ""
 
-#: ../../po4a:1709
+#: ../../po4a:1712
 #, perl-format
 msgid "PO file %s for language %s is missing -- skipping."
 msgstr ""
 
-#: ../../po4a:1748
+#: ../../po4a:1751
 #, perl-format
 msgid "%s doesn't need to be updated."
 msgstr "%s は更新する必要がありません。"
 
-#: ../../po4a:1804
+#: ../../po4a:1807
 #, perl-format
 msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
 msgstr "%s を破棄します (%s/%s; %s%% しか訳していません。%s%% 必要です)。"
 
-#: ../../po4a:1814
+#: ../../po4a:1817
 #, perl-format
 msgid "Timestamp %s created."
 msgstr "タイムスタンプ  %s を作成しました。"
 
-#: ../../po4a:1825
+#: ../../po4a:1828
 #, perl-format
 msgid "Timestamp %s removed."
 msgstr "タイムスタンプ  %s を削除しました。"
 
-#: ../../po4a:1839
+#: ../../po4a:1842
 #, perl-format
 msgid "Addendum %s does NOT apply to %s (translation discarded)."
 msgstr "追加内容 %s を %s に「適用しません」(翻訳を破棄)"
 
-#: ../../po4a:1848
+#: ../../po4a:1851
 #, fuzzy, perl-format
 #| msgid "%s is %s%% translated (%s strings)."
 msgid "%s is 100%% translated (%s strings)."
 msgstr "%s は %s%% 翻訳完了 (%s 文字列)。"
 
-#: ../../po4a:1852 ../../po4a-translate:275
+#: ../../po4a:1855 ../../po4a-translate:275
 #, perl-format
 msgid "%s is %s%% translated (%s of %s strings)."
 msgstr "%s は %s%% 翻訳完了 (%s/%s 文字列)。"
@@ -1443,8 +1470,11 @@ msgstr "完了。"
 #: ../../po4a-updatepo:318
 #, fuzzy, perl-format
 #| msgid "Error while copying the PO file: %s"
-msgid "Error while copying the PO file (%s -> %s): %s"
+msgid "Could not copy the PO file (%s → %s): %s"
 msgstr "PO ファイルのコピー中にエラー: %s"
+
+#~ msgid "Error while running msgmerge: %s"
+#~ msgstr "msgmerge の実行中にエラー: %s"
 
 #~ msgid "Can't open %s: %s"
 #~ msgstr "%s をオープンできません: %s"

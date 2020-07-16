@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a\n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2020-05-22 00:39+0200\n"
+"POT-Creation-Date: 2020-07-10 15:02+0200\n"
 "PO-Revision-Date: 2007-08-12 21:47+0200\n"
 "Last-Translator: Shashidhar Honnungar <shashidhar.honnungar@gmail.com>\n"
 "Language-Team: Kannada <debian-l10n-kannada@lists.debian.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Rosetta-Export-Date: 2007-08-12 16:08:42+0000\n"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:149 ../../lib/Locale/Po4a/Man.pm:496
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:156 ../../lib/Locale/Po4a/Man.pm:496
 #: ../../lib/Locale/Po4a/Po.pm:235 ../../lib/Locale/Po4a/RubyDoc.pm:74
 #: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1662
 #: ../../lib/Locale/Po4a/Text.pm:211 ../../lib/Locale/Po4a/Xml.pm:598
@@ -26,26 +26,31 @@ msgstr ""
 msgid "Unknown option: %s"
 msgstr "ಗೊತ್ತಿಲ್ಲದ ಆಯ್ಕೆ: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:208
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:163
+#, perl-format
+msgid "Invalid compatibility setting: '%s'. It must be either '%s' or '%s'."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:221
 #, perl-format
 msgid "Unable to parse macro definition: %s"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:255 ../../lib/Locale/Po4a/TeX.pm:1064
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:268 ../../lib/Locale/Po4a/TeX.pm:1064
 #: ../../po4a:942 ../../po4a:1015 ../../po4a:1242 ../../po4a-translate:298
 #, fuzzy, perl-format
 #| msgid "Can't open %s: %s"
 msgid "Cannot open %s: %s"
 msgstr "%s ತೆರೆಯಲಾಗುತ್ತಿಲ್ಲ: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:290
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:303
 #, perl-format
 msgid ""
 "Detection of two line titles failed at %s\n"
 "Please install the Unicode::GCString module."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:414
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:427
 #, perl-format
 msgid ""
 "'%s' seems to be a two-lines title underlined with '%s', but the underlines "
@@ -53,7 +58,7 @@ msgid ""
 "your master document."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:871
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:886
 msgid ""
 "It seems that you are adding unindented content to an item. The standard "
 "allows this, but you may still want to change your document to use indented "
@@ -377,7 +382,7 @@ msgstr "ಕಡತದ ಹೆಸರಿಲ್ಲದೆ ಕಡತಕ್ಕೆ ಬರ
 msgid "Parse error at: -->%s<--"
 msgstr "ವಿಚಿತ್ರ ಸಾಲು: -->%s<--"
 
-#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:643
+#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:642
 #: ../../lib/Locale/Po4a/TransTractor.pm:490
 #, fuzzy
 #| msgid "Can't write to a file without filename"
@@ -395,18 +400,18 @@ msgstr "%s ಇದಕ್ಕೆ ಬರೆಯಲಾಗುತ್ತಿಲ್ಲ: %s"
 msgid "Cannot write PO files with more than two plural forms."
 msgstr "ಕಡತದ ಹೆಸರಿಲ್ಲದೆ ಕಡತಕ್ಕೆ ಬರೆಯಲಾಗದು"
 
-#: ../../lib/Locale/Po4a/Po.pm:625
+#: ../../lib/Locale/Po4a/Po.pm:624
 #, fuzzy, perl-format
 msgid "Cannot unlink %s: %s."
 msgstr "%s ತೆರೆಯಲಾಗುತ್ತಿಲ್ಲ: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:632 ../../lib/Locale/Po4a/Po.pm:636
-#: ../../po4a:1685
+#: ../../lib/Locale/Po4a/Po.pm:631 ../../lib/Locale/Po4a/Po.pm:635
+#: ../../po4a:1681
 #, fuzzy, perl-format
 msgid "Cannot move %s to %s: %s."
 msgstr "%s ಇಂದ %s ಗೆ ಮರುನಾಮಕರಣ ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ."
 
-#: ../../lib/Locale/Po4a/Po.pm:678
+#: ../../lib/Locale/Po4a/Po.pm:677
 msgid ""
 "\n"
 "The gettextization failed (once again). Don't give up, gettextizing is a "
@@ -417,14 +422,14 @@ msgid ""
 "task"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:694
+#: ../../lib/Locale/Po4a/Po.pm:693
 #, perl-format
 msgid ""
 "Original has more strings than the translation (%d>%d). Please fix it by "
 "editing the translated version to add some dummy entry."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:707
+#: ../../lib/Locale/Po4a/Po.pm:706
 #, perl-format
 msgid ""
 "Original has less strings than the translation (%d<%d). Please fix it by "
@@ -434,7 +439,7 @@ msgid ""
 "way each time. Remove one of the translations, and you're fine."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:777
+#: ../../lib/Locale/Po4a/Po.pm:776
 #, perl-format
 msgid ""
 "po4a gettextization: Structure disparity between original and translated "
@@ -446,31 +451,31 @@ msgid ""
 "(result so far dumped to gettextization.failed.po)"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:1021
+#: ../../lib/Locale/Po4a/Po.pm:1020
 #, perl-format
 msgid "Evaluating the provided filter failed: %s"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:1151
+#: ../../lib/Locale/Po4a/Po.pm:1150
 #, perl-format
 msgid ""
 "'%s' is the singular form of a message, po4a will use the msgstr[0] "
 "translation (%s)."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:1161
+#: ../../lib/Locale/Po4a/Po.pm:1160
 #, perl-format
 msgid ""
 "'%s' is the plural form of a message, po4a will use the msgstr[1] "
 "translation (%s)."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:1389
+#: ../../lib/Locale/Po4a/Po.pm:1388
 #, perl-format
 msgid "msgid defined twice: %s"
 msgstr "msgid ಎರಡು ಬಾರಿ ಕೊಡಲಾಗಿದೆ: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:1423
+#: ../../lib/Locale/Po4a/Po.pm:1422
 #, perl-format
 msgid ""
 "Translations don't match for:\n"
@@ -481,6 +486,17 @@ msgid ""
 "%s\n"
 " Old translation discarded."
 msgstr ""
+
+#: ../../lib/Locale/Po4a/Po.pm:1535
+#, perl-format
+msgid "The amount of entries differ between files: %d is not %d"
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Po.pm:1543
+#, fuzzy, perl-format
+#| msgid "msgid defined twice: %s"
+msgid "msgid declared in one file only: %s\n"
+msgstr "msgid ಎರಡು ಬಾರಿ ಕೊಡಲಾಗಿದೆ: %s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:220
 msgid ""
@@ -564,22 +580,22 @@ msgstr "%s ತೆರೆಯಲಾಗುತ್ತಿಲ್ಲ: %s"
 msgid "Unknown tag %s"
 msgstr "ಗೊತ್ತಿಲ್ಲದ ಆಯ್ಕೆ: %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1019
+#: ../../lib/Locale/Po4a/Sgml.pm:1021
 #, fuzzy, perl-format
 msgid "bad translation '%s' for '%s' in '%s'"
 msgstr "%s ಅನುವಾದ %s ನಲ್ಲಿ ಮರುಬಳಕೆಯಾಗಿದೆ"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1075 ../../lib/Locale/Po4a/Sgml.pm:1160
+#: ../../lib/Locale/Po4a/Sgml.pm:1077 ../../lib/Locale/Po4a/Sgml.pm:1162
 #, perl-format
 msgid "Closing tag for a translation container missing before %s"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1245
+#: ../../lib/Locale/Po4a/Sgml.pm:1247
 #, fuzzy, perl-format
 msgid "Unknown SGML event type: %s"
 msgstr "ಗೊತ್ತಿಲ್ಲದ ಫಾರ್ಮ್ಯಾಟ್ ಬಗೆ: %s."
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1259
+#: ../../lib/Locale/Po4a/Sgml.pm:1261
 msgid ""
 "Warning: onsgmls produced some errors.  This is usually caused by po4a, "
 "which modifies the input and restores it afterwards, causing the input of "
@@ -587,7 +603,7 @@ msgid ""
 "generated document with onsgmls -wno-valid."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1271
+#: ../../lib/Locale/Po4a/Sgml.pm:1273
 msgid ""
 "To see the error message, rerun po4a with this additional argument:\n"
 "   -o debug=onsgmls"
@@ -871,17 +887,27 @@ msgstr ""
 msgid "%s: foldattributes setting ignored since '%s' is not inline tag"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Xml.pm:2093 ../../lib/Locale/Po4a/Xml.pm:2108
+#: ../../lib/Locale/Po4a/Xml.pm:2015
+#, perl-format
+msgid ""
+"Invalid placeholder in the translation (the 'type' and 'id' must be present, "
+"in this order).\n"
+"%s\n"
+"\n"
+"Please fix your translation."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Xml.pm:2102 ../../lib/Locale/Po4a/Xml.pm:2117
 #, perl-format
 msgid ""
 "The '%s' option is deprecated. Please use the translated/untranslated and/or "
 "break/inline/placeholder categories."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Xml.pm:2271 ../../lib/Locale/Po4a/Xml.pm:2278
-#: ../../lib/Locale/Po4a/Xml.pm:2281 ../../lib/Locale/Po4a/Xml.pm:2284
-#: ../../lib/Locale/Po4a/Xml.pm:2289 ../../lib/Locale/Po4a/Xml.pm:2292
-#: ../../lib/Locale/Po4a/Xml.pm:2297
+#: ../../lib/Locale/Po4a/Xml.pm:2280 ../../lib/Locale/Po4a/Xml.pm:2287
+#: ../../lib/Locale/Po4a/Xml.pm:2290 ../../lib/Locale/Po4a/Xml.pm:2293
+#: ../../lib/Locale/Po4a/Xml.pm:2298 ../../lib/Locale/Po4a/Xml.pm:2301
+#: ../../lib/Locale/Po4a/Xml.pm:2306
 #, perl-format
 msgid "Tag '%s' both in the %s and %s categories."
 msgstr ""
@@ -926,8 +952,8 @@ msgstr "%s ಪರಿಷ್ಕರಿಸಲಾಗುತ್ತಿದೆ:"
 
 #: ../../msguntypot:212 ../../po4a-updatepo:309
 #, fuzzy, perl-format
-msgid "Error while running msgmerge: %s"
-msgstr "po ಕಡತ ನಕಲಿಸುವಾಗ ತೊಂದರೆ: %s"
+msgid "Could not run msgmerge: %s"
+msgstr "%s ತೆರೆಯಲಾಗುತ್ತಿಲ್ಲ: %s"
 
 #: ../../msguntypot:234
 #, perl-format
@@ -1155,7 +1181,7 @@ msgstr ""
 msgid "Creating %s:"
 msgstr "%s ಪರಿಷ್ಕರಿಸಲಾಗುತ್ತಿದೆ:"
 
-#: ../../po4a:1484 ../../po4a:1517 ../../po4a:1643 ../../po4a-updatepo:284
+#: ../../po4a:1484 ../../po4a:1517 ../../po4a:1639 ../../po4a-updatepo:284
 #, fuzzy, perl-format
 msgid "Cannot create a temporary POT file: %s"
 msgstr "ತಾತ್ಕಾಲಿಕ pot ಕಡತವೊಂದನ್ನು ರಚಿಸಲಾಗುತ್ತಿಲ್ಲ: %s"
@@ -1170,7 +1196,7 @@ msgstr " (%d ಸಾಲುಗಳು)"
 msgid "POT file %s already up to date."
 msgstr ""
 
-#: ../../po4a:1522 ../../po4a:1589 ../../po4a:1677
+#: ../../po4a:1522 ../../po4a:1589 ../../po4a:1673
 #, fuzzy, perl-format
 msgid "Cannot create directory '%s': %s"
 msgstr "%s ಇದಕ್ಕೆ ಬರೆಯಲಾಗುತ್ತಿಲ್ಲ: %s"
@@ -1195,48 +1221,48 @@ msgstr ""
 msgid "Updating the translation in language %s:"
 msgstr ""
 
-#: ../../po4a:1707
+#: ../../po4a:1710
 #, perl-format
 msgid "PO file for language %s is missing -- skipping."
 msgstr ""
 
-#: ../../po4a:1709
+#: ../../po4a:1712
 #, perl-format
 msgid "PO file %s for language %s is missing -- skipping."
 msgstr ""
 
-#: ../../po4a:1748
+#: ../../po4a:1751
 #, perl-format
 msgid "%s doesn't need to be updated."
 msgstr ""
 
-#: ../../po4a:1804
+#: ../../po4a:1807
 #, fuzzy, perl-format
 msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
 msgstr "%s ತ್ಯಜಿಸಿ (ಕೇವಲ %s%% ಅನುವಾದಿತ; %s%% ಬೇಕು)."
 
-#: ../../po4a:1814
+#: ../../po4a:1817
 #, perl-format
 msgid "Timestamp %s created."
 msgstr ""
 
-#: ../../po4a:1825
+#: ../../po4a:1828
 #, perl-format
 msgid "Timestamp %s removed."
 msgstr ""
 
-#: ../../po4a:1839
+#: ../../po4a:1842
 #, perl-format
 msgid "Addendum %s does NOT apply to %s (translation discarded)."
 msgstr ""
 
-#: ../../po4a:1848
+#: ../../po4a:1851
 #, fuzzy, perl-format
 #| msgid "%s is %s%% translated (%s strings)."
 msgid "%s is 100%% translated (%s strings)."
 msgstr "%s ಕಡತವು %s%% ಅನುವಾದಿತ (%s ಸಾಲುಗಳು)."
 
-#: ../../po4a:1852 ../../po4a-translate:275
+#: ../../po4a:1855 ../../po4a-translate:275
 #, perl-format
 msgid "%s is %s%% translated (%s of %s strings)."
 msgstr "%s ಕಡತವು %s%% ಅನುವಾದಿತ (%s ಸಾಲುಗಳು %s ಒಟ್ಟು ಸಾಲುಗಳಲ್ಲಿ)."
@@ -1287,8 +1313,12 @@ msgstr "ಆಯಿತು."
 
 #: ../../po4a-updatepo:318
 #, fuzzy, perl-format
-msgid "Error while copying the PO file (%s -> %s): %s"
+msgid "Could not copy the PO file (%s → %s): %s"
 msgstr "po ಕಡತ ನಕಲಿಸುವಾಗ ತೊಂದರೆ: %s"
+
+#, fuzzy
+#~ msgid "Error while running msgmerge: %s"
+#~ msgstr "po ಕಡತ ನಕಲಿಸುವಾಗ ತೊಂದರೆ: %s"
 
 #~ msgid "Can't open %s: %s"
 #~ msgstr "%s ತೆರೆಯಲಾಗುತ್ತಿಲ್ಲ: %s"

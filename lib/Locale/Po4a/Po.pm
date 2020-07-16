@@ -618,8 +618,7 @@ sub move_po_if_needed {
     my $diff;
 
     if ( -e $old_po ) {
-        my $diff_ignore = "-I'^#:' " . "-I'^\"POT-Creation-Date:' " . "-I'^\"PO-Revision-Date:'";
-        $diff = qx(diff -q $diff_ignore $old_po $new_po);
+        $diff = qx(diff -q -I'^#:' -I'^\"POT-Creation-Date:' -I'^\"PO-Revision-Date:' $old_po $new_po);
         if ( $diff eq "" ) {
             unlink $new_po
               or die wrap_msg( dgettext( "po4a", "Cannot unlink %s: %s." ), $new_po, $! );
@@ -1530,16 +1529,18 @@ sub equals_msgid($$) {
     my ( $self, $other ) = ( shift, shift );
 
     unless ( $self->count_entries() == $other->count_entries() ) {
-        return ( 0,
-                "The amount of entries differ between files: "
-              . $self->count_entries()
-              . " is not "
-              . $other->count_entries()
-              . "\n" );
+        return (
+            0,
+            wrap_msg(
+                dgettext( "po4a", "The amount of entries differ between files: %d" . " is not %d" ),
+                $self->count_entries(),
+                $other->count_entries()
+            )
+        );
     }
     foreach my $msgid ( keys %{ $self->{po} } ) {
         unless ( defined( $self->{po}{$msgid} ) && defined( $other->{po}{$msgid} ) ) {
-            return ( 0, "msgid declared in one file only: $msgid\n" );
+            return ( 0, wrap_msg( dgettext( "po4a", "msgid declared in one file only: %s\n" ), $msgid ) );
         }
     }
     return ( 1, "" );
