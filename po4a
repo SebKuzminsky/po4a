@@ -311,8 +311,8 @@ It requires B<gettext> 0.16 or later, and is activated by default.
 
 =head1 CONFIGURATION FILE
 
-po4a expects a configuration file as argument. This file must contain the
-following elements:
+po4a expects a configuration file as argument. This file must contain
+the following elements:
 
 =over
 
@@ -335,31 +335,43 @@ All lines contain a command between square braces, followed by its parameters.
 Comments begin with the char '#' and run until the end of the line. You can
 escape the end of line to spread a command over several lines.
 
+Some full examples are presented on this page, while other examples
+can be found in the C<t/cfg> directory of the source distribution.
+
 =head2 Finding the PO and POT files
 
-The simplest solution is to give the path to the directory containing your
-translation project as follows.
-
- [po_directory] man/po/
-
-The provided directory must contain a set of PO files, each named F<XX.po> with
-C<XX> the ISO 639-1 of the language used in this file. The directory must also
-contain a single POT file, with the C<.pot> file extension.
-
-If you prefer, you can give the same information explicitly as follows:
+The simplest solution is to explicitly give the path to POT and PO files, as follows:
 
  [po4a_paths] man/po/project.pot de:man/po/de.po fr:man/po/fr.po
 
 This specifies the path to the POT file first, and then the paths to the German
 and French PO files.
 
-Finally, the same information can be written as follows:
+The same information can be written as follows to reduce the risk of copy/paste errors:
 
  [po4a_langs] fr de
  [po4a_paths] man/po/project.pot $lang:man/po/$lang.po
 
 The C<$lang> component is automatically expanded using the provided languages
 list, reducing the risk of copy/paste error when a new language is added.
+
+You can further compact the same information by only providing the
+path to the directory containing your translation project, as follows.
+
+ [po_directory] man/po/
+
+The provided directory must contain a set of PO files, each named F<XX.po> with
+C<XX> the ISO 639-1 of the language used in this file. The directory must also
+contain a single POT file, with the C<.pot> file extension. For the first run,
+this file can be empty but it must exist (po4a cannot guess the name to use
+before the extension).
+
+Note that you must choose only one between C<po_directory> and
+C<po4a_paths>. The first one (C<po_directory>) is more compact,
+further reduces the risk of copy/paste error, but forces you to use
+the expected project structure and file names. The second one
+(C<po4a_paths>), is more explicit, probably more readable, and
+advised when you setup your first project with po4a.
 
 =head3 Centralized or split PO files?
 
@@ -996,11 +1008,27 @@ while (<CONFIG>) {
         die wrap_ref_mod( "$config_file:$nb", "", gettext("'%s' redeclared"), "po4a_path" )
           if ( length $pot_filename );
         $pot_filename = $main;
-        foreach my $arg ( split( / /, $args ) ) {
+        warn wrap_ref_mod(
+            "$config_file:$nb",
+            "",
+            gettext(
+                "Your POT file '%s' file name does not end with the 'pot' extension. This is unusual and will trouble the translators."
+            ),
+            $pot_filename
+        ) unless $pot_filename =~ m/\.pot$/;
+        my @split_args = split( / /, $args );
+        warn wrap_ref_mod(
+            "$config_file:$nb",
+            "",
+            gettext("No PO file provided as subsequent parameters to '%s'. Your documentation will not be translated."),
+            "po4a_path"
+        ) unless scalar @split_args > 0;
+
+        foreach my $arg (@split_args) {
             die wrap_ref_mod( "$config_file:$nb", "", gettext("Unparsable argument '%s'."), $arg )
               unless ( $arg =~ /^([^:]*):(.*)/ );
             my ( $component, $path ) = ( $1, $2 );
-            if ( $component =~ m/^add_(.*)$/ ) {
+            if ( $component =~ m/^add_(.*)$/ ) {    # This is an addendum declaration
                 my $lang    = $1;
                 my @addlist = ($path);
                 while ( scalar @addlist ) {
@@ -1141,6 +1169,8 @@ while (<CONFIG>) {
                     gettext("No PO files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."),
                     $destdir, $main, $calldir, $main, $srcdir, $main );
             }
+            warn wrap_ref_mod( "$config_file:$nb", "",
+                gettext("Your project will not be translated to any language.") );
         }
 
         # Step 4: if no POT file found, make a sensible error message
@@ -1159,6 +1189,8 @@ while (<CONFIG>) {
                     gettext("No POT files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."),
                     $destdir, $main, $calldir, $main, $srcdir, $main );
             }
+            warn wrap_ref_mod( "$config_file:$nb", "",
+                gettext("Please create an empty file with the 'pot' extension (e.g. 'myproject.pot').") );
         }
 
     } elsif ( $cmd =~ m/type: *(.*)/ ) {

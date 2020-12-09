@@ -2,6 +2,64 @@ This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
 =======================================================================
+
+        ___   __  ____
+__   __/ _ \ / /_|___ \
+\ \ / / | | | '_ \ __) |
+ \ V /| |_| | (_) / __/
+  \_/  \___(_)___/_____|
+
+po4a tool:
+ * Improve po_paths on misconfigurations, improve doc and error messages.
+
+Asciidoc:
+ * Unwrap all paragraphs by default (Github's #242).
+   Introduce "forcewrap" option to re-enable line wrapping on output.
+ * Support definition list continuations with indent (Github's #273)
+
+DocBook:
+ * Mark xreflabel attributes as translatable (GitHub's #267).
+
+Documentation:
+ * Fix some typos, thanks mestaritonttu.
+
+Translations:
+ * Updated: Croatian, thanks Milo Ivir.
+ * Updated: Chinese (simplified), thanks taotieren.
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: French, thanks jmichault and Jean-Baptiste Holcroft.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Hungarian, thanks Balázs Úr.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Norwegian Bokmål, thanks Allan Nordhøy and Petter
+   Reinholdtsen.
+ * Updated: Portuguese, thanks Silvério Santos.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: Russian, thanks Yuriy Balyuk and Artem.
+ * Updated: Serbian (cyrillic), thanks Ivan Pesic.
+ * Updated: Spanish, thanks Vladimir Támara Patiño and Emma Peel.
+ * Updated: Ukrainian, thanks Yuri Chornoivan (українська).
+
+Status of the binary translation:
+ 13 languages = 100%: de, es, fr, hr, hu, it, nb, nl, pt, pt_BR,
+                      sr_Cyrl, uk, zh_CN.
+ 1 language  >= 90%: ru (91%).
+ 11 languages >= 50%: cs (61%), da (62%), eo (59%), et (66%), eu (60%),
+                      id (61%), ja (66%), pl (66%), sl (59%), sv (64%),
+                      vi (66%).
+ 1 language  >= 33%: ca (48%).
+ 5 starting languages: af (7%), ar (14%), kn (7%), ko (19%), zh_HK (3%).
+
+Status of the documentation translation:
+ 4 languages = 100%: de, fr, pt_BR, uk.
+ 4 languages >= 95%: nl (99%), pt (99%), sr_Cyrl (99%), zh_CHS (99%).
+ 1 language  >= 80%: es (80%).
+ 2 languages >= 70%: ja (73%), pl (73%).
+ 2 languages >= 50%: it (64%), ru (61%).
+ 1 language  >= 33%: ca (47%).
+ 4 starting languages: eo (2%), hr (0%), hu (0%), nb (1%).
+
+=======================================================================
         ___   __   _
 __   __/ _ \ / /_ / |
 \ \ / / | | | '_ \| |             The schroot release.

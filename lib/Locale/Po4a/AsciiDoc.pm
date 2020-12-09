@@ -62,6 +62,33 @@ Space-separated list of macro definitions.
 
 Space-separated list of style definitions.
 
+=item B<forcewrap>
+
+Enable automatic line wrapping in non-verbatim blocks, even if the
+result could be misinterpreted by AsciiDoc formatters.
+
+By default, po4a will not wrap the produced AsciiDoc files because a
+manual inspection is mandated to ensure that the wrapping does not
+change the formatting. Consider for instance the following list
+item:
+
+ * a long sentence that is ending with a number 1. A second sentence.
+
+If the wrapping leads to the following presentation, the item is
+split into a numbered sub-list. To make things worse, only the
+speakers of the language used in the translation can inspect the
+situation.
+
+ * a long sentence that is ending with a number
+   1. A second sentence.
+
+Note that not wrapping the files produced by po4a should not be a
+problem since those files are meant to be processed automatically.
+They should not be regarded as source files anyway.
+
+With this option, po4a will produce better-looking source files, that
+may lead to possibly erroneous formatted outputs.
+
 =item B<noimagetargets>
 
 By default, the targets of block images are translatable to give opportunity
@@ -142,6 +169,7 @@ sub initialize {
     my %options = @_;
 
     $self->{options}{'nobullets'}      = 1;
+    $self->{options}{'forcewrap'}      = 0;
     $self->{options}{'debug'}          = '';
     $self->{options}{'verbose'}        = 1;
     $self->{options}{'entry'}          = '';
@@ -792,6 +820,13 @@ sub parse {
             {
                 # same indent level as before: append
                 $paragraph .= $text . "\n";
+            } elsif ( length($paragraph)
+                and ( length( $self->{bullet} ) == 0 ) )
+            {
+                # definition list continuation
+                $paragraph .= $text . "\n";
+                $self->{indent} = "";
+                print STDERR " definition list continuation\n" if ( $debug{parse} );
             } else {
 
                 # not the same indent level: start a new translated paragraph
@@ -990,6 +1025,7 @@ sub do_paragraph {
         $paragraph =~ s/^(.*?)(\n*)$/$1/s;
         $end = $2 || "";
     }
+
     my $t = $self->translate(
         $paragraph,
         $self->{ref},
@@ -997,6 +1033,12 @@ sub do_paragraph {
         "comment" => join( "\n", @comments ),
         "wrap"    => $wrap
     );
+
+    my $unwrap_result = !$self->{options}{'forcewrap'} && $wrap;
+    if ($unwrap_result) {
+        $t =~ s/(\n| )+/ /g;
+    }
+
     @comments = ();
     if ( defined $self->{bullet} ) {
         my $bullet  = $self->{bullet};
