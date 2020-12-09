@@ -10,7 +10,6 @@ Build-Depends-Indep: docbook,
                      docbook-xml,
                      docbook-xsl,
                      gettext,
-                     libmodule-build-perl,
                      libpod-parser-perl,
                      libsgmls-perl,
                      libterm-readkey-perl,
@@ -22,7 +21,8 @@ Build-Depends-Indep: docbook,
                      texlive-latex-base,
                      xsltproc
 Build-Depends:
- debhelper-compat (= 13)
+ debhelper-compat (= 13),
+ libmodule-build-perl
 Rules-Requires-Root: no
 Homepage: https://po4a.org/
 Vcs-Git: https://salsa.debian.org/debian/po4a.git
