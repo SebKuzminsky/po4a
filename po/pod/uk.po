@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ukrainian (po4a)\n"
 "Report-Msgid-Bugs-To: devel@lists.po4a.org\n"
-"POT-Creation-Date: 2020-06-01 12:30+0200\n"
-"PO-Revision-Date: 2020-06-03 13:41+0000\n"
+"POT-Creation-Date: 2020-09-22 23:12+0200\n"
+"PO-Revision-Date: 2020-09-24 20:41+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/po4a/po4a-doc/"
 "uk/>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.1-dev\n"
+"X-Generator: Weblate 4.3-dev\n"
 
 #. type: Attribute 'xml:lang' of: <refentry>
 #: share/doc/po4a-display-man.xml:1 share/doc/po4a-display-pod.xml:1
@@ -175,7 +175,7 @@ msgstr ""
 "translate</refentrytitle><manvolnum>1</manvolnum></citerefentry>."
 
 #. type: =head1
-#: share/doc/po4a-display-man.xml:21 share/doc/po4a-display-pod.xml:20 po4a:187
+#: share/doc/po4a-display-man.xml:21 share/doc/po4a-display-pod.xml:20 po4a:189
 #: po4a-gettextize:71 po4a-normalize:29 po4a-translate:54 po4a-updatepo:53
 #: msguntypot:29 doc/po4a.7.pod:150 lib/Locale/Po4a/Chooser.pm:7
 #: lib/Locale/Po4a/Dia.pm:12 lib/Locale/Po4a/Docbook.pm:15
@@ -1097,58 +1097,40 @@ msgstr ""
 "параметри. Коментарі починаються з символу «#» і завершуються кінцем рядка. "
 "Ви можете екранувати кінець рядка і поділити команду на декілька рядків."
 
-#. type: =head2
+#. type: textblock
 #: po4a:99
+msgid ""
+"Some full examples are presented on this page, while other examples can be "
+"found in the C<t/cfg> directory of the source distribution."
+msgstr ""
+"На цій сторінці представлено декілька повних прикладів. Інші приклади можна "
+"знайти у каталозі C<t/cfg> пакунка із початковим кодом програми."
+
+#. type: =head2
+#: po4a:100
 msgid "Finding the PO and POT files"
 msgstr "Пошук файлів PO і POT"
 
 #. type: textblock
-#: po4a:100
+#: po4a:101
 msgid ""
-"The simplest solution is to give the path to the directory containing your "
-"translation project as follows."
+"The simplest solution is to explicitly give the path to POT and PO files, as "
+"follows:"
 msgstr ""
-"Найпростішим рішенням є визначення шляху до каталогу, де міститься ваш "
-"проєкт перекладу, так, як вказано нижче."
+"Найпростішим рішенням є явне визначення шляху до файлів POT та PO, ось так:"
 
 #. type: verbatim
-#: po4a:101
+#: po4a:102
 #, no-wrap
 msgid ""
-" [po_directory] man/po/\n"
+" [po4a_paths] man/po/project.pot de:man/po/de.po fr:man/po/fr.po\n"
 "\n"
 msgstr ""
-" [po_directory] man/po/\n"
+" [po4a_paths] man/po/project.pot de:man/po/de.po fr:man/po/fr.po\n"
 "\n"
-
-#. type: textblock
-#: po4a:102
-msgid ""
-"The provided directory must contain a set of PO files, each named F<XX.po> "
-"with C<XX> the ISO 639-1 of the language used in this file. The directory "
-"must also contain a single POT file, with the C<.pot> file extension."
-msgstr ""
-"У вказаному каталозі має міститися набір файлів PO, назви яких слід "
-"записувати у форматі F<XX.po>, де C<XX> — код мови перекладу за ISO 639-1. У "
-"каталозі також має зберігатися один файл POT із суфіксом назви C<.pot>."
 
 #. type: textblock
 #: po4a:103
-msgid "If you prefer, you can give the same information explicitly as follows:"
-msgstr "Якщо хочете, можете надати деякі дані явно, ось так:"
-
-#. type: verbatim
-#: po4a:104
-#, no-wrap
-msgid ""
-" [po4a_paths] man/po/project.pot de:man/po/de.po fr:man/po/fr.po\n"
-"\n"
-msgstr ""
-" [po4a_paths] man/po/project.pot de:man/po/de.po fr:man/po/fr.po\n"
-"\n"
-
-#. type: textblock
-#: po4a:105
 msgid ""
 "This specifies the path to the POT file first, and then the paths to the "
 "German and French PO files."
@@ -1157,12 +1139,15 @@ msgstr ""
 "перекладів німецькою та французькою мовами."
 
 #. type: textblock
-#: po4a:106
-msgid "Finally, the same information can be written as follows:"
-msgstr "Нарешті, ті самі дані можна записати так:"
+#: po4a:104
+msgid ""
+"The same information can be written as follows to reduce the risk of copy/"
+"paste errors:"
+msgstr ""
+"Те саме можна записати для зменшення ризику помилок при копіюванні ось так:"
 
 #. type: verbatim
-#: po4a:107
+#: po4a:105
 #, no-wrap
 msgid ""
 " [po4a_langs] fr de\n"
@@ -1174,7 +1159,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:108
+#: po4a:106
 msgid ""
 "The C<$lang> component is automatically expanded using the provided "
 "languages list, reducing the risk of copy/paste error when a new language is "
@@ -1184,13 +1169,64 @@ msgstr ""
 "мов. Це зменшить ризик помилки під час вставляння при додаванні нової мови "
 "перекладу."
 
-#. type: =head3
+#. type: textblock
+#: po4a:107
+msgid ""
+"You can further compact the same information by only providing the path to "
+"the directory containing your translation project, as follows."
+msgstr ""
+"Зробити той самий запис компактнішим можна надавши шлях до каталогу, у якому "
+"міститься проєкт з перекладу. Приклад наведено нижче."
+
+#. type: verbatim
+#: po4a:108
+#, no-wrap
+msgid ""
+" [po_directory] man/po/\n"
+"\n"
+msgstr ""
+" [po_directory] man/po/\n"
+"\n"
+
+#. type: textblock
 #: po4a:109
+msgid ""
+"The provided directory must contain a set of PO files, each named F<XX.po> "
+"with C<XX> the ISO 639-1 of the language used in this file. The directory "
+"must also contain a single POT file, with the C<.pot> file extension. For "
+"the first run, this file can be empty but it must exist (po4a cannot guess "
+"the name to use before the extension)."
+msgstr ""
+"У вказаному каталозі має міститися набір файлів PO, назви яких слід "
+"записувати у форматі F<XX.po>, де C<XX> — код мови перекладу за ISO 639-1. У "
+"каталозі також має зберігатися один файл POT із суфіксом назви C<.pot>. Для "
+"першого запуску цей файл може бути порожнім, але має існувати (po4a не може "
+"визначити назву, якою слід скористатися перед суфіксом)."
+
+#. type: textblock
+#: po4a:110
+msgid ""
+"Note that you must choose only one between C<po_directory> and "
+"C<po4a_paths>. The first one (C<po_directory>) is more compact, further "
+"reduces the risk of copy/paste error, but forces you to use the expected "
+"project structure and file names. The second one (C<po4a_paths>), is more "
+"explicit, probably more readable, and advised when you setup your first "
+"project with po4a."
+msgstr ""
+"Зауважте, що слід вибрати лише один з варіантів, C<po_directory> або "
+"C<po4a_paths>. Перший (C<po_directory>) є компактнішим, зменшує ризик "
+"помилки під час копіювання, але примушує вас до використання очікуваної "
+"структури проєкту та назв файлів. Другий (C<po4a_paths>) є більш явним, "
+"ймовірно, зручнішим для читання, радимо користуватися ним, якщо ви "
+"налаштовуєте ваш перший проєкт у po4a."
+
+#. type: =head3
+#: po4a:111
 msgid "Centralized or split PO files?"
 msgstr "Централізовані чи поділені файли PO?"
 
 #. type: textblock
-#: po4a:110
+#: po4a:112
 msgid ""
 "By default, po4a produces one single PO file per target language, containing "
 "the whole content of your translation project. As your project grows, the "
@@ -1208,7 +1244,7 @@ msgstr ""
 "просити про поділ даних на декілька файлів."
 
 #. type: textblock
-#: po4a:111
+#: po4a:113
 msgid ""
 "To have one PO file per master file, you simply have to use the string C<"
 "$master> in the name of your PO files on the C<[po4a_paths]> line, as "
@@ -1219,7 +1255,7 @@ msgstr ""
 "C<[po4a_paths]>, як це показано нижче."
 
 #. type: verbatim
-#: po4a:112
+#: po4a:114
 #, no-wrap
 msgid ""
 " [po4a_paths] doc/$master/$master.pot $lang:doc/$master/$lang.po\n"
@@ -1229,7 +1265,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:113
+#: po4a:115
 msgid ""
 "If there are name conflicts because several files have the same filename, "
 "the name of the master file can be specified by adding a C<master:"
@@ -1240,7 +1276,7 @@ msgstr ""
 "параметра C<master:file=>I<назва>:"
 
 #. type: verbatim
-#: po4a:114
+#: po4a:116
 #, no-wrap
 msgid ""
 " [po4a_langs] de fr ja\n"
@@ -1256,7 +1292,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:115
+#: po4a:117
 msgid ""
 "In split mode, B<po4a> builds a temporary compendium during the PO update, "
 "to share the translations between all the PO files. If two PO files have "
@@ -1274,12 +1310,12 @@ msgstr ""
 "у всіх інших файлах PO автоматично."
 
 #. type: =head2
-#: po4a:116
+#: po4a:118
 msgid "Specifying the documents to translate"
 msgstr "Визначення документів для перекладу"
 
 #. type: textblock
-#: po4a:117
+#: po4a:119
 msgid ""
 "You must also list the documents that should be translated. For each master "
 "file, you must specify the format parser to use, the location of the "
@@ -1292,7 +1328,7 @@ msgstr ""
 "налаштування. Ось приклад:"
 
 #. type: verbatim
-#: po4a:118
+#: po4a:120
 #, no-wrap
 msgid ""
 " [type: sgml] doc/my_stuff.sgml fr:doc/fr/mon_truc.sgml \\\n"
@@ -1310,7 +1346,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:119
+#: po4a:121
 msgid ""
 "But again, these complex lines are difficult to read and modify, e.g. when "
 "adding a new language. It is much simpler to reorganize things using the C<"
@@ -1321,7 +1357,7 @@ msgstr ""
 "$lang> ось так:"
 
 #. type: verbatim
-#: po4a:120
+#: po4a:122
 #, no-wrap
 msgid ""
 " [type: sgml]    doc/my_stuff.sgml $lang:doc/$lang/my_stuff.sgml\n"
@@ -1335,12 +1371,12 @@ msgstr ""
 "\n"
 
 #. type: =head2
-#: po4a:121
+#: po4a:123
 msgid "Specifying options"
 msgstr "Визначення параметрів"
 
 #. type: textblock
-#: po4a:122
+#: po4a:124
 msgid ""
 "There is two types of options: I<po4a options> are default values to the "
 "po4a command line options while I<format options> are used to change the "
@@ -1362,7 +1398,7 @@ msgstr ""
 "обрізати пробіли навколо видобутих рядків."
 
 #. type: textblock
-#: po4a:123
+#: po4a:125
 msgid ""
 "You can pass these options for a specific master file, or even for a "
 "specific translation of that file, using C<opt:> and C<opt_XX:> for the "
@@ -1377,7 +1413,7 @@ msgstr ""
 "французькою (тобто визначено, що цей переклад зберігатиметься завжди)."
 
 #. type: verbatim
-#: po4a:124
+#: po4a:126
 #, no-wrap
 msgid ""
 " [type:xml] toto.xml $lang:toto.$lang.xml opt:\"-o nostrip\" opt_fr:\"--keep 0\"\n"
@@ -1387,7 +1423,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:125
+#: po4a:127
 msgid ""
 "In any case, these configuration chunks must be located at the end of the "
 "line.  The declaration of files must come first, then the addendum if any "
@@ -1402,7 +1438,7 @@ msgstr ""
 "елементи буде поєднано як рядки. Наступні приклади є еквівалентними:"
 
 #. type: verbatim
-#: po4a:126
+#: po4a:128
 #, no-wrap
 msgid ""
 "  [type:xml] toto.xml $lang:toto.$lang.xml opt:\"--keep 20\" opt:\"-o nostrip\" opt_fr:\"--keep 0\"\n"
@@ -1416,7 +1452,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:127
+#: po4a:129
 msgid ""
 "Note that language specific options are not used when building the POT file. "
 "It is for example impossible to pass B<nostrip> to the parser only when "
@@ -1432,12 +1468,12 @@ msgstr ""
 "створення перекладених документів, наприклад параметр C<--keep>."
 
 #. type: =head3
-#: po4a:128
+#: po4a:130
 msgid "Configuration aliases"
 msgstr "Альтернативи налаштувань"
 
 #. type: textblock
-#: po4a:129
+#: po4a:131
 msgid ""
 "To pass the same options to several files, the best is to define a type "
 "alias as follows. In the next example, C<--keep 0> is passed to every "
@@ -1450,7 +1486,7 @@ msgstr ""
 "який є розширенням типу C<man>."
 
 #. type: verbatim
-#: po4a:130
+#: po4a:132
 #, no-wrap
 msgid ""
 "  [po4a_alias:test] man opt_it:\"--keep 0\"\n"
@@ -1462,7 +1498,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:131
+#: po4a:133
 msgid ""
 "You can also extend an existing type reusing the same name for the alias as "
 "follows. This is not interpreted as as an erroneous recursive definition."
@@ -1472,7 +1508,7 @@ msgstr ""
 "вважаються помилковими рекурсивними оголошеннями."
 
 #. type: verbatim
-#: po4a:132
+#: po4a:134
 #, no-wrap
 msgid ""
 "  [po4a_alias:man] man opt_it:\"--keep 0\"\n"
@@ -1484,12 +1520,12 @@ msgstr ""
 "\n"
 
 #. type: =head3
-#: po4a:133
+#: po4a:135
 msgid "Global default options"
 msgstr "Загальні типові параметри"
 
 #. type: textblock
-#: po4a:134
+#: po4a:136
 msgid ""
 "You can also use C<[options]> lines to define options that must be used for "
 "all files, regardless of their type."
@@ -1498,7 +1534,7 @@ msgstr ""
 "які має бути використано для усіх файлів, незалежно від типу."
 
 #. type: verbatim
-#: po4a:135
+#: po4a:137
 #, no-wrap
 msgid ""
 "  [options] --keep 20 --option nostrip\n"
@@ -1508,7 +1544,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:136
+#: po4a:138
 msgid ""
 "As with the command line options, you can abbreviate the parameters passed "
 "in the configuration file:"
@@ -1517,7 +1553,7 @@ msgstr ""
 "параметрів, які передаються через файл налаштувань:"
 
 #. type: verbatim
-#: po4a:137
+#: po4a:139
 #, no-wrap
 msgid ""
 "  [options] -k 20 -o nostrip\n"
@@ -1527,12 +1563,12 @@ msgstr ""
 "\n"
 
 #. type: =head3
-#: po4a:138
+#: po4a:140
 msgid "Option priorities"
 msgstr "Пріоритетність параметрів"
 
 #. type: textblock
-#: po4a:139
+#: po4a:141
 msgid ""
 "The options of every sources are concatenated, ensuring that the default "
 "values can easily be overridden by more specific options. The order is as "
@@ -1543,7 +1579,7 @@ msgstr ""
 "є таким:"
 
 #. type: textblock
-#: po4a:140
+#: po4a:142
 msgid ""
 "C<[options]> lines provide default values that can be overridden by any "
 "other source."
@@ -1552,7 +1588,7 @@ msgstr ""
 "будь-якому іншому джерелі."
 
 #. type: textblock
-#: po4a:141
+#: po4a:143
 msgid ""
 "Type aliases are then used. Language specific settings override the ones "
 "applicable to all languages."
@@ -1561,7 +1597,7 @@ msgstr ""
 "перевизначають параметри, які застосовуються для усіх мов."
 
 #. type: textblock
-#: po4a:142
+#: po4a:144
 msgid ""
 "Settings that are specific to a given master file override both the default "
 "ones and the ones coming from the type alias. In this case also, language "
@@ -1573,7 +1609,7 @@ msgstr ""
 "параметри перевизначають загальні."
 
 #. type: textblock
-#: po4a:143
+#: po4a:145
 msgid ""
 "Finally, parameters provided on the B<po4a> command line override any "
 "settings from the configuration file."
@@ -1582,37 +1618,37 @@ msgstr ""
 "пріоритет за будь-які параметри з файла налаштувань."
 
 #. type: =head3
-#: po4a:144
+#: po4a:146
 msgid "Example"
 msgstr "Приклад"
 
 #. type: textblock
-#: po4a:145
+#: po4a:147
 msgid "Here is an example showing how to quote the spaces and quotes:"
 msgstr "Ось приклад, який демонструє те, як екранувати пробіли і лапки:"
 
 #. type: verbatim
-#: po4a:146
-#, no-wrap
-msgid ""
-" [po_directory] man/po/\n"
-" \n"
-msgstr ""
-" [po_directory] man/po/\n"
-" \n"
-
-#. type: verbatim
-#: po4a:147
-#, no-wrap
-msgid ""
-" [options] --master-charset UTF-8\n"
-" \n"
-msgstr ""
-" [options] --master-charset UTF-8\n"
-" \n"
-
-#. type: verbatim
 #: po4a:148
+#, no-wrap
+msgid ""
+" [po_directory] man/po/\n"
+" \n"
+msgstr ""
+" [po_directory] man/po/\n"
+" \n"
+
+#. type: verbatim
+#: po4a:149
+#, no-wrap
+msgid ""
+" [options] --master-charset UTF-8\n"
+" \n"
+msgstr ""
+" [options] --master-charset UTF-8\n"
+" \n"
+
+#. type: verbatim
+#: po4a:150
 #, no-wrap
 msgid ""
 " [po4a_alias:man] man opt:\"-o \\\"mdoc=NAME,SEE ALSO\\\"\"\n"
@@ -1626,12 +1662,12 @@ msgstr ""
 "\n"
 
 #. type: =head2
-#: po4a:149
+#: po4a:151
 msgid "Addendum: Adding extra content in the translation"
 msgstr "Додаток: додавання даних до перекладу"
 
 #. type: textblock
-#: po4a:150
+#: po4a:152
 msgid ""
 "If you want to add an extra section to the translation, for example to give "
 "credit to the translator, then you need to define an addendum to the line "
@@ -1644,46 +1680,46 @@ msgstr ""
 "(man) L<po4a(7)>, щоб дізнатися більше про синтаксис файлів додатків."
 
 #. type: verbatim
-#: po4a:151
-#, no-wrap
-msgid ""
-" [type: pod] script fr:doc/fr/script.1 \\\n"
-"             add_fr:doc/l10n/script.fr.add\n"
-"\n"
-msgstr ""
-" [type: pod] script fr:doc/fr/script.1 \\\n"
-"             add_fr:doc/l10n/script.fr.add\n"
-"\n"
-
-#. type: textblock
-#: po4a:152
-msgid "You can also use language templates as follow:"
-msgstr "Використовувати шаблони мов можна так:"
-
-#. type: verbatim
 #: po4a:153
 #, no-wrap
 msgid ""
-" [type: pod] script $lang:doc/$lang/script.1 \\\n"
-"             add_$lang:doc/l10n/script.$lang.add\n"
+" [type: pod] script fr:doc/fr/script.1 \\\n"
+"             add_fr:doc/l10n/script.fr.add\n"
 "\n"
 msgstr ""
-" [type: pod] script $lang:doc/$lang/script.1 \\\n"
-"             add_$lang:doc/l10n/script.$lang.add\n"
+" [type: pod] script fr:doc/fr/script.1 \\\n"
+"             add_fr:doc/l10n/script.fr.add\n"
 "\n"
 
 #. type: textblock
 #: po4a:154
+msgid "You can also use language templates as follow:"
+msgstr "Використовувати шаблони мов можна так:"
+
+#. type: verbatim
+#: po4a:155
+#, no-wrap
+msgid ""
+" [type: pod] script $lang:doc/$lang/script.1 \\\n"
+"             add_$lang:doc/l10n/script.$lang.add\n"
+"\n"
+msgstr ""
+" [type: pod] script $lang:doc/$lang/script.1 \\\n"
+"             add_$lang:doc/l10n/script.$lang.add\n"
+"\n"
+
+#. type: textblock
+#: po4a:156
 msgid "If an addendum fails to apply, the translation is discarded."
 msgstr "Якщо додаток не вдасться застосувати, переклад буде відкинуто."
 
 #. type: =head3
-#: po4a:155
+#: po4a:157
 msgid "Modifiers for the addendum declaration"
 msgstr "Модифікатори для оголошення додатка"
 
 #. type: textblock
-#: po4a:156
+#: po4a:158
 msgid ""
 "Addendum modifiers can simplify the configuration file in the case where not "
 "all languages provide an addendum, or when the list of addenda changes from "
@@ -1695,23 +1731,23 @@ msgstr ""
 "Модифікатор — одинарний символ, який вказують перед назвою файла."
 
 #. type: =item
-#: po4a:157
+#: po4a:159
 msgid "B<?>"
 msgstr "B<?>"
 
 #. type: textblock
-#: po4a:158
+#: po4a:160
 msgid "Include I<addendum_path> if this file does exist, otherwise do nothing."
 msgstr ""
 "Включити I<шлях_до_додатка>, якщо цей файл існує, інакше, не робити нічого."
 
 #. type: =item
-#: po4a:159
+#: po4a:161
 msgid "B<@>"
 msgstr "B<@>"
 
 #. type: textblock
-#: po4a:160
+#: po4a:162
 msgid ""
 "I<addendum_path> is not a regular addendum but a file containing a list of "
 "addenda, one by line.  Each addendum may be preceded by modifiers."
@@ -1721,12 +1757,12 @@ msgstr ""
 "бути вказано модифікатори."
 
 #. type: =item
-#: po4a:161
+#: po4a:163
 msgid "B<!>"
 msgstr "B<!>"
 
 #. type: textblock
-#: po4a:162
+#: po4a:164
 msgid ""
 "I<addendum_path> is discarded, it is not loaded and will not be loaded by "
 "any further addendum specification."
@@ -1735,7 +1771,7 @@ msgstr ""
 "завантажено будь-якою подальшою специфікацією додатків."
 
 #. type: textblock
-#: po4a:163
+#: po4a:165
 msgid ""
 "The following includes an addendum in any language, but if only it exists. "
 "No error is reported if the addendum does not exist."
@@ -1745,7 +1781,7 @@ msgstr ""
 "повідомлятиме про це додатково."
 
 #. type: verbatim
-#: po4a:164
+#: po4a:166
 #, no-wrap
 msgid ""
 " [type: pod] script $lang:doc/$lang/script.1  add_$lang:?doc/l10n/script.$lang.add\n"
@@ -1755,12 +1791,12 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:165
+#: po4a:167
 msgid "The following includes a list of addendum for every language:"
 msgstr "Наведений нижче код включає список додатків для будь-якої мови:"
 
 #. type: verbatim
-#: po4a:166
+#: po4a:168
 #, no-wrap
 msgid ""
 " [type: pod] script $lang:doc/$lang/script.1  add_$lang:@doc/l10n/script.$lang.add\n"
@@ -1770,12 +1806,12 @@ msgstr ""
 "\n"
 
 #. type: =head2
-#: po4a:167
+#: po4a:169
 msgid "Filtering the translated strings"
 msgstr "Фільтрування перекладених рядків"
 
 #. type: textblock
-#: po4a:168
+#: po4a:170
 msgid ""
 "Sometimes, you want to hide some strings from the translation process. To "
 "that extend, you can give a C<pot_in> parameter to your master file to "
@@ -1788,7 +1824,7 @@ msgstr ""
 "побудові файла POT. Ось приклад:"
 
 #. type: verbatim
-#: po4a:169
+#: po4a:171
 #, no-wrap
 msgid ""
 "  [type:docbook] book.xml          \\\n"
@@ -1802,7 +1838,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:170
+#: po4a:172
 msgid ""
 "With this setting, the strings to translate will be extracted from the "
 "F<book-filtered.xml> (that must be produced before calling B<po4a>) while "
@@ -1825,17 +1861,17 @@ msgstr ""
 "документів навіть для неповних перекладів."
 
 #. type: =head2
-#: po4a:171
+#: po4a:173
 msgid "CONFIGURATION EXAMPLE"
 msgstr "ПРИКЛАД НАЛАШТУВАНЬ"
 
 #. type: textblock
-#: po4a:172
+#: po4a:174
 msgid "TODO: Is this section really useful?"
 msgstr "ЗАВДАННЯ: Чи потрібен взагалі цей розділ?"
 
 #. type: textblock
-#: po4a:173
+#: po4a:175
 msgid ""
 "Let's assume you maintain a program named B<foo> which has a man page F<man/"
 "foo.1> which naturally is maintained in English only. Now you as the "
@@ -1851,12 +1887,12 @@ msgstr ""
 "перекладачам, за допомогою L<po4a-gettextize(1)>."
 
 #. type: textblock
-#: po4a:174
+#: po4a:176
 msgid "So for our case we would call"
 msgstr "Отже, у нашому прикладі слід віддати команду"
 
 #. type: verbatim
-#: po4a:175
+#: po4a:177
 #, no-wrap
 msgid ""
 " cd man && po4a-gettextize -f man -m foo.1 -p foo.pot\n"
@@ -1866,7 +1902,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:176
+#: po4a:178
 msgid ""
 "You would then send this file to the appropriate language lists or offer it "
 "for download somewhere on your website."
@@ -1875,7 +1911,7 @@ msgstr ""
 "або запропонувати отримувати його з якоїсь адреси на вашому сайті."
 
 #. type: textblock
-#: po4a:177
+#: po4a:179
 msgid ""
 "Now let's assume you received three translations before your next release: "
 "F<de.po> (including an addendum F<de.add>), F<sv.po> and F<pt.po>.  Since "
@@ -1892,7 +1928,7 @@ msgstr ""
 "F<po4a.cfg>. У нашому прикладі його вміст буде таким:"
 
 #. type: verbatim
-#: po4a:178
+#: po4a:180
 #, no-wrap
 msgid ""
 " [po_directory] man/po4a/po/\n"
@@ -1902,7 +1938,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: po4a:179
+#: po4a:181
 #, no-wrap
 msgid ""
 " [type: man] man/foo.1 $lang:man/translated/$lang/foo.1 \\\n"
@@ -1914,7 +1950,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:180
+#: po4a:182
 msgid ""
 "In this example we assume that your generated man pages (and all PO and "
 "addenda files) should be stored in F<man/translated/$lang/> (respectively in "
@@ -1929,7 +1965,7 @@ msgstr ""
 "po> і F<sv.po>, а каталог F<man/po4a/add_de/> міститиме F<de.add>."
 
 #. type: textblock
-#: po4a:181
+#: po4a:183
 msgid ""
 "Note the use of the modifier B<?> as only the German translation (F<de.po>) "
 "is accompanied by an addendum."
@@ -1938,7 +1974,7 @@ msgstr ""
 "німецькою (F<de.po>) супроводжується додатком."
 
 #. type: textblock
-#: po4a:182
+#: po4a:184
 msgid ""
 "To actually build the translated man pages you would then (once!) add the "
 "following line in the B<build> target of the appropriate F<Makefile>:"
@@ -1947,7 +1983,7 @@ msgstr ""
 "разу!) додати такий рядок до цілі B<build> відповідного файла F<Makefile>:"
 
 #. type: verbatim
-#: po4a:183
+#: po4a:185
 #, no-wrap
 msgid ""
 "        po4a po4a.cfg\n"
@@ -1957,7 +1993,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:184
+#: po4a:186
 msgid ""
 "Once this is set up you don't need to touch the F<Makefile> when a new "
 "translation arrives, i.e. if the French team sends you F<fr.po> and F<fr."
@@ -1973,7 +2009,7 @@ msgstr ""
 "до F<man/translated/fr/>."
 
 #. type: textblock
-#: po4a:185
+#: po4a:187
 msgid ""
 "Note that you still need an appropriate target to install localized manual "
 "pages with English ones."
@@ -1982,7 +2018,7 @@ msgstr ""
 "підручника разом із англійськими все ж доведеться створити окремо."
 
 #. type: verbatim
-#: po4a:186
+#: po4a:188
 #, no-wrap
 msgid ""
 "Finally if you do not store generated files into your version control system,\n"
@@ -1996,7 +2032,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a:188
+#: po4a:190
 msgid ""
 "L<po4a-gettextize(1)>, L<po4a-normalize(1)>, L<po4a-translate(1)>, L<po4a-"
 "updatepo(1)>, L<po4a(7)>."
@@ -2005,9 +2041,9 @@ msgstr ""
 "updatepo(1)>, L<po4a(7)>."
 
 #. type: =head1
-#: po4a:189 po4a-gettextize:73 po4a-normalize:31 po4a-translate:56
+#: po4a:191 po4a-gettextize:73 po4a-normalize:31 po4a-translate:56
 #: po4a-updatepo:55 msguntypot:32 doc/po4a.7.pod:156
-#: lib/Locale/Po4a/AsciiDoc.pm:38 lib/Locale/Po4a/BibTeX.pm:11
+#: lib/Locale/Po4a/AsciiDoc.pm:46 lib/Locale/Po4a/BibTeX.pm:11
 #: lib/Locale/Po4a/Chooser.pm:12 lib/Locale/Po4a/Common.pm:28
 #: lib/Locale/Po4a/Dia.pm:14 lib/Locale/Po4a/Docbook.pm:17
 #: lib/Locale/Po4a/Guide.pm:12 lib/Locale/Po4a/Halibut.pm:16
@@ -2022,7 +2058,7 @@ msgid "AUTHORS"
 msgstr "АВТОРИ"
 
 #. type: verbatim
-#: po4a:190 po4a-gettextize:74 po4a-normalize:32 po4a-translate:57
+#: po4a:192 po4a-gettextize:74 po4a-normalize:32 po4a-translate:57
 #: po4a-updatepo:56 lib/Locale/Po4a/Man.pm:110
 #, no-wrap
 msgid ""
@@ -2037,8 +2073,8 @@ msgstr ""
 "\n"
 
 #. type: =head1
-#: po4a:191 po4a-gettextize:75 po4a-normalize:33 po4a-translate:58
-#: po4a-updatepo:57 msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:40
+#: po4a:193 po4a-gettextize:75 po4a-normalize:33 po4a-translate:58
+#: po4a-updatepo:57 msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:48
 #: lib/Locale/Po4a/BibTeX.pm:13 lib/Locale/Po4a/Chooser.pm:14
 #: lib/Locale/Po4a/Common.pm:30 lib/Locale/Po4a/Dia.pm:16
 #: lib/Locale/Po4a/Docbook.pm:19 lib/Locale/Po4a/Guide.pm:14
@@ -2053,14 +2089,14 @@ msgid "COPYRIGHT AND LICENSE"
 msgstr "АВТОРСЬКІ ПРАВА ТА ЛІЦЕНЗУВАННЯ"
 
 #. type: textblock
-#: po4a:192 po4a-gettextize:76 po4a-normalize:34 po4a-translate:59
+#: po4a:194 po4a-gettextize:76 po4a-normalize:34 po4a-translate:59
 #: po4a-updatepo:58
 msgid "Copyright 2002-2020 by SPI, inc."
 msgstr "© SPI, inc., 2002–2020."
 
 #. type: textblock
-#: po4a:193 po4a-gettextize:77 po4a-normalize:35 po4a-translate:60
-#: po4a-updatepo:59 msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:42
+#: po4a:195 po4a-gettextize:77 po4a-normalize:35 po4a-translate:60
+#: po4a-updatepo:59 msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:50
 #: lib/Locale/Po4a/BibTeX.pm:15 lib/Locale/Po4a/Chooser.pm:16
 #: lib/Locale/Po4a/Common.pm:32 lib/Locale/Po4a/Dia.pm:18
 #: lib/Locale/Po4a/Docbook.pm:21 lib/Locale/Po4a/Guide.pm:16
@@ -5100,11 +5136,92 @@ msgstr "Список відокремлених пробілами визнач�
 
 #. type: =item
 #: lib/Locale/Po4a/AsciiDoc.pm:17
+msgid "B<forcewrap>"
+msgstr "B<forcewrap>"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:18
+msgid ""
+"Enable automatic line wrapping in non-verbatim blocks, even if the result "
+"could be misinterpreted by AsciiDoc formatters."
+msgstr ""
+"Увімкнути автоматичне перенесення рядків у блоках, які не є блоками з "
+"наперед визначеним форматуванням, навіть якщо результат може бути оброблено "
+"з помилками засобами форматування AsciiDoc."
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:19
+msgid ""
+"By default, po4a will not wrap the produced AsciiDoc files because a manual "
+"inspection is mandated to ensure that the wrapping does not change the "
+"formatting. Consider for instance the following list item:"
+msgstr ""
+"Типово, po4a не переноситиме рядки у створених файлах AsciiDoc, оскільки "
+"уникнути впливу перенесення рядків на форматування тексту у таких файлах "
+"можна лише вручну. Розгляньмо, наприклад, такий пункт списку:"
+
+#. type: verbatim
+#: lib/Locale/Po4a/AsciiDoc.pm:20
+#, no-wrap
+msgid ""
+" * a long sentence that is ending with a number 1. A second sentence.\n"
+"\n"
+msgstr ""
+" * довге речення, яке завершується цифрою 1. Друге речення.\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:21
+msgid ""
+"If the wrapping leads to the following presentation, the item is split into "
+"a numbered sub-list. To make things worse, only the speakers of the language "
+"used in the translation can inspect the situation."
+msgstr ""
+"Якщо перенесення рядків призводить до наведеного нижче варіанта, пункт буде "
+"поділено — з'явиться упорядкований підлеглий список. Погіршує ситуацію і те, "
+"що помилку зможуть помітити лише ті, хто користуватиметься перекладом."
+
+#. type: verbatim
+#: lib/Locale/Po4a/AsciiDoc.pm:22
+#, no-wrap
+msgid ""
+" * a long sentence that is ending with a number\n"
+"   1. A second sentence.\n"
+"\n"
+msgstr ""
+" * довге речення, яке завершується цифрою\n"
+"   1. Друге речення.\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:23
+msgid ""
+"Note that not wrapping the files produced by po4a should not be a problem "
+"since those files are meant to be processed automatically.  They should not "
+"be regarded as source files anyway."
+msgstr ""
+"Зауважте, що якщо рядки у файлі, який буде створено po4a, не буде "
+"перенесено, ніяких проблем виникнути не повинно — ці файли все одно буде "
+"оброблено автоматично. Їх не слід розглядати з точки зору подальшого "
+"редагування людиною."
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:24
+msgid ""
+"With this option, po4a will produce better-looking source files, that may "
+"lead to possibly erroneous formatted outputs."
+msgstr ""
+"Використання цього параметра надає змогу po4a створювати файли із зручнішим "
+"для редагування форматуванням, але може призвести до помилок під час обробки "
+"природними для формату файлів засобами форматування."
+
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:25
 msgid "B<noimagetargets>"
 msgstr "B<noimagetargets>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:18
+#: lib/Locale/Po4a/AsciiDoc.pm:26
 msgid ""
 "By default, the targets of block images are translatable to give opportunity "
 "to make the content point to translated images. This can be stopped by "
@@ -5115,12 +5232,12 @@ msgstr ""
 "переклад цих блоків можна за допомогою цього параметра."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:19
+#: lib/Locale/Po4a/AsciiDoc.pm:27
 msgid "B<tablecells>"
 msgstr "B<tablecells>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:20
+#: lib/Locale/Po4a/AsciiDoc.pm:28
 msgid ""
 "This option is a flag that enables sub-table segmentation into cell "
 "content.  The segmentation is limited to cell content, without any parsing "
@@ -5130,12 +5247,12 @@ msgstr ""
 "комірки. Поділ обмежено вмістом комірки, без обробки даних всередині."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:21
+#: lib/Locale/Po4a/AsciiDoc.pm:29
 msgid "B<compat>"
 msgstr "B<compat>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:22
+#: lib/Locale/Po4a/AsciiDoc.pm:30
 msgid ""
 "Switch parsing rules to compatibility with different tools. Available "
 "options are \"asciidoc\" or \"asciidoctor\". Asciidoctor has stricter "
@@ -5148,12 +5265,12 @@ msgstr ""
 "завершальних обв'язок блоків."
 
 #. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:23 lib/Locale/Po4a/TeX.pm:27
+#: lib/Locale/Po4a/AsciiDoc.pm:31 lib/Locale/Po4a/TeX.pm:27
 msgid "INLINE CUSTOMIZATION"
 msgstr "НАЛАШТОВУВАННЯ НА МІСЦІ"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:24
+#: lib/Locale/Po4a/AsciiDoc.pm:32
 msgid ""
 "The AsciiDoc module can be customized with lines starting by B<//po4a:>.  "
 "These lines are interpreted as commands to the parser.  The following "
@@ -5164,12 +5281,12 @@ msgstr ""
 "Передбачено такі команди:"
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:25
+#: lib/Locale/Po4a/AsciiDoc.pm:33
 msgid "B<//po4a: macro >I<name>B<[>I<attribute list>B<]>"
 msgstr "B<//po4a: macro >I<назва>B<[>I<список атрибутів>B<]>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:26
+#: lib/Locale/Po4a/AsciiDoc.pm:34
 msgid ""
 "This permits to describe in detail the parameters of a B<macro>; I<name> "
 "must be a valid macro name, and it ends with an underscore if the target "
@@ -5180,7 +5297,7 @@ msgstr ""
 "якщо ціль має бути перекладено."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:27
+#: lib/Locale/Po4a/AsciiDoc.pm:35
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -5192,7 +5309,7 @@ msgstr ""
 "атрибути."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:28
+#: lib/Locale/Po4a/AsciiDoc.pm:36
 msgid ""
 "If a plus sign (B<+>) is prepended to I<name>, then the macro and its "
 "arguments are translated as a whole.  There is no need to define attribute "
@@ -5203,12 +5320,12 @@ msgstr ""
 "атрибутів, але квадратні дужки все ж доведеться дописати."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:29
+#: lib/Locale/Po4a/AsciiDoc.pm:37
 msgid "B<//po4a: style >B<[>I<attribute list>B<]>"
 msgstr "B<//po4a: style >B<[>I<список атрибутів>B<]>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:30
+#: lib/Locale/Po4a/AsciiDoc.pm:38
 msgid ""
 "This permits to describe in detail which attributes of a style must be "
 "translated."
@@ -5216,7 +5333,7 @@ msgstr ""
 "Цей рядок надає змогу докладно описати атрибути стилю, які слід перекласти."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:31
+#: lib/Locale/Po4a/AsciiDoc.pm:39
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -5229,7 +5346,7 @@ msgstr ""
 "атрибути. Перший атрибут є назвою стилю, його не буде перекладено."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:32
+#: lib/Locale/Po4a/AsciiDoc.pm:40
 msgid ""
 "If a plus sign (B<+>) is prepended to the style name, then the attribute "
 "list is translated as a whole.  There is no need to define translatable "
@@ -5240,7 +5357,7 @@ msgstr ""
 "атрибутів, які слід перекладати."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:33
+#: lib/Locale/Po4a/AsciiDoc.pm:41
 msgid ""
 "If a minus sign (B<->) is prepended to the style name, then this attribute "
 "is not translated."
@@ -5249,12 +5366,12 @@ msgstr ""
 "перекладається."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:34
+#: lib/Locale/Po4a/AsciiDoc.pm:42
 msgid "B<//po4a: entry >I<name>"
 msgstr "B<//po4a: entry >I<назва>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:35
+#: lib/Locale/Po4a/AsciiDoc.pm:43
 msgid ""
 "This declares an attribute entry as being translatable.  By default, they "
 "are not translated."
@@ -5263,7 +5380,7 @@ msgstr ""
 "атрибутів не перекладаються."
 
 #. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:36 lib/Locale/Po4a/BibTeX.pm:9
+#: lib/Locale/Po4a/AsciiDoc.pm:44 lib/Locale/Po4a/BibTeX.pm:9
 #: lib/Locale/Po4a/Dia.pm:10 lib/Locale/Po4a/Docbook.pm:6
 #: lib/Locale/Po4a/Guide.pm:7 lib/Locale/Po4a/Halibut.pm:7
 #: lib/Locale/Po4a/KernelHelp.pm:5 lib/Locale/Po4a/Man.pm:96
@@ -5275,12 +5392,12 @@ msgid "STATUS OF THIS MODULE"
 msgstr "СТАН ЦЬОГО МОДУЛЯ"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:37
+#: lib/Locale/Po4a/AsciiDoc.pm:45
 msgid "Tested successfully on simple AsciiDoc files."
 msgstr "Успішно перевірено на простих файлах AsciiDoc."
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:39
+#: lib/Locale/Po4a/AsciiDoc.pm:47
 #, no-wrap
 msgid ""
 " Nicolas François <nicolas.francois@centraliens.net>\n"
@@ -5292,7 +5409,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:41
+#: lib/Locale/Po4a/AsciiDoc.pm:49
 #, no-wrap
 msgid ""
 " Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.\n"
@@ -9366,9 +9483,9 @@ msgstr "B<yfm_keys> (лише розмітка)"
 #. type: textblock
 #: lib/Locale/Po4a/Text.pm:31
 msgid ""
-"Coma-separated list of keys to process for translation in the YAML Front "
+"Comma-separated list of keys to process for translation in the YAML Front "
 "Matter section. All other keys are skipped. Keys are matched with a case-"
-"insensitive match. Arrays values are always translated, unless the "
+"insensitive match. Array values are always translated, unless the "
 "B<yfm_skip_array> option is provided."
 msgstr ""
 "Список відокремлених комами ключів, які слід обробляти для перекладу у "
@@ -11979,6 +12096,10 @@ msgstr ""
 " © Jordi Vilalta  <jvprat@gmail.com>, 2004\n"
 " © Nicolas François <nicolas.francois@centraliens.net>, 2008—2009\n"
 "\n"
+
+#~ msgid ""
+#~ "If you prefer, you can give the same information explicitly as follows:"
+#~ msgstr "Якщо хочете, можете надати деякі дані явно, ось так:"
 
 #~ msgid ""
 #~ "Extra option(s) to pass to the format plugin and other po4a internal "
