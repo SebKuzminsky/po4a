@@ -32,7 +32,7 @@ Package: po4a
 Architecture: all
 Multi-Arch: foreign
 Depends: gettext,
-         libpod-parser-perl,
+         libpod-parser-perl (>= 1.63),
          libsgmls-perl,
          libyaml-tiny-perl,
          opensp,
