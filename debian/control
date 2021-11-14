@@ -5,7 +5,7 @@ Maintainer: Martin Quinson <mquinson@debian.org>
 Uploaders: Jonas Smedegaard <dr@jones.dk>,
            Denis Barbier <barbier@debian.org>,
            Dr. Tobias Quathamer <toddy@debian.org>
-Standards-Version: 4.5.1
+Standards-Version: 4.6.0
 Build-Depends-Indep: docbook,
                      docbook-xml,
                      docbook-xsl,

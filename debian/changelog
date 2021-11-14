@@ -6,6 +6,7 @@ po4a (0.65-1) unstable; urgency=medium
     - Many translation updates.
   * Versioned depends on libpod-parser-perl (>= 1.63) to ease upgrades
     from Buster (Closes: #990507). Thanks Andreas for noticing.
+  * Update Standards-Version to 4.6.0, no changes needed.
 
  -- Martin Quinson <mquinson@debian.org>  Sun, 14 Nov 2021 13:55:07 +0100
 
