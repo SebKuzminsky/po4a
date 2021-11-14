@@ -32,6 +32,7 @@ use vars qw(@ISA @EXPORT);
 
 use Locale::Po4a::TransTractor;
 use Locale::Po4a::Common;
+use YAML::Tiny;
 
 =head1 OPTIONS ACCEPTED BY THIS MODULE
 
@@ -62,6 +63,33 @@ Space-separated list of macro definitions.
 
 Space-separated list of style definitions.
 
+=item B<forcewrap>
+
+Enable automatic line wrapping in non-verbatim blocks, even if the
+result could be misinterpreted by AsciiDoc formatters.
+
+By default, po4a will not wrap the produced AsciiDoc files because a
+manual inspection is mandated to ensure that the wrapping does not
+change the formatting. Consider for instance the following list
+item:
+
+ * a long sentence that is ending with a number 1. A second sentence.
+
+If the wrapping leads to the following presentation, the item is
+split into a numbered sub-list. To make things worse, only the
+speakers of the language used in the translation can inspect the
+situation.
+
+ * a long sentence that is ending with a number
+   1. A second sentence.
+
+Note that not wrapping the files produced by po4a should not be a
+problem since those files are meant to be processed automatically.
+They should not be regarded as source files anyway.
+
+With this option, po4a will produce better-looking source files, that
+may lead to possibly erroneous formatted outputs.
+
 =item B<noimagetargets>
 
 By default, the targets of block images are translatable to give opportunity
@@ -72,6 +100,35 @@ this option.
 
 This option is a flag that enables sub-table segmentation into cell content.
 The segmentation is limited to cell content, without any parsing inside of it.
+
+=item B<compat>
+
+Switch parsing rules to compatibility with different tools. Available options are
+"asciidoc" or "asciidoctor". Asciidoctor has stricter parsing rules, such as
+equality of length of opening and closing block fences.
+
+=item B<yfm_keys>
+
+Comma-separated list of keys to process for translation in the YAML Front Matter
+section. All other keys are skipped. Keys are matched with a case-insensitive
+match. Array values are always translated, unless the B<yfm_skip_array> option
+is provided.
+
+=item B<nolinting>
+
+Disable linting messages. When the source code cannot be fixed for clearer document structure, these messages are useless.
+
+=cut
+
+my %yfm_keys = ();
+
+=item B<yfm_skip_array>
+
+Do not translate array values in the YAML Front Matter section.
+
+=cut
+
+my $yfm_skip_array = 0;
 
 =back
 
@@ -136,6 +193,7 @@ sub initialize {
     my %options = @_;
 
     $self->{options}{'nobullets'}      = 1;
+    $self->{options}{'forcewrap'}      = 0;
     $self->{options}{'debug'}          = '';
     $self->{options}{'verbose'}        = 1;
     $self->{options}{'entry'}          = '';
@@ -144,6 +202,10 @@ sub initialize {
     $self->{options}{'definitions'}    = '';
     $self->{options}{'noimagetargets'} = 0;
     $self->{options}{'tablecells'}     = 0;
+    $self->{options}{'compat'}         = 'asciidoc';
+    $self->{options}{'yfm_keys'}       = '';
+    $self->{options}{'yfm_skip_array'} = 0;
+    $self->{options}{'nolinting'}      = 0;
 
     foreach my $opt ( keys %options ) {
         die wrap_mod( "po4a::asciidoc", dgettext( "po4a", "Unknown option: %s" ), $opt )
@@ -151,11 +213,24 @@ sub initialize {
         $self->{options}{$opt} = $options{$opt};
     }
 
+    my $compat = $self->{options}{'compat'};
+    die wrap_mod( "po4a::asciidoc",
+        dgettext( "po4a", "Invalid compatibility setting: '%s'. It must be either '%s' or '%s'." ),
+        $compat, 'asciidoc', 'asciidoctor' )
+      if ( defined $compat && $compat ne "asciidoc" && $compat ne "asciidoctor" );
+
     if ( $options{'debug'} ) {
         foreach ( $options{'debug'} ) {
             $debug{$_} = 1;
         }
     }
+    map {
+        $_ =~ s/^\s+|\s+$//g;    # Trim the keys before using them
+        $yfm_keys{$_} = 1
+    } ( split( ',', $self->{options}{'yfm_keys'} ) );
+
+    #        map { print STDERR "key $_\n"; } (keys %yfm_keys);
+    $yfm_skip_array = $self->{options}{'yfm_skip_array'};
 
     $self->{translate} = {
         macro => {},
@@ -298,12 +373,31 @@ BEGIN {
 
 sub parse {
     my $self = shift;
-    my ( $line, $ref );
+    my ( $line, $ref ) = $self->shiftline();
+
+    # Handle the YAML Front Matter, if any
+    if ( defined($line) && $line =~ /^---$/ ) {
+        my $yfm;
+        my ( $nextline, $nextref ) = $self->shiftline();
+        while ( defined($nextline) ) {
+            last if ( $nextline =~ /^(---|\.\.\.)$/ );
+            $yfm .= $nextline;
+            ( $nextline, $nextref ) = $self->shiftline();
+        }
+        die "Could not get the YAML Front Matter from the file." if ( length($yfm) == 0 );
+        my $yamlarray = YAML::Tiny->read_string($yfm)
+          || die "Couldn't read YAML Front Matter ($!)\n$yfm\n";
+
+        $self->handle_yaml( $ref, $yamlarray, \%yfm_keys, $yfm_skip_array );
+
+        ( $line, $ref ) = $self->shiftline();    # Pass the final '---'
+    }
+
     my $paragraph    = "";
     my $wrapped_mode = 1;
-    ( $line, $ref ) = $self->shiftline();
-    my $file = $ref;
+    my $file         = $ref;
     $file =~ s/:[0-9]+$// if defined($line);
+
     while ( defined($line) ) {
         $ref =~ m/^(.*):[0-9]+$/;
         if ( $1 ne $file ) {
@@ -336,6 +430,10 @@ sub parse {
             } else {
                 push @comments, $line;
             }
+            do_paragraph( $self, $paragraph, $wrapped_mode );
+            $paragraph    = "";
+            $wrapped_mode = 1 unless defined( $self->{verbatim} );
+            $self->pushline( $line . "\n" );
         } elsif ( ( defined $self->{type} )
             and ( $self->{type} eq "Table" )
             and ( $line !~ m/^\|===/ )
@@ -416,7 +514,9 @@ sub parse {
                 ),
                 $paragraph,
                 $level
-            ) if ( chars( $paragraph, $self->{TT}{po_in}{encoder}, $ref ) != length($line) );
+              )
+              if ( ( chars( $paragraph, $self->{TT}{po_in}{encoder}, $ref ) != length($line) )
+                && ( !$self->{options}{'nolinting'} ) );
 
             my $t = $self->translate(
                 $paragraph,
@@ -456,7 +556,9 @@ sub parse {
             # Found one delimited block
             my $t = $line;
             $t =~ s/^(.).*$/$1/;
+            my $l    = length $line;
             my $type = "delimited block $t";
+            $type = "$type $l" if ( $self->{options}{'compat'} eq 'asciidoctor' );
             if ( defined $self->{verbatim} and ( $self->{type} ne $type ) ) {
                 $paragraph .= "$line\n";
             } else {
@@ -520,7 +622,7 @@ sub parse {
                     $self->{type} = $type;
                 }
                 $paragraph = "";
-                $self->pushline( $line . "\n" ) unless defined( $self->{verbatim} ) && $self->{verbatim} == 2;
+                $self->pushline( $line . "\n" );
             }
         } elsif ( ( not defined( $self->{verbatim} ) ) and ( $line =~ m/^\/\/(.*)/ ) ) {
             my $comment = $1;
@@ -533,6 +635,11 @@ sub parse {
                 # Comment line
                 push @comments, $comment;
             }
+            do_paragraph( $self, $paragraph, $wrapped_mode ) if length($paragraph);
+            $paragraph    = "";
+            $wrapped_mode = 1;
+
+            $self->pushline( $line . "\n" );
         } elsif ( not defined $self->{verbatim}
             and ( $line =~ m/^\[\[([^\]]*)\]\]$/ ) )
         {
@@ -587,7 +694,7 @@ sub parse {
             undef $self->{bullet};
             undef $self->{indent};
         } elsif ( not defined $self->{verbatim}
-            and ( $line =~ m/^(\s*)([-%~\$[*_+`'#<>[:alnum:]\\"(].*)((?:::|;;|\?\?|:-)(?: *\\)?)$/ ) )
+            and ( $line =~ m/^(\s*)([-%~\$[*_+`'#<>[:alnum:]\\"(].*?)((?::::?|;;|\?\?|:-)(?: *\\)?)$/ ) )
         {
             my $indent   = $1;
             my $label    = $2;
@@ -609,7 +716,7 @@ sub parse {
             $self->pushline("$indent$t$labelend\n");
             @comments = ();
         } elsif ( not defined $self->{verbatim}
-            and ( $line =~ m/^(\s*)(\S.*)((?:::|;;)\s+)(.*)$/ ) )
+            and ( $line =~ m/^(\s*)(\S.*?)((?::?::|;;)\s+)(.*)$/ ) )
         {
             my $indent    = $1;
             my $label     = $2;
@@ -680,6 +787,10 @@ sub parse {
                 and ( defined( $self->{type} ) and ( $self->{type} eq "Table" ) ) )
             {
                 $paragraph .= $line . "\n";
+            } elsif ( ( $macroname eq "include" || $macroname eq "ifeval" )
+                and ( $macrotype eq '::' ) )
+            {
+                $self->pushline( $line . "\n" );
             } else {
                 if ( $macrotype eq '::' ) {
                     do_paragraph( $self, $paragraph, $wrapped_mode );
@@ -777,6 +888,13 @@ sub parse {
             {
                 # same indent level as before: append
                 $paragraph .= $text . "\n";
+            } elsif ( length($paragraph)
+                and ( length( $self->{bullet} ) == 0 ) )
+            {
+                # definition list continuation
+                $paragraph .= $text . "\n";
+                $self->{indent} = "";
+                print STDERR " definition list continuation\n" if ( $debug{parse} );
             } else {
 
                 # not the same indent level: start a new translated paragraph
@@ -860,7 +978,9 @@ sub parse {
                 $wrapped_mode = 0;
             }
 
-            if ( $paragraph ne "" && $self->{bullet} && length( $self->{indent} || "" ) == 0 ) {
+            if (   ( $paragraph ne "" && $self->{bullet} && length( $self->{indent} || "" ) == 0 )
+                && ( !$self->{options}{'nolinting'} ) )
+            {
 
                 # Second line of an item block is not indented. It is unindented
                 # (and allowed) additional text or a new list item.
@@ -975,6 +1095,7 @@ sub do_paragraph {
         $paragraph =~ s/^(.*?)(\n*)$/$1/s;
         $end = $2 || "";
     }
+
     my $t = $self->translate(
         $paragraph,
         $self->{ref},
@@ -982,6 +1103,12 @@ sub do_paragraph {
         "comment" => join( "\n", @comments ),
         "wrap"    => $wrap
     );
+
+    my $unwrap_result = !$self->{options}{'forcewrap'} && $wrap;
+    if ($unwrap_result) {
+        $t =~ s/(\n| )+/ /g;
+    }
+
     @comments = ();
     if ( defined $self->{bullet} ) {
         my $bullet  = $self->{bullet};

@@ -147,9 +147,9 @@ my $markdown = 0;
 
 =item B<yfm_keys> (markdown-only)
 
-Coma-separated list of keys to process for translation in the YAML Front Matter
+Comma-separated list of keys to process for translation in the YAML Front Matter
 section. All other keys are skipped. Keys are matched with a case-insensitive
-match. Arrays values are always translated, unless the B<yfm_skip_array> option
+match. Array values are always translated, unless the B<yfm_skip_array> option
 is provided.
 
 =cut
@@ -301,12 +301,12 @@ sub parse_fallback {
         if (
             $markdown
             and (
-                $line =~ /\S  $/    # explicit newline
+                $line =~ /\S  $/     # explicit newline
                 or $line =~ /"""$/
             )
           )
-        {                           # """ textblock inside macro begin
-                                    # Markdown markup needing separation _after_ this line
+        {                            # """ textblock inside macro begin
+                                     # Markdown markup needing separation _after_ this line
             $end_of_paragraph = 1;
         } else {
             undef $self->{bullet};
@@ -575,9 +575,8 @@ sub parse_markdown_bibliographic_information {
 #
 sub parse_markdown_yaml_front_matter {
     my ( $self, $line, $blockref ) = @_;
-    my ( $nextline, $nextref );
     my $yfm;
-    ( $nextline, $nextref ) = $self->shiftline();
+    my ( $nextline, $nextref ) = $self->shiftline();
     while ( defined($nextline) ) {
         last if ( $nextline =~ /^(---|\.\.\.)$/ );
         $yfm .= $nextline;
@@ -586,162 +585,8 @@ sub parse_markdown_yaml_front_matter {
     die "Could not get the YAML Front Matter from the file." if ( length($yfm) == 0 );
     my $yamlarray = YAML::Tiny->read_string($yfm)
       || die "Couldn't read YAML Front Matter ($!)\n$yfm\n";
-    die "Empty YAML Front Matter" unless ( length($yamlarray) > 0 );
 
-    my ( $indent, $ctx ) = ( 0, "" );
-    foreach my $cursor (@$yamlarray) {
-
-        # An empty document
-        if ( !defined $cursor ) {
-            $self->pushline("---\n");
-
-            # Do nothing
-
-            # A scalar document
-        } elsif ( !ref $cursor ) {
-            $self->pushline("---\n");
-            $self->pushline(
-                format_scalar( $self->translate( $cursor, $blockref, "YAML Front Matter (scalar)", "wrap" => 0 ) ) );
-
-            # A list at the root
-        } elsif ( ref $cursor eq 'ARRAY' ) {
-            if (@$cursor) {
-                $self->pushline("---\n");
-                do_array( $self, $blockref, $cursor, $indent, $ctx );
-            } else {
-                $self->pushline("---[]\n");
-            }
-
-            # A hash at the root
-        } elsif ( ref $cursor eq 'HASH' ) {
-            if (%$cursor) {
-                $self->pushline("---\n");
-                do_hash( $self, $blockref, $cursor, $indent, $ctx );
-            } else {
-                $self->pushline("--- {}\n");
-            }
-
-        } else {
-            die( "Cannot serialize " . ref($cursor) );
-        }
-        $self->pushline("---\n");
-    }
-
-    # Escape the string to make it valid in YAML.
-    # This is very similar to YAML::Tiny::_dump_scalar but does not do the internal->UTF-8 decoding,
-    # as the translations that we feed into this function are already in UTF-8
-    sub format_scalar {
-        my $string = $_[0];
-        my $is_key = $_[1];
-
-        return '~'  unless defined $string;
-        return "''" unless length $string;
-        if ( Scalar::Util::looks_like_number($string) ) {
-
-            # keys and values that have been used as strings get quoted
-            if ($is_key) {
-                return qq['$string'];
-            } else {
-                return $string;
-            }
-        }
-        if ( $string =~ /[\\\'\n]/ ) {
-            $string =~ s/\\/\\\\/g;
-            $string =~ s/"/\\"/g;
-            $string =~ s/\n/\\n/g;
-            return qq|"$string"|;
-        }
-        if ( $string =~ /(?:^[~!@#%&*|>?:,'"`{}\[\]]|^-+$|\s|:\z)/ ) {
-            return "'$string'";
-        }
-        return $string;
-    }
-
-    sub do_array {
-        my ( $self, $blockref, $array, $indent, $ctx ) = @_;
-        foreach my $el (@$array) {
-            my $header = ( '  ' x $indent ) . '- ';
-            my $type   = ref $el;
-            if ( !$type ) {
-                if ($yfm_skip_array) {
-                    $self->pushline( $header . YAML::Tiny::_dump_scalar( "dummy", $el, 0 ) . "\n" );
-                } else {
-                    $self->pushline( $header
-                          . format_scalar( $self->translate( $el, $blockref, "YAML Front Matter:$ctx", "wrap" => 0 ) )
-                          . "\n" );
-                }
-
-            } elsif ( $type eq 'ARRAY' ) {
-                if (@$el) {
-                    $self->pushline( $header . "\n" );
-                    do_array( $self, $blockref, $el, $indent + 1, $ctx );
-                } else {
-                    $self->pushline( $header . " []\n" );
-                }
-
-            } elsif ( $type eq 'HASH' ) {
-                if ( keys %$el ) {
-                    $self->pushline( $header . "\n" );
-                    do_hash( $self, $blockref, $el, $indent + 1, $ctx );
-                } else {
-                    $self->pushline( $header . " {}\n" );
-                }
-
-            } else {
-                die "YAML $type references not supported";
-            }
-        }
-    }
-
-    sub do_hash {
-        my ( $self, $blockref, $hash, $indent, $ctx ) = @_;
-        foreach my $name ( sort keys %$hash ) {
-            my $el     = $hash->{$name};
-            my $header = ( '  ' x $indent ) . YAML::Tiny::_dump_scalar( "dummy", $name, 1 ) . ":";
-            my $type   = ref $el;
-            if ( !$type ) {
-                if ( ( not %yfm_keys ) || $yfm_keys{$name} )
-                {    # either no key is provided, or the key we need is also provided
-                    $self->pushline(
-                        $header . ' '
-                          . format_scalar(
-                            $self->translate( $el, $blockref, "YAML Front Matter:$ctx $name", "wrap" => 0 )
-                          )
-                          . "\n"
-                    );
-                } else {
-
-                    # Work around a bug in YAML::Tiny that quotes numbers
-                    # See https://github.com/Perl-Toolchain-Gang/YAML-Tiny#additional-perl-specific-notes
-                    if ( Scalar::Util::looks_like_number($el) ) {
-                        $self->pushline("$header $el\n");
-                    } else {
-                        $self->pushline( $header . ' ' . YAML::Tiny::_dump_scalar( "dummy", $el ) . "\n" );
-                    }
-                }
-
-            } elsif ( $type eq 'ARRAY' ) {
-                if (@$el) {
-                    $self->pushline( $header . "\n" );
-                    do_array( $self, $blockref, $el, $indent + 1, "$ctx $name" );
-                } else {
-                    $self->pushline( $header . " []\n" );
-                }
-
-            } elsif ( $type eq 'HASH' ) {
-                if ( keys %$el ) {
-                    $self->pushline( $header . "\n" );
-                    do_hash( $self, $blockref, $el, $indent + 1, "$ctx $name" );
-                } else {
-                    $self->pushline( $header . " {}\n" );
-                }
-
-            } else {
-                die "YAML $type references not supported";
-            }
-        }
-    }
-
+    $self->handle_yaml( $blockref, $yamlarray, \%yfm_keys, $yfm_skip_array );
     return;
 }
 
@@ -838,11 +683,11 @@ sub parse_markdown {
         $paragraph        = "";
         $end_of_paragraph = 1;
     } elsif (
-        $line =~ /^\s*\[\[\!\S+\s*$/    # macro begin
+        $line =~ /^\s*\[\[\!\S+\s*$/       # macro begin
         or $line =~ /^\s*"""\s*\]\]\s*$/
       )
-    {                                   # """ textblock inside macro end
-                                        # Avoid translating Markdown lines containing only markup
+    {                                      # """ textblock inside macro end
+                                           # Avoid translating Markdown lines containing only markup
         do_paragraph( $self, $paragraph, $wrapped_mode );
         $paragraph    = "";
         $wrapped_mode = $defaultwrap;
@@ -907,7 +752,7 @@ sub parse {
             # Some Markdown markup can (or might) not survive wrapping
             $wrapped_mode = 0
               if (
-                $paragraph =~ /^>/ms                        # blockquote
+                $paragraph    =~ /^>/ms                     # blockquote
                 or $paragraph =~ /^( {8}|\t)/ms             # monospaced
                 or $paragraph =~ /^\$(\S+[{}]\S*\s*)+/ms    # Xapian macro
                 or $paragraph =~ /<(?![a-z]+[:@])/ms        # maybe html (tags but not wiki <URI>)
@@ -968,7 +813,7 @@ sub do_paragraph {
             my $indent1 = $1;
             my $indent2 = "$1" . ( ' ' x length $bullet );
             my $text    = $4;
-            while ( $para !~ m/$indent2(?:[-*o+]|([0-9]+[.\)])|\([0-9]+\))\s+/
+            while ( $para !~ m/^$indent2(?:[-*o+]|([0-9]+[.\)])|\([0-9]+\))\s+/
                 and $para =~ s/^$indent2(\S[^\n]*\n)//s )
             {
                 $text .= $1;
@@ -978,7 +823,10 @@ sub do_paragraph {
             if ( $text !~ m/\S[ \t][ \t][ \t]+\S/s ) {
                 my $bullet_regex = quotemeta( $indent1 . $bullet );
                 $bullet_regex =~ s/[0-9]+/\\d\+/;
-                if ( $para eq '' or $para =~ m/^$bullet_regex\S/s ) {
+                if (   $para eq ''
+                    or $para =~ m/^(\s*)((?:[-*o+]|([0-9]+[.\)])|\([0-9]+\))\s+)([^\n]*\n)(.*)$/s
+                    or $para =~ m/^$bullet_regex\S/s )
+                {
                     my $trans = $self->translate(
                         $text,
                         $self->{ref},

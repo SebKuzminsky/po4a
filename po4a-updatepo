@@ -65,9 +65,10 @@ B<po4a-updatepo>.
 
 =item B<-o>, B<--option>
 
-Extra option(s) to pass to the format plugin and other po4a internal modules.
-Specify each option in the 'I<name>B<=>I<value>' format. See the documentation of
-each plugin for more information about the valid options and their meanings.
+Extra option(s) to pass to the format plugin. See the documentation of each
+plugin for more information about the valid options and their meanings. For 
+example, you could pass '-o tablecells' to the AsciiDoc parser, while the 
+text parser would accept '-o tabs=split'.
 
 =item B<--no-previous>
 
@@ -305,7 +306,7 @@ while ( my $po_filename = shift @pofiles ) {
         push @cmd, ( "-U", $po_filename, $pot_filename );
         print STDERR join( ' ', @cmd ) . "\n" if $debug;
         system(@cmd) == 0
-          or die wrap_msg( gettext("Error while running msgmerge: %s"), $! );
+          or die wrap_msg( gettext("Could not run msgmerge: %s"), $! );
         @cmd = ( "msgfmt" . $Config{_exe}, "--statistics", "-v", "-o", File::Spec->devnull(), $po_filename );
         print STDERR join( ' ', @cmd ) . "\n" if $debug;
         system(@cmd)
@@ -314,7 +315,7 @@ while ( my $po_filename = shift @pofiles ) {
         print STDERR wrap_msg( gettext("Creating %s:"), $po_filename )
           if $verbose;
         copy( $pot_filename, $po_filename )
-          or die wrap_msg( gettext("Error while copying the PO file (%s -> %s): %s"), $pot_filename, $po_filename, $! );
+          or die wrap_msg( gettext("Could not copy the PO file (%s → %s): %s"), $pot_filename, $po_filename, $! );
     }
 }
 

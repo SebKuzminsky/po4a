@@ -618,8 +618,7 @@ sub move_po_if_needed {
     my $diff;
 
     if ( -e $old_po ) {
-        my $diff_ignore = "-I'^#:' " . "-I'^\"POT-Creation-Date:' " . "-I'^\"PO-Revision-Date:'";
-        $diff = qx(diff -q $diff_ignore $old_po $new_po);
+        $diff = qx(diff -q -I'^#:' -I'^\"POT-Creation-Date:' -I'^\"PO-Revision-Date:' $old_po $new_po);
         if ( $diff eq "" ) {
             unlink $new_po
               or die wrap_msg( dgettext( "po4a", "Cannot unlink %s: %s." ), $new_po, $! );
@@ -1468,7 +1467,7 @@ sub push_raw {
         $flags = " $flags ";
         $flags =~ s/,/ /g;
         foreach my $flag (@known_flags) {
-            if ( $flags =~ /\s$flag\s/ ) {    # if flag to be set
+            if ( index( $flags, " $flag " ) != -1 ) {    # if flag to be set
                 unless ( defined( $self->{po}{$msgid}{'flags'} )
                     && $self->{po}{$msgid}{'flags'} =~ /\b$flag\b/ )
                 {
@@ -1518,8 +1517,8 @@ sub count_entries_doc($) {
 
 =item equals_msgid(po)
 
-Returns ($uptodate, $diagnostic) with $uptodate indicating whether all msgid of the current po file are also present in the one passed as parameter
-(all other fields are ignored in the file comparison).
+Returns ($uptodate, $diagnostic) with $uptodate indicating whether all msgid of the current po file are 
+also present in the one passed as parameter (all other fields are ignored in the file comparison).
 Informally, if $uptodate returns false, then the po files would be changed when going through B<po4a-updatepo>.
 
 If $uptodate is false, then $diagnostic contains a diagnostic of why this is so.
@@ -1530,16 +1529,18 @@ sub equals_msgid($$) {
     my ( $self, $other ) = ( shift, shift );
 
     unless ( $self->count_entries() == $other->count_entries() ) {
-        return ( 0,
-                "The amount of entries differ between files: "
-              . $self->count_entries()
-              . " is not "
-              . $other->count_entries()
-              . "\n" );
+        return (
+            0,
+            wrap_msg(
+                dgettext( "po4a", "The amount of entries differ between files: %d is not %d" ),
+                $self->count_entries(),
+                $other->count_entries()
+            )
+        );
     }
     foreach my $msgid ( keys %{ $self->{po} } ) {
         unless ( defined( $self->{po}{$msgid} ) && defined( $other->{po}{$msgid} ) ) {
-            return ( 0, "msgid declared in one file only: $msgid\n" );
+            return ( 0, wrap_msg( dgettext( "po4a", "msgid declared in one file only: %s\n" ), $msgid ) );
         }
     }
     return ( 1, "" );

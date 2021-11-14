@@ -127,9 +127,10 @@ Output some debugging information.
 
 =item B<-o>, B<--option>
 
-Extra option(s) to pass to the format plugin. Specify each option in the
-'I<name>B<=>I<value>' format. See the documentation of each plugin for more
-information about the valid options and their meanings.
+Extra option(s) to pass to the format plugin. See the documentation of each
+plugin for more information about the valid options and their meanings. For 
+example, you could pass '-o tablecells' to the AsciiDoc parser, while the 
+text parser would accept '-o tabs=split'.
 
 =item B<-f>, B<--force>
 
@@ -310,8 +311,8 @@ It requires B<gettext> 0.16 or later, and is activated by default.
 
 =head1 CONFIGURATION FILE
 
-po4a expects a configuration file as argument. This file must contain the
-following elements:
+po4a expects a configuration file as argument. This file must contain
+the following elements:
 
 =over
 
@@ -334,31 +335,43 @@ All lines contain a command between square braces, followed by its parameters.
 Comments begin with the char '#' and run until the end of the line. You can
 escape the end of line to spread a command over several lines.
 
+Some full examples are presented on this page, while other examples
+can be found in the C<t/cfg> directory of the source distribution.
+
 =head2 Finding the PO and POT files
 
-The simplest solution is to give the path to the directory containing your
-translation project as follows.
-
- [po_directory] man/po/
-
-The provided directory must contain a set of PO files, each named F<XX.po> with
-C<XX> the ISO 639-1 of the language used in this file. The directory must also
-contain a single POT file, with the C<.pot> file extension.
-
-If you prefer, you can give the same information explicitly as follows:
+The simplest solution is to explicitly give the path to POT and PO files, as follows:
 
  [po4a_paths] man/po/project.pot de:man/po/de.po fr:man/po/fr.po
 
 This specifies the path to the POT file first, and then the paths to the German
 and French PO files.
 
-Finally, the same information can be written as follows:
+The same information can be written as follows to reduce the risk of copy/paste errors:
 
  [po4a_langs] fr de
  [po4a_paths] man/po/project.pot $lang:man/po/$lang.po
 
 The C<$lang> component is automatically expanded using the provided languages
 list, reducing the risk of copy/paste error when a new language is added.
+
+You can further compact the same information by only providing the
+path to the directory containing your translation project, as follows.
+
+ [po_directory] man/po/
+
+The provided directory must contain a set of PO files, each named F<XX.po> with
+C<XX> the ISO 639-1 of the language used in this file. The directory must also
+contain a single POT file, with the C<.pot> file extension. For the first run,
+this file can be empty but it must exist (po4a cannot guess the name to use
+before the extension).
+
+Note that you must choose only one between C<po_directory> and
+C<po4a_paths>. The first one (C<po_directory>) is more compact,
+further reduces the risk of copy/paste error, but forces you to use
+the expected project structure and file names. The second one
+(C<po4a_paths>), is more explicit, probably more readable, and
+advised when you setup your first project with po4a.
 
 =head3 Centralized or split PO files?
 
@@ -374,14 +387,18 @@ C<$master> in the name of your PO files on the C<[po4a_paths]> line, as follows.
 
  [po4a_paths] doc/$master/$master.pot $lang:doc/$master/$lang.po
 
-If there are name conflicts because several files have the same filename,
-the name of the master file can be specified by adding a C<master:file=>I<name>
-option:
+With this line, po4a will produce separate POT and PO files for each document to translate. 
+For example, if you have 3 documents and 5 languages, this will result in 3 POT files and 
+15 PO files. These files are named as specified on the C<po4a_paths> template, with 
+C<$master> substituted to the basename of each document to translate. In case of name 
+conflict, you can specify the POT file to use as follows, with the C<pot=> parameter. 
+This feature can also be used to group several translated files into the same POT file.
 
  [po4a_langs] de fr ja
  [po4a_paths] l10n/po/$master.pot $lang:l10n/po/$master.$lang.po
- [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml master:file=foo-gui
- [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml master:file=bar-gui
+ [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml pot=foo-gui
+ [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml pot=bar
+ [type: xml] bar/cli.xml $lang:bar/cli.$lang.xml pot=bar
 
 In split mode, B<po4a> builds a temporary compendium during the PO update, to
 share the translations between all the PO files. If two PO files have different
@@ -691,6 +708,9 @@ sub show_version {
 # keep the command line arguments
 my @ORIGINAL_ARGV = @ARGV;
 
+# Use /NUL instead of /dev/null on Windows
+my $devnull = ( $^O =~ /Win/ ) ? '/NUL' : '/dev/null';
+
 # Parse the options provided on the command line, or in argument
 sub get_options {
     if ( defined $_[0] ) {
@@ -931,11 +951,21 @@ my $config_file = shift(@ARGV) || pod2usage();
 # Parse the config file
 my (@langs);
 my (%aliases);    # module aliases ([po4a_alias:...]
-my ($pot_filename) = "";
-my (%po_filename);     # po_files: '$lang'=>'$path'
-my (%add_filename);    # Global addendum_files: '$lang'=>array of '$path'
-my (%document)
-  ;    # '$master'=> {'format'=>'$format'; '$lang'=>'$path'; 'add_$lang'=>('$path','$path') ; 'pot_in'=> '$master'}
+my $pot_filename     = "";    # In split mode, this is the temp file name for the big POT
+my $pot_filename_cfg = "";    # This is never modified, useful in split mode to find the cfg content
+my (%po_filename);            # po_files: '$lang'=>'$path'
+my (%add_filename);           # Global addendum_files: '$lang'=>array of '$path'
+
+# The document hash table contains all the information about the files to translate.
+# Each key of the hash map a master file, ie a file to translate. For each such master file, we have a sub-hashmap containing:
+#  'format' => '$format': string designating the po4a module to use
+#  '$lang'  => '$path': one string entry per language, the path of the translated file
+# Optional parts:
+#  'add_$lang'=>('$path','$path'): one vector per language, the list of all addendum for that language
+#  'pot_in' => '$master': The master file to use in input when building the POT (allows to filter out some things)
+#  'pot'    => the filename to use when building the POT file in split mode (when not provided, basename of master is used)
+my (%document);
+
 my $doc_count = 0;
 my %partial   = ( 'master' => {}, 'files' => {}, 'lang' => {} );
 open CONFIG, "<", "$config_file" or die wrap_msg( gettext("Cannot open %s: %s"), $config_file, $! );
@@ -994,12 +1024,29 @@ while (<CONFIG>) {
     if ( $cmd eq "po4a_paths" ) {
         die wrap_ref_mod( "$config_file:$nb", "", gettext("'%s' redeclared"), "po4a_path" )
           if ( length $pot_filename );
-        $pot_filename = $main;
-        foreach my $arg ( split( / /, $args ) ) {
+        $pot_filename     = $main;
+        $pot_filename_cfg = $main;
+        warn wrap_ref_mod(
+            "$config_file:$nb",
+            "",
+            gettext(
+                "Your POT file '%s' file name does not end with the 'pot' extension. This is unusual and will trouble the translators."
+            ),
+            $pot_filename
+        ) unless $pot_filename =~ m/\.pot$/;
+        my @split_args = split( / /, $args );
+        warn wrap_ref_mod(
+            "$config_file:$nb",
+            "",
+            gettext("No PO file provided as subsequent parameters to '%s'. Your documentation will not be translated."),
+            "po4a_path"
+        ) unless scalar @split_args > 0;
+
+        foreach my $arg (@split_args) {
             die wrap_ref_mod( "$config_file:$nb", "", gettext("Unparsable argument '%s'."), $arg )
               unless ( $arg =~ /^([^:]*):(.*)/ );
             my ( $component, $path ) = ( $1, $2 );
-            if ( $component =~ m/^add_(.*)$/ ) {
+            if ( $component =~ m/^add_(.*)$/ ) {    # This is an addendum declaration
                 my $lang    = $1;
                 my @addlist = ($path);
                 while ( scalar @addlist ) {
@@ -1048,35 +1095,120 @@ while (<CONFIG>) {
         die wrap_ref_mod( "$config_file:$nb", "", gettext("The POT file cannot be set twice.") )
           if length $pot_filename;
 
+        # Search for the candidate PO and POT files
+        # The difficulty is that the directory itself must be searched in destdir, calldir, srcdir and then the PO files must be searched in there.
+        # This mechanism is easy to get wrong (see eg #960892), so let's get cautionous and verbose on error.
+        # Step 1. collect the files in every candidate po_directory we find.
         my $po_directory = $main;
-        die wrap_ref_mod( "$config_file:$nb", "", gettext("'%s' is not a directory"), $po_directory )
-          unless ( -d find_input_file($po_directory) );
-        opendir PO_DIR, find_input_file($po_directory)
-          or die wrap_ref_mod( "$config_file:$nb", "", gettext("Cannot list the '%s' directory"), $po_directory );
+        my @po_files;
+        print STDERR "Searching for po_directory '$po_directory'."
+          if $po4a_opts{"debug"};
+        if ( File::Spec->file_name_is_absolute($po_directory) ) {
+            print STDERR wrap_msg( gettext("Using '%s' as a %s."), $po_directory, "po_directory" )
+              if $po4a_opts{"verbose"};
+            die wrap_ref_mod( "$config_file:$nb", "", gettext("'%s' is not a directory (current dir: %s)"),
+                $po_directory, cwd() )
+              unless ( -d $po_directory );
 
-        foreach my $f ( sort readdir PO_DIR ) {
-            next unless -f find_input_file("$po_directory/$f");
-            if ( $f =~ m/^(.*)\.po$/ ) {
-                push @langs, $1;
-                $po_filename{$1} = "$po_directory/$f";
-                print wrap_msg( gettext("Found language '%s' in the provided po_directory."), $1 )
-                  if $po4a_opts{"verbose"};
-            }
-            if ( $f =~ m/\.pot$/ ) {
-                if ( length $pot_filename ) {
-                    die wrap_ref_mod( "$config_file:$nb", "", gettext("too many POT files: %s %s"),
-                        $pot_filename, "$po_directory/$f" );
-                } else {
-                    $pot_filename = "$po_directory/$f";
-                    print wrap_msg( gettext("Found POT file '%s' in the provided po_directory."), $pot_filename )
+            opendir PO_DIR, find_input_file($po_directory)
+              or die wrap_ref_mod( "$config_file:$nb", "", gettext("Cannot list the '%s' directory"), $po_directory );
+            map { push @po_files, $_ if -e $_; } ( sort readdir PO_DIR );
+        } else {
+            my $found = 0;
+            foreach my $basedir ( $destdir, $calldir // ".", $srcdir ) {
+                next unless defined $basedir;
+                my $candidate = "$basedir/$po_directory";
+                if ( -e $candidate && -d $candidate ) {
+                    $found = 1;
+                    print STDERR wrap_msg( gettext("Using '%s' as a %s."), $candidate, "po_directory" )
                       if $po4a_opts{"verbose"};
+
+                    opendir PO_DIR,
+                      $candidate
+                      or die wrap_ref_mod( "$config_file:$nb", "", gettext("Cannot list directory '%s' in '%s' "),
+                        $po_directory, $basedir );
+                    map { push @po_files, "$po_directory/$_" if -e "$candidate/$_"; } ( sort readdir PO_DIR );
                 }
+            }
+            unless ($found) {
+                die wrap_ref_mod( "$config_file:$nb", "", gettext("Directory '%s' not found in '%s'."),
+                    $po_directory, $calldir )
+                  if ( not defined $destdir && not defined $srcdir );
+                die wrap_ref_mod( "$config_file:$nb", "", gettext("Directory '%s' not found in '%s' nor in '%s'."),
+                    $po_directory, $destdir, $calldir )
+                  if ( defined $destdir && not defined $srcdir );
+                die wrap_ref_mod( "$config_file:$nb", "", gettext("Directory '%s' not found in '%s' nor in '%s'."),
+                    $po_directory, $calldir, $srcdir )
+                  if ( not defined $destdir && defined $srcdir );
+                die wrap_ref_mod( "$config_file:$nb", "",
+                    gettext("Directory '%s' not found in '%s' nor in '%s' nor in '%s'."),
+                    $po_directory, $destdir, $calldir, $srcdir );
             }
         }
 
+        # Step 2: separate the PO and POT files we found in all traversed directories
+        my %seen = ();    # the elements of po_files that we saw already (we need to ignore the dupplicates)
+        foreach my $f (@po_files) {
+            next if $seen{$f}++;    # we saw it already
+            if ( $f =~ m|^(.*?)/([^/]*)\.po$| ) {
+                push @langs, $2;
+                die wrap_ref_mod( "$config_file:$nb", gettext("Language '%s' found twice in '%s' and '%s'."),
+                    $po_filename{$2}, $f )
+                  if defined $po_filename{$2} && $po_filename{$2} ne $f;
+                $po_filename{$2} = $f;
+                print wrap_msg( gettext("Found language '%s' in the provided po_directory: %s"), $2, $f )
+                  if $po4a_opts{"verbose"};
+            }
+            if ( $f =~ m/\.pot$/ ) {
+                die wrap_msg( gettext("%s:%d: too many POT files: '%s' and '%s'."), $config_file, $nb, $pot_filename,
+                    $f )
+                  if ( length $pot_filename );
+                $pot_filename = $f;
+                print wrap_msg( gettext("Found POT file '%s' in the provided po_directory."), $pot_filename )
+                  if $po4a_opts{"verbose"};
+            }
+        }
+        undef %seen;
+
+        # Step 3: if no PO file found, make a sensible error message.
+        # We could factorize the error message, but it would break gettext()
         if ( not @langs ) {
-            warn wrap_ref_mod( "$config_file:$nb", "", gettext("no PO files found in %s"),
-                find_input_file($po_directory) );
+            if ( not defined $destdir && not defined $srcdir ) {
+                warn wrap_ref_mod( "$config_file:$nb", "", gettext("No PO files found in '%s'/'%s'."), $calldir,
+                    $main );
+            } elsif ( defined $destdir && not defined $srcdir ) {
+                warn wrap_ref_mod( "$config_file:$nb", "", gettext("No PO files found in '%s'/'%s' nor in '%s'/'%s'."),
+                    $destdir, $main, $calldir, $main );
+            } elsif ( not defined $destdir && defined $srcdir ) {
+                warn wrap_ref_mod( "$config_file:$nb", "", gettext("No PO files found in '%s'/'%s' nor in '%s'/'%s'."),
+                    $calldir, $main, $srcdir, $main );
+            } else {
+                warn wrap_ref_mod( "$config_file:$nb", "",
+                    gettext("No PO files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."),
+                    $destdir, $main, $calldir, $main, $srcdir, $main );
+            }
+            warn wrap_ref_mod( "$config_file:$nb", "",
+                gettext("Your project will not be translated to any language.") );
+        }
+
+        # Step 4: if no POT file found, make a sensible error message
+        if ( length $pot_filename == 0 ) {
+            if ( not defined $destdir && not defined $srcdir ) {
+                warn wrap_ref_mod( "$config_file:$nb", "", gettext("No POT files found in '%s'/'%s'."), $calldir,
+                    $main );
+            } elsif ( defined $destdir && not defined $srcdir ) {
+                warn wrap_ref_mod( "$config_file:$nb", "", gettext("No POT files found in '%s'/'%s' nor in '%s'/'%s'."),
+                    $destdir, $main, $calldir, $main );
+            } elsif ( not defined $destdir && defined $srcdir ) {
+                warn wrap_ref_mod( "$config_file:$nb", "", gettext("No POT files found in '%s'/'%s' nor in '%s'/'%s'."),
+                    $calldir, $main, $srcdir, $main );
+            } else {
+                warn wrap_ref_mod( "$config_file:$nb", "",
+                    gettext("No POT files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."),
+                    $destdir, $main, $calldir, $main, $srcdir, $main );
+            }
+            warn wrap_ref_mod( "$config_file:$nb", "",
+                gettext("Please create an empty file with the 'pot' extension (e.g. 'myproject.pot').") );
         }
 
     } elsif ( $cmd =~ m/type: *(.*)/ ) {
@@ -1132,8 +1264,15 @@ while (<CONFIG>) {
           if defined $document{$main}{'options'};
 
         # 4. Save the name of the master doc, to handle "$master" substitution in strings
-        if ( $args =~ s/ +master:file=(\S+)// ) {
-            $document{$main}{'master'} = $1;
+        warn(
+            wrap_ref_mod(
+                "$config_file:$nb", "",
+                gettext("Option 'master:file' is deprecated. Please use 'pot' instead for the same effect.")
+            )
+        ) if ( $args =~ m/ +master:file=\S/ );
+
+        if ( $args =~ s/ +master:file=(\S+)// || $args =~ s/ +pot=(\S+)// ) {
+            $document{$main}{'pot'} = $1;
         }
 
         # 5. Merge the document specific options
@@ -1262,9 +1401,6 @@ if (    defined $document{''}{"options"}
     %po4a_opts = get_options( split_opts( $document{''}{"options"}{"global"} ), @ORIGINAL_ARGV );
 }
 
-my %split_po;     # po_files: '$lang','$master' => '$path'
-my %split_pot;    # pot_files: '$master' => '$path'
-
 # make a big pot
 my $update_pot_file = 0;
 if ( $pot_filename =~ m/\$master/ ) {
@@ -1273,13 +1409,6 @@ if ( $pot_filename =~ m/\$master/ ) {
     if ( scalar @{ $po4a_opts{"partial"} } ) {
         print wrap_msg( gettext("Disabling --translate-only option, it is not supported in split mode") . "\n" );
         $po4a_opts{"partial"} = [];
-    }
-    foreach my $master ( keys %document ) {
-        next if ( $master eq '' );
-        my $m          = $document{$master}{"master"} || basename $master;
-        my $master_pot = $pot_filename;
-        $master_pot =~ s/\$master/$m/g;
-        $split_pot{$master} = $master_pot;
     }
 
     # The POT needs to be generated anyway.
@@ -1427,46 +1556,62 @@ if ($update_pot_file) {
       if ( $po4a_opts{"verbose"} and not $po4a_opts{"no-update"} );
 }
 
-if ( $po4a_opts{"split"} ) {
+my %split_po;           # po_files: '$lang','$master' => '$path'
+my %split_pot;          # pot_files: '$master' => '$path'
+my %split_pot_files;    # List of files in a given POT, as a parameter to msggrep: '$potfile' => "-N file1 -N file2"
 
-    # Generate a .pot for each document
+if ( $po4a_opts{"split"} ) {
     foreach my $master ( keys %document ) {
         next if ( $master eq '' );
-        my $tmp_file;
-
-        # Create a temporary POT, and check if the old one needs to be
-        # updated (unless --force was specified).
-        unless ( $po4a_opts{"force"} ) {
-            ( undef, $tmp_file ) = File::Temp::tempfile(
-                "po4aXXXX",
-                DIR    => $ENV{TMPDIR} || "/tmp",
-                SUFFIX => ".pot",
-                OPEN   => 0,
-                UNLINK => 0
-            ) or die wrap_msg( gettext("Cannot create a temporary POT file: %s"), $! );
-        }
-
-        my $dir = dirname( find_output_file( $split_pot{$master} ) );
-        if ( not -d $dir ) {
-            mkdir $dir or die wrap_msg( gettext("Cannot create directory '%s': %s"), $dir, $! );
-        }
-        my $outfile       = $po4a_opts{"force"} ? find_output_file( $split_pot{$master} ) : $tmp_file;
+        my $m          = $document{$master}{'pot'} || basename $master;
+        my $master_pot = $pot_filename_cfg;
+        $master_pot =~ s/\$master/$m/g;
+        $split_pot{$master} = $master_pot;
         my $searched_file = $document{$master}{'pot_in'} // $master;
-        my $cmd           = "msggrep$Config{_exe} -N \"$searched_file\" -o $outfile $pot_filename";
-        run_cmd($cmd);
-
-        die wrap_msg(
-            gettext(
-                "msggrep did not create '%s'. Used command:\n  %s\nPlease report that bug, along the information allowing to reproduce it.\n"
-            ),
-            $outfile, $cmd
-        ) unless ( -e $outfile );
-
-        move_po_if_needed( $tmp_file, find_output_file( $split_pot{$master} ), 0 )
-          unless ( $po4a_opts{"force"} );
+        $split_pot_files{$master_pot} //= '';
+        $split_pot_files{$master_pot} .= " -N \"$searched_file\"";
     }
 
-    # Generate a complete .po
+    # Generate a .pot for each document by msggrep on the big POT file.
+    # These files are used to update the PO files later on (and also by humans to start new translations)
+    if ( not $po4a_opts{"no-update"} ) {
+        foreach my $master_pot ( keys %split_pot_files ) {
+            my $tmp_file;
+
+            # Create a temporary POT, and check if the old one needs to be
+            # updated (unless --force was specified).
+            unless ( $po4a_opts{"force"} ) {
+                ( undef, $tmp_file ) = File::Temp::tempfile(
+                    "po4aXXXX",
+                    DIR    => $ENV{TMPDIR} || "/tmp",
+                    SUFFIX => ".pot",
+                    OPEN   => 0,
+                    UNLINK => 0
+                ) or die wrap_msg( gettext("Cannot create a temporary POT file: %s"), $! );
+            }
+
+            my $dir = dirname( find_output_file($master_pot) );
+            if ( not -d $dir ) {
+                mkdir $dir or die wrap_msg( gettext("Cannot create directory '%s': %s"), $dir, $! );
+            }
+            my $outfile = $po4a_opts{"force"} ? find_output_file($master_pot) : $tmp_file;
+            my $cmd     = "msggrep$Config{_exe} $split_pot_files{$master_pot} -o $outfile $pot_filename";
+            run_cmd($cmd);
+
+            die wrap_msg(
+                gettext(
+                    "msggrep did not create '%s'. Used command:\n  %s\nPlease report that bug, along the information allowing to reproduce it.\n"
+                ),
+                $outfile, $cmd
+            ) unless ( -e $outfile );
+
+            move_po_if_needed( $tmp_file, find_output_file($master_pot), 0 )
+              unless ( $po4a_opts{"force"} );
+        }
+    }
+
+    # Generate a complete .po for each language, with the translations of all master files
+    # That's done with msgcat on all existing PO files of a given language
     foreach my $lang ( sort keys %po_filename ) {
         my $tmp_bigpo;
         ( undef, $tmp_bigpo ) = File::Temp::tempfile(
@@ -1479,7 +1624,7 @@ if ( $po4a_opts{"split"} ) {
         my $cmd_cat = "";
         foreach my $master ( sort keys %document ) {
             next if ( $master eq '' );
-            my $m         = $document{$master}{"master"} || basename $master;
+            my $m         = $document{$master}{'pot'} || basename $master;
             my $master_po = $po_filename{$lang};
             $master_po =~ s/\$master/$m/g;
             if ( -e find_input_file($master_po) ) {
@@ -1535,7 +1680,7 @@ if ( not $po4a_opts{"no-update"} ) {
                         printf( gettext("Updating %s:"), $po_filename{$lang} );
                     }
 
-                    my $stat = qx(msgfmt$Config{_exe} --statistics -v -o /dev/null $outfile 2>&1);
+                    my $stat = qx(msgfmt$Config{_exe} --statistics -v -o $devnull $outfile 2>&1);
                     $stat =~ s/^[^:]*://;
                     print $stat;
                 }
@@ -1543,82 +1688,89 @@ if ( not $po4a_opts{"no-update"} ) {
             } else {
                 my $read_pot_filename = find_input_file($pot_filename);
                 my $cmd =
-                  "msginit$Config{_exe} -i $read_pot_filename --locale $lang -o $outfile --no-translator >/dev/null";
+                  "msginit$Config{_exe} -i $read_pot_filename --locale $lang -o $outfile --no-translator >$devnull";
                 run_cmd($cmd);
             }
         }
-    }
 
-    if ( $po4a_opts{"split"} ) {
+        if ( $po4a_opts{"split"} ) {
 
-        # We don't need the tmp big POT anymore
-        unlink($pot_filename);
-        print STDERR "Unlink the big POT file $pot_filename\n" if $po4a_opts{'debug'};
+            # Split the complete PO in multiple POs
+            foreach $lang ( sort keys %po_filename ) {
+                foreach my $master ( keys %document ) {
+                    next if ( $master eq '' );
+                    my $tmp_file;
 
-        # Split the complete PO in multiple POs
-        foreach $lang ( sort keys %po_filename ) {
-            foreach my $master ( keys %document ) {
-                next if ( $master eq '' );
-                my $tmp_file;
+                    # Create a temporary PO, and check if the old one needs to be
+                    # updated (unless --force was specified).
+                    ( undef, $tmp_file ) = File::Temp::tempfile(
+                        "po4aXXXX",
+                        DIR    => $ENV{TMPDIR} || "/tmp",
+                        SUFFIX => ".po",
+                        OPEN   => 0,
+                        UNLINK => 0
+                    ) or die wrap_msg( gettext("Cannot create a temporary POT file: %s"), $! );
 
-                # Create a temporary PO, and check if the old one needs to be
-                # updated (unless --force was specified).
-                ( undef, $tmp_file ) = File::Temp::tempfile(
-                    "po4aXXXX",
-                    DIR    => $ENV{TMPDIR} || "/tmp",
-                    SUFFIX => ".po",
-                    OPEN   => 0,
-                    UNLINK => 0
-                ) or die wrap_msg( gettext("Cannot create a temporary POT file: %s"), $! );
+                    my $cmd;
 
-                my $cmd;
+                    # Pass msggrep to C (english), but not under windows as this syntax is not understood by the shell
+                    my $env = ( $^O =~ /Win/ ) ? "" : "LC_ALL=C.UTF-8";
 
-                # Create an empty PO or copy the original PO header (to keep the header)
-                if ( -f find_input_file( $split_po{$lang}{$master} ) ) {
+                    # Create an empty PO or copy the original PO header (to keep the header)
+                    if ( -f find_input_file( $split_po{$lang}{$master} ) ) {
+                        $cmd =
+                            $env
+                          . " msggrep$Config{_exe}"
+                          . " --force-po --invert-match --msgid --regexp '.'"
+                          . " --output $tmp_file "
+                          . find_input_file( $split_po{$lang}{$master} );
+                    } else {
+                        $cmd =
+                            "msginit$Config{_exe} "
+                          . "--no-translator -l $lang --input "
+                          . find_output_file( $split_pot{$master} )
+                          . " --output $tmp_file  >$devnull";
+                    }
+                    run_cmd($cmd);
+
+                    # Update the PO according to the new POT and to the big PO (compendium).
                     $cmd =
-                        "LC_ALL=C.UTF-8 msggrep$Config{_exe}"
-                      . " --force-po --invert-match --msgid --regexp '.'"
-                      . " --output $tmp_file "
-                      . find_input_file( $split_po{$lang}{$master} );
-                } else {
-                    $cmd =
-                        "msginit$Config{_exe} "
-                      . "--no-translator -l $lang --input "
-                      . find_output_file( $split_pot{$master} )
-                      . " --output $tmp_file  >/dev/null";
-                }
-                run_cmd($cmd);
+                        "msgmerge$Config{_exe} "
+                      . " --compendium "
+                      . $po_filename{$lang}
+                      . " --update --backup=none "
+                      . $po4a_opts{"msgmerge-opt"}
+                      . " $tmp_file "
+                      . find_output_file( $split_pot{$master} );
+                    run_cmd($cmd);
 
-                # Update the PO according to the new POT and to the big PO (compendium).
-                $cmd =
-                    "msgmerge$Config{_exe} "
-                  . " --compendium "
-                  . $po_filename{$lang}
-                  . " --update --backup=none "
-                  . $po4a_opts{"msgmerge-opt"}
-                  . " $tmp_file "
-                  . find_output_file( $split_pot{$master} );
-                run_cmd($cmd);
-
-                my $dir = dirname( $split_po{$lang}{$master} );
-                if ( not -d $dir ) {
-                    mkdir $dir
-                      or die wrap_msg( gettext("Cannot create directory '%s': %s"), $dir, $! );
-                }
-                unless ( $po4a_opts{"force"} ) {
-                    move_po_if_needed( $tmp_file, $split_po{$lang}{$master}, 0 );
-                } else {
-                    move $tmp_file,
-                      find_output_file( $split_po{$lang}{$master} )
-                      or die wrap_msg(
-                        dgettext( "po4a", "Cannot move %s to %s: %s." ), $tmp_file,
-                        find_output_file( $split_po{$lang}{$master} ), $!
-                      );
+                    my $dir = dirname( $split_po{$lang}{$master} );
+                    if ( not -d $dir ) {
+                        mkdir $dir
+                          or die wrap_msg( gettext("Cannot create directory '%s': %s"), $dir, $! );
+                    }
+                    unless ( $po4a_opts{"force"} ) {
+                        move_po_if_needed( $tmp_file, $split_po{$lang}{$master}, 0 );
+                    } else {
+                        move $tmp_file,
+                          find_output_file( $split_po{$lang}{$master} )
+                          or die wrap_msg(
+                            dgettext( "po4a", "Cannot move %s to %s: %s." ), $tmp_file,
+                            find_output_file( $split_po{$lang}{$master} ), $!
+                          );
+                    }
                 }
             }
-        }
-    }    # if split
-}    # update po/pot files
+        }    # if ( $po4a_opts{"split"} )
+    }    # if ( not scalar @{ $po4a_opts{"partial"} } )
+}    # not $po4a_opts{"no-update"}
+
+if ( $po4a_opts{"split"} ) {
+
+    # We don't need the tmp big POT anymore
+    unlink($pot_filename);
+    print STDERR "Unlink the big POT file $pot_filename\n" if $po4a_opts{'debug'};
+}
 
 if ( not $po4a_opts{"no-translations"} ) {
 
@@ -1644,7 +1796,7 @@ if ( not $po4a_opts{"no-translations"} ) {
         print "Reading PO file $pofile for language $lang: "
           if ( $po4a_opts{"debug"} );
         $po->read($pofile);
-        system( "msgfmt" . $Config{_exe} . " --statistics -v -o /dev/null $pofile" )
+        system( "msgfmt" . $Config{_exe} . " --statistics -v -o $devnull $pofile" )
           if ( $po4a_opts{"debug"} );
 
       DOC: foreach my $master (
@@ -1722,10 +1874,6 @@ if ( not $po4a_opts{"no-translations"} ) {
                 'destdir'          => $po4a_opts{"destdir"},
                 'calldir'          => $po4a_opts{"calldir"}
             );
-
-            #            my ( $is_uptodate, $uptodate_diag ) = $doc->is_po_uptodate();
-            #            die wrap_msg(gettext("PO file %s needs another update after translating the documents:\n  %s\nPlease report this bug."), $po_filename{$lang}, $uptodate_diag)
-            #                unless ($is_uptodate or $po4a_opts{'no-update'});
 
             my ( $percent, $hit, $queries ) = $doc->stats();
             if ( $percent < $file_opts{"threshold"} ) {

@@ -4,14 +4,14 @@
 # Zaki Akhmad <zakiakhmad@gmail.com>, 2007.
 # T. Surya Fajri <kilelme@gmail.com>, 2012.
 # Izharul Haq <atoz.chevara@yahoo.com>, 2016.
-#
+# Reza Almanda <rezaalmanda27@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.47-2\n"
 "Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2020-05-19 02:45+0200\n"
-"PO-Revision-Date: 2019-09-29 10:55+0000\n"
-"Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
+"POT-Creation-Date: 2021-11-06 11:27+0100\n"
+"PO-Revision-Date: 2021-06-03 00:38+0000\n"
+"Last-Translator: Reza Almanda <rezaalmanda27@gmail.com>\n"
 "Language-Team: Indonesian <https://hosted.weblate.org/projects/po4a/po4a/id/"
 ">\n"
 "Language: id\n"
@@ -19,43 +19,45 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 3.9-dev\n"
+"X-Generator: Weblate 4.7-dev\n"
 "X-Rosetta-Export-Date: 2007-08-12 16:08:34+0000\n"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:149 ../../lib/Locale/Po4a/Man.pm:496
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:211 ../../lib/Locale/Po4a/Man.pm:496
 #: ../../lib/Locale/Po4a/Po.pm:235 ../../lib/Locale/Po4a/RubyDoc.pm:74
-#: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1662
+#: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1664
 #: ../../lib/Locale/Po4a/Text.pm:211 ../../lib/Locale/Po4a/Xml.pm:598
 #: ../../lib/Locale/Po4a/Yaml.pm:39
 #, perl-format
 msgid "Unknown option: %s"
 msgstr "Opsi tidak diketahui: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:208
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:218
+#, perl-format
+msgid "Invalid compatibility setting: '%s'. It must be either '%s' or '%s'."
+msgstr ""
+"Pengaturan kompatibilitas tidak valid: '%s'. Harusnya berupa '%s' atau '%s'."
+
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:283
 #, perl-format
 msgid "Unable to parse macro definition: %s"
 msgstr "Tidak dapat mem-parse definisi macro: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:255 ../../lib/Locale/Po4a/TeX.pm:1064
-#: ../../po4a:941 ../../po4a:1014 ../../po4a:1171 ../../po4a-translate:297
-#, fuzzy, perl-format
-#| msgid "Can't open %s: %s"
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:330 ../../lib/Locale/Po4a/TeX.pm:1066
+#: ../../po4a:971 ../../po4a:1061 ../../po4a:1310 ../../po4a-translate:298
+#, perl-format
 msgid "Cannot open %s: %s"
 msgstr "Tidak bisa membuka %s: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:290
-#, fuzzy, perl-format
-#| msgid ""
-#| "Detection of two line titles failed at %s\n"
-#| "Install the Unicode::GCString module!"
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:365
+#, perl-format
 msgid ""
 "Detection of two line titles failed at %s\n"
 "Please install the Unicode::GCString module."
 msgstr ""
 "Deteksi dari dua baris judul gagal pada %s\n"
-"Instal Unicode::GCString module!"
+"Silakan instal Unicode::GCString module."
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:414
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:512
 #, perl-format
 msgid ""
 "'%s' seems to be a two-lines title underlined with '%s', but the underlines "
@@ -63,7 +65,7 @@ msgid ""
 "your master document."
 msgstr ""
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:871
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:991
 msgid ""
 "It seems that you are adding unindented content to an item. The standard "
 "allows this, but you may still want to change your document to use indented "
@@ -71,10 +73,8 @@ msgid ""
 msgstr ""
 
 #: ../../lib/Locale/Po4a/Chooser.pm:25
-#, fuzzy
-#| msgid "Need to provide a module name"
 msgid "Please provide a module name"
-msgstr "Diperlukan menyediakan nama modul"
+msgstr "Harap berikan nama modul"
 
 #: ../../lib/Locale/Po4a/Chooser.pm:50
 #, perl-format
@@ -127,10 +127,8 @@ msgid "pod: Perl Online Documentation format."
 msgstr "pod: format dokumentasi perl online."
 
 #: ../../lib/Locale/Po4a/Chooser.pm:83
-#, fuzzy
-#| msgid "pod: Perl Online Documentation format."
 msgid "rubydoc: Ruby Documentation (RD) format."
-msgstr "pod: format dokumentasi perl online."
+msgstr "rubydoc: Format Dokumentasi Ruby (RD)."
 
 #: ../../lib/Locale/Po4a/Chooser.pm:85
 msgid "sgml: either DebianDoc or DocBook DTD."
@@ -170,7 +168,7 @@ msgstr "yaml: dokumen YAML."
 #| "%s version %s.\n"
 #| "Written by Martin Quinson and Denis Barbier.\n"
 #| "\n"
-#| "Copyright © 2002-2018 Software in the Public Interest, Inc.\n"
+#| "Copyright © 2002-2020 Software in the Public Interest, Inc.\n"
 #| "This is free software; see source code for copying\n"
 #| "conditions. There is NO warranty; not even for\n"
 #| "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
@@ -178,15 +176,15 @@ msgid ""
 "%s version %s.\n"
 "Written by Martin Quinson and Denis Barbier.\n"
 "\n"
-"Copyright © 2002-2020 Software in the Public Interest, Inc.\n"
+"Copyright © 2002-2021 Software in the Public Interest, Inc.\n"
 "This is free software; see source code for copying\n"
 "conditions. There is NO warranty; not even for\n"
 "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
 msgstr ""
 "%s versi %s. \n"
-"ditulis oleh Martin Quinson dan Denis Barbier. \n"
+"dibuat oleh Martin Quinson dan Denis Barbier. \n"
 "\n"
-"Hak cipta © 2002-2018 Perangkat Lunak dari Public Interest, Inc. \n"
+"Hak cipta © 2002-2020 Perangkat Lunak dari Public Interest, Inc. \n"
 "Ini adalah perangkat lunak bebas; lihat sumber kode untuk kondisi\n"
 "menyalin. TIDAK ada jaminan, bahkan untuk \n"
 "DIJUAL atau KESESUAIAN UNTUK TUJUAN KHUSUS."
@@ -200,7 +198,7 @@ msgstr "Ruas diterjemahkan di dalam dokumen master: %s"
 msgid "Begin of a new entry before the end of previous one"
 msgstr "Permulaan dari entri baru sebelum akhir dari yang sebelumnya"
 
-#: ../../lib/Locale/Po4a/KernelHelp.pm:100
+#: ../../lib/Locale/Po4a/KernelHelp.pm:98
 msgid "Syntax error"
 msgstr "Kesalahan syntax"
 
@@ -344,7 +342,7 @@ msgstr ""
 #: ../../lib/Locale/Po4a/Man.pm:1695
 #, perl-format
 msgid "Cannot parse command arguments: %s"
-msgstr "Agumen tidak dapat diparse: '%s'."
+msgstr "Agumen tidak dapat diparse: %s"
 
 #: ../../lib/Locale/Po4a/Man.pm:1825
 #, perl-format
@@ -433,12 +431,13 @@ msgid ""
 "Invalid po file %s:\n"
 "%s"
 msgstr ""
+"Berkas po tidak valid %s:\n"
+"%s"
 
-#: ../../lib/Locale/Po4a/Po.pm:340 ../../lib/Locale/Po4a/TeX.pm:961
+#: ../../lib/Locale/Po4a/Po.pm:340 ../../lib/Locale/Po4a/TeX.pm:963
 #: ../../lib/Locale/Po4a/TransTractor.pm:448
 #: ../../lib/Locale/Po4a/TransTractor.pm:601 ../../lib/Locale/Po4a/Xhtml.pm:140
-#, fuzzy, perl-format
-#| msgid "Can't read from %s: %s"
+#, perl-format
 msgid "Cannot read from %s: %s"
 msgstr "Tidak bisa membaca dari %s: %s"
 
@@ -452,39 +451,32 @@ msgstr "Pesan dengan lebih dari dua form jamak tidak didukung."
 msgid "Parse error at: -->%s<--"
 msgstr "Baris aneh: -->%s<--"
 
-#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:643
+#: ../../lib/Locale/Po4a/Po.pm:490 ../../lib/Locale/Po4a/Po.pm:642
 #: ../../lib/Locale/Po4a/TransTractor.pm:490
-#, fuzzy
-#| msgid "Can't write to a file without filename"
 msgid "Cannot write to a file without filename"
 msgstr "Tidak bisa menulis ke berkas tanpa nama berkas"
 
 #: ../../lib/Locale/Po4a/Po.pm:507 ../../lib/Locale/Po4a/TransTractor.pm:506
-#, fuzzy, perl-format
-#| msgid "Can't write to %s: %s"
+#, perl-format
 msgid "Cannot write to %s: %s"
 msgstr "Tidak dapat menulis ke %s: %s"
 
 #: ../../lib/Locale/Po4a/Po.pm:580
-#, fuzzy
-#| msgid "Can't write PO files with more than two plural forms."
 msgid "Cannot write PO files with more than two plural forms."
 msgstr "Tidak dapat menulis berkas PO dengan lebih dari dua form jamak."
 
-#: ../../lib/Locale/Po4a/Po.pm:625
-#, fuzzy, perl-format
-#| msgid "Can't unlink %s: %s."
+#: ../../lib/Locale/Po4a/Po.pm:624
+#, perl-format
 msgid "Cannot unlink %s: %s."
 msgstr "Tidak dapat tidak menaut %s: %s."
 
-#: ../../lib/Locale/Po4a/Po.pm:632 ../../lib/Locale/Po4a/Po.pm:636
-#: ../../po4a:1610
-#, fuzzy, perl-format
-#| msgid "Can't move %s to %s: %s."
+#: ../../lib/Locale/Po4a/Po.pm:631 ../../lib/Locale/Po4a/Po.pm:635
+#: ../../po4a:1758
+#, perl-format
 msgid "Cannot move %s to %s: %s."
 msgstr "Tidak dapat memindahkan %s ke %s: %s."
 
-#: ../../lib/Locale/Po4a/Po.pm:678
+#: ../../lib/Locale/Po4a/Po.pm:677
 msgid ""
 "\n"
 "The gettextization failed (once again). Don't give up, gettextizing is a "
@@ -502,7 +494,7 @@ msgstr ""
 "translasi yang belum-ada ke po4a?\" terdapat beberapa bantuan untuk membantu "
 "anda dalam melakukan tugas anda"
 
-#: ../../lib/Locale/Po4a/Po.pm:694
+#: ../../lib/Locale/Po4a/Po.pm:693
 #, perl-format
 msgid ""
 "Original has more strings than the translation (%d>%d). Please fix it by "
@@ -512,7 +504,7 @@ msgstr ""
 "perbaiki sebelum menyunting versi yang sudah diterjemahkan untuk menambah "
 "beberapa entri contoh."
 
-#: ../../lib/Locale/Po4a/Po.pm:707
+#: ../../lib/Locale/Po4a/Po.pm:706
 #, perl-format
 msgid ""
 "Original has less strings than the translation (%d<%d). Please fix it by "
@@ -529,7 +521,7 @@ msgstr ""
 "diterjemahkan dengan cara yang sama. Hapus salah satu dari translasi-"
 "translasi yang ada, dan anda akan baik-baik saja."
 
-#: ../../lib/Locale/Po4a/Po.pm:777
+#: ../../lib/Locale/Po4a/Po.pm:776
 #, perl-format
 msgid ""
 "po4a gettextization: Structure disparity between original and translated "
@@ -548,12 +540,12 @@ msgstr ""
 "Teks terjemahan: %s\n"
 "(hasil sampai saat ini ditempatkan pada gettextization.failed.po)"
 
-#: ../../lib/Locale/Po4a/Po.pm:1021
+#: ../../lib/Locale/Po4a/Po.pm:1020
 #, perl-format
 msgid "Evaluating the provided filter failed: %s"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Po.pm:1151
+#: ../../lib/Locale/Po4a/Po.pm:1150
 #, perl-format
 msgid ""
 "'%s' is the singular form of a message, po4a will use the msgstr[0] "
@@ -562,7 +554,7 @@ msgstr ""
 "'%s' adalah form tunggal dari sebuah pesan, po4a akan menggunakan msgstr[0] "
 "terjemahan (%s)."
 
-#: ../../lib/Locale/Po4a/Po.pm:1161
+#: ../../lib/Locale/Po4a/Po.pm:1160
 #, perl-format
 msgid ""
 "'%s' is the plural form of a message, po4a will use the msgstr[1] "
@@ -571,12 +563,12 @@ msgstr ""
 "'%s' adalah form jamak dari sebuah pesan, po4a akan menggunakan msgstr[1] "
 "terjemahan (%s)."
 
-#: ../../lib/Locale/Po4a/Po.pm:1389
+#: ../../lib/Locale/Po4a/Po.pm:1388
 #, perl-format
 msgid "msgid defined twice: %s"
 msgstr "msgid didefinisikan dua kali: %s"
 
-#: ../../lib/Locale/Po4a/Po.pm:1423
+#: ../../lib/Locale/Po4a/Po.pm:1422
 #, perl-format
 msgid ""
 "Translations don't match for:\n"
@@ -594,6 +586,17 @@ msgstr ""
 " Terjemahan kedua:\n"
 "%s\n"
 " Terjemahan lama dibuang."
+
+#: ../../lib/Locale/Po4a/Po.pm:1535
+#, perl-format
+msgid "The amount of entries differ between files: %d is not %d"
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Po.pm:1543
+#, fuzzy, perl-format
+#| msgid "msgid defined twice: %s"
+msgid "msgid declared in one file only: %s\n"
+msgstr "msgid didefinisikan dua kali: %s"
 
 #: ../../lib/Locale/Po4a/Sgml.pm:220
 msgid ""
@@ -697,22 +700,22 @@ msgstr "Tidak bisa menjalankan onsgmls: %s"
 msgid "Unknown tag %s"
 msgstr "Tag yang tidak diketahui %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1019
+#: ../../lib/Locale/Po4a/Sgml.pm:1021
 #, perl-format
 msgid "bad translation '%s' for '%s' in '%s'"
 msgstr "translasi yang buruk '%s' untuk '%s' di dalam '%s'"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1075 ../../lib/Locale/Po4a/Sgml.pm:1160
+#: ../../lib/Locale/Po4a/Sgml.pm:1077 ../../lib/Locale/Po4a/Sgml.pm:1162
 #, perl-format
 msgid "Closing tag for a translation container missing before %s"
 msgstr "Tag penutup untuk translasi yang mengandung hilang sebelum %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1245
+#: ../../lib/Locale/Po4a/Sgml.pm:1247
 #, perl-format
 msgid "Unknown SGML event type: %s"
 msgstr "Tidak diketahui tipe even SGML: %s"
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1259
+#: ../../lib/Locale/Po4a/Sgml.pm:1261
 #, fuzzy
 #| msgid ""
 #| "Warning: onsgmls produced some errors.  This is usually caused by po4a, "
@@ -731,7 +734,7 @@ msgstr ""
 "tetapi anda mungkin ingin untuk memverifikasi dihasilkan dengan onsgmls -wno-"
 "valid. Berlanjut... "
 
-#: ../../lib/Locale/Po4a/Sgml.pm:1271
+#: ../../lib/Locale/Po4a/Sgml.pm:1273
 msgid ""
 "To see the error message, rerun po4a with this additional argument:\n"
 "   -o debug=onsgmls"
@@ -754,36 +757,36 @@ msgstr ""
 msgid "Unknown command: '%s'"
 msgstr "Perintah yang tidak diketahui: '%s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:956
+#: ../../lib/Locale/Po4a/TeX.pm:957
 #, fuzzy
 #| msgid "Can't read from file without having a filename"
 msgid "Cannot read from file without having a filename"
 msgstr "Tidak bisa membaca dari berkas tanpa harus memiliki nama-berkas"
 
-#: ../../lib/Locale/Po4a/TeX.pm:999
+#: ../../lib/Locale/Po4a/TeX.pm:1001
 #, fuzzy, perl-format
 #| msgid "Can't find %s with kpsewhich"
 msgid "Cannot find %s with kpsewhich"
 msgstr "Tidak dapat menemukan %s dengan kpsewhich"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1030 ../../lib/Locale/Po4a/TransTractor.pm:473
+#: ../../lib/Locale/Po4a/TeX.pm:1032 ../../lib/Locale/Po4a/TransTractor.pm:473
 #: ../../lib/Locale/Po4a/Xhtml.pm:147
 #, fuzzy, perl-format
 #| msgid "Can't close %s after reading: %s"
 msgid "Cannot close %s after reading: %s"
 msgstr "Tidak bisa menutup %s setelah membaca: %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1055
+#: ../../lib/Locale/Po4a/TeX.pm:1057
 #, perl-format
 msgid "kpsewhich cannot find %s"
 msgstr "kpsewhich tidak dapat menemukan %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1101
+#: ../../lib/Locale/Po4a/TeX.pm:1103
 #, perl-format
 msgid "Cannot use an alias to the unknown command '%s'"
 msgstr "Tidak bisa menggunakan alias pada perintah yang tidak diketahui '%s'"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1108
+#: ../../lib/Locale/Po4a/TeX.pm:1110
 #, perl-format
 msgid ""
 "You are using the old definitions format (%s).  Please update this "
@@ -792,40 +795,40 @@ msgstr ""
 "Anda menggunakan format definisi lama (%s). Tolong perbarui definisi baris "
 "ini."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1317 ../../lib/Locale/Po4a/TeX.pm:1570
+#: ../../lib/Locale/Po4a/TeX.pm:1319 ../../lib/Locale/Po4a/TeX.pm:1572
 #, perl-format
 msgid "unknown environment: '%s'"
 msgstr "lingkungan yang tidak diketahui: '%s'"
 
 #. a begin may have been hidden in the middle of a translated
 #. buffer. FIXME: Just warn for now.
-#: ../../lib/Locale/Po4a/TeX.pm:1340
+#: ../../lib/Locale/Po4a/TeX.pm:1342
 #, perl-format
 msgid "unmatched end of environment '%s'"
 msgstr "akhir yang tidak cocok dari lingkungan '%s'"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1390 ../../lib/Locale/Po4a/TeX.pm:1499
+#: ../../lib/Locale/Po4a/TeX.pm:1392 ../../lib/Locale/Po4a/TeX.pm:1501
 #, perl-format
 msgid "Wrong number of arguments for the '%s' command."
 msgstr "Jumlah yang salah dari argumen-argumen untuk perintah '%s'."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1402 ../../lib/Locale/Po4a/TeX.pm:1511
-#: ../../lib/Locale/Po4a/TeX.pm:1597
+#: ../../lib/Locale/Po4a/TeX.pm:1404 ../../lib/Locale/Po4a/TeX.pm:1513
+#: ../../lib/Locale/Po4a/TeX.pm:1599
 msgid "An optional argument was provided, but a mandatory one is expected."
 msgstr ""
 "Sebuah argumen opsional telah disediakan, tetapi wajib satu yang diharapkan."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1403 ../../lib/Locale/Po4a/TeX.pm:1512
+#: ../../lib/Locale/Po4a/TeX.pm:1405 ../../lib/Locale/Po4a/TeX.pm:1514
 #, perl-format
 msgid "Command '%s': %s"
 msgstr "Perintah '%s': %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1459
+#: ../../lib/Locale/Po4a/TeX.pm:1461
 #, perl-format
 msgid "register_generic_command: unsupported format: '%s'."
 msgstr "register_generic_command: format yang tidak didukung: '%s'."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1565
+#: ../../lib/Locale/Po4a/TeX.pm:1567
 msgid "The first argument of \\begin is mandatory."
 msgstr "Argumen pertama dari \\begin adalah sebuah keharusan."
 
@@ -913,34 +916,34 @@ msgstr "Tidak bisa menerapkan addendum ketika tidak diberikan nama-berkas"
 msgid "Addendum %s does not exist."
 msgstr "Addendum %s tidak ada."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:735
+#: ../../lib/Locale/Po4a/TransTractor.pm:736
 #, perl-format
 msgid "No candidate position for the addendum %s."
 msgstr "Tidak ada posisi kandidat untuk addendum %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:739
+#: ../../lib/Locale/Po4a/TransTractor.pm:740
 #, perl-format
 msgid "More than one candidate position found for the addendum %s."
 msgstr "Lebih dari satu posisi kandidat ditemukan untuk tambahan %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:748
-#: ../../lib/Locale/Po4a/TransTractor.pm:770
+#: ../../lib/Locale/Po4a/TransTractor.pm:751
+#: ../../lib/Locale/Po4a/TransTractor.pm:773
 #, perl-format
 msgid "Addendum '%s' applied before this line: %s"
 msgstr "Addendum '%s' diterapkan sebelum baris ini: %s"
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:776
+#: ../../lib/Locale/Po4a/TransTractor.pm:779
 #, perl-format
 msgid "Addendum '%s' applied after the line: %s."
 msgstr "Addendum '%s' diterapkan setelah baris ini: %s."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:783
+#: ../../lib/Locale/Po4a/TransTractor.pm:786
 #, perl-format
 msgid "Addendum '%s' applied at the end of the file."
 msgstr "Addendum '%s' diterapkan pada akhir dari berkas."
 
-#: ../../lib/Locale/Po4a/TransTractor.pm:956
-#: ../../lib/Locale/Po4a/TransTractor.pm:1144
+#: ../../lib/Locale/Po4a/TransTractor.pm:959
+#: ../../lib/Locale/Po4a/TransTractor.pm:1147
 #, perl-format
 msgid ""
 "Couldn't determine the input document's charset. Please specify it on the "
@@ -950,22 +953,19 @@ msgstr ""
 "baris perintah. (karakter non-ASCII pada %s)"
 
 #: ../../lib/Locale/Po4a/Wml.pm:93
-#, fuzzy, perl-format
-#| msgid "Can't create a temporary XML file: %s"
+#, perl-format
 msgid "Cannot create a temporary XML file: %s"
 msgstr "Tidak bisa membuat file XML sementara: %s"
 
 #: ../../lib/Locale/Po4a/Xml.pm:119
-#, fuzzy, perl-format
-#| msgid "Can't read from %s: %s"
+#, perl-format
 msgid "%s: Cannot read from %s: %s"
-msgstr "Tidak bisa membaca dari %s: %s"
+msgstr "%s: Tidak bisa membaca dari %s: %s"
 
 #: ../../lib/Locale/Po4a/Xml.pm:128
-#, fuzzy, perl-format
-#| msgid "Can't close %s after reading: %s"
+#, perl-format
 msgid "%s: Cannot close %s after reading: %s"
-msgstr "Tidak bisa menutup %s setelah membaca: %s"
+msgstr "%s: Tidak bisa menutup %s setelah membaca: %s"
 
 #: ../../lib/Locale/Po4a/Xml.pm:230
 #, perl-format
@@ -979,7 +979,7 @@ msgstr ""
 #: ../../lib/Locale/Po4a/Xml.pm:270
 #, perl-format
 msgid ">>> filename = '%s'"
-msgstr ""
+msgstr ">>> nama file = '%s'"
 
 #: ../../lib/Locale/Po4a/Xml.pm:750
 #, perl-format
@@ -1002,7 +1002,7 @@ msgid ""
 "Unexpected closing tag </%s> found. The main document may be wrong.  "
 "Continuing…"
 msgstr ""
-" Tag penutup tidak diharapkan </%s> ditemukan. Dokumen utama mungkin salah. "
+"Tag penutup tidak diharapkan </%s> ditemukan. Dokumen utama mungkin salah.  "
 "Dilanjutkan…"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1050 ../../lib/Locale/Po4a/Xml.pm:1793
@@ -1019,15 +1019,14 @@ msgid ""
 msgstr ""
 
 #: ../../lib/Locale/Po4a/Xml.pm:1450
-#, fuzzy, perl-format
+#, perl-format
 msgid "%s: Bad attribute syntax.  Continuing…"
-msgstr "%s: Atribut sintaks buruk. Dilanjutkan…"
+msgstr "%s: Atribut sintaks buruk.  Dilanjutkan…"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1452
-#, fuzzy, perl-format
-#| msgid "Bad attribute syntax"
+#, perl-format
 msgid "%s: Bad attribute syntax"
-msgstr "Atribut sintaks buruk"
+msgstr "%s: Atribut sintaks buruk"
 
 #: ../../lib/Locale/Po4a/Xml.pm:1575
 #, perl-format
@@ -1042,7 +1041,17 @@ msgstr ""
 msgid "%s: foldattributes setting ignored since '%s' is not inline tag"
 msgstr ""
 
-#: ../../lib/Locale/Po4a/Xml.pm:2093 ../../lib/Locale/Po4a/Xml.pm:2108
+#: ../../lib/Locale/Po4a/Xml.pm:2015
+#, perl-format
+msgid ""
+"Invalid placeholder in the translation (the 'type' and 'id' must be present, "
+"in this order).\n"
+"%s\n"
+"\n"
+"Please fix your translation."
+msgstr ""
+
+#: ../../lib/Locale/Po4a/Xml.pm:2102 ../../lib/Locale/Po4a/Xml.pm:2117
 #, perl-format
 msgid ""
 "The '%s' option is deprecated. Please use the translated/untranslated and/or "
@@ -1051,13 +1060,13 @@ msgstr ""
 "Opsi '%s' telah ditinggalkan. Tolong gunakan kategori translated/"
 "untranslated dan/atau break/inline/placeholder."
 
-#: ../../lib/Locale/Po4a/Xml.pm:2271 ../../lib/Locale/Po4a/Xml.pm:2278
-#: ../../lib/Locale/Po4a/Xml.pm:2281 ../../lib/Locale/Po4a/Xml.pm:2284
-#: ../../lib/Locale/Po4a/Xml.pm:2289 ../../lib/Locale/Po4a/Xml.pm:2292
-#: ../../lib/Locale/Po4a/Xml.pm:2297
+#: ../../lib/Locale/Po4a/Xml.pm:2280 ../../lib/Locale/Po4a/Xml.pm:2287
+#: ../../lib/Locale/Po4a/Xml.pm:2290 ../../lib/Locale/Po4a/Xml.pm:2293
+#: ../../lib/Locale/Po4a/Xml.pm:2298 ../../lib/Locale/Po4a/Xml.pm:2301
+#: ../../lib/Locale/Po4a/Xml.pm:2306
 #, perl-format
 msgid "Tag '%s' both in the %s and %s categories."
-msgstr "Tag '%s'  baik dalam kategori %s dan %s."
+msgstr "Tag '%s' baik dalam kategori %s dan %s."
 
 #. Argument checking
 #: ../../msguntypot:163 ../../msguntypot:165
@@ -1066,9 +1075,9 @@ msgid "Mandatory argument '%s' missing."
 msgstr "Argumen yang bersifat perintah '%s' hilang."
 
 #. Check file existence
-#: ../../msguntypot:164 ../../msguntypot:166 ../../po4a:929
-#: ../../po4a-gettextize:385 ../../po4a-normalize:175 ../../po4a-translate:238
-#: ../../po4a-translate:239 ../../po4a-updatepo:273
+#: ../../msguntypot:164 ../../msguntypot:166 ../../po4a:949
+#: ../../po4a-gettextize:386 ../../po4a-normalize:176 ../../po4a-translate:239
+#: ../../po4a-translate:240 ../../po4a-updatepo:274
 #, perl-format
 msgid "File %s does not exist."
 msgstr "Berkas %s tidak ada."
@@ -1085,11 +1094,10 @@ msgstr ""
 #: ../../msguntypot:192
 #, perl-format
 msgid "Found %d modified entries."
-msgstr "Ditemukan entri yang dimodifikasi %d"
+msgstr "Ditemukan entri yang dimodifikasi %d."
 
-#: ../../msguntypot:203 ../../po4a:1478
-#, fuzzy, perl-format
-#| msgid "Can't create a temporary PO file: %s"
+#: ../../msguntypot:203 ../../po4a:1623
+#, perl-format
 msgid "Cannot create a temporary PO file: %s"
 msgstr "Tidak bisa membuat berkas sementara PO: %s"
 
@@ -1098,122 +1106,200 @@ msgstr "Tidak bisa membuat berkas sementara PO: %s"
 msgid "Handling %s"
 msgstr "Menangani %s"
 
-#: ../../msguntypot:212 ../../po4a-updatepo:308
+#: ../../msguntypot:212 ../../po4a-updatepo:309
 #, perl-format
-msgid "Error while running msgmerge: %s"
-msgstr "Salah ketika menjalankan msgmerge: %s"
+msgid "Could not run msgmerge: %s"
+msgstr "Tidak dapat menjalankan msgmerge: %s"
 
 #: ../../msguntypot:234
 #, perl-format
 msgid "Modified %d entries in %d files."
 msgstr "Entri termodifikasi %d di dalam berkas-berkas %d."
 
-#: ../../po4a:812 ../../po4a:816
-#, fuzzy, perl-format
-#| msgid "Invalid %s. Directory %s does not exist."
+#: ../../po4a:832 ../../po4a:836
+#, perl-format
 msgid "Option %s invalid. Directory %s does not exist (current directory: %s)."
-msgstr "%s tidak valid. Direktori %s tidak ada."
+msgstr "Opsi %s tidak valid. Direktori %s tidak ada (direktori saat ini: %s)."
 
 #. TRANSLATOR: There is two chunks in the following:  opt:"--keep 20" opt:"-o nowrap"
-#: ../../po4a:852
-#, fuzzy, perl-format
-#| msgid "Unparsable argument '%s' (%s)."
+#: ../../po4a:872
+#, perl-format
 msgid "Unparsable option chunk '%s' (%s)."
-msgstr "Argument tidak dapa diparse '%s' (%s)."
+msgstr "Potongan opsi yang tidak dapat diuraikan '%s' (%s)."
 
-#: ../../po4a:861
+#: ../../po4a:881
 #, perl-format
 msgid "Skipping option chunk '%s'."
-msgstr ""
+msgstr "Melewatkan potongan opsi '%s'."
 
-#: ../../po4a:910
+#: ../../po4a:930
 #, perl-format
 msgid "failed to execute '%s': %s."
 msgstr "gagal untuk mengeksekusi '%s': %s."
 
-#: ../../po4a:913
+#: ../../po4a:933
 #, perl-format
 msgid "'%s' died with signal %d, with coredump."
 msgstr "'%s' mati dengan sinyal %d, tanpa coredump."
 
-#: ../../po4a:915
+#: ../../po4a:935
 #, perl-format
 msgid "'%s' died with signal %d, without coredump."
 msgstr "'%s' mati dengan sinyal %d, tanpa coredump."
 
-#: ../../po4a:918
+#: ../../po4a:938
 #, perl-format
 msgid "'%s' exited with value %d."
 msgstr "'%s' keluar dengan nilai %d."
 
-#: ../../po4a:921
+#: ../../po4a:941
 #, perl-format
 msgid "Error: %s"
 msgstr "Error: %s"
 
-#: ../../po4a:954 ../../po4a:1023 ../../po4a:1181
+#: ../../po4a:984 ../../po4a:1070 ../../po4a:1320
 #, perl-format
 msgid "Unknown variable: %s"
 msgstr "Variabel tidak diketahui: %s"
 
-#: ../../po4a:964
+#: ../../po4a:994
 #, perl-format
 msgid "Syntax error: %s"
 msgstr "Kesalahan sintaks: %s"
 
-#: ../../po4a:995 ../../po4a:1041
+#: ../../po4a:1025 ../../po4a:1088
 #, perl-format
 msgid "'%s' redeclared"
 msgstr "'%s' di deklarasikan ulang"
 
-#: ../../po4a:999
+#: ../../po4a:1033
+#, perl-format
+msgid ""
+"Your POT file '%s' file name does not end with the 'pot' extension. This is "
+"unusual and will trouble the translators."
+msgstr ""
+
+#: ../../po4a:1041
+#, perl-format
+msgid ""
+"No PO file provided as subsequent parameters to '%s'. Your documentation "
+"will not be translated."
+msgstr ""
+
+#: ../../po4a:1046
 #, perl-format
 msgid "Unparsable argument '%s'."
 msgstr "Agumen tidak dapat diparse '%s'."
 
-#: ../../po4a:1046
+#: ../../po4a:1093
 msgid "The list of languages cannot be set twice."
 msgstr "Daftar dari bahasa tidak dapat di diatur dua kali."
 
-#: ../../po4a:1048
+#: ../../po4a:1095
 msgid "The POT file cannot be set twice."
 msgstr "File POT tidak dapat diatur dua kali."
 
-#: ../../po4a:1052
+#: ../../po4a:1107 ../../po4a:1123
 #, perl-format
-msgid "'%s' is not a directory"
-msgstr "'%s' bukan sebuah direktori"
+msgid "Using '%s' as a %s."
+msgstr "Gunakan '%s' sebagai %s."
 
-#: ../../po4a:1055
+#: ../../po4a:1109
+#, perl-format
+msgid "'%s' is not a directory (current dir: %s)"
+msgstr "'%s' bukan direktori (dir saat ini: %s)"
+
+#: ../../po4a:1114
 #, perl-format
 msgid "Cannot list the '%s' directory"
 msgstr "Tidak bisa daftar direktori '%s'"
 
-#: ../../po4a:1062
+#: ../../po4a:1128
 #, perl-format
-msgid "Found language '%s' in the provided po_directory."
-msgstr ""
+msgid "Cannot list directory '%s' in '%s' "
+msgstr "Tidak dapat mencantumkan direktori '%s' di '%s' "
 
-#: ../../po4a:1067
+#: ../../po4a:1134
 #, perl-format
-msgid "too many POT files: %s %s"
-msgstr "terlalu banyak file POT: %s %s"
+msgid "Directory '%s' not found in '%s'."
+msgstr "Direktori '%s' tidak ditemukan di '%s'."
 
-#: ../../po4a:1071
+#: ../../po4a:1137 ../../po4a:1140
+#, perl-format
+msgid "Directory '%s' not found in '%s' nor in '%s'."
+msgstr "Direktori '%s' tidak ditemukan di '%s' atau di '%s'."
+
+#: ../../po4a:1144
+#, perl-format
+msgid "Directory '%s' not found in '%s' nor in '%s' nor in '%s'."
+msgstr "Direktori '%s' tidak ditemukan di '%s' atau di '%s' maupun di '%s'."
+
+#: ../../po4a:1155
+#, perl-format
+msgid "Language '%s' found twice in '%s' and '%s'."
+msgstr "Bahasa '%s' ditemukan dua kali di '%s' dan '%s'."
+
+#: ../../po4a:1159
+#, perl-format
+msgid "Found language '%s' in the provided po_directory: %s"
+msgstr "Menemukan bahasa '%s' di po_directory yang disediakan: %s"
+
+#: ../../po4a:1163
+#, perl-format
+msgid "%s:%d: too many POT files: '%s' and '%s'."
+msgstr "%s:%d: terlalu banyak file POT: '%s' dan '%s'."
+
+#: ../../po4a:1167
 #, perl-format
 msgid "Found POT file '%s' in the provided po_directory."
+msgstr "Ditemukan berkas POT '%s' dalam berkas po_directory."
+
+#: ../../po4a:1177
+#, perl-format
+msgid "No PO files found in '%s'/'%s'."
+msgstr "Tidak ada file PO yang ditemukan di '%s'/'%s'."
+
+#: ../../po4a:1180 ../../po4a:1183
+#, perl-format
+msgid "No PO files found in '%s'/'%s' nor in '%s'/'%s'."
+msgstr "Tidak ada file PO yang ditemukan di '%s'/'%s' atau di '%s'/'%s'."
+
+#: ../../po4a:1187
+#, perl-format
+msgid "No PO files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."
+msgstr ""
+"Tidak ada file PO yang ditemukan di '%s'/'%s' atau di '%s'/'%s' atau di "
+"'%s'/'%s'."
+
+#: ../../po4a:1191
+msgid "Your project will not be translated to any language."
 msgstr ""
 
-#: ../../po4a:1078
+#: ../../po4a:1197
 #, perl-format
-msgid "no PO files found in %s"
-msgstr "tidak ada file PO ditemukan dalam %s"
+msgid "No POT files found in '%s'/'%s'."
+msgstr "Tidak ada berkas POT di '%s'/'%s'."
 
-#: ../../po4a:1089
-#, fuzzy, perl-format
-#| msgid ""
-#| "The '%s' master file was specified earlier in the configuration file.  "
-#| "This may cause problems with options."
+#: ../../po4a:1200 ../../po4a:1203
+#, perl-format
+msgid "No POT files found in '%s'/'%s' nor in '%s'/'%s'."
+msgstr "Tidak ada file POT di '%s'/'%s' atau di '%s'/'%s'."
+
+#: ../../po4a:1207
+#, perl-format
+msgid "No POT files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."
+msgstr ""
+"Tidak ada file POT yang ditemukan di '%s'/'%s' atau di '%s'/'%s' maupun di "
+"'%s'/'%s'."
+
+#: ../../po4a:1211
+msgid ""
+"Please create an empty file with the 'pot' extension (e.g. 'myproject.pot')."
+msgstr ""
+"Silakan buat file kosong dengan ekstensi 'pot' (misalnya 'myproject.pot')."
+
+#: ../../po4a:1221
+#, perl-format
 msgid ""
 "The master file '%s' was specified earlier in the configuration file. This "
 "may cause problems with options."
@@ -1221,33 +1307,38 @@ msgstr ""
 "File master '%s' telah ditentukan telebih dahulu dalam file konfigurasi. Hal "
 "ini menyebabkan masalah pada opsi."
 
-#: ../../po4a:1094
-#, fuzzy, perl-format
-#| msgid "The '%s' master file does not exist."
+#: ../../po4a:1226
+#, perl-format
 msgid "The master file '%s' does not exist."
 msgstr "File master '%s' tidak ada."
 
-#: ../../po4a:1153
+#: ../../po4a:1270
+msgid ""
+"Option 'master:file' is deprecated. Please use 'pot' instead for the same "
+"effect."
+msgstr ""
+
+#: ../../po4a:1292
 #, perl-format
 msgid "Unparsable argument '%s' (%s)."
 msgstr "Argument tidak dapa diparse '%s' (%s)."
 
-#: ../../po4a:1156
+#: ../../po4a:1295
 msgid "The translated and master file are the same."
 msgstr "Berkas yang diterjmahkan dan master adalah sama."
 
-#: ../../po4a:1198
+#: ../../po4a:1337
 #, perl-format
 msgid "Translation of %s in %s redefined"
 msgstr "Translasi dari %s di dalam %s didefinisikan ulang"
 
-#: ../../po4a:1218
+#: ../../po4a:1357
 #, perl-format
 msgid "Unparsable command '%s'."
 msgstr "Perintah yang tidak dapat diparse '%s'."
 
 #. don't care about error here
-#: ../../po4a:1224
+#: ../../po4a:1363
 #, fuzzy
 #| msgid "po4a_paths not declared. Dunno where to find the POT and PO files"
 msgid ""
@@ -1257,65 +1348,62 @@ msgstr ""
 "po4a_paths tidak bisa dideklarasikan. Tidak tahu dimana untuk menemukan "
 "berkas POT dan berkas PO"
 
-#: ../../po4a:1240
+#: ../../po4a:1379
 #, perl-format
 msgid "Cannot parse option line (missing >%s<?): %s"
 msgstr "Tidak dapat mengurai baris opsi (missing >%s<?): %s"
 
-#: ../../po4a:1271
-#, fuzzy, perl-format
-#| msgid "Split mode, creating a temporary POT"
+#: ../../po4a:1407
+#, perl-format
 msgid "Split mode, creating a temporary POT:"
-msgstr "Mode split, membuat sebuah POT sementara"
+msgstr "Mode split, membuat sebuah POT sementara :"
 
-#: ../../po4a:1274
+#: ../../po4a:1410
 msgid "Disabling --translate-only option, it is not supported in split mode"
 msgstr ""
 "Menonaktifkan opsi --translate-only, hal ini tidak didukung pada mode split"
 
-#: ../../po4a:1330
+#: ../../po4a:1459
 #, perl-format
 msgid "NOT updating %s as requested (--no-update)."
-msgstr ""
+msgstr "TIDAK memperbarui %s seperti yang diminta (--no-update)."
 
-#: ../../po4a:1334 ../../po4a:1531 ../../po4a-updatepo:301
+#: ../../po4a:1463 ../../po4a:1680 ../../po4a-updatepo:302
 #, perl-format
 msgid "Updating %s:"
 msgstr "Memutakhirkan %s:"
 
-#: ../../po4a:1338
+#: ../../po4a:1467
 #, perl-format
 msgid "NOT creating %s as requested (--no-update)."
-msgstr ""
+msgstr "TIDAK membuat %s seperti yang diminta (--no-update)."
 
-#: ../../po4a:1341 ../../po4a-updatepo:314
+#: ../../po4a:1470 ../../po4a-updatepo:315
 #, perl-format
 msgid "Creating %s:"
 msgstr "Membuat %s:"
 
-#: ../../po4a:1413 ../../po4a:1446 ../../po4a:1568 ../../po4a-updatepo:283
-#, fuzzy, perl-format
-#| msgid "Can't create a temporary POT file: %s"
+#: ../../po4a:1542 ../../po4a:1590 ../../po4a:1712 ../../po4a-updatepo:284
+#, perl-format
 msgid "Cannot create a temporary POT file: %s"
 msgstr "Tidak bisa membuat berkas sementara POT: %s"
 
-#: ../../po4a:1423
+#: ../../po4a:1552
 #, perl-format
 msgid " (%d entries)"
 msgstr " (%d entri-entri)"
 
-#: ../../po4a:1426
+#: ../../po4a:1555
 #, perl-format
 msgid "POT file %s already up to date."
-msgstr ""
+msgstr "File POT %s sudah diperbarui."
 
-#: ../../po4a:1451 ../../po4a:1602
-#, fuzzy, perl-format
-#| msgid "Can't create directory '%s': %s"
+#: ../../po4a:1595 ../../po4a:1663 ../../po4a:1750
+#, perl-format
 msgid "Cannot create directory '%s': %s"
 msgstr "Tidak dapat membuat direktori '%s': %s"
 
-#: ../../po4a:1460
+#: ../../po4a:1603
 #, perl-format
 msgid ""
 "msggrep did not create '%s'. Used command:\n"
@@ -1323,114 +1411,116 @@ msgid ""
 "Please report that bug, along the information allowing to reproduce it.\n"
 msgstr ""
 
-#: ../../po4a:1489
+#: ../../po4a:1634
 #, perl-format
 msgid ""
 "The translation of master file '%s' in language '%s' is missing (file: %s) "
 "-- skipping."
 msgstr ""
 
-#: ../../po4a:1529
+#: ../../po4a:1678
 #, perl-format
 msgid "Updating the translation in language %s:"
-msgstr ""
+msgstr "Memperbarui terjemahan dalam bahasa %s:"
 
-#: ../../po4a:1632
+#: ../../po4a:1788
 #, perl-format
 msgid "PO file for language %s is missing -- skipping."
-msgstr ""
+msgstr "File PO untuk bahasa %s hilang -- dilewati."
 
-#: ../../po4a:1634
+#: ../../po4a:1790
 #, perl-format
 msgid "PO file %s for language %s is missing -- skipping."
-msgstr ""
+msgstr "File PO %s untuk bahasa %s hilang -- dilewati."
 
-#: ../../po4a:1673
+#: ../../po4a:1829
 #, perl-format
 msgid "%s doesn't need to be updated."
 msgstr "%s tidak memerlukan update."
 
-#: ../../po4a:1729
+#: ../../po4a:1885
 #, perl-format
 msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
 msgstr ""
 "Menghapus %s (string %s dari %s; hanya %s%% diterjemahkan; memerlukan %s%%)."
 
-#: ../../po4a:1739
+#: ../../po4a:1895
 #, perl-format
 msgid "Timestamp %s created."
 msgstr "Timestamp %s dibuat."
 
-#: ../../po4a:1750
+#: ../../po4a:1906
 #, perl-format
 msgid "Timestamp %s removed."
 msgstr "Timestamp %s hapus."
 
-#: ../../po4a:1764
+#: ../../po4a:1920
 #, perl-format
 msgid "Addendum %s does NOT apply to %s (translation discarded)."
 msgstr "Addendum %s TIDAK dapat diterapkan ke %s (translasi dibuang)."
 
-#: ../../po4a:1773
+#: ../../po4a:1929
 #, fuzzy, perl-format
 #| msgid "%s is %s%% translated (%s strings)."
 msgid "%s is 100%% translated (%s strings)."
 msgstr "%s adalah %s%% diterjemahkan (%s string-string)."
 
-#: ../../po4a:1777 ../../po4a-translate:274
+#: ../../po4a:1933 ../../po4a-translate:275
 #, perl-format
 msgid "%s is %s%% translated (%s of %s strings)."
 msgstr "%s adalah %s%% diterjemahkan (%s dari %s string-string)."
 
-#: ../../po4a-normalize:176
+#: ../../po4a-normalize:177
 #, perl-format
 msgid "Options %s and %s cannot be provided together"
 msgstr ""
 
-#: ../../po4a-normalize:198
+#: ../../po4a-normalize:199
 #, perl-format
 msgid "Write the normalized document to %s."
 msgstr ""
 
-#: ../../po4a-normalize:201
+#: ../../po4a-normalize:202
 #, perl-format
 msgid "Write the normalized PO file to %s."
 msgstr ""
 
-#: ../../po4a-translate:279
+#: ../../po4a-translate:280
 #, perl-format
 msgid "Discard the translation of %s (only %s%% translated; need %s%%)."
 msgstr "Buang translasi dari %s (hanya %s%% diterjemahkan: butuh %s%%)."
 
-#: ../../po4a-translate:317
+#: ../../po4a-translate:318
 #, perl-format
 msgid "Discard the translation of %s (addendum %s does not apply)."
 msgstr "Buang translasi dari %s (addendum %s tidak bisa diterapkan)."
 
-#: ../../po4a-translate:327
+#: ../../po4a-translate:328
 #, perl-format
 msgid ""
 "Your input po file %s seems outdated (%s). Please consider running po4a-"
 "updatepo to refresh it."
 msgstr ""
 
-#: ../../po4a-updatepo:274
+#: ../../po4a-updatepo:275
 msgid "po4a-updatepo can't take the input PO from stdin."
 msgstr "po4a-updatepo tidak bisa mengambil masukan PO dari stdin."
 
-#: ../../po4a-updatepo:285
+#: ../../po4a-updatepo:286
 msgid "Parse input files… "
 msgstr "Parse berkas masukan… "
 
-#: ../../po4a-updatepo:297
+#: ../../po4a-updatepo:298
 msgid "done."
 msgstr "selesai."
 
-#: ../../po4a-updatepo:317
-#, fuzzy, perl-format
-#| msgid "Error while copying the PO file: %s"
-msgid "Error while copying the PO file (%s -> %s): %s"
-msgstr "Kesalahan ketika menyalin berkas PO: %s"
+#: ../../po4a-updatepo:318
+#, perl-format
+msgid "Could not copy the PO file (%s → %s): %s"
+msgstr "Tidak bisa menyalin berkas PO (%s → %s): %s"
+
+#~ msgid "Error while running msgmerge: %s"
+#~ msgstr "Salah ketika menjalankan msgmerge: %s"
 
 #~ msgid "Can't open %s: %s"
 #~ msgstr "Tidak bisa membuka %s: %s"
