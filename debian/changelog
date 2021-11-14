@@ -1,13 +1,13 @@
-po4a (0.65-1) UNRELEASED; urgency=medium
+po4a (0.65-1) unstable; urgency=medium
 
   * New upstream release.
-    - po4a: Allow to group several files per POT in split mode
+    - po4a: Allow one to group several files per POT in split mode.
     - Many bug fixes to AsciiDoc, pod, Tex, yaml and core.
     - Many translation updates.
   * Versioned depends on libpod-parser-perl (>= 1.63) to ease upgrades
     from Buster (Closes: #990507). Thanks Andreas for noticing.
 
- -- Martin Quinson <mquinson@debian.org>  Sun, 14 Nov 2021 13:42:52 +0100
+ -- Martin Quinson <mquinson@debian.org>  Sun, 14 Nov 2021 13:55:07 +0100
 
 po4a (0.62-1) unstable; urgency=medium
 
