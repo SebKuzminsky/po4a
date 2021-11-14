@@ -2,7 +2,7 @@
 # Copyright © 2004 Martin Quinson and Denis Barbier.
 # This file is distributed under the same license as the po4a package.
 # Danilo Piazzalunga <danilopiazza@libero.it>, 2004-2005.
-# Marco Ciampa <ciampix@posteo.net>, 2015-2020.
+# Marco Ciampa <ciampix@posteo.net>, 2015-2021.
 #
 # Piccolo prontuario dei termini usati in questa traduzione:
 # MC: parser (TT - invariato)
@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.20\n"
 "Report-Msgid-Bugs-To: devel@lists.po4a.org\n"
-"POT-Creation-Date: 2020-09-22 23:12+0200\n"
-"PO-Revision-Date: 2020-10-16 09:15+0200\n"
+"POT-Creation-Date: 2021-11-06 11:27+0100\n"
+"PO-Revision-Date: 2021-11-09 13:30+0100\n"
 "Last-Translator: Marco Ciampa <ciampix@posteo.net>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/po4a/po4a-doc/it/"
 ">\n"
@@ -182,7 +182,7 @@ msgstr ""
 #. type: =head1
 #: share/doc/po4a-display-man.xml:21 share/doc/po4a-display-pod.xml:20 po4a:189
 #: po4a-gettextize:71 po4a-normalize:29 po4a-translate:54 po4a-updatepo:53
-#: msguntypot:29 doc/po4a.7.pod:150 lib/Locale/Po4a/Chooser.pm:7
+#: msguntypot:29 doc/po4a.7.pod:177 lib/Locale/Po4a/Chooser.pm:7
 #: lib/Locale/Po4a/Dia.pm:12 lib/Locale/Po4a/Docbook.pm:15
 #: lib/Locale/Po4a/Guide.pm:10 lib/Locale/Po4a/Halibut.pm:14
 #: lib/Locale/Po4a/Ini.pm:8 lib/Locale/Po4a/KernelHelp.pm:7
@@ -597,7 +597,11 @@ msgid ""
 "plugin for more information about the valid options and their meanings. For "
 "example, you could pass '-o tablecells' to the AsciiDoc parser, while the "
 "text parser would accept '-o tabs=split'."
-msgstr "Opzioni extra da passare al plugin di formato. Vedere la documentazione per ogni plugin per ulteriori informazioni sulle opzioni valide e sul loro significato. Per esempio si può passare \"-o tablecells\" al parser AsciiDoc mentre il parser di testo semplice accetta \"-o tabs=split\"."
+msgstr ""
+"Opzioni extra da passare al plugin di formato. Vedere la documentazione per "
+"ogni plugin per ulteriori informazioni sulle opzioni valide e sul loro "
+"significato. Per esempio si può passare \"-o tablecells\" al parser AsciiDoc "
+"mentre il parser di testo semplice accetta \"-o tabs=split\"."
 
 #. type: =item
 #: po4a:36
@@ -1093,7 +1097,9 @@ msgstr ""
 msgid ""
 "Some full examples are presented on this page, while other examples can be "
 "found in the C<t/cfg> directory of the source distribution."
-msgstr "Alcuni esempi completi sono presenti su questa pagina, mentre altri esempi si possono trovare nella cartella C<t/cfg> della distribuzione dei sorgenti."
+msgstr ""
+"Alcuni esempi completi sono presenti su questa pagina, mentre altri esempi "
+"si possono trovare nella cartella C<t/cfg> della distribuzione dei sorgenti."
 
 #. type: =head2
 #: po4a:100
@@ -1105,7 +1111,9 @@ msgstr "Trovare i file POT e PO"
 msgid ""
 "The simplest solution is to explicitly give the path to POT and PO files, as "
 "follows:"
-msgstr "La soluzione più semplice è indicare il percorso ai file POT e PO nel modo seguente:"
+msgstr ""
+"La soluzione più semplice è indicare il percorso ai file POT e PO nel modo "
+"seguente:"
 
 #. type: verbatim
 #: po4a:102
@@ -1131,7 +1139,9 @@ msgstr ""
 msgid ""
 "The same information can be written as follows to reduce the risk of copy/"
 "paste errors:"
-msgstr "La stessa informazione può essere scritta come di seguito per ridurre il rischio di errori di copia/incolla:"
+msgstr ""
+"La stessa informazione può essere scritta come di seguito per ridurre il "
+"rischio di errori di copia/incolla:"
 
 #. type: verbatim
 #: po4a:105
@@ -1161,7 +1171,10 @@ msgstr ""
 msgid ""
 "You can further compact the same information by only providing the path to "
 "the directory containing your translation project, as follows."
-msgstr "Si possono compattare ulteriormente le stesse informazioni fornendo solamente il percorso per la cartella contenente il progetto di traduzione, come di seguito."
+msgstr ""
+"Si possono compattare ulteriormente le stesse informazioni fornendo "
+"solamente il percorso per la cartella contenente il progetto di traduzione, "
+"come di seguito."
 
 #. type: verbatim
 #: po4a:108
@@ -1181,7 +1194,12 @@ msgid ""
 "must also contain a single POT file, with the C<.pot> file extension. For "
 "the first run, this file can be empty but it must exist (po4a cannot guess "
 "the name to use before the extension)."
-msgstr "La cartella fornita deve contenere un insieme di file PO, ognuno con nome F<XX.po> dove C<XX> è il codice ISO 639-1 della lingua usata in questo file. La cartella deve anche contenere un singolo file POT, con estensione file C<.pot> . Nella prima esecuzione, quest'ultimo può essere vuoto ma deve esistere (po4a non può indovinare il nome da usare davanti all'estensione)."
+msgstr ""
+"La cartella fornita deve contenere un insieme di file PO, ognuno con nome "
+"F<XX.po> dove C<XX> è il codice ISO 639-1 della lingua usata in questo file. "
+"La cartella deve anche contenere un singolo file POT, con estensione file C<."
+"pot> . Nella prima esecuzione, quest'ultimo può essere vuoto ma deve "
+"esistere (po4a non può indovinare il nome da usare davanti all'estensione)."
 
 #. type: textblock
 #: po4a:110
@@ -1192,7 +1210,12 @@ msgid ""
 "project structure and file names. The second one (C<po4a_paths>), is more "
 "explicit, probably more readable, and advised when you setup your first "
 "project with po4a."
-msgstr "Si noti che bisogna scegliere solo uno tra C<po_directory> e C<po4a_paths>. Il primo (C<po_directory>) è più compatto, inoltre riduce il rischio degli errori di copia/incolla, ma forza ad usare la struttura progetto e i nomi file previsti. Il secondo (C<po4a_paths>), è più esplicito, probabilmente più leggibile, e suggerito quando si imposta il primo progetto con po4a."
+msgstr ""
+"Si noti che bisogna scegliere solo uno tra C<po_directory> e C<po4a_paths>. "
+"Il primo (C<po_directory>) è più compatto, inoltre riduce il rischio degli "
+"errori di copia/incolla, ma forza ad usare la struttura progetto e i nomi "
+"file previsti. Il secondo (C<po4a_paths>), è più esplicito, probabilmente "
+"più leggibile, e suggerito quando si imposta il primo progetto con po4a."
 
 #. type: =head3
 #: po4a:111
@@ -1208,7 +1231,14 @@ msgid ""
 "possible to specify priorities for each translation segment (i.e., msgid) so "
 "that the important ones get translated first. Still, some translation teams "
 "prefer to split the content in several files."
-msgstr "Per impostazione predefinita, po4a produce un singolo file PO per lingua obiettivo, con l'intero contenuto del progetto di traduzione. Come il progetto cresce, la dimensione di questi file può diventare problematica. Quando si usa weblate, è possibile specificare priorità per ogni segmento di traduzione (cioè msgid) in modo tale da far tradurre i più importanti per primi. Comunque, alcune squadre di traduzione preferiscono dividere il contenuto in più file."
+msgstr ""
+"Per impostazione predefinita, po4a produce un singolo file PO per lingua "
+"obiettivo, con l'intero contenuto del progetto di traduzione. Come il "
+"progetto cresce, la dimensione di questi file può diventare problematica. "
+"Quando si usa weblate, è possibile specificare priorità per ogni segmento di "
+"traduzione (cioè msgid) in modo tale da far tradurre i più importanti per "
+"primi. Comunque, alcune squadre di traduzione preferiscono dividere il "
+"contenuto in più file."
 
 #. type: textblock
 #: po4a:113
@@ -1216,7 +1246,9 @@ msgid ""
 "To have one PO file per master file, you simply have to use the string C<"
 "$master> in the name of your PO files on the C<[po4a_paths]> line, as "
 "follows."
-msgstr "Per avere un file PO per file master, basta semplicemente usare la stringa C<$master> nel nome dei file PO nella riga C<[po4a_paths]>, come di seguito."
+msgstr ""
+"Per avere un file PO per file master, basta semplicemente usare la stringa C<"
+"$master> nel nome dei file PO nella riga C<[po4a_paths]>, come di seguito."
 
 #. type: verbatim
 #: po4a:114
@@ -1231,13 +1263,15 @@ msgstr ""
 #. type: textblock
 #: po4a:115
 msgid ""
-"If there are name conflicts because several files have the same filename, "
-"the name of the master file can be specified by adding a C<master:"
-"file=>I<name> option:"
-msgstr ""
-"Se ci sono conflitti di nomi a causa del fatto che i diversi file hanno lo "
-"stesso nomefile, il nome del file master può essere specificato aggiungendo "
-"l'opzione C<master:file=>I<nome>:"
+"With this line, po4a will produce separate POT and PO files for each "
+"document to translate.  For example, if you have 3 documents and 5 "
+"languages, this will result in 3 POT files and 15 PO files. These files are "
+"named as specified on the C<po4a_paths> template, with C<$master> "
+"substituted to the basename of each document to translate. In case of name "
+"conflict, you can specify the POT file to use as follows, with the C<pot=> "
+"parameter.  This feature can also be used to group several translated files "
+"into the same POT file."
+msgstr "Con questa riga, po4a produrrà file POT e PO separati per ogni documento da tradurre. Ad esempio, se si ha 3 documenti e 5 lingue, questo produrrà 3 file POT e 15 file PO. Questi file saranno denominati come specificato nel modello C<po4a_paths>, con C<$master> sostituito con il nome di base di ciascun documento da tradurre. In caso di conflitto di nomi, è possibile specificare il file POT da utilizzare come segue, con il parametro C<pot=>. Questa funzione può essere utilizzata anche per raggruppare diversi file tradotti nello stesso file POT."
 
 #. type: verbatim
 #: po4a:116
@@ -1245,14 +1279,16 @@ msgstr ""
 msgid ""
 " [po4a_langs] de fr ja\n"
 " [po4a_paths] l10n/po/$master.pot $lang:l10n/po/$master.$lang.po\n"
-" [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml master:file=foo-gui\n"
-" [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml master:file=bar-gui\n"
+" [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml pot=foo-gui\n"
+" [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml pot=bar\n"
+" [type: xml] bar/cli.xml $lang:bar/cli.$lang.xml pot=bar\n"
 "\n"
 msgstr ""
 " [po4a_langs] de fr ja\n"
 " [po4a_paths] l10n/po/$master.pot $lang:l10n/po/$master.$lang.po\n"
-" [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml master:file=foo-gui\n"
-" [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml master:file=bar-gui\n"
+" [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml pot=foo-gui\n"
+" [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml pot=bar\n"
+" [type: xml] bar/cli.xml $lang:bar/cli.$lang.xml pot=bar\n"
 "\n"
 
 #. type: textblock
@@ -1285,7 +1321,11 @@ msgid ""
 "file, you must specify the format parser to use, the location of the "
 "translated document to produce, and optionally some configuration. Here is "
 "an example:"
-msgstr "Bisogna anche elencare i documenti che dovrebbero essere tradotti. Per ogni file master, bisogna specificare il processatore del formato da usare, la posizione del documento tradotto da produrre, e opzionalmente qualche configurazione. Ecco un esempio:"
+msgstr ""
+"Bisogna anche elencare i documenti che dovrebbero essere tradotti. Per ogni "
+"file master, bisogna specificare il processatore del formato da usare, la "
+"posizione del documento tradotto da produrre, e opzionalmente qualche "
+"configurazione. Ecco un esempio:"
 
 #. type: verbatim
 #: po4a:120
@@ -1311,7 +1351,10 @@ msgid ""
 "But again, these complex lines are difficult to read and modify, e.g. when "
 "adding a new language. It is much simpler to reorganize things using the C<"
 "$lang> template as follows:"
-msgstr "Ma ancora, queste righe complesse sono difficili da leggere e da modificare, per es. quando si vuole aggiungere una lingua. È molto più semplice riorganizzare le cose usando il modello C<$lang> come di seguito:"
+msgstr ""
+"Ma ancora, queste righe complesse sono difficili da leggere e da modificare, "
+"per es. quando si vuole aggiungere una lingua. È molto più semplice "
+"riorganizzare le cose usando il modello C<$lang> come di seguito:"
 
 #. type: verbatim
 #: po4a:122
@@ -1343,7 +1386,16 @@ msgid ""
 "documented on the specific page of each parsing module, e.g. L<Locale::Po4a::"
 "Xml(3pm)>. You could for example pass B<nostrip> to the XML parser to not "
 "strip the spaces around the extracted strings."
-msgstr "Ci sono due tipi di opzioni: le I<opzioni po4a> sono valori predefiniti alle opzioni di riga di comando po4a mentre le I<opzioni di formato> vengono usate per cambiare il comportamento dei parser di formato. Con una I<opzione po4a>, si può per esempio specificare nel file di configurazione che il valore predefinito del parametro a riga di comando B<--keep> è 50% invece che 80%. Le I<opzioni di formato> sono documentate nella pagina specifica di ogni modulo di elaborazione, per es. L<Locale::Po4a::Xml(3pm)>. Si può per esempio passare B<nostrip> al parser XML per non eliminare gli spazi attorno alle stringhe estratte."
+msgstr ""
+"Ci sono due tipi di opzioni: le I<opzioni po4a> sono valori predefiniti alle "
+"opzioni di riga di comando po4a mentre le I<opzioni di formato> vengono "
+"usate per cambiare il comportamento dei parser di formato. Con una I<opzione "
+"po4a>, si può per esempio specificare nel file di configurazione che il "
+"valore predefinito del parametro a riga di comando B<--keep> è 50% invece "
+"che 80%. Le I<opzioni di formato> sono documentate nella pagina specifica di "
+"ogni modulo di elaborazione, per es. L<Locale::Po4a::Xml(3pm)>. Si può per "
+"esempio passare B<nostrip> al parser XML per non eliminare gli spazi attorno "
+"alle stringhe estratte."
 
 #. type: textblock
 #: po4a:125
@@ -1353,7 +1405,12 @@ msgid ""
 "C<XX> language.  In the following example, the B<nostrip> option is passed "
 "to the XML parser (for all languages), while the threshold will be reduced "
 "to 0% for the French translation (that is thus always kept)."
-msgstr "È possibile passare queste opzioni per un file master specifico, o persino per una specifica traduzione di quel file, usando C<opt:> e C<opt_XX:> per la lingua C<XX>.  Nell'esempio seguente, viene passata l'opzione B<nostrip> al parser XML (per tutte le lingue), mentre la soglia viene ridotta a 0% per la traduzione francese (che significa perciò che sarà sempre mantenuta)."
+msgstr ""
+"È possibile passare queste opzioni per un file master specifico, o persino "
+"per una specifica traduzione di quel file, usando C<opt:> e C<opt_XX:> per "
+"la lingua C<XX>.  Nell'esempio seguente, viene passata l'opzione B<nostrip> "
+"al parser XML (per tutte le lingue), mentre la soglia viene ridotta a 0% per "
+"la traduzione francese (che significa perciò che sarà sempre mantenuta)."
 
 #. type: verbatim
 #: po4a:126
@@ -1361,7 +1418,9 @@ msgstr "È possibile passare queste opzioni per un file master specifico, o pers
 msgid ""
 " [type:xml] toto.xml $lang:toto.$lang.xml opt:\"-o nostrip\" opt_fr:\"--keep 0\"\n"
 "\n"
-msgstr " [type:xml] toto.xml $lang:toto.$lang.xml opt:\"-o nostrip\" opt_fr:\"--keep 0\"\n\n"
+msgstr ""
+" [type:xml] toto.xml $lang:toto.$lang.xml opt:\"-o nostrip\" opt_fr:\"--keep 0\"\n"
+"\n"
 
 #. type: textblock
 #: po4a:127
@@ -1371,7 +1430,13 @@ msgid ""
 "(see below), and then only the options. The grouping of configuration chunks "
 "is not very important, since elements are internally concatenated as "
 "strings. The following examples are all equivalent:"
-msgstr "In ogni caso, questi blocchi di configurazione devono essere posizionati alla fine della riga.  La dichiarazione dei file viene prima, poi l'addendum se presente (vedere sotto), e solo poi le opzioni. Il raggruppamento dei blocchi di configurazione non è molto importante, dato che gli elementi sono internamente concatenati come stringhe. Gli esempi seguenti sono tutti equivalenti:"
+msgstr ""
+"In ogni caso, questi blocchi di configurazione devono essere posizionati "
+"alla fine della riga.  La dichiarazione dei file viene prima, poi l'addendum "
+"se presente (vedere sotto), e solo poi le opzioni. Il raggruppamento dei "
+"blocchi di configurazione non è molto importante, dato che gli elementi sono "
+"internamente concatenati come stringhe. Gli esempi seguenti sono tutti "
+"equivalenti:"
 
 #. type: verbatim
 #: po4a:128
@@ -1395,7 +1460,13 @@ msgid ""
 "building the French translation, because the same POT file is used to update "
 "every languages. So the only options that can be language-specific are the "
 "ones that are used when producing the translation, as the C<--keep> option."
-msgstr "Si noti che le opzioni specifiche della lingua non vengono usate durante la costruzione del file POT. È per esempio impossibile passare B<nostrip> al parser solo quando crea la traduzione francese, perché lo stesso file POT viene usato per aggiornare tutte le lingue. Perciò le sole opzioni che possono essere specifiche per una lingua sono quelle che vengono usate durante la produzione della traduzione, come l'opzione C<--keep>."
+msgstr ""
+"Si noti che le opzioni specifiche della lingua non vengono usate durante la "
+"costruzione del file POT. È per esempio impossibile passare B<nostrip> al "
+"parser solo quando crea la traduzione francese, perché lo stesso file POT "
+"viene usato per aggiornare tutte le lingue. Perciò le sole opzioni che "
+"possono essere specifiche per una lingua sono quelle che vengono usate "
+"durante la produzione della traduzione, come l'opzione C<--keep>."
 
 #. type: =head3
 #: po4a:130
@@ -1409,7 +1480,11 @@ msgid ""
 "alias as follows. In the next example, C<--keep 0> is passed to every "
 "Italian translation using this C<test> type, that is an extension of the "
 "C<man> type."
-msgstr "Per passare le stesse opzioni a più file, è meglio definire un alias di tipo come di seguito. Nel prossimo esempio, C<--keep 0> viene passata ad ogni traduzione italiana usando il tipo C<test>, che è un'estensione del tipo C<man>."
+msgstr ""
+"Per passare le stesse opzioni a più file, è meglio definire un alias di tipo "
+"come di seguito. Nel prossimo esempio, C<--keep 0> viene passata ad ogni "
+"traduzione italiana usando il tipo C<test>, che è un'estensione del tipo "
+"C<man>."
 
 #. type: verbatim
 #: po4a:132
@@ -1428,7 +1503,10 @@ msgstr ""
 msgid ""
 "You can also extend an existing type reusing the same name for the alias as "
 "follows. This is not interpreted as as an erroneous recursive definition."
-msgstr "Si può anche estendere un tipo esistente riutilizzando lo stesso nome per l'alias come di seguito. Ciò non viene interpretato come una definizione erroneamente ricorsiva."
+msgstr ""
+"Si può anche estendere un tipo esistente riutilizzando lo stesso nome per "
+"l'alias come di seguito. Ciò non viene interpretato come una definizione "
+"erroneamente ricorsiva."
 
 #. type: verbatim
 #: po4a:134
@@ -1452,7 +1530,9 @@ msgstr "Opzioni predefinite globali"
 msgid ""
 "You can also use C<[options]> lines to define options that must be used for "
 "all files, regardless of their type."
-msgstr "Si può anche usare righe di C<[options]> per definire opzioni che devono essere usate per tutti i file, indipendentemente dal loro tipo."
+msgstr ""
+"Si può anche usare righe di C<[options]> per definire opzioni che devono "
+"essere usate per tutti i file, indipendentemente dal loro tipo."
 
 #. type: verbatim
 #: po4a:137
@@ -1460,14 +1540,18 @@ msgstr "Si può anche usare righe di C<[options]> per definire opzioni che devon
 msgid ""
 "  [options] --keep 20 --option nostrip\n"
 "\n"
-msgstr "  [options] --keep 20 --option nostrip\n\n"
+msgstr ""
+"  [options] --keep 20 --option nostrip\n"
+"\n"
 
 #. type: textblock
 #: po4a:138
 msgid ""
 "As with the command line options, you can abbreviate the parameters passed "
 "in the configuration file:"
-msgstr "Come con le opzioni a riga di comando, si possono abbreviare i parametri passati nel file di configurazione:"
+msgstr ""
+"Come con le opzioni a riga di comando, si possono abbreviare i parametri "
+"passati nel file di configurazione:"
 
 #. type: verbatim
 #: po4a:139
@@ -1475,7 +1559,9 @@ msgstr "Come con le opzioni a riga di comando, si possono abbreviare i parametri
 msgid ""
 "  [options] -k 20 -o nostrip\n"
 "\n"
-msgstr "  [options] -k 20 -o nostrip\n\n"
+msgstr ""
+"  [options] -k 20 -o nostrip\n"
+"\n"
 
 #. type: =head3
 #: po4a:140
@@ -1488,21 +1574,28 @@ msgid ""
 "The options of every sources are concatenated, ensuring that the default "
 "values can easily be overridden by more specific options. The order is as "
 "follows:"
-msgstr "Le opzioni di ogni sorgente vengono concatenate, assicurando così che i valori predefiniti possano essere facilmente ridefiniti da opzioni più specifiche. L'ordine è il seguente:"
+msgstr ""
+"Le opzioni di ogni sorgente vengono concatenate, assicurando così che i "
+"valori predefiniti possano essere facilmente ridefiniti da opzioni più "
+"specifiche. L'ordine è il seguente:"
 
 #. type: textblock
 #: po4a:142
 msgid ""
 "C<[options]> lines provide default values that can be overridden by any "
 "other source."
-msgstr "Le righe C<[options]> forniscono i valori predefiniti che possono essere ridefiniti da qualsiasi altra sorgente."
+msgstr ""
+"Le righe C<[options]> forniscono i valori predefiniti che possono essere "
+"ridefiniti da qualsiasi altra sorgente."
 
 #. type: textblock
 #: po4a:143
 msgid ""
 "Type aliases are then used. Language specific settings override the ones "
 "applicable to all languages."
-msgstr "Vengono poi usati gli alias dei tipi. Le impostazioni specifiche per la lingua sovrascrivono quelle applicabili a tutte le lingue."
+msgstr ""
+"Vengono poi usati gli alias dei tipi. Le impostazioni specifiche per la "
+"lingua sovrascrivono quelle applicabili a tutte le lingue."
 
 #. type: textblock
 #: po4a:144
@@ -1510,14 +1603,20 @@ msgid ""
 "Settings that are specific to a given master file override both the default "
 "ones and the ones coming from the type alias. In this case also, language "
 "specific settings override the global ones."
-msgstr "Le impostazioni specifiche ad ogni dato file master sovrascrivono sia quelle predefinite che quelle che provengono dagli alias dei tipi. In questo caso inoltre, le impostazioni specifiche della lingua sovrascrivono quelle globali."
+msgstr ""
+"Le impostazioni specifiche ad ogni dato file master sovrascrivono sia quelle "
+"predefinite che quelle che provengono dagli alias dei tipi. In questo caso "
+"inoltre, le impostazioni specifiche della lingua sovrascrivono quelle "
+"globali."
 
 #. type: textblock
 #: po4a:145
 msgid ""
 "Finally, parameters provided on the B<po4a> command line override any "
 "settings from the configuration file."
-msgstr "Infine, i parametri forniti sulla riga di comando di B<po4a> sovrascrivono qualsiasi impostazione proveniente dal file di configurazione."
+msgstr ""
+"Infine, i parametri forniti sulla riga di comando di B<po4a> sovrascrivono "
+"qualsiasi impostazione proveniente dal file di configurazione."
 
 #. type: =head3
 #: po4a:146
@@ -1527,7 +1626,8 @@ msgstr "Esempio"
 #. type: textblock
 #: po4a:147
 msgid "Here is an example showing how to quote the spaces and quotes:"
-msgstr "Ecco un esempio che mostra come commentare gli spazi e il virgolettato:"
+msgstr ""
+"Ecco un esempio che mostra come commentare gli spazi e il virgolettato:"
 
 #. type: verbatim
 #: po4a:148
@@ -1575,7 +1675,11 @@ msgid ""
 "credit to the translator, then you need to define an addendum to the line "
 "defining your master file. Please refer to the page L<po4a(7)> for more "
 "details on the syntax of addendum files."
-msgstr "Se si vuole aggiungere una sezione extra alla traduzione, per esempio per dare credito al lavoro del traduttore, allora è necessario definire un addendum alla riga che difinisce il file master. Fare riferimento alla pagina L<po4a(7)> per ulteriori dettagli sulla sintassi dei file addendum."
+msgstr ""
+"Se si vuole aggiungere una sezione extra alla traduzione, per esempio per "
+"dare credito al lavoro del traduttore, allora è necessario definire un "
+"addendum alla riga che difinisce il file master. Fare riferimento alla "
+"pagina L<po4a(7)> per ulteriori dettagli sulla sintassi dei file addendum."
 
 #. type: verbatim
 #: po4a:153
@@ -1609,7 +1713,8 @@ msgstr ""
 #. type: textblock
 #: po4a:156
 msgid "If an addendum fails to apply, the translation is discarded."
-msgstr "Se un file addendum fallisce nell'applicazione, la traduzione viene scartata."
+msgstr ""
+"Se un file addendum fallisce nell'applicazione, la traduzione viene scartata."
 
 #. type: =head3
 #: po4a:157
@@ -1623,7 +1728,11 @@ msgid ""
 "all languages provide an addendum, or when the list of addenda changes from "
 "one language to the other. The modifier is a single char located before the "
 "file name."
-msgstr "I modificatori dell'addendum possono semplificare il file di configurazione nel caso in cui non tutte le lingue forniscano un addendum, o quando l'elenco degli addenda cambia da una lingua all'altra. Il modificatore è un singolo carattere posizionato prima del nome del file."
+msgstr ""
+"I modificatori dell'addendum possono semplificare il file di configurazione "
+"nel caso in cui non tutte le lingue forniscano un addendum, o quando "
+"l'elenco degli addenda cambia da una lingua all'altra. Il modificatore è un "
+"singolo carattere posizionato prima del nome del file."
 
 #. type: =item
 #: po4a:159
@@ -1670,7 +1779,9 @@ msgstr ""
 msgid ""
 "The following includes an addendum in any language, but if only it exists. "
 "No error is reported if the addendum does not exist."
-msgstr "Il seguente include un addendum in ogni lingua, ma solo se questo esiste. Non viene generato nessun errore se l'addendum non esiste."
+msgstr ""
+"Il seguente include un addendum in ogni lingua, ma solo se questo esiste. "
+"Non viene generato nessun errore se l'addendum non esiste."
 
 #. type: verbatim
 #: po4a:166
@@ -1709,7 +1820,11 @@ msgid ""
 "that extend, you can give a C<pot_in> parameter to your master file to "
 "specify the name of the file to use instead of the real master when building "
 "the POT file. Here is an example:"
-msgstr "Talvolta si vorrebbe nascondere alcune stringhe dal processo di traduzione. A tale scopo, si può passare un parametro C<pot_in> al file master per specificare il nome del file da usare invece del master reale quando si crea il file POT. Ecco un esempio:"
+msgstr ""
+"Talvolta si vorrebbe nascondere alcune stringhe dal processo di traduzione. "
+"A tale scopo, si può passare un parametro C<pot_in> al file master per "
+"specificare il nome del file da usare invece del master reale quando si crea "
+"il file POT. Ecco un esempio:"
 
 #. type: verbatim
 #: po4a:171
@@ -1738,6 +1853,15 @@ msgid ""
 "translation, so you may need the C<--keep> option to ensure that the "
 "document is produced anyway."
 msgstr ""
+"Con questa impostazione, le stringhe da tradurre verranno estratte da F<book-"
+"filtered.xml> (che deve essere prodotto prima di chiamare B<po4a>) mentre i "
+"file tradotti verranno creati da F<book.xml>. Di conseguenza, qualsiasi "
+"stringa che fa parte di F<book.xml> ma non di F<book-filtered.xml> non verrà "
+"inclusa nei file PO, impedendo ai traduttori di fornire una traduzione per "
+"essi. Quindi queste stringhe non verranno modificate durante la produzione "
+"dei documenti tradotti. Questo naturalmente riduce il livello di traduzione, "
+"quindi si potrebbe aver bisogno dell'opzione C<--keep> per assicurarsi che "
+"il documento venga prodotto comunque."
 
 #. type: =head2
 #: po4a:173
@@ -1921,8 +2045,8 @@ msgstr ""
 
 #. type: =head1
 #: po4a:191 po4a-gettextize:73 po4a-normalize:31 po4a-translate:56
-#: po4a-updatepo:55 msguntypot:32 doc/po4a.7.pod:156
-#: lib/Locale/Po4a/AsciiDoc.pm:46 lib/Locale/Po4a/BibTeX.pm:11
+#: po4a-updatepo:55 msguntypot:32 doc/po4a.7.pod:183
+#: lib/Locale/Po4a/AsciiDoc.pm:52 lib/Locale/Po4a/BibTeX.pm:11
 #: lib/Locale/Po4a/Chooser.pm:12 lib/Locale/Po4a/Common.pm:28
 #: lib/Locale/Po4a/Dia.pm:14 lib/Locale/Po4a/Docbook.pm:17
 #: lib/Locale/Po4a/Guide.pm:12 lib/Locale/Po4a/Halibut.pm:16
@@ -1953,7 +2077,7 @@ msgstr ""
 
 #. type: =head1
 #: po4a:193 po4a-gettextize:75 po4a-normalize:33 po4a-translate:58
-#: po4a-updatepo:57 msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:48
+#: po4a-updatepo:57 msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:54
 #: lib/Locale/Po4a/BibTeX.pm:13 lib/Locale/Po4a/Chooser.pm:14
 #: lib/Locale/Po4a/Common.pm:30 lib/Locale/Po4a/Dia.pm:16
 #: lib/Locale/Po4a/Docbook.pm:19 lib/Locale/Po4a/Guide.pm:14
@@ -1975,7 +2099,7 @@ msgstr "Copyright 2002-2020 by SPI, inc."
 
 #. type: textblock
 #: po4a:195 po4a-gettextize:77 po4a-normalize:35 po4a-translate:60
-#: po4a-updatepo:59 msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:50
+#: po4a-updatepo:59 msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:56
 #: lib/Locale/Po4a/BibTeX.pm:15 lib/Locale/Po4a/Chooser.pm:16
 #: lib/Locale/Po4a/Common.pm:32 lib/Locale/Po4a/Dia.pm:18
 #: lib/Locale/Po4a/Docbook.pm:21 lib/Locale/Po4a/Guide.pm:16
@@ -2005,13 +2129,13 @@ msgid ""
 "B<po4a-gettextize> B<-f> I<fmt> B<-m> I<master.doc> [B<-l> I<XX.doc>] B<-p> "
 "I<XX.po>"
 msgstr ""
-"B<po4a-gettextize> B<-f> I<formatoE> B<-m> I<originale.doc> [B<-l> I<XX."
-"doc>] B<-p> I<XX.po>"
+"B<po4a-gettextize> B<-f> I<formato> B<-m> I<originale.doc> [B<-l> I<XX.doc>] "
+"B<-p> I<XX.po>"
 
 #. type: textblock
 #: po4a-gettextize:5
 msgid "(I<XX.po> is the output, all others are inputs)"
-msgstr "dove I<XX.po> è l'output e tutti gli altri sono input."
+msgstr "(I<XX.po> è l'output, tutti gli altri sono input)"
 
 #. type: textblock
 #: po4a-gettextize:8
@@ -2034,6 +2158,12 @@ msgid ""
 "This process remains tedious and manual, as explained in Section 'Converting "
 "a manual translation to po4a' below."
 msgstr ""
+"Se parte da zero, B<po4a-gettextize> estrarrà le stringhe traducibili dalla "
+"documentazione e scriverà un file POT. Se si fornisce un file tradotto già "
+"esistente con il flag B<-l>, B<po4a-gettextize> proverà a usare le "
+"traduzioni che contiene nel file PO prodotto. Questo processo rimane noioso "
+"e manuale, come spiegato più avanti nella sezione \"Conversione di una "
+"traduzione manuale in po4a\". "
 
 #. type: textblock
 #: po4a-gettextize:10
@@ -2158,7 +2288,14 @@ msgid ""
 "the translation of the 4th string in original (of type 'paragraph'). It is "
 "more likely that a new paragraph was added to the original, or that two "
 "original paragraphs were merged together in the translation."
-msgstr "Internamente, ogni parser po4a riporta il tipo di sintassi di ogni stringa estratta. Questo è il modo in cui la desincronizzazione viene rilevata durante la fase di gettext-izzazione. Per esempio, se i file hanno la seguente struttura, è molto improbabile che la quarta stringa nella traduzione (di tipo 'capitolo') sia la traduzione della quarta stringa nell'originale (di tipo 'paragrafo'), o che due paragrafi originali vengano fusi assieme nella traduzione."
+msgstr ""
+"Internamente, ogni parser po4a riporta il tipo di sintassi di ogni stringa "
+"estratta. Questo è il modo in cui la desincronizzazione viene rilevata "
+"durante la fase di gettext-izzazione. Per esempio, se i file hanno la "
+"seguente struttura, è molto improbabile che la quarta stringa nella "
+"traduzione (di tipo 'capitolo') sia la traduzione della quarta stringa "
+"nell'originale (di tipo 'paragrafo'), o che due paragrafi originali vengano "
+"fusi assieme nella traduzione."
 
 #. type: verbatim
 #: po4a-gettextize:47
@@ -2200,6 +2337,14 @@ msgid ""
 "(or both) to fix the reported disparities, until the structure of both "
 "documents perfectly match. Some tricks are given in the next section."
 msgstr ""
+"B<po4a-gettextize> diagnostica in modo prolisso qualsiasi desincronizzazione "
+"della struttura rilevata. Quando ciò accade, è necessario modificare "
+"manualmente i file (ciò probabilmente richiede avere alcune nozioni sulla "
+"lingua di destinazione). È necessario aggiungere paragrafi falsi o rimuovere "
+"alcuni contenuti in uno dei documenti (o entrambi) per correggere le "
+"disparità segnalate, fino a quando la struttura di entrambi i documenti non "
+"corrisponde perfettamente. Alcuni trucchi sono forniti nella sezione "
+"successiva."
 
 #. type: textblock
 #: po4a-gettextize:50
@@ -2211,6 +2356,12 @@ msgid ""
 "actually the translation of the associated msgid, and not the string before "
 "or after."
 msgstr ""
+"Anche quando il documento viene elaborato correttamente, sono ancora "
+"possibili disparità non rilevate ed errori silenziosi. Questo è il motivo "
+"per cui qualsiasi traduzione associata automaticamente da po4a-gettextize "
+"viene contrassegnata come I<fuzzy> per richiedere un'ispezione manuale. È "
+"necessario verificare che ogni msgstr recuperato sia effettivamente la "
+"traduzione del msgid associato e non la stringa prima o dopo."
 
 #. type: textblock
 #: po4a-gettextize:51
@@ -2221,6 +2372,11 @@ msgid ""
 "translation, and only update the PO file against the latest master file once "
 "the gettextization was successful."
 msgstr ""
+"Come si può vedere, è fondamentale avere la stessa identica struttura nel "
+"documento tradotto e in quello originale. La cosa migliore è eseguire la "
+"\"gettext-izzazione\" sulla versione esatta di F<master.doc> utilizzata per "
+"la traduzione e aggiornare il file PO rispetto al file master più recente "
+"solo una volta che la \"gettext-izzazione\" abbia avuto successo."
 
 #. type: textblock
 #: po4a-gettextize:52
@@ -2273,6 +2429,13 @@ msgid ""
 "match the elements that couldn't be automatically matched, explaining why "
 "automatic resynchronization is not implemented (yet?)."
 msgstr ""
+"La gettextization si interrompe non appena viene rilevata una "
+"desincronizzazione. In teoria, dovrebbe probabilmente essere possibile "
+"risincronizzare la \"gettext-izzazione\" più avanti nei documenti usando ad "
+"es. lo stesso algoritmo di L<diff(1)>. Ma un intervento manuale sarebbe "
+"comunque obbligatorio per abbinare manualmente gli elementi che non possono "
+"essere abbinati automaticamente, spiegando perché la risincronizzazione "
+"automatica non è stata implementata (ancora?)."
 
 #. type: textblock
 #: po4a-gettextize:56
@@ -2317,6 +2480,13 @@ msgid ""
 "not hesitate to also edit the original document if required: the important "
 "thing is to get a first PO file to start with."
 msgstr ""
+"Se è necessario modificare i file per allineare le loro strutture, è "
+"preferibile modificare la traduzione, se possibile. Infatti, se le modifiche "
+"all'originale sono troppo invadenti, la vecchia e la nuova versione non "
+"verranno abbinate durante l'aggiornamento del PO e la traduzione "
+"corrispondente verrà comunque scaricata. Ma non si esitati a modificare "
+"anche il documento originale, se necessario: l'importante è ottenere un "
+"primo file PO con cui iniziare."
 
 #. type: textblock
 #: po4a-gettextize:60
@@ -2325,6 +2495,10 @@ msgid ""
 "translated version. This content will be automatically reintroduced "
 "afterward, when synchronizing the PO file with the document."
 msgstr ""
+"Non fatevi problemi a eliminare qualsiasi contenuto originale che non "
+"esisterebbe nella versione tradotta. Questo contenuto verrà reintrodotto "
+"automaticamente in seguito, durante la sincronizzazione del file PO con il "
+"documento."
 
 #. type: textblock
 #: po4a-gettextize:61
@@ -2425,6 +2599,12 @@ msgid ""
 "slightly alter one of the translations in the document. You can also prefer "
 "to kill the second paragraph in the original document."
 msgstr ""
+"Quindi, la situazione precedente si verifica quando due paragrafi simili ma "
+"diversi vengono tradotti nello stesso identico modo. Apparentemente questo "
+"rimuoverà un paragrafo della traduzione. Per risolvere il problema, è "
+"sufficiente modificare leggermente una delle traduzioni nel documento. Se lo "
+"si preferisce si può anche eliminare il secondo paragrafo nel documento "
+"originale."
 
 #. type: textblock
 #: po4a-gettextize:68
@@ -2450,6 +2630,12 @@ msgid ""
 "the POT file built from the recent master files. This forces gettext to "
 "search for the closest one using a costly string proximity algorithm."
 msgstr ""
+"Come nota finale, non siate troppo sorpresi se la prima sincronizzazione del "
+"file PO richiede molto tempo. Questo perché la maggior parte del msgid del "
+"file PO risultante dalla \"gettext-izzazione\" non corrisponde esattamente a "
+"nessun elemento del file POT creato dai file master recenti. Questo "
+"costringe gettext a cercare quello più vicino utilizzando un pesante "
+"algoritmo di prossimità di stringhe."
 
 #. type: textblock
 #: po4a-gettextize:70
@@ -2458,6 +2644,9 @@ msgid ""
 "translation (5.5 MB PO file) took about 48 hours (yes, two days) while the "
 "subsequent ones only take a dozen of seconds."
 msgstr ""
+"Ad esempio, il primo B<po4a-updatepo> della traduzione francese della "
+"documentazione Perl (file PO da 5,5 MB) ha impiegato circa 48 ore (sì, due "
+"giorni) mentre i successivi solo una dozzina di secondi."
 
 #. type: textblock
 #: po4a-gettextize:72
@@ -3086,6 +3275,10 @@ msgid ""
 "using the classical gettext tools. The main feature of po4a is that it "
 "decouples the translation of content from its document structure."
 msgstr ""
+"po4a (PO per tutto) facilita la manutenzione della traduzione della "
+"documentazione utilizzando i classici strumenti gettext. La caratteristica "
+"principale di po4a è che separa la traduzione dei contenuti dalla struttura "
+"del documento stesso."
 
 #. type: textblock
 #: doc/po4a.7.pod:5
@@ -3094,6 +3287,9 @@ msgid ""
 "potential users considering whether to use this tool and on the curious "
 "wanting to understand why things are the way they are."
 msgstr ""
+"Questo documento serve da introduzione al progetto po4a, concentrandosi sui "
+"potenziali utenti di questo strumento e sui curiosi che vogliono capire come "
+"funziona ed il suo scopo."
 
 #. type: =head1
 #: doc/po4a.7.pod:6
@@ -3121,6 +3317,10 @@ msgid ""
 "translations represent a huge effort of many individuals, crippled by small "
 "technical difficulties."
 msgstr ""
+"Questa situazione è ben compresa dalla maggior parte dei progetti e tutti "
+"sono ormai convinti della necessità di tradurre tutto. Eppure, le traduzioni "
+"attuali rappresentano un enorme sforzo per molti individui, paralizzate da "
+"piccole difficoltà tecniche."
 
 #. type: textblock
 #: doc/po4a.7.pod:9
@@ -3153,6 +3353,14 @@ msgid ""
 "quickly turns into a nightmare for the translators. If done manually, this "
 "task is unpleasant and error prone."
 msgstr ""
+"Per quanto riguarda la documentazione, invece, la situazione è ancora "
+"alquanto deludente. All'inizio tradurre la documentazione può sembrare più "
+"facile che tradurre un programma in quanto sembrerebbe che devi solo copiare "
+"il file sorgente della documentazione e iniziare a tradurre il contenuto. "
+"Tuttavia, quando la documentazione originale viene modificata, tenere "
+"traccia delle modifiche si trasforma rapidamente in un incubo per i "
+"traduttori. Se eseguita manualmente, questa attività è spiacevole e soggetta "
+"a errori."
 
 #. type: textblock
 #: doc/po4a.7.pod:11
@@ -3165,6 +3373,14 @@ msgid ""
 "These difficulties, often caused by poor tooling, can undermine the "
 "motivation of volunteer translators, further aggravating the problem."
 msgstr ""
+"Le traduzioni obsolete sono spesso peggio di nessuna traduzione. Gli utenti "
+"finali possono essere ingannati dalla documentazione che descrive un vecchio "
+"comportamento del programma. Inoltre, non possono interagire direttamente "
+"con i manutentori poiché non parlano inglese. Inoltre, il manutentore non "
+"può risolvere il problema poiché non conosce tutte le lingue in cui è "
+"tradotta la documentazione. Queste difficoltà, spesso causate da una "
+"strumentazione scarsa, possono minare la motivazione dei traduttori "
+"volontari, aggravando ulteriormente il problema."
 
 #. type: textblock
 #: doc/po4a.7.pod:12
@@ -3173,6 +3389,9 @@ msgid ""
 "translators>.  In particular, it makes documentation translations "
 "I<maintainable>."
 msgstr ""
+"B<L'obiettivo del progetto po4a è facilitare il lavoro dei traduttori di "
+"documentazione>. In particolare, rende le traduzioni della documentazione "
+"I<manutenibili>."
 
 #. type: textblock
 #: doc/po4a.7.pod:13
@@ -3187,6 +3406,16 @@ msgid ""
 "translated is left in English in the resulting document, ensuring that the "
 "end users never see an outdated translation in the documentation."
 msgstr ""
+"L'idea è di riutilizzare e adattare l'approccio gettext a questo campo. Come "
+"con gettext, i testi vengono estratti dalle loro posizioni originali e "
+"presentati ai traduttori come cataloghi di traduzione PO. I traduttori "
+"possono sfruttare i classici strumenti gettext per monitorare il lavoro da "
+"fare, collaborare e organizzarsi come squadra di traduzione. po4a quindi "
+"inserisce le traduzioni direttamente nella struttura della documentazione "
+"per produrre file sorgente tradotti che possono essere elaborati e "
+"distribuiti proprio come i file inglesi. Qualsiasi paragrafo non tradotto "
+"viene lasciato in inglese nel documento risultante, assicurando che gli "
+"utenti finali non vedano mai una traduzione obsoleta nella documentazione."
 
 #. type: textblock
 #: doc/po4a.7.pod:14
@@ -3197,6 +3426,12 @@ msgid ""
 "modification. Specific verification can also be used to reduce the chance of "
 "formatting errors that would result in a broken document."
 msgstr ""
+"Ciò automatizza la maggior parte del lavoro oneroso della manutenzione della "
+"traduzione. La scoperta dei paragrafi che necessitano di un aggiornamento "
+"diventa molto semplice e il processo è completamente automatizzato quando "
+"gli elementi vengono riordinati senza ulteriori modifiche. È inoltre "
+"possibile utilizzare una verifica specifica per ridurre la possibilità di "
+"errori di formattazione che potrebbero causare il rovinarsi del documento."
 
 #. type: textblock
 #: doc/po4a.7.pod:15
@@ -3244,6 +3479,8 @@ msgid ""
 "The L<Locale::Po4a::Man(3pm)|Man> module also supports the mdoc format, used "
 "by the BSD man pages (they are also quite common on Linux)."
 msgstr ""
+"Il modulo L<Locale::Po4a::Man(3pm)|Man> supporta anche il formato mdoc, "
+"usato dalle pagine man BSD (sono anche abbastanza comuni su Linux)."
 
 #. type: =item
 #: doc/po4a.7.pod:21
@@ -3257,14 +3494,22 @@ msgid ""
 "documentation. It is for example used to document the git system. Those "
 "manpages are translated using po4a."
 msgstr ""
+"Questo formato è un formato di markup leggero inteso a facilitare la "
+"creazione della documentazione. Ad esempio, viene utilizzato per documentare "
+"il sistema git. Tali pagine man sono tradotte usando po4a."
+
+#. type: textblock
+#: doc/po4a.7.pod:23
+msgid "See L<Locale::Po4a::AsciiDoc> for details."
+msgstr "Consultare L<Locale::Po4a::AsciiDoc> per i dettagli."
 
 #. type: =item
-#: doc/po4a.7.pod:23
+#: doc/po4a.7.pod:24
 msgid "pod (mature parser)"
 msgstr "pod (parser maturo)"
 
 #. type: textblock
-#: doc/po4a.7.pod:24
+#: doc/po4a.7.pod:25
 msgid ""
 "This is the Perl Online Documentation format. The language and extensions "
 "themselves are documented using this format in addition to most existing "
@@ -3279,13 +3524,18 @@ msgstr ""
 "più semplice al programmatore, ma sfortunatamente non al traduttore, finché "
 "non si usa po4a."
 
+#. type: textblock
+#: doc/po4a.7.pod:26
+msgid "See L<Locale::Po4a::Pod> for details."
+msgstr "Consultare L<Locale::Po4a::Pod> per i dettagli."
+
 #. type: =item
-#: doc/po4a.7.pod:25
+#: doc/po4a.7.pod:27
 msgid "sgml (mature parser)"
 msgstr "sgml (parser maturo)"
 
 #. type: textblock
-#: doc/po4a.7.pod:26
+#: doc/po4a.7.pod:28
 msgid ""
 "Even if superseded by XML nowadays, this format is still used for documents "
 "which are more than a few screens long. It can even be used for complete "
@@ -3301,7 +3551,7 @@ msgstr ""
 "Fortunatamente, po4a può aiutare dopo questo processo."
 
 #. type: textblock
-#: doc/po4a.7.pod:27
+#: doc/po4a.7.pod:29
 msgid ""
 "Currently, only DebianDoc and DocBook DTD are supported, but adding support "
 "for a new one is really easy. It is even possible to use po4a on an unknown "
@@ -3315,12 +3565,12 @@ msgstr ""
 "Sgml(3pm)> per i dettagli."
 
 #. type: =item
-#: doc/po4a.7.pod:28
+#: doc/po4a.7.pod:30
 msgid "TeX / LaTeX (mature parser)"
 msgstr "TeX / LaTeX (parser maturo)"
 
 #. type: textblock
-#: doc/po4a.7.pod:29
+#: doc/po4a.7.pod:31
 msgid ""
 "The LaTeX format is a major documentation format used in the Free Software "
 "world and for publications."
@@ -3329,7 +3579,7 @@ msgstr ""
 "del Free Software e da diverse pubblicazioni."
 
 #. type: textblock
-#: doc/po4a.7.pod:30
+#: doc/po4a.7.pod:32
 msgid ""
 "The L<Locale::Po4a::LaTeX(3pm)|LaTeX> module was tested with the Python "
 "documentation, a book and some presentations."
@@ -3338,22 +3588,23 @@ msgstr ""
 "documentazione Python, un libro e alcune presentazioni."
 
 #. type: =item
-#: doc/po4a.7.pod:31
+#: doc/po4a.7.pod:33
 msgid "text (mature parser)"
 msgstr "text (parser maturo)"
 
 #. type: textblock
-#: doc/po4a.7.pod:32
+#: doc/po4a.7.pod:34
 msgid ""
 "The Text format is the base format for many formats that include long blocks "
-"of text, including Markdown, debian/changelog, and debian/control."
+"of text, including Markdown, fortunes, YAML front matter section, debian/"
+"changelog, and debian/control."
 msgstr ""
 "Il formato text (testo) è il formato base per molti formati che includono "
-"lunghi blocchi di testo, inclusi Markdown, debian/changelog, e debian/"
-"control."
+"lunghi blocchi di testo, inclusi Markdown, fortunes, YAML front matter "
+"section, debian/changelog, e debian/control."
 
 #. type: textblock
-#: doc/po4a.7.pod:33
+#: doc/po4a.7.pod:35
 msgid ""
 "This supports the common format used in Static Site Generators, READMEs, and "
 "other documentation systems. See L<Locale::Po4a::Text(3pm)|Text> for details."
@@ -3363,31 +3614,188 @@ msgstr ""
 "L<Locale::Po4a::Text(3pm)|Text> per i dettagli."
 
 #. type: =item
-#: doc/po4a.7.pod:34
+#: doc/po4a.7.pod:36
 msgid "xml and XHMTL (probably mature parser)"
 msgstr "xml e XHMTL (parser probabilmente maturo)"
 
 #. type: textblock
-#: doc/po4a.7.pod:35
+#: doc/po4a.7.pod:37
 msgid "The XML format is a base format for many documentation formats."
 msgstr "Il formato XML è un formato base per molti formati di documentazione."
 
 #. type: textblock
-#: doc/po4a.7.pod:36
+#: doc/po4a.7.pod:38
 msgid ""
 "Currently, the DocBook DTD (see L<Locale::Po4a::Docbook(3pm)> for details) "
 "and XHTML are supported by po4a."
 msgstr ""
-"Attualmente, il DTD DocBook (consultare L<Locale::Po4a::Docbook(3pm) per i "
+"Attualmente, il DTD DocBook (consultare L<Locale::Po4a::Docbook(3pm)> per i "
 "dettagli) e XHTML sono supportati da po4a."
 
 #. type: =item
-#: doc/po4a.7.pod:37
+#: doc/po4a.7.pod:39
+msgid "BibTex (probably mature parser)"
+msgstr "BibTex (parser probabilmente maturo)"
+
+#. type: textblock
+#: doc/po4a.7.pod:40
+msgid ""
+"The BibTex format is used alongside LaTex for formatting lists of references "
+"(bibliographies)."
+msgstr ""
+"Il formato BibTex viene usato assieme a LaTex per la formattazione di "
+"elenchi di riferimenti bibliografici."
+
+#. type: textblock
+#: doc/po4a.7.pod:41
+msgid "See L<Locale::Po4a::BibTex> for details."
+msgstr "Consultare L<Locale::Po4a::BibTex> per i dettagli."
+
+#. type: =item
+#: doc/po4a.7.pod:42
+msgid "Docbook (probably mature parser)"
+msgstr "Docbook (parser probabilmente maturo)"
+
+#. type: textblock
+#: doc/po4a.7.pod:43
+msgid ""
+"A XML-based markup language that uses semantic tags to describe documents."
+msgstr ""
+"Un linguaggio a marcatori basato su XML che usa etichette semantiche per "
+"descrivere i documenti."
+
+#. type: textblock
+#: doc/po4a.7.pod:44
+msgid "See L<Locale::Po4a:Docbook> for greater details."
+msgstr "Consultare L<Locale::Po4a:Docbook> per ulteriori dettagli."
+
+#. type: =item
+#: doc/po4a.7.pod:45
+msgid "Guide XML (probably mature parser)"
+msgstr "Guide XML (parser probabilmente maturo)"
+
+#. type: textblock
+#: doc/po4a.7.pod:46
+msgid ""
+"A XML documentation format. This module was developed specifically to help "
+"with supporting and maintaining translations of Gentoo Linux documentation "
+"up until at least March 2016 (Based on the Wayback Machine). Gentoo have "
+"since moved to the DevBook XML format."
+msgstr ""
+"Un formato di documentazione XML. Questo modulo è stato sviluppato "
+"specificamente per supportare e mantenere le traduzioni della documentazione "
+"di Gentoo Linux almeno fino a marzo 2016 (secondo Wayback Machine). Da "
+"allora Gentoo è passato al formato DevBook XML."
+
+#. type: textblock
+#: doc/po4a.7.pod:47
+msgid "See L<Locale::Po4a:Guide> for greater details."
+msgstr "Consultare L<Locale::Po4a:Guide> per maggiori dettagli."
+
+#. type: =item
+#: doc/po4a.7.pod:48
+msgid "Wml (probably mature parser)"
+msgstr "Wml (parser probabilmente maturo)"
+
+#. type: textblock
+#: doc/po4a.7.pod:49
+msgid ""
+"The Web Markup Language, do not mixup WML with the WAP stuff used on cell "
+"phones.  This module relies on the Xhtml module, which itself relies on the "
+"XmL module."
+msgstr ""
+"Il Web Markup Language, da non confondere il WML con la roba WAP usata (N.d."
+"T. soprattutto in passato) sui telefoni cellulari. Questo modulo si basa sul "
+"modulo Xhtml, che a sua volta si basa sul modulo XmL."
+
+#. type: textblock
+#: doc/po4a.7.pod:50
+msgid "See L<Locale::Po4a::Wml> for greater details."
+msgstr "Consultare L<Locale::Po4a::Wml> per maggiori dettagli."
+
+#. type: =item
+#: doc/po4a.7.pod:51
+msgid "Yaml (probably mature parser)"
+msgstr "Yaml (parser probabilmente maturo)"
+
+#. type: textblock
+#: doc/po4a.7.pod:52
+msgid ""
+"A strict superset of JSON. YAML is often used as systems or configuration "
+"projects.  YAML is at the core of Red Hat's Ansible."
+msgstr ""
+"Un soprainsieme di JSON, YAML viene spesso usato per progetti sistemistici o "
+"per configurazione. YAML è centrale per il sistema di Red Hat Ansible."
+
+#. type: textblock
+#: doc/po4a.7.pod:53
+msgid "See L<Locale::Po4a::Yaml> for greater details."
+msgstr "See L<Locale::Po4A::Yaml> for greater details."
+
+#. type: =item
+#: doc/po4a.7.pod:54
+msgid "RubyDoc (probably mature parser)"
+msgstr "RubyDoc (parser probabilmente maturo)"
+
+#. type: textblock
+#: doc/po4a.7.pod:55
+msgid ""
+"The Ruby Document (RD) format, originally the default documentation format "
+"for Ruby and Ruby projects before converted to RDoc in 2002. Though "
+"apparently the Japanese version of the Ruby Reference Manual still use RD."
+msgstr ""
+"Il formato Ruby Document (RD), originariamente il formato di documentazione "
+"predefinito per Ruby e per i progetti Ruby prima di essere convertito in "
+"RDoc nel 2002. Anche se apparentemente la versione giapponese del Ruby "
+"Reference Manual usa ancora RD."
+
+#. type: textblock
+#: doc/po4a.7.pod:56
+msgid "See L<Locale::Po4a::RubyDoc> for greater details."
+msgstr "Consultare L<Locale::Po4a::RubyDoc> per maggiori dettagli."
+
+#. type: =item
+#: doc/po4a.7.pod:57
+msgid "Halibut (probably experimental parser)"
+msgstr "Halibut (parser probabilmente sperimentale)"
+
+#. type: textblock
+#: doc/po4a.7.pod:58
+msgid ""
+"A documentation production system, with elements similar to TeX, debiandoc-"
+"sgml, TeXinfo, and others, developed by Simon Tatham, the developer of PuTTY."
+msgstr ""
+"Un sistema di produzione di documentazione, con elementi simili a TeX, "
+"debiandoc-sgml, TeXinfo e altri, sviluppato da Simon Tatham, lo sviluppatore "
+"di PuTTY."
+
+#. type: textblock
+#: doc/po4a.7.pod:59
+msgid "See L<Locale::Po4a:Halibut> for greater details."
+msgstr "Consultare L<Locale::Po4a:Halibut> per maggiori dettagli."
+
+#. type: =item
+#: doc/po4a.7.pod:60
+msgid "Ini (probably experimental parser)"
+msgstr "Ini (parser probabilmente sperimentale)"
+
+#. type: textblock
+#: doc/po4a.7.pod:61
+msgid "Configuration file format popularized by MS-DOS."
+msgstr "Formato di file di configurazione reso popolare da MS-DOS."
+
+#. type: textblock
+#: doc/po4a.7.pod:62
+msgid "See L<Locale::Po4a::Ini> for greater details."
+msgstr "Consultare L<Locale::Po4a::Ini> per maggiori dettagli."
+
+#. type: =item
+#: doc/po4a.7.pod:63
 msgid "texinfo (very highly experimental parser)"
 msgstr "texinfo (parser molto sperimentale)"
 
 #. type: textblock
-#: doc/po4a.7.pod:38
+#: doc/po4a.7.pod:64
 msgid ""
 "All of the GNU documentation is written in this format (it's even one of the "
 "requirements to become an official GNU project). The support for L<Locale::"
@@ -3400,33 +3808,35 @@ msgstr ""
 "eventuali difetti e richieste di miglioramenti."
 
 #. type: =item
-#: doc/po4a.7.pod:39
+#: doc/po4a.7.pod:65
 msgid "Others supported formats"
 msgstr "Altri formati supportati"
 
 #. type: textblock
-#: doc/po4a.7.pod:40
+#: doc/po4a.7.pod:66
 msgid ""
 "Po4a can also handle some more rare or specialized formats, such as the "
-"documentation of compilation options for the 2.4+ Linux kernels or the "
-"diagrams produced by the dia tool. Adding a new format is often very easy "
-"and the main task is to come up with a parser for your target format. See "
-"L<Locale::Po4a::TransTractor(3pm)> for more information about this."
+"documentation of compilation options for the 2.4+ Linux kernels (L<Locale::"
+"Po4a::KernelHelp>) or the diagrams produced by the dia tool (L<Locale::Po4a:"
+"Dia>). Adding a new format is often very easy and the main task is to come "
+"up with a parser for your target format. See L<Locale::Po4a::"
+"TransTractor(3pm)> for more information about this."
 msgstr ""
-"Po4a può anche gestire qualche altro formato raro o di uso specifico, ad "
-"esempio la documentazione delle opzioni di compilazione dei kernel 2.4+, "
-"oppure i diagrammi prodotti dal programma Dia. Aggiungere un nuovo formato è "
-"spesso molto facile e il grosso del lavoro è produrre un parser per il "
-"formato scelto. Per maggiori informazioni su questo argomento, consultare "
-"L<Locale::Po4a::TransTractor(3pm)>."
+"Po4a può anche gestire qualche altro formato raro o di uso specifico, come "
+"la documentazione delle opzioni di compilazione dei kernel 2.4+(L<Locale::"
+"Po4a::KernelHelp>), oppure i diagrammi prodotti dal programma Dia(L<Locale::"
+"Po4a::Dia>). Aggiungere un nuovo formato è spesso molto facile e il grosso "
+"del lavoro è produrre un parser per il formato scelto. Per maggiori "
+"informazioni su questo argomento, consultare L<Locale::Po4a::"
+"TransTractor(3pm)>."
 
 #. type: =item
-#: doc/po4a.7.pod:41
+#: doc/po4a.7.pod:67
 msgid "Unsupported formats"
 msgstr "Formati non supportati"
 
 #. type: textblock
-#: doc/po4a.7.pod:42
+#: doc/po4a.7.pod:68
 msgid ""
 "Unfortunately, po4a still lacks support for several documentation formats. "
 "Many of them would be easy to support in po4a. This includes formats not "
@@ -3444,12 +3854,12 @@ msgstr ""
 "wine."
 
 #. type: =head1
-#: doc/po4a.7.pod:43
+#: doc/po4a.7.pod:69
 msgid "Using po4a"
-msgstr ""
+msgstr "Uso di po4a"
 
 #. type: textblock
-#: doc/po4a.7.pod:44
+#: doc/po4a.7.pod:70
 msgid ""
 "Historically, po4a was built around four scripts, each fulfilling a specific "
 "task. L<po4a-gettextize(1)> helps bootstrapping translations and optionally "
@@ -3461,9 +3871,19 @@ msgid ""
 "document from the original one. It makes it easier to spot the glitches "
 "introduced by the parsing process."
 msgstr ""
+"Storicamente, po4a è stato costruito attorno a quattro script, ognuno dei "
+"quali svolgeva un compito specifico. L<po4a-gettextize(1)> aiuta nell'avvio "
+"delle traduzioni e opzionalmente a convertire i progetti di traduzione "
+"esistenti in po4a. L<po4a-updatepo(1)> riporta le modifiche alla "
+"documentazione originale nei corrispondenti file po. L<po4a-translate(1)> "
+"crea il file sorgente tradotto dal file originale e dal corrispondente file "
+"PO. Infine, L<po4a-normalize(1)> è utile principalmente per eseguire il "
+"debug dei parser po4a, poiché produce un documento non tradotto da quello "
+"originale. Rende più facile individuare i piccoli difetti introdotti dal "
+"processo di analisi."
 
 #. type: textblock
-#: doc/po4a.7.pod:45
+#: doc/po4a.7.pod:71
 msgid ""
 "Most projects only require the features of L<po4a-updatepo(1)> and L<po4a-"
 "translate(1)>, but these scripts proved to be cumbersome and error prone to "
@@ -3477,22 +3897,37 @@ msgid ""
 "translation files that need to. If everything is already up to date, "
 "L<po4a(1)> does not change any file."
 msgstr ""
+"La maggior parte dei progetti richiede solo le funzionalità di L<po4a-"
+"updatepo(1)> e L<po4a-translate(1)>, ma questi script si sono dimostrati "
+"macchinosi e soggetti a errori nell'uso. Se la documentazione da tradurre è "
+"suddivisa in più file di origine, è difficile mantenere aggiornati i file PO "
+"e creare correttamente i file di documentazione. In risposta, è stato "
+"fornito uno strumento omnicomprensivo: L<po4a(1)>. Questo strumento utilizza "
+"un file di configurazione che descrive la struttura del progetto di "
+"traduzione: la posizione dei file PO, l'elenco dei file da tradurre e le "
+"opzioni da utilizzare, automatizzando completamente il processo. Quando si "
+"esegue L<po4a(1)>, esso aggiorna i file PO e rigenera i file di traduzione "
+"necessari. Se è tutto già aggiornato, L<po4a(1)> non cambia alcun file."
 
 #. type: textblock
-#: doc/po4a.7.pod:46
+#: doc/po4a.7.pod:72
 msgid ""
 "The rest of this section gives an overview of how use the scripts' interface "
 "of po4a. Most users will probably prefer to use the all-in-one tool, that is "
 "described in the documentation of L<po4a(1)>."
 msgstr ""
+"Il resto di questa sezione fornisce una panoramica su come utilizzare "
+"l'interfaccia degli script di po4a. La maggior parte degli utenti preferirà "
+"probabilmente utilizzare lo strumento omnicomprensivo, descritto nella "
+"documentazione di L<po4a(1)>."
 
 #. type: =head2
-#: doc/po4a.7.pod:47
+#: doc/po4a.7.pod:73
 msgid "Graphical overview of the po4a scripts"
 msgstr "Panoramica grafica degli script po4a"
 
 #. type: textblock
-#: doc/po4a.7.pod:48
+#: doc/po4a.7.pod:74
 msgid ""
 "The following schema gives an overview of how each po4a script can be used.  "
 "Here, F<master.doc> is an example name for the documentation to be "
@@ -3503,9 +3938,17 @@ msgid ""
 "translators will be mostly concerned with the PO file, while the end users "
 "will only see the F<XX.doc> file."
 msgstr ""
+"Il seguente schema offre una panoramica di come ogni script po4a può essere "
+"utilizzato. Qui, F<master.doc> è un nome di esempio per la documentazione da "
+"tradurre; F<XX.doc> è lo stesso documento tradotto nella lingua XX mentre "
+"F<doc.XX.po> è il catalogo di traduzione per quel documento nella lingua XX. "
+"Gli autori della documentazione si occuperanno principalmente di F<master."
+"doc> (che può essere una pagina man, un documento XML, un file asciidoc o "
+"simile); i traduttori si occuperanno principalmente del file PO, mentre gli "
+"utenti finali vedranno solo il file F<XX.doc>."
 
 #. type: verbatim
-#: doc/po4a.7.pod:49
+#: doc/po4a.7.pod:75
 #, no-wrap
 msgid ""
 "                                   master.doc\n"
@@ -3591,15 +4034,18 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:50
+#: doc/po4a.7.pod:76
 msgid ""
 "This schema is complicated, but in practice only the right part (involving "
 "L<po4a-updatepo(1)> and L<po4a-translate(1)>) is used once the project is "
 "setup and configured."
 msgstr ""
+"Questo schema è complicato, ma in pratica solo la parte destra (che "
+"coinvolge L<po4a-updatepo(1)> e L<po4a-translate(1)>) viene utilizzata, una "
+"volta impostato e configurato il progetto."
 
 #. type: textblock
-#: doc/po4a.7.pod:51
+#: doc/po4a.7.pod:77
 msgid ""
 "The left part depicts how L<po4a-gettextize(1)> can be used to convert an "
 "existing translation project to the po4a infrastructure. This script takes "
@@ -3610,9 +4056,18 @@ msgid ""
 "translation to convert, you can forget about this and focus on the right "
 "part of the schema."
 msgstr ""
+"La parte sinistra mostra come L<po4a-gettextize(1)> può essere usato per "
+"convertire un progetto di traduzione esistente verso l'infrastruttura po4a. "
+"Questo script prende un documento originale e la sua associata parte "
+"tradotta e cerca di creare il file PO corrispondente. Tale conversione "
+"manuale è piuttosto complicata (vedere la documentazione di L<po4a-"
+"gettextize(1)> per maggiori dettagli), ma è necessaria solo una volta per "
+"convertire le traduzioni esistenti. Se non si ha alcuna traduzione da "
+"convertire, si può dimenticarsene e concentrarsi solo sulla parte destra "
+"dello schema."
 
 #. type: textblock
-#: doc/po4a.7.pod:52
+#: doc/po4a.7.pod:78
 msgid ""
 "On the top right part, the action of the original author is depicted, "
 "updating the documentation. The middle right part depicts the automatic "
@@ -3633,7 +4088,7 @@ msgstr ""
 "materiale nuovo o completamente modificato viene lasciato non tradotto."
 
 #. type: textblock
-#: doc/po4a.7.pod:53
+#: doc/po4a.7.pod:79
 msgid ""
 "Then, the I<manual editing> reported depicts the action of the translators, "
 "that modify the PO files to provide translations to every original string "
@@ -3643,9 +4098,16 @@ msgid ""
 "translation result is a set of PO files, one per language. Please refer to "
 "the gettext documentation for more details."
 msgstr ""
+"Quindi, la I<modifica manuale> riportata, descrive l'azione dei traduttori, "
+"che modificano i file PO per fornire traduzioni per ogni stringa e paragrafo "
+"originali. Ciò può essere effettuato utilizzando un editor specifico come lo "
+"B<GNOME Translation Editor>, B<Lokalize> di KDE o B<poedit> o utilizzando "
+"una piattaforma di traduzione sul web come B<weblate> o B<pootle>. Il "
+"risultato della traduzione è un insieme di file PO, uno per lingua. Fare "
+"riferimento alla documentazione di gettext per maggiori dettagli."
 
 #. type: textblock
-#: doc/po4a.7.pod:54
+#: doc/po4a.7.pod:80
 msgid ""
 "The bottom part of the figure shows how L<po4a-translate(1)> creates a "
 "translated source document from the F<master.doc> original document and the "
@@ -3655,22 +4117,33 @@ msgid ""
 "some extra text to the translation. This is often used to add the name of "
 "the translator to the final document. See below for details."
 msgstr ""
+"La parte inferiore della figura mostra come L<po4a-translate(1)> crea un "
+"documento sorgente tradotto dal documento originale F<master.doc> e il "
+"catalogo di traduzioni F<doc.XX.po> aggiornato dai traduttori. La struttura "
+"del documento viene riutilizzata, mentre il contenuto originale viene "
+"sostituito dalla sua controparte tradotta. Facoltativamente, è possibile "
+"utilizzare un'appendice per aggiungere del testo extra alla traduzione. "
+"Viene spesso utilizzato per aggiungere il nome del traduttore al documento "
+"finale. Vedere sotto per i dettagli."
 
 #. type: textblock
-#: doc/po4a.7.pod:55
+#: doc/po4a.7.pod:81
 msgid ""
 "As noted before, the L<po4a(1)> program combines the effects of the "
 "separated scripts, updating the PO files and the translated document in one "
 "invocation.  The underlying logic remains the same."
 msgstr ""
+"Come notato prima, il programma L<po4a(1)> combina gli effetti degli script "
+"separati, aggiornando i file PO e il documento tradotto in un'unica "
+"esecuzione. La logica sottostante rimane la stessa."
 
 #. type: =head2
-#: doc/po4a.7.pod:56
+#: doc/po4a.7.pod:82
 msgid "Starting a new translation"
 msgstr "Iniziare una nuova traduzione"
 
 #. type: textblock
-#: doc/po4a.7.pod:57
+#: doc/po4a.7.pod:83
 msgid ""
 "If you use L<po4a(1)>, there is no specific step to start a translation. You "
 "just have to list the languages in the configuration file, and the missing "
@@ -3680,17 +4153,27 @@ msgid ""
 "can translate your project into a new language by renaming this file and "
 "providing the translations in their language."
 msgstr ""
+"Se usa L<po4a(1)>, non esiste un passaggio specifico per avviare una "
+"traduzione. Bisogna solo elencare le lingue nel file di configurazione e i "
+"file PO mancanti verranno creati automaticamente. Naturalmente, il "
+"traduttore deve quindi fornire le traduzioni per ogni contenuto usato nei "
+"documenti. L<po4a(1)> crea anche un file POT, che è un file modello PO. I "
+"potenziali traduttori possono tradurre il progetto in una nuova lingua "
+"rinominando questo file e fornendo le traduzioni nella propria lingua."
 
 #. type: textblock
-#: doc/po4a.7.pod:58
+#: doc/po4a.7.pod:84
 msgid ""
 "If you prefer to use the individual scripts separately, you should use "
 "L<po4a-gettextize(1)> as follows to create the POT file. This file can then "
 "be copied into F<XX.po> to initiate a new translation."
 msgstr ""
+"Se preferisce usare i singoli script separatamente, bisognerebbe usare "
+"L<po4a-gettextize(1)> come segue per creare il file POT. Questo file potrà "
+"quindi essere copiato in F<XX.po> per iniziare una nuova traduzione."
 
 #. type: verbatim
-#: doc/po4a.7.pod:59
+#: doc/po4a.7.pod:85
 #, no-wrap
 msgid ""
 "  $ po4a-gettextize --format <format> --master <master.doc> --po <translation.pot>\n"
@@ -3700,26 +4183,30 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:60
+#: doc/po4a.7.pod:86
 msgid ""
 "The master document is used in input, while the POT file is the output of "
 "this process."
 msgstr ""
+"Il documento master viene utilizzato in ingresso, mentre il file POT è "
+"l'uscita di questo processo."
 
 #. type: =head2
-#: doc/po4a.7.pod:61
+#: doc/po4a.7.pod:87
 msgid "Integrating changes to the original document"
-msgstr ""
+msgstr "Integrazione delle modifiche al documento originale"
 
 #. type: textblock
-#: doc/po4a.7.pod:62
+#: doc/po4a.7.pod:88
 msgid ""
 "The script to use for that is L<po4a-updatepo(1)> (please refer to its "
 "documentation for details):"
 msgstr ""
+"Lo script da usare per questo è L<po4a-updatepo(1)> (fare riferimento alla "
+"sua documentazione per i dettagli):"
 
 #. type: verbatim
-#: doc/po4a.7.pod:63
+#: doc/po4a.7.pod:89
 #, no-wrap
 msgid ""
 "  $ po4a-updatepo --format <format> --master <new_master.doc> --po <old_doc.XX.po>\n"
@@ -3729,19 +4216,21 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:64
+#: doc/po4a.7.pod:90
 msgid ""
 "The master document is used in input, while the PO file is updated: it is "
 "used both in input and output."
 msgstr ""
+"Il documento master viene usato in ingresso, mentre il file PO viene "
+"aggiornato: viene utilizzato sia in ingresso che in uscita."
 
 #. type: =head2
-#: doc/po4a.7.pod:65
+#: doc/po4a.7.pod:91
 msgid "Generating a translated document"
-msgstr ""
+msgstr "Generazione di un documento tradotto"
 
 #. type: textblock
-#: doc/po4a.7.pod:66
+#: doc/po4a.7.pod:92
 msgid ""
 "Once you're done with the translation, you want to get the translated "
 "documentation and distribute it to users along with the original one.  For "
@@ -3752,7 +4241,7 @@ msgstr ""
 "usare il programma L<po4a-translate(1)> in questo modo:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:67
+#: doc/po4a.7.pod:93
 #, no-wrap
 msgid ""
 "  $ po4a-translate --format <format> --master <master.doc> --po <doc.XX.po> --localized <XX.doc>\n"
@@ -3762,7 +4251,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:68
+#: doc/po4a.7.pod:94
 msgid ""
 "Both the master and PO files are used in input, while the localized file is "
 "the output of this process."
@@ -3771,12 +4260,12 @@ msgstr ""
 "localizzato (tradotto) è il file in uscita di questo processo."
 
 #. type: =head2
-#: doc/po4a.7.pod:69
+#: doc/po4a.7.pod:95
 msgid "Using addenda to add extra text to translations"
 msgstr "Uso di addenda per aggiungere testo extra alle traduzioni"
 
 #. type: textblock
-#: doc/po4a.7.pod:70
+#: doc/po4a.7.pod:96
 msgid ""
 "Adding new text to the translation is probably the only thing that is easier "
 "in the long run when you translate files manually :). This happens when you "
@@ -3785,9 +4274,15 @@ msgid ""
 "credits to the translation team, and to indicate how to report translation-"
 "specific issues."
 msgstr ""
+"L'aggiunta di nuovo testo alla traduzione è probabilmente l'unica cosa che è "
+"più facile fare a lungo termine quando si traducono i file manualmente :). "
+"Si fa quando si vuole aggiungere una sezione extra al documento tradotto che "
+"non corrisponde a nessun contenuto nel documento originale. Il caso d'uso "
+"classico è quello per dare riconoscimento ai traduttori e per indicare come "
+"segnalare problemi specifici riguardanti la traduzione."
 
 #. type: textblock
-#: doc/po4a.7.pod:71
+#: doc/po4a.7.pod:97
 msgid ""
 "With po4a, you have to specify B<addendum> files, that can be conceptually "
 "viewed as patches applied to the localized document after processing. Each "
@@ -3797,40 +4292,58 @@ msgid ""
 "syntax -- see below) while the rest of the file is added verbatim at the "
 "determined position."
 msgstr ""
+"Con po4a, bisogna specificare i file B<addendum>, che possono essere visti "
+"concettualmente come patch applicate al documento localizzato dopo "
+"l'elaborazione. Ogni addendum deve essere fornito come file separato, il cui "
+"formato è però molto diverso dalle patch classiche. La prima riga è una "
+"I<riga di intestazione>, che definisce il punto di inserimento dell'addendum "
+"(con una sintassi purtroppo criptica - vedere sotto) mentre il resto del "
+"file viene aggiunto, così com'è, alla posizione determinata."
 
 #. type: textblock
-#: doc/po4a.7.pod:72
+#: doc/po4a.7.pod:98
 msgid ""
 "The header line must begin with the string B<PO4A-HEADER:>, followed by a "
 "semi-colon separated list of I<key>B<=>I<value> fields."
 msgstr ""
+"La riga di intestazione deve iniziare con la stringa B<PO4A-HEADER:>, "
+"seguita da un elenco separato da punti e virgola di campi "
+"I<chiave>B<=>I<valore>."
 
 #. type: textblock
-#: doc/po4a.7.pod:73
+#: doc/po4a.7.pod:99
 msgid ""
 "For example, the following header declares an addendum that must be placed "
 "at the very end of the translation."
 msgstr ""
+"Ad esempio, la seguente intestazione dichiara un addendum che deve essere "
+"inserito alla fine della traduzione."
 
 #. type: verbatim
-#: doc/po4a.7.pod:74
+#: doc/po4a.7.pod:100
 #, no-wrap
 msgid ""
 " PO4A-HEADER: mode=eof\n"
 "\n"
 msgstr ""
+" PO4A-HEADER: mode=eof\n"
+"\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:75
+#: doc/po4a.7.pod:101
 msgid ""
 "Things are more complex when you want to add your extra content in the "
 "middle of the document. The following header declares an addendum that must "
 "be placed after the XML section containing the string C<About this document> "
 "in translation."
 msgstr ""
+"Le cose si fanno più complicate quando vuole aggiungere il contenuto extra "
+"in mezzo al documento. La seguente intestazione dichiara un addendum che "
+"deve essere inserito dopo la sezione XML contenente la stringa C<About this "
+"document> nella traduzione."
 
 #. type: verbatim
-#: doc/po4a.7.pod:76
+#: doc/po4a.7.pod:102
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=About this document; mode=after; endboundary=</section>\n"
@@ -3840,7 +4353,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:77
+#: doc/po4a.7.pod:103
 msgid ""
 "In practice, when trying to apply an addendum, po4a searches for the first "
 "line matching the C<position> argument (this can be a regexp). Do not forget "
@@ -3848,33 +4361,48 @@ msgid ""
 "in English, but your line should probably read as follows if you intend your "
 "addendum to apply to the French translation of the document."
 msgstr ""
+"In pratica, quando si cerca di applicare un addendum, po4a cerca la prima "
+"riga che corrisponde all'argomento C<position> (può essere un'espressione "
+"regolare). Non bisogna dimenticare che qui po4a considera il documento "
+"B<tradotto>. Questa documentazione è in inglese, ma la tua riga dovrebbe "
+"probabilmente essere la seguente si intende applicare l'addendum alla "
+"traduzione francese del documento."
 
 #. type: verbatim
-#: doc/po4a.7.pod:78
+#: doc/po4a.7.pod:104
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=À propos de ce document; mode=after; endboundary=</section>\n"
 "\n"
 msgstr ""
+" PO4A-HEADER: position=À propos de ce document; mode=after; endboundary=</section>\n"
+"\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:79
+#: doc/po4a.7.pod:105
 msgid ""
 "Once the C<position> is found in the target document, po4a searches for the "
 "next line after the C<position> that matches the provided C<endboundary>. "
 "The addendum is added right B<after> that line (because we provided an "
 "I<endboundary>, i.e. a boundary ending the current section)."
 msgstr ""
+"Una volta trovata la C<position> (posizione) nel documento di destinazione, "
+"po4a cerca la riga successiva dopo la C<position> che corrisponde al "
+"C<endboundary> fornito. L'addendum viene aggiunto subito B<after> (dopo) "
+"quella riga (perché abbiamo fornito una I<endboundary>, cioè un confine che "
+"termina la sezione corrente)."
 
 #. type: textblock
-#: doc/po4a.7.pod:80
+#: doc/po4a.7.pod:106
 msgid ""
 "The exact same effect could be obtained with the following header, that is "
 "equivalent:"
 msgstr ""
+"Lo stesso identico effetto potrebbe essere ottenuto con la seguente "
+"intestazione, che è equivalente:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:81
+#: doc/po4a.7.pod:107
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=About this document; mode=after; beginboundary=<section>\n"
@@ -3884,7 +4412,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:82
+#: doc/po4a.7.pod:108
 msgid ""
 "Here, po4a searches for the first line matching C<<section>> after the line "
 "matching C<About this document> in the translation, and add the addendum "
@@ -3895,9 +4423,18 @@ msgid ""
 "tag. This is equivalent to the previous example because what you really want "
 "is to add this addendum either after C</section>> or before C<<section>>."
 msgstr ""
+"Qui, po4a cerca la prima riga che corrisponde a C<<section>> dopo la riga "
+"che corrisponde a C<About this document> nella traduzione e aggiunge "
+"l'addendum B<before> (prima) quella riga poiché abbiamo fornito un "
+"I<beginboundary>, cioè un confine che segna l'inizio della sezione "
+"successiva. Quindi questa riga di intestazione richiede di inserire "
+"l'addendum dopo la sezione contenente C<About this document> e istruire po4a "
+"che una sezione inizia con una riga contenente il tag C<<section>>. Questo è "
+"equivalente all'esempio precedente perché quello che si vuole veramente è "
+"aggiungere questo addendum dopo C</section>> o prima di C<<section>>."
 
 #. type: textblock
-#: doc/po4a.7.pod:83
+#: doc/po4a.7.pod:109
 msgid ""
 "You can also set the insertion I<mode> to the value C<before>, with a "
 "similar semantic: combining C<mode=before> with an C<endboundary> will put "
@@ -3906,9 +4443,16 @@ msgid ""
 "C<beginboundary> will put the addendum just B<before> the matched boundary, "
 "that the last potential boundary line before the C<position>."
 msgstr ""
+"Si può anche impostare l'inserimento I<mode> al valore C<before>, con una "
+"semantica simile: combinando C<mode=before> con C<endboundary> metterà "
+"l'addendum appena B<dopo> il limite corrispondente, l'ultima potenziale "
+"linea di confine prima della C<position>. La combinazione di C<mode=before> "
+"e C<beginboundary> metterà l'addendum appena B<prima> del confine "
+"corrispondente, ovvero l'ultima potenziale linea di confine prima di "
+"C<position>."
 
 #. type: verbatim
-#: doc/po4a.7.pod:84
+#: doc/po4a.7.pod:110
 #, no-wrap
 msgid ""
 "  Mode   | Boundary kind |     Used boundary      | Insertion point compared to the boundary\n"
@@ -3920,14 +4464,22 @@ msgid ""
 " 'eof'   |   (none)      |  n/a                   | End of file\n"
 "\n"
 msgstr ""
+"  Modo   | Tipo confine  |     Confine usato       | Punto di inserimento rispetto al confine\n"
+" ========|===============|=========================|=========================================\n"
+" 'before'| 'endboundary' | ultimo prima 'position' | Subito dopo del confine selezionato\n"
+" 'before'|'beginboundary'| ultimo prima 'position' | Subito prima del confine selezionato\n"
+" 'after' | 'endboundary' |  primo dopo 'position'  | Subito dopo del confine selezionato\n"
+" 'after' |'beginboundary'|  primo dopo 'position'  | Subito prima del confine selezionato\n"
+" 'eof'   |   (nessuno)   |           -             | Fine del file\n"
+"\n"
 
 #. type: =head3
-#: doc/po4a.7.pod:85
+#: doc/po4a.7.pod:111
 msgid "Hint and tricks about addenda"
 msgstr "Suggerimenti e trucchi sugli addenda"
 
 #. type: textblock
-#: doc/po4a.7.pod:86
+#: doc/po4a.7.pod:112
 msgid ""
 "Remember that these are regexp. For example, if you want to match the end of "
 "a nroff section ending with the line C<.fi>, do not use C<.fi> as "
@@ -3941,15 +4493,18 @@ msgstr ""
 "tal caso è: C<^\\.fi$>."
 
 #. type: textblock
-#: doc/po4a.7.pod:87
+#: doc/po4a.7.pod:113
 msgid ""
 "White spaces ARE important in the content of the C<position> and boundaries. "
 "So the two following lines B<are different>. The second one will only be "
 "found if there is enough trailing spaces in the translated document."
 msgstr ""
+"Gli spazi bianchi SONO importanti nel contenuto di C<position> e dei "
+"confini. Quindi le due righe seguenti B<sono diverse>. Il secondo verrà "
+"trovato solo se ci sono abbastanza spazi finali nel documento tradotto."
 
 #. type: verbatim
-#: doc/po4a.7.pod:88
+#: doc/po4a.7.pod:114
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=About this document; mode=after; beginboundary=<section>\n"
@@ -3961,7 +4516,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:89
+#: doc/po4a.7.pod:115
 msgid ""
 "Although this context search may be considered to operate roughly on each "
 "line of the B<translated> document, it actually operates on the internal "
@@ -3980,25 +4535,28 @@ msgstr ""
 "e non può essere all'interno della stessa."
 
 #. type: textblock
-#: doc/po4a.7.pod:90
+#: doc/po4a.7.pod:116
 msgid ""
 "Pass the B<-vv> argument to po4a to understand how the addenda are added to "
 "the translation. It may also help to run po4a in debug mode to see the "
 "actual internal data string when your addendum does not apply."
 msgstr ""
+"Passa l'argomento B<-vv> a po4a per capire come aggiungere gli addenda alla "
+"traduzione. Può anche essere utile eseguire po4a in modalità di debug per "
+"vedere la stringa di dati interna effettiva quando l'addendum non si applica."
 
 #. type: =head3
-#: doc/po4a.7.pod:91
+#: doc/po4a.7.pod:117
 msgid "Addenda examples"
-msgstr ""
+msgstr "Esempi di addenda"
 
 #. type: textblock
-#: doc/po4a.7.pod:92
+#: doc/po4a.7.pod:118
 msgid "If you want to add something after the following nroff section:"
 msgstr "Se si vuole aggiungere qualcosa dopo la seguente sezione nroff:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:93
+#: doc/po4a.7.pod:119
 #, no-wrap
 msgid ""
 "  .SH \"AUTHORS\"\n"
@@ -4008,16 +4566,21 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:94
+#: doc/po4a.7.pod:120
 msgid ""
 "You should select a two step approach by setting B<mode=after>. Then you "
 "should narrow down search to the line after B<AUTHORS> with the B<position> "
 "argument regex. Then, you should match the beginning of the next section (i."
 "e., B<^\\.SH>) with the B<beginboundary> argument regex. That is to say:"
 msgstr ""
+"È necessario selezionare un approccio in due fasi impostando B<mode=after>. "
+"Quindi bisogna restringere la ricerca alla riga dopo B<AUTHORS> con "
+"l'argomento espressione regolare B<position>. Quindi, si dovrebbe abbinare "
+"l'inizio della sezione successiva (ad esempio, B<^\\.SH>) con l'espressione "
+"regolare dell'argomento B<beginboundary>. Vale a dire:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:95
+#: doc/po4a.7.pod:121
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=AUTHORS;beginboundary=\\.SH\n"
@@ -4027,7 +4590,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:96
+#: doc/po4a.7.pod:122
 msgid ""
 "If you want to add something right after a given line (e.g. after the line "
 "\"Copyright Big Dude\"), use a B<position> matching this line, B<mode=after> "
@@ -4039,7 +4602,7 @@ msgstr ""
 "riga."
 
 #. type: verbatim
-#: doc/po4a.7.pod:97
+#: doc/po4a.7.pod:123
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=Copyright Big Dude, 2004;beginboundary=^\n"
@@ -4049,7 +4612,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:98
+#: doc/po4a.7.pod:124
 msgid ""
 "If you want to add something at the end of the document, give a B<position> "
 "matching any line of your document (but only one line. Po4a won't proceed if "
@@ -4065,7 +4628,7 @@ msgstr ""
 "documento."
 
 #. type: verbatim
-#: doc/po4a.7.pod:99
+#: doc/po4a.7.pod:125
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=About this document;beginboundary=FakePo4aBoundary\n"
@@ -4075,17 +4638,17 @@ msgstr ""
 "\n"
 
 #. type: =head3
-#: doc/po4a.7.pod:100
+#: doc/po4a.7.pod:126
 msgid "More detailed example"
 msgstr "Esempio più dettagliato"
 
 #. type: textblock
-#: doc/po4a.7.pod:101
+#: doc/po4a.7.pod:127
 msgid "Original document (POD formatted):"
 msgstr "Documento originale (formattato POD):"
 
 #. type: verbatim
-#: doc/po4a.7.pod:102
+#: doc/po4a.7.pod:128
 #, no-wrap
 msgid ""
 " |=head1 NAME\n"
@@ -4107,7 +4670,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:103
+#: doc/po4a.7.pod:129
 msgid ""
 "Then, the following addendum will ensure that a section (in French) about "
 "the translator is added at the end of the file (in French, \"TRADUCTEUR\" "
@@ -4118,7 +4681,7 @@ msgstr ""
 "\"TRADUCTEUR\" significa \"TRADUTTORE\", e \"moi\" significa \"me\")."
 
 #. type: verbatim
-#: doc/po4a.7.pod:104
+#: doc/po4a.7.pod:130
 #, no-wrap
 msgid ""
 " |PO4A-HEADER:mode=after;position=AUTEUR;beginboundary=^=head\n"
@@ -4138,14 +4701,14 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:105
+#: doc/po4a.7.pod:131
 msgid "To put your addendum before the AUTHOR, use the following header:"
 msgstr ""
 "Per mettere il proprio addendum prima dell'AUTHOR, usare l'intestazione "
 "seguente:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:106
+#: doc/po4a.7.pod:132
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=NOM;beginboundary=^=head1\n"
@@ -4155,7 +4718,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:107
+#: doc/po4a.7.pod:133
 msgid ""
 "This works because the next line matching the B<beginboundary> /^=head1/ "
 "after the section \"NAME\" (translated to \"NOM\" in French), is the one "
@@ -4171,13 +4734,13 @@ msgstr ""
 "prima della nuova sezione."
 
 #. type: textblock
-#: doc/po4a.7.pod:108
+#: doc/po4a.7.pod:134
 msgid "To avoid this you may accomplish the same using B<mode>=I<before>:"
 msgstr ""
 "Per evitare ciò si può ottenere lo stesso risultato usando B<mode>=I<before>:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:109
+#: doc/po4a.7.pod:135
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=before;position=^=head1 AUTEUR\n"
@@ -4187,12 +4750,12 @@ msgstr ""
 "\n"
 
 #. type: =head1
-#: doc/po4a.7.pod:110
+#: doc/po4a.7.pod:136
 msgid "How does it work?"
 msgstr "Come funziona?"
 
 #. type: textblock
-#: doc/po4a.7.pod:111
+#: doc/po4a.7.pod:137
 msgid ""
 "This chapter gives you a brief overview of the po4a internals, so that you "
 "may feel more confident to help us maintaining and improving it. It may also "
@@ -4206,7 +4769,7 @@ msgstr ""
 "ci si aspetta e a risolvere eventuali problemi."
 
 #. type: textblock
-#: doc/po4a.7.pod:112
+#: doc/po4a.7.pod:138
 msgid ""
 "The po4a architecture is object oriented. The L<Locale::Po4a::"
 "TransTractor(3pm)|TransTractor> class is the common ancestor to all po4a "
@@ -4219,7 +4782,7 @@ msgstr ""
 "incaricato di tradurre il documento e di estrarne le stringhe."
 
 #. type: textblock
-#: doc/po4a.7.pod:113
+#: doc/po4a.7.pod:139
 msgid ""
 "More formally, it takes a document to translate plus a PO file containing "
 "the translations to use as input while producing two separate outputs: "
@@ -4237,7 +4800,7 @@ msgstr ""
 "rappresentazione grafica di tutto ciò:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:114
+#: doc/po4a.7.pod:140
 #, no-wrap
 msgid ""
 "   Input document --\\                             /---> Output document\n"
@@ -4257,7 +4820,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:115
+#: doc/po4a.7.pod:141
 msgid ""
 "This little bone is the core of all the po4a architecture. If you omit the "
 "input PO and the output document, you get B<po4a-gettextize>. If you provide "
@@ -4276,107 +4839,137 @@ msgstr ""
 "L<Locale::Po4a::TransTractor(3pm)> per ulteriori dettagli.\""
 
 #. type: =head1
-#: doc/po4a.7.pod:116
+#: doc/po4a.7.pod:142
 msgid "Open-source projects using po4a"
-msgstr ""
+msgstr "Progetti open source che usano po4a"
 
 #. type: textblock
-#: doc/po4a.7.pod:117
+#: doc/po4a.7.pod:143
 msgid ""
 "Here is a very partial list of projects that use po4a in production for "
 "their documentation. If you want to add your project to the list, just drop "
 "us an email (or a Merge Request)."
 msgstr ""
+"Ecco un elenco molto incompleto di progetti che usano po4a in produzione per "
+"la loro documentazione. Se si vuole aggiungere il proprio progetto "
+"all'elenco, inviaci un'e-mail (o una richiesta di merge)."
 
 #. type: textblock
-#: doc/po4a.7.pod:118
+#: doc/po4a.7.pod:144
 msgid "adduser (man): users and groups management tool."
-msgstr ""
+msgstr "adduser (man): strumento di gestione utenti e gruppi."
 
 #. type: textblock
-#: doc/po4a.7.pod:119
+#: doc/po4a.7.pod:145
 msgid "apt (man, docbook): Debian package manager."
-msgstr ""
+msgstr "apt (man, docbook): gestore pacchetti Debian."
 
 #. type: textblock
-#: doc/po4a.7.pod:120
+#: doc/po4a.7.pod:146
 msgid "aptitude (docbook, svg): terminal-based package manager for Debian"
 msgstr ""
+"aptitude (docbook, svg): gestore pacchetti basato sul terminale per Debian."
 
 #. type: textblock
-#: doc/po4a.7.pod:121
+#: doc/po4a.7.pod:147
 msgid ""
 "L<F-Droid website|https://gitlab.com/fdroid/fdroid-website> (markdown): "
 "installable catalogue of FOSS (Free and Open Source Software) applications "
 "for the Android platform."
 msgstr ""
+"L<Sito web F-Droid|https://gitlab.com/fdroid/fdroid-website> (markdown): "
+"catalogo installabile di applicazioni FOSS (Free and Open Source Software) "
+"per la piattaforma Android."
 
 #. type: textblock
-#: doc/po4a.7.pod:122
+#: doc/po4a.7.pod:148
 msgid ""
 "L<git|https://github.com/jnavila/git-manpages-l10n> (asciidoc): distributed "
 "version-control system for tracking changes in source code."
 msgstr ""
+"L<git|https://github.com/jnavila/git-manpages-l10n> (asciidoc): sistema di "
+"controllo versione distribuito per tenere traccia delle modifiche nel codice "
+"sorgente."
 
 #. type: textblock
-#: doc/po4a.7.pod:123
+#: doc/po4a.7.pod:149
 msgid ""
 "L<Linux manpages|https://salsa.debian.org/manpages-l10n-team/manpages-l10n> "
 "(man)"
 msgstr ""
+"L<Pagine man di Linux|https://salsa.debian.org/manpages-l10n-team/manpages-"
+"l10n> (man)"
 
 #. type: textblock
-#: doc/po4a.7.pod:124
+#: doc/po4a.7.pod:150
 msgid ""
 "This project provides an infrastructure for translating many manpages to "
 "different languages, ready for integration into several major distributions "
 "(Arch Linux, Debian and derivatives, Fedora)."
 msgstr ""
+"Questo progetto fornisce un'infrastruttura per la traduzione delle pagine "
+"man in diverse lingue, pronta per l'integrazione nelle principali "
+"distribuzioni (Arch Linux, Debian e derivate, Fedora, ecc.)."
 
 #. type: textblock
-#: doc/po4a.7.pod:125
+#: doc/po4a.7.pod:151
 msgid ""
 "L<Stellarium|https://github.com/Stellarium/stellarium> (HTML): a free open "
 "source planetarium for your computer. po4a is used to translate the sky "
 "culture descriptions."
 msgstr ""
+"L<Stellarium|https://github.com/Stellarium/stellarium> (HTML): un planetario "
+"libero e open source per il tuo computer. po4a viene usato per tradurre le "
+"descrizioni nelle varie culture del cielo."
+
+#. type: textblock
+#: doc/po4a.7.pod:152
+msgid ""
+"Other item to sort out: L<https://gitlab.com/fdroid/fdroid-website/> "
+"L<https://github.com/fsfe/reuse-docs/pull/61>"
+msgstr ""
+"Altro elemento da sistemare: L<https://gitlab.com/fdroid/fdroid-website/> "
+"L<https://github.com/fsfe/reuse-docs/pull/61>"
 
 #. type: =head1
-#: doc/po4a.7.pod:126
+#: doc/po4a.7.pod:153
 msgid "FAQ"
 msgstr "FAQ"
 
 #. type: =head2
-#: doc/po4a.7.pod:127
+#: doc/po4a.7.pod:154
 msgid "How do you pronounce po4a?"
 msgstr "Come si pronuncia po4a?"
 
 #. type: textblock
-#: doc/po4a.7.pod:128
+#: doc/po4a.7.pod:155
 msgid ""
 "I personally vocalize it as L<pouah|https://en.wiktionary.org/wiki/pouah>, "
 "which is a French onomatopoetic that we use in place of yuck :) I may have a "
 "strange sense of humor :)"
 msgstr ""
+"Personalmente lo pronuncio come L<pouah|https://en.wiktionary.org/wiki/"
+"pouah>, che è un termine onomatopoetico francese che si usa al posto di "
+"schifo :) Qualcuno potrebbe dire che ho uno strano senso dell'umorismo :)"
 
 #. type: =head2
-#: doc/po4a.7.pod:129
+#: doc/po4a.7.pod:156
 msgid "What about the other translation tools for documentation using gettext?"
 msgstr ""
 "E gli altri strumenti di traduzione per la documentazione che usano gettext?"
 
 #. type: textblock
-#: doc/po4a.7.pod:130
+#: doc/po4a.7.pod:157
 msgid "As far as I know, there are only two of them:"
 msgstr "Per quando ne sappiamo, ce ne sono solo due:"
 
 #. type: =item
-#: doc/po4a.7.pod:131
+#: doc/po4a.7.pod:158
 msgid "B<poxml>"
 msgstr "B<poxml>"
 
 #. type: textblock
-#: doc/po4a.7.pod:132
+#: doc/po4a.7.pod:159
 msgid ""
 "This is the tool developed by KDE people to handle DocBook XML. AFAIK, it "
 "was the first program to extract strings to translate from documentation to "
@@ -4388,7 +4981,7 @@ msgstr ""
 "nuovamente dopo la traduzione."
 
 #. type: textblock
-#: doc/po4a.7.pod:133
+#: doc/po4a.7.pod:160
 msgid ""
 "It can only handle XML, and only a particular DTD. I'm quite unhappy with "
 "the handling of lists, which end in one big msgid. When the list become big, "
@@ -4399,80 +4992,105 @@ msgstr ""
 "l'elenco diventa grande, il blocco diventa più difficile da gestire."
 
 #. type: =item
-#: doc/po4a.7.pod:134
+#: doc/po4a.7.pod:161
 msgid "B<po-debiandoc>"
 msgstr "B<po-debiandoc>"
 
 #. type: textblock
-#: doc/po4a.7.pod:135
+#: doc/po4a.7.pod:162
 msgid ""
 "This program done by Denis Barbier is a sort of precursor of the po4a SGML "
 "module, which more or less deprecates it. As the name says, it handles only "
 "the DebianDoc DTD, which is more or less a deprecated DTD."
 msgstr ""
+"Questo programma realizzato da Denis Barbier è una sorta di precursore del "
+"modulo SGML po4a, che più o meno lo rende deprecato. Come dice il nome, "
+"gestisce solo la DTD DebianDoc, che è più o meno una DTD deprecata."
 
 #. type: textblock
-#: doc/po4a.7.pod:136
+#: doc/po4a.7.pod:163
 msgid ""
 "The main advantages of po4a over them are the ease of extra content addition "
 "(which is even worse there) and the ability to achieve gettextization."
 msgstr ""
+"I principali vantaggi di po4a rispetto ad essi sono la facilità di aggiunta "
+"di contenuti extra (che lì è anche peggio) e la capacità di ottenere la "
+"gettextization."
 
 #. type: =head2
-#: doc/po4a.7.pod:137
+#: doc/po4a.7.pod:164
 msgid "SUMMARY of the advantages of the gettext based approach"
-msgstr ""
+msgstr "SOMMARIO dei vantaggi dell'approccio basato su gettext"
 
 #. type: textblock
-#: doc/po4a.7.pod:138
+#: doc/po4a.7.pod:165
 msgid ""
 "The translations are not stored along with the original, which makes it "
 "possible to detect if translations become out of date."
 msgstr ""
+"Le traduzioni non vengono memorizzate insieme all'originale, il che rende "
+"possibile rilevare se le traduzioni diventano obsolete."
 
 #. type: textblock
-#: doc/po4a.7.pod:139
+#: doc/po4a.7.pod:166
 msgid ""
 "The translations are stored in separate files from each other, which "
 "prevents translators of different languages from interfering, both when "
 "submitting their patch and at the file encoding level."
 msgstr ""
+"Le traduzioni vengono memorizzate in file separati l'uno dall'altro, il che "
+"impedisce ai traduttori di lingue diverse di interferire, sia quando inviano "
+"la loro patch che a livello di codifica del file."
 
 #. type: textblock
-#: doc/po4a.7.pod:140
+#: doc/po4a.7.pod:167
 msgid ""
 "It is based internally on B<gettext> (but B<po4a> offers a very simple "
 "interface so that you don't need to understand the internals to use it).  "
 "That way, we don't have to re-implement the wheel, and because of their wide "
 "use, we can think that these tools are more or less bug free."
 msgstr ""
+"È basato internamente su B<gettext> (ma B<po4a> offre un'interfaccia molto "
+"semplice in modo che non sia necessario comprendere le parti interne per "
+"usarlo). In questo modo, non bisogna reinventare la ruota e, a causa del "
+"loro ampio utilizzo, possiamo assumere che questi strumenti siano più o meno "
+"privi di bug."
 
 #. type: textblock
-#: doc/po4a.7.pod:141
+#: doc/po4a.7.pod:168
 msgid ""
 "Nothing changed for the end-user (beside the fact translations will "
 "hopefully be better maintained). The resulting documentation file "
 "distributed is exactly the same."
 msgstr ""
+"Non cambia nulla per l'utente finale (a parte il fatto che si spera che le "
+"traduzioni vengano mantenute meglio). Il file di documentazione risultante "
+"distribuito rimane esattamente lo stesso."
 
 #. type: textblock
-#: doc/po4a.7.pod:142
+#: doc/po4a.7.pod:169
 msgid ""
 "No need for translators to learn a new file syntax and their favorite PO "
 "file editor (like Emacs' PO mode, Lokalize or Gtranslator) will work just "
 "fine."
 msgstr ""
+"Non c'è bisogno che i traduttori imparino una nuova sintassi di file e il "
+"loro editor di file PO preferito (come la modalità PO di Emacs, Lokalize o "
+"Gtranslator) funzionerà perfettamente."
 
 #. type: textblock
-#: doc/po4a.7.pod:143
+#: doc/po4a.7.pod:170
 msgid ""
 "gettext offers a simple way to get statistics about what is done, what "
 "should be reviewed and updated, and what is still to do. Some example can be "
 "found at those addresses:"
 msgstr ""
+"gettext offre un modo semplice per ottenere statistiche su ciò che è stato "
+"fatto, cosa dovrebbe essere revisionato e aggiornato, e cosa c'è ancora da "
+"fare. Qualche esempio si può trovare su:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:144
+#: doc/po4a.7.pod:171
 #, no-wrap
 msgid ""
 " - https://docs.kde.org/stable5/en/kdesdk/lokalize/project-view.html\n"
@@ -4484,33 +5102,41 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:145
+#: doc/po4a.7.pod:172
 msgid ""
 "But everything isn't green, and this approach also has some disadvantages we "
 "have to deal with."
 msgstr ""
+"Ma non è tutto rose e fiori e questo approccio presenta anche alcuni "
+"svantaggi che dobbiamo affrontare."
 
 #. type: textblock
-#: doc/po4a.7.pod:146
+#: doc/po4a.7.pod:173
 msgid "Addenda are… strange at the first glance."
-msgstr ""
+msgstr "Gli addenda sono… strani ad una prima occhiata."
 
 #. type: textblock
-#: doc/po4a.7.pod:147
+#: doc/po4a.7.pod:174
 msgid ""
 "You can't adapt the translated text to your preferences, like splitting a "
 "paragraph here, and joining two other ones there. But in some sense, if "
 "there is an issue with the original, it should be reported as a bug anyway."
 msgstr ""
+"Non si può adattare il testo tradotto alle proprie preferenze, come dividere "
+"un paragrafo qui e unirne altri due la. Ma in un certo senso è un bene, "
+"perché se c'è un problema con l'originale, dovrebbe comunque essere "
+"segnalato come un bug all'autore."
 
 #. type: textblock
-#: doc/po4a.7.pod:148
+#: doc/po4a.7.pod:175
 msgid ""
 "Even with an easy interface, it remains a new tool people have to learn."
 msgstr ""
+"Anche con un'interfaccia semplice, rimane un nuovo strumento che le persone "
+"devono imparare."
 
 #. type: textblock
-#: doc/po4a.7.pod:149
+#: doc/po4a.7.pod:176
 msgid ""
 "One of my dreams would be to integrate somehow po4a to Gtranslator or "
 "Lokalize. When a documentation file is opened, the strings are automatically "
@@ -4518,9 +5144,14 @@ msgid ""
 "manage to do an MS Word (TM) module (or at least RTF) professional "
 "translators may even use it."
 msgstr ""
+"Uno dei miei sogni sarebbe quello di integrare in qualche modo po4a in "
+"Gtranslator o Lokalize. Aprendo un file di documentazione, le stringhe "
+"potrebbero essere estratte automaticamente e file tradotto e file po "
+"potrebbe venire scritti su disco. Se si riesce a fare un modulo MS Word (TM) "
+"(o almeno RTF) persino i traduttori professionisti potrebbero usarlo."
 
 #. type: textblock
-#: doc/po4a.7.pod:151
+#: doc/po4a.7.pod:178
 msgid ""
 "The documentation of the all-in-one tool that you should use: L<po4a(1)>."
 msgstr ""
@@ -4528,7 +5159,7 @@ msgstr ""
 "L<po4a(1)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:152
+#: doc/po4a.7.pod:179
 msgid ""
 "The documentation of the individual po4a scripts: L<po4a-gettextize(1)>, "
 "L<po4a-updatepo(1)>, L<po4a-translate(1)>, L<po4a-normalize(1)>."
@@ -4537,7 +5168,7 @@ msgstr ""
 "updatepo(1)>, L<po4a-translate(1)>, L<po4a-normalize(1)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:153
+#: doc/po4a.7.pod:180
 msgid ""
 "The additional helping scripts: L<msguntypot(1)>, L<po4a-display-man(1)>, "
 "L<po4a-display-pod(1)>."
@@ -4546,7 +5177,7 @@ msgstr ""
 "L<po4a-display-pod(1)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:154
+#: doc/po4a.7.pod:181
 msgid ""
 "The parsers of each formats, in particular to see the options accepted by "
 "each of them: L<Locale::Po4a::AsciiDoc(3pm)> L<Locale::Po4a::Dia(3pm)>, "
@@ -4558,10 +5189,20 @@ msgid ""
 "Po4a::LaTeX(3pm)>, L<Locale::Po4a::Pod(3pm)>, L<Locale::Po4a::Sgml(3pm)>, "
 "L<Locale::Po4a::TeX(3pm)>, L<Locale::Po4a::Wml(3pm)>, L<Locale::Po4a::"
 "Xml(3pm)>."
-msgstr "I parser di ogni formato, in particolare per vedere le opzioni accettate da ognuno di essi: L<Locale::Po4a::AsciiDoc(3pm)> L<Locale::Po4a::Dia(3pm)>, L<Locale::Po4a::Guide(3pm)>, L<Locale::Po4a::Ini(3pm)>, L<Locale::Po4a::KernelHelp(3pm)>, L<Locale::Po4a::Man(3pm)>, L<Locale::Po4a::RubyDoc(3pm)>, L<Locale::Po4a::Texinfo(3pm)>, L<Locale::Po4a::Text(3pm)>, L<Locale::Po4a::Xhtml(3pm)>, L<Locale::Po4a::Yaml(3pm)>, L<Locale::Po4a::BibTeX(3pm)>, L<Locale::Po4a::Docbook(3pm)>, L<Locale::Po4a::Halibut(3pm)>, L<Locale::Po4a::LaTeX(3pm)>, L<Locale::Po4a::Pod(3pm)>, L<Locale::Po4a::Sgml(3pm)>, L<Locale::Po4a::TeX(3pm)>, L<Locale::Po4a::Wml(3pm)>, L<Locale::Po4a::Xml(3pm)>."
+msgstr ""
+"I parser di ogni formato, in particolare per vedere le opzioni accettate da "
+"ognuno di essi: L<Locale::Po4a::AsciiDoc(3pm)> L<Locale::Po4a::Dia(3pm)>, "
+"L<Locale::Po4a::Guide(3pm)>, L<Locale::Po4a::Ini(3pm)>, L<Locale::Po4a::"
+"KernelHelp(3pm)>, L<Locale::Po4a::Man(3pm)>, L<Locale::Po4a::RubyDoc(3pm)>, "
+"L<Locale::Po4a::Texinfo(3pm)>, L<Locale::Po4a::Text(3pm)>, L<Locale::Po4a::"
+"Xhtml(3pm)>, L<Locale::Po4a::Yaml(3pm)>, L<Locale::Po4a::BibTeX(3pm)>, "
+"L<Locale::Po4a::Docbook(3pm)>, L<Locale::Po4a::Halibut(3pm)>, L<Locale::"
+"Po4a::LaTeX(3pm)>, L<Locale::Po4a::Pod(3pm)>, L<Locale::Po4a::Sgml(3pm)>, "
+"L<Locale::Po4a::TeX(3pm)>, L<Locale::Po4a::Wml(3pm)>, L<Locale::Po4a::"
+"Xml(3pm)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:155
+#: doc/po4a.7.pod:182
 msgid ""
 "The implementation of the core infrastructure: L<Locale::Po4a::"
 "TransTractor(3pm)> (particularly important to understand the code "
@@ -4576,7 +5217,7 @@ msgstr ""
 "nell'albero dei sorgenti."
 
 #. type: verbatim
-#: doc/po4a.7.pod:157
+#: doc/po4a.7.pod:184
 #, no-wrap
 msgid ""
 " Denis Barbier <barbier,linuxfr.org>\n"
@@ -4685,7 +5326,9 @@ msgstr "B<forcewrap>"
 msgid ""
 "Enable automatic line wrapping in non-verbatim blocks, even if the result "
 "could be misinterpreted by AsciiDoc formatters."
-msgstr "Abilita il ritorno a capo automatico nei blocchi non-verbatim, anche se il risultato potrebbe essere mal interpretato dai compilatori AsciiDoc."
+msgstr ""
+"Abilita il ritorno a capo automatico nei blocchi non-verbatim, anche se il "
+"risultato potrebbe essere mal interpretato dai compilatori AsciiDoc."
 
 #. type: textblock
 #: lib/Locale/Po4a/AsciiDoc.pm:19
@@ -4693,7 +5336,11 @@ msgid ""
 "By default, po4a will not wrap the produced AsciiDoc files because a manual "
 "inspection is mandated to ensure that the wrapping does not change the "
 "formatting. Consider for instance the following list item:"
-msgstr "Per impostazione predefinita, po4a non manderà a capo i file AsciiDoc prodotti perché ciò rende necessaria un'ispezione manuale per controllare che ciò non cambi la formattazione. Si consideri per esempio il seguente elenco puntato:"
+msgstr ""
+"Per impostazione predefinita, po4a non manderà a capo i file AsciiDoc "
+"prodotti perché ciò rende necessaria un'ispezione manuale per controllare "
+"che ciò non cambi la formattazione. Si consideri per esempio il seguente "
+"elenco puntato:"
 
 #. type: verbatim
 #: lib/Locale/Po4a/AsciiDoc.pm:20
@@ -4701,7 +5348,9 @@ msgstr "Per impostazione predefinita, po4a non manderà a capo i file AsciiDoc p
 msgid ""
 " * a long sentence that is ending with a number 1. A second sentence.\n"
 "\n"
-msgstr " * una lunga frase che finisce con un numero 1. Una seconda frase.\n\n"
+msgstr ""
+" * una lunga frase che finisce con un numero 1. Una seconda frase.\n"
+"\n"
 
 #. type: textblock
 #: lib/Locale/Po4a/AsciiDoc.pm:21
@@ -4709,7 +5358,10 @@ msgid ""
 "If the wrapping leads to the following presentation, the item is split into "
 "a numbered sub-list. To make things worse, only the speakers of the language "
 "used in the translation can inspect the situation."
-msgstr "Se l'andare a capo porta alla seguente rappresentazione, l'elenco viene spezzato in un sotto elenco numerato. A peggiorare le cose, solo i parlanti della lingua usata nella traduzione possono controllare la situazione."
+msgstr ""
+"Se l'andare a capo porta alla seguente rappresentazione, l'elenco viene "
+"spezzato in un sotto elenco numerato. A peggiorare le cose, solo i parlanti "
+"della lingua usata nella traduzione possono controllare la situazione."
 
 #. type: verbatim
 #: lib/Locale/Po4a/AsciiDoc.pm:22
@@ -4729,14 +5381,20 @@ msgid ""
 "Note that not wrapping the files produced by po4a should not be a problem "
 "since those files are meant to be processed automatically.  They should not "
 "be regarded as source files anyway."
-msgstr "Si noti che il non andare a capo dei file prodotti da po4a non dovrebbe essere un problema dato che questi file sono stati fatti per essere elaborati automaticamente.  Non dovrebbero comunque essere considerati come file sorgenti."
+msgstr ""
+"Si noti che il non andare a capo dei file prodotti da po4a non dovrebbe "
+"essere un problema dato che questi file sono stati fatti per essere "
+"elaborati automaticamente.  Non dovrebbero comunque essere considerati come "
+"file sorgenti."
 
 #. type: textblock
 #: lib/Locale/Po4a/AsciiDoc.pm:24
 msgid ""
 "With this option, po4a will produce better-looking source files, that may "
 "lead to possibly erroneous formatted outputs."
-msgstr "Con questa opzione, po4a produrrà file sorgenti più esteticamente belli, ma che possono portare a risultati formattati erroneamente."
+msgstr ""
+"Con questa opzione, po4a produrrà file sorgenti più esteticamente belli, ma "
+"che possono portare a risultati formattati erroneamente."
 
 #. type: =item
 #: lib/Locale/Po4a/AsciiDoc.pm:25
@@ -4765,7 +5423,10 @@ msgid ""
 "This option is a flag that enables sub-table segmentation into cell "
 "content.  The segmentation is limited to cell content, without any parsing "
 "inside of it."
-msgstr "Questa opzione è una flag che abilita la segmentazione delle subtabelle nel contenuto cella.  La segmentazione è limitata al contenuto della cella, senza elaborazione all'interno di essa."
+msgstr ""
+"Questa opzione è una flag che abilita la segmentazione delle subtabelle nel "
+"contenuto cella.  La segmentazione è limitata al contenuto della cella, "
+"senza elaborazione all'interno di essa."
 
 #. type: =item
 #: lib/Locale/Po4a/AsciiDoc.pm:29
@@ -4779,15 +5440,63 @@ msgid ""
 "options are \"asciidoc\" or \"asciidoctor\". Asciidoctor has stricter "
 "parsing rules, such as equality of length of opening and closing block "
 "fences."
-msgstr "Commuta le regole di analisi alla compatibilità con diversi strumenti. Le opzioni disponibili sono \"asciidoc\" o \"asciidoctor\". Asciidoctor ha delle regole più stringenti, come uguale lunghezza dei marcatori di apertura e chiusura blocchi."
+msgstr ""
+"Commuta le regole di analisi alla compatibilità con diversi strumenti. Le "
+"opzioni disponibili sono \"asciidoc\" o \"asciidoctor\". Asciidoctor ha "
+"delle regole più stringenti, come uguale lunghezza dei marcatori di apertura "
+"e chiusura blocchi."
+
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:31
+msgid "B<yfm_keys>"
+msgstr "B<yfm_keys>"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:32 lib/Locale/Po4a/Text.pm:31
+msgid ""
+"Comma-separated list of keys to process for translation in the YAML Front "
+"Matter section. All other keys are skipped. Keys are matched with a case-"
+"insensitive match. Array values are always translated, unless the "
+"B<yfm_skip_array> option is provided."
+msgstr ""
+"Elenco separato da virgole di chiavi da elaborare per la traduzione nella "
+"sezione Front Matter di YAML. Tutte le altre chiavi vengono ignorate. Le "
+"chiavi vengono confrontate senza differenziare tra maiuscolo e minuscolo. I "
+"valori degli array vengono sempre tradotti, a meno che non si usi l'opzione "
+"B<yfm_skip_array>."
+
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:33
+msgid "B<nolinting>"
+msgstr "B<nolinting>"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:34
+msgid ""
+"Disable linting messages. When the source code cannot be fixed for clearer "
+"document structure, these messages are useless."
+msgstr ""
+"Disabilita il messaggi di linting. Quando il codice sorgente non può essere "
+"sistemato per mantenere una struttura documentale più chiara, questi "
+"messaggi sono inutili."
+
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:35
+msgid "B<yfm_skip_array>"
+msgstr "B<yfm_skip_array>"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:36 lib/Locale/Po4a/Text.pm:33
+msgid "Do not translate array values in the YAML Front Matter section."
+msgstr "Non tradurre il valori array nella sezione Front Matter di YAML."
 
 #. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:31 lib/Locale/Po4a/TeX.pm:27
+#: lib/Locale/Po4a/AsciiDoc.pm:37 lib/Locale/Po4a/TeX.pm:27
 msgid "INLINE CUSTOMIZATION"
 msgstr "PERSONALIZZAZIONE INLINE"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:32
+#: lib/Locale/Po4a/AsciiDoc.pm:38
 msgid ""
 "The AsciiDoc module can be customized with lines starting by B<//po4a:>.  "
 "These lines are interpreted as commands to the parser.  The following "
@@ -4798,12 +5507,12 @@ msgstr ""
 "Sono riconosciuti i seguenti comandi:"
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:33
+#: lib/Locale/Po4a/AsciiDoc.pm:39
 msgid "B<//po4a: macro >I<name>B<[>I<attribute list>B<]>"
 msgstr "B<//po4a: macro >I<nome>B<[>I<elenco attributi>B<]>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:34
+#: lib/Locale/Po4a/AsciiDoc.pm:40
 msgid ""
 "This permits to describe in detail the parameters of a B<macro>; I<name> "
 "must be a valid macro name, and it ends with an underscore if the target "
@@ -4814,7 +5523,7 @@ msgstr ""
 "sottolineatura (underscore) se l'obiettivo va tradotto."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:35
+#: lib/Locale/Po4a/AsciiDoc.pm:41
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -4825,7 +5534,7 @@ msgstr ""
 "per definire parametri posizionali, o attributi nominali."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:36
+#: lib/Locale/Po4a/AsciiDoc.pm:42
 msgid ""
 "If a plus sign (B<+>) is prepended to I<name>, then the macro and its "
 "arguments are translated as a whole.  There is no need to define attribute "
@@ -4837,12 +5546,12 @@ msgstr ""
 "devono essere presenti."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:37
+#: lib/Locale/Po4a/AsciiDoc.pm:43
 msgid "B<//po4a: style >B<[>I<attribute list>B<]>"
 msgstr "B<//po4a: stile >B<[>I<elenco attributi>B<]>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:38
+#: lib/Locale/Po4a/AsciiDoc.pm:44
 msgid ""
 "This permits to describe in detail which attributes of a style must be "
 "translated."
@@ -4851,7 +5560,7 @@ msgstr ""
 "devono essere tradotti."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:39
+#: lib/Locale/Po4a/AsciiDoc.pm:45
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -4864,7 +5573,7 @@ msgstr ""
 "attributo, il nome dello stile, non verrà tradotto."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:40
+#: lib/Locale/Po4a/AsciiDoc.pm:46
 msgid ""
 "If a plus sign (B<+>) is prepended to the style name, then the attribute "
 "list is translated as a whole.  There is no need to define translatable "
@@ -4875,7 +5584,7 @@ msgstr ""
 "attributi traducibili."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:41
+#: lib/Locale/Po4a/AsciiDoc.pm:47
 msgid ""
 "If a minus sign (B<->) is prepended to the style name, then this attribute "
 "is not translated."
@@ -4884,12 +5593,12 @@ msgstr ""
 "attributo non viene tradotto."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:42
+#: lib/Locale/Po4a/AsciiDoc.pm:48
 msgid "B<//po4a: entry >I<name>"
 msgstr "B<//po4a: voce >I<nome>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:43
+#: lib/Locale/Po4a/AsciiDoc.pm:49
 msgid ""
 "This declares an attribute entry as being translatable.  By default, they "
 "are not translated."
@@ -4898,7 +5607,7 @@ msgstr ""
 "predefinita, non vengono tradotte."
 
 #. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:44 lib/Locale/Po4a/BibTeX.pm:9
+#: lib/Locale/Po4a/AsciiDoc.pm:50 lib/Locale/Po4a/BibTeX.pm:9
 #: lib/Locale/Po4a/Dia.pm:10 lib/Locale/Po4a/Docbook.pm:6
 #: lib/Locale/Po4a/Guide.pm:7 lib/Locale/Po4a/Halibut.pm:7
 #: lib/Locale/Po4a/KernelHelp.pm:5 lib/Locale/Po4a/Man.pm:96
@@ -4910,12 +5619,12 @@ msgid "STATUS OF THIS MODULE"
 msgstr "STATO DI QUESTO MODULO"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:45
+#: lib/Locale/Po4a/AsciiDoc.pm:51
 msgid "Tested successfully on simple AsciiDoc files."
 msgstr "Testato con successo su semplici file AsciiDoc."
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:47
+#: lib/Locale/Po4a/AsciiDoc.pm:53
 #, no-wrap
 msgid ""
 " Nicolas François <nicolas.francois@centraliens.net>\n"
@@ -4927,7 +5636,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:49
+#: lib/Locale/Po4a/AsciiDoc.pm:55
 #, no-wrap
 msgid ""
 " Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.\n"
@@ -5887,6 +6596,8 @@ msgid ""
 "Remark: The CW face is not available for all groff devices. It is not "
 "recommended to use it. It is provided for your convenience."
 msgstr ""
+"Nota: il CW face non è disponibile per tutti i dispositivi groff. Se ne "
+"sconsiglia l'uso. Viene fornito solo per comodità dell'utente."
 
 #. type: =head2
 #: lib/Locale/Po4a/Man.pm:22
@@ -5969,7 +6680,7 @@ msgstr ""
 #. type: =head2
 #: lib/Locale/Po4a/Man.pm:32
 msgid "Putting 'E<lt>' and 'E<gt>' in translations"
-msgstr ""
+msgstr "Mettere 'E<lt>' e 'E<gt>' nelle traduzioni"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:33
@@ -5978,6 +6689,10 @@ msgid ""
 "can't use them verbatim. Use EE<lt>ltE<gt> and EE<lt>gtE<gt> instead (as in "
 "POD, one more time)."
 msgstr ""
+"Siccome questi caratteri vengono usati per delimitare parti sottoposte a "
+"modifiche del font, non si possono usare direttamente. In alternativa si "
+"consiglia di usare EE<lt>ltE<gt> e EE<lt>gtE<gt> (ancora una volta, come nei "
+"POD)."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:36 lib/Locale/Po4a/Sgml.pm:8
@@ -6015,6 +6730,9 @@ msgid ""
 "This option permits to change the behavior of the module when it encounter "
 "a .de, .ie or .if section. It can take the following values:"
 msgstr ""
+"Questa opzione permette di cambiare il comportamento del modulo quando "
+"questo incontra una sezione un .de, .ie o .if . Può prendere i seguenti "
+"valori:"
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:42 lib/Locale/Po4a/Xml.pm:27
@@ -6027,6 +6745,8 @@ msgid ""
 "This is the default value.  The module will fail when a .de, .ie or .if "
 "section is encountered."
 msgstr ""
+"È il valore predefinito.  Il modulo fallirà quando incontrerà una sezione ."
+"de, .ie o .if ."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:44
@@ -6039,6 +6759,8 @@ msgid ""
 "Indicates that the .de, .ie or .if sections must be copied as is from the "
 "original to the translated document."
 msgstr ""
+"Indica che le sezioni .de, .ie o .if devono venir copiate come sono "
+"dall'originale nel documento tradotto."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:46
@@ -6053,8 +6775,11 @@ msgid ""
 "contained in one of these section. Otherwise, I<verbatim> should be "
 "preferred."
 msgstr ""
+"Indica che le sezioni .de, .ie o .if verranno proposte per la traduzione.  "
+"Si dovrebbe usare questa opzione solo se una stringa traducibile fosse "
+"presente in una di dette sezioni. Altrimenti, sarebbe preferibile "
+"I<verbatim>."
 
-# NdT: FIXME
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:48
 msgid "B<generated>"
@@ -6068,6 +6793,10 @@ msgid ""
 "permits to use po4a on generated man pages.  This option does not take any "
 "argument."
 msgstr ""
+"Questa opzione specifica che il file è un file generato, e che quindi po4a "
+"non dovrebbe cercare di rilevare se le pagine man siano state generate da un "
+"altro formato. Ciò permette di usare po4a sulle pagine man generate. Questa "
+"opzione non accetta alcun argomento."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:50
@@ -6077,7 +6806,7 @@ msgstr "B<mdoc>"
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:51
 msgid "This option is only useful for mdoc pages."
-msgstr ""
+msgstr "Questa opzione è utile solo per le pagine mdoc."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:52
@@ -6086,6 +6815,9 @@ msgid ""
 "translate the 'NAME' section.  mdoc pages whose 'NAME' section is translated "
 "won't generate any header or footer."
 msgstr ""
+"Seleziona un supporto più stringente del formato mdoc indicando a po4a di "
+"non tradurre la sezione 'NAME'. Le pagine mdoc la cui sezione 'NAME' è "
+"tradotta non genereranno alcuna intestazione o piè di pagina."
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:53
@@ -6098,6 +6830,12 @@ msgid ""
 " -o mdoc=NAME,SYNOPSIS,DESCRIPTION\n"
 "\n"
 msgstr ""
+"Secondo la pagina groff_mdoc, le sezioni NAME, SYNOPSIS e DESCRIPTION\n"
+"sono obbligatorie.\n"
+"Non sembrano esserci problemi conosciuti nel tradurre le sezioni SYNOPSIS\n"
+"o DESCRIPTION, ma si può specificare queste sezioni anche in questo modo:\n"
+" -o mdoc=NAME,SYNOPSIS,DESCRIPTION\n"
+"\n"
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:54
@@ -6108,6 +6846,10 @@ msgid ""
 " .TH DOCUMENT_TITLE 1 \"Month day, year\" OS \"Section Name\"\n"
 "\n"
 msgstr ""
+"Questo problema di mdoc può essere risolto anche con un addendum come questo:\n"
+" PO4A-HEADER:mode=before;position=^.Dd\n"
+" .TH DOCUMENT_TITLE 1 \"Month day, year\" OS \"Section Name\"\n"
+"\n"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:55
@@ -6116,6 +6858,10 @@ msgid ""
 "with a .de request), or of a macro not supported by po4a.  They take as "
 "argument a comma-separated list of macros.  For example:"
 msgstr ""
+"Le opzioni seguenti permettono di specificare il comportamento di una nuova "
+"macro (definita con una richiesta .de), o di una macro non supportata da "
+"po4a.  Prendono come argomento un elenco separato da virgole di macro.  Per "
+"esempio:"
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:56
@@ -6124,6 +6870,8 @@ msgid ""
 " -o noarg=FO,OB,AR -o translate_joined=BA,ZQ,UX\n"
 "\n"
 msgstr ""
+" -o noarg=FO,OB,AR -o translate_joined=BA,ZQ,UX\n"
+"\n"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:57
@@ -6131,8 +6879,10 @@ msgid ""
 "Note: if a macro is not supported by po4a and if you consider that it is a "
 "standard roff macro, you should submit it to the po4a development team."
 msgstr ""
+"Nota: se una macro macro non è supportata da po4a e si ritiene che sia una "
+"macro standard roff, sarebbe desiderabile comunicarlo al team di sviluppo di "
+"po4a (N.d.T. per un'eventuale inclusione in una prossima versione di po4a)."
 
-# NdT: FIXME
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:58 lib/Locale/Po4a/Xml.pm:91
 msgid "B<untranslated>"
@@ -6158,6 +6908,8 @@ msgid ""
 "B<noarg> is like B<untranslated>, except that po4a will verify that no "
 "argument is added to this macro."
 msgstr ""
+"B<noarg> è come B<untranslated>, eccetto per il fatto che po4a verificherà "
+"che non venga aggiunto nessun argomento a questa macro."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:62
@@ -6170,6 +6922,8 @@ msgid ""
 "B<translate_joined> indicates that po4a must propose to translate the "
 "arguments of the macro."
 msgstr ""
+"B<translate_joined> indica che po4a deve proporre di tradurre gli argomenti "
+"della macro."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:64
@@ -6182,6 +6936,8 @@ msgid ""
 "With B<translate_each>, the arguments will also be proposed for the "
 "translation, except that each one will be translated separately."
 msgstr ""
+"Anche con B<translate_each>, gli argomenti verranno proposti per la "
+"traduzione, ma ognuno verrà tradotto separatamente."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:66 lib/Locale/Po4a/TeX.pm:15
@@ -6195,6 +6951,10 @@ msgid ""
 "I<end>, where I<begin> and I<end> are commands that delimit the begin and "
 "end of a section that should not be rewrapped."
 msgstr ""
+"Questa opzione prende come argomento un elenco di coppie separate da virgole "
+"I<begin>:I<end>, dove I<begin> e I<end> sono comandi che delimitano "
+"rispettivamente l'inizio e la fine di una sezione che non dovrebbe essere "
+"riformattata (N.d.T. gli a-capo non devono cambiare)."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:68
@@ -6205,6 +6965,12 @@ msgid ""
 "can specify an existing I<end> (like fi) or I<begin> (like nf) as a "
 "counterpart.  These macros (and their arguments) wont be translated."
 msgstr ""
+"Nota: non viene effettuata nessuna prova per controllare che il comando "
+"I<end> corrisponda al suo comando I<begin>; qualunque comando di fine "
+"interrompe la modalità no_wrap.  Se si ha una macro I<begin> (o "
+"rispettivamente I<end>) che non ha un I<end> (o rispettivamente I<begin>), "
+"si può specificare un I<end> esistente (come fi) o I<begin> (come nf) come "
+"controparte.  Quesre macro (ed i loro argomenti) non verranno tradotte."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:69 lib/Locale/Po4a/Xml.pm:59
@@ -6219,6 +6985,10 @@ msgid ""
 "bar baz quxE<gt> quux>, where I<bar> is the command that should be inlined, "
 "and I<baz qux> its arguments."
 msgstr ""
+"Questa opzione specifica un elenco separato da virgole di macro che non "
+"devono spezzare il paragrafo corrente. La stringa da tradurre conterrà "
+"perciò I<foo E<lt>.bar baz quxE<gt> quux>, dove I<bar> è il comando che "
+"dovrebbe essere messo sulla stessa riga, e I<baz qux> i suoi argomenti."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:71
@@ -6234,11 +7004,16 @@ msgid ""
 "B<translate_joined>, or B<translate_each> (see above for an explanation of "
 "these values)."
 msgstr ""
+"Questa opzione indica come po4a dovrebbe comportarsi quando trova una macro "
+"sconosciuta.  Per impostazione predefinita, po4a fallisce con un "
+"avvertimento.  Può prendere i seguenti valori: B<failed> (il valore "
+"predefinito), B<untranslated>, B<noarg>, B<translate_joined>, o "
+"B<translate_each> (vedere sopra per una spiegazione di questi valori)."
 
 #. type: =head1
 #: lib/Locale/Po4a/Man.pm:73
 msgid "AUTHORING MAN PAGES COMPLIANT WITH PO4A::MAN"
-msgstr ""
+msgstr "CREAZIONE DI PAGINE COMPATIBILI MAN CON PO4A::MAN"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:74
@@ -6251,6 +7026,13 @@ msgid ""
 "see their productions translated, they may have to adapt to ease the work of "
 "translators."
 msgstr ""
+"Questo modulo è ancora molto limitato, e lo sarà sempre, perché non è un "
+"vero interprete nroff. Sarebbe possibile fare un vero interprete nroff, per "
+"consentire agli autori di utilizzare tutte le macro esistenti, o anche "
+"definirne di nuove nelle loro pagine, ma non abbiamo voluto. Sarebbe stato "
+"troppo difficile, e pensavamo che non fosse necessario. Pensiamo che se gli "
+"autori delle manpage vogliono vedere le loro produzioni tradotte, potrebbero "
+"doversi adattare per facilitare il lavoro dei traduttori."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:75
@@ -6260,11 +7042,15 @@ msgid ""
 "you'll have to avoid if you want to see translators taking care of your "
 "documentation."
 msgstr ""
+"Perciò, il parser man implementato in po4a ha alcune limitazioni note, che "
+"non abbiamo intenzione di correggere, e che potranno presentare dei problemi "
+"che sarà necessario evitare se si vuole che i traduttori si prendano cura "
+"della propria documentazione."
 
 #. type: =head2
 #: lib/Locale/Po4a/Man.pm:76
 msgid "Don't program in nroff"
-msgstr ""
+msgstr "Non programmare in nroff"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:77
@@ -6274,11 +7060,15 @@ msgid ""
 "interpreter, it will fail on pages using these facilities (There are about "
 "200 such pages on my box)."
 msgstr ""
+"nroff è un linguaggio di programmazione completo, con definizione di macro, "
+"condizionali e così via. Poiché questo parser non è un interprete nroff "
+"completo, non funzionerà sulle pagine che utilizzano queste funzionalità (ci "
+"sono circa 200 di queste pagine sul mio sistema)."
 
 #. type: =head2
 #: lib/Locale/Po4a/Man.pm:78
 msgid "Use the plain macro set"
-msgstr ""
+msgstr "Usare l'insieme di macro di base"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:79
@@ -6291,6 +7081,14 @@ msgid ""
 "for them. Because of these macros, about 250 pages on my box are "
 "inaccessible to po4a::man."
 msgstr ""
+"Ci sono ancora alcune macro che non sono supportate da po4a::man. Questo "
+"solo perché non siamo riusciti a trovare nessuna documentazione su di esse. "
+"Ecco l'elenco delle macro non supportate utilizzate sul mio sistema. Si noti "
+"che questo elenco non è esaustivo poiché il programma non riesce sulla prima "
+"macro non supportata incontrata. Se potete fornire informazioni su alcune di "
+"queste macro, aggiungeremo volentieri il supporto per esse. A causa di "
+"queste macro, circa 250 pagine del mio sistema sono inaccessibili a po4a::"
+"man."
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:80
@@ -6309,11 +7107,23 @@ msgid ""
 " .TT              .UC             .ul             .Vb             .zZ\n"
 "\n"
 msgstr ""
+" ..               .\"              .AT             .b              .bank\n"
+" .BE              ..br            .Bu             .BUGS           .BY\n"
+" .ce              .dbmmanage      .do                             .En\n"
+" .EP              .EX             .Fi             .hw             .i\n"
+" .Id              .l              .LO             .mf\n"
+" .N               .na             .NF             .nh             .nl\n"
+" .Nm              .ns             .NXR            .OPTIONS        .PB\n"
+" .pp              .PR             .PRE            .PU             .REq\n"
+" .RH              .rn             .S<             .sh             .SI\n"
+" .splitfont       .Sx             .T              .TF             .The\n"
+" .TT              .UC             .ul             .Vb             .zZ\n"
+"\n"
 
 #. type: =head2
 #: lib/Locale/Po4a/Man.pm:81
 msgid "Hiding text from po4a"
-msgstr ""
+msgstr "Nascondere il testo a po4a"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:82
@@ -6324,6 +7134,11 @@ msgid ""
 "first case, I<other> should be not be translatable. And in the second case, "
 "I<other> should be translated."
 msgstr ""
+"A volte, l'autore sa che alcune parti non vanno tradotte e non dovrebbero "
+"essere estratte da po4a. Ad esempio, un'opzione potrebbe accettare un "
+"argomento I<other> e I<other> potrebbe apparire anche come ultimo elemento "
+"di un elenco. Nel primo caso, I<other> non dovrebbe essere traducibile. E "
+"nel secondo caso, I<other> dovrebbe essere tradotto."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:83
@@ -6331,6 +7146,8 @@ msgid ""
 "In such case, the author can avoid po4a to extract some strings, using some "
 "special groff constructs:"
 msgstr ""
+"In tal caso, l'autore può evitare che po4a estragga alcune stringhe, "
+"utilizzando alcuni costrutti groff speciali:"
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:84
@@ -6339,11 +7156,13 @@ msgid ""
 " .if !'po4a'hide' .B other\n"
 "\n"
 msgstr ""
+" .if !'po4a'hide' .B other\n"
+"\n"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:85
 msgid "(this will require the B<-o groff_code=verbatim> option)"
-msgstr ""
+msgstr "(ciò richiederà l'opzione B<-o groff_code=verbatim>)"
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:86
@@ -6355,6 +7174,11 @@ msgid ""
 " ..\n"
 "\n"
 msgstr ""
+"Si può anche definire una nuova macro per automatizzare l'operazione:\n"
+" .de IR_untranslated\n"
+" .    IR \\\\$@\n"
+" ..\n"
+"\n"
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:87 lib/Locale/Po4a/Man.pm:90
@@ -6363,6 +7187,8 @@ msgid ""
 " .IR_untranslated \\-q \", \" \\-\\-quiet\n"
 "\n"
 msgstr ""
+" .IR_untranslated \\-q \", \" \\-\\-quiet\n"
+"\n"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:88
@@ -6372,6 +7198,10 @@ msgid ""
 "conditional is not strictly needed since po4a will not parse the internal of "
 "the macro definition)"
 msgstr ""
+"(questo richiederà le opzioni B<-o groff_code=verbatim> e B<-o "
+"untranslated=IR_untranslated>; con questo costrutto, il condizionale B<."
+"if !'po4a'hide'> non è strettamente necessario dato che po4a non analizzerà "
+"l'interno della definizione della macro)"
 
 #. type: verbatim
 #: lib/Locale/Po4a/Man.pm:89
@@ -6381,16 +7211,19 @@ msgid ""
 " .als IR_untranslated IR\n"
 "\n"
 msgstr ""
+"o usando un'alias:\n"
+" .als IR_untranslated IR\n"
+"\n"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:91
 msgid "This will require the B<-o untranslated=als,IR_untranslated> option."
-msgstr ""
+msgstr "Ciò richiederà l'opzione B<-o untranslated=als,IR_untranslated>."
 
 #. type: =head2
 #: lib/Locale/Po4a/Man.pm:92
 msgid "Conclusion"
-msgstr ""
+msgstr "Conclusione"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:93
@@ -6402,6 +7235,13 @@ msgid ""
 "put the macro arguments on the same line that the macro itself. I know that "
 "it's valid in nroff, but would complicate too much the parser to be handled."
 msgstr ""
+"Per riassumere, fare le cose semplicemente non cercando trucchi complessi "
+"nella creazione delle pagine man. Molte cose possibili in nroff non sono "
+"supportate da questo parser. Ad esempio, non si provi a pasticciare con \\c "
+"per interrompere l'elaborazione del testo (come fanno 40 pagine sul mio "
+"sistema). In alternativa, assicurarsi di inserire gli argomenti della macro "
+"sulla stessa unica riga della macro. È valido in nroff, ma complicherebbe "
+"troppo la gestione del parser."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:94
@@ -6416,7 +7256,7 @@ msgid ""
 "and because their nroff counterpart defines a lot of new macros I didn't "
 "want to write support for. On my box, 1432 of the 4323 pages are generated "
 "from POD and will be ignored by po4a::man."
-msgstr ""
+msgstr "Naturalmente, un'altra possibilità è usare un altro formato, più facile da tradurre (come il formato POD usando po4a::pod, o uno della famiglia XML come SGML), ma grazie a po4a::man, ciò non è comunque più necessario. Detto questo, se il formato sorgente della documentazione è POD o XML, potrebbe essere conveniente tradurre il formato sorgente e non quello generato. Nella maggior parte dei casi, po4a::man rileverà le pagine generate ed emetterà un avviso. Si rifiuterà persino di elaborare le pagine generate dal POD, perché quelle pagine sono perfettamente gestite da po4a::pod e perché la loro controparte nroff definisce molte nuove macro per le quali non si è voluto darne supporto. Per esempio, sulla macchina di uno degli autori, 1432 delle 4323 pagine presenti vengono generate da file POD e sono ignorate da po4a::man."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:95
@@ -6426,17 +7266,17 @@ msgid ""
 "complete without warning, but the output will be wrong. Such cases are "
 "called \"bugs\" ;) If you encounter such case, be sure to report this, along "
 "with a fix when possible…"
-msgstr ""
+msgstr "Nella maggior parte dei casi, po4a::man rileverà il problema e si rifiuterà di elaborare la pagina, inviando un messaggio conforme. In alcuni rari casi, il programma verrà completato senza preavviso, ma l'output sarà comunque errato. Tali casi sono chiamati \"bug\" ;) Se incontra un caso del genere, sarebbe gradita la segnalazione, insieme a una correzione se possibile..."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:97
 msgid "This module can be used for most of the existing man pages."
-msgstr ""
+msgstr "Questo modulo può essere usato per la maggior parte delle pagine man esistenti."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:98
 msgid "Some tests are regularly run on Linux boxes:"
-msgstr ""
+msgstr "Alcuni test vengono effettuati con regolarità su macchine Linux:"
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:99 lib/Locale/Po4a/Man.pm:101
@@ -6451,21 +7291,21 @@ msgstr "*"
 msgid ""
 "one third of the pages are refused because they were generated from another "
 "format supported by po4a (e.g. POD or SGML)."
-msgstr ""
+msgstr "un terzo delle pagine vengono rifiutate perché sono state generate da un altro formato supportato da po4a (per es. POD o SGML)."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:102
 msgid ""
 "10% of the remaining pages are rejected with an error (e.g. a groff macro is "
 "not supported)."
-msgstr ""
+msgstr "il 10% delle pagine rimanenti vengono rifiutate con un errore (perché per es. una macro groff non è supportata)."
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:104
 msgid ""
 "Then, less than 1% of the pages are accepted silently by po4a, but with "
 "significant issues (i.e. missing words, or new words inserted)"
-msgstr ""
+msgstr "Poi, meno dell'1% delle pagine vengono accettate da po4a silenziosamente (N.d.T. ovvero senza segnalazioni), ma con problemi significativi (cioè parole mancanti, o nuove parole inserite)"
 
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:106
@@ -7816,7 +8656,10 @@ msgid ""
 "The TeX module can be customized with lines starting by B<% po4a:>.  These "
 "lines are interpreted as commands to the parser.  The following commands are "
 "recognized:"
-msgstr "Il modulo TeX può essere personalizzato con righe che cominciano con B<% po4a:>.  Queste righe vengono interpretate come comandi passati al parser. I comandi seguenti sono riconosciuti:"
+msgstr ""
+"Il modulo TeX può essere personalizzato con righe che cominciano con B<% "
+"po4a:>.  Queste righe vengono interpretate come comandi passati al parser. I "
+"comandi seguenti sono riconosciuti:"
 
 #. type: =item
 #: lib/Locale/Po4a/TeX.pm:29
@@ -8265,7 +9108,8 @@ msgstr "Elabora una riga di definizione nella forma \"% po4a: \"."
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:87
 msgid "See the B<INLINE CUSTOMIZATION> section for more details."
-msgstr "Vedere la sezione B<PERSONALIZZAZIONE INLINE> per ulteriori dettagli."
+msgstr ""
+"Consultare la sezione B<PERSONALIZZAZIONE INLINE> per ulteriori dettagli."
 
 #. type: =item
 #: lib/Locale/Po4a/TeX.pm:88
@@ -8634,23 +9478,9 @@ msgstr ""
 msgid "B<yfm_keys> (markdown-only)"
 msgstr ""
 
-#. type: textblock
-#: lib/Locale/Po4a/Text.pm:31
-msgid ""
-"Comma-separated list of keys to process for translation in the YAML Front "
-"Matter section. All other keys are skipped. Keys are matched with a case-"
-"insensitive match. Array values are always translated, unless the "
-"B<yfm_skip_array> option is provided."
-msgstr ""
-
 #. type: =item
 #: lib/Locale/Po4a/Text.pm:32
 msgid "B<yfm_skip_array> (markdown-only)"
-msgstr ""
-
-#. type: textblock
-#: lib/Locale/Po4a/Text.pm:33
-msgid "Do not translate array values in the YAML Front Matter section."
 msgstr ""
 
 #. type: =item
@@ -10127,7 +10957,7 @@ msgstr ""
 #. type: =item
 #: lib/Locale/Po4a/Xml.pm:74
 msgid "B<translated>"
-msgstr "B<tradotto>"
+msgstr "B<translated>"
 
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:75
@@ -10230,7 +11060,7 @@ msgstr ""
 #. type: =item
 #: lib/Locale/Po4a/Xml.pm:95
 msgid "B<defaulttranslateoption>"
-msgstr "B<opzioneditraduzionepredefinita>"
+msgstr "B<defaulttranslateoption>"
 
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:96
@@ -10300,7 +11130,7 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:105
 msgid "See L<Locale::Po4a::Docbook(3pm)|Locale::Po4a::Docbook>,"
-msgstr "Vedere L<Locale::Po4a::Docbook(3pm)|Locale::Po4a::Docbook>,"
+msgstr "Consultare L<Locale::Po4a::Docbook(3pm)|Locale::Po4a::Docbook>,"
 
 #. type: =head2
 #: lib/Locale/Po4a/Xml.pm:106
