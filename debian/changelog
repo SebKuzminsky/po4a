@@ -1,3 +1,10 @@
+po4a (0.66-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+    - asciidoc: deal with empty cells (Closes: #1002303).
+
+ -- Martin Quinson <mquinson@debian.org>  Thu, 23 Dec 2021 12:21:30 +0100
+
 po4a (0.65-1) unstable; urgency=medium
 
   * New upstream release.
