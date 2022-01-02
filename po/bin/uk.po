@@ -2,62 +2,62 @@
 # This file is distributed under the same license as the po4a package.
 #
 # Sergey Dimchenko, 2005.
-# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2012, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2010, 2012, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: po4a\n"
-"Report-Msgid-Bugs-To: po4a@packages.debian.org\n"
-"POT-Creation-Date: 2020-09-22 21:41+0200\n"
-"PO-Revision-Date: 2020-09-09 19:36+0000\n"
+"Report-Msgid-Bugs-To: martin.quinson@debian.org\n"
+"POT-Creation-Date: 2021-12-23 17:41+0100\n"
+"PO-Revision-Date: 2021-12-24 21:51+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
-"Language-Team: Ukrainian <https://hosted.weblate.org/projects/po4a/po4a/uk/"
-">\n"
+"Language-Team: Ukrainian <https://hosted.weblate.org/projects/po4a/po4a/uk/>"
+"\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.10.1\n"
 "X-Rosetta-Version: 0.1\n"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:178 ../../lib/Locale/Po4a/Man.pm:496
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:211 ../../lib/Locale/Po4a/Man.pm:496
 #: ../../lib/Locale/Po4a/Po.pm:235 ../../lib/Locale/Po4a/RubyDoc.pm:74
-#: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1662
-#: ../../lib/Locale/Po4a/Text.pm:211 ../../lib/Locale/Po4a/Xml.pm:598
-#: ../../lib/Locale/Po4a/Yaml.pm:39
+#: ../../lib/Locale/Po4a/Sgml.pm:258 ../../lib/Locale/Po4a/TeX.pm:1663
+#: ../../lib/Locale/Po4a/Text.pm:211 ../../lib/Locale/Po4a/Xml.pm:601
+#: ../../lib/Locale/Po4a/Yaml.pm:40
 #, perl-format
 msgid "Unknown option: %s"
 msgstr "Невідомий параметр: «%s»"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:185
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:218
 #, perl-format
 msgid "Invalid compatibility setting: '%s'. It must be either '%s' or '%s'."
 msgstr ""
 "Некоректний параметр сумісності: «%s». Значенням параметра сумісності має "
 "бути «%s» або «%s»."
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:243
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:283
 #, perl-format
 msgid "Unable to parse macro definition: %s"
 msgstr "Не вдалося обробити визначення макроса: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:290 ../../lib/Locale/Po4a/TeX.pm:1064
-#: ../../po4a:954 ../../po4a:1043 ../../po4a:1285 ../../po4a-translate:298
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:330 ../../lib/Locale/Po4a/TeX.pm:1065
+#: ../../po4a:971 ../../po4a:1061 ../../po4a:1310 ../../po4a-translate:298
 #, perl-format
 msgid "Cannot open %s: %s"
 msgstr "Не вдалося відкрити %s: %s"
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:325
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:366
 #, perl-format
 msgid ""
 "Detection of two line titles failed at %s\n"
-"Please install the Unicode::GCString module."
+"Please install the Unicode::GCString module (error: %s)."
 msgstr ""
 "Спроба виявлення дворядкових заголовків зазнала невдачі, %s\n"
-"Будь ласка, встановіть модуль Unicode::GCString."
+"Будь ласка, встановіть модуль Unicode::GCString (помилка: %s)."
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:449
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:516
 #, perl-format
 msgid ""
 "'%s' seems to be a two-lines title underlined with '%s', but the underlines "
@@ -68,7 +68,17 @@ msgstr ""
 "підкреслення є надто короткими або надто довгими щодо довжини заголовка. Вам "
 "варто виправити цю помилку у основному документі."
 
-#: ../../lib/Locale/Po4a/AsciiDoc.pm:908
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:705
+msgid ""
+"Po4a's tablecells mode only supports PSV formatted tables with '|' "
+"separators. Disabling tablecells and falling back to block mode for this "
+"table."
+msgstr ""
+"У режимі комірок таблиці Po4a передбачено підтримку лише таблиць із "
+"відокремленням комірок символом «|». Вимикаємо режим комірок таблиці і "
+"повертаємося до блокового режиму для цієї таблиці."
+
+#: ../../lib/Locale/Po4a/AsciiDoc.pm:1009
 msgid ""
 "It seems that you are adding unindented content to an item. The standard "
 "allows this, but you may still want to change your document to use indented "
@@ -175,7 +185,7 @@ msgid ""
 "%s version %s.\n"
 "Written by Martin Quinson and Denis Barbier.\n"
 "\n"
-"Copyright © 2002-2020 Software in the Public Interest, Inc.\n"
+"Copyright © 2002-2021 Software in the Public Interest, Inc.\n"
 "This is free software; see source code for copying\n"
 "conditions. There is NO warranty; not even for\n"
 "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE."
@@ -183,7 +193,7 @@ msgstr ""
 "%s версії %s.\n"
 "створено Martin Quinson і Denis Barbier.\n"
 "\n"
-"© Software in the Public Interest, Inc., 2002—2020\n"
+"© Software in the Public Interest, Inc., 2002—2021\n"
 "Це вільне програмне забезпечення, умови копіювання\n"
 "можна знайти у пакунку з кодами. Жодних гарантій, навіть\n"
 "гарантій ДІЄЗДАТНОСТІ чи ПРИДАТНОСТІ ДЛЯ ПЕВНОЇ МЕТИ\n"
@@ -198,7 +208,7 @@ msgstr "Перекладене поле у основному документі
 msgid "Begin of a new entry before the end of previous one"
 msgstr "Початок нового запису до завершення попереднього"
 
-#: ../../lib/Locale/Po4a/KernelHelp.pm:100
+#: ../../lib/Locale/Po4a/KernelHelp.pm:98
 msgid "Syntax error"
 msgstr "Синтаксична помилка"
 
@@ -434,7 +444,7 @@ msgstr ""
 "Некоректний файл po %s:\n"
 "%s"
 
-#: ../../lib/Locale/Po4a/Po.pm:340 ../../lib/Locale/Po4a/TeX.pm:961
+#: ../../lib/Locale/Po4a/Po.pm:340 ../../lib/Locale/Po4a/TeX.pm:962
 #: ../../lib/Locale/Po4a/TransTractor.pm:448
 #: ../../lib/Locale/Po4a/TransTractor.pm:601 ../../lib/Locale/Po4a/Xhtml.pm:140
 #, perl-format
@@ -473,7 +483,7 @@ msgid "Cannot unlink %s: %s."
 msgstr "Не вдалося від’єднати %s: %s."
 
 #: ../../lib/Locale/Po4a/Po.pm:631 ../../lib/Locale/Po4a/Po.pm:635
-#: ../../po4a:1724
+#: ../../po4a:1759
 #, perl-format
 msgid "Cannot move %s to %s: %s."
 msgstr "Не вдалося пересунути %s до %s: %s."
@@ -736,17 +746,17 @@ msgstr ""
 "додатковим аргументом:\n"
 "   -o debug=onsgmls"
 
-#: ../../lib/Locale/Po4a/TeX.pm:521 ../../lib/Locale/Po4a/TeX.pm:605
+#: ../../lib/Locale/Po4a/TeX.pm:520 ../../lib/Locale/Po4a/TeX.pm:604
 #, perl-format
 msgid "un-balanced %s in '%s'"
 msgstr "неврівноважений %s у «%s»"
 
-#: ../../lib/Locale/Po4a/TeX.pm:536 ../../lib/Locale/Po4a/TeX.pm:624
+#: ../../lib/Locale/Po4a/TeX.pm:535 ../../lib/Locale/Po4a/TeX.pm:623
 #, perl-format
 msgid "Error while checking the number of arguments of the '%s' command: %s"
 msgstr "Помилка під час спроби перевірки кількості параметрів команди «%s»: %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:810 ../../lib/Locale/Po4a/TeX.pm:912
+#: ../../lib/Locale/Po4a/TeX.pm:809 ../../lib/Locale/Po4a/TeX.pm:911
 #, perl-format
 msgid "Unknown command: '%s'"
 msgstr "Невідома команда: «%s»"
@@ -755,28 +765,28 @@ msgstr "Невідома команда: «%s»"
 msgid "Cannot read from file without having a filename"
 msgstr "Читання файла без вказаної назви файла неможливе"
 
-#: ../../lib/Locale/Po4a/TeX.pm:999
+#: ../../lib/Locale/Po4a/TeX.pm:1000
 #, perl-format
 msgid "Cannot find %s with kpsewhich"
 msgstr "Не вдалося знайти %s за допомогою kpsewhich"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1030 ../../lib/Locale/Po4a/TransTractor.pm:473
+#: ../../lib/Locale/Po4a/TeX.pm:1031 ../../lib/Locale/Po4a/TransTractor.pm:473
 #: ../../lib/Locale/Po4a/Xhtml.pm:147
 #, perl-format
 msgid "Cannot close %s after reading: %s"
 msgstr "Не вдалося закрити %s після читання: %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1055
+#: ../../lib/Locale/Po4a/TeX.pm:1056
 #, perl-format
 msgid "kpsewhich cannot find %s"
 msgstr "kpsewhich не вдалося знайти %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1101
+#: ../../lib/Locale/Po4a/TeX.pm:1102
 #, perl-format
 msgid "Cannot use an alias to the unknown command '%s'"
 msgstr "Не вдалося використати іншу назву невідомої команди «%s»"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1108
+#: ../../lib/Locale/Po4a/TeX.pm:1109
 #, perl-format
 msgid ""
 "You are using the old definitions format (%s).  Please update this "
@@ -785,39 +795,39 @@ msgstr ""
 "Ви використовуєте застарілий формат визначення (%s). Будь ласка, оновіть цей "
 "рядок визначення."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1317 ../../lib/Locale/Po4a/TeX.pm:1570
+#: ../../lib/Locale/Po4a/TeX.pm:1318 ../../lib/Locale/Po4a/TeX.pm:1571
 #, perl-format
 msgid "unknown environment: '%s'"
 msgstr "невідоме середовище: «%s»"
 
 #. a begin may have been hidden in the middle of a translated
 #. buffer. FIXME: Just warn for now.
-#: ../../lib/Locale/Po4a/TeX.pm:1340
+#: ../../lib/Locale/Po4a/TeX.pm:1341
 #, perl-format
 msgid "unmatched end of environment '%s'"
 msgstr "невідповідне завершення середовища «%s»"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1390 ../../lib/Locale/Po4a/TeX.pm:1499
+#: ../../lib/Locale/Po4a/TeX.pm:1391 ../../lib/Locale/Po4a/TeX.pm:1500
 #, perl-format
 msgid "Wrong number of arguments for the '%s' command."
 msgstr "Помилкова кількість аргументів команди «%s»."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1402 ../../lib/Locale/Po4a/TeX.pm:1511
-#: ../../lib/Locale/Po4a/TeX.pm:1597
+#: ../../lib/Locale/Po4a/TeX.pm:1403 ../../lib/Locale/Po4a/TeX.pm:1512
+#: ../../lib/Locale/Po4a/TeX.pm:1598
 msgid "An optional argument was provided, but a mandatory one is expected."
 msgstr "Вказано необов’язковий параметр, обов’язковий параметр пропущено."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1403 ../../lib/Locale/Po4a/TeX.pm:1512
+#: ../../lib/Locale/Po4a/TeX.pm:1404 ../../lib/Locale/Po4a/TeX.pm:1513
 #, perl-format
 msgid "Command '%s': %s"
 msgstr "Команда «%s»: %s"
 
-#: ../../lib/Locale/Po4a/TeX.pm:1459
+#: ../../lib/Locale/Po4a/TeX.pm:1460
 #, perl-format
 msgid "register_generic_command: unsupported format: '%s'."
 msgstr "register_generic_command: непідтримуваний формат: «%s»."
 
-#: ../../lib/Locale/Po4a/TeX.pm:1565
+#: ../../lib/Locale/Po4a/TeX.pm:1566
 msgid "The first argument of \\begin is mandatory."
 msgstr "Перший параметр \\begin є обов’язковим."
 
@@ -963,12 +973,12 @@ msgstr ""
 msgid ">>> filename = '%s'"
 msgstr ">>> назва файла = «%s»"
 
-#: ../../lib/Locale/Po4a/Xml.pm:750
+#: ../../lib/Locale/Po4a/Xml.pm:753
 #, perl-format
 msgid "Internal error: unknown type identifier '%s'."
 msgstr "Внутрішня помилка: невідомий тип ідентифікатора «%s»."
 
-#: ../../lib/Locale/Po4a/Xml.pm:947
+#: ../../lib/Locale/Po4a/Xml.pm:950
 #, perl-format
 msgid ""
 "Bad document type. '%s' expected. You can fix this warning with a -o doctype "
@@ -978,7 +988,7 @@ msgstr ""
 "попередження можна використання параметра -o doctype або вимиканням "
 "перевірки за допомогою параметра -o doctype=\"\"."
 
-#: ../../lib/Locale/Po4a/Xml.pm:1044 ../../lib/Locale/Po4a/Xml.pm:1784
+#: ../../lib/Locale/Po4a/Xml.pm:1047 ../../lib/Locale/Po4a/Xml.pm:1787
 #, perl-format
 msgid ""
 "Unexpected closing tag </%s> found. The main document may be wrong.  "
@@ -987,14 +997,14 @@ msgstr ""
 "Виявлено неочікуваний завершальний теґ </%s>. Можливо, помилка у основному "
 "документі. Продовжуємо обробку…"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1050 ../../lib/Locale/Po4a/Xml.pm:1793
+#: ../../lib/Locale/Po4a/Xml.pm:1053 ../../lib/Locale/Po4a/Xml.pm:1796
 #, perl-format
 msgid "Unexpected closing tag </%s> found. The main document may be wrong."
 msgstr ""
 "Виявлено неочікуваний завершальний теґ </%s>. Можливо, помилка у основному "
 "документі."
 
-#: ../../lib/Locale/Po4a/Xml.pm:1431
+#: ../../lib/Locale/Po4a/Xml.pm:1434
 #, perl-format
 msgid ""
 "%s: attribute '%s' is not defined in module option 'attributes' and\n"
@@ -1003,17 +1013,17 @@ msgstr ""
 "%s: атрибут «%s» не визначено у параметрі модуля «attributes» і\n"
 "....  не перекладено для шляху до атрибутів «%s»"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1450
+#: ../../lib/Locale/Po4a/Xml.pm:1453
 #, perl-format
 msgid "%s: Bad attribute syntax.  Continuing…"
 msgstr "%s: помилковий синтаксис параметра. Продовжуємо обробку…"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1452
+#: ../../lib/Locale/Po4a/Xml.pm:1455
 #, perl-format
 msgid "%s: Bad attribute syntax"
 msgstr "%s: помилковий синтаксис параметра"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1575
+#: ../../lib/Locale/Po4a/Xml.pm:1578
 #, perl-format
 msgid ""
 "%s: translation option='%s'.\n"
@@ -1024,14 +1034,14 @@ msgstr ""
 " *** початковий параметр перекладу перевизначено, оскільки батьківський "
 "шлях=«%s» не перекладено,"
 
-#: ../../lib/Locale/Po4a/Xml.pm:1589
+#: ../../lib/Locale/Po4a/Xml.pm:1592
 #, perl-format
 msgid "%s: foldattributes setting ignored since '%s' is not inline tag"
 msgstr ""
 "%s: параметр foldattributes проігноновано, оскільки «%s» не є вбудованим "
 "теґом"
 
-#: ../../lib/Locale/Po4a/Xml.pm:2015
+#: ../../lib/Locale/Po4a/Xml.pm:2018
 #, perl-format
 msgid ""
 "Invalid placeholder in the translation (the 'type' and 'id' must be present, "
@@ -1046,7 +1056,7 @@ msgstr ""
 "\n"
 "Будь ласка, виправте переклад."
 
-#: ../../lib/Locale/Po4a/Xml.pm:2102 ../../lib/Locale/Po4a/Xml.pm:2117
+#: ../../lib/Locale/Po4a/Xml.pm:2105 ../../lib/Locale/Po4a/Xml.pm:2120
 #, perl-format
 msgid ""
 "The '%s' option is deprecated. Please use the translated/untranslated and/or "
@@ -1055,10 +1065,10 @@ msgstr ""
 "Параметр «%s» вважається застарілим. Будь ласка, скористайтеся категоріями "
 "translated/untranslated і/або break/inline/placeholder."
 
-#: ../../lib/Locale/Po4a/Xml.pm:2280 ../../lib/Locale/Po4a/Xml.pm:2287
-#: ../../lib/Locale/Po4a/Xml.pm:2290 ../../lib/Locale/Po4a/Xml.pm:2293
-#: ../../lib/Locale/Po4a/Xml.pm:2298 ../../lib/Locale/Po4a/Xml.pm:2301
-#: ../../lib/Locale/Po4a/Xml.pm:2306
+#: ../../lib/Locale/Po4a/Xml.pm:2283 ../../lib/Locale/Po4a/Xml.pm:2290
+#: ../../lib/Locale/Po4a/Xml.pm:2293 ../../lib/Locale/Po4a/Xml.pm:2296
+#: ../../lib/Locale/Po4a/Xml.pm:2301 ../../lib/Locale/Po4a/Xml.pm:2304
+#: ../../lib/Locale/Po4a/Xml.pm:2309
 #, perl-format
 msgid "Tag '%s' both in the %s and %s categories."
 msgstr "Теґ «%s» належить обом категоріям: %s і %s."
@@ -1070,7 +1080,7 @@ msgid "Mandatory argument '%s' missing."
 msgstr "Не вказано обов’язкового параметра «%s»."
 
 #. Check file existence
-#: ../../msguntypot:164 ../../msguntypot:166 ../../po4a:942
+#: ../../msguntypot:164 ../../msguntypot:166 ../../po4a:949
 #: ../../po4a-gettextize:386 ../../po4a-normalize:176 ../../po4a-translate:239
 #: ../../po4a-translate:240 ../../po4a-updatepo:274
 #, perl-format
@@ -1091,7 +1101,7 @@ msgstr ""
 msgid "Found %d modified entries."
 msgstr "Виявлено %d змінених записів."
 
-#: ../../msguntypot:203 ../../po4a:1592
+#: ../../msguntypot:203 ../../po4a:1623
 #, perl-format
 msgid "Cannot create a temporary PO file: %s"
 msgstr "Не вдалося створити тимчасовий файл PO: %s"
@@ -1111,63 +1121,63 @@ msgstr "Не вдалося виконати msgmerge: %s"
 msgid "Modified %d entries in %d files."
 msgstr "Змінено %d записів у %d файлах."
 
-#: ../../po4a:825 ../../po4a:829
+#: ../../po4a:832 ../../po4a:836
 #, perl-format
 msgid "Option %s invalid. Directory %s does not exist (current directory: %s)."
 msgstr "Некоректний параметр %s. Каталогу %s не існує (поточний каталог: %s)."
 
 #. TRANSLATOR: There is two chunks in the following:  opt:"--keep 20" opt:"-o nowrap"
-#: ../../po4a:865
+#: ../../po4a:872
 #, perl-format
 msgid "Unparsable option chunk '%s' (%s)."
 msgstr "Непридатний для обробки фрагмент параметра «%s» (%s)."
 
-#: ../../po4a:874
+#: ../../po4a:881
 #, perl-format
 msgid "Skipping option chunk '%s'."
 msgstr "Пропускаємо фрагмент параметра «%s»."
 
-#: ../../po4a:923
+#: ../../po4a:930
 #, perl-format
 msgid "failed to execute '%s': %s."
 msgstr "не вдалося виконати «%s»: %s."
 
-#: ../../po4a:926
+#: ../../po4a:933
 #, perl-format
 msgid "'%s' died with signal %d, with coredump."
 msgstr "«%s» завершила роботу з сигналом %d та дампом ядра."
 
-#: ../../po4a:928
+#: ../../po4a:935
 #, perl-format
 msgid "'%s' died with signal %d, without coredump."
 msgstr "«%s» завершила роботу з сигналом %d, без дампу ядра."
 
-#: ../../po4a:931
+#: ../../po4a:938
 #, perl-format
 msgid "'%s' exited with value %d."
 msgstr "«%s» завершила роботу зі значенням %d."
 
-#: ../../po4a:934
+#: ../../po4a:941
 #, perl-format
 msgid "Error: %s"
 msgstr "Помилка: %s"
 
-#: ../../po4a:967 ../../po4a:1052 ../../po4a:1295
+#: ../../po4a:984 ../../po4a:1070 ../../po4a:1320
 #, perl-format
 msgid "Unknown variable: %s"
 msgstr "Невідома змінна: %s"
 
-#: ../../po4a:977
+#: ../../po4a:994
 #, perl-format
 msgid "Syntax error: %s"
 msgstr "Синтаксична помилка: %s"
 
-#: ../../po4a:1008 ../../po4a:1070
+#: ../../po4a:1025 ../../po4a:1088
 #, perl-format
 msgid "'%s' redeclared"
 msgstr "«%s» перевизначено"
 
-#: ../../po4a:1015
+#: ../../po4a:1033
 #, perl-format
 msgid ""
 "Your POT file '%s' file name does not end with the 'pot' extension. This is "
@@ -1176,7 +1186,7 @@ msgstr ""
 "Назва вашого файла POT «%s» не завершується суфіксом «pot». Це не є типовим "
 "і може спантеличити перекладачів."
 
-#: ../../po4a:1023
+#: ../../po4a:1041
 #, perl-format
 msgid ""
 "No PO file provided as subsequent parameters to '%s'. Your documentation "
@@ -1185,116 +1195,116 @@ msgstr ""
 "Не вказано файла PO як наступних параметрів «%s». Вашу документацію не буде "
 "перекладено."
 
-#: ../../po4a:1028
+#: ../../po4a:1046
 #, perl-format
 msgid "Unparsable argument '%s'."
 msgstr "Непридатний для обробки параметр «%s»."
 
-#: ../../po4a:1075
+#: ../../po4a:1093
 msgid "The list of languages cannot be set twice."
 msgstr "Не можна двічі визначати список мов."
 
-#: ../../po4a:1077
+#: ../../po4a:1095
 msgid "The POT file cannot be set twice."
 msgstr "Не можна двічі визначати файл POT."
 
-#: ../../po4a:1089 ../../po4a:1105
+#: ../../po4a:1107 ../../po4a:1123
 #, perl-format
 msgid "Using '%s' as a %s."
 msgstr "Використовуємо \"%s\" як %s."
 
-#: ../../po4a:1091
+#: ../../po4a:1109
 #, perl-format
 msgid "'%s' is not a directory (current dir: %s)"
 msgstr "«%s» не є каталогом (поточний каталог - %s)"
 
-#: ../../po4a:1096
+#: ../../po4a:1114
 #, perl-format
 msgid "Cannot list the '%s' directory"
 msgstr "Не вдалося побудувати список вмісту каталогу «%s»"
 
-#: ../../po4a:1110
+#: ../../po4a:1128
 #, perl-format
 msgid "Cannot list directory '%s' in '%s' "
 msgstr "Не вдалося створити список вмісту каталогу «%s» у « %s» "
 
-#: ../../po4a:1116
+#: ../../po4a:1134
 #, perl-format
 msgid "Directory '%s' not found in '%s'."
 msgstr "Каталог «%s» не знайдено у «%s»."
 
-#: ../../po4a:1119 ../../po4a:1122
+#: ../../po4a:1137 ../../po4a:1140
 #, perl-format
 msgid "Directory '%s' not found in '%s' nor in '%s'."
 msgstr "Каталог «%s» не знайдено ні у «%s», ні у «%s»."
 
-#: ../../po4a:1126
+#: ../../po4a:1144
 #, perl-format
 msgid "Directory '%s' not found in '%s' nor in '%s' nor in '%s'."
 msgstr "Каталог «%s» не знайдено ні у «%s», ні у «%s», ні у «%s»."
 
-#: ../../po4a:1137
+#: ../../po4a:1155
 #, perl-format
 msgid "Language '%s' found twice in '%s' and '%s'."
 msgstr "Мову «%s» знайдено двічі — у «%s» і у «%s»."
 
-#: ../../po4a:1141
+#: ../../po4a:1159
 #, perl-format
 msgid "Found language '%s' in the provided po_directory: %s"
 msgstr "Знайдено мову «%s» у вказаному po_directory: %s"
 
-#: ../../po4a:1145
+#: ../../po4a:1163
 #, perl-format
 msgid "%s:%d: too many POT files: '%s' and '%s'."
 msgstr "%s: %d: забагато файлів POT: «%s» і «%s»."
 
-#: ../../po4a:1149
+#: ../../po4a:1167
 #, perl-format
 msgid "Found POT file '%s' in the provided po_directory."
 msgstr "Знайдено файл POT «%s» у вказаному po_directory."
 
-#: ../../po4a:1159
+#: ../../po4a:1177
 #, perl-format
 msgid "No PO files found in '%s'/'%s'."
 msgstr "У «%s»/«%s» не виявлено файлів PO."
 
-#: ../../po4a:1162 ../../po4a:1165
+#: ../../po4a:1180 ../../po4a:1183
 #, perl-format
 msgid "No PO files found in '%s'/'%s' nor in '%s'/'%s'."
 msgstr "Ні у «%s»/«%s», ні у «%s»/«%s» не виявлено файлів PO."
 
-#: ../../po4a:1169
+#: ../../po4a:1187
 #, perl-format
 msgid "No PO files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."
 msgstr "Ні у «%s»/«%s», ні у «%s»/«%s», ні у «%s»/«%s» не виявлено файлів PO."
 
-#: ../../po4a:1173
+#: ../../po4a:1191
 msgid "Your project will not be translated to any language."
 msgstr "Ваш проєкт не буде перекладено жодною мовою."
 
-#: ../../po4a:1179
+#: ../../po4a:1197
 #, perl-format
 msgid "No POT files found in '%s'/'%s'."
 msgstr "У «%s»/«%s» не виявлено файлів POT."
 
-#: ../../po4a:1182 ../../po4a:1185
+#: ../../po4a:1200 ../../po4a:1203
 #, perl-format
 msgid "No POT files found in '%s'/'%s' nor in '%s'/'%s'."
 msgstr "Ні у «%s»/«%s», ні у «%s»/«%s» не виявлено файлів POT."
 
-#: ../../po4a:1189
+#: ../../po4a:1207
 #, perl-format
 msgid "No POT files found in '%s'/'%s' nor in '%s'/'%s' nor in '%s'/'%s'."
 msgstr "Ні у «%s»/«%s», ні у «%s»/«%s», ні у «%s»/«%s» не виявлено файлів POT."
 
-#: ../../po4a:1193
+#: ../../po4a:1211
 msgid ""
 "Please create an empty file with the 'pot' extension (e.g. 'myproject.pot')."
 msgstr ""
 "Будь ласка, створіть порожній файл із суфіксом назви «pot» (наприклад, "
 "«myproject.pot»)."
 
-#: ../../po4a:1203
+#: ../../po4a:1221
 #, perl-format
 msgid ""
 "The master file '%s' was specified earlier in the configuration file. This "
@@ -1303,95 +1313,103 @@ msgstr ""
 "Основний файл «%s» було вказано у файлі налаштувань раніше. Такий порядок "
 "може спричинити проблеми з параметрами."
 
-#: ../../po4a:1208
+#: ../../po4a:1226
 #, perl-format
 msgid "The master file '%s' does not exist."
 msgstr "Основного файла «%s» не існує."
 
-#: ../../po4a:1267
+#: ../../po4a:1270
+msgid ""
+"Option 'master:file' is deprecated. Please use 'pot' instead for the same "
+"effect."
+msgstr ""
+"Параметр «master:файл» є застарілим. Будь ласка, скористайтеся замість нього "
+"параметром «pot», щоб отримати той самий результат."
+
+#: ../../po4a:1292
 #, perl-format
 msgid "Unparsable argument '%s' (%s)."
 msgstr "Непридатний для обробки параметр «%s» (%s)."
 
-#: ../../po4a:1270
+#: ../../po4a:1295
 msgid "The translated and master file are the same."
 msgstr "Дані у перекладеному і основному файлі збігаються."
 
-#: ../../po4a:1312
+#: ../../po4a:1337
 #, perl-format
 msgid "Translation of %s in %s redefined"
 msgstr "Переклад %s у %s перевизначено"
 
-#: ../../po4a:1332
+#: ../../po4a:1357
 #, perl-format
 msgid "Unparsable command '%s'."
 msgstr "Непридатна для обробки команда «%s»."
 
 #. don't care about error here
-#: ../../po4a:1338
+#: ../../po4a:1363
 msgid ""
 "'po4a_paths' is not defined in the configuration file. Where are the POT and "
 "PO files?"
 msgstr ""
 "«po4a_paths» не визначено у файлі налаштувань. Де шукати файли POT і PO?"
 
-#: ../../po4a:1354
+#: ../../po4a:1379
 #, perl-format
 msgid "Cannot parse option line (missing >%s<?): %s"
 msgstr "Не вдалося обробити рядок параметрів (немає >%s<?): %s"
 
-#: ../../po4a:1385
+#: ../../po4a:1407
 #, perl-format
 msgid "Split mode, creating a temporary POT:"
 msgstr "Режим поділу, створюємо тимчасовий файл POT:"
 
-#: ../../po4a:1388
+#: ../../po4a:1410
 msgid "Disabling --translate-only option, it is not supported in split mode"
 msgstr ""
 "Параметр --translate-only вимкнено, його підтримки у режимі поділу не "
 "передбачено"
 
-#: ../../po4a:1444
+#: ../../po4a:1459
 #, perl-format
 msgid "NOT updating %s as requested (--no-update)."
 msgstr "НЕ оновлюємо %s, як наказано (--no-update)."
 
-#: ../../po4a:1448 ../../po4a:1649 ../../po4a-updatepo:302
+#: ../../po4a:1463 ../../po4a:1680 ../../po4a-updatepo:302
 #, perl-format
 msgid "Updating %s:"
 msgstr "Оновлення %s:"
 
-#: ../../po4a:1452
+#: ../../po4a:1467
 #, perl-format
 msgid "NOT creating %s as requested (--no-update)."
 msgstr "НЕ створюємо %s, як наказано (--no-update)."
 
-#: ../../po4a:1455 ../../po4a-updatepo:315
+#: ../../po4a:1470 ../../po4a-updatepo:315
 #, perl-format
 msgid "Creating %s:"
 msgstr "Створення %s:"
 
-#: ../../po4a:1527 ../../po4a:1560 ../../po4a:1682 ../../po4a-updatepo:284
+#: ../../po4a:1542 ../../po4a:1590 ../../po4a:1712 ../../po4a-updatepo:284
 #, perl-format
 msgid "Cannot create a temporary POT file: %s"
 msgstr "Не вдалося створити тимчасовий файл POT: %s"
 
-#: ../../po4a:1537
+#: ../../po4a:1552
 #, perl-format
 msgid " (%d entries)"
 msgstr " (%d записів)"
 
-#: ../../po4a:1540
+#: ../../po4a:1555
 #, perl-format
 msgid "POT file %s already up to date."
 msgstr "Файл POT %s не потребує оновлення."
 
-#: ../../po4a:1565 ../../po4a:1632 ../../po4a:1716
+#: ../../po4a:1595 ../../po4a:1663 ../../po4a:1751
 #, perl-format
 msgid "Cannot create directory '%s': %s"
 msgstr "Не вдалося створити каталог «%s»: %s"
 
-#: ../../po4a:1574
+#: ../../po4a:1603
 #, perl-format
 msgid ""
 "msggrep did not create '%s'. Used command:\n"
@@ -1403,7 +1421,7 @@ msgstr ""
 "Будь ласка, повідомте про цю ваду, додавши дані щодо того, як відтворити цю "
 "ваду.\n"
 
-#: ../../po4a:1603
+#: ../../po4a:1634
 #, perl-format
 msgid ""
 "The translation of master file '%s' in language '%s' is missing (file: %s) "
@@ -1411,52 +1429,52 @@ msgid ""
 msgstr ""
 "Немає перекладу основного файла «%s» мовою «%s» (файл: %s) — пропускаємо."
 
-#: ../../po4a:1647
+#: ../../po4a:1678
 #, perl-format
 msgid "Updating the translation in language %s:"
 msgstr "Оновлюємо переклад мовою %s:"
 
-#: ../../po4a:1753
+#: ../../po4a:1789
 #, perl-format
 msgid "PO file for language %s is missing -- skipping."
 msgstr "Немає файла PO для мови %s — пропускаємо."
 
-#: ../../po4a:1755
+#: ../../po4a:1791
 #, perl-format
 msgid "PO file %s for language %s is missing -- skipping."
 msgstr "Немає файла PO %s для мови %s — пропускаємо."
 
-#: ../../po4a:1794
+#: ../../po4a:1830
 #, perl-format
 msgid "%s doesn't need to be updated."
 msgstr "%s не потрібно оновлювати."
 
-#: ../../po4a:1850
+#: ../../po4a:1882
 #, perl-format
 msgid "Discard %s (%s of %s strings; only %s%% translated; need %s%%)."
 msgstr "Відкидання %s (%s з %s рядків; перекладено лише %s%%; потрібно %s%%)."
 
-#: ../../po4a:1860
+#: ../../po4a:1892
 #, perl-format
 msgid "Timestamp %s created."
 msgstr "Створено часову мітку %s."
 
-#: ../../po4a:1871
+#: ../../po4a:1903
 #, perl-format
 msgid "Timestamp %s removed."
 msgstr "Вилучено часову мітку %s."
 
-#: ../../po4a:1885
+#: ../../po4a:1917
 #, perl-format
 msgid "Addendum %s does NOT apply to %s (translation discarded)."
 msgstr "Доповнення %s не можна додати до %s (переклад відкинуто)."
 
-#: ../../po4a:1894
+#: ../../po4a:1926
 #, perl-format
 msgid "%s is 100%% translated (%s strings)."
 msgstr "%s перекладено на 20%% (%s рядків)."
 
-#: ../../po4a:1898 ../../po4a-translate:275
+#: ../../po4a:1930 ../../po4a-translate:275
 #, perl-format
 msgid "%s is %s%% translated (%s of %s strings)."
 msgstr "%s перекладено на %s%% (%s з %s рядків)."
@@ -1500,7 +1518,7 @@ msgid "po4a-updatepo can't take the input PO from stdin."
 msgstr "po4a-updatepo не може прийняти вхідні дані PO з stdin."
 
 #: ../../po4a-updatepo:286
-msgid "Parse input files… "
+msgid "Parse input files... "
 msgstr "Обробка вхідних файлів… "
 
 #: ../../po4a-updatepo:298
@@ -1509,7 +1527,7 @@ msgstr "завершено."
 
 #: ../../po4a-updatepo:318
 #, perl-format
-msgid "Could not copy the PO file (%s → %s): %s"
+msgid "Could not copy the PO file (%s -> %s): %s"
 msgstr "Не вдалося скопіювати файл PO (%s → %s): %s"
 
 #~ msgid "Error while running msgmerge: %s"

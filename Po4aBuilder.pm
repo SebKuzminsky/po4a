@@ -76,10 +76,10 @@ sub ACTION_binpo {
         print "XX po/bin/po4a.pot uptodate.\n";
     }
 
-    # DO NOT update languages. They are updated by the weblate robot directly
-  if (0) {
     foreach (@{$self->rscan_dir('po/bin',qr{\.po$})}) {
         my $lang = fileparse($_, qw{.po});
+      # DO NOT update languages. They are updated by the weblate robot directly
+      if (0) {
         unless ($self->up_to_date("po/bin/po4a.pot", $_)) {
             print "XX Sync $_: ";
             system("msgmerge --previous $_ po/bin/po4a.pot -o $_.new") && die;
@@ -98,12 +98,12 @@ sub ACTION_binpo {
         } else {
             print "XX $_ uptodate.\n";
         }
+      }
         unless ($self->up_to_date($_,"blib/po/$lang/LC_MESSAGES/po4a.mo")) {
             mkpath( File::Spec->catdir( 'blib', 'po', $lang, "LC_MESSAGES" ), 0, oct(755) );
             system("msgfmt -o blib/po/$lang/LC_MESSAGES/po4a.mo $_") && die;
         }
     }
-  }
 }
 
 sub ACTION_install {
@@ -151,7 +151,7 @@ sub ACTION_docpo {
     $self->depends_on('code');
     $self->make_files_writable("po/pod");
 
-    my $cmd = "PERL5LIB=lib perl po4a "; # Use this version of po4a
+    my $cmd = "perl -Ilib po4a "; # Use this version of po4a
     $cmd .= "--previous ";
     $cmd .= "--no-translations ";
     $cmd .= "--msgid-bugs-address devel\@lists.po4a.org ";
@@ -178,7 +178,7 @@ sub ACTION_man {
     my $manpath  = File::Spec->catdir( 'blib', 'man' );
     File::Path::rmtree( $manpath, 0, 1);
 
-    my $cmd = "PERL5LIB=lib perl po4a "; # Use this version of po4a
+    my $cmd = "perl -Ilib po4a "; # Use this version of po4a
     $cmd .= $ENV{PO4AFLAGS}." " if defined($ENV{PO4AFLAGS});
     $cmd .= "--previous po/pod.cfg";
     system($cmd) and die;

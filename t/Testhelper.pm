@@ -94,8 +94,10 @@ $ENV{'COLUMNS'} = "80";
 # Path to the tested executables. AUTOPKGTEST_TMP is set on salsa CI for Debian packages.
 my $execpath = defined $ENV{AUTOPKGTEST_TMP} ? "/usr/bin" : "perl ..";
 
+# msginit annoyances, see https://github.com/mquinson/po4a/issues/338
 my $PODIFF =
-  "-I'Copyright (C) 20.. Free Software Foundation, Inc.' -I'^# Automatically generated, 20...' -I'^\"Project-Id-Version:' -I'^\"POT-Creation-Date:' -I'^\"PO-Revision-Date:'";
+    "-I'^\"Project-Id-Version:' -I'^\"POT-Creation-Date:' -I'^\"PO-Revision-Date:' "
+  . "-I'^# [^[:blank:]]* translations for ' -I'^# Language [^[:blank:]]* translations for ' -I'Copyright (C) 20.. Free Software Foundation, Inc.' -I'^# This file is distributed under the same license as the' -I'^# Automatically generated, 20...' ";
 
 sub show_files {
     my $basename = shift;
@@ -120,8 +122,7 @@ sub system_failed {
     my ( $cmd, $doc, $expected_exit_status ) = @_;
     $expected_exit_status //= 0;
     my $exit_status = system($cmd);
-    $cmd =~
-      s/diff -u -I'Copyright .C. 20.. Free Software Foundation, Inc.' -I'.. Automatically generated, 20...' -I'."Project-Id-Version:' -I'."POT-Creation-Date:' -I'."PO-Revision-Date:'/PODIFF/g;
+    $cmd =~ s/diff -u $PODIFF /PODIFF/g;
     $cmd =~ s{$root_dir/}{BUILDPATH/}g;
     $cmd =~ s{t/../po4a}{po4a};
 
@@ -184,7 +185,7 @@ sub run_one_po4aconf {
     my $options          = "--verbose " . ( $t->{'options'} // "" );
     my $closed_path      = $t->{'closed_path'};
     my $doc              = $t->{'doc'};
-    my $expected_files   = $t->{'expected_files'} // "";
+    my $expected_files   = $t->{'expected_files'}   // "";
     my $expected_retcode = $t->{'expected_retcode'} // 0;
 
     fail("Broken test: 'tests' is not an array as expected") if exists $t->{tests} && ref $t->{tests} ne 'ARRAY';
@@ -344,7 +345,7 @@ sub run_one_po4aconf {
 sub run_one_format {
     my ( $test, $input ) = @_;
 
-    my $doc = $test->{'doc'} // "Format testing '$input'";
+    my $doc   = $test->{'doc'}   // "Format testing '$input'";
     my $error = $test->{'error'} // 0;    # Whether a normalization error is expected to interrupt the test
 
     my %valid_options;
@@ -424,7 +425,7 @@ sub run_one_format {
     }
 
     push @tests, "diff -uN $norm_stderr $real_stderr";
-    push @tests, "PODIFF  $potfile  $tmpbase.pot" unless $error;
+    push @tests, "PODIFF  $potfile  $tmpbase.pot"  unless $error;
     push @tests, "diff -u $output   $tmpbase.norm" unless $error;
 
     unless ($error) {

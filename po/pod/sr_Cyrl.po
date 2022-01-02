@@ -1,13 +1,13 @@
 # SOME DESCRIPTIVE TITLE
 # Copyright (C) YEAR Free Software Foundation, Inc.
 # This file is distributed under the same license as the po4a package.
-# eevan78 <ivan.pesic@gmail.com>, 2020.
+# eevan78 <ivan.pesic@gmail.com>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: po4a 0.58\n"
 "Report-Msgid-Bugs-To: devel@lists.po4a.org\n"
-"POT-Creation-Date: 2020-09-22 23:12+0200\n"
-"PO-Revision-Date: 2020-09-24 20:41+0000\n"
+"POT-Creation-Date: 2021-12-14 21:19+0100\n"
+"PO-Revision-Date: 2021-12-20 15:51+0000\n"
 "Last-Translator: eevan78 <ivan.pesic@gmail.com>\n"
 "Language-Team: Serbian (cyrillic) <https://hosted.weblate.org/projects/po4a/"
 "po4a-doc/sr_Cyrl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.3-dev\n"
+"X-Generator: Weblate 4.10\n"
 
 #. type: Attribute 'xml:lang' of: <refentry>
 #: share/doc/po4a-display-man.xml:1 share/doc/po4a-display-pod.xml:1
@@ -86,10 +86,12 @@ msgstr ""
 #: lib/Locale/Po4a/Guide.pm:3 lib/Locale/Po4a/Halibut.pm:3
 #: lib/Locale/Po4a/Ini.pm:3 lib/Locale/Po4a/KernelHelp.pm:3
 #: lib/Locale/Po4a/LaTeX.pm:3 lib/Locale/Po4a/Man.pm:3 lib/Locale/Po4a/Po.pm:9
-#: lib/Locale/Po4a/Pod.pm:7 lib/Locale/Po4a/Sgml.pm:3 lib/Locale/Po4a/TeX.pm:3
+#: lib/Locale/Po4a/Pod.pm:7 lib/Locale/Po4a/RubyDoc.pm:3
+#: lib/Locale/Po4a/Sgml.pm:3 lib/Locale/Po4a/TeX.pm:3
 #: lib/Locale/Po4a/Texinfo.pm:3 lib/Locale/Po4a/Text.pm:3
 #: lib/Locale/Po4a/TransTractor.pm:3 lib/Locale/Po4a/Wml.pm:3
 #: lib/Locale/Po4a/Xhtml.pm:3 lib/Locale/Po4a/Xml.pm:3
+#: lib/Locale/Po4a/Yaml.pm:3
 msgid "DESCRIPTION"
 msgstr "ОПИС"
 
@@ -179,14 +181,15 @@ msgstr ""
 #. type: =head1
 #: share/doc/po4a-display-man.xml:21 share/doc/po4a-display-pod.xml:20 po4a:189
 #: po4a-gettextize:71 po4a-normalize:29 po4a-translate:54 po4a-updatepo:53
-#: msguntypot:29 doc/po4a.7.pod:150 lib/Locale/Po4a/Chooser.pm:7
+#: msguntypot:29 doc/po4a.7.pod:177 lib/Locale/Po4a/Chooser.pm:7
 #: lib/Locale/Po4a/Dia.pm:12 lib/Locale/Po4a/Docbook.pm:15
 #: lib/Locale/Po4a/Guide.pm:10 lib/Locale/Po4a/Halibut.pm:14
 #: lib/Locale/Po4a/Ini.pm:8 lib/Locale/Po4a/KernelHelp.pm:7
 #: lib/Locale/Po4a/LaTeX.pm:8 lib/Locale/Po4a/Man.pm:107
-#: lib/Locale/Po4a/Pod.pm:36 lib/Locale/Po4a/TeX.pm:118
-#: lib/Locale/Po4a/Texinfo.pm:10 lib/Locale/Po4a/Xhtml.pm:15
-#: lib/Locale/Po4a/Xml.pm:184
+#: lib/Locale/Po4a/Pod.pm:36 lib/Locale/Po4a/RubyDoc.pm:14
+#: lib/Locale/Po4a/TeX.pm:118 lib/Locale/Po4a/Texinfo.pm:10
+#: lib/Locale/Po4a/Xhtml.pm:15 lib/Locale/Po4a/Xml.pm:187
+#: lib/Locale/Po4a/Yaml.pm:15
 msgid "SEE ALSO"
 msgstr "ПОГЛЕДАЈТЕ ТАКОЂЕ"
 
@@ -297,10 +300,11 @@ msgstr "Флорентин Дуно"
 #: lib/Locale/Po4a/Halibut.pm:1 lib/Locale/Po4a/Ini.pm:1
 #: lib/Locale/Po4a/KernelHelp.pm:1 lib/Locale/Po4a/LaTeX.pm:1
 #: lib/Locale/Po4a/Man.pm:1 lib/Locale/Po4a/Po.pm:1 lib/Locale/Po4a/Pod.pm:1
-#: lib/Locale/Po4a/Sgml.pm:1 lib/Locale/Po4a/TeX.pm:1
-#: lib/Locale/Po4a/Texinfo.pm:1 lib/Locale/Po4a/Text.pm:1
-#: lib/Locale/Po4a/TransTractor.pm:1 lib/Locale/Po4a/Wml.pm:1
-#: lib/Locale/Po4a/Xhtml.pm:1 lib/Locale/Po4a/Xml.pm:1
+#: lib/Locale/Po4a/RubyDoc.pm:1 lib/Locale/Po4a/Sgml.pm:1
+#: lib/Locale/Po4a/TeX.pm:1 lib/Locale/Po4a/Texinfo.pm:1
+#: lib/Locale/Po4a/Text.pm:1 lib/Locale/Po4a/TransTractor.pm:1
+#: lib/Locale/Po4a/Wml.pm:1 lib/Locale/Po4a/Xhtml.pm:1 lib/Locale/Po4a/Xml.pm:1
+#: lib/Locale/Po4a/Yaml.pm:1
 msgid "NAME"
 msgstr "ИМЕ"
 
@@ -1243,12 +1247,23 @@ msgstr ""
 #. type: textblock
 #: po4a:115
 msgid ""
-"If there are name conflicts because several files have the same filename, "
-"the name of the master file can be specified by adding a C<master:"
-"file=>I<name> option:"
+"With this line, po4a will produce separate POT and PO files for each "
+"document to translate.  For example, if you have 3 documents and 5 "
+"languages, this will result in 3 POT files and 15 PO files. These files are "
+"named as specified on the C<po4a_paths> template, with C<$master> "
+"substituted to the basename of each document to translate. In case of name "
+"conflict, you can specify the POT file to use as follows, with the C<pot=> "
+"parameter.  This feature can also be used to group several translated files "
+"into the same POT file."
 msgstr ""
-"Ако постоји конфликт са именима јер више фајлова има идентичан назив, име "
-"мастер фајла може да се наведе додавањем опције C<master:file=>I<име>:"
+"Овом линијом ће po4a да произведе одвојене POT и PO фајлове за сваки "
+"документ који се преводи. На пример, ако имате 3 документа и 5 језика, "
+"добићете 3 POT фајлова и 15 PO фајлова. Они добијају име наведено "
+"C<po4a_paths> шаблоном, у којем се C<$master> замењује са базним именом "
+"сваког документа који се преводи. У случају да дође до конфликта, на следећи "
+"начин можете навести POT фајл који треба да се користи, параметром C<pot=>. "
+"Ова могућност такође може да се користи за груписање неколико преведених "
+"фајлова у исти POT фајл."
 
 #. type: verbatim
 #: po4a:116
@@ -1256,10 +1271,17 @@ msgstr ""
 msgid ""
 " [po4a_langs] de fr ja\n"
 " [po4a_paths] l10n/po/$master.pot $lang:l10n/po/$master.$lang.po\n"
-" [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml master:file=foo-gui\n"
-" [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml master:file=bar-gui\n"
+" [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml pot=foo-gui\n"
+" [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml pot=bar\n"
+" [type: xml] bar/cli.xml $lang:bar/cli.$lang.xml pot=bar\n"
 "\n"
 msgstr ""
+" [po4a_langs] de fr ja\n"
+" [po4a_paths] l10n/po/$master.pot $lang:l10n/po/$master.$lang.po\n"
+" [type: xml] foo/gui.xml $lang:foo/gui.$lang.xml pot=foo-gui\n"
+" [type: xml] bar/gui.xml $lang:bar/gui.$lang.xml pot=bar\n"
+" [type: xml] bar/cli.xml $lang:bar/cli.$lang.xml pot=bar\n"
+"\n"
 
 #. type: textblock
 #: po4a:117
@@ -2002,18 +2024,19 @@ msgstr ""
 
 #. type: =head1
 #: po4a:191 po4a-gettextize:73 po4a-normalize:31 po4a-translate:56
-#: po4a-updatepo:55 msguntypot:32 doc/po4a.7.pod:156
-#: lib/Locale/Po4a/AsciiDoc.pm:46 lib/Locale/Po4a/BibTeX.pm:11
+#: po4a-updatepo:55 msguntypot:32 doc/po4a.7.pod:183
+#: lib/Locale/Po4a/AsciiDoc.pm:52 lib/Locale/Po4a/BibTeX.pm:11
 #: lib/Locale/Po4a/Chooser.pm:12 lib/Locale/Po4a/Common.pm:28
 #: lib/Locale/Po4a/Dia.pm:14 lib/Locale/Po4a/Docbook.pm:17
 #: lib/Locale/Po4a/Guide.pm:12 lib/Locale/Po4a/Halibut.pm:16
 #: lib/Locale/Po4a/Ini.pm:10 lib/Locale/Po4a/KernelHelp.pm:9
 #: lib/Locale/Po4a/LaTeX.pm:10 lib/Locale/Po4a/Man.pm:109
 #: lib/Locale/Po4a/Po.pm:101 lib/Locale/Po4a/Pod.pm:38
-#: lib/Locale/Po4a/Sgml.pm:53 lib/Locale/Po4a/TeX.pm:120
-#: lib/Locale/Po4a/Texinfo.pm:12 lib/Locale/Po4a/Text.pm:40
-#: lib/Locale/Po4a/TransTractor.pm:156 lib/Locale/Po4a/Wml.pm:11
-#: lib/Locale/Po4a/Xhtml.pm:17 lib/Locale/Po4a/Xml.pm:186
+#: lib/Locale/Po4a/RubyDoc.pm:16 lib/Locale/Po4a/Sgml.pm:53
+#: lib/Locale/Po4a/TeX.pm:120 lib/Locale/Po4a/Texinfo.pm:12
+#: lib/Locale/Po4a/Text.pm:40 lib/Locale/Po4a/TransTractor.pm:156
+#: lib/Locale/Po4a/Wml.pm:11 lib/Locale/Po4a/Xhtml.pm:17
+#: lib/Locale/Po4a/Xml.pm:189 lib/Locale/Po4a/Yaml.pm:17
 msgid "AUTHORS"
 msgstr "АУТОРИ"
 
@@ -2023,7 +2046,7 @@ msgstr "АУТОРИ"
 #, no-wrap
 msgid ""
 " Denis Barbier <barbier@linuxfr.org>\n"
-" Nicolas François <nicolas.francois@centraliens.net>\n"
+" Nicolas Francois <nicolas.francois@centraliens.net>\n"
 " Martin Quinson (mquinson#debian.org)\n"
 "\n"
 msgstr ""
@@ -2034,17 +2057,18 @@ msgstr ""
 
 #. type: =head1
 #: po4a:193 po4a-gettextize:75 po4a-normalize:33 po4a-translate:58
-#: po4a-updatepo:57 msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:48
+#: po4a-updatepo:57 msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:54
 #: lib/Locale/Po4a/BibTeX.pm:13 lib/Locale/Po4a/Chooser.pm:14
 #: lib/Locale/Po4a/Common.pm:30 lib/Locale/Po4a/Dia.pm:16
 #: lib/Locale/Po4a/Docbook.pm:19 lib/Locale/Po4a/Guide.pm:14
 #: lib/Locale/Po4a/Halibut.pm:18 lib/Locale/Po4a/Ini.pm:12
 #: lib/Locale/Po4a/KernelHelp.pm:11 lib/Locale/Po4a/LaTeX.pm:12
 #: lib/Locale/Po4a/Man.pm:111 lib/Locale/Po4a/Pod.pm:40
-#: lib/Locale/Po4a/Sgml.pm:58 lib/Locale/Po4a/TeX.pm:122
-#: lib/Locale/Po4a/Texinfo.pm:14 lib/Locale/Po4a/Text.pm:42
-#: lib/Locale/Po4a/Wml.pm:13 lib/Locale/Po4a/Xhtml.pm:19
-#: lib/Locale/Po4a/Xml.pm:188
+#: lib/Locale/Po4a/RubyDoc.pm:18 lib/Locale/Po4a/Sgml.pm:58
+#: lib/Locale/Po4a/TeX.pm:122 lib/Locale/Po4a/Texinfo.pm:14
+#: lib/Locale/Po4a/Text.pm:42 lib/Locale/Po4a/Wml.pm:13
+#: lib/Locale/Po4a/Xhtml.pm:19 lib/Locale/Po4a/Xml.pm:191
+#: lib/Locale/Po4a/Yaml.pm:19
 msgid "COPYRIGHT AND LICENSE"
 msgstr "ПРАВА УМНОЖАВАЊА И ЛИЦЕНЦА"
 
@@ -2056,7 +2080,7 @@ msgstr "Права умножавања 2002-2020 by SPI, inc."
 
 #. type: textblock
 #: po4a:195 po4a-gettextize:77 po4a-normalize:35 po4a-translate:60
-#: po4a-updatepo:59 msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:50
+#: po4a-updatepo:59 msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:56
 #: lib/Locale/Po4a/BibTeX.pm:15 lib/Locale/Po4a/Chooser.pm:16
 #: lib/Locale/Po4a/Common.pm:32 lib/Locale/Po4a/Dia.pm:18
 #: lib/Locale/Po4a/Docbook.pm:21 lib/Locale/Po4a/Guide.pm:16
@@ -2064,7 +2088,8 @@ msgstr "Права умножавања 2002-2020 by SPI, inc."
 #: lib/Locale/Po4a/Man.pm:113 lib/Locale/Po4a/Pod.pm:42
 #: lib/Locale/Po4a/Sgml.pm:60 lib/Locale/Po4a/TeX.pm:124
 #: lib/Locale/Po4a/Text.pm:45 lib/Locale/Po4a/Wml.pm:15
-#: lib/Locale/Po4a/Xhtml.pm:21 lib/Locale/Po4a/Xml.pm:190
+#: lib/Locale/Po4a/Xhtml.pm:21 lib/Locale/Po4a/Xml.pm:193
+#: lib/Locale/Po4a/Yaml.pm:21
 msgid ""
 "This program is free software; you may redistribute it and/or modify it "
 "under the terms of GPL (see the COPYING file)."
@@ -2621,10 +2646,10 @@ msgstr "B<po4a-normalize> B<-f> I<fmt> I<мастер.doc>"
 #: lib/Locale/Po4a/Dia.pm:4 lib/Locale/Po4a/Docbook.pm:4
 #: lib/Locale/Po4a/Guide.pm:4 lib/Locale/Po4a/Halibut.pm:4
 #: lib/Locale/Po4a/LaTeX.pm:4 lib/Locale/Po4a/Man.pm:4
-#: lib/Locale/Po4a/Sgml.pm:4 lib/Locale/Po4a/TeX.pm:4
-#: lib/Locale/Po4a/Texinfo.pm:4 lib/Locale/Po4a/Text.pm:4
-#: lib/Locale/Po4a/TransTractor.pm:4 lib/Locale/Po4a/Wml.pm:4
-#: lib/Locale/Po4a/Xhtml.pm:4 lib/Locale/Po4a/Xml.pm:4
+#: lib/Locale/Po4a/RubyDoc.pm:4 lib/Locale/Po4a/Sgml.pm:4
+#: lib/Locale/Po4a/TeX.pm:4 lib/Locale/Po4a/Texinfo.pm:4
+#: lib/Locale/Po4a/Text.pm:4 lib/Locale/Po4a/TransTractor.pm:4
+#: lib/Locale/Po4a/Wml.pm:4 lib/Locale/Po4a/Xhtml.pm:4 lib/Locale/Po4a/Xml.pm:4
 msgid ""
 "The po4a (PO for anything) project goal is to ease translations (and more "
 "interestingly, the maintenance of translations) using gettext tools on areas "
@@ -3426,13 +3451,18 @@ msgstr ""
 "поједностављивање писања документације. На пример, коришћен је за "
 "документовање git система. Те man стране су преведене уз помоћ po4a."
 
-#. type: =item
+#. type: textblock
 #: doc/po4a.7.pod:23
+msgid "See L<Locale::Po4a::AsciiDoc> for details."
+msgstr "За још детаља, погледајте L<Locale::Po4a::AsciiDoc>."
+
+#. type: =item
+#: doc/po4a.7.pod:24
 msgid "pod (mature parser)"
 msgstr "pod (стабилни парсер)"
 
 #. type: textblock
-#: doc/po4a.7.pod:24
+#: doc/po4a.7.pod:25
 msgid ""
 "This is the Perl Online Documentation format. The language and extensions "
 "themselves are documented using this format in addition to most existing "
@@ -3446,13 +3476,18 @@ msgstr ""
 "их заједно у исти фајл. Чини живот програмера једноставнијим, али на несрећу "
 "не и преводиочев. Све док не почнете да користите po4a."
 
+#. type: textblock
+#: doc/po4a.7.pod:26
+msgid "See L<Locale::Po4a::Pod> for details."
+msgstr "За више детаља, погледајте L<Locale::Po4a::Pod>."
+
 #. type: =item
-#: doc/po4a.7.pod:25
+#: doc/po4a.7.pod:27
 msgid "sgml (mature parser)"
 msgstr "sgml (стабилни парсер)"
 
 #. type: textblock
-#: doc/po4a.7.pod:26
+#: doc/po4a.7.pod:28
 msgid ""
 "Even if superseded by XML nowadays, this format is still used for documents "
 "which are more than a few screens long. It can even be used for complete "
@@ -3468,7 +3503,7 @@ msgstr ""
 "помогне након тог процеса."
 
 #. type: textblock
-#: doc/po4a.7.pod:27
+#: doc/po4a.7.pod:29
 msgid ""
 "Currently, only DebianDoc and DocBook DTD are supported, but adding support "
 "for a new one is really easy. It is even possible to use po4a on an unknown "
@@ -3482,12 +3517,12 @@ msgstr ""
 "више детаља."
 
 #. type: =item
-#: doc/po4a.7.pod:28
+#: doc/po4a.7.pod:30
 msgid "TeX / LaTeX (mature parser)"
 msgstr "TeX / LaTeX (стабилни парсер)"
 
 #. type: textblock
-#: doc/po4a.7.pod:29
+#: doc/po4a.7.pod:31
 msgid ""
 "The LaTeX format is a major documentation format used in the Free Software "
 "world and for publications."
@@ -3496,7 +3531,7 @@ msgstr ""
 "Слободног Софтвера као и за публикације."
 
 #. type: textblock
-#: doc/po4a.7.pod:30
+#: doc/po4a.7.pod:32
 msgid ""
 "The L<Locale::Po4a::LaTeX(3pm)|LaTeX> module was tested with the Python "
 "documentation, a book and some presentations."
@@ -3505,21 +3540,23 @@ msgstr ""
 "документацијом, књигом и неким презентацијама."
 
 #. type: =item
-#: doc/po4a.7.pod:31
+#: doc/po4a.7.pod:33
 msgid "text (mature parser)"
 msgstr "text (стабилни парсер)"
 
 #. type: textblock
-#: doc/po4a.7.pod:32
+#: doc/po4a.7.pod:34
 msgid ""
 "The Text format is the base format for many formats that include long blocks "
-"of text, including Markdown, debian/changelog, and debian/control."
+"of text, including Markdown, fortunes, YAML front matter section, debian/"
+"changelog, and debian/control."
 msgstr ""
 "Text формат је базни формат за многе друге формате који укључују дугачке "
-"блокове текста, укључујући Markdown, debian/changelog, и debian/control."
+"блокове текста, укључујући Markdown, fortunes, YAML одељак пре главног "
+"текста, debian/changelog, и debian/control."
 
 #. type: textblock
-#: doc/po4a.7.pod:33
+#: doc/po4a.7.pod:35
 msgid ""
 "This supports the common format used in Static Site Generators, READMEs, and "
 "other documentation systems. See L<Locale::Po4a::Text(3pm)|Text> for details."
@@ -3529,17 +3566,17 @@ msgstr ""
 "Po4a::Text(3pm)|Text> за више детаља."
 
 #. type: =item
-#: doc/po4a.7.pod:34
+#: doc/po4a.7.pod:36
 msgid "xml and XHMTL (probably mature parser)"
 msgstr "xml и XHMTL (вероватно стабилан парсер)"
 
 #. type: textblock
-#: doc/po4a.7.pod:35
+#: doc/po4a.7.pod:37
 msgid "The XML format is a base format for many documentation formats."
 msgstr "XML формат је базни формат за многе формате документације."
 
 #. type: textblock
-#: doc/po4a.7.pod:36
+#: doc/po4a.7.pod:38
 msgid ""
 "Currently, the DocBook DTD (see L<Locale::Po4a::Docbook(3pm)> for details) "
 "and XHTML are supported by po4a."
@@ -3548,12 +3585,167 @@ msgstr ""
 "за више детаља) и XHTML."
 
 #. type: =item
-#: doc/po4a.7.pod:37
+#: doc/po4a.7.pod:39
+msgid "BibTex (probably mature parser)"
+msgstr "BibTex (вероватно стабилан парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:40
+msgid ""
+"The BibTex format is used alongside LaTex for formatting lists of references "
+"(bibliographies)."
+msgstr ""
+"Формат BibTex се користи уз LaTex за форматирање листи референци "
+"(библиографије)."
+
+#. type: textblock
+#: doc/po4a.7.pod:41
+msgid "See L<Locale::Po4a::BibTex> for details."
+msgstr "За више детаља, погледајте L<Locale::Po4a::BibTex>."
+
+#. type: =item
+#: doc/po4a.7.pod:42
+msgid "Docbook (probably mature parser)"
+msgstr "Docbook (вероватно стабилан парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:43
+msgid ""
+"A XML-based markup language that uses semantic tags to describe documents."
+msgstr ""
+"Језик означавања заснован на XML који за описивање докумената користи "
+"семантичке ознаке."
+
+#. type: textblock
+#: doc/po4a.7.pod:44
+msgid "See L<Locale::Po4a:Docbook> for greater details."
+msgstr "За више детаља, погледајте L<Locale::Po4a:Docbook>."
+
+#. type: =item
+#: doc/po4a.7.pod:45
+msgid "Guide XML (probably mature parser)"
+msgstr "Guide XML (вероватно стабилан парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:46
+msgid ""
+"A XML documentation format. This module was developed specifically to help "
+"with supporting and maintaining translations of Gentoo Linux documentation "
+"up until at least March 2016 (Based on the Wayback Machine). Gentoo have "
+"since moved to the DevBook XML format."
+msgstr ""
+"XML формат документације. Овај модул је специјално развијен као помоћ за "
+"подршку и одржавање превода Gentoo Linux документације све до барем марта "
+"2016 (како каже Wayback Machine). Од тада се Gentoo пребацио на DevBook XML "
+"формат."
+
+#. type: textblock
+#: doc/po4a.7.pod:47
+msgid "See L<Locale::Po4a:Guide> for greater details."
+msgstr "За више детаља, погледајте L<Locale::Po4a:Guide>."
+
+#. type: =item
+#: doc/po4a.7.pod:48
+msgid "Wml (probably mature parser)"
+msgstr "Wml (вероватно стабилан парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:49
+msgid ""
+"The Web Markup Language, do not mixup WML with the WAP stuff used on cell "
+"phones.  This module relies on the Xhtml module, which itself relies on the "
+"XmL module."
+msgstr ""
+"Web Markup Language, немојте да помешате WML са WAP протоколом који се "
+"користи на мобилним телефонима. Овај модул се ослања на Xhtml модул, који се "
+"са своје стране ослања на XmL модул."
+
+#. type: textblock
+#: doc/po4a.7.pod:50
+msgid "See L<Locale::Po4a::Wml> for greater details."
+msgstr "За више детаља, погледајте <Locale::Po4a::Wml>."
+
+#. type: =item
+#: doc/po4a.7.pod:51
+msgid "Yaml (probably mature parser)"
+msgstr "Yaml (вероватно стабилан парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:52
+msgid ""
+"A strict superset of JSON. YAML is often used as systems or configuration "
+"projects.  YAML is at the core of Red Hat's Ansible."
+msgstr ""
+"Стриктни надскуп JSON. YAML се често користи за пројекте система или "
+"конфигурације. YAML је језгро за Ansible компаније Red Hat."
+
+#. type: textblock
+#: doc/po4a.7.pod:53
+msgid "See L<Locale::Po4a::Yaml> for greater details."
+msgstr "За више детаља, погледајте L<Locale::Po4a::Yaml>."
+
+#. type: =item
+#: doc/po4a.7.pod:54
+msgid "RubyDoc (probably mature parser)"
+msgstr "RubyDoc (вероватно стабилан парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:55
+msgid ""
+"The Ruby Document (RD) format, originally the default documentation format "
+"for Ruby and Ruby projects before converted to RDoc in 2002. Though "
+"apparently the Japanese version of the Ruby Reference Manual still use RD."
+msgstr ""
+"Формат Ruby Document (RD), у почетку подразумевани формат документације за "
+"Ruby и Ruby пројекте пре конверзије у RDoc 2002. године. Мада изгледа да "
+"јапанска верзија Ruby референтног приручника још увек користи RD."
+
+#. type: textblock
+#: doc/po4a.7.pod:56
+msgid "See L<Locale::Po4a::RubyDoc> for greater details."
+msgstr "За више детаља, погледајте L<Locale::Po4a::RubyDoc>."
+
+#. type: =item
+#: doc/po4a.7.pod:57
+msgid "Halibut (probably experimental parser)"
+msgstr "Halibut (вероватно експериментални парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:58
+msgid ""
+"A documentation production system, with elements similar to TeX, debiandoc-"
+"sgml, TeXinfo, and others, developed by Simon Tatham, the developer of PuTTY."
+msgstr ""
+"Систем документације са елементима који личе на TeX, debiandoc-sgml, TeXinfo "
+"и остале, развио је Сајмон Татам, програмер програма PuTTY."
+
+#. type: textblock
+#: doc/po4a.7.pod:59
+msgid "See L<Locale::Po4a:Halibut> for greater details."
+msgstr "За више детаља, погледајте L<Locale::Po4a:Halibut>."
+
+#. type: =item
+#: doc/po4a.7.pod:60
+msgid "Ini (probably experimental parser)"
+msgstr "Ini (вероватно експериментални парсер)"
+
+#. type: textblock
+#: doc/po4a.7.pod:61
+msgid "Configuration file format popularized by MS-DOS."
+msgstr "Формат фајла за конфигурацију који је MS-DOS учинио популарим."
+
+#. type: textblock
+#: doc/po4a.7.pod:62
+msgid "See L<Locale::Po4a::Ini> for greater details."
+msgstr "За више детаља, погледајте L<Locale::Po4a::Ini>."
+
+#. type: =item
+#: doc/po4a.7.pod:63
 msgid "texinfo (very highly experimental parser)"
 msgstr "texinfo (врло експериментални парсер)"
 
 #. type: textblock
-#: doc/po4a.7.pod:38
+#: doc/po4a.7.pod:64
 msgid ""
 "All of the GNU documentation is written in this format (it's even one of the "
 "requirements to become an official GNU project). The support for L<Locale::"
@@ -3566,32 +3758,34 @@ msgstr ""
 "багове и поднесете захтеве за новим могућностима."
 
 #. type: =item
-#: doc/po4a.7.pod:39
+#: doc/po4a.7.pod:65
 msgid "Others supported formats"
 msgstr "Остали подржани формати"
 
 #. type: textblock
-#: doc/po4a.7.pod:40
+#: doc/po4a.7.pod:66
 msgid ""
 "Po4a can also handle some more rare or specialized formats, such as the "
-"documentation of compilation options for the 2.4+ Linux kernels or the "
-"diagrams produced by the dia tool. Adding a new format is often very easy "
-"and the main task is to come up with a parser for your target format. See "
-"L<Locale::Po4a::TransTractor(3pm)> for more information about this."
+"documentation of compilation options for the 2.4+ Linux kernels (L<Locale::"
+"Po4a::KernelHelp>) or the diagrams produced by the dia tool (L<Locale::Po4a:"
+"Dia>). Adding a new format is often very easy and the main task is to come "
+"up with a parser for your target format. See L<Locale::Po4a::"
+"TransTractor(3pm)> for more information about this."
 msgstr ""
 "Po4a такође може да обради и ређе или специјализоване формате, као што је "
-"документација опција компилације 2.4+ Linux кернела или дијаграми које "
-"производи алат dia. Додавање нових формата је често веома једноставно и "
-"главни задатак је да се изађе са парсером за ваш циљни формат. Погледајте "
-"L<Locale::Po4a::TransTractor(3pm)> за више информација у вези овога."
+"документација опција компилације 2.4+ Linux кернела (L<Locale::Po4a::"
+"KernelHelp>) или дијаграми које производи алат dial (L<Locale::Po4a:Dia>). "
+"Додавање нових формата је често веома једноставно и главни задатак је да се "
+"изађе са парсером за ваш циљни формат. Погледајте L<Locale::Po4a::"
+"TransTractor(3pm)> за више информација у вези овога."
 
 #. type: =item
-#: doc/po4a.7.pod:41
+#: doc/po4a.7.pod:67
 msgid "Unsupported formats"
 msgstr "Неподржани формати"
 
 #. type: textblock
-#: doc/po4a.7.pod:42
+#: doc/po4a.7.pod:68
 msgid ""
 "Unfortunately, po4a still lacks support for several documentation formats. "
 "Many of them would be easy to support in po4a. This includes formats not "
@@ -3608,12 +3802,12 @@ msgstr ""
 "игре или wine ресурс фајлови."
 
 #. type: =head1
-#: doc/po4a.7.pod:43
+#: doc/po4a.7.pod:69
 msgid "Using po4a"
 msgstr "Употреба po4a"
 
 #. type: textblock
-#: doc/po4a.7.pod:44
+#: doc/po4a.7.pod:70
 msgid ""
 "Historically, po4a was built around four scripts, each fulfilling a specific "
 "task. L<po4a-gettextize(1)> helps bootstrapping translations and optionally "
@@ -3636,7 +3830,7 @@ msgstr ""
 "омашке које уноси процес парсирања."
 
 #. type: textblock
-#: doc/po4a.7.pod:45
+#: doc/po4a.7.pod:71
 msgid ""
 "Most projects only require the features of L<po4a-updatepo(1)> and L<po4a-"
 "translate(1)>, but these scripts proved to be cumbersome and error prone to "
@@ -3663,7 +3857,7 @@ msgstr ""
 "врши измену ни над једним фајлом."
 
 #. type: textblock
-#: doc/po4a.7.pod:46
+#: doc/po4a.7.pod:72
 msgid ""
 "The rest of this section gives an overview of how use the scripts' interface "
 "of po4a. Most users will probably prefer to use the all-in-one tool, that is "
@@ -3674,12 +3868,12 @@ msgstr ""
 "описан документацији за L<po4a(1)>."
 
 #. type: =head2
-#: doc/po4a.7.pod:47
+#: doc/po4a.7.pod:73
 msgid "Graphical overview of the po4a scripts"
 msgstr "Графички преглед po4a скрипти"
 
 #. type: textblock
-#: doc/po4a.7.pod:48
+#: doc/po4a.7.pod:74
 msgid ""
 "The following schema gives an overview of how each po4a script can be used.  "
 "Here, F<master.doc> is an example name for the documentation to be "
@@ -3700,7 +3894,7 @@ msgstr ""
 "фајл F<XX.doc>."
 
 #. type: verbatim
-#: doc/po4a.7.pod:49
+#: doc/po4a.7.pod:75
 #, no-wrap
 msgid ""
 "                                   master.doc\n"
@@ -3786,7 +3980,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:50
+#: doc/po4a.7.pod:76
 msgid ""
 "This schema is complicated, but in practice only the right part (involving "
 "L<po4a-updatepo(1)> and L<po4a-translate(1)>) is used once the project is "
@@ -3797,7 +3991,7 @@ msgstr ""
 "updatepo(1)> и L<po4a-translate(1)>)."
 
 #. type: textblock
-#: doc/po4a.7.pod:51
+#: doc/po4a.7.pod:77
 msgid ""
 "The left part depicts how L<po4a-gettextize(1)> can be used to convert an "
 "existing translation project to the po4a infrastructure. This script takes "
@@ -3818,7 +4012,7 @@ msgstr ""
 "све ово и да се фокусирате на десни део схеме."
 
 #. type: textblock
-#: doc/po4a.7.pod:52
+#: doc/po4a.7.pod:78
 msgid ""
 "On the top right part, the action of the original author is depicted, "
 "updating the documentation. The middle right part depicts the automatic "
@@ -3838,7 +4032,7 @@ msgstr ""
 "материјал се оставља непреведен."
 
 #. type: textblock
-#: doc/po4a.7.pod:53
+#: doc/po4a.7.pod:79
 msgid ""
 "Then, the I<manual editing> reported depicts the action of the translators, "
 "that modify the PO files to provide translations to every original string "
@@ -3857,7 +4051,7 @@ msgstr ""
 "детаља, молимо вас погледајте gettext документацију."
 
 #. type: textblock
-#: doc/po4a.7.pod:54
+#: doc/po4a.7.pod:80
 msgid ""
 "The bottom part of the figure shows how L<po4a-translate(1)> creates a "
 "translated source document from the F<master.doc> original document and the "
@@ -3876,7 +4070,7 @@ msgstr ""
 "документу. Погледајте ниже за још детаља."
 
 #. type: textblock
-#: doc/po4a.7.pod:55
+#: doc/po4a.7.pod:81
 msgid ""
 "As noted before, the L<po4a(1)> program combines the effects of the "
 "separated scripts, updating the PO files and the translated document in one "
@@ -3887,12 +4081,12 @@ msgstr ""
 "Основна логика остаје неизмењена."
 
 #. type: =head2
-#: doc/po4a.7.pod:56
+#: doc/po4a.7.pod:82
 msgid "Starting a new translation"
 msgstr "Започињање новог превода"
 
 #. type: textblock
-#: doc/po4a.7.pod:57
+#: doc/po4a.7.pod:83
 msgid ""
 "If you use L<po4a(1)>, there is no specific step to start a translation. You "
 "just have to list the languages in the configuration file, and the missing "
@@ -3911,7 +4105,7 @@ msgstr ""
 "превод на свој језик."
 
 #. type: textblock
-#: doc/po4a.7.pod:58
+#: doc/po4a.7.pod:84
 msgid ""
 "If you prefer to use the individual scripts separately, you should use "
 "L<po4a-gettextize(1)> as follows to create the POT file. This file can then "
@@ -3922,7 +4116,7 @@ msgstr ""
 "фајл затим може да се копира у F<XX.po> и тако започне нови превод."
 
 #. type: verbatim
-#: doc/po4a.7.pod:59
+#: doc/po4a.7.pod:85
 #, no-wrap
 msgid ""
 "  $ po4a-gettextize --format <format> --master <master.doc> --po <translation.pot>\n"
@@ -3932,7 +4126,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:60
+#: doc/po4a.7.pod:86
 msgid ""
 "The master document is used in input, while the POT file is the output of "
 "this process."
@@ -3940,12 +4134,12 @@ msgstr ""
 "Мастер документ се користи као улаз, док је POT фајл излаз овог процеса."
 
 #. type: =head2
-#: doc/po4a.7.pod:61
+#: doc/po4a.7.pod:87
 msgid "Integrating changes to the original document"
 msgstr "Интегрисање измена на оригиналном документу"
 
 #. type: textblock
-#: doc/po4a.7.pod:62
+#: doc/po4a.7.pod:88
 msgid ""
 "The script to use for that is L<po4a-updatepo(1)> (please refer to its "
 "documentation for details):"
@@ -3954,7 +4148,7 @@ msgstr ""
 "погледате њену документацију):"
 
 #. type: verbatim
-#: doc/po4a.7.pod:63
+#: doc/po4a.7.pod:89
 #, no-wrap
 msgid ""
 "  $ po4a-updatepo --format <format> --master <new_master.doc> --po <old_doc.XX.po>\n"
@@ -3964,7 +4158,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:64
+#: doc/po4a.7.pod:90
 msgid ""
 "The master document is used in input, while the PO file is updated: it is "
 "used both in input and output."
@@ -3973,12 +4167,12 @@ msgstr ""
 "улаз и излаз."
 
 #. type: =head2
-#: doc/po4a.7.pod:65
+#: doc/po4a.7.pod:91
 msgid "Generating a translated document"
 msgstr "Генерисање преведеног документа"
 
 #. type: textblock
-#: doc/po4a.7.pod:66
+#: doc/po4a.7.pod:92
 msgid ""
 "Once you're done with the translation, you want to get the translated "
 "documentation and distribute it to users along with the original one.  For "
@@ -3989,7 +4183,7 @@ msgstr ""
 "бисте то урадили, употребите програм L<po4a-translate(1)> на следећи начин:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:67
+#: doc/po4a.7.pod:93
 #, no-wrap
 msgid ""
 "  $ po4a-translate --format <format> --master <master.doc> --po <doc.XX.po> --localized <XX.doc>\n"
@@ -3999,7 +4193,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:68
+#: doc/po4a.7.pod:94
 msgid ""
 "Both the master and PO files are used in input, while the localized file is "
 "the output of this process."
@@ -4008,12 +4202,12 @@ msgstr ""
 "овог процеса."
 
 #. type: =head2
-#: doc/po4a.7.pod:69
+#: doc/po4a.7.pod:95
 msgid "Using addenda to add extra text to translations"
 msgstr "Употреба додатака за додавање додатног текста преводима"
 
 #. type: textblock
-#: doc/po4a.7.pod:70
+#: doc/po4a.7.pod:96
 msgid ""
 "Adding new text to the translation is probably the only thing that is easier "
 "in the long run when you translate files manually :). This happens when you "
@@ -4030,7 +4224,7 @@ msgstr ""
 "за пријаву проблема који се тичу превода."
 
 #. type: textblock
-#: doc/po4a.7.pod:71
+#: doc/po4a.7.pod:97
 msgid ""
 "With po4a, you have to specify B<addendum> files, that can be conceptually "
 "viewed as patches applied to the localized document after processing. Each "
@@ -4049,7 +4243,7 @@ msgstr ""
 "одређену позицију."
 
 #. type: textblock
-#: doc/po4a.7.pod:72
+#: doc/po4a.7.pod:98
 msgid ""
 "The header line must begin with the string B<PO4A-HEADER:>, followed by a "
 "semi-colon separated list of I<key>B<=>I<value> fields."
@@ -4058,7 +4252,7 @@ msgstr ""
 "листа I<кључ>B<=>I<вредност> поља раздвојених са тачка запета знацима."
 
 #. type: textblock
-#: doc/po4a.7.pod:73
+#: doc/po4a.7.pod:99
 msgid ""
 "For example, the following header declares an addendum that must be placed "
 "at the very end of the translation."
@@ -4067,7 +4261,7 @@ msgstr ""
 "крај превода."
 
 #. type: verbatim
-#: doc/po4a.7.pod:74
+#: doc/po4a.7.pod:100
 #, no-wrap
 msgid ""
 " PO4A-HEADER: mode=eof\n"
@@ -4077,7 +4271,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:75
+#: doc/po4a.7.pod:101
 msgid ""
 "Things are more complex when you want to add your extra content in the "
 "middle of the document. The following header declares an addendum that must "
@@ -4089,7 +4283,7 @@ msgstr ""
 "се постави након XML одељка који садржи стринг C<У вези овог документа>."
 
 #. type: verbatim
-#: doc/po4a.7.pod:76
+#: doc/po4a.7.pod:102
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=About this document; mode=after; endboundary=</section>\n"
@@ -4099,7 +4293,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:77
+#: doc/po4a.7.pod:103
 msgid ""
 "In practice, when trying to apply an addendum, po4a searches for the first "
 "line matching the C<position> argument (this can be a regexp). Do not forget "
@@ -4114,7 +4308,7 @@ msgstr ""
 "следи, у случају да намеравате да свој додатак уметнете у француски превод."
 
 #. type: verbatim
-#: doc/po4a.7.pod:78
+#: doc/po4a.7.pod:104
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=À propos de ce document; mode=after; endboundary=</section>\n"
@@ -4124,7 +4318,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:79
+#: doc/po4a.7.pod:105
 msgid ""
 "Once the C<position> is found in the target document, po4a searches for the "
 "next line after the C<position> that matches the provided C<endboundary>. "
@@ -4137,7 +4331,7 @@ msgstr ""
 "I<endboundary>, тј. границу на којој се завршава текући одељак)."
 
 #. type: textblock
-#: doc/po4a.7.pod:80
+#: doc/po4a.7.pod:106
 msgid ""
 "The exact same effect could be obtained with the following header, that is "
 "equivalent:"
@@ -4145,7 +4339,7 @@ msgstr ""
 "Потпуно исти ефекат би могао да се добије следећим еквивалентним заглављем:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:81
+#: doc/po4a.7.pod:107
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=About this document; mode=after; beginboundary=<section>\n"
@@ -4155,7 +4349,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:82
+#: doc/po4a.7.pod:108
 msgid ""
 "Here, po4a searches for the first line matching C<<section>> after the line "
 "matching C<About this document> in the translation, and add the addendum "
@@ -4177,7 +4371,7 @@ msgstr ""
 "или испред C<<section>>."
 
 #. type: textblock
-#: doc/po4a.7.pod:83
+#: doc/po4a.7.pod:109
 msgid ""
 "You can also set the insertion I<mode> to the value C<before>, with a "
 "similar semantic: combining C<mode=before> with an C<endboundary> will put "
@@ -4194,7 +4388,7 @@ msgstr ""
 "границе, последње потенцијалне граничне линије испред C<position>."
 
 #. type: verbatim
-#: doc/po4a.7.pod:84
+#: doc/po4a.7.pod:110
 #, no-wrap
 msgid ""
 "  Mode   | Boundary kind |     Used boundary      | Insertion point compared to the boundary\n"
@@ -4216,12 +4410,12 @@ msgstr ""
 "\n"
 
 #. type: =head3
-#: doc/po4a.7.pod:85
+#: doc/po4a.7.pod:111
 msgid "Hint and tricks about addenda"
 msgstr "Савети и трикови у вези додатака"
 
 #. type: textblock
-#: doc/po4a.7.pod:86
+#: doc/po4a.7.pod:112
 msgid ""
 "Remember that these are regexp. For example, if you want to match the end of "
 "a nroff section ending with the line C<.fi>, do not use C<.fi> as "
@@ -4235,7 +4429,7 @@ msgstr ""
 "је: C<^\\.fi$>."
 
 #. type: textblock
-#: doc/po4a.7.pod:87
+#: doc/po4a.7.pod:113
 msgid ""
 "White spaces ARE important in the content of the C<position> and boundaries. "
 "So the two following lines B<are different>. The second one will only be "
@@ -4246,7 +4440,7 @@ msgstr ""
 "преведеном документу има довољно празних карактера на крају."
 
 #. type: verbatim
-#: doc/po4a.7.pod:88
+#: doc/po4a.7.pod:114
 #, no-wrap
 msgid ""
 " PO4A-HEADER: position=About this document; mode=after; beginboundary=<section>\n"
@@ -4258,7 +4452,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:89
+#: doc/po4a.7.pod:115
 msgid ""
 "Although this context search may be considered to operate roughly on each "
 "line of the B<translated> document, it actually operates on the internal "
@@ -4277,7 +4471,7 @@ msgstr ""
 "података."
 
 #. type: textblock
-#: doc/po4a.7.pod:90
+#: doc/po4a.7.pod:116
 msgid ""
 "Pass the B<-vv> argument to po4a to understand how the addenda are added to "
 "the translation. It may also help to run po4a in debug mode to see the "
@@ -4289,17 +4483,17 @@ msgstr ""
 "додатак не примењује."
 
 #. type: =head3
-#: doc/po4a.7.pod:91
+#: doc/po4a.7.pod:117
 msgid "Addenda examples"
 msgstr "Примери додатака"
 
 #. type: textblock
-#: doc/po4a.7.pod:92
+#: doc/po4a.7.pod:118
 msgid "If you want to add something after the following nroff section:"
 msgstr "Ако желите да додате нешто након следећег nroff одељка:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:93
+#: doc/po4a.7.pod:119
 #, no-wrap
 msgid ""
 "  .SH \"AUTHORS\"\n"
@@ -4309,7 +4503,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:94
+#: doc/po4a.7.pod:120
 msgid ""
 "You should select a two step approach by setting B<mode=after>. Then you "
 "should narrow down search to the line after B<AUTHORS> with the B<position> "
@@ -4323,7 +4517,7 @@ msgstr ""
 "B<beginboundary>. Дакле:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:95
+#: doc/po4a.7.pod:121
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=AUTHORS;beginboundary=\\.SH\n"
@@ -4333,7 +4527,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:96
+#: doc/po4a.7.pod:122
 msgid ""
 "If you want to add something right after a given line (e.g. after the line "
 "\"Copyright Big Dude\"), use a B<position> matching this line, B<mode=after> "
@@ -4345,7 +4539,7 @@ msgstr ""
 "било којом линијом."
 
 #. type: verbatim
-#: doc/po4a.7.pod:97
+#: doc/po4a.7.pod:123
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=Copyright Big Dude, 2004;beginboundary=^\n"
@@ -4355,7 +4549,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:98
+#: doc/po4a.7.pod:124
 msgid ""
 "If you want to add something at the end of the document, give a B<position> "
 "matching any line of your document (but only one line. Po4a won't proceed if "
@@ -4371,7 +4565,7 @@ msgstr ""
 "да постоје у вашем документу."
 
 #. type: verbatim
-#: doc/po4a.7.pod:99
+#: doc/po4a.7.pod:125
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=About this document;beginboundary=FakePo4aBoundary\n"
@@ -4381,17 +4575,17 @@ msgstr ""
 "\n"
 
 #. type: =head3
-#: doc/po4a.7.pod:100
+#: doc/po4a.7.pod:126
 msgid "More detailed example"
 msgstr "Детаљнији пример"
 
 #. type: textblock
-#: doc/po4a.7.pod:101
+#: doc/po4a.7.pod:127
 msgid "Original document (POD formatted):"
 msgstr "Оригинални документ (POD форматиран):"
 
 #. type: verbatim
-#: doc/po4a.7.pod:102
+#: doc/po4a.7.pod:128
 #, no-wrap
 msgid ""
 " |=head1 NAME\n"
@@ -4413,7 +4607,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:103
+#: doc/po4a.7.pod:129
 msgid ""
 "Then, the following addendum will ensure that a section (in French) about "
 "the translator is added at the end of the file (in French, \"TRADUCTEUR\" "
@@ -4424,7 +4618,7 @@ msgstr ""
 "\"TRANSLATOR\", а \"moi\" значи \"me\")."
 
 #. type: verbatim
-#: doc/po4a.7.pod:104
+#: doc/po4a.7.pod:130
 #, no-wrap
 msgid ""
 " |PO4A-HEADER:mode=after;position=AUTEUR;beginboundary=^=head\n"
@@ -4444,13 +4638,13 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:105
+#: doc/po4a.7.pod:131
 msgid "To put your addendum before the AUTHOR, use the following header:"
 msgstr ""
 "Да бисте уметнули свој додатак испред AUTHOR, употребите следеће заглавље:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:106
+#: doc/po4a.7.pod:132
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=after;position=NOM;beginboundary=^=head1\n"
@@ -4460,7 +4654,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:107
+#: doc/po4a.7.pod:133
 msgid ""
 "This works because the next line matching the B<beginboundary> /^=head1/ "
 "after the section \"NAME\" (translated to \"NOM\" in French), is the one "
@@ -4475,14 +4669,14 @@ msgstr ""
 "одељака, програм po4a ће погрешно да постави додатак испред тог новог одељка."
 
 #. type: textblock
-#: doc/po4a.7.pod:108
+#: doc/po4a.7.pod:134
 msgid "To avoid this you may accomplish the same using B<mode>=I<before>:"
 msgstr ""
 "Да бисте ово спречили, исти резултат можете да постигнете употребом "
 "B<mode>=I<before>:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:109
+#: doc/po4a.7.pod:135
 #, no-wrap
 msgid ""
 " PO4A-HEADER:mode=before;position=^=head1 AUTEUR\n"
@@ -4492,12 +4686,12 @@ msgstr ""
 "\n"
 
 #. type: =head1
-#: doc/po4a.7.pod:110
+#: doc/po4a.7.pod:136
 msgid "How does it work?"
 msgstr "На који начин програм функционише?"
 
 #. type: textblock
-#: doc/po4a.7.pod:111
+#: doc/po4a.7.pod:137
 msgid ""
 "This chapter gives you a brief overview of the po4a internals, so that you "
 "may feel more confident to help us maintaining and improving it. It may also "
@@ -4511,7 +4705,7 @@ msgstr ""
 "проблема у раду са програмом."
 
 #. type: textblock
-#: doc/po4a.7.pod:112
+#: doc/po4a.7.pod:138
 msgid ""
 "The po4a architecture is object oriented. The L<Locale::Po4a::"
 "TransTractor(3pm)|TransTractor> class is the common ancestor to all po4a "
@@ -4524,7 +4718,7 @@ msgstr ""
 "превођење документа и за издвајање стрингова."
 
 #. type: textblock
-#: doc/po4a.7.pod:113
+#: doc/po4a.7.pod:139
 msgid ""
 "More formally, it takes a document to translate plus a PO file containing "
 "the translations to use as input while producing two separate outputs: "
@@ -4541,7 +4735,7 @@ msgstr ""
 "садржајем улазног PO). Ево графичке представе овога:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:114
+#: doc/po4a.7.pod:140
 #, no-wrap
 msgid ""
 "   Input document --\\                             /---> Output document\n"
@@ -4561,7 +4755,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:115
+#: doc/po4a.7.pod:141
 msgid ""
 "This little bone is the core of all the po4a architecture. If you omit the "
 "input PO and the output document, you get B<po4a-gettextize>. If you provide "
@@ -4580,12 +4774,12 @@ msgstr ""
 "TransTractor(3pm)>."
 
 #. type: =head1
-#: doc/po4a.7.pod:116
+#: doc/po4a.7.pod:142
 msgid "Open-source projects using po4a"
 msgstr "Пројекти отвореног кода који користе po4a"
 
 #. type: textblock
-#: doc/po4a.7.pod:117
+#: doc/po4a.7.pod:143
 msgid ""
 "Here is a very partial list of projects that use po4a in production for "
 "their documentation. If you want to add your project to the list, just drop "
@@ -4596,22 +4790,22 @@ msgstr ""
 "само нам пошаљите мејл (или Merge захтев)."
 
 #. type: textblock
-#: doc/po4a.7.pod:118
+#: doc/po4a.7.pod:144
 msgid "adduser (man): users and groups management tool."
 msgstr "adduser (man): алат за управљање корисницима и групама."
 
 #. type: textblock
-#: doc/po4a.7.pod:119
+#: doc/po4a.7.pod:145
 msgid "apt (man, docbook): Debian package manager."
 msgstr "apt (man, docbook): Debian менаџер пакета."
 
 #. type: textblock
-#: doc/po4a.7.pod:120
+#: doc/po4a.7.pod:146
 msgid "aptitude (docbook, svg): terminal-based package manager for Debian"
 msgstr "aptitude (docbook, svg): терминалски менаџер пакета за Debian"
 
 #. type: textblock
-#: doc/po4a.7.pod:121
+#: doc/po4a.7.pod:147
 msgid ""
 "L<F-Droid website|https://gitlab.com/fdroid/fdroid-website> (markdown): "
 "installable catalogue of FOSS (Free and Open Source Software) applications "
@@ -4622,7 +4816,7 @@ msgstr ""
 "које могу да се инсталирају."
 
 #. type: textblock
-#: doc/po4a.7.pod:122
+#: doc/po4a.7.pod:148
 msgid ""
 "L<git|https://github.com/jnavila/git-manpages-l10n> (asciidoc): distributed "
 "version-control system for tracking changes in source code."
@@ -4632,7 +4826,7 @@ msgstr ""
 "изворном коду."
 
 #. type: textblock
-#: doc/po4a.7.pod:123
+#: doc/po4a.7.pod:149
 msgid ""
 "L<Linux manpages|https://salsa.debian.org/manpages-l10n-team/manpages-l10n> "
 "(man)"
@@ -4641,7 +4835,7 @@ msgstr ""
 "(man)"
 
 #. type: textblock
-#: doc/po4a.7.pod:124
+#: doc/po4a.7.pod:150
 msgid ""
 "This project provides an infrastructure for translating many manpages to "
 "different languages, ready for integration into several major distributions "
@@ -4652,7 +4846,7 @@ msgstr ""
 "(Arch Linux, Debian и из њега изведене, Fedora)."
 
 #. type: textblock
-#: doc/po4a.7.pod:125
+#: doc/po4a.7.pod:151
 msgid ""
 "L<Stellarium|https://github.com/Stellarium/stellarium> (HTML): a free open "
 "source planetarium for your computer. po4a is used to translate the sky "
@@ -4662,18 +4856,27 @@ msgstr ""
 "планетаријум отвореног кода за ваш компјутер. po4a се користи за превод "
 "описа небеске културе."
 
+#. type: textblock
+#: doc/po4a.7.pod:152
+msgid ""
+"Other item to sort out: L<https://gitlab.com/fdroid/fdroid-website/> "
+"L<https://github.com/fsfe/reuse-docs/pull/61>"
+msgstr ""
+"Још једна ставка која треба да се среди: L<https://gitlab.com/fdroid/fdroid-"
+"website/> L<https://github.com/fsfe/reuse-docs/pull/61>"
+
 #. type: =head1
-#: doc/po4a.7.pod:126
+#: doc/po4a.7.pod:153
 msgid "FAQ"
 msgstr "ЧПП"
 
 #. type: =head2
-#: doc/po4a.7.pod:127
+#: doc/po4a.7.pod:154
 msgid "How do you pronounce po4a?"
 msgstr "Како се изговара po4a?"
 
 #. type: textblock
-#: doc/po4a.7.pod:128
+#: doc/po4a.7.pod:155
 msgid ""
 "I personally vocalize it as L<pouah|https://en.wiktionary.org/wiki/pouah>, "
 "which is a French onomatopoetic that we use in place of yuck :) I may have a "
@@ -4684,22 +4887,22 @@ msgstr ""
 "чудан смисао за хумор :)"
 
 #. type: =head2
-#: doc/po4a.7.pod:129
+#: doc/po4a.7.pod:156
 msgid "What about the other translation tools for documentation using gettext?"
 msgstr "Шта је са осталим алатима за превођење документације помоћу gettext?"
 
 #. type: textblock
-#: doc/po4a.7.pod:130
+#: doc/po4a.7.pod:157
 msgid "As far as I know, there are only two of them:"
 msgstr "Колико знам, постоје само два таква:"
 
 #. type: =item
-#: doc/po4a.7.pod:131
+#: doc/po4a.7.pod:158
 msgid "B<poxml>"
 msgstr "B<poxml>"
 
 #. type: textblock
-#: doc/po4a.7.pod:132
+#: doc/po4a.7.pod:159
 msgid ""
 "This is the tool developed by KDE people to handle DocBook XML. AFAIK, it "
 "was the first program to extract strings to translate from documentation to "
@@ -4710,7 +4913,7 @@ msgstr ""
 "фајлове, па их након превођења умеће назад."
 
 #. type: textblock
-#: doc/po4a.7.pod:133
+#: doc/po4a.7.pod:160
 msgid ""
 "It can only handle XML, and only a particular DTD. I'm quite unhappy with "
 "the handling of lists, which end in one big msgid. When the list become big, "
@@ -4721,12 +4924,12 @@ msgstr ""
 "msgid. Када листа постане велика, залогај постаје тежак за гутање."
 
 #. type: =item
-#: doc/po4a.7.pod:134
+#: doc/po4a.7.pod:161
 msgid "B<po-debiandoc>"
 msgstr "B<po-debiandoc>"
 
 #. type: textblock
-#: doc/po4a.7.pod:135
+#: doc/po4a.7.pod:162
 msgid ""
 "This program done by Denis Barbier is a sort of precursor of the po4a SGML "
 "module, which more or less deprecates it. As the name says, it handles only "
@@ -4737,7 +4940,7 @@ msgstr ""
 "обрађује само DebianDoc DTD, што је такође мање-више застарео DTD."
 
 #. type: textblock
-#: doc/po4a.7.pod:136
+#: doc/po4a.7.pod:163
 msgid ""
 "The main advantages of po4a over them are the ease of extra content addition "
 "(which is even worse there) and the ability to achieve gettextization."
@@ -4746,12 +4949,12 @@ msgstr ""
 "садржаја (која је тамо још гора) и могућност постизања gettextизације."
 
 #. type: =head2
-#: doc/po4a.7.pod:137
+#: doc/po4a.7.pod:164
 msgid "SUMMARY of the advantages of the gettext based approach"
 msgstr "РЕЗИМЕ предности приступа базираног на gettext"
 
 #. type: textblock
-#: doc/po4a.7.pod:138
+#: doc/po4a.7.pod:165
 msgid ""
 "The translations are not stored along with the original, which makes it "
 "possible to detect if translations become out of date."
@@ -4760,7 +4963,7 @@ msgstr ""
 "застарелост превода."
 
 #. type: textblock
-#: doc/po4a.7.pod:139
+#: doc/po4a.7.pod:166
 msgid ""
 "The translations are stored in separate files from each other, which "
 "prevents translators of different languages from interfering, both when "
@@ -4771,7 +4974,7 @@ msgstr ""
 "и на нивоу кодирања фајла."
 
 #. type: textblock
-#: doc/po4a.7.pod:140
+#: doc/po4a.7.pod:167
 msgid ""
 "It is based internally on B<gettext> (but B<po4a> offers a very simple "
 "interface so that you don't need to understand the internals to use it).  "
@@ -4785,7 +4988,7 @@ msgstr ""
 "мање-више ослобођени багова."
 
 #. type: textblock
-#: doc/po4a.7.pod:141
+#: doc/po4a.7.pod:168
 msgid ""
 "Nothing changed for the end-user (beside the fact translations will "
 "hopefully be better maintained). The resulting documentation file "
@@ -4796,7 +4999,7 @@ msgstr ""
 "дистрибуира је потпуно исти."
 
 #. type: textblock
-#: doc/po4a.7.pod:142
+#: doc/po4a.7.pod:169
 msgid ""
 "No need for translators to learn a new file syntax and their favorite PO "
 "file editor (like Emacs' PO mode, Lokalize or Gtranslator) will work just "
@@ -4807,7 +5010,7 @@ msgstr ""
 "лепо да функционише."
 
 #. type: textblock
-#: doc/po4a.7.pod:143
+#: doc/po4a.7.pod:170
 msgid ""
 "gettext offers a simple way to get statistics about what is done, what "
 "should be reviewed and updated, and what is still to do. Some example can be "
@@ -4818,7 +5021,7 @@ msgstr ""
 "преостало да се уради. Неки пример може да се пронађе на следећим адресама:"
 
 #. type: verbatim
-#: doc/po4a.7.pod:144
+#: doc/po4a.7.pod:171
 #, no-wrap
 msgid ""
 " - https://docs.kde.org/stable5/en/kdesdk/lokalize/project-view.html\n"
@@ -4830,7 +5033,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: doc/po4a.7.pod:145
+#: doc/po4a.7.pod:172
 msgid ""
 "But everything isn't green, and this approach also has some disadvantages we "
 "have to deal with."
@@ -4839,12 +5042,12 @@ msgstr ""
 "морамо да се носимо."
 
 #. type: textblock
-#: doc/po4a.7.pod:146
+#: doc/po4a.7.pod:173
 msgid "Addenda are… strange at the first glance."
 msgstr "Додаци су… чудни на први поглед."
 
 #. type: textblock
-#: doc/po4a.7.pod:147
+#: doc/po4a.7.pod:174
 msgid ""
 "You can't adapt the translated text to your preferences, like splitting a "
 "paragraph here, and joining two other ones there. But in some sense, if "
@@ -4855,7 +5058,7 @@ msgstr ""
 "проблем са оригиналом, то би у сваком случају требало да се пријави као баг."
 
 #. type: textblock
-#: doc/po4a.7.pod:148
+#: doc/po4a.7.pod:175
 msgid ""
 "Even with an easy interface, it remains a new tool people have to learn."
 msgstr ""
@@ -4863,7 +5066,7 @@ msgstr ""
 "научити како да користе."
 
 #. type: textblock
-#: doc/po4a.7.pod:149
+#: doc/po4a.7.pod:176
 msgid ""
 "One of my dreams would be to integrate somehow po4a to Gtranslator or "
 "Lokalize. When a documentation file is opened, the strings are automatically "
@@ -4878,14 +5081,14 @@ msgstr ""
 "професионални преводиоци."
 
 #. type: textblock
-#: doc/po4a.7.pod:151
+#: doc/po4a.7.pod:178
 msgid ""
 "The documentation of the all-in-one tool that you should use: L<po4a(1)>."
 msgstr ""
 "Документација све-у-једном алата који би требало да користите: L<po4a(1)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:152
+#: doc/po4a.7.pod:179
 msgid ""
 "The documentation of the individual po4a scripts: L<po4a-gettextize(1)>, "
 "L<po4a-updatepo(1)>, L<po4a-translate(1)>, L<po4a-normalize(1)>."
@@ -4894,7 +5097,7 @@ msgstr ""
 "updatepo(1)>, L<po4a-translate(1)>, L<po4a-normalize(1)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:153
+#: doc/po4a.7.pod:180
 msgid ""
 "The additional helping scripts: L<msguntypot(1)>, L<po4a-display-man(1)>, "
 "L<po4a-display-pod(1)>."
@@ -4903,7 +5106,7 @@ msgstr ""
 "display-pod(1)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:154
+#: doc/po4a.7.pod:181
 msgid ""
 "The parsers of each formats, in particular to see the options accepted by "
 "each of them: L<Locale::Po4a::AsciiDoc(3pm)> L<Locale::Po4a::Dia(3pm)>, "
@@ -4928,7 +5131,7 @@ msgstr ""
 "Xml(3pm)>."
 
 #. type: textblock
-#: doc/po4a.7.pod:155
+#: doc/po4a.7.pod:182
 msgid ""
 "The implementation of the core infrastructure: L<Locale::Po4a::"
 "TransTractor(3pm)> (particularly important to understand the code "
@@ -4943,7 +5146,7 @@ msgstr ""
 "md>."
 
 #. type: verbatim
-#: doc/po4a.7.pod:157
+#: doc/po4a.7.pod:184
 #, no-wrap
 msgid ""
 " Denis Barbier <barbier,linuxfr.org>\n"
@@ -4972,9 +5175,11 @@ msgstr ""
 
 #. type: =head1
 #: lib/Locale/Po4a/AsciiDoc.pm:6 lib/Locale/Po4a/BibTeX.pm:7
-#: lib/Locale/Po4a/Man.pm:34 lib/Locale/Po4a/Po.pm:13 lib/Locale/Po4a/Sgml.pm:7
+#: lib/Locale/Po4a/Man.pm:34 lib/Locale/Po4a/Po.pm:13
+#: lib/Locale/Po4a/RubyDoc.pm:9 lib/Locale/Po4a/Sgml.pm:7
 #: lib/Locale/Po4a/TeX.pm:11 lib/Locale/Po4a/Text.pm:8 lib/Locale/Po4a/Wml.pm:7
 #: lib/Locale/Po4a/Xhtml.pm:6 lib/Locale/Po4a/Xml.pm:9
+#: lib/Locale/Po4a/Yaml.pm:7
 msgid "OPTIONS ACCEPTED BY THIS MODULE"
 msgstr "ОПЦИЈЕ КОЈЕ ПРИХВАТА ОВАЈ МОДУЛ"
 
@@ -4982,6 +5187,7 @@ msgstr "ОПЦИЈЕ КОЈЕ ПРИХВАТА ОВАЈ МОДУЛ"
 #: lib/Locale/Po4a/AsciiDoc.pm:7 lib/Locale/Po4a/Man.pm:35
 #: lib/Locale/Po4a/TeX.pm:12 lib/Locale/Po4a/Text.pm:9
 #: lib/Locale/Po4a/Xhtml.pm:7 lib/Locale/Po4a/Xml.pm:11
+#: lib/Locale/Po4a/Yaml.pm:8
 msgid "These are this module's particular options:"
 msgstr "Ово су опције везане само за овај модул:"
 
@@ -5173,13 +5379,55 @@ msgstr ""
 "парсирања, као што је једнакост дужина отварајућих и затварајућих ограда "
 "блока."
 
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:31
+msgid "B<yfm_keys>"
+msgstr "B<yfm_keys>"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:32 lib/Locale/Po4a/Text.pm:31
+msgid ""
+"Comma-separated list of keys to process for translation in the YAML Front "
+"Matter section. All other keys are skipped. Keys are matched with a case-"
+"insensitive match. Array values are always translated, unless the "
+"B<yfm_skip_array> option is provided."
+msgstr ""
+"Листа кључева раздвојених зарезима који се процесирају за превођење у YAML "
+"Front Matter одељку. Сви остали кључеви се прескачу. При подударању кључева "
+"се не води рачуна о разлици малих и великих слова. Вредности низова се увек "
+"преводе, осим у случају када је постављена опција B<yfm_skip_array>."
+
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:33
+msgid "B<nolinting>"
+msgstr "B<nolinting>"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:34
+msgid ""
+"Disable linting messages. When the source code cannot be fixed for clearer "
+"document structure, these messages are useless."
+msgstr ""
+"Искључује линтинг поруке. Када изворни кôд не може да се поправи тако да се "
+"добије чистија структура документа, ове поруке су бескорисне."
+
+#. type: =item
+#: lib/Locale/Po4a/AsciiDoc.pm:35
+msgid "B<yfm_skip_array>"
+msgstr "B<yfm_skip_array>"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:36 lib/Locale/Po4a/Text.pm:33
+msgid "Do not translate array values in the YAML Front Matter section."
+msgstr "Вредности типа низ у YAML Front Matter одељку се не преводе."
+
 #. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:31 lib/Locale/Po4a/TeX.pm:27
+#: lib/Locale/Po4a/AsciiDoc.pm:37 lib/Locale/Po4a/TeX.pm:27
 msgid "INLINE CUSTOMIZATION"
 msgstr "ПРИЛАГОЂАВАЊЕ ИЗ САМОГ ФАЈЛА"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:32
+#: lib/Locale/Po4a/AsciiDoc.pm:38
 msgid ""
 "The AsciiDoc module can be customized with lines starting by B<//po4a:>.  "
 "These lines are interpreted as commands to the parser.  The following "
@@ -5189,12 +5437,12 @@ msgstr ""
 "линије се интерпретирају као команде парсера. Препознају се следеће команде:"
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:33
+#: lib/Locale/Po4a/AsciiDoc.pm:39
 msgid "B<//po4a: macro >I<name>B<[>I<attribute list>B<]>"
 msgstr "B<//po4a: macro >I<име>B<[>I<листа атрибута>B<]>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:34
+#: lib/Locale/Po4a/AsciiDoc.pm:40
 msgid ""
 "This permits to describe in detail the parameters of a B<macro>; I<name> "
 "must be a valid macro name, and it ends with an underscore if the target "
@@ -5205,7 +5453,7 @@ msgstr ""
 "преведе."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:35
+#: lib/Locale/Po4a/AsciiDoc.pm:41
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -5216,7 +5464,7 @@ msgstr ""
 "бројеве, који дефинишу позиционе параметре, или именоване атрибуте."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:36
+#: lib/Locale/Po4a/AsciiDoc.pm:42
 msgid ""
 "If a plus sign (B<+>) is prepended to I<name>, then the macro and its "
 "arguments are translated as a whole.  There is no need to define attribute "
@@ -5227,12 +5475,12 @@ msgstr ""
 "дефинише листа аргумената, али је потребно да постоје угласте заграде."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:37
+#: lib/Locale/Po4a/AsciiDoc.pm:43
 msgid "B<//po4a: style >B<[>I<attribute list>B<]>"
 msgstr "B<//po4a: style >B<[>I<листа атрибута>B<]>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:38
+#: lib/Locale/Po4a/AsciiDoc.pm:44
 msgid ""
 "This permits to describe in detail which attributes of a style must be "
 "translated."
@@ -5240,7 +5488,7 @@ msgstr ""
 "Ово омогућава да се детаљно опише који атрибути стила морају да се преведу."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:39
+#: lib/Locale/Po4a/AsciiDoc.pm:45
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
 "informations about translatable arguments.  This list contains either "
@@ -5253,7 +5501,7 @@ msgstr ""
 "Први атрибут је име стила, и он неће да се преводи."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:40
+#: lib/Locale/Po4a/AsciiDoc.pm:46
 msgid ""
 "If a plus sign (B<+>) is prepended to the style name, then the attribute "
 "list is translated as a whole.  There is no need to define translatable "
@@ -5264,7 +5512,7 @@ msgstr ""
 "преводе."
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:41
+#: lib/Locale/Po4a/AsciiDoc.pm:47
 msgid ""
 "If a minus sign (B<->) is prepended to the style name, then this attribute "
 "is not translated."
@@ -5273,12 +5521,12 @@ msgstr ""
 "не преводи."
 
 #. type: =item
-#: lib/Locale/Po4a/AsciiDoc.pm:42
+#: lib/Locale/Po4a/AsciiDoc.pm:48
 msgid "B<//po4a: entry >I<name>"
 msgstr "B<//po4a: entry >I<име>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:43
+#: lib/Locale/Po4a/AsciiDoc.pm:49
 msgid ""
 "This declares an attribute entry as being translatable.  By default, they "
 "are not translated."
@@ -5287,24 +5535,25 @@ msgstr ""
 "могу да се преводе."
 
 #. type: =head1
-#: lib/Locale/Po4a/AsciiDoc.pm:44 lib/Locale/Po4a/BibTeX.pm:9
+#: lib/Locale/Po4a/AsciiDoc.pm:50 lib/Locale/Po4a/BibTeX.pm:9
 #: lib/Locale/Po4a/Dia.pm:10 lib/Locale/Po4a/Docbook.pm:6
 #: lib/Locale/Po4a/Guide.pm:7 lib/Locale/Po4a/Halibut.pm:7
 #: lib/Locale/Po4a/KernelHelp.pm:5 lib/Locale/Po4a/Man.pm:96
-#: lib/Locale/Po4a/Pod.pm:9 lib/Locale/Po4a/Sgml.pm:34
-#: lib/Locale/Po4a/TeX.pm:104 lib/Locale/Po4a/Texinfo.pm:8
-#: lib/Locale/Po4a/Text.pm:38 lib/Locale/Po4a/Wml.pm:9
-#: lib/Locale/Po4a/Xhtml.pm:12 lib/Locale/Po4a/Xml.pm:178
+#: lib/Locale/Po4a/Pod.pm:9 lib/Locale/Po4a/RubyDoc.pm:6
+#: lib/Locale/Po4a/Sgml.pm:34 lib/Locale/Po4a/TeX.pm:104
+#: lib/Locale/Po4a/Texinfo.pm:8 lib/Locale/Po4a/Text.pm:38
+#: lib/Locale/Po4a/Wml.pm:9 lib/Locale/Po4a/Xhtml.pm:12
+#: lib/Locale/Po4a/Xml.pm:181
 msgid "STATUS OF THIS MODULE"
 msgstr "СТАТУС ОВОГ МОДУЛА"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:45
+#: lib/Locale/Po4a/AsciiDoc.pm:51
 msgid "Tested successfully on simple AsciiDoc files."
 msgstr "Успешно је тестиран на једноставним AsciiDoc фајловима."
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:47
+#: lib/Locale/Po4a/AsciiDoc.pm:53
 #, no-wrap
 msgid ""
 " Nicolas François <nicolas.francois@centraliens.net>\n"
@@ -5316,7 +5565,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/AsciiDoc.pm:49
+#: lib/Locale/Po4a/AsciiDoc.pm:55
 #, no-wrap
 msgid ""
 " Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.\n"
@@ -5793,7 +6042,7 @@ msgstr ""
 "(осим типичних фајлова ентитета) и обично је и боље да се одржавају одвојено."
 
 #. type: =head2
-#: lib/Locale/Po4a/Docbook.pm:9 lib/Locale/Po4a/Xml.pm:103
+#: lib/Locale/Po4a/Docbook.pm:9 lib/Locale/Po4a/Xml.pm:106
 msgid "OVERRIDE THE DEFAULT BEHAVIOR WITH COMMAND LINE OPTIONS"
 msgstr "ИЗМЕНА ПОДРАЗУМЕВАНОГ ПОНАШАЊА ОПЦИЈАМА У КОМАНДНОЈ ЛИНИЈИ"
 
@@ -6031,7 +6280,7 @@ msgid "NOTE: If the text is not quoted, it will be ignored."
 msgstr "НАПОМЕНА: Ако се текст не налази између наводника, игнорисаће се."
 
 #. type: textblock
-#: lib/Locale/Po4a/Ini.pm:9
+#: lib/Locale/Po4a/Ini.pm:9 lib/Locale/Po4a/Yaml.pm:16
 msgid "L<Locale::Po4a::TransTractor(3pm)>, L<po4a(7)|po4a.7>"
 msgstr "L<Locale::Po4a::TransTractor(3pm)>, L<po4a(7)|po4a.7>"
 
@@ -6544,7 +6793,7 @@ msgstr ""
 "po4a."
 
 #. type: =item
-#: lib/Locale/Po4a/Man.pm:58 lib/Locale/Po4a/Xml.pm:91
+#: lib/Locale/Po4a/Man.pm:58 lib/Locale/Po4a/Xml.pm:94
 msgid "B<untranslated>"
 msgstr "B<untranslated>"
 
@@ -7919,6 +8168,177 @@ msgstr ""
 "TransTractor(3pm)>, L<po4a(7)|po4a.7>"
 
 #. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:2
+msgid "Locale::Po4a::RubyDoc -- Convert Ruby Document data from/to PO files"
+msgstr ""
+"Locale::Po4a::RubyDoc - двосмерна конверзија Ruby Document података и PO "
+"фајлова"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:5
+msgid ""
+"Locale::Po4a::RubyDoc is a module to help the translation of documentation "
+"in the Ruby Document (RD) format (a language used to document Ruby) into "
+"other [human] languages."
+msgstr ""
+"Locale::Po4a::RubyDoc је модул који помаже превођење документације у Ruby "
+"Document (RD) формату (језик који се користи за документовање Ruby кода) на "
+"друге [људске] језике."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:7
+msgid ""
+"This module has been successfully tested on simple Ruby Document files "
+"covering a good part of the format syntax."
+msgstr ""
+"Овај модул је успешно тестиран на једноставним Ruby Document фајловима који "
+"покривају већи део синтаксе формата."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:8
+msgid ""
+"A known limitation is that it fails to properly recognize the stacked "
+"structure of input Ruby Document: this implies that when, for instance, an "
+"EnumListItem consists of more than one Block, only the first Block is "
+"actually recognized as EnumListItem, while the subsequent ones are "
+"considered just as TextBlocks..."
+msgstr ""
+"Познато ограничење је што не успева исправно да препозна наслагану структуру "
+"улазног Ruby Document фајла: на пример када се EnumListItem састоји од више "
+"блокова, само први се препознаје као EnumListItem, док се остали сматрају за "
+"обичне TextBlock..."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:10
+msgid "This module supports the following option:"
+msgstr "Овај модул прихвата следеће опције:"
+
+#. type: =item
+#: lib/Locale/Po4a/RubyDoc.pm:11
+msgid "B<puredoc>"
+msgstr "B<puredoc>"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:12
+msgid ""
+"Handle files entirely made of Ruby Document formatted text (without any "
+"\"=begin\" line)."
+msgstr ""
+"Обрада чистих Ruby Document форматираних текстова (без и једне „=begin” "
+"линије)."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:13
+msgid ""
+"By default, this module only handles Ruby Document formatted text between "
+"\"=begin\" and \"=end\" lines (hence ignoring, among other things, "
+"everything that precedes the first \"=begin\" line)."
+msgstr ""
+"Овај модул подразумевано обрађује само Ruby Document форматирани текст "
+"између „=begin” и „=end” линија (игноришући, између осталог, и све испред "
+"прве „=begin” линије)."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:15
+msgid "L<Locale::Po4a::TransTractor(3pm)>"
+msgstr "L<Locale::Po4a::TransTractor(3pm)>"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:17
+msgid "Francesco Poli <invernomuto@paranoici.org>"
+msgstr "Франческо Поли <invernomuto@paranoici.org>"
+
+#. type: verbatim
+#: lib/Locale/Po4a/RubyDoc.pm:19
+#, no-wrap
+msgid ""
+" Copyright © 2016-2017 Francesco Poli <invernomuto@paranoici.org>\n"
+"\n"
+msgstr ""
+" Ауторска права © 2016-2017 Франческо Поли <invernomuto@paranoici.org>\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:20
+msgid ""
+"This work is free software; you can redistribute it and/or modify it under "
+"the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+"Овај рад је слободни софтвер; можете за редистрибуирати и/или мењати под "
+"условима ГНУ Опште јавне лиценце, оне коју је објавила Фондација слободног "
+"софтвера; или верзије 2, или (према вашем мишљењу) било које касније верзије."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:21
+msgid ""
+"This work is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+"Овај рад се дистрибуира у нади да ће бити користан, али БЕЗ БИЛО КАКВЕ "
+"ГАРАНЦИЈЕ; чак и без подразумеване гаранције МОГУЋНОСТИ ПРОДАЈЕ или "
+"ПОДОБНОСТИ ЗА ОДРЕЂЕНУ УПОТРЕБУ. За више детаља, погледајте ГНУ Општиу јавну "
+"лиценцу."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:22
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this work; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA."
+msgstr ""
+"Требало је да сте уз овај рад добили и копију ГНУ Опште јавне лиценце; у "
+"случају да нисте, пишите на адресу Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:23
+msgid ""
+"Parts of the code (such as many regular expressions) were adapted from the "
+"source of rdtool, under the terms of the GNU General Public License, version "
+"2 or later.  These parts are originally:"
+msgstr ""
+"Делови кода (као што су многи регуларни изрази)су прилагођени из изворног "
+"кода алата rdtool, под условима ГНУ Опште јавне лиценце, верзије 2 или "
+"касније. Ови делови су оригинално:"
+
+#. type: verbatim
+#: lib/Locale/Po4a/RubyDoc.pm:24
+#, no-wrap
+msgid ""
+" Copyright © 2004      MoonWolf <moonwolf@moonwolf.com>\n"
+" Copyright © 2011-2012 Youhei SASAKI <uwabami@gfd-dennou.org>\n"
+"\n"
+msgstr ""
+" Ауторска права © 2004      MoonWolf <moonwolf@moonwolf.com>\n"
+" Ауторска права © 2011-2012 Јухеи САСАКИ <uwabami@gfd-dennou.org>\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:25
+msgid ""
+"The initialize code was adapted from the source of Locale::Po4a::Text, under "
+"the terms of the GNU General Public License, version 2 or later.  This code "
+"was originally:"
+msgstr ""
+"Иницијализациони код је адаптиран из изворног кода Locale::Po4a::Text, под "
+"условима ГНУ Опште јавне лиценце, верзије 2 или касније. Овај код је био "
+"оригинално:"
+
+#. type: verbatim
+#: lib/Locale/Po4a/RubyDoc.pm:26
+#, no-wrap
+msgid ""
+" Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>\n"
+"\n"
+msgstr ""
+" Ауторска права © 2005-2008 Никола ФРАНСОА <nicolas.francois@centraliens.net>\n"
+"\n"
+
+#. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:2
 msgid "Locale::Po4a::Sgml - convert SGML documents from/to PO files"
 msgstr "Locale::Po4a::Sgml - двосмерна конверзија SGML докумената и PO фајлова"
@@ -8322,7 +8742,7 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:2
 msgid ""
-"Locale::Po4a::TeX - convert TeX documents and derivates from/to PO files"
+"Locale::Po4a::TeX - convert TeX documents and derivatives from/to PO files"
 msgstr ""
 "Locale::Po4a::TeX - двосмерна конверзија TeX (и изведених из њега) "
 "докумената и PO фајлова"
@@ -8364,12 +8784,12 @@ msgstr ""
 "чак мање, као што су наслови или индекси)."
 
 #. type: textblock
-#: lib/Locale/Po4a/TeX.pm:9 lib/Locale/Po4a/Xml.pm:8
+#: lib/Locale/Po4a/TeX.pm:9
 msgid ""
 "There are some options (described in the next section) that can customize "
 "this behavior.  If this doesn't fit to your document format you're "
-"encouraged to write your own module derived from this, to describe your "
-"format's details.  See the section B<WRITING DERIVATE MODULES> below, for "
+"encouraged to write your own derivative module from this, to describe your "
+"format's details.  See the section B<WRITING DERIVATIVE MODULES> below, for "
 "the process description."
 msgstr ""
 "Постоје неке опције (описане у наредном одељку) које могу да прилагоде ово "
@@ -8382,12 +8802,10 @@ msgstr ""
 #: lib/Locale/Po4a/TeX.pm:10
 msgid ""
 "This module can also be customized by lines starting with \"% po4a:\" in the "
-"TeX file.  These customizations are described in the B<INLINE CUSTOMIZATION> "
-"section."
+"TeX file. This process is described in the B<INLINE CUSTOMIZATION> section."
 msgstr ""
 "Овај модул такође може да се прилагоди линијама у TeX фајлу које почињу са "
-"„% po4a:”. Ова прилагођавања су описана у одељку B<ПРИЛАГОЂАВАЊЕ ИЗ САМОГ "
-"ФАЈЛА>."
+"„% po4a:”. Овај процес је описан у одељку B<ПРИЛАГОЂАВАЊЕ ИЗ САМОГ ФАЈЛА>."
 
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:16
@@ -8686,11 +9104,11 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:51
 msgid ""
-"The notion of environment is expended to the type displayed in the PO file.  "
+"The notion of environment is expanded to the type displayed in the PO file.  "
 "This can be used to split on \"\\\\\\\\\" in the first mandatory argument of "
 "the title command.  In this case, the environment is title{#1}."
 msgstr ""
-"Појам окружења се пребацује у тип приказан у PO фајлу. Ово може дасе "
+"Појам окружења се пребацује у тип приказан у PO фајлу. Ово може да се "
 "искористи за поделу на „\\\\\\\\” у првом обавезном аргументу команде "
 "наслова. У овом случају, окружење је title{#1}."
 
@@ -8946,8 +9364,9 @@ msgid "B<docheader>"
 msgstr "B<docheader>"
 
 #. type: =head1
-#: lib/Locale/Po4a/TeX.pm:91
-msgid "INTERNAL FUNCTIONS used to write derivated parsers"
+#: lib/Locale/Po4a/TeX.pm:91 lib/Locale/Po4a/TransTractor.pm:95
+#: lib/Locale/Po4a/Xml.pm:134
+msgid "INTERNAL FUNCTIONS used to write derivative parsers"
 msgstr "ИНТЕРНЕ ФУНКЦИЈЕ које се користе за писање изведених парсера"
 
 #. type: textblock
@@ -9057,7 +9476,7 @@ msgid "It was tested on a book and with the Python documentation."
 msgstr "Тестиран је на књизи и Python документацији."
 
 #. type: =head1
-#: lib/Locale/Po4a/TeX.pm:107 lib/Locale/Po4a/Xml.pm:180
+#: lib/Locale/Po4a/TeX.pm:107 lib/Locale/Po4a/Xml.pm:183
 msgid "TODO LIST"
 msgstr "ЛИСТА СТВАРИ КОЈЕ ТРЕБА ДА СЕ УРАДЕ"
 
@@ -9335,28 +9754,10 @@ msgstr "Обрађује неко специјално маркирање у Mar
 msgid "B<yfm_keys> (markdown-only)"
 msgstr "B<yfm_keys> (само markdown)"
 
-#. type: textblock
-#: lib/Locale/Po4a/Text.pm:31
-msgid ""
-"Comma-separated list of keys to process for translation in the YAML Front "
-"Matter section. All other keys are skipped. Keys are matched with a case-"
-"insensitive match. Array values are always translated, unless the "
-"B<yfm_skip_array> option is provided."
-msgstr ""
-"Листа кључева раздвојених зарезима који се процесирају за превођење у YAML "
-"Front Matter одељку. Сви остали кључеви се прескачу. При подударању кључева "
-"се не води рачуна о разлици малих и великих слова. Вредности низова се увек "
-"преводе, осим у случају када је постављена опција B<yfm_skip_array>."
-
 #. type: =item
 #: lib/Locale/Po4a/Text.pm:32
 msgid "B<yfm_skip_array> (markdown-only)"
 msgstr "B<yfm_skip_array> (само markdown)"
-
-#. type: textblock
-#: lib/Locale/Po4a/Text.pm:33
-msgid "Do not translate array values in the YAML Front Matter section."
-msgstr "Вредности типа низ у YAML Front Matter одељку се не преводе."
 
 #. type: =item
 #: lib/Locale/Po4a/Text.pm:34
@@ -9887,9 +10288,12 @@ msgstr "new(%)"
 
 #. type: textblock
 #: lib/Locale/Po4a/TransTractor.pm:67
-msgid "Create a new po4a document. Accepted options (but be in a hash):"
+msgid ""
+"Create a new po4a document. Accepted options (in the hash passed as a "
+"parameter):"
 msgstr ""
-"Креира нови po4a документ. Прихватају се опције (морају да буду у хешу):"
+"Креира нови po4a документ. Прихватају се опције (у хешу који се прослеђује "
+"као параметар):"
 
 #. type: =item
 #: lib/Locale/Po4a/TransTractor.pm:68
@@ -10096,11 +10500,6 @@ msgstr ""
 #: lib/Locale/Po4a/TransTractor.pm:94
 msgid "This function returns a non-null integer on error."
 msgstr "У случају грешке, ова функција враћа цео број различит од нуле."
-
-#. type: =head1
-#: lib/Locale/Po4a/TransTractor.pm:95 lib/Locale/Po4a/Xml.pm:131
-msgid "INTERNAL FUNCTIONS used to write derivative parsers"
-msgstr "ИНТЕРНЕ ФУНКЦИЈЕ које се користе за писање изведених парсера"
 
 #. type: =head2
 #: lib/Locale/Po4a/TransTractor.pm:96
@@ -10662,6 +11061,21 @@ msgstr ""
 "текст у већини докумената базираних на XML."
 
 #. type: textblock
+#: lib/Locale/Po4a/Xml.pm:8
+msgid ""
+"There are some options (described in the next section) that can customize "
+"this behavior.  If this doesn't fit to your document format you're "
+"encouraged to write your own module derived from this, to describe your "
+"format's details.  See the section B<WRITING DERIVATE MODULES> below, for "
+"the process description."
+msgstr ""
+"Постоје неке опције (описане у наредном одељку) које могу да прилагоде ово "
+"понашање. Ако се не уклапа у формат вашег документа, најбоље је да напишете "
+"ваш сопствени модул изведен из овога, који ће да опише детаље вашег формата. "
+"Погледајте одељак B<ПИСАЊЕ ИЗВЕДЕНИХ МОДУЛА> испод, да сазнате више о том "
+"процесу."
+
+#. type: textblock
 #: lib/Locale/Po4a/Xml.pm:10
 msgid ""
 "The global debug option causes this module to show the excluded strings, in "
@@ -10821,11 +11235,11 @@ msgstr "Напомена: ова опција је застарела."
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:36
 msgid ""
-"Extracts only the specified tags in the \"tags\" option.  Otherwise, it will "
+"Extracts only the specified tags in the B<tags> option.  Otherwise, it will "
 "extract all the tags except the ones specified."
 msgstr ""
-"Издваја само ознаке наведене у опцији „tags”. Иначе, издвајаће се све ознаке "
-"осим оних наведених."
+"Издваја само ознаке наведене у опцији B<tags>. Иначе, издвајаће се све "
+"ознаке осим оних наведених."
 
 #. type: =item
 #: lib/Locale/Po4a/Xml.pm:37
@@ -10869,11 +11283,11 @@ msgstr "B<optionalclosingtag>"
 msgid ""
 "Boolean indicating whether closing tags are optional (as in HTML). By "
 "default, missing closing tags raise an error handled according to "
-"C<ontagerror>."
+"B<ontagerror>."
 msgstr ""
 "Логичка вредност која означава да ли су затварајуће ознаке опционалне (као у "
 "HTML). Подразумевано понашање је да се за затварајућу ознаку која недостаје "
-"пријави грешка која се затим обрађује сагласно са C<ontagerror>."
+"пријави грешка која се затим обрађује сагласно са B<ontagerror>."
 
 #. type: =item
 #: lib/Locale/Po4a/Xml.pm:43
@@ -10911,16 +11325,17 @@ msgstr ""
 #: lib/Locale/Po4a/Xml.pm:46
 msgid ""
 "You can also specify some tag options by putting some characters in front of "
-"the tag hierarchy. For example, you can put 'w' (wrap) or 'W' (don't wrap)  "
-"to override the default behavior specified by the global \"wrap\" option."
+"the tag hierarchy. For example, you can put I<w> (wrap) or I<W> (don't "
+"wrap)  to override the default behavior specified by the global B<wrap> "
+"option."
 msgstr ""
 "Такође можете да наведете и неке опције за ознаке стављањем неких карактера "
-"испред хијерархије ознака. На пример, можете да ставите ’w’ (wrap - "
-"обавијај) или ’W’ (не обавијај) и тиме преиначите подразумевано понашање "
-"задато глобалном опцијом „wrap”."
+"испред хијерархије ознака. На пример, можете да ставите I<w> (wrap - "
+"обавијај) или I<W> (не обавијај) и тиме преиначите подразумевано понашање "
+"задато глобалном опцијом B<wrap>."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:47 lib/Locale/Po4a/Xml.pm:89
+#: lib/Locale/Po4a/Xml.pm:47 lib/Locale/Po4a/Xml.pm:92
 msgid "Example: WE<lt>chapterE<gt>E<lt>titleE<gt>"
 msgstr "Пример: WE<lt>chapterE<gt>E<lt>titleE<gt>"
 
@@ -10997,7 +11412,7 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:57 lib/Locale/Po4a/Xml.pm:61
 #: lib/Locale/Po4a/Xml.pm:66 lib/Locale/Po4a/Xml.pm:76
-#: lib/Locale/Po4a/Xml.pm:93
+#: lib/Locale/Po4a/Xml.pm:96
 msgid ""
 "The tags must be in the form <aaa>, but you can join some (<bbb><aaa>), if a "
 "tag (<aaa>) should only be considered when it's within another tag (<bbb>)."
@@ -11067,14 +11482,14 @@ msgstr "B<break-pi>"
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:68
 msgid ""
-"By default, Processing Instructions (i.e., C<<? ... ?>> tags) are handled as "
-"inline tags.  Pass this option if you want the PI to be handled as breaking "
-"tag.  Note that unprocessed PHP tags are handled as Processing Instructions "
-"by the parser."
+"By default, Processing Instructions (i.e., C<E<lt>? ... ?E<gt>> tags) are "
+"handled as inline tags.  Pass this option if you want the PI to be handled "
+"as breaking tag.  Note that unprocessed PHP tags are handled as Processing "
+"Instructions by the parser."
 msgstr ""
-"Подразумевано се Инструкције за Процесирање (нпр. C<<? ... ?>> ознаке) "
-"обрађују као ознаке унутар линије. Проследите ову опције ако желите да се ИП "
-"обрађују као ознака која прелама. Имајте на уму да парсер обрађује "
+"Подразумевано се Инструкције за Процесирање (нпр. C<E<lt>? ... ?E<gt>> "
+"ознаке) обрађују као ознаке унутар линије. Проследите ову опције ако желите "
+"да се ИП обрађују као ознака која прелама. Имајте на уму да парсер обрађује "
 "непроцесиране PHP ознаке као Инструкције за Процесирање."
 
 #. type: =item
@@ -11197,24 +11612,34 @@ msgstr ""
 "Интерно, XML парсеру су битне само следеће четири опције: I<w> I<W> I<i> "
 "I<p>."
 
-#. type: verbatim
+#. type: textblock
 #: lib/Locale/Po4a/Xml.pm:87
-#, no-wrap
 msgid ""
-"  * Tags listed in B<break> are set to I<w> or I<W> depending on the <wrap> option.\n"
-"  * Tags listed in B<inline> are set to I<i>.\n"
-"  * Tags listed in B<placeholder> are set to I<p>.\n"
-"  * Tags listed in B<untranslated> are without any of these options set.\n"
-"\n"
+"* Tags listed in B<break> are set to I<w> or I<W> depending on the B<wrap> "
+"option."
 msgstr ""
-"  * Ознаке наведене у B<break> се постављају на I<w> или I<W> у зависности од опције <wrap>.\n"
-"  * Ознаке наведене у B<inline> се постављају на I<i>.\n"
-"  * Ознаке наведене у B<placeholder> се постављају на I<p>.\n"
-"  * Ознаке наведене у B<untranslated> немају постављену ниједну од ових опција.\n"
-"\n"
+"* Ознаке наведене у B<break> се постављају на I<w> или I<W> у зависности од "
+"опције B<wrap>."
 
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:88
+msgid "* Tags listed in B<inline> are set to I<i>."
+msgstr "* Ознаке наведене у B<inline> се постављају на I<i>."
+
+#. type: textblock
+#: lib/Locale/Po4a/Xml.pm:89
+msgid "* Tags listed in B<placeholder> are set to I<p>."
+msgstr "* Ознаке наведене у B<placeholder> се постављају I<p>."
+
+#. type: textblock
+#: lib/Locale/Po4a/Xml.pm:90
+msgid "* Tags listed in B<untranslated> are without any of these options set."
+msgstr ""
+"* Ознакама наведеним у B<untranslated> није постављена ниједна од ових "
+"опција."
+
+#. type: textblock
+#: lib/Locale/Po4a/Xml.pm:91
 msgid ""
 "You can verify actual internal parameter behavior by invoking B<po4a> with "
 "B<--debug> option."
@@ -11223,7 +11648,7 @@ msgstr ""
 "са опцијом B<--debug>."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:90
+#: lib/Locale/Po4a/Xml.pm:93
 msgid ""
 "Please note a tag should be listed in either B<translated> or "
 "B<untranslated> setting string."
@@ -11232,28 +11657,28 @@ msgstr ""
 "B<translated>, или у B<untranslated> стрингу подешавања."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:92
+#: lib/Locale/Po4a/Xml.pm:95
 msgid "Space-separated list of tags you do not want to translate."
 msgstr "Листа ознака раздвојених размацима које не желите да се преводе."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:94
+#: lib/Locale/Po4a/Xml.pm:97
 msgid ""
 "Please note a translatable inline tag in an untranslated tag is treated as a "
 "translatable breaking tag, I<i> setting is dropped and I<w> or I<W> is set "
-"depending on the <wrap> option."
+"depending on the B<wrap> option."
 msgstr ""
 "Молим вас, имајте на уму да се преводива ознака унутар линије која се налази "
 "у непреводивој ознаци третира као преламајућа ознака, I<i> подешавање се "
-"брише и поставља се I<w> или I<W> у зависности од опције <wrap>."
+"брише и поставља се I<w> или I<W> у зависности од опције B<wrap>."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:95
+#: lib/Locale/Po4a/Xml.pm:98
 msgid "B<defaulttranslateoption>"
 msgstr "B<defaulttranslateoption>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:96
+#: lib/Locale/Po4a/Xml.pm:99
 msgid ""
 "The default categories for tags that are not in any of the translated, "
 "untranslated, break, inline, or placeholder."
@@ -11262,7 +11687,7 @@ msgstr ""
 "untranslated, break, inline, или placeholder."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:97
+#: lib/Locale/Po4a/Xml.pm:100
 msgid ""
 "This is a set of letters as defined in B<translated> and this setting is "
 "only valid for translatable tags."
@@ -11271,17 +11696,17 @@ msgstr ""
 "само за преводиве ознаке."
 
 #. type: =head1
-#: lib/Locale/Po4a/Xml.pm:98
+#: lib/Locale/Po4a/Xml.pm:101
 msgid "WRITING DERIVATIVE MODULES"
 msgstr "ПИСАЊЕ ИЗВЕДЕНИХ МОДУЛА"
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:99
+#: lib/Locale/Po4a/Xml.pm:102
 msgid "DEFINE WHAT TAGS AND ATTRIBUTES TO TRANSLATE"
 msgstr "ДЕФИНИШИТЕ КОЈЕ ОЗНАКЕ И КОЈИ АТРИБУТИ СЕ ПРЕВОДЕ"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:100
+#: lib/Locale/Po4a/Xml.pm:103
 msgid ""
 "The simplest customization is to define which tags and attributes you want "
 "the parser to translate.  This should be done in the initialize function.  "
@@ -11298,7 +11723,7 @@ msgstr ""
 "би да их дефинишете пре позива главне функције за иницијализацију:"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:101
+#: lib/Locale/Po4a/Xml.pm:104
 #, no-wrap
 msgid ""
 "  $self->{options}{'new_option'}='';\n"
@@ -11318,7 +11743,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:102
+#: lib/Locale/Po4a/Xml.pm:105
 msgid ""
 "You should use the B<_default_inline>, B<_default_break>, "
 "B<_default_placeholder>, B<_default_translated>, B<_default_untranslated>, "
@@ -11333,7 +11758,7 @@ msgstr ""
 "дефинише ваш модул."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:104
+#: lib/Locale/Po4a/Xml.pm:107
 msgid ""
 "If you don't like the default behavior of this xml module and its derivative "
 "modules, you can provide command line options to change their behavior."
@@ -11343,17 +11768,17 @@ msgstr ""
 "мења."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:105
+#: lib/Locale/Po4a/Xml.pm:108
 msgid "See L<Locale::Po4a::Docbook(3pm)|Locale::Po4a::Docbook>,"
 msgstr "Погледајте L<Locale::Po4a::Docbook(3pm)|Locale::Po4a::Docbook>,"
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:106
+#: lib/Locale/Po4a/Xml.pm:109
 msgid "OVERRIDING THE found_string FUNCTION"
 msgstr "ПРЕИНАЧАВАЊЕ ФУНКЦИЈЕ found_string"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:107
+#: lib/Locale/Po4a/Xml.pm:110
 msgid ""
 "Another simple step is to override the function \"found_string\", which "
 "receives the extracted strings from the parser, in order to translate them.  "
@@ -11366,7 +11791,7 @@ msgstr ""
 "трансформације пре или након самог превођења."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:108
+#: lib/Locale/Po4a/Xml.pm:111
 msgid ""
 "It receives the extracted text, the reference on where it was, and a hash "
 "that contains extra information to control what strings to translate, how to "
@@ -11377,7 +11802,7 @@ msgstr ""
 "преведу, како да се преведу и да се генерише коментар."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:109
+#: lib/Locale/Po4a/Xml.pm:112
 msgid ""
 "The content of these options depends on the kind of string it is (specified "
 "in an entry of this hash):"
@@ -11385,12 +11810,12 @@ msgstr ""
 "Садржај ових опција зависи од врсте стринга (наведена је ставки овог хеша):"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:110
+#: lib/Locale/Po4a/Xml.pm:113
 msgid "type=\"tag\""
 msgstr "type=\"tag\""
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:111
+#: lib/Locale/Po4a/Xml.pm:114
 msgid ""
 "The found string is the content of a translatable tag. The entry "
 "\"tag_options\" contains the option characters in front of the tag hierarchy "
@@ -11400,12 +11825,12 @@ msgstr ""
 "карактере опција испред хијерархије ознака у „tags”опцији модула."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:112
+#: lib/Locale/Po4a/Xml.pm:115
 msgid "type=\"attribute\""
 msgstr "type=\"attribute\""
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:113
+#: lib/Locale/Po4a/Xml.pm:116
 msgid ""
 "Means that the found string is the value of a translatable attribute. The "
 "entry \"attribute\" has the name of the attribute."
@@ -11414,7 +11839,7 @@ msgstr ""
 "„attribute” садржи име тог атрибута."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:114
+#: lib/Locale/Po4a/Xml.pm:117
 msgid ""
 "It must return the text that will replace the original in the translated "
 "document. Here's a basic example of this function:"
@@ -11423,7 +11848,7 @@ msgstr ""
 "Ево основног примера ове функције:"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:115
+#: lib/Locale/Po4a/Xml.pm:118
 #, no-wrap
 msgid ""
 "  sub found_string {\n"
@@ -11443,7 +11868,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:116
+#: lib/Locale/Po4a/Xml.pm:119
 msgid ""
 "There's another simple example in the new Dia module, which only filters "
 "some strings."
@@ -11452,12 +11877,12 @@ msgstr ""
 "стрингове."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:117
+#: lib/Locale/Po4a/Xml.pm:120
 msgid "MODIFYING TAG TYPES (TODO)"
 msgstr "ИЗМЕНА ТИПОВА ОЗНАКА (УРАДИТИ)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:118
+#: lib/Locale/Po4a/Xml.pm:121
 msgid ""
 "This is a more complex one, but it enables a (almost) total customization.  "
 "It's based on a list of hashes, each one defining a tag type's behavior. The "
@@ -11473,32 +11898,32 @@ msgstr ""
 "хеш са следећим кључевима:"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:119
+#: lib/Locale/Po4a/Xml.pm:122
 msgid "B<beginning>"
 msgstr "B<beginning>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:120
+#: lib/Locale/Po4a/Xml.pm:123
 msgid "Specifies the beginning of the tag, after the \"E<lt>\"."
 msgstr "Наводи почетак ознаке, након „E<lt>”."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:121
+#: lib/Locale/Po4a/Xml.pm:124
 msgid "B<end>"
 msgstr "B<end>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:122
+#: lib/Locale/Po4a/Xml.pm:125
 msgid "Specifies the end of the tag, before the \"E<gt>\"."
 msgstr "Наводи крај ознаке, испред „E<gt>”."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:123
+#: lib/Locale/Po4a/Xml.pm:126
 msgid "B<breaking>"
 msgstr "B<breaking>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:124
+#: lib/Locale/Po4a/Xml.pm:127
 msgid ""
 "It says if this is a breaking tag class.  A non-breaking (inline) tag is one "
 "that can be taken as part of the content of another tag.  It can take the "
@@ -11513,12 +11938,12 @@ msgstr ""
 "ће да каже да ли је конкретна ознака ове класе преламајућа или није."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:125
+#: lib/Locale/Po4a/Xml.pm:128
 msgid "B<f_breaking>"
 msgstr "B<f_breaking>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:126
+#: lib/Locale/Po4a/Xml.pm:129
 msgid ""
 "It's a function that will tell if the next tag is a breaking one or not.  It "
 "should be defined if the B<breaking> option is not."
@@ -11527,12 +11952,12 @@ msgstr ""
 "Мора да се дефинише у случају када опција B<breaking> није дефинисана."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:127
+#: lib/Locale/Po4a/Xml.pm:130
 msgid "B<f_extract>"
 msgstr "B<f_extract>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:128
+#: lib/Locale/Po4a/Xml.pm:131
 msgid ""
 "If you leave this key undefined, the generic extraction function will have "
 "to extract the tag itself.  It's useful for tags that can have other tags or "
@@ -11547,12 +11972,12 @@ msgstr ""
 "треба да се уклони из улазног тока или не."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:129
+#: lib/Locale/Po4a/Xml.pm:132
 msgid "B<f_translate>"
 msgstr "B<f_translate>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:130
+#: lib/Locale/Po4a/Xml.pm:133
 msgid ""
 "This function receives the tag (in the get_string_until() format) and "
 "returns the translated tag (translated attributes or all needed "
@@ -11563,17 +11988,17 @@ msgstr ""
 "један стринг."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:132
+#: lib/Locale/Po4a/Xml.pm:135
 msgid "WORKING WITH TAGS"
 msgstr "РАД СА ОЗНАКАМА"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:133
+#: lib/Locale/Po4a/Xml.pm:136
 msgid "get_path()"
 msgstr "get_path()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:134
+#: lib/Locale/Po4a/Xml.pm:137
 msgid ""
 "This function returns the path to the current tag from the document's root, "
 "in the form E<lt>htmlE<gt>E<lt>bodyE<gt>E<lt>pE<gt>."
@@ -11582,7 +12007,7 @@ msgstr ""
 "E<lt>htmlE<gt>E<lt>bodyE<gt>E<lt>pE<gt>."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:135
+#: lib/Locale/Po4a/Xml.pm:138
 msgid ""
 "An additional array of tags (without brackets) can be passed as argument.  "
 "These path elements are added to the end of the current path."
@@ -11591,12 +12016,12 @@ msgstr ""
 "елементи путање се додају на крај текуће путање."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:136
+#: lib/Locale/Po4a/Xml.pm:139
 msgid "tag_type()"
 msgstr "tag_type()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:137
+#: lib/Locale/Po4a/Xml.pm:140
 msgid ""
 "This function returns the index from the tag_types list that fits to the "
 "next tag in the input stream, or -1 if it's at the end of the input file."
@@ -11605,7 +12030,7 @@ msgstr ""
 "ознаком у улазном току, или -1 ако је дошла до краја улазног фајла."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:138
+#: lib/Locale/Po4a/Xml.pm:141
 msgid ""
 "Here, the tag has structure started by E<lt> and end by E<gt> and it can "
 "contain multiple lines."
@@ -11614,8 +12039,8 @@ msgstr ""
 "састоји од више линија."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:139 lib/Locale/Po4a/Xml.pm:142
-#: lib/Locale/Po4a/Xml.pm:149 lib/Locale/Po4a/Xml.pm:158
+#: lib/Locale/Po4a/Xml.pm:142 lib/Locale/Po4a/Xml.pm:145
+#: lib/Locale/Po4a/Xml.pm:152 lib/Locale/Po4a/Xml.pm:161
 msgid ""
 "This works on the array C<< @{$self->{TT}{doc_in}} >> holding input document "
 "data and reference indirectly via C<< $self->shiftline() >> and C<< $self-"
@@ -11626,12 +12051,12 @@ msgstr ""
 ">shiftline() >> и C<< $self->unshiftline($$) >>."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:140
+#: lib/Locale/Po4a/Xml.pm:143
 msgid "extract_tag($$)"
 msgstr "extract_tag($$)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:141
+#: lib/Locale/Po4a/Xml.pm:144
 msgid ""
 "This function returns the next tag from the input stream without the "
 "beginning and end, in an array form, to maintain the references from the "
@@ -11645,12 +12070,12 @@ msgstr ""
 "ли би ознака требало да се уклони из улазног тока."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:143
+#: lib/Locale/Po4a/Xml.pm:146
 msgid "get_tag_name(@)"
 msgstr "get_tag_name(@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:144
+#: lib/Locale/Po4a/Xml.pm:147
 msgid ""
 "This function returns the name of the tag passed as an argument, in the "
 "array form returned by extract_tag."
@@ -11659,12 +12084,12 @@ msgstr ""
 "низа који враћа extract_tag."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:145
+#: lib/Locale/Po4a/Xml.pm:148
 msgid "breaking_tag()"
 msgstr "breaking_tag()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:146
+#: lib/Locale/Po4a/Xml.pm:149
 msgid ""
 "This function returns a boolean that says if the next tag in the input "
 "stream is a breaking tag or not (inline tag).  It leaves the input stream "
@@ -11675,12 +12100,12 @@ msgstr ""
 "оставља нетакнут."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:147
+#: lib/Locale/Po4a/Xml.pm:150
 msgid "treat_tag()"
 msgstr "treat_tag()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:148
+#: lib/Locale/Po4a/Xml.pm:151
 msgid ""
 "This function translates the next tag from the input stream.  Using each tag "
 "type's custom translation functions."
@@ -11689,12 +12114,12 @@ msgstr ""
 "функција превођења сваког од типова ознака."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:150
+#: lib/Locale/Po4a/Xml.pm:153
 msgid "tag_in_list($@)"
 msgstr "tag_in_list($@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:151
+#: lib/Locale/Po4a/Xml.pm:154
 msgid ""
 "This function returns a string value that says if the first argument (a tag "
 "hierarchy) matches any of the tags from the second argument (a list of tags "
@@ -11709,40 +12134,40 @@ msgstr ""
 "1 (ако та ознака нема опције)."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:152
+#: lib/Locale/Po4a/Xml.pm:155
 msgid "WORKING WITH ATTRIBUTES"
 msgstr "РАД СА АТРИБУТИМА"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:153
+#: lib/Locale/Po4a/Xml.pm:156
 msgid "treat_attributes(@)"
 msgstr "treat_attributes(@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:154
+#: lib/Locale/Po4a/Xml.pm:157
 msgid ""
 "This function handles the translation of the tags' attributes. It receives "
 "the tag without the beginning / end marks, and then it finds the attributes, "
 "and it translates the translatable ones (specified by the module option "
-"\"attributes\").  This returns a plain string with the translated tag."
+"B<attributes>).  This returns a plain string with the translated tag."
 msgstr ""
 "Ова функција обрађује превођење атрибута ознаке. Она прихвата ознаку без "
 "маркера почетка / краја, па затим проналази атрибуте и преводи оне који могу "
-"да се преведу (њих наводи опција модула „attributes”). Она враћа прости "
+"да се преведу (њих наводи опција модула B<attributes>). Она враћа прости "
 "стринг са преведеном ознаком."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:155
+#: lib/Locale/Po4a/Xml.pm:158
 msgid "WORKING WITH TAGGED CONTENTS"
 msgstr "РАД СА ОЗНАЧЕНИМ САДРЖАЈЕМ"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:156
+#: lib/Locale/Po4a/Xml.pm:159
 msgid "treat_content()"
 msgstr "treat_content()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:157
+#: lib/Locale/Po4a/Xml.pm:160
 msgid ""
 "This function gets the text until the next breaking tag (not inline) from "
 "the input stream.  Translate it using each tag type's custom translation "
@@ -11753,17 +12178,17 @@ msgstr ""
 "превођење сваког од типова ознака."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:159
+#: lib/Locale/Po4a/Xml.pm:162
 msgid "WORKING WITH THE MODULE OPTIONS"
 msgstr "РАД СА ОПЦИЈАМА МОДУЛА"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:160
+#: lib/Locale/Po4a/Xml.pm:163
 msgid "treat_options()"
 msgstr "treat_options()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:161
+#: lib/Locale/Po4a/Xml.pm:164
 msgid ""
 "This function fills the internal structures that contain the tags, "
 "attributes and inline data with the options of the module (specified in the "
@@ -11774,17 +12199,17 @@ msgstr ""
 "или у функцији за иницијализацију)."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:162
+#: lib/Locale/Po4a/Xml.pm:165
 msgid "GETTING TEXT FROM THE INPUT DOCUMENT"
 msgstr "ПРИХВАТАЊЕ ТЕКСТА ИЗ УЛАЗНОГ ДОКУМЕНТА"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:163
+#: lib/Locale/Po4a/Xml.pm:166
 msgid "get_string_until($%)"
 msgstr "get_string_until($%)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:164
+#: lib/Locale/Po4a/Xml.pm:167
 msgid ""
 "This function returns an array with the lines (and references) from the "
 "input document until it finds the first argument.  The second argument is an "
@@ -11795,61 +12220,61 @@ msgstr ""
 "значи искључено (подразумевано), а 1 укључено."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:165
+#: lib/Locale/Po4a/Xml.pm:168
 msgid "The valid options are:"
 msgstr "Важеће опције су:"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:166
+#: lib/Locale/Po4a/Xml.pm:169
 msgid "B<include>"
 msgstr "B<include>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:167
+#: lib/Locale/Po4a/Xml.pm:170
 msgid "This makes the returned array to contain the searched text"
 msgstr "Ово чини да враћени низ садржи текст за претрагу"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:168
+#: lib/Locale/Po4a/Xml.pm:171
 msgid "B<remove>"
 msgstr "B<remove>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:169
+#: lib/Locale/Po4a/Xml.pm:172
 msgid "This removes the returned stream from the input"
 msgstr "Ово из улаза уклања враћени ток"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:170
+#: lib/Locale/Po4a/Xml.pm:173
 msgid "B<unquoted>"
 msgstr "B<unquoted>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:171
+#: lib/Locale/Po4a/Xml.pm:174
 msgid "This ensures that the searched text is outside any quotes"
 msgstr ""
 "Ово обезбеђује да се текст који се претражује не налази унутар било каквих "
 "знакова навода"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:172
+#: lib/Locale/Po4a/Xml.pm:175
 msgid "B<regex>"
 msgstr "B<regex>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:173
+#: lib/Locale/Po4a/Xml.pm:176
 msgid ""
 "This denotes that the first argument is a regular expression rather than an "
 "plain string"
 msgstr "Ово означава да је први аргумент регуларни израз, а не прости стринг"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:174
+#: lib/Locale/Po4a/Xml.pm:177
 msgid "skip_spaces(\\@)"
 msgstr "skip_spaces(\\@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:175
+#: lib/Locale/Po4a/Xml.pm:178
 msgid ""
 "This function receives as argument the reference to a paragraph (in the "
 "format returned by get_string_until), skips his heading spaces and returns "
@@ -11860,12 +12285,12 @@ msgstr ""
 "прост стринг."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:176
+#: lib/Locale/Po4a/Xml.pm:179
 msgid "join_lines(@)"
 msgstr "join_lines(@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:177
+#: lib/Locale/Po4a/Xml.pm:180
 msgid ""
 "This function returns a simple string with the text from the argument array "
 "(discarding the references)."
@@ -11874,17 +12299,17 @@ msgstr ""
 "аргумент (одбацујући референце)."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:179
+#: lib/Locale/Po4a/Xml.pm:182
 msgid "This module can translate tags and attributes."
 msgstr "Овај модул може да преведе ознаке и атрибуте."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:181
+#: lib/Locale/Po4a/Xml.pm:184
 msgid "DOCTYPE (ENTITIES)"
 msgstr "DOCTYPE (ЕНТИТЕТИ)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:182
+#: lib/Locale/Po4a/Xml.pm:185
 msgid ""
 "There is a minimal support for the translation of entities. They are "
 "translated as a whole, and tags are not taken into account. Multilines "
@@ -11896,7 +12321,7 @@ msgstr ""
 "ентитети се увек поново обавијају током превођења."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:183
+#: lib/Locale/Po4a/Xml.pm:186
 msgid ""
 "MODIFY TAG TYPES FROM INHERITED MODULES (move the tag_types structure inside "
 "the $self hash?)"
@@ -11905,7 +12330,7 @@ msgstr ""
 "унутар $self хеша?)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:185
+#: lib/Locale/Po4a/Xml.pm:188
 msgid ""
 "L<Locale::Po4a::TransTractor(3pm)|Locale::Po4a::TransTractor>, L<po4a(7)|"
 "po4a.7>"
@@ -11914,7 +12339,7 @@ msgstr ""
 "po4a.7>"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:187
+#: lib/Locale/Po4a/Xml.pm:190
 #, no-wrap
 msgid ""
 " Jordi Vilalta <jvprat@gmail.com>\n"
@@ -11926,7 +12351,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:189
+#: lib/Locale/Po4a/Xml.pm:192
 #, no-wrap
 msgid ""
 " Copyright © 2004 Jordi Vilalta  <jvprat@gmail.com>\n"
@@ -11936,6 +12361,151 @@ msgstr ""
 " Права умножавања © 2004 Жорди Вилалта <jvprat@gmail.com>\n"
 " Права умножавања © 2008-2009 Никола Франсоа <nicolas.francois@centraliens.net>\n"
 "\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:2
+msgid "Locale::Po4a::Yaml - convert YAML files from/to PO files"
+msgstr "Locale::Po4a::Yaml - двосмерна конверзија YAML фајлова и PO фајлова"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:4
+msgid ""
+"Locale::Po4a::Yaml is a module to help the translation of Yaml files into "
+"other [human] languages."
+msgstr ""
+"Locale::Po4a::Yaml је модул који помаже у превођењу Yaml фајлова на друге "
+"[људске] језике."
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:5
+msgid ""
+"The module extracts the value of YAML hashes and arrays. Hash keys are not "
+"extracted."
+msgstr ""
+"Модул издваја вредност YAML хешева и низова. Хеш кључеви се не издвајају."
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:6
+msgid "NOTE: This module parses the YAML file with YAML::Tiny."
+msgstr "НАПОМЕНА: овај модул парсира YAML фајл помоћу YAML::Tiny."
+
+#. type: =item
+#: lib/Locale/Po4a/Yaml.pm:9
+msgid "B<keys>"
+msgstr "B<keys>"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:10
+msgid ""
+"Space-separated list of hash keys to process for extraction, all other keys "
+"are skipped.  Keys are matched with a case-insensitive match.  If B<paths> "
+"and B<keys> are used together, values are included if they are matched by at "
+"least one of the options.  Arrays values are always returned unless the "
+"B<skip_array> option is provided."
+msgstr ""
+"Листа хеш кључева раздвојених размацима који треба да се обраде за "
+"издвајање, сви остали кључеви се прескачу. При подударању кључева се не води "
+"рачуна о разлици малих и великих слова. Ако се B<paths> и B<keys> употребе "
+"заједно, вредности се укључују ако се подударају са барем једном од њих. "
+"Вредности низова се увек враћају, осим у случају када је постављена опција "
+"B<skip_array>."
+
+#. type: =item
+#: lib/Locale/Po4a/Yaml.pm:11
+msgid "B<paths>"
+msgstr "B<paths>"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:12
+msgid ""
+"Comma-separated list of hash paths to process for extraction, all other "
+"paths are skipped. Paths are matched with a case-insensitive match.  If "
+"B<paths> and B<keys> are used together, values are included if they are "
+"matched by at least one of the options.  Arrays values are always returned "
+"unless the B<skip_array> option is provided."
+msgstr ""
+"Листа хеш путања раздвојених запетама који треба да се обраде за издвајање, "
+"све остале путање се прескачу. При подударању путања не води се рачуна о "
+"разлици малих и великих слова. Ако се B<paths> и B<keys> употребе заједно, "
+"вредности се укључују ако се подударају са барем једном од опција. Вредности "
+"низова се увек враћају, осим у случају када је постављена опција "
+"B<skip_array>."
+
+#. type: =item
+#: lib/Locale/Po4a/Yaml.pm:13
+msgid "B<skip_array>"
+msgstr "B<skip_array>"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:14
+msgid "Do not translate array values."
+msgstr "Вредности низа се не преводе."
+
+#. type: verbatim
+#: lib/Locale/Po4a/Yaml.pm:18
+#, no-wrap
+msgid ""
+" Brian Exelbierd <bex@pobox.com>\n"
+"\n"
+msgstr ""
+" Брајан Екселбирд <bex@pobox.com>\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:20
+msgid "Copyright © 2017 Brian Exelbierd."
+msgstr "Ауторска права © 2017 Брајан Екселбирд."
+
+#, no-wrap
+#~ msgid ""
+#~ "  * Tags listed in B<break> are set to I<w> or I<W> depending on the <wrap> option.\n"
+#~ "  * Tags listed in B<inline> are set to I<i>.\n"
+#~ "  * Tags listed in B<placeholder> are set to I<p>.\n"
+#~ "  * Tags listed in B<untranslated> are without any of these options set.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  * Ознаке наведене у B<break> се постављају на I<w> или I<W> у зависности од опције <wrap>.\n"
+#~ "  * Ознаке наведене у B<inline> се постављају на I<i>.\n"
+#~ "  * Ознаке наведене у B<placeholder> се постављају на I<p>.\n"
+#~ "  * Ознаке наведене у B<untranslated> немају постављену ниједну од ових опција.\n"
+#~ "\n"
+
+#~ msgid "INTERNAL FUNCTIONS used to write derivated parsers"
+#~ msgstr "ИНТЕРНЕ ФУНКЦИЈЕ које се користе за писање изведених парсера"
+
+#~ msgid ""
+#~ "Space-separated list of hash keys to process for extraction, all other "
+#~ "keys are skipped.  Keys are matched with a case-insentive match.  If "
+#~ "B<paths> and B<keys> are used together, values are included if they are "
+#~ "matched by at least one of the options.  Arrays values are always "
+#~ "returned unless if the B<skip_array> option is provided."
+#~ msgstr ""
+#~ "Листа хеш кључева раздвојених размацима који треба да се обраде за "
+#~ "издвајање, сви остали кључеви се прескачу. При подударању кључева се не "
+#~ "води рачуна о разлици малих и великих слова. Ако се B<paths> и B<keys> "
+#~ "употребе заједно, вредности се укључују ако се подударају са барем једном "
+#~ "од опција. Вредности низова се увек враћају, осим у случају када је "
+#~ "постављена опција B<skip_array>."
+
+#~ msgid ""
+#~ "Space-separated list of hash keys to process for extraction, all other "
+#~ "keys are skipped.  Keys are matched with a case-insensitive match.  If "
+#~ "B<paths> and B<keys> are used together, values are included if they are "
+#~ "matched by at least one of the options.  Arrays values are always "
+#~ "returned unless if the B<skip_array> option is provided. DUPPLICATE"
+#~ msgstr ""
+#~ "Листа хеш кључева раздвојених размацима који треба да се обраде за "
+#~ "издвајање, сви остали кључеви се прескачу. При подударању кључева се не "
+#~ "води рачуна о разлици малих и великих слова. Вредности низова се увек "
+#~ "преводе, осим у случају када је постављена опција B<yfm_skip_array>."
+
+#~ msgid ""
+#~ "If there are name conflicts because several files have the same filename, "
+#~ "the name of the master file can be specified by adding a C<master:"
+#~ "file=>I<name> option:"
+#~ msgstr ""
+#~ "Ако постоји конфликт са именима јер више фајлова има идентичан назив, име "
+#~ "мастер фајла може да се наведе додавањем опције C<master:file=>I<име>:"
 
 #~ msgid ""
 #~ "If you prefer, you can give the same information explicitly as follows:"

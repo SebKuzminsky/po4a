@@ -26,8 +26,6 @@ push @tests, {
 
   },
   {
-    'todo' => 'POT files created anyway',
-
     'doc'              => 'Split settings, no po, --no-update',
     'po4a.conf'        => 'cfg/split-nopo/po4a.conf',
     'options'          => ' --no-update',
@@ -43,6 +41,14 @@ push @tests, {
     'expected_files' => 'first.man.de first.man.de.po first.man.fr first.man.fr.po first.man.pot '
       . 'second.man.de second.man.de.po second.man.fr second.man.fr.po second.man.pot',
 
+  },
+  {
+    'doc'            => 'Split settings, grouping several files into a given POT file',
+    'po4a.conf'      => 'cfg/split-multimaster/po4a.conf',
+    'closed_path'    => 'cfg/*/',
+    'expected_files' => 'first.man.de first.man.fr third.man.de  third.man.fr  '
+      . 'Documentation.pot Documentation.de.po Documentation.fr.po '
+      . 'second.man.de second.man.de.po second.man.fr second.man.fr.po second.man.pot',
   },
   {
     'doc'            => 'Split settings, translation uptodate',
@@ -69,8 +75,6 @@ push @tests, {
 
   },
   {
-    'todo' => 'POT files touched anyway',
-
     'doc'            => 'Split settings, translation would be fuzzied if --no-update were not given',
     'po4a.conf'      => 'cfg/split-fuzzied-noup/po4a.conf',
     'options'        => '--no-update',
@@ -91,6 +95,12 @@ push @tests, {
     'closed_path'    => 'cfg/*/',
     'expected_files' => 'first.man.de first.man.de.po first.man.fr first.man.fr.po first.man.pot '
       . 'second.man.de second.man.de.po second.man.fr second.man.fr.po second.man.pot',
+  },
+  {
+    'doc'            => 'Split settings, with an YAML master doc, translation uptodate',
+    'po4a.conf'      => 'cfg/split-yaml/po4a.cfg',
+    'closed_path'    => 'cfg/*/',
+    'expected_files' => 'content.pot content.vi.po _index.vi.md i18n.pot i18n.vi.po vi.yaml'
   };
 
 run_all_tests(@tests);

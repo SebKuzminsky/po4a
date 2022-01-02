@@ -300,7 +300,7 @@ L<po4a(7)>.
 =head1 AUTHORS
 
  Denis Barbier <barbier@linuxfr.org>
- Nicolas François <nicolas.francois@centraliens.net>
+ Nicolas Francois <nicolas.francois@centraliens.net>
  Martin Quinson (mquinson#debian.org)
 
 =head1 COPYRIGHT AND LICENSE
@@ -369,9 +369,10 @@ GetOptions(
 ) or pod2usage();
 
 # Argument check
-$help && pod2usage( -verbose => 1, -exitval => 0 );
+$help     && pod2usage( -verbose => 1, -exitval => 0 );
 $help_fmt && Locale::Po4a::Chooser::list(0);
 pod2usage() if ( scalar @ARGV > 1 ) || ( scalar @masterfile < 1 );
+$locchar //= "UTF-8";
 
 foreach (@options) {
     if (m/^([^=]*)=(.*)$/) {

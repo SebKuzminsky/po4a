@@ -93,7 +93,7 @@ L<po4a(7)>
 =head1 AUTHORS
 
  Denis Barbier <barbier@linuxfr.org>
- Nicolas François <nicolas.francois@centraliens.net>
+ Nicolas Francois <nicolas.francois@centraliens.net>
  Martin Quinson (mquinson#debian.org)
 
 =head1 COPYRIGHT AND LICENSE
@@ -148,7 +148,7 @@ GetOptions(
     'version|V' => \&show_version
 ) or pod2usage();
 
-$help && pod2usage( -verbose => 1, -exitval => 0 );
+$help     && pod2usage( -verbose => 1, -exitval => 0 );
 $help_fmt && Locale::Po4a::Chooser::list(0);
 pod2usage() unless scalar @ARGV == 1;
 

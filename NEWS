@@ -2,12 +2,231 @@ This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
 =======================================================================
+        ___   __    __
+__   __/ _ \ / /_  / /_
+\ \ / / | | | '_ \| '_ \          The 2+1 times 22 are 66 release.
+ \ V /| |_| | (_) | (_) |
+  \_/  \___(_)___/ \___/          (Released on 2/1/22)
 
+
+Asciidoc:
+ * Support empty cells in tablecells mode (GitHub's #343) [J.N. Avila]
+ * Disable tablecells when table is not in PSV format (GitHub's #343 too)
+   [J.N. Avila]
+
+Yaml:
+ * New option "paths" to select the full paths to extract.
+   The old "key" option (that allows to select any path ending with
+   the given key) still works as previously (thanks Oliver Rahner).
+
+Tests:
+ * Make the SGML tests use valid input files to fix brekages on
+   paranoid OSes (GitHub's#327 -- thanks newbluemoon for report and fix).
+ * Add a new tests that fixes the weird permission settings of the
+   other tests, and prevent the users from running the tests as root.
+   (GitHub's #332 -- thanks Oliver Rahner for stepping on that trap)
+ * Fix the testsuite so that it works even if the source is checkouted
+   in an arbitrary directory (GitHub's #338).
+
+po4a-gettextize:
+ * Use UTF-8 by default for localized charset.
+
+Translations:
+ * Updated: Croatian, thanks Milo Ivir.
+ * Updated: Esperanto, thanks Marco Ciampa.
+ * Updated: French, thanks Martin Quinson & brandelune.
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Norwegian Bokmål, thanks Petter Reinholdtsen.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: Russian, thanks Azamat H. Hackimov.
+ * Updated: Serbian (cyrillic), thanks Ivan Pesic.
+ * Updated: Ukrainian, thanks Yuri Chornoivan (українська).
+
+Status of the binary translation:
+ 7 languages = 100%: fr, hr, it, nb, nl, pt_BR, uk.
+ 8 languages >= 95%: de (97%), eo (98%), es (97%), hu (97%), pt (97%), ru (98%), sr_Cyrl (99%), zh_CN (97%).
+ 1 language  >= 80%: id (81%).
+ 2 languages >= 70%: et (71%), sv (76%).
+ 7 languages >= 50%: cs (60%), da (62%), eu (59%), ja (65%), pl (65%), sl (58%), vi (65%).
+ 1 language  >= 33%: ca (47%).
+ 1 language  >= 20%: zh_Hant (22%).
+ 6 starting languages: ace (2%), af (7%), ar (14%), kn (7%), ko (19%), zh_HK (3%).
+
+Status of the documentation translation:
+ 3 languages = 100%: it, pt_BR, uk.
+ 4 languages >= 95%: de (99%), fr (96%), nl (99%), sr_Cyrl (99%).
+ 2 languages >= 90%: pt (94%), zh_CHS (93%).
+ 1 language  >= 70%: es (78%).
+ 3 languages >= 50%: ja (69%), pl (69%), ru (69%).
+ 1 language  >= 33%: ca (44%).
+ 4 starting languages: eo (2%), hr (0%), hu (0%), nb (3%).      
+
+=======================================================================
+        ___   __  ____
+__   __/ _ \ / /_| ___|
+\ \ / / | | | '_ \___ \           The Apollo 12 release.
+ \ V /| |_| | (_) |__) |
+  \_/  \___(_)___/____/           (released November 14. 2021)
+
+
+Asciidoc:
+ * Ensure that comments appear in the translated contents, to preserve
+   the document structure (Github's #307 and #308). Thanks Jean-Noël
+   Avila for the fix!
+ * Add an "nolinting" option to disable lint messages.
+
+po4a runner:
+ * In split mode, allow to group several files within the same POT file.
+ * Rename the option 'master:file' to 'pot' for clarity. The old name
+   still works (with a warning).
+
+Tex:
+ * Don't use the full absolute file path in #: references of PO files.
+   (Debian's #998196, Github's #281)
+
+Translations:
+ * Updated: Croatian, thanks Milo Ivir.
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: French, thanks brandelune.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Hungarian, thanks Balázs Úr.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: Russian, thanks Edward Smirnov and Azamat H. Hackimov.
+ * Updated: Serbian (cyrillic), thanks Ivan Pesic.
+ * Updated: Ukrainian, thanks Yuri Chornoivan (українська).
+
+Status of the binary translation:
+ 6 languages = 100%: de, fr, it, nl, ru, uk.
+ 9 languages >= 95%: eo (99%), es (99%), hr (99%), hu (99%), nb (99%), pt (99%), pt_BR (99%), sr_Cyrl (99%), zh_CN (99%).
+ 1 language  >= 80%: id (82%).
+ 2 languages >= 70%: et (73%), sv (77%).
+ 7 languages >= 50%: cs (61%), da (62%), eu (60%), ja (65%), pl (66%), sl (59%), vi (66%).
+ 1 language  >= 33%: ca (48%).
+ 1 language  >= 20%: zh_Hant (23%).
+ 6 starting languages: ace (2%), af (7%), ar (14%), kn (7%), ko (19%), zh_HK (3%).
+
+Status of the documentation translation:
+ 2 languages = 100%: de, uk.
+ 6 languages >= 95%: fr (97%), nl (99%), pt (97%), pt_BR (99%), sr_Cyrl (99%), zh_CHS (97%).
+ 1 language  >= 80%: es (80%).
+ 3 languages >= 70%: it (75%), ja (72%), pl (71%).
+ 1 language  >= 50%: ru (67%).
+ 1 language  >= 33%: ca (46%).
+ 4 starting languages: eo (2%), hr (0%), hu (0%), nb (1%).
+
+=======================================================================
+        ___   __   _  _
+__   __/ _ \ / /_ | || |
+\ \ / / | | | '_ \| || |_         The Lascaux release.
+ \ V /| |_| | (_) |__   _|
+  \_/  \___(_)___/   |_|          (released September 12. 2021)
+
+Asciidoc:
+ * Detect sublevel description lists with :::
+ * Don't split in attributes include:: and ifeval:: lines (Github's #298)
+
+Pod:
+ * Don't wrap textblocks, as it may break C<> markup (similar to Github's #242)
+
+Core:
+ * Mitigate Perl bug #18604 (simplify a regexp into a substring index) (Github's #302)
+ * Improve the consistency of all our module lists (related to Github's #136)
+   Thanks Viet Than.
+
+Translations:
+ * Updated: Chinese (Traditional), thanks Shen-Ta Hsieh.
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: Esperanto, thanks phlostically.
+ * Updated: French, thanks jmichault.
+ * Updated: Indonesian, thanks Reza Almanda.
+ * Updated: Norwegian Bokmål, thanks Petter Reinholdtsen.
+ * Updated: Portuguese, thanks Silvério Santos.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: Serbian (cyrillic), thanks Ivan Pesic.
+ * Updated: Spanish, thanks Támara Patiño.
+ * Updated: Swedish, thanks Anders Jonsson.
+ * Updated: Ukrainian, thanks Tymofij Lytvynenko and Yuri Chornoivan.
+
+Status of the binary translation:
+ 7 languages = 100%: de, nb, nl, pt, pt_BR, sr_Cyrl, uk.
+ 8 languages >= 95%: eo (99%), es (99%), fr (99%), hr (99%), hu (99%), it (99%), ru (99%), zh_CN (99%).
+ 1 language  >= 80%: id (83%).
+ 2 languages >= 70%: et (73%), sv (77%).
+ 7 languages >= 50%: cs (61%), da (62%), eu (60%), ja (66%), pl (66%), sl (59%), vi (66%).
+ 1 language  >= 33%: ca (48%).
+ 1 language  >= 20%: zh_Hant (23%).
+ 6 starting languages: ace (2%), af (7%), ar (14%), kn (7%), ko (19%), zh_HK (3%).
+
+Status of the documentation translation:
+ 8 languages >= 95%: de (97%), fr (97%), nl (97%), pt (97%), pt_BR (97%), sr_Cyrl (97%), uk (97%), zh_CHS (97%).
+ 1 language  >= 80%: es (80%).
+ 2 languages >= 70%: ja (72%), pl (71%).
+ 2 languages >= 50%: it (69%), ru (61%).
+ 1 language  >= 33%: ca (46%).
+ 4 starting languages: eo (2%), hr (0%), hu (0%), nb (1%).
+
+=======================================================================
+        ___   __  _____
+__   __/ _ \ / /_|___ /
+\ \ / / | | | '_ \ |_ \           The actually translated release.
+ \ V /| |_| | (_) |__) |
+  \_/  \___(_)___/____/           (released February 22. 2021)
+
+
+A bug in v0.62 removed all binary translations :(
+
+Asciidoc:
+ * Properly deal with the YAML Front Matter, when one is found.
+
+Texinfo:
+ * Add support for @tindex (Github's #284)
+
+Yaml:
+ * Follow the reference style of YAML Front Matter in Markdown module to
+   fix the GitHub issue #289. (GitHub's #292)
+
+Portability:
+ * Fix po4a(1) on Windows (GitHub's #293)
+
+Build scripts:
+ * Fix Po4aBuilder to use -I instead of reseting PERL5LIB (Github's #286)
+ * Fix Po4aBuilder to actually install the mo files (GitHub's #294)
+
+Translations:
+ * Updated: Esperanto, thanks jmichault.
+ * Updated: Estonian, thanks Kristjan Räts.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Russian, thanks Golubev Alexander.
+ * Updated: Spanish, Pau Garcia Quiles.
+
+Status of the binary translation:
+ 14 languages = 100%: de, es, fr, hr, hu, it, nb, nl, pt, pt_BR, ru,
+                      sr_Cyrl, uk, zh_CN.
+  1 language  >= 80%: eo (83%).
+  1 language  >= 70%: et (73%).
+  9 languages >= 50%: cs (61%), da (62%), eu (60%), id (61%), ja (66%),
+                      pl (66%), sl (59%), sv (64%), vi (66%).
+  1 language  >= 33%: ca (48%).
+  5 starting languages: af (7%), ar (14%), kn (7%), ko (19%), zh_HK (3%).
+
+Status of the documentation translation:
+  5 languages = 100%: de, fr, pt, pt_BR, uk.
+  3 languages >= 95%: nl (99%), sr_Cyrl (99%), zh_CHS (99%).
+  1 language  >= 80%: es (80%).
+  2 languages >= 70%: ja (73%), pl (73%).
+  2 languages >= 50%: it (65%), ru (62%).
+  1 language  >= 33%: ca (47%).
+  4 starting languages: eo (2%), hr (0%), hu (0%), nb (1%).
+
+=======================================================================
         ___   __  ____
 __   __/ _ \ / /_|___ \
-\ \ / / | | | '_ \ __) |
+\ \ / / | | | '_ \ __) |          The make-it-better release.
  \ V /| |_| | (_) / __/
-  \_/  \___(_)___/_____|
+  \_/  \___(_)___/_____|          (released December 7. 2020)
 
 po4a tool:
  * Improve po_paths on misconfigurations, improve doc and error messages.
@@ -292,7 +511,7 @@ Status of the binary translation:
    1 language  >= 90%: sr_Cyrl (93%).
    7 languages >= 80%: et (89%), ja (87%), nb (89%), pl (89%),
                        pt (89%), sv (84%), vi (89%).
-   6 languages >= 70%: cs (77%), da (77%), eo (77%), eu (77%), 
+   6 languages >= 70%: cs (77%), da (77%), eo (77%), eu (77%),
                        id (79%), sl (77%).
    1 language  >= 50%: ca (60%).
    2 languages >= 20%: ko (27%), zh_CN (26%).
@@ -327,7 +546,7 @@ Markdown:
    content should not be translated.
  * Work around a bug in YAML::Tiny that quotes numbers (GitHub's #217)
  * Add gettext flag "markdown-text" for relevant entries (GitHub's #208)
- 
+
 Text:
  * Honor the (existing) --neverwrap option to handle every content verbatim.
 
@@ -346,7 +565,7 @@ XML and DocBook:
 
 Yaml:
  * Introduce option to skip array values. (GitHub's #187)
- 
+
 po4a tool:
  * Cleanups and fixups about options' parsing (now tested and documented)
      _
@@ -372,7 +591,7 @@ Core:
    underlying detection would fail, possibly for document containing
    UTF-8 chars composed on printable ascii chars only.
  * Add a --wrap-po option to control how the po file is wrapped, and
-   chose between either nicely wrapped files that tend to produce git 
+   chose between either nicely wrapped files that tend to produce git
    conflicts, or ugly files that are easy to automatically deal with.
 
 Tests:
@@ -410,7 +629,7 @@ AsciiDoc:
  * Fix a crash occuring when a cell is nothing.
 
 Translations:
- * New translation: Hungarian, thanks Balázs Úr. 
+ * New translation: Hungarian, thanks Balázs Úr.
  * Updated: French, thanks brandelune, Mattéo Rossillol‑‑Laruelle and
    Julien Lepiller.
  * Updated: German, thanks Helge Kreutzmann.
