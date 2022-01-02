@@ -27,9 +27,9 @@ License: GPL-2.0+
 Files: debian/*
 Copyright: © 2002-2022 Martin Quinson <mquinson@debian.org>
            © 2005-2009 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>
-	   © 2009 Neil Williams <linux@codehelp.co.uk>
-	   © 2003-2013 Denis Barbier <barbier@debian.org>
-	   © 2018-2020 Dr. Tobias Quathamer <toddy@debian.org>
+           © 2009 Neil Williams <linux@codehelp.co.uk>
+           © 2003-2013 Denis Barbier <barbier@debian.org>
+           © 2018-2020 Dr. Tobias Quathamer <toddy@debian.org>
 License: GPL-2.0+
 
 License: GPL-2.0+
