@@ -1,11 +1,11 @@
-po4a (0.66-1) UNRELEASED; urgency=medium
+po4a (0.66-1) unstable; urgency=medium
 
   * New upstream release.
     - asciidoc: properly deal with empty cells (Closes: #1002303).
     - yaml: new option 'key' to select the translated elements.
     - plus the usual bug fixes and translation updates.
 
- -- Martin Quinson <mquinson@debian.org>  Thu, 23 Dec 2021 12:21:30 +0100
+ -- Martin Quinson <mquinson@debian.org>  Sun, 02 Jan 2022 01:57:28 +0100
 
 po4a (0.65-1) unstable; urgency=medium
 
