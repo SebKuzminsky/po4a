@@ -31,6 +31,7 @@ sub initialize {
     my %options = @_;
 
     $self->{options}{'keys'}       = '';
+    $self->{options}{'paths'}      = '';
     $self->{options}{'debug'}      = 0;
     $self->{options}{'verbose'}    = 1;
     $self->{options}{'skip_array'} = 0;
@@ -44,6 +45,11 @@ sub initialize {
     $self->{options}{keys} =~ s/^\s*//;
     foreach my $attr ( split( /\s+/, $self->{options}{keys} ) ) {
         $self->{keys}{ lc($attr) } = '';
+    }
+
+    $self->{options}{paths} =~ s/^\s*//;
+    foreach my $attr ( split( /,/, $self->{options}{paths} ) ) {
+        $self->{paths}{ lc( $attr =~ s/^\s+|\s+$//gr ) } = '';
     }
 }
 
@@ -83,7 +89,21 @@ sub walk_yaml {
             if ( ref $el->{$key} ne ref "" ) {
                 &walk_yaml( $self, $el->{$key}, "$ctx $key" );
             } else {
-                next if ( ( $self->{options}{keys} ne "" ) and ( !exists $self->{keys}{ lc($key) } ) );
+                my $path = "$ctx $key" =~ s/^\s+|\s+$//gr;
+                print STDERR "working on path '$path'\n" if $self->{'options'}{'debug'};
+                my $keysdefined  = $self->{options}{keys} ne "";
+                my $keymatches   = exists $self->{keys}{ lc($key) };
+                my $pathsdefined = $self->{options}{paths} ne "";
+                my $pathmatches  = exists $self->{paths}{ lc($path) };
+                next
+                  if (
+                    !(
+                           ( $keysdefined     and $keymatches )
+                        or ( $pathsdefined    and $pathmatches )
+                        or ( not $keysdefined and not $pathsdefined )
+                    )
+                  );
+                print STDERR " * path survived check\n" if $self->{'options'}{'debug'};
                 my $trans = $self->translate(
                     Encode::encode_utf8( $el->{$key} ),
                     $reference,
@@ -98,16 +118,16 @@ sub walk_yaml {
         for my $i ( 0 .. $#{$el} ) {
             if ( ref $el->[$i] ne ref "" ) {
                 &walk_yaml( $self, $el->[$i], "$ctx" );
-            } elsif ( !$self->{options}{skip_array} ) {       # translate that element only if not asked to skip arrays
+            } elsif ( !$self->{options}{skip_array} ) {    # translate that element only if not asked to skip arrays
                 my $trans =
                   $self->translate( Encode::encode_utf8( $el->[$i] ), $reference, "Array Element:$ctx", 'wrap' => 0 );
-                $el->[$i] = Encode::decode_utf8($trans);      # Save the translation
+                $el->[$i] = Encode::decode_utf8($trans);    # Save the translation
             }
         }
     } else {
         print STDERR "got a string - this is unexpected in yaml\n" if $self->{'options'}{'debug'};
         my $trans = $self->translate( Encode::encode_utf8($$el), $reference, "String:$ctx", 'wrap' => 0 );
-        $$el = Encode::decode_utf8($trans);                   # Save the translation
+        $$el = Encode::decode_utf8($trans);    # Save the translation
     }
 }
 
@@ -143,8 +163,19 @@ These are this module's particular options:
 =item B<keys>
 
 Space-separated list of hash keys to process for extraction, all
-other keys are skipped.  Keys are matched with a case-insentive match.
-Arrays values are always returned unless if the B<skip_array> option is
+other keys are skipped.  Keys are matched with a case-insensitive match.
+If B<paths> and B<keys> are used together, values are included if they are
+matched by at least one of the options.
+Arrays values are always returned unless the B<skip_array> option is
+provided.
+
+=item B<paths>
+
+Comma-separated list of hash paths to process for extraction, all
+other paths are skipped. Paths are matched with a case-insensitive match.
+If B<paths> and B<keys> are used together, values are included if they are
+matched by at least one of the options.
+Arrays values are always returned unless the B<skip_array> option is
 provided.
 
 =item B<skip_array>

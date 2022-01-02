@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: po4a 0.64\n"
+"Project-Id-Version: po4a 0.66\n"
 "Report-Msgid-Bugs-To: devel@lists.po4a.org\n"
-"POT-Creation-Date: 2021-11-04 18:37+0100\n"
-"PO-Revision-Date: 2021-11-07 18:21+0100\n"
+"POT-Creation-Date: 2021-12-14 21:19+0100\n"
+"PO-Revision-Date: 2021-12-15 21:12+0100\n"
 "Last-Translator: Helge Kreutzmann <debian@helgefjell.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
 "Language: de\n"
@@ -84,10 +84,12 @@ msgstr ""
 #: lib/Locale/Po4a/Guide.pm:3 lib/Locale/Po4a/Halibut.pm:3
 #: lib/Locale/Po4a/Ini.pm:3 lib/Locale/Po4a/KernelHelp.pm:3
 #: lib/Locale/Po4a/LaTeX.pm:3 lib/Locale/Po4a/Man.pm:3 lib/Locale/Po4a/Po.pm:9
-#: lib/Locale/Po4a/Pod.pm:7 lib/Locale/Po4a/Sgml.pm:3 lib/Locale/Po4a/TeX.pm:3
+#: lib/Locale/Po4a/Pod.pm:7 lib/Locale/Po4a/RubyDoc.pm:3
+#: lib/Locale/Po4a/Sgml.pm:3 lib/Locale/Po4a/TeX.pm:3
 #: lib/Locale/Po4a/Texinfo.pm:3 lib/Locale/Po4a/Text.pm:3
 #: lib/Locale/Po4a/TransTractor.pm:3 lib/Locale/Po4a/Wml.pm:3
 #: lib/Locale/Po4a/Xhtml.pm:3 lib/Locale/Po4a/Xml.pm:3
+#: lib/Locale/Po4a/Yaml.pm:3
 msgid "DESCRIPTION"
 msgstr "BESCHREIBUNG"
 
@@ -185,9 +187,10 @@ msgstr ""
 #: lib/Locale/Po4a/Guide.pm:10 lib/Locale/Po4a/Halibut.pm:14
 #: lib/Locale/Po4a/Ini.pm:8 lib/Locale/Po4a/KernelHelp.pm:7
 #: lib/Locale/Po4a/LaTeX.pm:8 lib/Locale/Po4a/Man.pm:107
-#: lib/Locale/Po4a/Pod.pm:36 lib/Locale/Po4a/TeX.pm:118
-#: lib/Locale/Po4a/Texinfo.pm:10 lib/Locale/Po4a/Xhtml.pm:15
-#: lib/Locale/Po4a/Xml.pm:184
+#: lib/Locale/Po4a/Pod.pm:36 lib/Locale/Po4a/RubyDoc.pm:14
+#: lib/Locale/Po4a/TeX.pm:118 lib/Locale/Po4a/Texinfo.pm:10
+#: lib/Locale/Po4a/Xhtml.pm:15 lib/Locale/Po4a/Xml.pm:187
+#: lib/Locale/Po4a/Yaml.pm:15
 msgid "SEE ALSO"
 msgstr "SIEHE AUCH"
 
@@ -300,10 +303,11 @@ msgstr "Florentin Duneau"
 #: lib/Locale/Po4a/Halibut.pm:1 lib/Locale/Po4a/Ini.pm:1
 #: lib/Locale/Po4a/KernelHelp.pm:1 lib/Locale/Po4a/LaTeX.pm:1
 #: lib/Locale/Po4a/Man.pm:1 lib/Locale/Po4a/Po.pm:1 lib/Locale/Po4a/Pod.pm:1
-#: lib/Locale/Po4a/Sgml.pm:1 lib/Locale/Po4a/TeX.pm:1
-#: lib/Locale/Po4a/Texinfo.pm:1 lib/Locale/Po4a/Text.pm:1
-#: lib/Locale/Po4a/TransTractor.pm:1 lib/Locale/Po4a/Wml.pm:1
-#: lib/Locale/Po4a/Xhtml.pm:1 lib/Locale/Po4a/Xml.pm:1
+#: lib/Locale/Po4a/RubyDoc.pm:1 lib/Locale/Po4a/Sgml.pm:1
+#: lib/Locale/Po4a/TeX.pm:1 lib/Locale/Po4a/Texinfo.pm:1
+#: lib/Locale/Po4a/Text.pm:1 lib/Locale/Po4a/TransTractor.pm:1
+#: lib/Locale/Po4a/Wml.pm:1 lib/Locale/Po4a/Xhtml.pm:1 lib/Locale/Po4a/Xml.pm:1
+#: lib/Locale/Po4a/Yaml.pm:1
 msgid "NAME"
 msgstr "NAME"
 
@@ -2093,20 +2097,22 @@ msgstr ""
 #: lib/Locale/Po4a/Ini.pm:10 lib/Locale/Po4a/KernelHelp.pm:9
 #: lib/Locale/Po4a/LaTeX.pm:10 lib/Locale/Po4a/Man.pm:109
 #: lib/Locale/Po4a/Po.pm:101 lib/Locale/Po4a/Pod.pm:38
-#: lib/Locale/Po4a/Sgml.pm:53 lib/Locale/Po4a/TeX.pm:120
-#: lib/Locale/Po4a/Texinfo.pm:12 lib/Locale/Po4a/Text.pm:40
-#: lib/Locale/Po4a/TransTractor.pm:156 lib/Locale/Po4a/Wml.pm:11
-#: lib/Locale/Po4a/Xhtml.pm:17 lib/Locale/Po4a/Xml.pm:186
+#: lib/Locale/Po4a/RubyDoc.pm:16 lib/Locale/Po4a/Sgml.pm:53
+#: lib/Locale/Po4a/TeX.pm:120 lib/Locale/Po4a/Texinfo.pm:12
+#: lib/Locale/Po4a/Text.pm:40 lib/Locale/Po4a/TransTractor.pm:156
+#: lib/Locale/Po4a/Wml.pm:11 lib/Locale/Po4a/Xhtml.pm:17
+#: lib/Locale/Po4a/Xml.pm:189 lib/Locale/Po4a/Yaml.pm:17
 msgid "AUTHORS"
 msgstr "AUTOREN"
 
+# FIXME Francois → François
 #. type: verbatim
 #: po4a:192 po4a-gettextize:74 po4a-normalize:32 po4a-translate:57
 #: po4a-updatepo:56 lib/Locale/Po4a/Man.pm:110
 #, no-wrap
 msgid ""
 " Denis Barbier <barbier@linuxfr.org>\n"
-" Nicolas François <nicolas.francois@centraliens.net>\n"
+" Nicolas Francois <nicolas.francois@centraliens.net>\n"
 " Martin Quinson (mquinson#debian.org)\n"
 "\n"
 msgstr ""
@@ -2124,10 +2130,11 @@ msgstr ""
 #: lib/Locale/Po4a/Halibut.pm:18 lib/Locale/Po4a/Ini.pm:12
 #: lib/Locale/Po4a/KernelHelp.pm:11 lib/Locale/Po4a/LaTeX.pm:12
 #: lib/Locale/Po4a/Man.pm:111 lib/Locale/Po4a/Pod.pm:40
-#: lib/Locale/Po4a/Sgml.pm:58 lib/Locale/Po4a/TeX.pm:122
-#: lib/Locale/Po4a/Texinfo.pm:14 lib/Locale/Po4a/Text.pm:42
-#: lib/Locale/Po4a/Wml.pm:13 lib/Locale/Po4a/Xhtml.pm:19
-#: lib/Locale/Po4a/Xml.pm:188
+#: lib/Locale/Po4a/RubyDoc.pm:18 lib/Locale/Po4a/Sgml.pm:58
+#: lib/Locale/Po4a/TeX.pm:122 lib/Locale/Po4a/Texinfo.pm:14
+#: lib/Locale/Po4a/Text.pm:42 lib/Locale/Po4a/Wml.pm:13
+#: lib/Locale/Po4a/Xhtml.pm:19 lib/Locale/Po4a/Xml.pm:191
+#: lib/Locale/Po4a/Yaml.pm:19
 msgid "COPYRIGHT AND LICENSE"
 msgstr "URHEBERRECHT UND LIZENZ"
 
@@ -2147,7 +2154,8 @@ msgstr "Copyright 2002-2020 SPI, Inc."
 #: lib/Locale/Po4a/Man.pm:113 lib/Locale/Po4a/Pod.pm:42
 #: lib/Locale/Po4a/Sgml.pm:60 lib/Locale/Po4a/TeX.pm:124
 #: lib/Locale/Po4a/Text.pm:45 lib/Locale/Po4a/Wml.pm:15
-#: lib/Locale/Po4a/Xhtml.pm:21 lib/Locale/Po4a/Xml.pm:190
+#: lib/Locale/Po4a/Xhtml.pm:21 lib/Locale/Po4a/Xml.pm:193
+#: lib/Locale/Po4a/Yaml.pm:21
 msgid ""
 "This program is free software; you may redistribute it and/or modify it "
 "under the terms of GPL (see the COPYING file)."
@@ -2729,10 +2737,10 @@ msgstr "B<po4a-normalize> B<-f> I<fmt> I<Master.doc>"
 #: lib/Locale/Po4a/Dia.pm:4 lib/Locale/Po4a/Docbook.pm:4
 #: lib/Locale/Po4a/Guide.pm:4 lib/Locale/Po4a/Halibut.pm:4
 #: lib/Locale/Po4a/LaTeX.pm:4 lib/Locale/Po4a/Man.pm:4
-#: lib/Locale/Po4a/Sgml.pm:4 lib/Locale/Po4a/TeX.pm:4
-#: lib/Locale/Po4a/Texinfo.pm:4 lib/Locale/Po4a/Text.pm:4
-#: lib/Locale/Po4a/TransTractor.pm:4 lib/Locale/Po4a/Wml.pm:4
-#: lib/Locale/Po4a/Xhtml.pm:4 lib/Locale/Po4a/Xml.pm:4
+#: lib/Locale/Po4a/RubyDoc.pm:4 lib/Locale/Po4a/Sgml.pm:4
+#: lib/Locale/Po4a/TeX.pm:4 lib/Locale/Po4a/Texinfo.pm:4
+#: lib/Locale/Po4a/Text.pm:4 lib/Locale/Po4a/TransTractor.pm:4
+#: lib/Locale/Po4a/Wml.pm:4 lib/Locale/Po4a/Xhtml.pm:4 lib/Locale/Po4a/Xml.pm:4
 msgid ""
 "The po4a (PO for anything) project goal is to ease translations (and more "
 "interestingly, the maintenance of translations) using gettext tools on areas "
@@ -5336,9 +5344,11 @@ msgstr ""
 
 #. type: =head1
 #: lib/Locale/Po4a/AsciiDoc.pm:6 lib/Locale/Po4a/BibTeX.pm:7
-#: lib/Locale/Po4a/Man.pm:34 lib/Locale/Po4a/Po.pm:13 lib/Locale/Po4a/Sgml.pm:7
+#: lib/Locale/Po4a/Man.pm:34 lib/Locale/Po4a/Po.pm:13
+#: lib/Locale/Po4a/RubyDoc.pm:9 lib/Locale/Po4a/Sgml.pm:7
 #: lib/Locale/Po4a/TeX.pm:11 lib/Locale/Po4a/Text.pm:8 lib/Locale/Po4a/Wml.pm:7
 #: lib/Locale/Po4a/Xhtml.pm:6 lib/Locale/Po4a/Xml.pm:9
+#: lib/Locale/Po4a/Yaml.pm:7
 msgid "OPTIONS ACCEPTED BY THIS MODULE"
 msgstr "VON DIESEM MODUL AKZEPTIERTE OPTIONEN"
 
@@ -5346,6 +5356,7 @@ msgstr "VON DIESEM MODUL AKZEPTIERTE OPTIONEN"
 #: lib/Locale/Po4a/AsciiDoc.pm:7 lib/Locale/Po4a/Man.pm:35
 #: lib/Locale/Po4a/TeX.pm:12 lib/Locale/Po4a/Text.pm:9
 #: lib/Locale/Po4a/Xhtml.pm:7 lib/Locale/Po4a/Xml.pm:11
+#: lib/Locale/Po4a/Yaml.pm:8
 msgid "These are this module's particular options:"
 msgstr "Dies sind die Modul-spezifischen Optionen:"
 
@@ -5707,10 +5718,11 @@ msgstr ""
 #: lib/Locale/Po4a/Dia.pm:10 lib/Locale/Po4a/Docbook.pm:6
 #: lib/Locale/Po4a/Guide.pm:7 lib/Locale/Po4a/Halibut.pm:7
 #: lib/Locale/Po4a/KernelHelp.pm:5 lib/Locale/Po4a/Man.pm:96
-#: lib/Locale/Po4a/Pod.pm:9 lib/Locale/Po4a/Sgml.pm:34
-#: lib/Locale/Po4a/TeX.pm:104 lib/Locale/Po4a/Texinfo.pm:8
-#: lib/Locale/Po4a/Text.pm:38 lib/Locale/Po4a/Wml.pm:9
-#: lib/Locale/Po4a/Xhtml.pm:12 lib/Locale/Po4a/Xml.pm:178
+#: lib/Locale/Po4a/Pod.pm:9 lib/Locale/Po4a/RubyDoc.pm:6
+#: lib/Locale/Po4a/Sgml.pm:34 lib/Locale/Po4a/TeX.pm:104
+#: lib/Locale/Po4a/Texinfo.pm:8 lib/Locale/Po4a/Text.pm:38
+#: lib/Locale/Po4a/Wml.pm:9 lib/Locale/Po4a/Xhtml.pm:12
+#: lib/Locale/Po4a/Xml.pm:181
 msgid "STATUS OF THIS MODULE"
 msgstr "STATUS DIESES MODULS"
 
@@ -6222,7 +6234,7 @@ msgstr ""
 "warten."
 
 #. type: =head2
-#: lib/Locale/Po4a/Docbook.pm:9 lib/Locale/Po4a/Xml.pm:103
+#: lib/Locale/Po4a/Docbook.pm:9 lib/Locale/Po4a/Xml.pm:106
 msgid "OVERRIDE THE DEFAULT BEHAVIOR WITH COMMAND LINE OPTIONS"
 msgstr "AUSSERKRAFTSETZEN DES VORGABEVERHALTENS MIT BEFEHLSZEILENOPTIONEN"
 
@@ -6472,7 +6484,7 @@ msgstr ""
 "er ignoriert."
 
 #. type: textblock
-#: lib/Locale/Po4a/Ini.pm:9
+#: lib/Locale/Po4a/Ini.pm:9 lib/Locale/Po4a/Yaml.pm:16
 msgid "L<Locale::Po4a::TransTractor(3pm)>, L<po4a(7)|po4a.7>"
 msgstr "L<Locale::Po4a::TransTractor(3pm)>, L<po4a(7)|po4a.7>"
 
@@ -7000,7 +7012,7 @@ msgstr ""
 "Entwicklungsteam mitteilen."
 
 #. type: =item
-#: lib/Locale/Po4a/Man.pm:58 lib/Locale/Po4a/Xml.pm:91
+#: lib/Locale/Po4a/Man.pm:58 lib/Locale/Po4a/Xml.pm:94
 msgid "B<untranslated>"
 msgstr "B<untranslated>"
 
@@ -8418,6 +8430,167 @@ msgstr ""
 "TransTractor(3pm)>, L<po4a(7)|po4a.7>"
 
 #. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:2
+msgid "Locale::Po4a::RubyDoc -- Convert Ruby Document data from/to PO files"
+msgstr ""
+"Locale::Po4a::RubyDoc - konvertiert Ruby Document-Daten von/in PO-Dateien"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:5
+msgid ""
+"Locale::Po4a::RubyDoc is a module to help the translation of documentation "
+"in the Ruby Document (RD) format (a language used to document Ruby) into "
+"other [human] languages."
+msgstr ""
+"Locale::Po4a::RubyDoc ist ein Modul, um bei der Übersetzung von "
+"Dokumentation in dem Ruby Document- (RD-)Format (einer Sprache zur "
+"Dokumentation von Ruby) in andere [natürliche] Sprachen zu helfen."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:7
+msgid ""
+"This module has been successfully tested on simple Ruby Document files "
+"covering a good part of the format syntax."
+msgstr ""
+"Dieses Modul wurde erfolgreich mit einfachen Ruby Document-Dateien getestet, "
+"die einen guten Anteil der Formatsyntax abdecken."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:8
+msgid ""
+"A known limitation is that it fails to properly recognize the stacked "
+"structure of input Ruby Document: this implies that when, for instance, an "
+"EnumListItem consists of more than one Block, only the first Block is "
+"actually recognized as EnumListItem, while the subsequent ones are "
+"considered just as TextBlocks..."
+msgstr ""
+"Eine bekannte Einschränkung ist, dass es die geschichtete Struktur eines "
+"Eingabe-Ruby-Dokuments nicht korrekt erkennt: wenn beispielsweise ein "
+"EnumListItem aus mehr als einem Block besteht, impliziert dies, dass nur der "
+"erste Block tatsächlich als EnumListItem erkannt wird, während nachfolgende "
+"nur als TextBlocks betrachtet werden…"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:10
+msgid "This module supports the following option:"
+msgstr "Dieses Modul unterstützt die folgenden Optionen:"
+
+#. type: =item
+#: lib/Locale/Po4a/RubyDoc.pm:11
+msgid "B<puredoc>"
+msgstr "B<puredoc>"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:12
+msgid ""
+"Handle files entirely made of Ruby Document formatted text (without any "
+"\"=begin\" line)."
+msgstr ""
+"Handhabt Dateien, die komplett aus formatierten Ruby Document-Text bestehen "
+"(ohne eine »=begin«-Zeile)."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:13
+msgid ""
+"By default, this module only handles Ruby Document formatted text between "
+"\"=begin\" and \"=end\" lines (hence ignoring, among other things, "
+"everything that precedes the first \"=begin\" line)."
+msgstr ""
+"Standardmäßig handhabt dieses Modul nur formatierten Ruby Document-Text "
+"zwischen »=begin«- und »=end«-Zeilen (damit wird unter anderem alles vor der "
+"ersten »=begin«-Zeile ignoriert)."
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:15
+msgid "L<Locale::Po4a::TransTractor(3pm)>"
+msgstr "L<Locale::Po4a::TransTractor(3pm)>"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:17
+msgid "Francesco Poli <invernomuto@paranoici.org>"
+msgstr "Francesco Poli <invernomuto@paranoici.org>"
+
+#. type: verbatim
+#: lib/Locale/Po4a/RubyDoc.pm:19
+#, no-wrap
+msgid ""
+" Copyright © 2016-2017 Francesco Poli <invernomuto@paranoici.org>\n"
+"\n"
+msgstr ""
+" Copyright © 2016-2017 Francesco Poli <invernomuto@paranoici.org>\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:20
+msgid ""
+"This work is free software; you can redistribute it and/or modify it under "
+"the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:21
+msgid ""
+"This work is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details."
+msgstr ""
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:22
+msgid ""
+"You should have received a copy of the GNU General Public License along with "
+"this work; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301 USA."
+msgstr ""
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:23
+msgid ""
+"Parts of the code (such as many regular expressions) were adapted from the "
+"source of rdtool, under the terms of the GNU General Public License, version "
+"2 or later.  These parts are originally:"
+msgstr ""
+"Teile des Codes (wie beispielsweise viele reguläre Ausdrücke) wurden aus dem "
+"Quelltext von Rdtool unter den Bedingungen der GNU General Public License, "
+"Version 2 oder neuer, adaptiert. Diese Teile sind ursprünglich:"
+
+#. type: verbatim
+#: lib/Locale/Po4a/RubyDoc.pm:24
+#, no-wrap
+msgid ""
+" Copyright © 2004      MoonWolf <moonwolf@moonwolf.com>\n"
+" Copyright © 2011-2012 Youhei SASAKI <uwabami@gfd-dennou.org>\n"
+"\n"
+msgstr ""
+" Copyright © 2004      MoonWolf <moonwolf@moonwolf.com>\n"
+" Copyright © 2011-2012 Youhei SASAKI <uwabami@gfd-dennou.org>\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/RubyDoc.pm:25
+msgid ""
+"The initialize code was adapted from the source of Locale::Po4a::Text, under "
+"the terms of the GNU General Public License, version 2 or later.  This code "
+"was originally:"
+msgstr ""
+"Der Initialisierungs-Code wurde aus dem Quelltext von Locale::Po4a::Text, "
+"unter den Bedingungen der GNU General Public License, Version 2 oder neuer, "
+"adaptiert. Dieser Code war ursprünglich:"
+
+#. type: verbatim
+#: lib/Locale/Po4a/RubyDoc.pm:26
+#, no-wrap
+msgid ""
+" Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>\n"
+"\n"
+msgstr ""
+" Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>\n"
+"\n"
+
+#. type: textblock
 #: lib/Locale/Po4a/Sgml.pm:2
 msgid "Locale::Po4a::Sgml - convert SGML documents from/to PO files"
 msgstr "Locale::Po4a::Sgml - konvertiert SGML-Dokumente von/in PO-Dateien"
@@ -8834,7 +9007,7 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:2
 msgid ""
-"Locale::Po4a::TeX - convert TeX documents and derivates from/to PO files"
+"Locale::Po4a::TeX - convert TeX documents and derivatives from/to PO files"
 msgstr ""
 "Locale::Po4a::TeX - konvertiert TeX-Dokumente und Derivate von/in PO-Dateien"
 
@@ -8875,12 +9048,12 @@ msgstr ""
 "Blöcke oder sogar kleinere wie Titel oder Indices) teilen."
 
 #. type: textblock
-#: lib/Locale/Po4a/TeX.pm:9 lib/Locale/Po4a/Xml.pm:8
+#: lib/Locale/Po4a/TeX.pm:9
 msgid ""
 "There are some options (described in the next section) that can customize "
 "this behavior.  If this doesn't fit to your document format you're "
-"encouraged to write your own module derived from this, to describe your "
-"format's details.  See the section B<WRITING DERIVATE MODULES> below, for "
+"encouraged to write your own derivative module from this, to describe your "
+"format's details.  See the section B<WRITING DERIVATIVE MODULES> below, for "
 "the process description."
 msgstr ""
 "Es gibt einige Optionen (die im nächsten Abschnitt beschrieben werden), die "
@@ -8894,12 +9067,11 @@ msgstr ""
 #: lib/Locale/Po4a/TeX.pm:10
 msgid ""
 "This module can also be customized by lines starting with \"% po4a:\" in the "
-"TeX file.  These customizations are described in the B<INLINE CUSTOMIZATION> "
-"section."
+"TeX file. This process is described in the B<INLINE CUSTOMIZATION> section."
 msgstr ""
 "Dieses Modul kann auch durch Zeilen in der TeX-Datei, die mit »% po4a:« "
-"beginnen, angepasst werden. Diese Anpassungen werden im Abschnitt "
-"B<ANPASSUNGEN IM DOKUMENT> beschrieben."
+"beginnen, angepasst werden. Dieser Prozess wird im Abschnitt B<ANPASSUNGEN "
+"IM DOKUMENT> beschrieben."
 
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:16
@@ -9206,12 +9378,12 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:51
 msgid ""
-"The notion of environment is expended to the type displayed in the PO file.  "
+"The notion of environment is expanded to the type displayed in the PO file.  "
 "This can be used to split on \"\\\\\\\\\" in the first mandatory argument of "
 "the title command.  In this case, the environment is title{#1}."
 msgstr ""
 "Der Begriff der Umgebung wird auf den in der PO-Datei angezeigten Typ "
-"angewandt. Dies kann benutzt werden, um auf »\\\\\\\\« im ersten zwingenden "
+"erweitert. Dies kann benutzt werden, um auf »\\\\\\\\« im ersten zwingenden "
 "Argument des Titelbefehls zu unterteilen. In diesem Fall ist die Umgebung "
 "Title{#1}."
 
@@ -9473,8 +9645,9 @@ msgid "B<docheader>"
 msgstr "B<docheader>"
 
 #. type: =head1
-#: lib/Locale/Po4a/TeX.pm:91
-msgid "INTERNAL FUNCTIONS used to write derivated parsers"
+#: lib/Locale/Po4a/TeX.pm:91 lib/Locale/Po4a/TransTractor.pm:95
+#: lib/Locale/Po4a/Xml.pm:134
+msgid "INTERNAL FUNCTIONS used to write derivative parsers"
 msgstr ""
 "INTERNE FUNKTIONEN, die zum Schreiben abgeleiteter Parser verwendet werden"
 
@@ -9587,7 +9760,7 @@ msgid "It was tested on a book and with the Python documentation."
 msgstr "Es wurde mit einem Buch und mit der Python-Dokumentation getestet."
 
 #. type: =head1
-#: lib/Locale/Po4a/TeX.pm:107 lib/Locale/Po4a/Xml.pm:180
+#: lib/Locale/Po4a/TeX.pm:107 lib/Locale/Po4a/Xml.pm:183
 msgid "TODO LIST"
 msgstr "TODO-LISTE"
 
@@ -10414,10 +10587,12 @@ msgstr "new(%)"
 
 #. type: textblock
 #: lib/Locale/Po4a/TransTractor.pm:67
-msgid "Create a new po4a document. Accepted options (but be in a hash):"
+msgid ""
+"Create a new po4a document. Accepted options (in the hash passed as a "
+"parameter):"
 msgstr ""
-"erstellt ein neues Po4a-Dokument; akzeptiert Optionen (aber nur in Form "
-"eines Hashs):"
+"erstellt ein neues Po4a-Dokument; akzeptiert Optionen (in dem als Parameter "
+"übergebenen Hash):"
 
 #. type: =item
 #: lib/Locale/Po4a/TransTractor.pm:68
@@ -10627,12 +10802,6 @@ msgstr ""
 msgid "This function returns a non-null integer on error."
 msgstr ""
 "Diese Funktion gibt bei einem Fehler eine Ganzzahl ungleich Null zurück."
-
-#. type: =head1
-#: lib/Locale/Po4a/TransTractor.pm:95 lib/Locale/Po4a/Xml.pm:131
-msgid "INTERNAL FUNCTIONS used to write derivative parsers"
-msgstr ""
-"INTERNE FUNKTIONEN, die zum Schreiben abgeleiteter Parser verwendet werden"
 
 #. type: =head2
 #: lib/Locale/Po4a/TransTractor.pm:96
@@ -11205,6 +11374,22 @@ msgstr ""
 "der geschriebene Text befindet."
 
 #. type: textblock
+#: lib/Locale/Po4a/Xml.pm:8
+msgid ""
+"There are some options (described in the next section) that can customize "
+"this behavior.  If this doesn't fit to your document format you're "
+"encouraged to write your own module derived from this, to describe your "
+"format's details.  See the section B<WRITING DERIVATE MODULES> below, for "
+"the process description."
+msgstr ""
+"Es gibt einige Optionen (die im nächsten Abschnitt beschrieben werden), die "
+"dieses Verhalten anpassen lassen. Falls dies nicht auf Ihr Dokumentenformat "
+"passt, ermutigen wir Sie, Ihr eigenes, von diesem Modul abgeleitetes Modul "
+"zu schreiben, um die Details Ihres Formats zu beschreiben. Lesen Sie den "
+"Abschnitt B<SCHREIBEN ABGELEITETER MODULE> weiter unten für die Beschreibung "
+"des Prozesses."
+
+#. type: textblock
 #: lib/Locale/Po4a/Xml.pm:10
 msgid ""
 "The global debug option causes this module to show the excluded strings, in "
@@ -11370,10 +11555,10 @@ msgstr "Hinweis: Diese Option wurde missbilligt."
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:36
 msgid ""
-"Extracts only the specified tags in the \"tags\" option.  Otherwise, it will "
+"Extracts only the specified tags in the B<tags> option.  Otherwise, it will "
 "extract all the tags except the ones specified."
 msgstr ""
-"extrahiert nur die angegebenen Markierungen in der Option »tags«. "
+"extrahiert nur die angegebenen Markierungen in der Option B<tags>. "
 "Andernfalls wird es nur die Markierungen extrahieren mit Ausnahme "
 "derjenigen, die angegeben wurden."
 
@@ -11420,11 +11605,11 @@ msgstr "B<optionalclosingtag>"
 msgid ""
 "Boolean indicating whether closing tags are optional (as in HTML). By "
 "default, missing closing tags raise an error handled according to "
-"C<ontagerror>."
+"B<ontagerror>."
 msgstr ""
 "Logischer Wert, der angibt, ob schließende Markierungen optional sind (wie "
 "in HTML). Standardmäßig lösen fehlende schließende Markierungen einen Fehler "
-"aus, der entsprechend C<ontagerror> behandelt wird."
+"aus, der entsprechend B<ontagerror> behandelt wird."
 
 #. type: =item
 #: lib/Locale/Po4a/Xml.pm:43
@@ -11463,17 +11648,18 @@ msgstr ""
 #: lib/Locale/Po4a/Xml.pm:46
 msgid ""
 "You can also specify some tag options by putting some characters in front of "
-"the tag hierarchy. For example, you can put 'w' (wrap) or 'W' (don't wrap)  "
-"to override the default behavior specified by the global \"wrap\" option."
+"the tag hierarchy. For example, you can put I<w> (wrap) or I<W> (don't "
+"wrap)  to override the default behavior specified by the global B<wrap> "
+"option."
 msgstr ""
 "Sie können außerdem einige Markierungsoptionen angeben, indem Sie ein paar "
 "Zeichen an den Anfang der Markierungshierarchie stellen. Sie können zum "
-"Beispiel »w« (Zeilenumbruch) oder »W« (kein Zeilenumbruch) setzen, um das "
-"Standardverhalten, das durch die globale Option »wrap« angegeben wurde, "
+"Beispiel I<w> (Zeilenumbruch) oder I<W> (kein Zeilenumbruch) setzen, um das "
+"Standardverhalten, das durch die globale Option B<wrap> angegeben wurde, "
 "außer Kraft zu setzen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:47 lib/Locale/Po4a/Xml.pm:89
+#: lib/Locale/Po4a/Xml.pm:47 lib/Locale/Po4a/Xml.pm:92
 msgid "Example: WE<lt>chapterE<gt>E<lt>titleE<gt>"
 msgstr "Beispiel: WE<lt>KapitelE<gt>E<lt>TitelE<gt>"
 
@@ -11551,7 +11737,7 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:57 lib/Locale/Po4a/Xml.pm:61
 #: lib/Locale/Po4a/Xml.pm:66 lib/Locale/Po4a/Xml.pm:76
-#: lib/Locale/Po4a/Xml.pm:93
+#: lib/Locale/Po4a/Xml.pm:96
 msgid ""
 "The tags must be in the form <aaa>, but you can join some (<bbb><aaa>), if a "
 "tag (<aaa>) should only be considered when it's within another tag (<bbb>)."
@@ -11622,12 +11808,12 @@ msgstr "B<break-pi>"
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:68
 msgid ""
-"By default, Processing Instructions (i.e., C<<? ... ?>> tags) are handled as "
-"inline tags.  Pass this option if you want the PI to be handled as breaking "
-"tag.  Note that unprocessed PHP tags are handled as Processing Instructions "
-"by the parser."
+"By default, Processing Instructions (i.e., C<E<lt>? ... ?E<gt>> tags) are "
+"handled as inline tags.  Pass this option if you want the PI to be handled "
+"as breaking tag.  Note that unprocessed PHP tags are handled as Processing "
+"Instructions by the parser."
 msgstr ""
-"Standardmäßig werden Verarbeitungsanweisungen (d.h. C<<? ... ?>>-"
+"Standardmäßig werden Verarbeitungsanweisungen (d.h. C<E<lt>? … ?E<gt>>-"
 "Markierungen) als innenliegende Markierungen behandelt. Übergeben Sie diese "
 "Option, wenn Sie möchten, dass die Verarbeitungshinweise als unterbrechende "
 "Markierungen behandelt werden sollen. Beachten Sie, dass unkomprimierte PHP-"
@@ -11759,24 +11945,34 @@ msgstr ""
 "Intern kümmert sich der XML-Parser nur um diese vier Optionen: I<w> I<W> "
 "I<i> I<p>."
 
-#. type: verbatim
+#. type: textblock
 #: lib/Locale/Po4a/Xml.pm:87
-#, no-wrap
 msgid ""
-"  * Tags listed in B<break> are set to I<w> or I<W> depending on the <wrap> option.\n"
-"  * Tags listed in B<inline> are set to I<i>.\n"
-"  * Tags listed in B<placeholder> are set to I<p>.\n"
-"  * Tags listed in B<untranslated> are without any of these options set.\n"
-"\n"
+"* Tags listed in B<break> are set to I<w> or I<W> depending on the B<wrap> "
+"option."
 msgstr ""
-"  * In B<break> aufgeführte Markierungen werden abhängig von der Option <wrap> auf I<w> oder I<W> gesetzt.\n"
-"  * In B<inline> aufgeführte Markierungen werden auf I<i> gesetzt.\n"
-"  * In B<placeholder> aufgeführte Markierungen werden auf I<p> gesetzt.\n"
-"  * In B<untranslated> aufgeführte Markierungen haben keine dieser Optionen gesetzt.\n"
-"\n"
+"* In B<break> aufgeführte Markierungen werden abhängig von der Option "
+"B<wrap> auf I<w> oder I<W> gesetzt."
 
 #. type: textblock
 #: lib/Locale/Po4a/Xml.pm:88
+msgid "* Tags listed in B<inline> are set to I<i>."
+msgstr "* In B<inline> aufgeführte Markierungen werden auf I<i> gesetzt."
+
+#. type: textblock
+#: lib/Locale/Po4a/Xml.pm:89
+msgid "* Tags listed in B<placeholder> are set to I<p>."
+msgstr "* In B<placeholder> aufgeführte Markierungen werden auf I<p> gesetzt."
+
+#. type: textblock
+#: lib/Locale/Po4a/Xml.pm:90
+msgid "* Tags listed in B<untranslated> are without any of these options set."
+msgstr ""
+"* In B<untranslated> aufgeführte Markierungen sind ohne eine dieser "
+"gesetzten Optionen."
+
+#. type: textblock
+#: lib/Locale/Po4a/Xml.pm:91
 msgid ""
 "You can verify actual internal parameter behavior by invoking B<po4a> with "
 "B<--debug> option."
@@ -11785,7 +11981,7 @@ msgstr ""
 "B<po4a> mit der Option B<--debug> überprüfen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:90
+#: lib/Locale/Po4a/Xml.pm:93
 msgid ""
 "Please note a tag should be listed in either B<translated> or "
 "B<untranslated> setting string."
@@ -11795,30 +11991,30 @@ msgstr ""
 "sollte."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:92
+#: lib/Locale/Po4a/Xml.pm:95
 msgid "Space-separated list of tags you do not want to translate."
 msgstr ""
 "leerzeichengetrennte Liste der Markierungen, die Sie nicht übersetzen möchten"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:94
+#: lib/Locale/Po4a/Xml.pm:97
 msgid ""
 "Please note a translatable inline tag in an untranslated tag is treated as a "
 "translatable breaking tag, I<i> setting is dropped and I<w> or I<W> is set "
-"depending on the <wrap> option."
+"depending on the B<wrap> option."
 msgstr ""
 "Bitte beachten Sie, dass eine übersetzbare innenliegende Markierung in einer "
 "unübersetzbaren Markierung als eine übersetzbare unterbrechende Markierung "
 "behandelt wird, die Einstellung I<i> entfällt und I<w> oder I<W> werden "
-"abhängig von der Option <wrap> gesetzt."
+"abhängig von der Option B<wrap> gesetzt."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:95
+#: lib/Locale/Po4a/Xml.pm:98
 msgid "B<defaulttranslateoption>"
 msgstr "B<defaulttranslateoption>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:96
+#: lib/Locale/Po4a/Xml.pm:99
 msgid ""
 "The default categories for tags that are not in any of the translated, "
 "untranslated, break, inline, or placeholder."
@@ -11827,7 +12023,7 @@ msgstr ""
 "»untranslated«, »break«, »inline« oder »placeholder« befinden"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:97
+#: lib/Locale/Po4a/Xml.pm:100
 msgid ""
 "This is a set of letters as defined in B<translated> and this setting is "
 "only valid for translatable tags."
@@ -11836,17 +12032,17 @@ msgstr ""
 "Einstellung ist nur für übersetzbare Markierungen gültig."
 
 #. type: =head1
-#: lib/Locale/Po4a/Xml.pm:98
+#: lib/Locale/Po4a/Xml.pm:101
 msgid "WRITING DERIVATIVE MODULES"
 msgstr "SCHREIBEN ABGELEITETER MODULE"
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:99
+#: lib/Locale/Po4a/Xml.pm:102
 msgid "DEFINE WHAT TAGS AND ATTRIBUTES TO TRANSLATE"
 msgstr "DEFINIERT, WELCHE MARKIERUNGEN UND ATTRIBUTE ZU ÜBERSETZEN SIND"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:100
+#: lib/Locale/Po4a/Xml.pm:103
 msgid ""
 "The simplest customization is to define which tags and attributes you want "
 "the parser to translate.  This should be done in the initialize function.  "
@@ -11864,7 +12060,7 @@ msgstr ""
 "Aufruf der Haupt-»initialize«-Funktion definieren:"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:101
+#: lib/Locale/Po4a/Xml.pm:104
 #, no-wrap
 msgid ""
 "  $self->{options}{'new_option'}='';\n"
@@ -11884,7 +12080,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:102
+#: lib/Locale/Po4a/Xml.pm:105
 msgid ""
 "You should use the B<_default_inline>, B<_default_break>, "
 "B<_default_placeholder>, B<_default_translated>, B<_default_untranslated>, "
@@ -11899,7 +12095,7 @@ msgstr ""
 "Befehlszeilenoptionen außer Kraft zu setzen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:104
+#: lib/Locale/Po4a/Xml.pm:107
 msgid ""
 "If you don't like the default behavior of this xml module and its derivative "
 "modules, you can provide command line options to change their behavior."
@@ -11909,17 +12105,17 @@ msgstr ""
 "Verhaltens bereitstellen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:105
+#: lib/Locale/Po4a/Xml.pm:108
 msgid "See L<Locale::Po4a::Docbook(3pm)|Locale::Po4a::Docbook>,"
 msgstr "Siehe L<Locale::Po4a::Docbook(3pm)|Locale::Po4a::Docbook>,"
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:106
+#: lib/Locale/Po4a/Xml.pm:109
 msgid "OVERRIDING THE found_string FUNCTION"
 msgstr "DIE FUNKTION found_string AUßER KRAFT SETZEN"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:107
+#: lib/Locale/Po4a/Xml.pm:110
 msgid ""
 "Another simple step is to override the function \"found_string\", which "
 "receives the extracted strings from the parser, in order to translate them.  "
@@ -11933,7 +12129,7 @@ msgstr ""
 "selbst durchführen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:108
+#: lib/Locale/Po4a/Xml.pm:111
 msgid ""
 "It receives the extracted text, the reference on where it was, and a hash "
 "that contains extra information to control what strings to translate, how to "
@@ -11945,7 +12141,7 @@ msgstr ""
 "Kommentar zu erzeugen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:109
+#: lib/Locale/Po4a/Xml.pm:112
 msgid ""
 "The content of these options depends on the kind of string it is (specified "
 "in an entry of this hash):"
@@ -11954,12 +12150,12 @@ msgstr ""
 "in einem Eintrag dieses Hashs):"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:110
+#: lib/Locale/Po4a/Xml.pm:113
 msgid "type=\"tag\""
 msgstr "type=\"Markierung\""
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:111
+#: lib/Locale/Po4a/Xml.pm:114
 msgid ""
 "The found string is the content of a translatable tag. The entry "
 "\"tag_options\" contains the option characters in front of the tag hierarchy "
@@ -11970,12 +12166,12 @@ msgstr ""
 "Markierungshierarchie in der Moduloption »tags«."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:112
+#: lib/Locale/Po4a/Xml.pm:115
 msgid "type=\"attribute\""
 msgstr "type=\"Attribut\""
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:113
+#: lib/Locale/Po4a/Xml.pm:116
 msgid ""
 "Means that the found string is the value of a translatable attribute. The "
 "entry \"attribute\" has the name of the attribute."
@@ -11984,7 +12180,7 @@ msgstr ""
 "Attributs ist. Der Eintrag »Attribut« erhält den Namen des Attributs."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:114
+#: lib/Locale/Po4a/Xml.pm:117
 msgid ""
 "It must return the text that will replace the original in the translated "
 "document. Here's a basic example of this function:"
@@ -11993,7 +12189,7 @@ msgstr ""
 "ersetzt. Hier ein grundlegendes Beispiel dieser Funktion:"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:115
+#: lib/Locale/Po4a/Xml.pm:118
 #, no-wrap
 msgid ""
 "  sub found_string {\n"
@@ -12013,7 +12209,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:116
+#: lib/Locale/Po4a/Xml.pm:119
 msgid ""
 "There's another simple example in the new Dia module, which only filters "
 "some strings."
@@ -12022,12 +12218,12 @@ msgstr ""
 "Zeichenketten filtert."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:117
+#: lib/Locale/Po4a/Xml.pm:120
 msgid "MODIFYING TAG TYPES (TODO)"
 msgstr "ÄNDERN VON KENNZEICHENTYPEN (ZU ERLEDIGEN)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:118
+#: lib/Locale/Po4a/Xml.pm:121
 msgid ""
 "This is a more complex one, but it enables a (almost) total customization.  "
 "It's based on a list of hashes, each one defining a tag type's behavior. The "
@@ -12044,32 +12240,32 @@ msgstr ""
 "folgenden Schlüsseln erstellen:"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:119
+#: lib/Locale/Po4a/Xml.pm:122
 msgid "B<beginning>"
 msgstr "B<beginning>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:120
+#: lib/Locale/Po4a/Xml.pm:123
 msgid "Specifies the beginning of the tag, after the \"E<lt>\"."
 msgstr "gibt den Anfang der Markierung an, nach dem »E<lt>«"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:121
+#: lib/Locale/Po4a/Xml.pm:124
 msgid "B<end>"
 msgstr "B<end>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:122
+#: lib/Locale/Po4a/Xml.pm:125
 msgid "Specifies the end of the tag, before the \"E<gt>\"."
 msgstr "gibt das Ende der Markierung an, vor dem »E<gt>«"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:123
+#: lib/Locale/Po4a/Xml.pm:126
 msgid "B<breaking>"
 msgstr "B<breaking>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:124
+#: lib/Locale/Po4a/Xml.pm:127
 msgid ""
 "It says if this is a breaking tag class.  A non-breaking (inline) tag is one "
 "that can be taken as part of the content of another tag.  It can take the "
@@ -12086,12 +12282,12 @@ msgstr ""
 "nicht."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:125
+#: lib/Locale/Po4a/Xml.pm:128
 msgid "B<f_breaking>"
 msgstr "B<f_breaking>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:126
+#: lib/Locale/Po4a/Xml.pm:129
 msgid ""
 "It's a function that will tell if the next tag is a breaking one or not.  It "
 "should be defined if the B<breaking> option is not."
@@ -12101,12 +12297,12 @@ msgstr ""
 "B<breaking> nicht definiert ist."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:127
+#: lib/Locale/Po4a/Xml.pm:130
 msgid "B<f_extract>"
 msgstr "B<f_extract>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:128
+#: lib/Locale/Po4a/Xml.pm:131
 msgid ""
 "If you leave this key undefined, the generic extraction function will have "
 "to extract the tag itself.  It's useful for tags that can have other tags or "
@@ -12122,12 +12318,12 @@ msgstr ""
 "Eingabedatenstrom entfernt werden soll oder nicht."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:129
+#: lib/Locale/Po4a/Xml.pm:132
 msgid "B<f_translate>"
 msgstr "B<f_translate>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:130
+#: lib/Locale/Po4a/Xml.pm:133
 msgid ""
 "This function receives the tag (in the get_string_until() format) and "
 "returns the translated tag (translated attributes or all needed "
@@ -12138,17 +12334,17 @@ msgstr ""
 "Umbildungen) als eine einzelne Zeichenkette zurück."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:132
+#: lib/Locale/Po4a/Xml.pm:135
 msgid "WORKING WITH TAGS"
 msgstr "ARBEITEN MIT KENNZEICHEN"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:133
+#: lib/Locale/Po4a/Xml.pm:136
 msgid "get_path()"
 msgstr "get_path()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:134
+#: lib/Locale/Po4a/Xml.pm:137
 msgid ""
 "This function returns the path to the current tag from the document's root, "
 "in the form E<lt>htmlE<gt>E<lt>bodyE<gt>E<lt>pE<gt>."
@@ -12157,7 +12353,7 @@ msgstr ""
 "Dokuments in der Form E<lt>htmlE<gt>E<lt>bodyE<gt>E<lt>pE<gt> zurück."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:135
+#: lib/Locale/Po4a/Xml.pm:138
 msgid ""
 "An additional array of tags (without brackets) can be passed as argument.  "
 "These path elements are added to the end of the current path."
@@ -12167,12 +12363,12 @@ msgstr ""
 "hinzugefügt."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:136
+#: lib/Locale/Po4a/Xml.pm:139
 msgid "tag_type()"
 msgstr "tag_type()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:137
+#: lib/Locale/Po4a/Xml.pm:140
 msgid ""
 "This function returns the index from the tag_types list that fits to the "
 "next tag in the input stream, or -1 if it's at the end of the input file."
@@ -12182,7 +12378,7 @@ msgstr ""
 "Eingabedatei liegt."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:138
+#: lib/Locale/Po4a/Xml.pm:141
 msgid ""
 "Here, the tag has structure started by E<lt> and end by E<gt> and it can "
 "contain multiple lines."
@@ -12191,8 +12387,8 @@ msgstr ""
 "und mehrere Zeilen enthalten kann."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:139 lib/Locale/Po4a/Xml.pm:142
-#: lib/Locale/Po4a/Xml.pm:149 lib/Locale/Po4a/Xml.pm:158
+#: lib/Locale/Po4a/Xml.pm:142 lib/Locale/Po4a/Xml.pm:145
+#: lib/Locale/Po4a/Xml.pm:152 lib/Locale/Po4a/Xml.pm:161
 msgid ""
 "This works on the array C<< @{$self->{TT}{doc_in}} >> holding input document "
 "data and reference indirectly via C<< $self->shiftline() >> and C<< $self-"
@@ -12203,12 +12399,12 @@ msgstr ""
 "$self->unshiftline($$) >> Referenzen enthält."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:140
+#: lib/Locale/Po4a/Xml.pm:143
 msgid "extract_tag($$)"
 msgstr "extract_tag($$)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:141
+#: lib/Locale/Po4a/Xml.pm:144
 msgid ""
 "This function returns the next tag from the input stream without the "
 "beginning and end, in an array form, to maintain the references from the "
@@ -12223,12 +12419,12 @@ msgstr ""
 "angibt, ob die Markierung aus dem Eingabedatenstrom entfernt werden soll."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:143
+#: lib/Locale/Po4a/Xml.pm:146
 msgid "get_tag_name(@)"
 msgstr "get_tag_name(@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:144
+#: lib/Locale/Po4a/Xml.pm:147
 msgid ""
 "This function returns the name of the tag passed as an argument, in the "
 "array form returned by extract_tag."
@@ -12237,12 +12433,12 @@ msgstr ""
 "Form eines durch extract_tag zurückgegebenen Feldes zurück."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:145
+#: lib/Locale/Po4a/Xml.pm:148
 msgid "breaking_tag()"
 msgstr "breaking_tag()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:146
+#: lib/Locale/Po4a/Xml.pm:149
 msgid ""
 "This function returns a boolean that says if the next tag in the input "
 "stream is a breaking tag or not (inline tag).  It leaves the input stream "
@@ -12253,12 +12449,12 @@ msgstr ""
 "nicht (innenliegende Markierung). Sie läßt den Eingabedatenstrom intakt."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:147
+#: lib/Locale/Po4a/Xml.pm:150
 msgid "treat_tag()"
 msgstr "treat_tag()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:148
+#: lib/Locale/Po4a/Xml.pm:151
 msgid ""
 "This function translates the next tag from the input stream.  Using each tag "
 "type's custom translation functions."
@@ -12268,12 +12464,12 @@ msgstr ""
 "Markierungstyps."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:150
+#: lib/Locale/Po4a/Xml.pm:153
 msgid "tag_in_list($@)"
 msgstr "tag_in_list($@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:151
+#: lib/Locale/Po4a/Xml.pm:154
 msgid ""
 "This function returns a string value that says if the first argument (a tag "
 "hierarchy) matches any of the tags from the second argument (a list of tags "
@@ -12289,41 +12485,41 @@ msgstr ""
 "(falls die Markierung keine Optionen hat)."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:152
+#: lib/Locale/Po4a/Xml.pm:155
 msgid "WORKING WITH ATTRIBUTES"
 msgstr "MIT ATTRIBUTEN ARBEITEN"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:153
+#: lib/Locale/Po4a/Xml.pm:156
 msgid "treat_attributes(@)"
 msgstr "treat_attributes(@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:154
+#: lib/Locale/Po4a/Xml.pm:157
 msgid ""
 "This function handles the translation of the tags' attributes. It receives "
 "the tag without the beginning / end marks, and then it finds the attributes, "
 "and it translates the translatable ones (specified by the module option "
-"\"attributes\").  This returns a plain string with the translated tag."
+"B<attributes>).  This returns a plain string with the translated tag."
 msgstr ""
 "Diese Funktion handhabt die Übersetzung der Attribute von Markierungen. Sie "
 "erhält die Markierung ohne die Anfangs-/Endmarkierungen, sucht dann die "
 "Attribute und übersetzt die, die übersetzbar sind (angegeben durch die "
-"Moduloption »attributes«). Dies gibt eine einfache Zeichenkette mit der "
+"Moduloption B<attributes>). Dies gibt eine einfache Zeichenkette mit der "
 "übersetzten Markierung zurück."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:155
+#: lib/Locale/Po4a/Xml.pm:158
 msgid "WORKING WITH TAGGED CONTENTS"
 msgstr "ARBEITEN MIT MARKIERTEN INHALTEN"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:156
+#: lib/Locale/Po4a/Xml.pm:159
 msgid "treat_content()"
 msgstr "treat_content()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:157
+#: lib/Locale/Po4a/Xml.pm:160
 msgid ""
 "This function gets the text until the next breaking tag (not inline) from "
 "the input stream.  Translate it using each tag type's custom translation "
@@ -12334,17 +12530,17 @@ msgstr ""
 "der angepassten Übersetzungsfunktionen jedes Markierungstyps."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:159
+#: lib/Locale/Po4a/Xml.pm:162
 msgid "WORKING WITH THE MODULE OPTIONS"
 msgstr "MIT DEN MODULOPTIONEN ARBEITEN"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:160
+#: lib/Locale/Po4a/Xml.pm:163
 msgid "treat_options()"
 msgstr "treat_options()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:161
+#: lib/Locale/Po4a/Xml.pm:164
 msgid ""
 "This function fills the internal structures that contain the tags, "
 "attributes and inline data with the options of the module (specified in the "
@@ -12355,17 +12551,17 @@ msgstr ""
 "auf der Befehlszeile oder in der Initialisierungsfunktion)."
 
 #. type: =head2
-#: lib/Locale/Po4a/Xml.pm:162
+#: lib/Locale/Po4a/Xml.pm:165
 msgid "GETTING TEXT FROM THE INPUT DOCUMENT"
 msgstr "TEXT AUS DEM EINGABEDOKUMENT ERHALTEN"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:163
+#: lib/Locale/Po4a/Xml.pm:166
 msgid "get_string_until($%)"
 msgstr "get_string_until($%)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:164
+#: lib/Locale/Po4a/Xml.pm:167
 msgid ""
 "This function returns an array with the lines (and references) from the "
 "input document until it finds the first argument.  The second argument is an "
@@ -12377,50 +12573,50 @@ msgstr ""
 "Vorgabe) und 1 »aktiviert«."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:165
+#: lib/Locale/Po4a/Xml.pm:168
 msgid "The valid options are:"
 msgstr "Die gültigen Optionen sind:"
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:166
+#: lib/Locale/Po4a/Xml.pm:169
 msgid "B<include>"
 msgstr "B<include>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:167
+#: lib/Locale/Po4a/Xml.pm:170
 msgid "This makes the returned array to contain the searched text"
 msgstr ""
 "Dies sorgt dafür, dass das zurückgegebene Feld den gesuchten Text erhält."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:168
+#: lib/Locale/Po4a/Xml.pm:171
 msgid "B<remove>"
 msgstr "B<remove>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:169
+#: lib/Locale/Po4a/Xml.pm:172
 msgid "This removes the returned stream from the input"
 msgstr "Dies entfernt den zurückgegebenen Datenstrom aus der Eingabe."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:170
+#: lib/Locale/Po4a/Xml.pm:173
 msgid "B<unquoted>"
 msgstr "B<unquoted>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:171
+#: lib/Locale/Po4a/Xml.pm:174
 msgid "This ensures that the searched text is outside any quotes"
 msgstr ""
 "Dies stellt sicher, dass der gesuchte Text außerhalb irgendwelcher "
 "Anführungszeichen steht."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:172
+#: lib/Locale/Po4a/Xml.pm:175
 msgid "B<regex>"
 msgstr "B<RegAus>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:173
+#: lib/Locale/Po4a/Xml.pm:176
 msgid ""
 "This denotes that the first argument is a regular expression rather than an "
 "plain string"
@@ -12429,12 +12625,12 @@ msgstr ""
 "einfachen Zeichenkette ist."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:174
+#: lib/Locale/Po4a/Xml.pm:177
 msgid "skip_spaces(\\@)"
 msgstr "skip_spaces(\\@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:175
+#: lib/Locale/Po4a/Xml.pm:178
 msgid ""
 "This function receives as argument the reference to a paragraph (in the "
 "format returned by get_string_until), skips his heading spaces and returns "
@@ -12445,12 +12641,12 @@ msgstr ""
 "Leerzeichen und gibt sie als einfache Zeichenkette zurück."
 
 #. type: =item
-#: lib/Locale/Po4a/Xml.pm:176
+#: lib/Locale/Po4a/Xml.pm:179
 msgid "join_lines(@)"
 msgstr "join_lines(@)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:177
+#: lib/Locale/Po4a/Xml.pm:180
 msgid ""
 "This function returns a simple string with the text from the argument array "
 "(discarding the references)."
@@ -12459,17 +12655,17 @@ msgstr ""
 "Argument-Feld (die Referenzen werden weggelassen)."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:179
+#: lib/Locale/Po4a/Xml.pm:182
 msgid "This module can translate tags and attributes."
 msgstr "Dieses Modul kann Markierungen und Attribute übersetzen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:181
+#: lib/Locale/Po4a/Xml.pm:184
 msgid "DOCTYPE (ENTITIES)"
 msgstr "DOKUMENTENART (ENTITÄTEN)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:182
+#: lib/Locale/Po4a/Xml.pm:185
 msgid ""
 "There is a minimal support for the translation of entities. They are "
 "translated as a whole, and tags are not taken into account. Multilines "
@@ -12482,7 +12678,7 @@ msgstr ""
 "werden während der Übersetzung immer neu umgebrochen."
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:183
+#: lib/Locale/Po4a/Xml.pm:186
 msgid ""
 "MODIFY TAG TYPES FROM INHERITED MODULES (move the tag_types structure inside "
 "the $self hash?)"
@@ -12491,7 +12687,7 @@ msgstr ""
 "Hashs $self verschieben?)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Xml.pm:185
+#: lib/Locale/Po4a/Xml.pm:188
 msgid ""
 "L<Locale::Po4a::TransTractor(3pm)|Locale::Po4a::TransTractor>, L<po4a(7)|"
 "po4a.7>"
@@ -12500,7 +12696,7 @@ msgstr ""
 "po4a.7>"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:187
+#: lib/Locale/Po4a/Xml.pm:190
 #, no-wrap
 msgid ""
 " Jordi Vilalta <jvprat@gmail.com>\n"
@@ -12512,7 +12708,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Xml.pm:189
+#: lib/Locale/Po4a/Xml.pm:192
 #, no-wrap
 msgid ""
 " Copyright © 2004 Jordi Vilalta  <jvprat@gmail.com>\n"
@@ -12522,6 +12718,131 @@ msgstr ""
 " Copyright © 2004 Jordi Vilalta  <jvprat@gmail.com>\n"
 " Copyright © 2008-2009 Nicolas François <nicolas.francois@centraliens.net>\n"
 "\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:2
+msgid "Locale::Po4a::Yaml - convert YAML files from/to PO files"
+msgstr "Locale::Po4a::Yaml - konvertiert YAML-Dateien von/in PO-Dateien"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:4
+msgid ""
+"Locale::Po4a::Yaml is a module to help the translation of Yaml files into "
+"other [human] languages."
+msgstr ""
+"Locale::Po4a::Yaml ist ein Modul, um bei der Übersetzung von Yaml-Dateien in "
+"andere [natürliche] Sprachen zu helfen."
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:5
+msgid ""
+"The module extracts the value of YAML hashes and arrays. Hash keys are not "
+"extracted."
+msgstr ""
+"Dieses Modul zieht den Wert von YAML-Hashes und -Felder heraus. Hash-"
+"Schlüssel werden nicht herausgezogen."
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:6
+msgid "NOTE: This module parses the YAML file with YAML::Tiny."
+msgstr "HINWEIS: Dieses Modul wertet die YAML-Datei mit YAML::Tiny aus."
+
+#. type: =item
+#: lib/Locale/Po4a/Yaml.pm:9
+msgid "B<keys>"
+msgstr "B<keys>"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:10
+msgid ""
+"Space-separated list of hash keys to process for extraction, all other keys "
+"are skipped.  Keys are matched with a case-insensitive match.  If B<paths> "
+"and B<keys> are used together, values are included if they are matched by at "
+"least one of the options.  Arrays values are always returned unless the "
+"B<skip_array> option is provided."
+msgstr ""
+"Leerzeichen-getrennte Liste der Hash-Schlüssel, die für das Herausziehen "
+"verarbeitet werden. Alle anderen Schlüssel werden übersprungen. Schlüssel "
+"werden unabhängig von der Groß-/Kleinschreibung verglichen. Falls B<paths> "
+"und B<keys> zusammen verwandt werden, werden Werte aufgenommen, falls sie "
+"auf mindestens eine der Optionen passen. Feldwerte werden immer "
+"zurückgeliefert, außer die Option B<skip_array> wird bereitgestellt."
+
+#. type: =item
+#: lib/Locale/Po4a/Yaml.pm:11
+msgid "B<paths>"
+msgstr "B<paths>"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:12
+msgid ""
+"Comma-separated list of hash paths to process for extraction, all other "
+"paths are skipped. Paths are matched with a case-insensitive match.  If "
+"B<paths> and B<keys> are used together, values are included if they are "
+"matched by at least one of the options.  Arrays values are always returned "
+"unless the B<skip_array> option is provided."
+msgstr ""
+"Kommata-getrennte Liste von Hash-Pfaden zu Prozessen für das Herausziehen, "
+"alle anderen Pfade werden übersprungen. Pfade werden unabhängig von der "
+"Groß-/Kleinschreibung verglichen. Falls B<paths> und B<keys> zusammen "
+"verwandt werden, werden Werte aufgenommen, falls sie auf mindestens eine der "
+"Optionen passen. Feldwerte werden immer zurückgeliefert, außer die Option "
+"B<skip_array> wird bereitgestellt."
+
+#. type: =item
+#: lib/Locale/Po4a/Yaml.pm:13
+msgid "B<skip_array>"
+msgstr "B<skip_array>"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:14
+msgid "Do not translate array values."
+msgstr "Keine Feldwerte übersetzen."
+
+#. type: verbatim
+#: lib/Locale/Po4a/Yaml.pm:18
+#, no-wrap
+msgid ""
+" Brian Exelbierd <bex@pobox.com>\n"
+"\n"
+msgstr ""
+" Brian Exelbierd <bex@pobox.com>\n"
+"\n"
+
+#. type: textblock
+#: lib/Locale/Po4a/Yaml.pm:20
+msgid "Copyright © 2017 Brian Exelbierd."
+msgstr "Copyright © 2017 Brian Exelbierd."
+
+#, no-wrap
+#~ msgid ""
+#~ "  * Tags listed in B<break> are set to I<w> or I<W> depending on the <wrap> option.\n"
+#~ "  * Tags listed in B<inline> are set to I<i>.\n"
+#~ "  * Tags listed in B<placeholder> are set to I<p>.\n"
+#~ "  * Tags listed in B<untranslated> are without any of these options set.\n"
+#~ "\n"
+#~ msgstr ""
+#~ "  * In B<break> aufgeführte Markierungen werden abhängig von der Option <wrap> auf I<w> oder I<W> gesetzt.\n"
+#~ "  * In B<inline> aufgeführte Markierungen werden auf I<i> gesetzt.\n"
+#~ "  * In B<placeholder> aufgeführte Markierungen werden auf I<p> gesetzt.\n"
+#~ "  * In B<untranslated> aufgeführte Markierungen haben keine dieser Optionen gesetzt.\n"
+#~ "\n"
+
+#, no-wrap
+#~ msgid ""
+#~ " Denis Barbier <barbier@linuxfr.org>\n"
+#~ " Nicolas François <nicolas.francois@centraliens.net>\n"
+#~ " Martin Quinson (mquinson#debian.org)\n"
+#~ "\n"
+#~ msgstr ""
+#~ " Denis Barbier <barbier@linuxfr.org>\n"
+#~ " Nicolas François <nicolas.francois@centraliens.net>\n"
+#~ " Martin Quinson (mquinson#debian.org)\n"
+#~ "\n"
+
+#~ msgid "INTERNAL FUNCTIONS used to write derivated parsers"
+#~ msgstr ""
+#~ "INTERNE FUNKTIONEN, die zum Schreiben abgeleiteter Parser verwendet werden"
 
 #~ msgid ""
 #~ "If there are name conflicts because several files have the same filename, "
@@ -15141,9 +15462,6 @@ msgstr ""
 #~ msgstr ""
 #~ "Für Informationen über die Unterstützung der Übersetzung von Nachrichten "
 #~ "zur Programmlaufzeit durch F<po4a-build> lesen Sie L<po4a-runtime(7)>."
-
-#~ msgid "Currently, C<po4a-build> supports the following combinations:"
-#~ msgstr "Derzeit unterstützt C<po4a-build> die folgenden Kombinationen:"
 
 #~ msgid "DocBook XML for sections 1 and 3"
 #~ msgstr "DocBook XML für Abschnitt 1 und 3"

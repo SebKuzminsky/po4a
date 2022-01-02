@@ -2,6 +2,68 @@ This file presents the major changes of each version, focusing on
 user-visible changes while the day to day changes are in the git logs.
 
 =======================================================================
+        ___   __    __
+__   __/ _ \ / /_  / /_
+\ \ / / | | | '_ \| '_ \          The 2+1 times 22 are 66 release.
+ \ V /| |_| | (_) | (_) |
+  \_/  \___(_)___/ \___/          (Released on 2/1/22)
+
+
+Asciidoc:
+ * Support empty cells in tablecells mode (GitHub's #343) [J.N. Avila]
+ * Disable tablecells when table is not in PSV format (GitHub's #343 too)
+   [J.N. Avila]
+
+Yaml:
+ * New option "paths" to select the full paths to extract.
+   The old "key" option (that allows to select any path ending with
+   the given key) still works as previously (thanks Oliver Rahner).
+
+Tests:
+ * Make the SGML tests use valid input files to fix brekages on
+   paranoid OSes (GitHub's#327 -- thanks newbluemoon for report and fix).
+ * Add a new tests that fixes the weird permission settings of the
+   other tests, and prevent the users from running the tests as root.
+   (GitHub's #332 -- thanks Oliver Rahner for stepping on that trap)
+ * Fix the testsuite so that it works even if the source is checkouted
+   in an arbitrary directory (GitHub's #338).
+
+po4a-gettextize:
+ * Use UTF-8 by default for localized charset.
+
+Translations:
+ * Updated: Croatian, thanks Milo Ivir.
+ * Updated: Esperanto, thanks Marco Ciampa.
+ * Updated: French, thanks Martin Quinson & brandelune.
+ * Updated: Dutch, thanks Frans Spiesschaert.
+ * Updated: German, thanks Helge Kreutzmann.
+ * Updated: Italian, thanks Marco Ciampa.
+ * Updated: Norwegian Bokmål, thanks Petter Reinholdtsen.
+ * Updated: Portuguese (Brazil), thanks Rafael Fontenelle.
+ * Updated: Russian, thanks Azamat H. Hackimov.
+ * Updated: Serbian (cyrillic), thanks Ivan Pesic.
+ * Updated: Ukrainian, thanks Yuri Chornoivan (українська).
+
+Status of the binary translation:
+ 7 languages = 100%: fr, hr, it, nb, nl, pt_BR, uk.
+ 8 languages >= 95%: de (97%), eo (98%), es (97%), hu (97%), pt (97%), ru (98%), sr_Cyrl (99%), zh_CN (97%).
+ 1 language  >= 80%: id (81%).
+ 2 languages >= 70%: et (71%), sv (76%).
+ 7 languages >= 50%: cs (60%), da (62%), eu (59%), ja (65%), pl (65%), sl (58%), vi (65%).
+ 1 language  >= 33%: ca (47%).
+ 1 language  >= 20%: zh_Hant (22%).
+ 6 starting languages: ace (2%), af (7%), ar (14%), kn (7%), ko (19%), zh_HK (3%).
+
+Status of the documentation translation:
+ 3 languages = 100%: it, pt_BR, uk.
+ 4 languages >= 95%: de (99%), fr (96%), nl (99%), sr_Cyrl (99%).
+ 2 languages >= 90%: pt (94%), zh_CHS (93%).
+ 1 language  >= 70%: es (78%).
+ 3 languages >= 50%: ja (69%), pl (69%), ru (69%).
+ 1 language  >= 33%: ca (44%).
+ 4 starting languages: eo (2%), hr (0%), hu (0%), nb (3%).      
+
+=======================================================================
         ___   __  ____
 __   __/ _ \ / /_| ___|
 \ \ / / | | | '_ \___ \           The Apollo 12 release.
@@ -105,7 +167,7 @@ Status of the documentation translation:
  2 languages >= 50%: it (69%), ru (61%).
  1 language  >= 33%: ca (46%).
  4 starting languages: eo (2%), hr (0%), hu (0%), nb (1%).
-     
+
 =======================================================================
         ___   __  _____
 __   __/ _ \ / /_|___ /
@@ -449,7 +511,7 @@ Status of the binary translation:
    1 language  >= 90%: sr_Cyrl (93%).
    7 languages >= 80%: et (89%), ja (87%), nb (89%), pl (89%),
                        pt (89%), sv (84%), vi (89%).
-   6 languages >= 70%: cs (77%), da (77%), eo (77%), eu (77%), 
+   6 languages >= 70%: cs (77%), da (77%), eo (77%), eu (77%),
                        id (79%), sl (77%).
    1 language  >= 50%: ca (60%).
    2 languages >= 20%: ko (27%), zh_CN (26%).
@@ -484,7 +546,7 @@ Markdown:
    content should not be translated.
  * Work around a bug in YAML::Tiny that quotes numbers (GitHub's #217)
  * Add gettext flag "markdown-text" for relevant entries (GitHub's #208)
- 
+
 Text:
  * Honor the (existing) --neverwrap option to handle every content verbatim.
 
@@ -503,7 +565,7 @@ XML and DocBook:
 
 Yaml:
  * Introduce option to skip array values. (GitHub's #187)
- 
+
 po4a tool:
  * Cleanups and fixups about options' parsing (now tested and documented)
      _
@@ -529,7 +591,7 @@ Core:
    underlying detection would fail, possibly for document containing
    UTF-8 chars composed on printable ascii chars only.
  * Add a --wrap-po option to control how the po file is wrapped, and
-   chose between either nicely wrapped files that tend to produce git 
+   chose between either nicely wrapped files that tend to produce git
    conflicts, or ugly files that are easy to automatically deal with.
 
 Tests:
@@ -567,7 +629,7 @@ AsciiDoc:
  * Fix a crash occuring when a cell is nothing.
 
 Translations:
- * New translation: Hungarian, thanks Balázs Úr. 
+ * New translation: Hungarian, thanks Balázs Úr.
  * Updated: French, thanks brandelune, Mattéo Rossillol‑‑Laruelle and
    Julien Lepiller.
  * Updated: German, thanks Helge Kreutzmann.

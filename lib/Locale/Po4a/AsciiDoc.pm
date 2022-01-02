@@ -358,13 +358,14 @@ BEGIN {
             } else {
                 $text =~ s/\n$//s;
                 return length($text) if !( defined($encoder) && $encoder->name ne "ascii" );
+                eval { require Unicode::GCString };
                 die wrap_mod(
                     "po4a::asciidoc",
                     dgettext(
                         "po4a",
-                        "Detection of two line titles failed at %s\nPlease install the Unicode::GCString module."
+                        "Detection of two line titles failed at %s\nPlease install the Unicode::GCString module (error: %s)."
                     ),
-                    shift
+                    shift, $@
                 );
             }
         }
@@ -437,7 +438,8 @@ sub parse {
         } elsif ( ( defined $self->{type} )
             and ( $self->{type} eq "Table" )
             and ( $line !~ m/^\|===/ )
-            and ( $self->{options}{"tablecells"} ) )
+            and ( $self->{options}{"tablecells"} )
+			and (not defined $self->{disabletablecells}))
         {
             # inside a table, and we should split per cell
             my $new_line = "";
@@ -460,7 +462,9 @@ sub parse {
             shift @texts;
             my @parts = map { ( $_, shift @texts ) } @seps;
             foreach my $part (@parts) {
-                if ( !$part ) { next }
+                if ( not defined $part ) {
+					# allows concatenation and will be stripped anyway
+					$part = " "; }
                 if ( $part =~ /\|$/ ) {
 
                     # this is a cell separator. End the previous cell
@@ -690,6 +694,18 @@ sub parse {
                     $wrapped_mode = 0;
                 }
                 print STDERR "Starting verse\n" if $debug{parse};
+            }
+            if ((( $line =~ m/^\[format=(['"]?)(csv|tsv|dsv)\1,/ ) ||
+				( $line =~ m/^\[separator=[^\|]/ )) &&
+				$self->{options}{'tablecells'}) {
+                warn wrap_mod(
+                    "$ref",
+                    dgettext(
+                        "po4a",
+                        "Po4a's tablecells mode only supports PSV formatted tables with '|' separators. Disabling tablecells and falling back to block mode for this table."
+                    )
+                );
+				$self->{disabletablecells} = 1;
             }
             undef $self->{bullet};
             undef $self->{indent};
@@ -950,7 +966,8 @@ sub parse {
             } else {
 
                 # End the Table
-                if ( $self->{options}{'tablecells'} ) {
+                if ( $self->{options}{'tablecells'} and
+					 not defined  $self->{disabletablecells} ) {
                     do_stripped_unwrapped_paragraph( $self, $paragraph, $wrapped_mode );
                     $self->pushline("\n");
                 } else {
@@ -958,6 +975,7 @@ sub parse {
                 }
                 undef $self->{verbatim};
                 undef $self->{type};
+				undef $self->{disabletablecells};
                 $paragraph = "";
             }
             $self->pushline( $line . "\n" );

@@ -11,7 +11,7 @@ use warnings;
 
 use subs qw(makespace);
 use vars qw($VERSION @ISA @EXPORT);
-$VERSION = "0.65";
+$VERSION = "0.66";
 @ISA     = qw(DynaLoader);
 @EXPORT  = qw(new process translate
   read write readpo writepo
@@ -250,7 +250,7 @@ Charset for the addenda.
 
 =item new(%)
 
-Create a new po4a document. Accepted options (but be in a hash):
+Create a new po4a document. Accepted options (in the hash passed as a parameter):
 
 =over 4
 
