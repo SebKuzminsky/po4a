@@ -21,7 +21,7 @@ Build-Depends-Indep: docbook,
                      texlive-latex-base,
                      xsltproc
 Build-Depends:
- debhelper-compat (= 13),
+ debhelper-compat (= 9),
  libmodule-build-perl
 Rules-Requires-Root: no
 Homepage: https://po4a.org/
