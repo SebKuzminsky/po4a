@@ -1,3 +1,9 @@
+po4a (0.67-2+buster.0) UNRELEASED; urgency=medium
+
+  * Backport to Buster for LinuxCNC.
+
+ -- Sebastian Kuzminsky <seb@highlab.com>  Sun, 14 Aug 2022 09:37:36 -0600
+
 po4a (0.67-2) unstable; urgency=medium
 
   * Add libsyntax-keyword-try-perl as a runtime dependency too.
