@@ -119,7 +119,7 @@ Increase verbosity.
 
 =item B<groff_code>
 
-This option permits to change the behavior of the module when it encounter
+This option controls the behavior of the module when it encounter
 a .de, .ie or .if section. It can take the following values:
 
 =over
@@ -148,8 +148,8 @@ should be preferred.
 
 This option specifies that the file was generated, and that po4a should not
 try to detect if the man pages was generated from another format.
-This permits to use po4a on generated man pages.
-This option does not take any argument.
+This option is mandatory to use po4a on generated man pages.
+Note that translating generated pages instead of sources ones is often more fragile, and thus a bad idea.
 
 =item B<mdoc>
 
@@ -216,7 +216,7 @@ I<begin> command; any ending command stop the no_wrap mode.
 If you have a I<begin> (respectively I<end>) macro that has no I<end>
 (respectively I<begin>), you can specify an existing I<end> (like fi) or
 I<begin> (like nf) as a counterpart.
-These macros (and their arguments) wont be translated.
+These macros (and their arguments) won't be translated.
 
 =item B<inline>
 
@@ -1036,15 +1036,14 @@ sub pre_trans {
 
     $str =~ s/>/E<gt>/sg;
     $str =~ s/</E<lt>/sg;
-    $str =~ s/EE<lt>gt>/E<gt>/g;               # could be done in a smarter way?
+    $str =~ s/EE<lt>gt>/E<gt>/g;    # could be done in a smarter way?
 
     while ( $str =~ m/^(.*)PO4A-INLINE:(.*?):PO4A-INLINE(.*)$/s ) {
         my ( $t1, $t2, $t3 ) = ( $1, $2, $3 );
         $str = "$1E<$2>";
         if ($mdoc_mode) {
 
-            # When a punctuation sign must be joined to an argument, mdoc
-            # permits to use such a construct:
+            # When a punctuation sign must be joined to an argument, mdoc allows such a construct:
             # .Ar file1 , file2 , file3 ) .
             # Here, we move the punctuation out of the E<...> tag.
             # This is reverted in post_trans.
@@ -2192,14 +2191,56 @@ $macro{'bp'} = \&untranslated;
 # .ad c     Start line adjustment in mode c (c=l,r,b,n).
 $macro{'ad'} = \&untranslated;
 
-# .de macro Define or redefine macro until .. is encountered.
-$macro{'de'} = sub {
+my %ds_variables;
+
+# .ds stringvar anything
+#                 Set stringvar to anything.
+$macro{'ds'} = sub {
+    my ( $self, $m ) = ( shift, shift );
+    my $name   = shift;
+    my $string = "@_";
+    $ds_variables{$name} = $string;
+
+    # indicate to which variable this corresponds. The translator can
+    # find references to this string in the translation "\*(name" or
+    # "\*[name]"
+    $self->{type} = "ds $name";
+    $self->pushline( $m . " " . $self->r($name) . " " . $self->translate($string) . "\n" );
+};
+
+# .de macro [end]   Define or redefine macro until end is encountered (end=.. by default).
+# .de1 macro [end]  Define or redefine macro until end is encountered (end=.. by default), turns off compatibility mode while executing the macro.
+# .dei macro [end]  Define or redefine macro until end is encountered (end=.. by default) substituting parameters with '.ds' content
+# .dei1 macro [end] Define or redefine macro until end is encountered (end=.. by default) substituting parameters and turning compatibility off
+
+$macro{'de'} = $macro{'de1'} = $macro{'dei'} = $macro{'dei1'} = sub {
     my $self = shift;
     if ( $groff_code ne "fail" ) {
         my $paragraph = "@_";
         my $end       = ".";
-        if ( $paragraph =~ /^[.'][\t ]*de[\t ]+([^\t ]+)[\t ]+([^\t ]+)[\t ]$/ ) {
+        my $macroname = $_[1];
+        $macroname = $ds_variables{$macroname} if ( $_[0] eq "dei" || $_[0] eq "dei1" );
+        $macroname =~ s/^ *//;
+        unless (exists $macro{$macroname} || exists $inline{$macroname}) {
+            warn wrap_mod(
+            "po4a::man",
+            dgettext(
+                "po4a",
+                "This page defines a new macro '%s' with '%s', but you did not specify the expected po4a behavior "
+                  . "when '%s' is used. You will get an error if this macro is actually used in your page.\n"
+                  . "Add your macro to one of the '%s', '%s', '%s', '%s', '%s' or '%s' parameters to avoid issues.\n"
+                  . "For example, passing '%s' to po4a will ensure that the defined macro remains hidden from translators.\n"
+                  . "Please refer to the manpage of Locale::Po4a::Man for more info on these parameters.\n"
+            ),
+            $macroname,
+            $_[0],$macroname,
+            'untranslated', 'noarg', 'translate_joined', 'translate_each', 'no_wrap', 'inline', "-o untranslated=$macroname"
+        );
+
+        }
+        if ( $paragraph =~ /^[.'][\t ]*d[ei1]*[\t ]+([^\t ]+)[\t ]+([^\t ]+)[\t ]$/ ) {
             $end = $2;
+            $end = $ds_variables{$end} if ( $_[0] eq "dei" || $_[0] eq "dei1" );
         }
         my ( $line, $ref ) = $self->SUPER::shiftline();
         chomp $line;
@@ -2223,24 +2264,15 @@ $macro{'de'} = sub {
             "po4a::man",
             dgettext(
                 "po4a",
-                "This page defines a new macro with '.de'. Since po4a is not a real groff parser, this is not supported."
-            )
+                "This page defines a new macro with '%s'. Since po4a is not a real groff parser, this is not supported. "
+                  . "The option '%s' gets these macros copied verbatim in the translated file, but it's not very robust. "
+                  . "'%s' shows these macros to the translators, but groff macros are not user-friendly for translators."
+            ),
+            $_[0],
+            "groff_code=verbatim",
+            "groff_code=translate"
         );
     }
-};
-
-# .ds stringvar anything
-#                 Set stringvar to anything.
-$macro{'ds'} = sub {
-    my ( $self, $m ) = ( shift, shift );
-    my $name   = shift;
-    my $string = "@_";
-
-    # indicate to which variable this corresponds. The translator can
-    # find references to this string in the translation "\*(name" or
-    # "\*[name]"
-    $self->{type} = "ds $name";
-    $self->pushline( $m . " " . $self->r($name) . " " . $self->translate($string) . "\n" );
 };
 
 #       .fam      Return to previous font family.
@@ -2328,12 +2360,19 @@ $macro{'ie'} = $macro{'if'} = sub {
             "po4a::man",
             dgettext(
                 "po4a",
-                "This page uses conditionals with '%s'. Since po4a is not a real groff parser, this is not supported."
+                "This page uses conditionals with '%s'. Since po4a is not a real groff parser, this is not supported by default. "
+                  . "The option '%s' gets these macros copied verbatim in the translated file, but it's not very robust. "
+                  . "'%s' shows these macros to the translators, but groff macros are not user-friendly for translators."
             ),
-            $_[0]
+            $_[0],
+            "groff_code=verbatim",
+            "groff_code=translate"
         );
     }
 };
+
+# .el anything  Display the parameter (part of a if-then-else with .ie)
+$macro{'el'} = \&translate_joined;
 
 # .in  N    Change indent according to N (default scaling indicator m).
 $macro{'in'} = \&untranslated;
@@ -2351,6 +2390,9 @@ $macro{'ig'} = sub {
         ( $line, $ref ) = $self->shiftline();
     }
 };
+
+# .it n macro Set an input line trap.
+$macro{'it'} = \&untranslated;
 
 # .lf N file  Set input line number to N and filename to file.
 $macro{'lf'} = \&untranslated;
@@ -2417,9 +2459,9 @@ $macro{'ti'} = \&untranslated;
 ###
 $macro{'TS'} = sub {
     my $self = shift;
-    my ( $in_headers,   $tab,     $buffer )   = ( 1, "\t", "" );
-    my ( $in_textblock, $preline, $postline ) = ( 0, "",   "" );
-    my ( $line, $ref ) = $self->shiftline();
+    my ( $in_headers, $tab, $buffer )         = ( 1, "\t", "" );
+    my ( $in_textblock, $preline, $postline ) = ( 0, "", "" );
+    my ( $line, $ref )                        = $self->shiftline();
     my @options;
 
     # Push table start
@@ -2801,3 +2843,7 @@ sub define_mdoc_macros {
     $macro{'br'} = \&noarg;
 
 }    # end of define_mdoc_macros
+
+__END__
+
+#  LocalWords: Charset charset po UTF gettext msgid nostrip

@@ -101,6 +101,7 @@ po/pod/ru.po
 po/pod/sr_Cyrl.po
 po/pod/uk.po
 po/pod/zh_CHS.po
+po/pod/zh_Hant.po
 msguntypot
 po4a
 po4a-gettextize
@@ -668,6 +669,11 @@ t/fmt/asciidoc/Footnotes.norm
 t/fmt/asciidoc/Footnotes.po
 t/fmt/asciidoc/Footnotes.pot
 t/fmt/asciidoc/Footnotes.trans
+t/fmt/asciidoc/LineBreak.adoc
+t/fmt/asciidoc/LineBreak.norm
+t/fmt/asciidoc/LineBreak.po
+t/fmt/asciidoc/LineBreak.pot
+t/fmt/asciidoc/LineBreak.trans
 t/fmt/asciidoc/Lists.adoc
 t/fmt/asciidoc/Lists.norm
 t/fmt/asciidoc/Lists.norm.stderr
@@ -675,6 +681,11 @@ t/fmt/asciidoc/Lists.po
 t/fmt/asciidoc/Lists.pot
 t/fmt/asciidoc/Lists.trans
 t/fmt/asciidoc/Lists.trans.stderr
+t/fmt/asciidoc/MacroIncludesHugo.adoc
+t/fmt/asciidoc/MacroIncludesHugo.norm
+t/fmt/asciidoc/MacroIncludesHugo.po
+t/fmt/asciidoc/MacroIncludesHugo.pot
+t/fmt/asciidoc/MacroIncludesHugo.trans
 t/fmt/asciidoc/NoImageTarget.adoc
 t/fmt/asciidoc/NoImageTarget.norm
 t/fmt/asciidoc/NoImageTarget.po
@@ -985,14 +996,21 @@ t/fmt/txt-markdown/Rules.pot
 t/fmt/txt-markdown/Rules.trans
 t/fmt/txt-markdown/YamlFrontMatter.md
 t/fmt/txt-markdown/YamlFrontMatter.norm
+t/fmt/txt-markdown/YamlFrontMatter.po
+t/fmt/txt-markdown/YamlFrontMatter.pot
+t/fmt/txt-markdown/YamlFrontMatter.trans
+t/fmt/txt-markdown/YamlFrontMatter_fake.md
+t/fmt/txt-markdown/YamlFrontMatter_fake.norm
+t/fmt/txt-markdown/YamlFrontMatter_fake.norm.stderr
+t/fmt/txt-markdown/YamlFrontMatter_fake.po
+t/fmt/txt-markdown/YamlFrontMatter_fake.pot
+t/fmt/txt-markdown/YamlFrontMatter_fake.trans
+t/fmt/txt-markdown/YamlFrontMatter_fake.trans.stderr
 t/fmt/txt-markdown/YamlFrontMatter_Options.md
 t/fmt/txt-markdown/YamlFrontMatter_Options.norm
 t/fmt/txt-markdown/YamlFrontMatter_Options.po
 t/fmt/txt-markdown/YamlFrontMatter_Options.pot
 t/fmt/txt-markdown/YamlFrontMatter_Options.trans
-t/fmt/txt-markdown/YamlFrontMatter.po
-t/fmt/txt-markdown/YamlFrontMatter.pot
-t/fmt/txt-markdown/YamlFrontMatter.trans
 t/fmt/wml/basic.norm
 t/fmt/wml/basic.po
 t/fmt/wml/basic.pot
@@ -1014,6 +1032,11 @@ t/fmt/xhtml/includessi.norm
 t/fmt/xhtml/includessi.po
 t/fmt/xhtml/includessi.pot
 t/fmt/xhtml/includessi.trans
+t/fmt/xhtml/table.html
+t/fmt/xhtml/table.norm
+t/fmt/xhtml/table.po
+t/fmt/xhtml/table.pot
+t/fmt/xhtml/table.trans
 t/fmt/xml/attribute-novalue.desc
 t/fmt/xml/attribute-novalue.norm
 t/fmt/xml/attribute-novalue.po
@@ -1081,6 +1104,13 @@ t/fmt/yaml/utf8.po
 t/fmt/yaml/utf8.pot
 t/fmt/yaml/utf8.trans
 t/fmt/yaml/utf8.yaml
+t/gettextize/TEST_OK.md
+t/gettextize/test_dups.err
+t/gettextize/test_dups.md
+t/gettextize/test_dups.po
+t/gettextize/test_ok.err
+t/gettextize/test_ok.md
+t/gettextize/test_ok.po
 
 t/add.t
 t/cfg-args.t
@@ -1107,6 +1137,7 @@ t/fmt-xhtml.t
 t/fmt-xml-dia.t
 t/fmt-xml.t
 t/fmt-yaml.t
+t/gettextize.t
 t/pod.t
 
 

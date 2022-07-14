@@ -11,7 +11,7 @@ use warnings;
 
 use subs qw(makespace);
 use vars qw($VERSION @ISA @EXPORT);
-$VERSION = "0.66";
+$VERSION = "0.67";
 @ISA     = qw(DynaLoader);
 @EXPORT  = qw(new process translate
   read write readpo writepo
@@ -262,6 +262,10 @@ Sets the verbosity.
 
 Sets the debugging.
 
+=item B<dedup>
+
+Boolean indicating whether we should deduplicate msgids. Passed to Po.pm as is. See Po.pm documentation for more info.
+
 =back
 
 =cut
@@ -373,6 +377,7 @@ sub new {
     $self->{options}{'package-name'}       = '';
     $self->{options}{'package-version'}    = '';
     $self->{options}{'wrap-po'}            = '';
+    $self->{options}{'dedup'}              = 0;    # Deduplicate msgids, to help gettextization
 
     # let the plugin parse the options and such
     $self->initialize(%options);
@@ -385,6 +390,7 @@ sub new {
     $po_options{'package-name'}       = $options{'package-name'};
     $po_options{'package-version'}    = $options{'package-version'};
     $po_options{'wrap-po'}            = $options{'wrap-po'};
+    $po_options{'dedup'}              = $options{'dedup'};
 
     # private data
     $self->{TT}         = ();
@@ -544,11 +550,6 @@ of use:
     ($percent,$hit,$queries) = $document->stats();
     print "We found translations for $percent\%  ($hit from $queries) of strings.\n";
 
-=item is_po_uptodate()
-
-Returns ($uptodate, $diagnostic) where $uptodate is whether the input po and the output po match (if not, it means that the input po should be updated)
-and $diagnostic is a string explaining why the po file is not uptodate, when this happens.
-
 =back
 
 =cut
@@ -571,10 +572,6 @@ sub writepo {
 
 sub stats {
     return $_[0]->{TT}{po_in}->stats_get();
-}
-
-sub is_po_uptodate($) {
-    return $_[0]->{TT}{po_in}->equals_msgid( $_[0]->{TT}{po_out} );
 }
 
 =head2 Manipulating addenda
@@ -1307,18 +1304,20 @@ sub handle_yaml {
             if ( !$type ) {
                 my %keys = %{$yfm_keys};
                 if ( ( not %keys ) || $keys{$name} ) {  # either no key is provided, or the key we need is also provided
-                    $self->pushline(
-                        $header . ' '
-                          . format_scalar(
-                            $self->translate( $el, $blockref, "YAML Front Matter:$ctx $name", "wrap" => 0 )
-                          )
-                          . "\n"
-                    );
+                    my $translation = $self->translate( $el, $blockref, "YAML Front Matter:$ctx $name", "wrap" => 0 );
+                    if ( $el =~ /^\[.*\]$/  ) { # Do not quote the lists
+                        $self->pushline( $header . " $translation\n" );
+                    } else {
+                        # add extra quotes to the parameter, as a protection to the extra chars that the translator could add
+                        $self->pushline( $header . ' ' . format_scalar($translation) . "\n" );
+                    }
                 } else {
 
                     # Work around a bug in YAML::Tiny that quotes numbers
                     # See https://github.com/Perl-Toolchain-Gang/YAML-Tiny#additional-perl-specific-notes
                     if ( Scalar::Util::looks_like_number($el) ) {
+                        $self->pushline("$header $el\n");
+                    } elsif ( $el =~ /^\[.*\]$/ ) { # Do not quote the lists either
                         $self->pushline("$header $el\n");
                     } else {
                         $self->pushline( $header . ' ' . YAML::Tiny::_dump_scalar( "dummy", $el ) . "\n" );

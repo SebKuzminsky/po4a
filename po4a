@@ -259,7 +259,7 @@ content. If set to B<newlines>, po4a will only split the msgid and msgstr after
 newlines in the content. If set to B<no>, po4a will not wrap the po file at all.
 The reference comments are always wrapped by the gettext tools that we use internally.
 
-Note that this option has no impact on how the msgid and msgstr are wrapped, ie
+Note that this option has no impact on how the msgid and msgstr are wrapped, i.e.
 on how newlines are added to the content of these strings.
 
 =item B<--master-language>
@@ -300,7 +300,7 @@ Note: B<$lang> will be extended to the current language.
 =item B<--no-previous>
 
 This option removes B<--previous> from the options passed to B<msgmerge>.
-This permits to support versions of B<gettext> earlier than 0.16.
+This is necessary to support versions of B<gettext> earlier than 0.16.
 
 =item B<--previous>
 
@@ -1535,7 +1535,7 @@ if ($update_pot_file) {
     if ( $po4a_opts{"split"} ) {
         ( undef, $pot_filename ) = File::Temp::tempfile(
             "po4a-temp-pot-XXXX",
-            DIR    => $ENV{TMPDIR} || "/tmp",
+            DIR    => File::Spec->tmpdir(),
             SUFFIX => ".pot",
             OPEN   => 0,
             UNLINK => 0
@@ -1583,7 +1583,7 @@ if ( $po4a_opts{"split"} ) {
             unless ( $po4a_opts{"force"} ) {
                 ( undef, $tmp_file ) = File::Temp::tempfile(
                     "po4aXXXX",
-                    DIR    => $ENV{TMPDIR} || "/tmp",
+                    DIR    => File::Spec->tmpdir(),
                     SUFFIX => ".pot",
                     OPEN   => 0,
                     UNLINK => 0
@@ -1616,7 +1616,7 @@ if ( $po4a_opts{"split"} ) {
         my $tmp_bigpo;
         ( undef, $tmp_bigpo ) = File::Temp::tempfile(
             "po4aXXXX",
-            DIR    => $ENV{TMPDIR} || "/tmp",
+            DIR    => File::Spec->tmpdir(),
             SUFFIX => "-$lang.po",
             OPEN   => 0,
             UNLINK => 0
@@ -1705,7 +1705,7 @@ if ( not $po4a_opts{"no-update"} ) {
                     # updated (unless --force was specified).
                     ( undef, $tmp_file ) = File::Temp::tempfile(
                         "po4aXXXX",
-                        DIR    => $ENV{TMPDIR} || "/tmp",
+                        DIR    => File::Spec->tmpdir(),
                         SUFFIX => ".po",
                         OPEN   => 0,
                         UNLINK => 0
@@ -1990,3 +1990,6 @@ sub is_older {
 }
 
 __END__
+
+#  LocalWords: Charset charset AsciiDoc tablecells po UTF gettext msgid nostrip
+#  LocalWords:  xml docbook
