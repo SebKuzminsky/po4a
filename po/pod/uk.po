@@ -1,11 +1,11 @@
-# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2020, 2021, 2022.
 # Tymofij Lytvynenko <till.svit@gmail.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: Ukrainian (po4a)\n"
 "Report-Msgid-Bugs-To: devel@lists.po4a.org\n"
-"POT-Creation-Date: 2021-12-14 21:19+0100\n"
-"PO-Revision-Date: 2021-12-20 15:51+0000\n"
+"POT-Creation-Date: 2022-07-09 19:23+0200\n"
+"PO-Revision-Date: 2022-07-09 19:57+0000\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/po4a/po4a-doc/"
 "uk/>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.10\n"
+"X-Generator: Weblate 4.13.1-dev\n"
 
 #. type: Attribute 'xml:lang' of: <refentry>
 #: share/doc/po4a-display-man.xml:1 share/doc/po4a-display-pod.xml:1
@@ -179,7 +179,7 @@ msgstr ""
 
 #. type: =head1
 #: share/doc/po4a-display-man.xml:21 share/doc/po4a-display-pod.xml:20 po4a:189
-#: po4a-gettextize:71 po4a-normalize:29 po4a-translate:54 po4a-updatepo:53
+#: po4a-gettextize:73 po4a-normalize:29 po4a-translate:54 po4a-updatepo:53
 #: msguntypot:29 doc/po4a.7.pod:177 lib/Locale/Po4a/Chooser.pm:7
 #: lib/Locale/Po4a/Dia.pm:12 lib/Locale/Po4a/Docbook.pm:15
 #: lib/Locale/Po4a/Guide.pm:10 lib/Locale/Po4a/Halibut.pm:14
@@ -544,24 +544,24 @@ msgstr ""
 "одному кодуванні."
 
 #. type: =item
-#: po4a:26 po4a-gettextize:30 po4a-normalize:27 po4a-translate:36
+#: po4a:26 po4a-gettextize:32 po4a-normalize:27 po4a-translate:36
 #: po4a-updatepo:32
 msgid "B<-V>, B<--version>"
 msgstr "B<-V>, B<--version>"
 
 #. type: textblock
-#: po4a:27 po4a-gettextize:31 po4a-normalize:28 po4a-translate:37
+#: po4a:27 po4a-gettextize:33 po4a-normalize:28 po4a-translate:37
 #: po4a-updatepo:33
 msgid "Display the version of the script and exit."
 msgstr "Вивести дані щодо версії скрипту і завершити роботу."
 
 #. type: =item
-#: po4a:28 po4a-gettextize:32 po4a-translate:38 po4a-updatepo:34
+#: po4a:28 po4a-gettextize:34 po4a-translate:38 po4a-updatepo:34
 msgid "B<-v>, B<--verbose>"
 msgstr "B<-v>, B<--verbose>"
 
 #. type: textblock
-#: po4a:29 po4a-gettextize:33 po4a-translate:39 po4a-updatepo:35
+#: po4a:29 po4a-gettextize:35 po4a-translate:39 po4a-updatepo:35
 msgid "Increase the verbosity of the program."
 msgstr "Збільшити докладність повідомлень програми."
 
@@ -576,12 +576,12 @@ msgid "Decrease the verbosity of the program."
 msgstr "Зменшити докладність повідомлень програми."
 
 #. type: =item
-#: po4a:32 po4a-gettextize:34 po4a-translate:40 po4a-updatepo:36
+#: po4a:32 po4a-gettextize:36 po4a-translate:40 po4a-updatepo:36
 msgid "B<-d>, B<--debug>"
 msgstr "B<-d>, B<--debug>"
 
 #. type: textblock
-#: po4a:33 po4a-gettextize:35 po4a-translate:41 po4a-updatepo:37
+#: po4a:33 po4a-gettextize:37 po4a-translate:41 po4a-updatepo:37
 msgid "Output some debugging information."
 msgstr "Вивести деякі діагностичні відомості."
 
@@ -928,10 +928,10 @@ msgstr ""
 "використовує на внутрішньому рівні."
 
 #. type: textblock
-#: po4a:74 po4a-translate:48 po4a-updatepo:44 lib/Locale/Po4a/Po.pm:19
+#: po4a:74
 msgid ""
 "Note that this option has no impact on how the msgid and msgstr are wrapped, "
-"ie on how newlines are added to the content of these strings."
+"i.e.  on how newlines are added to the content of these strings."
 msgstr ""
 "Зауважте, що цей параметр не стосується того, яким чином переноситимуться "
 "рядки у msgid і msgstr, тобто того, у який спосіб до цих рядків "
@@ -952,12 +952,12 @@ msgstr ""
 "документи мають належати до однієї мови."
 
 #. type: =item
-#: po4a:77 po4a-gettextize:36 po4a-updatepo:45 lib/Locale/Po4a/Po.pm:20
+#: po4a:77 po4a-gettextize:38 po4a-updatepo:45 lib/Locale/Po4a/Po.pm:20
 msgid "B<--msgid-bugs-address> I<email@address>"
 msgstr "B<--msgid-bugs-address> I<адреса@електронної.пошти>"
 
 #. type: textblock
-#: po4a:78 po4a-gettextize:37 po4a-updatepo:46 lib/Locale/Po4a/Po.pm:21
+#: po4a:78 po4a-gettextize:39 po4a-updatepo:46 lib/Locale/Po4a/Po.pm:21
 msgid ""
 "Set the report address for msgid bugs. By default, the created POT files "
 "have no Report-Msgid-Bugs-To fields."
@@ -967,12 +967,12 @@ msgstr ""
 "Msgid-Bugs-To."
 
 #. type: =item
-#: po4a:79 po4a-gettextize:38 po4a-updatepo:47 lib/Locale/Po4a/Po.pm:22
+#: po4a:79 po4a-gettextize:40 po4a-updatepo:47 lib/Locale/Po4a/Po.pm:22
 msgid "B<--copyright-holder> I<string>"
 msgstr "B<--copyright-holder> I<рядок>"
 
 #. type: textblock
-#: po4a:80 po4a-gettextize:39 po4a-updatepo:48 lib/Locale/Po4a/Po.pm:23
+#: po4a:80 po4a-gettextize:41 po4a-updatepo:48 lib/Locale/Po4a/Po.pm:23
 msgid ""
 "Set the copyright holder in the POT header. The default value is \"Free "
 "Software Foundation, Inc.\""
@@ -981,24 +981,24 @@ msgstr ""
 "Software Foundation, Inc.»"
 
 #. type: =item
-#: po4a:81 po4a-gettextize:40 po4a-updatepo:49 lib/Locale/Po4a/Po.pm:24
+#: po4a:81 po4a-gettextize:42 po4a-updatepo:49 lib/Locale/Po4a/Po.pm:24
 msgid "B<--package-name> I<string>"
 msgstr "B<--package-name> I<рядок>"
 
 #. type: textblock
-#: po4a:82 po4a-gettextize:41 po4a-updatepo:50 lib/Locale/Po4a/Po.pm:25
+#: po4a:82 po4a-gettextize:43 po4a-updatepo:50 lib/Locale/Po4a/Po.pm:25
 msgid "Set the package name for the POT header. The default is \"PACKAGE\"."
 msgstr ""
 "Встановити назву пакунка для заголовка POT. Типовою є назва пакунка "
 "«PACKAGE»."
 
 #. type: =item
-#: po4a:83 po4a-gettextize:42 po4a-updatepo:51 lib/Locale/Po4a/Po.pm:26
+#: po4a:83 po4a-gettextize:44 po4a-updatepo:51 lib/Locale/Po4a/Po.pm:26
 msgid "B<--package-version> I<string>"
 msgstr "B<--package-version> I<рядок>"
 
 #. type: textblock
-#: po4a:84 po4a-gettextize:43 po4a-updatepo:52 lib/Locale/Po4a/Po.pm:27
+#: po4a:84 po4a-gettextize:45 po4a-updatepo:52 lib/Locale/Po4a/Po.pm:27
 msgid "Set the package version for the POT header. The default is \"VERSION\"."
 msgstr ""
 "Встановити версію пакунка для заголовка POT. Типовим є запис «VERSION»."
@@ -1029,10 +1029,10 @@ msgid "B<--no-previous>"
 msgstr "B<--no-previous>"
 
 #. type: textblock
-#: po4a:90 po4a-updatepo:23
+#: po4a:90
 msgid ""
 "This option removes B<--previous> from the options passed to B<msgmerge>.  "
-"This permits to support versions of B<gettext> earlier than 0.16."
+"This is necessary to support versions of B<gettext> earlier than 0.16."
 msgstr ""
 "Цей параметр вилучає B<--previous> з параметрів, які передаються "
 "B<msgmerge>. За його допомогою реалізовано підтримку версій B<gettext> до "
@@ -2058,7 +2058,7 @@ msgstr ""
 "updatepo(1)>, L<po4a(7)>."
 
 #. type: =head1
-#: po4a:191 po4a-gettextize:73 po4a-normalize:31 po4a-translate:56
+#: po4a:191 po4a-gettextize:75 po4a-normalize:31 po4a-translate:56
 #: po4a-updatepo:55 msguntypot:32 doc/po4a.7.pod:183
 #: lib/Locale/Po4a/AsciiDoc.pm:52 lib/Locale/Po4a/BibTeX.pm:11
 #: lib/Locale/Po4a/Chooser.pm:12 lib/Locale/Po4a/Common.pm:28
@@ -2066,17 +2066,17 @@ msgstr ""
 #: lib/Locale/Po4a/Guide.pm:12 lib/Locale/Po4a/Halibut.pm:16
 #: lib/Locale/Po4a/Ini.pm:10 lib/Locale/Po4a/KernelHelp.pm:9
 #: lib/Locale/Po4a/LaTeX.pm:10 lib/Locale/Po4a/Man.pm:109
-#: lib/Locale/Po4a/Po.pm:101 lib/Locale/Po4a/Pod.pm:38
+#: lib/Locale/Po4a/Po.pm:100 lib/Locale/Po4a/Pod.pm:38
 #: lib/Locale/Po4a/RubyDoc.pm:16 lib/Locale/Po4a/Sgml.pm:53
 #: lib/Locale/Po4a/TeX.pm:120 lib/Locale/Po4a/Texinfo.pm:12
-#: lib/Locale/Po4a/Text.pm:40 lib/Locale/Po4a/TransTractor.pm:156
+#: lib/Locale/Po4a/Text.pm:42 lib/Locale/Po4a/TransTractor.pm:156
 #: lib/Locale/Po4a/Wml.pm:11 lib/Locale/Po4a/Xhtml.pm:17
 #: lib/Locale/Po4a/Xml.pm:189 lib/Locale/Po4a/Yaml.pm:17
 msgid "AUTHORS"
 msgstr "АВТОРИ"
 
 #. type: verbatim
-#: po4a:192 po4a-gettextize:74 po4a-normalize:32 po4a-translate:57
+#: po4a:192 po4a-gettextize:76 po4a-normalize:32 po4a-translate:57
 #: po4a-updatepo:56 lib/Locale/Po4a/Man.pm:110
 #, no-wrap
 msgid ""
@@ -2091,7 +2091,7 @@ msgstr ""
 "\n"
 
 #. type: =head1
-#: po4a:193 po4a-gettextize:75 po4a-normalize:33 po4a-translate:58
+#: po4a:193 po4a-gettextize:77 po4a-normalize:33 po4a-translate:58
 #: po4a-updatepo:57 msguntypot:34 lib/Locale/Po4a/AsciiDoc.pm:54
 #: lib/Locale/Po4a/BibTeX.pm:13 lib/Locale/Po4a/Chooser.pm:14
 #: lib/Locale/Po4a/Common.pm:30 lib/Locale/Po4a/Dia.pm:16
@@ -2101,20 +2101,20 @@ msgstr ""
 #: lib/Locale/Po4a/Man.pm:111 lib/Locale/Po4a/Pod.pm:40
 #: lib/Locale/Po4a/RubyDoc.pm:18 lib/Locale/Po4a/Sgml.pm:58
 #: lib/Locale/Po4a/TeX.pm:122 lib/Locale/Po4a/Texinfo.pm:14
-#: lib/Locale/Po4a/Text.pm:42 lib/Locale/Po4a/Wml.pm:13
+#: lib/Locale/Po4a/Text.pm:44 lib/Locale/Po4a/Wml.pm:13
 #: lib/Locale/Po4a/Xhtml.pm:19 lib/Locale/Po4a/Xml.pm:191
 #: lib/Locale/Po4a/Yaml.pm:19
 msgid "COPYRIGHT AND LICENSE"
 msgstr "АВТОРСЬКІ ПРАВА ТА ЛІЦЕНЗУВАННЯ"
 
 #. type: textblock
-#: po4a:194 po4a-gettextize:76 po4a-normalize:34 po4a-translate:59
+#: po4a:194 po4a-gettextize:78 po4a-normalize:34 po4a-translate:59
 #: po4a-updatepo:58
 msgid "Copyright 2002-2020 by SPI, inc."
 msgstr "© SPI, inc., 2002–2020."
 
 #. type: textblock
-#: po4a:195 po4a-gettextize:77 po4a-normalize:35 po4a-translate:60
+#: po4a:195 po4a-gettextize:79 po4a-normalize:35 po4a-translate:60
 #: po4a-updatepo:59 msguntypot:36 lib/Locale/Po4a/AsciiDoc.pm:56
 #: lib/Locale/Po4a/BibTeX.pm:15 lib/Locale/Po4a/Chooser.pm:16
 #: lib/Locale/Po4a/Common.pm:32 lib/Locale/Po4a/Dia.pm:18
@@ -2122,7 +2122,7 @@ msgstr "© SPI, inc., 2002–2020."
 #: lib/Locale/Po4a/Ini.pm:14 lib/Locale/Po4a/KernelHelp.pm:13
 #: lib/Locale/Po4a/Man.pm:113 lib/Locale/Po4a/Pod.pm:42
 #: lib/Locale/Po4a/Sgml.pm:60 lib/Locale/Po4a/TeX.pm:124
-#: lib/Locale/Po4a/Text.pm:45 lib/Locale/Po4a/Wml.pm:15
+#: lib/Locale/Po4a/Text.pm:47 lib/Locale/Po4a/Wml.pm:15
 #: lib/Locale/Po4a/Xhtml.pm:21 lib/Locale/Po4a/Xml.pm:193
 #: lib/Locale/Po4a/Yaml.pm:21
 msgid ""
@@ -2277,13 +2277,29 @@ msgstr "B<--help-format>"
 msgid "List the documentation formats understood by po4a."
 msgstr "Список форматів документації, відомих po4a."
 
+#. type: textblock
+#: po4a-gettextize:30
+msgid "= item B<-k> B<--keep-temps>"
+msgstr "= запис B<-k> B<--keep-temps>"
+
+#. type: textblock
+#: po4a-gettextize:31
+msgid ""
+"Keep the temporary master and localized POT files built before merging.  "
+"This can be useful to understand why these files get desynchronized, leading "
+"to gettextization problems"
+msgstr ""
+"Зберегти тимчасові основний файл POT і локалізований файл, які зібрано до "
+"об'єднання. Може бути корисним для визначення причини розсинхронізації, яка "
+"призвела до проблем із перетворенням у формат gettext"
+
 #. type: =head2
-#: po4a-gettextize:44
+#: po4a-gettextize:46
 msgid "Converting a manual translation to po4a"
 msgstr "Перетворення виконаного вручну перекладу до формату po4a"
 
 #. type: textblock
-#: po4a-gettextize:45
+#: po4a-gettextize:47
 msgid ""
 "B<po4a-gettextize> will try to extract the content of any provided "
 "translation file, and use this content as msgstr in the produced PO file. Be "
@@ -2300,7 +2316,7 @@ msgstr ""
 "якщо структура двох файлів є різною."
 
 #. type: textblock
-#: po4a-gettextize:46
+#: po4a-gettextize:48
 msgid ""
 "Internally, each po4a parser reports the syntactical type of each extracted "
 "strings. This is how desynchronization are detected during the "
@@ -2319,7 +2335,7 @@ msgstr ""
 "перекладі."
 
 #. type: verbatim
-#: po4a-gettextize:47
+#: po4a-gettextize:49
 #, no-wrap
 msgid ""
 "    Original         Translation\n"
@@ -2329,7 +2345,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: po4a-gettextize:48
+#: po4a-gettextize:50
 #, no-wrap
 msgid ""
 "  chapter            chapter\n"
@@ -2349,7 +2365,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: po4a-gettextize:49
+#: po4a-gettextize:51
 msgid ""
 "B<po4a-gettextize> will verbosely diagnose any detected structure "
 "desynchronization. When this happens, you should manually edit the files "
@@ -2368,7 +2384,7 @@ msgstr ""
 "розділі."
 
 #. type: textblock
-#: po4a-gettextize:50
+#: po4a-gettextize:52
 msgid ""
 "Even when the document is successfully processed, undetected disparities and "
 "silent errors are still possible. That is why any translation associated "
@@ -2385,7 +2401,7 @@ msgstr ""
 "перекладом відповідного рядка msgid, а не рядка перед ним або після нього."
 
 #. type: textblock
-#: po4a-gettextize:51
+#: po4a-gettextize:53
 msgid ""
 "As you can see, the key here is to have the exact same structure in the "
 "translated document and in the original one. The best is to do the "
@@ -2400,7 +2416,7 @@ msgstr ""
 "версією основного файла."
 
 #. type: textblock
-#: po4a-gettextize:52
+#: po4a-gettextize:54
 msgid ""
 "If you are lucky enough to have a a perfect match in the file structures, "
 "building a correct PO file is a matter of seconds. Otherwise, you will soon "
@@ -2417,7 +2433,7 @@ msgstr ""
 "документами і перекладами завжди буде повністю автоматичною."
 
 #. type: textblock
-#: po4a-gettextize:53
+#: po4a-gettextize:55
 msgid ""
 "Even when things go wrong, gettextization often remains faster than "
 "translating everything again. I was able to gettextize the existing French "
@@ -2433,12 +2449,12 @@ msgstr ""
 "символів), на новий переклад довелося б витратити місяці або навіть роки."
 
 #. type: =head2
-#: po4a-gettextize:54
+#: po4a-gettextize:56
 msgid "Hints and tricks for the gettextization process"
 msgstr "Підказки і настанови щодо процедури перетворення до формату gettext"
 
 #. type: textblock
-#: po4a-gettextize:55
+#: po4a-gettextize:57
 msgid ""
 "The gettextization stops as soon as a desynchronization is detected. In "
 "theory, it should probably be possible resynchronize the gettextization "
@@ -2456,7 +2472,7 @@ msgstr ""
 "повторну синхронізацію (ще?) не реалізовано."
 
 #. type: textblock
-#: po4a-gettextize:56
+#: po4a-gettextize:58
 msgid ""
 "When this happens, the whole game comes down to the alignment of these damn "
 "files' structures again through manual edits. B<po4a-gettextize> is rather "
@@ -2473,12 +2489,12 @@ msgstr ""
 "подальшого вивчення."
 
 #. type: textblock
-#: po4a-gettextize:57
+#: po4a-gettextize:59
 msgid "Here are some other tricks to help you in this tedious process:"
 msgstr "Ось декілька підказок, які допоможуть вам у цій марудній справі:"
 
 #. type: textblock
-#: po4a-gettextize:58
+#: po4a-gettextize:60
 msgid ""
 "Remove all extra content of the translations, such as the section giving "
 "credits to the translators. You can add them back in po4a afterward, using "
@@ -2489,7 +2505,7 @@ msgstr ""
 "додатків (див. L<po4a(7)>)."
 
 #. type: textblock
-#: po4a-gettextize:59
+#: po4a-gettextize:61
 msgid ""
 "If you need to edit the files to align their structures, you should prefer "
 "editing the translation if possible. Indeed, if the changes to the original "
@@ -2506,7 +2522,7 @@ msgstr ""
 "важливо отримати початкову версію файла PO, яку можна буде виправити пізніше."
 
 #. type: textblock
-#: po4a-gettextize:60
+#: po4a-gettextize:62
 msgid ""
 "Do not hesitate to kill any original content that would not exist in the "
 "translated version. This content will be automatically reintroduced "
@@ -2517,7 +2533,7 @@ msgstr ""
 "файла PO з документом."
 
 #. type: textblock
-#: po4a-gettextize:61
+#: po4a-gettextize:63
 msgid ""
 "You should probably inform the original author of any structural change in "
 "the translation that seems justified. Issues in the original document should "
@@ -2531,7 +2547,7 @@ msgstr ""
 "виправлення неможливе, якщо використовується система po4a ;)"
 
 #. type: textblock
-#: po4a-gettextize:62
+#: po4a-gettextize:64
 msgid ""
 "Sometimes, the paragraph content does match, but not their types. Fixing it "
 "is rather format-dependent. In POD and man, it often comes from the fact "
@@ -2548,7 +2564,7 @@ msgstr ""
 "Також причиною може бути друкарська помилку у назві теґу у XML."
 
 #. type: textblock
-#: po4a-gettextize:63
+#: po4a-gettextize:65
 msgid ""
 "Likewise, two paragraphs may get merged together in POD when the separating "
 "line contains some spaces, or when there is no empty line between the "
@@ -2559,7 +2575,7 @@ msgstr ""
 "порожнього рядка."
 
 #. type: textblock
-#: po4a-gettextize:64
+#: po4a-gettextize:66
 msgid ""
 "Sometimes, the desynchronization message seems odd because the translation "
 "is attached to the wrong original paragraph. It is the sign of an undetected "
@@ -2573,66 +2589,63 @@ msgstr ""
 "failed.po> місце, де починається розсинхронізація, і виправте її."
 
 #. type: textblock
-#: po4a-gettextize:65
-msgid ""
-"In some unfortunate settings, you will get the feeling that po4a ate some "
-"parts of the text, either the original or the translation. F<gettextization."
-"failed.po> indicates that both files matched as expected up to the paragraph "
-"N. But then, an (unsuccessful) attempt is made to match the N+1 paragraph in "
-"the original file not with the N+1 paragraph in the translation as it "
-"should, but with the N+2 paragraph. Just as if the N+1 paragraph that you "
-"see in the document simply disappeared from the file during the process."
-msgstr ""
-"Іноді, ви трапляються випадки, коли програма po4a «з'їдає» частину тексту у "
-"початковому файлі або у перекладі. F<gettextization.failed.po> вказує на те, "
-"що до певного моменту відповідність зберігалася (аж до абзацу N). Але потім, "
-"а потім сталася помилка через те, що програма намагалася встановити "
-"відповідність абзацу N+1 у початковому файлі, але встановила її не з абзацом "
-"N+1 перекладу, а з абзацом N+2. Таким чином, абзац N+2 у процесі обробки "
-"«зник» з файла результатів."
-
-#. type: textblock
-#: po4a-gettextize:66
-msgid ""
-"This unfortunate situation happens when the same paragraph is repeated over "
-"the document. In that case, no new entry is created in the PO file, but a "
-"new reference is added to the existing one instead."
-msgstr ""
-"Така неприємна ситуація трапляється, коли у документі повторюється певний "
-"абзац. У цьому випадку, у файлі PO не додається новий запис, а створюється "
-"посилання на вже наявний у ньому запис."
-
-#. type: textblock
 #: po4a-gettextize:67
 msgid ""
-"So, the previous situation occurs when two similar but different paragraphs "
-"are translated in the exact same way. This will apparently remove a "
-"paragraph of the translation. To fix the problem, it is sufficient to "
-"slightly alter one of the translations in the document. You can also prefer "
-"to kill the second paragraph in the original document."
+"In some case, po4a adds a space at the end of either the original or the "
+"translated strings. This is because every string must be deduplicated during "
+"the gettextize process. Imagine that a string appearing several times "
+"unmodified in the original, but is translated in differing way, or that "
+"different paragraphs are translated in the exact same way."
 msgstr ""
-"Отже, попередня проблема сталася через те, що два подібні, але різні абзаци "
-"було перекладено однаково. Це призводить до видимого вилучення абзацу з "
-"перекладу. Щоб виправити цю проблему достатньо трохи змінити один з "
-"перекладів у документі. Також можна просто прибрати другий з абзаців у "
-"початковому документі."
+"У деяких випадках po4a додає пробіл наприкінці або початкового, або "
+"перекладеного рядківtrings. Причиною є те, що кожен рядок має бути "
+"позбавлено дублікатів під час перетворення до формату gettext. Уявіть собі, "
+"що рядок з'являється декілька разів у початковому тексті без змін, але його "
+"переклади є різними, або різні параграфи мають зовсім однакові переклади."
 
 #. type: textblock
 #: po4a-gettextize:68
 msgid ""
-"To the opposite, if the same paragraph appearing twice in the original "
-"document is not translated in the exact same way at both locations, you will "
-"get the feeling that one paragraph of the original document just vanished. "
-"Just copy the best translation over the other one in the translated document "
-"to fix the problem."
+"Without deduplication, such case would break the gettexization algorithm, as "
+"it is a simple one to one pairing between the msgids of both the master and "
+"the localized files. Since one of the PO files would miss an entry (that "
+"would be reported as duplicate, with two references), the pairing would fail."
 msgstr ""
-"Протилежний випадок: той самий абзац, який траплявся у початковому документі "
-"двічі, не було перекладено однаково у двох місцях. Результатом є умовне "
-"«зникнення» абзацу у перекладі. Просте копіювання вдалішого з перекладів на "
-"місце іншого у перекладеному документі має вирішити проблему."
+"Без усування дублювання такі випадки порушували б роботу алгоритму "
+"перетворення тексту до формату gettext, оскільки має бути однозначна "
+"відповідність між msgid основного і перекладеного файлів. Оскільки у одному "
+"з файлів PO не було б якогось запису (про який би було повідомлено як "
+"дублікат), однозначну відповідність було б порушено."
 
 #. type: textblock
 #: po4a-gettextize:69
+msgid ""
+"Since po4a uses the entry type (\"title\" or \"plain paragraph\", etc) to "
+"detect whether the parsing streams got desynchronized, similar issues could "
+"occur if two identical entries (same content but differing type) of the "
+"master file are translated in the exact same way in the localized file. po4a "
+"would detect a fake desyncronization in such case."
+msgstr ""
+"Оскільки po4a використовує для визначення того, чи розсинхронізовано потоки "
+"обробки, тип запису («заголовок» або «звичайний абзац» тощо), подібні "
+"проблеми можуть трапитися, якщо два ідентичних записи (той самий вміст, але "
+"різний тип) основного файла перекладено зовсім однаково у файлі перекладу. "
+"po4a виявляє фіктивну розсинхронізацію у таких випадках."
+
+#. type: textblock
+#: po4a-gettextize:70
+msgid ""
+"In most cases, the extra space added by po4a to deduplicate the strings has "
+"no impact on the formatting. Strings are fuzzied anyway, and msgmerge will "
+"probably match the strings accordingly afterward."
+msgstr ""
+"У більшості випадків, коли po4a дописує додатковий пробіл для усування "
+"дублювання рядків, цей пробіл не впливає на форматування. Переклади рядків "
+"попри це буде позначено як неточні, а msgmerge згодом, ймовірно, зіставить "
+"рядки відповідним чином."
+
+#. type: textblock
+#: po4a-gettextize:71
 msgid ""
 "As a final note, do not be too surprised if the first synchronization of "
 "your PO file takes a long time. This is because most of the msgid of the PO "
@@ -2648,7 +2661,7 @@ msgstr ""
 "використовуючи складний алгоритм порівняння і оцінки рядків."
 
 #. type: textblock
-#: po4a-gettextize:70
+#: po4a-gettextize:72
 msgid ""
 "For example, the first B<po4a-updatepo> of the Perl documentation's French "
 "translation (5.5 MB PO file) took about 48 hours (yes, two days) while the "
@@ -2659,7 +2672,7 @@ msgstr ""
 "дні), хоча для наступних синхронізацій було достатньо десятка секунд."
 
 #. type: textblock
-#: po4a-gettextize:72
+#: po4a-gettextize:74
 msgid ""
 "L<po4a(1)>, L<po4a-normalize(1)>, L<po4a-translate(1)>, L<po4a-updatepo(1)>, "
 "L<po4a(7)>."
@@ -2904,6 +2917,16 @@ msgstr ""
 "B<no>, po4a не переноситиме рядки у файлі po взагалі. Перенесення рядків у "
 "коментарях контролюється за допомогою параметра B<--porefs>."
 
+#. type: textblock
+#: po4a-translate:48 po4a-updatepo:44 lib/Locale/Po4a/Po.pm:19
+msgid ""
+"Note that this option has no impact on how the msgid and msgstr are wrapped, "
+"ie on how newlines are added to the content of these strings."
+msgstr ""
+"Зауважте, що цей параметр не стосується того, яким чином переноситимуться "
+"рядки у msgid і msgstr, тобто того, у який спосіб до цих рядків "
+"додаватимуться символи розриву рядків."
+
 #. type: =head1
 #: po4a-translate:49
 msgid "Adding content (beside translations) to generated files"
@@ -3011,14 +3034,14 @@ msgstr ""
 #. type: textblock
 #: po4a-updatepo:10
 msgid ""
-"If the master document has non-ASCII characters, it will convert the PO "
-"files to UTF-8 (if they weren't already), in order to allow non-standard "
-"characters in a culture independent way."
+"If the master document has non-ASCII characters, this script will convert "
+"the PO files to UTF-8 (if they weren't already), for a transparent handling "
+"of non-standard characters."
 msgstr ""
 "Якщо у основному документів містяться символи, які не належать до ASCII, "
 "перетворені файли PO буде записано у кодуванні UTF-8 (якщо це кодування там "
-"ще не використовувалося) для того, щоб уможливити представлення "
-"нестандартних символів в універсальний спосіб."
+"ще не використовувалося) для того, щоб уможливити прозору обробку "
+"нестандартних символів."
 
 #. type: textblock
 #: po4a-updatepo:15
@@ -3042,6 +3065,16 @@ msgid ""
 msgstr ""
 "Файли, які слід оновити. Якщо цих файлів не існує, їх буде створено за "
 "допомогою B<po4a-updatepo>."
+
+#. type: textblock
+#: po4a-updatepo:23
+msgid ""
+"This option removes B<--previous> from the options passed to B<msgmerge>.  "
+"This permits to support versions of B<gettext> earlier than 0.16."
+msgstr ""
+"Цей параметр вилучає B<--previous> з параметрів, які передаються "
+"B<msgmerge>. За його допомогою реалізовано підтримку версій B<gettext> до "
+"0.16."
 
 #. type: textblock
 #: po4a-updatepo:54
@@ -5503,7 +5536,7 @@ msgid "B<yfm_skip_array>"
 msgstr "B<yfm_skip_array>"
 
 #. type: textblock
-#: lib/Locale/Po4a/AsciiDoc.pm:36 lib/Locale/Po4a/Text.pm:33
+#: lib/Locale/Po4a/AsciiDoc.pm:36 lib/Locale/Po4a/Text.pm:35
 msgid "Do not translate array values in the YAML Front Matter section."
 msgstr "Не перекладати значення масивів у вступному розділі YAML."
 
@@ -5531,19 +5564,19 @@ msgstr "B<//po4a: macro >I<назва>B<[>I<список атрибутів>B<]>
 #. type: textblock
 #: lib/Locale/Po4a/AsciiDoc.pm:40
 msgid ""
-"This permits to describe in detail the parameters of a B<macro>; I<name> "
-"must be a valid macro name, and it ends with an underscore if the target "
-"must be translated."
+"This describes in detail the parameters of a B<macro>; I<name> must be a "
+"valid macro name, and it ends with an underscore if the target must be "
+"translated."
 msgstr ""
-"Цей рядок надає змогу докладно описати параметри B<макроса>; I<назва> має "
-"бути коректною назвою макроса і має завершуватися символом підкреслювання, "
-"якщо ціль має бути перекладено."
+"Цей рядок докладно описує параметри B<макроса>; I<назва> має бути коректною "
+"назвою макроса і має завершуватися символом підкреслювання, якщо ціль має "
+"бути перекладено."
 
 #. type: textblock
 #: lib/Locale/Po4a/AsciiDoc.pm:41
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
-"informations about translatable arguments.  This list contains either "
+"information about translatable arguments.  This list contains either "
 "numbers, to define positional parameters, or named attributes."
 msgstr ""
 "Аргумент I<список атрибутів> є списком відокремлених комами значень, які "
@@ -5570,8 +5603,7 @@ msgstr "B<//po4a: style >B<[>I<список атрибутів>B<]>"
 #. type: textblock
 #: lib/Locale/Po4a/AsciiDoc.pm:44
 msgid ""
-"This permits to describe in detail which attributes of a style must be "
-"translated."
+"This describes in detail which attributes of a style must be translated."
 msgstr ""
 "Цей рядок надає змогу докладно описати атрибути стилю, які слід перекласти."
 
@@ -5579,7 +5611,7 @@ msgstr ""
 #: lib/Locale/Po4a/AsciiDoc.pm:45
 msgid ""
 "The I<attribute list> argument is a comma separated list which contains "
-"informations about translatable arguments.  This list contains either "
+"information about translatable arguments.  This list contains either "
 "numbers, to define positional parameters, or named attributes.  The first "
 "attribute is the style name, it will not be translated."
 msgstr ""
@@ -5629,7 +5661,7 @@ msgstr ""
 #: lib/Locale/Po4a/KernelHelp.pm:5 lib/Locale/Po4a/Man.pm:96
 #: lib/Locale/Po4a/Pod.pm:9 lib/Locale/Po4a/RubyDoc.pm:6
 #: lib/Locale/Po4a/Sgml.pm:34 lib/Locale/Po4a/TeX.pm:104
-#: lib/Locale/Po4a/Texinfo.pm:8 lib/Locale/Po4a/Text.pm:38
+#: lib/Locale/Po4a/Texinfo.pm:8 lib/Locale/Po4a/Text.pm:40
 #: lib/Locale/Po4a/Wml.pm:9 lib/Locale/Po4a/Xhtml.pm:12
 #: lib/Locale/Po4a/Xml.pm:181
 msgid "STATUS OF THIS MODULE"
@@ -5667,6 +5699,20 @@ msgstr ""
 "\n"
 
 #. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:57
+msgid "__END__"
+msgstr "__END__"
+
+#. type: textblock
+#: lib/Locale/Po4a/AsciiDoc.pm:58
+msgid ""
+"# LocalWords: Charset charset AsciiDoc tablecells po UTF gettext msgid "
+"nostrip"
+msgstr ""
+"# LocalWords: Charset charset AsciiDoc tablecells po UTF gettext msgid "
+"nostrip"
+
+#. type: textblock
 #: lib/Locale/Po4a/BibTeX.pm:2
 msgid "Locale::Po4a::BibTeX - convert BibTeX documents from/to PO files"
 msgstr ""
@@ -5699,7 +5745,7 @@ msgstr "Це дуже простий модуль, але ще доволі мо
 #. type: verbatim
 #: lib/Locale/Po4a/BibTeX.pm:12 lib/Locale/Po4a/Halibut.pm:17
 #: lib/Locale/Po4a/LaTeX.pm:11 lib/Locale/Po4a/TeX.pm:121
-#: lib/Locale/Po4a/Texinfo.pm:13 lib/Locale/Po4a/Text.pm:41
+#: lib/Locale/Po4a/Texinfo.pm:13
 #, no-wrap
 msgid ""
 " Nicolas François <nicolas.francois@centraliens.net>\n"
@@ -5803,7 +5849,7 @@ msgstr ""
 
 #. type: verbatim
 #: lib/Locale/Po4a/Chooser.pm:13 lib/Locale/Po4a/KernelHelp.pm:10
-#: lib/Locale/Po4a/Po.pm:102 lib/Locale/Po4a/Pod.pm:39
+#: lib/Locale/Po4a/Po.pm:101 lib/Locale/Po4a/Pod.pm:39
 #: lib/Locale/Po4a/Sgml.pm:57
 #, no-wrap
 msgid ""
@@ -6744,11 +6790,11 @@ msgstr "B<groff_code>"
 #. type: textblock
 #: lib/Locale/Po4a/Man.pm:41
 msgid ""
-"This option permits to change the behavior of the module when it encounter "
-"a .de, .ie or .if section. It can take the following values:"
+"This option controls the behavior of the module when it encounter a .de, .ie "
+"or .if section. It can take the following values:"
 msgstr ""
-"Цей параметр надає зомгу зміни поведінку модуля, якщо у даних трапиться "
-"розділ .de, .ie або .if. Може приймати такі значення:"
+"Цей параметр керує поведінкою модуля, якщо у даних трапиться розділ .de, .ie "
+"або .if. Може приймати такі значення:"
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:42 lib/Locale/Po4a/Xml.pm:27
@@ -6806,14 +6852,15 @@ msgstr "B<generated>"
 msgid ""
 "This option specifies that the file was generated, and that po4a should not "
 "try to detect if the man pages was generated from another format.  This "
-"permits to use po4a on generated man pages.  This option does not take any "
-"argument."
+"option is mandatory to use po4a on generated man pages.  Note that "
+"translating generated pages instead of sources ones is often more fragile, "
+"and thus a bad idea."
 msgstr ""
 "Цей параметр вказує на те, що файл було створено автоматично, і po4a не слід "
 "намагатися визначити, чи не було сторінки підручника створено на основі "
-"іншого формату. Цей параметр надає змогу використовувати po4a для "
-"автоматично створених сторінок підручника. Параметру не передаються жодні "
-"аргументи."
+"іншого формату. Цей параметр є обов'язковим для використання po4a для "
+"автоматично створених сторінок підручника. Зауважте, що переклад створених "
+"сторінок, замість початкових даних, часто є помилковим рішенням."
 
 #. type: =item
 #: lib/Locale/Po4a/Man.pm:50
@@ -6979,7 +7026,7 @@ msgid ""
 "command; any ending command stop the no_wrap mode.  If you have a I<begin> "
 "(respectively I<end>) macro that has no I<end> (respectively I<begin>), you "
 "can specify an existing I<end> (like fi) or I<begin> (like nf) as a "
-"counterpart.  These macros (and their arguments) wont be translated."
+"counterpart.  These macros (and their arguments) won't be translated."
 msgstr ""
 "Зауваження: програма не виконуватиме ніяких перевірок щодо того, чи є "
 "відповідність між командами I<кінець> і I<початок> — будь яка команда "
@@ -7482,18 +7529,39 @@ msgstr ""
 "документації info), описів пакунків, шаблонів debconf та будь-чого, що "
 "корисно перекладати."
 
+#. type: =item
+#: lib/Locale/Po4a/Po.pm:28 lib/Locale/Po4a/TransTractor.pm:72
+msgid "B<dedup>"
+msgstr "B<dedup>"
+
+#. type: textblock
+#: lib/Locale/Po4a/Po.pm:29
+msgid ""
+"Boolean indicating whether we should deduplicate msgids.  If true, when the "
+"same string is added again, a space is appended to deduplicate it.  This is "
+"probably only useful in the gettextization context, where dupplicate msgids "
+"break the string pairing algorithm.  See https://github.com/mquinson/po4a/"
+"issues/334 for more info."
+msgstr ""
+"Булеве значення, яке вказує на те, чи слід виконувати усування дублікатів "
+"msgid. Якщо має значення «true», коли той самий рядок додається ще раз, "
+"програма додасть до нього пробіл, щоб він не став дублікатом. Ймовірно, це "
+"корисно лише у контексті перетворення на gettext, де дублювання msgid "
+"порушує роботу алгоритму встановлення відповідності. Щоб дізнатися більше, "
+"див. https://github.com/mquinson/po4a/issues/334."
+
 #. type: =head1
-#: lib/Locale/Po4a/Po.pm:28
+#: lib/Locale/Po4a/Po.pm:30
 msgid "Functions concerning entire message catalogs"
 msgstr "Функції, які стосуються усіх каталогів повідомлень"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:29
+#: lib/Locale/Po4a/Po.pm:31
 msgid "new()"
 msgstr "new()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:30
+#: lib/Locale/Po4a/Po.pm:32
 msgid ""
 "Creates a new message catalog. If an argument is provided, it's the name of "
 "a PO file we should load."
@@ -7502,12 +7570,12 @@ msgstr ""
 "файла PO, який слід завантажити."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:31
+#: lib/Locale/Po4a/Po.pm:33
 msgid "read($)"
 msgstr "read($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:32
+#: lib/Locale/Po4a/Po.pm:34
 msgid ""
 "Reads a PO file (which name is given as argument).  Previously existing "
 "entries in self are not removed, the new ones are added to the end of the "
@@ -7517,22 +7585,22 @@ msgstr ""
 "вилучаються, нові додаються наприкінці каталогу."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:33 lib/Locale/Po4a/TransTractor.pm:77
+#: lib/Locale/Po4a/Po.pm:35 lib/Locale/Po4a/TransTractor.pm:79
 msgid "write($)"
 msgstr "write($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:34
+#: lib/Locale/Po4a/Po.pm:36
 msgid "Writes the current catalog to the given file."
 msgstr "Записує поточний каталог до вказаного файла."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:35
+#: lib/Locale/Po4a/Po.pm:37
 msgid "write_if_needed($$)"
 msgstr "write_if_needed($$)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:36
+#: lib/Locale/Po4a/Po.pm:38
 msgid ""
 "Like write, but if the PO or POT file already exists, the object will be "
 "written in a temporary file which will be compared with the existing file to "
@@ -7545,12 +7613,12 @@ msgstr ""
 "POT лише для оновлення посилань на рядки або поля дати створення POT)."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:37
+#: lib/Locale/Po4a/Po.pm:39
 msgid "gettextize($$)"
 msgstr "gettextize($$)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:38
+#: lib/Locale/Po4a/Po.pm:40
 msgid ""
 "This function produces one translated message catalog from two catalogs, an "
 "original and a translation. This process is described in L<po4a(7)|po4a.7>, "
@@ -7561,12 +7629,12 @@ msgstr ""
 "розділ I<Перетворення на формат gettextization: як це працює?>."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:39
+#: lib/Locale/Po4a/Po.pm:41
 msgid "filter($)"
 msgstr "filter($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:40
+#: lib/Locale/Po4a/Po.pm:42
 msgid ""
 "This function extracts a catalog from an existing one. Only the entries "
 "having a reference in the given file will be placed in the resulting catalog."
@@ -7576,7 +7644,7 @@ msgstr ""
 "файл."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:41
+#: lib/Locale/Po4a/Po.pm:43
 msgid ""
 "This function parses its argument, converts it to a Perl function "
 "definition, evals this definition and filters the fields for which this "
@@ -7587,17 +7655,17 @@ msgstr ""
 "повертає true."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:42
+#: lib/Locale/Po4a/Po.pm:44
 msgid "I love Perl sometimes ;)"
 msgstr "Іноді я люблю Perl ;)"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:43
+#: lib/Locale/Po4a/Po.pm:45
 msgid "to_utf8()"
 msgstr "to_utf8()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:44
+#: lib/Locale/Po4a/Po.pm:46
 msgid ""
 "Recodes to UTF-8 the PO's msgstrs. Does nothing if the charset is not "
 "specified in the PO file (\"CHARSET\" value), or if it's already UTF-8 or "
@@ -7608,17 +7676,17 @@ msgstr ""
 "або якщо дані вже записано у кодуванні UTF-8, або дані є символами ASCII."
 
 #. type: =head1
-#: lib/Locale/Po4a/Po.pm:45
+#: lib/Locale/Po4a/Po.pm:47
 msgid "Functions to use a message catalog for translations"
 msgstr "Функції для використання каталогу повідомлень для перекладів"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:46
+#: lib/Locale/Po4a/Po.pm:48
 msgid "gettext($%)"
 msgstr "gettext($%)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:47
+#: lib/Locale/Po4a/Po.pm:49
 msgid ""
 "Request the translation of the string given as argument in the current "
 "catalog.  The function returns the original (untranslated) string if the "
@@ -7629,7 +7697,7 @@ msgstr ""
 "якщо рядок не буде знайдено у каталозі."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:48
+#: lib/Locale/Po4a/Po.pm:50
 msgid ""
 "After the string to translate, you can pass a hash of extra arguments. Here "
 "are the valid entries:"
@@ -7638,13 +7706,13 @@ msgstr ""
 "аргументів. Ось коректні записи цих аргументів:"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:49 lib/Locale/Po4a/Po.pm:79
+#: lib/Locale/Po4a/Po.pm:51 lib/Locale/Po4a/Po.pm:81
 #: lib/Locale/Po4a/TransTractor.pm:120 lib/Locale/Po4a/Xml.pm:14
 msgid "B<wrap>"
 msgstr "B<wrap>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:50
+#: lib/Locale/Po4a/Po.pm:52
 msgid ""
 "boolean indicating whether we can consider that whitespaces in string are "
 "not important. If yes, the function canonizes the string before looking for "
@@ -7656,24 +7724,24 @@ msgstr ""
 "рядків у результаті пошуку."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:51 lib/Locale/Po4a/Po.pm:82
+#: lib/Locale/Po4a/Po.pm:53 lib/Locale/Po4a/Po.pm:84
 #: lib/Locale/Po4a/TransTractor.pm:122
 msgid "B<wrapcol>"
 msgstr "B<wrapcol>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:52 lib/Locale/Po4a/Po.pm:83
+#: lib/Locale/Po4a/Po.pm:54 lib/Locale/Po4a/Po.pm:85
 #: lib/Locale/Po4a/TransTractor.pm:123
 msgid "the column at which we should wrap (default: 76)."
 msgstr "позиція, на якій слід переносити рядки (типове значення: 76)."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:53
+#: lib/Locale/Po4a/Po.pm:55
 msgid "stats_get()"
 msgstr "stats_get()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:54
+#: lib/Locale/Po4a/Po.pm:56
 msgid ""
 "Returns statistics about the hit ratio of gettext since the last time that "
 "stats_clear() was called. Please note that it's not the same statistics than "
@@ -7688,7 +7756,7 @@ msgstr ""
 "Приклад використання:"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Po.pm:55
+#: lib/Locale/Po4a/Po.pm:57
 #, no-wrap
 msgid ""
 "    [some use of the PO file to translate stuff]\n"
@@ -7698,7 +7766,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Po.pm:56
+#: lib/Locale/Po4a/Po.pm:58
 #, no-wrap
 msgid ""
 "    ($percent,$hit,$queries) = $pofile->stats_get();\n"
@@ -7710,27 +7778,27 @@ msgstr ""
 "\n"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:57
+#: lib/Locale/Po4a/Po.pm:59
 msgid "stats_clear()"
 msgstr "stats_clear()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:58
+#: lib/Locale/Po4a/Po.pm:60
 msgid "Clears the statistics about gettext hits."
 msgstr "Вилучає статистику щодо відповідників gettext."
 
 #. type: =head1
-#: lib/Locale/Po4a/Po.pm:59
+#: lib/Locale/Po4a/Po.pm:61
 msgid "Functions to build a message catalog"
 msgstr "Функції для збирання каталогу повідомлень"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:60
+#: lib/Locale/Po4a/Po.pm:62
 msgid "push(%)"
 msgstr "push(%)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:61
+#: lib/Locale/Po4a/Po.pm:63
 msgid ""
 "Push a new entry at the end of the current catalog. The arguments should "
 "form a hash table. The valid keys are:"
@@ -7739,32 +7807,32 @@ msgstr ""
 "форматі таблиці хешів. Коректні ключі:"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:62
+#: lib/Locale/Po4a/Po.pm:64
 msgid "B<msgid>"
 msgstr "B<msgid>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:63
+#: lib/Locale/Po4a/Po.pm:65
 msgid "the string in original language."
 msgstr "рядок початковою мовою."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:64
+#: lib/Locale/Po4a/Po.pm:66
 msgid "B<msgstr>"
 msgstr "B<msgstr>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:65
+#: lib/Locale/Po4a/Po.pm:67
 msgid "the translation."
 msgstr "переклад."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:66
+#: lib/Locale/Po4a/Po.pm:68
 msgid "B<reference>"
 msgstr "B<reference>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:67
+#: lib/Locale/Po4a/Po.pm:69
 msgid ""
 "an indication of where this string was found. Example: file.c:46 (meaning in "
 "'file.c' at line 46). It can be a space-separated list in case of multiple "
@@ -7775,23 +7843,23 @@ msgstr ""
 "рядок трапляється у декількох місцях."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:68 lib/Locale/Po4a/TransTractor.pm:124
+#: lib/Locale/Po4a/Po.pm:70 lib/Locale/Po4a/TransTractor.pm:124
 msgid "B<comment>"
 msgstr "B<comment>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:69
+#: lib/Locale/Po4a/Po.pm:71
 msgid ""
 "a comment added here manually (by the translators). The format here is free."
 msgstr "коментар, доданий сюди вручну (перекладачами). Формат є довільним."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:70
+#: lib/Locale/Po4a/Po.pm:72
 msgid "B<automatic>"
 msgstr "B<automatic>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:71
+#: lib/Locale/Po4a/Po.pm:73
 msgid ""
 "a comment which was automatically added by the string extraction program. "
 "See the B<--add-comments> option of the B<xgettext> program for more "
@@ -7802,17 +7870,17 @@ msgstr ""
 "підручника до програми B<xgettext>."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:72
+#: lib/Locale/Po4a/Po.pm:74
 msgid "B<flags>"
 msgstr "B<flags>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:73
+#: lib/Locale/Po4a/Po.pm:75
 msgid "space-separated list of all defined flags for this entry."
 msgstr "список усіх прапорців для цього запису, відокремлених пробілами."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:74
+#: lib/Locale/Po4a/Po.pm:76
 msgid ""
 "Valid flags are: B<c-text>, B<python-text>, B<lisp-text>, B<elisp-text>, "
 "B<librep-text>, B<smalltalk-text>, B<java-text>, B<awk-text>, B<object-"
@@ -7824,17 +7892,17 @@ msgstr ""
 "B<fuzzy>."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:75
+#: lib/Locale/Po4a/Po.pm:77
 msgid "See the gettext documentation for their meaning."
 msgstr "Із призначенням прапорців можна ознайомитися у документації з gettext."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:76
+#: lib/Locale/Po4a/Po.pm:78
 msgid "B<type>"
 msgstr "B<type>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:77
+#: lib/Locale/Po4a/Po.pm:79
 msgid ""
 "this is mostly an internal argument: it is used while gettextizing "
 "documents. The idea here is to parse both the original and the translation "
@@ -7855,7 +7923,7 @@ msgstr ""
 "повідомляє про помилку."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:78
+#: lib/Locale/Po4a/Po.pm:80
 msgid ""
 "This information is written as automatic comment in the PO file since this "
 "gives to translators some context about the strings to translate."
@@ -7864,7 +7932,7 @@ msgstr ""
 "надають перекладачам контекст щодо рядка, який вони перекладають."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:80
+#: lib/Locale/Po4a/Po.pm:82
 msgid ""
 "boolean indicating whether whitespaces can be mangled in cosmetic "
 "reformattings. If true, the string is canonized before use."
@@ -7874,7 +7942,7 @@ msgstr ""
 "канонічної форми перед його використанням."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:81
+#: lib/Locale/Po4a/Po.pm:83
 msgid ""
 "This information is written to the PO file using the B<wrap> or B<no-wrap> "
 "flag."
@@ -7883,32 +7951,32 @@ msgstr ""
 "wrap>."
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:84
+#: lib/Locale/Po4a/Po.pm:86
 msgid "This information is not written to the PO file."
 msgstr "Ця інформація не записується до файла PO."
 
 #. type: =head1
-#: lib/Locale/Po4a/Po.pm:85
+#: lib/Locale/Po4a/Po.pm:87
 msgid "Miscellaneous functions"
 msgstr "Різноманітні функції"
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:86
+#: lib/Locale/Po4a/Po.pm:88
 msgid "count_entries()"
 msgstr "count_entries()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:87
+#: lib/Locale/Po4a/Po.pm:89
 msgid "Returns the number of entries in the catalog (without the header)."
 msgstr "Повертає кількість записів у каталозі (без заголовка)."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:88
+#: lib/Locale/Po4a/Po.pm:90
 msgid "count_entries_doc()"
 msgstr "count_entries_doc()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:89
+#: lib/Locale/Po4a/Po.pm:91
 msgid ""
 "Returns the number of entries in document. If a string appears multiple "
 "times in the document, it will be counted multiple times."
@@ -7917,61 +7985,32 @@ msgstr ""
 "зустрічається декілька разів, його буде пораховано декілька разів."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:90
-msgid "equals_msgid(po)"
-msgstr "equals_msgid(po)"
-
-#. type: textblock
-#: lib/Locale/Po4a/Po.pm:91
-msgid ""
-"Returns ($uptodate, $diagnostic) with $uptodate indicating whether all msgid "
-"of the current po file are also present in the one passed as parameter (all "
-"other fields are ignored in the file comparison).  Informally, if $uptodate "
-"returns false, then the po files would be changed when going through B<po4a-"
-"updatepo>."
-msgstr ""
-"Повертає ($uptodate, $diagnostic), де $uptodate вказує, чи усі msgid у "
-"поточному файлі po містяться у файлі, який передано як параметр (при "
-"порівнянні файлів усі інші поля буде проігноровано). Неформально, якщо "
-"$uptodate має значення false, файли po буде змінено при обробці B<po4a-"
-"updatepo>."
-
-#. type: textblock
 #: lib/Locale/Po4a/Po.pm:92
-msgid ""
-"If $uptodate is false, then $diagnostic contains a diagnostic of why this is "
-"so."
-msgstr ""
-"Якщо $uptodate має значення false, параметр $diagnostic містить діагностичні "
-"дані щодо причин."
-
-#. type: =item
-#: lib/Locale/Po4a/Po.pm:93
 msgid "msgid($)"
 msgstr "msgid($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:94
+#: lib/Locale/Po4a/Po.pm:93
 msgid "Returns the msgid of the given number."
 msgstr "Повертає msgid із вказаним номером."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:95
+#: lib/Locale/Po4a/Po.pm:94
 msgid "msgid_doc($)"
 msgstr "msgid_doc($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:96
+#: lib/Locale/Po4a/Po.pm:95
 msgid "Returns the msgid with the given position in the document."
 msgstr "Повертає msgid із вказаною позицією у документі."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:97
+#: lib/Locale/Po4a/Po.pm:96
 msgid "get_charset()"
 msgstr "get_charset()"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:98
+#: lib/Locale/Po4a/Po.pm:97
 msgid ""
 "Returns the character set specified in the PO header. If it hasn't been set, "
 "it will return \"UTF-8\"."
@@ -7980,12 +8019,12 @@ msgstr ""
 "кодування не вказано, поверне рядок «UTF-8»."
 
 #. type: =item
-#: lib/Locale/Po4a/Po.pm:99
+#: lib/Locale/Po4a/Po.pm:98
 msgid "set_charset($)"
 msgstr "set_charset($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/Po.pm:100
+#: lib/Locale/Po4a/Po.pm:99
 msgid ""
 "This sets the character set of the PO header to the value specified in its "
 "first argument. If you never call this function (and no file with a "
@@ -8995,11 +9034,10 @@ msgstr ""
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:26
 msgid ""
-"Using these options permits to override the behaviour of the commands "
-"defined in the default lists."
+"Use these options to override the default behavior of the defined commands."
 msgstr ""
-"За допомогою цих параметрів можна перевизначити поведінку команд, які "
-"визначено у типових списках."
+"Скористайтеся цими параметрами для перевизначення типової поведінки "
+"визначених команд."
 
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:28
@@ -9034,9 +9072,8 @@ msgstr "B<% po4a: command> I<команда1> I<параметри>"
 #. type: textblock
 #: lib/Locale/Po4a/TeX.pm:32
 msgid ""
-"This permit to describe in detail the parameters of the I<command1> "
-"command.  This information will be used to check the number of arguments and "
-"their types."
+"This describes in detail the parameters of the I<command1> command.  This "
+"information will be used to check the number of arguments and their types."
 msgstr ""
 "Надає змогу докладно описати параметри команди I<команда1>. Ці дані буде "
 "використано для перевірки кількості аргументів та їхніх типів."
@@ -9073,9 +9110,8 @@ msgid ""
 "As for an asterisk, the command will be extracted if it appear at an "
 "extremity of a block, but the parameters won't be translated separately.  "
 "The translator will have to translate the command concatenated to all its "
-"parameters.  This permits to keep more context, and is useful for commands "
-"with small words in parameter, which can have multiple meanings (and "
-"translations)."
+"parameters.  This keeps more context, and is useful for commands with small "
+"words in parameter, which can have multiple meanings (and translations)."
 msgstr ""
 "Як і для зірочки, команду буде видобуто, якщо вона стоятиме на початку або "
 "наприкінці блоку, але параметри не перекладатимуться окремо. Перекладачеві "
@@ -9173,9 +9209,9 @@ msgstr "B<% po4a: environment> I<середовище> I<параметри>"
 #: lib/Locale/Po4a/TeX.pm:45
 #, no-wrap
 msgid ""
-"This permits to define the parameters accepted by the I<env> environment.\n"
+"This defines the parameters accepted by the I<env> environment and specifies the ones to be translated.\n"
 "This information is later used to check the number of arguments of the\n"
-"\\begin command, and permit to specify which one must be translated.\n"
+"\\begin command.\n"
 "The syntax of the I<parameters> argument is the same as described for the\n"
 "others commands.\n"
 "The first parameter of the \\begin command is the name of the environment.\n"
@@ -9185,8 +9221,7 @@ msgid ""
 " % po4a: environment equation\n"
 "\n"
 msgstr ""
-"За допомогою цього рядка можна визначити параметри, які прийматимуться\n"
-"середовищем I<середовище>.\n"
+"За допомогою цього рядка можна визначити параметри, які прийматимуться середовищем I<середовище>.\n"
 "Ці дані пізніше буде використано для перевірки кількості аргументів команди\n"
 "\\begin і визначення тих параметрів, які слід перекласти.\n"
 "Синтаксис аргументу I<параметри> є тим самим, який описано для\n"
@@ -9223,7 +9258,7 @@ msgstr "Вказує, що середовище слід розділити за
 #: lib/Locale/Po4a/TeX.pm:49
 msgid ""
 "The regular expression is delimited by quotes.  It should not create any "
-"backreference.  You should use (?:) if you need a group.  It may also need "
+"back-reference.  You should use (?:) if you need a group.  It may also need "
 "some escapes."
 msgstr ""
 "Формальний вираз у лапках. Не повинен містити зворотних посилань. Якщо "
@@ -9863,7 +9898,7 @@ msgstr "B<debianchangelog>"
 #: lib/Locale/Po4a/Text.pm:25
 msgid ""
 "Handle the header and footer of released versions, which only contain non "
-"translatable informations."
+"translatable information."
 msgstr ""
 "Обробляти заголовки і нижні колонтитули випущених версій, де міститься лише "
 "непридатна до перекладу інформація."
@@ -9899,16 +9934,35 @@ msgstr "B<yfm_keys> (лише розмітка)"
 
 #. type: =item
 #: lib/Locale/Po4a/Text.pm:32
+msgid "B<yfm_lenient> (markdown only)"
+msgstr "B<yfm_lenient> (лише розмітка)"
+
+#. type: textblock
+#: lib/Locale/Po4a/Text.pm:33
+msgid ""
+"Allow the YAML Front Matter parser to fail on malformated headers. This is "
+"particularly helpful when your file starts with a horizontal ruler instead "
+"of a YAML Front Matter, but you insist on using three dashes only for your "
+"ruler."
+msgstr ""
+"Дозволити засобу обробки вступної частини YAML завершувати роботу з "
+"повідомленням про помилку, якщо форматування заголовків є помилковим. Це, "
+"зокрема, є корисним, якщо ваш файл починається з горизонтальної риски "
+"замість вступної частини YAML, але вам варто користуватися для вашої "
+"горизонтальної риски лише трьома дефісами."
+
+#. type: =item
+#: lib/Locale/Po4a/Text.pm:34
 msgid "B<yfm_skip_array> (markdown-only)"
 msgstr "B<yfm_skip_array> (лише розмітка)"
 
 #. type: =item
-#: lib/Locale/Po4a/Text.pm:34
+#: lib/Locale/Po4a/Text.pm:36
 msgid "B<control>[B<=>I<taglist>]"
 msgstr "B<control>[B<=>I<список_теґів>]"
 
 #. type: textblock
-#: lib/Locale/Po4a/Text.pm:35
+#: lib/Locale/Po4a/Text.pm:37
 msgid ""
 "Handle control files.  A comma-separated list of tags to be translated can "
 "be provided."
@@ -9917,12 +9971,12 @@ msgstr ""
 "які слід перекласти."
 
 #. type: =item
-#: lib/Locale/Po4a/Text.pm:36
+#: lib/Locale/Po4a/Text.pm:38
 msgid "B<neverwrap>"
 msgstr "B<neverwrap>"
 
 #. type: textblock
-#: lib/Locale/Po4a/Text.pm:37
+#: lib/Locale/Po4a/Text.pm:39
 msgid ""
 "Prevent po4a from wrapping any lines. This means that every content is "
 "handled verbatim, even simple paragraphs."
@@ -9931,7 +9985,7 @@ msgstr ""
 "буквально, навіть прості абзаци."
 
 #. type: textblock
-#: lib/Locale/Po4a/Text.pm:39
+#: lib/Locale/Po4a/Text.pm:41
 msgid "Tested successfully on simple text files and NEWS.Debian files."
 msgstr "Успішно перевірено на простих текстових файлах та файлах NEWS.Debian."
 
@@ -9939,18 +9993,28 @@ msgstr "Успішно перевірено на простих текстови
 #: lib/Locale/Po4a/Text.pm:43
 #, no-wrap
 msgid ""
-" Copyright © 2005-2008 Nicolas FRANÇOIS <nicolas.francois@centraliens.net>.\n"
+" Nicolas Francois <nicolas.francois@centraliens.net>\n"
 "\n"
 msgstr ""
-" © Nicolas FRANÇOIS <nicolas.francois@centraliens.net>, 2005–2008.\n"
+" Nicolas Francois <nicolas.francois@centraliens.net>\n"
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/Text.pm:44
+#: lib/Locale/Po4a/Text.pm:45
 #, no-wrap
 msgid ""
-" Copyright © 2008-2009, 2018 Jonas Smedegaard <dr@jones.dk>.\n"
-" Copyright © 2020 Martin Quinson <mquinson#debian.org>.\n"
+" Copyright (c) 2005-2008 Nicolas FRANCOIS <nicolas.francois@centraliens.net>.\n"
+"\n"
+msgstr ""
+" © Nicolas FRANCOIS <nicolas.francois@centraliens.net>, 2005–2008.\n"
+"\n"
+
+#. type: verbatim
+#: lib/Locale/Po4a/Text.pm:46
+#, no-wrap
+msgid ""
+" Copyright (c) 2008-2009, 2018 Jonas Smedegaard <dr@jones.dk>.\n"
+" Copyright (c) 2020 Martin Quinson <mquinson#debian.org>.\n"
 "\n"
 msgstr ""
 " © Jonas Smedegaard <dr@jones.dk>, 2008-2009, 2018.\n"
@@ -10459,18 +10523,28 @@ msgstr "debug ($)"
 msgid "Sets the debugging."
 msgstr "Встановлює рівень діагностики."
 
+#. type: textblock
+#: lib/Locale/Po4a/TransTractor.pm:73
+msgid ""
+"Boolean indicating whether we should deduplicate msgids. Passed to Po.pm as "
+"is. See Po.pm documentation for more info."
+msgstr ""
+"Булеве значення, яке вказує на те, чи слід усувати дублікати msgid. "
+"Передається до Po.pm без змін. Див. документацію до Po.pm, щоб дізнатися "
+"більше."
+
 #. type: =head2
-#: lib/Locale/Po4a/TransTractor.pm:72
+#: lib/Locale/Po4a/TransTractor.pm:74
 msgid "Manipulating document files"
 msgstr "Робота з файлами документів"
 
 #. type: =item
-#: lib/Locale/Po4a/TransTractor.pm:73
+#: lib/Locale/Po4a/TransTractor.pm:75
 msgid "read($$)"
 msgstr "read($$)"
 
 #. type: textblock
-#: lib/Locale/Po4a/TransTractor.pm:74
+#: lib/Locale/Po4a/TransTractor.pm:76
 msgid ""
 "Add another input document data at the end of the existing array C<< @{$self-"
 ">{TT}{doc_in}} >>. The argument is the filename to read. If a second "
@@ -10482,7 +10556,7 @@ msgstr ""
 "використовувати у посиланнях."
 
 #. type: verbatim
-#: lib/Locale/Po4a/TransTractor.pm:75
+#: lib/Locale/Po4a/TransTractor.pm:77
 #, no-wrap
 msgid ""
 "This array C<< @{$self->{TT}{doc_in}} >> holds this input document data as an\n"
@@ -10500,7 +10574,7 @@ msgstr ""
 "\n"
 
 #. type: textblock
-#: lib/Locale/Po4a/TransTractor.pm:76
+#: lib/Locale/Po4a/TransTractor.pm:78
 msgid ""
 "Please note that it does not parse anything. You should use the parse()  "
 "function when you're done with packing input files into the document."
@@ -10509,12 +10583,12 @@ msgstr ""
 "використовувати після завершення пакування вхідних файлів до документа."
 
 #. type: textblock
-#: lib/Locale/Po4a/TransTractor.pm:78
+#: lib/Locale/Po4a/TransTractor.pm:80
 msgid "Write the translated document to the given filename."
 msgstr "Записати перекладений документ до файла із вказаною назвою."
 
 #. type: verbatim
-#: lib/Locale/Po4a/TransTractor.pm:79
+#: lib/Locale/Po4a/TransTractor.pm:81
 #, no-wrap
 msgid ""
 "This translated document data are provided by:\n"
@@ -10528,17 +10602,17 @@ msgstr ""
 "\n"
 
 #. type: =head2
-#: lib/Locale/Po4a/TransTractor.pm:80
+#: lib/Locale/Po4a/TransTractor.pm:82
 msgid "Manipulating PO files"
 msgstr "Робота з файлами PO"
 
 #. type: =item
-#: lib/Locale/Po4a/TransTractor.pm:81
+#: lib/Locale/Po4a/TransTractor.pm:83
 msgid "readpo($)"
 msgstr "readpo($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/TransTractor.pm:82
+#: lib/Locale/Po4a/TransTractor.pm:84
 msgid ""
 "Add the content of a file (which name is passed as argument) to the existing "
 "input PO. The old content is not discarded."
@@ -10547,22 +10621,22 @@ msgstr ""
 "вхідних даних PO. Старий вміст файла не відкидається."
 
 #. type: =item
-#: lib/Locale/Po4a/TransTractor.pm:83
+#: lib/Locale/Po4a/TransTractor.pm:85
 msgid "writepo($)"
 msgstr "writepo($)"
 
 #. type: textblock
-#: lib/Locale/Po4a/TransTractor.pm:84
+#: lib/Locale/Po4a/TransTractor.pm:86
 msgid "Write the extracted PO file to the given filename."
 msgstr "Записати видобуті дані PO до файла із вказаною назвою."
 
 #. type: =item
-#: lib/Locale/Po4a/TransTractor.pm:85
+#: lib/Locale/Po4a/TransTractor.pm:87
 msgid "stats()"
 msgstr "stats()"
 
 #. type: textblock
-#: lib/Locale/Po4a/TransTractor.pm:86
+#: lib/Locale/Po4a/TransTractor.pm:88
 msgid ""
 "Returns some statistics about the translation done so far. Please note that "
 "it's not the same statistics than the one printed by msgfmt --statistic. "
@@ -10577,7 +10651,7 @@ msgstr ""
 "Po::stats_get, застосованою до файла PO вхідних даних. Приклад використання:"
 
 #. type: verbatim
-#: lib/Locale/Po4a/TransTractor.pm:87
+#: lib/Locale/Po4a/TransTractor.pm:89
 #, no-wrap
 msgid ""
 "    [normal use of the po4a document...]\n"
@@ -10587,7 +10661,7 @@ msgstr ""
 "\n"
 
 #. type: verbatim
-#: lib/Locale/Po4a/TransTractor.pm:88
+#: lib/Locale/Po4a/TransTractor.pm:90
 #, no-wrap
 msgid ""
 "    ($percent,$hit,$queries) = $document->stats();\n"
@@ -10597,24 +10671,6 @@ msgstr ""
 "    ($percent,$hit,$queries) = $document->stats();\n"
 "    print \"Знайдено переклади $percent\\%  ($hit з $queries) рядків.\\n\";\n"
 "\n"
-
-#. type: =item
-#: lib/Locale/Po4a/TransTractor.pm:89
-msgid "is_po_uptodate()"
-msgstr "is_po_uptodate()"
-
-#. type: textblock
-#: lib/Locale/Po4a/TransTractor.pm:90
-msgid ""
-"Returns ($uptodate, $diagnostic) where $uptodate is whether the input po and "
-"the output po match (if not, it means that the input po should be updated)  "
-"and $diagnostic is a string explaining why the po file is not uptodate, when "
-"this happens."
-msgstr ""
-"Повертає ($uptodate, $diagnostic), де $uptodate вказує на те, чи збігаються "
-"файл po вхідних даних і файл po вихідних даних (якщо ні, це означає, що файл "
-"po вхідних даних слід оновити) і $diagnostic є рядком, який пояснює, чому "
-"файл po втратив актуальність, якщо це трапилося."
 
 #. type: =head2
 #: lib/Locale/Po4a/TransTractor.pm:91
@@ -11140,14 +11196,11 @@ msgstr ""
 #: lib/Locale/Po4a/Xhtml.pm:14
 msgid ""
 "\"It works for me\", which means I use it successfully on my personal Web "
-"site.  However, YMMV: please let me know if something doesn't work for you. "
-"In particular, tables are getting no testing whatsoever, as we don't use "
-"them."
+"site.  However, YMMV: please let me know if something doesn't work for you."
 msgstr ""
 "«Це працює у мене», тобто автор успішно використав модуль для перекладу "
 "особистого сайта. Втім, у вас усе може бути інакше: будь ласка, повідомте "
-"авторові, якщо у вас щось не працюватиме. Зокрема, зовсім не тестувалися "
-"таблиці, оскільки автор їх не використовує."
+"авторові, якщо у вас щось не працюватиме."
 
 #. type: verbatim
 #: lib/Locale/Po4a/Xhtml.pm:18
@@ -12614,6 +12667,96 @@ msgstr ""
 #: lib/Locale/Po4a/Yaml.pm:20
 msgid "Copyright © 2017 Brian Exelbierd."
 msgstr "© Brian Exelbierd, 2017."
+
+#~ msgid ""
+#~ "In some unfortunate settings, you will get the feeling that po4a ate some "
+#~ "parts of the text, either the original or the translation. "
+#~ "F<gettextization.failed.po> indicates that both files matched as expected "
+#~ "up to the paragraph N. But then, an (unsuccessful) attempt is made to "
+#~ "match the N+1 paragraph in the original file not with the N+1 paragraph "
+#~ "in the translation as it should, but with the N+2 paragraph. Just as if "
+#~ "the N+1 paragraph that you see in the document simply disappeared from "
+#~ "the file during the process."
+#~ msgstr ""
+#~ "Іноді, ви трапляються випадки, коли програма po4a «з'їдає» частину тексту "
+#~ "у початковому файлі або у перекладі. F<gettextization.failed.po> вказує "
+#~ "на те, що до певного моменту відповідність зберігалася (аж до абзацу N). "
+#~ "Але потім, а потім сталася помилка через те, що програма намагалася "
+#~ "встановити відповідність абзацу N+1 у початковому файлі, але встановила "
+#~ "її не з абзацом N+1 перекладу, а з абзацом N+2. Таким чином, абзац N+2 у "
+#~ "процесі обробки «зник» з файла результатів."
+
+#~ msgid ""
+#~ "This unfortunate situation happens when the same paragraph is repeated "
+#~ "over the document. In that case, no new entry is created in the PO file, "
+#~ "but a new reference is added to the existing one instead."
+#~ msgstr ""
+#~ "Така неприємна ситуація трапляється, коли у документі повторюється певний "
+#~ "абзац. У цьому випадку, у файлі PO не додається новий запис, а "
+#~ "створюється посилання на вже наявний у ньому запис."
+
+#~ msgid ""
+#~ "So, the previous situation occurs when two similar but different "
+#~ "paragraphs are translated in the exact same way. This will apparently "
+#~ "remove a paragraph of the translation. To fix the problem, it is "
+#~ "sufficient to slightly alter one of the translations in the document. You "
+#~ "can also prefer to kill the second paragraph in the original document."
+#~ msgstr ""
+#~ "Отже, попередня проблема сталася через те, що два подібні, але різні "
+#~ "абзаци було перекладено однаково. Це призводить до видимого вилучення "
+#~ "абзацу з перекладу. Щоб виправити цю проблему достатньо трохи змінити "
+#~ "один з перекладів у документі. Також можна просто прибрати другий з "
+#~ "абзаців у початковому документі."
+
+#~ msgid ""
+#~ "To the opposite, if the same paragraph appearing twice in the original "
+#~ "document is not translated in the exact same way at both locations, you "
+#~ "will get the feeling that one paragraph of the original document just "
+#~ "vanished. Just copy the best translation over the other one in the "
+#~ "translated document to fix the problem."
+#~ msgstr ""
+#~ "Протилежний випадок: той самий абзац, який траплявся у початковому "
+#~ "документі двічі, не було перекладено однаково у двох місцях. Результатом "
+#~ "є умовне «зникнення» абзацу у перекладі. Просте копіювання вдалішого з "
+#~ "перекладів на місце іншого у перекладеному документі має вирішити "
+#~ "проблему."
+
+#~ msgid "equals_msgid(po)"
+#~ msgstr "equals_msgid(po)"
+
+#~ msgid ""
+#~ "Returns ($uptodate, $diagnostic) with $uptodate indicating whether all "
+#~ "msgid of the current po file are also present in the one passed as "
+#~ "parameter (all other fields are ignored in the file comparison).  "
+#~ "Informally, if $uptodate returns false, then the po files would be "
+#~ "changed when going through B<po4a-updatepo>."
+#~ msgstr ""
+#~ "Повертає ($uptodate, $diagnostic), де $uptodate вказує, чи усі msgid у "
+#~ "поточному файлі po містяться у файлі, який передано як параметр (при "
+#~ "порівнянні файлів усі інші поля буде проігноровано). Неформально, якщо "
+#~ "$uptodate має значення false, файли po буде змінено при обробці B<po4a-"
+#~ "updatepo>."
+
+#~ msgid ""
+#~ "If $uptodate is false, then $diagnostic contains a diagnostic of why this "
+#~ "is so."
+#~ msgstr ""
+#~ "Якщо $uptodate має значення false, параметр $diagnostic містить "
+#~ "діагностичні дані щодо причин."
+
+#~ msgid "is_po_uptodate()"
+#~ msgstr "is_po_uptodate()"
+
+#~ msgid ""
+#~ "Returns ($uptodate, $diagnostic) where $uptodate is whether the input po "
+#~ "and the output po match (if not, it means that the input po should be "
+#~ "updated)  and $diagnostic is a string explaining why the po file is not "
+#~ "uptodate, when this happens."
+#~ msgstr ""
+#~ "Повертає ($uptodate, $diagnostic), де $uptodate вказує на те, чи "
+#~ "збігаються файл po вхідних даних і файл po вихідних даних (якщо ні, це "
+#~ "означає, що файл po вхідних даних слід оновити) і $diagnostic є рядком, "
+#~ "який пояснює, чому файл po втратив актуальність, якщо це трапилося."
 
 #, no-wrap
 #~ msgid ""

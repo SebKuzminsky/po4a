@@ -14,8 +14,8 @@ sub ACTION_build {
     $self->depends_on('code');
     $self->depends_on('docs');
     $self->depends_on('distmeta'); # regenerate META.yml
-    $self->depends_on('man');
-    $self->depends_on('postats');
+    $self->depends_on('man') unless ($^O eq 'MSWin32');
+    $self->depends_on('postats') unless ($^O eq 'MSWin32');
 }
 
 sub make_files_writable {
@@ -238,23 +238,25 @@ sub ACTION_man {
         unlink "$file" || die;
     }
 
-    # Install the manpages written in XML DocBook
-    foreach $file (qw(po4a-display-man.xml po4a-display-pod.xml)) {
-        copy ( File::Spec->catdir("share", "doc", $file), $man1path) or die;
-    }
-    foreach $file (@{$self->rscan_dir($manpath, qr{\.xml$})}) {
-        if ($file =~ m,(.*/man(.))/([^/]*)\.xml$,) {
-            my ($outdir, $section, $outfile) = ($1, $2, $3);
-	    if (-e "/usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl") { # Location on Debian at least
-		print "Convert $outdir/$outfile.$section (local docbook.xsl file). ";
-		system("xsltproc -o $outdir/$outfile.$section --nonet /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl $file") and die;
-	    } else { # Not found locally, use the XSL file online
-		print "Convert $outdir/$outfile.$section (online docbook.xsl file). ";
-		system("xsltproc -o $outdir/$outfile.$section --nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $file") and die;
-	    }
-            system ("gzip -9 -f $outdir/$outfile.$section") and die;
+    if ($^O ne 'MSWin32') {
+        # Install the manpages written in XML DocBook
+        foreach $file (qw(po4a-display-man.xml po4a-display-pod.xml)) {
+            copy ( File::Spec->catdir("share", "doc", $file), $man1path) or die;
         }
-        unlink "$file" || die;
+        foreach $file (@{$self->rscan_dir($manpath, qr{\.xml$})}) {
+            if ($file =~ m,(.*/man(.))/([^/]*)\.xml$,) {
+                my ($outdir, $section, $outfile) = ($1, $2, $3);
+            if (-e "/usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl") { # Location on Debian at least
+            print "Convert $outdir/$outfile.$section (local docbook.xsl file). ";
+            system("xsltproc -o $outdir/$outfile.$section --nonet /usr/share/xml/docbook/stylesheet/docbook-xsl/manpages/docbook.xsl $file") and die;
+            } else { # Not found locally, use the XSL file online
+            print "Convert $outdir/$outfile.$section (online docbook.xsl file). ";
+            system("xsltproc -o $outdir/$outfile.$section --nonet http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl $file") and die;
+            }
+                system ("gzip -9 -f $outdir/$outfile.$section") and die;
+            }
+            unlink "$file" || die;
+        }
     }
 }
 

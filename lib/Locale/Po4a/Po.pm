@@ -92,6 +92,13 @@ Set the package name for the POT header. The default is "PACKAGE".
 
 Set the package version for the POT header. The default is "VERSION".
 
+=item B<dedup>
+
+Boolean indicating whether we should deduplicate msgids.
+If true, when the same string is added again, a space is appended to deduplicate it.
+This is probably only useful in the gettextization context, where dupplicate msgids break the string pairing algorithm.
+See https://github.com/mquinson/po4a/issues/334 for more info.
+
 =back
 
 =cut
@@ -227,6 +234,7 @@ sub initialize {
     $self->{options}{'wrap-po'}            = 76;
     $self->{options}{'pot-charset'}        = "UTF-8";
     $self->{options}{'pot-language'}       = "";
+    $self->{options}{'dedup'}              = 0;
 
     foreach my $opt ( keys %$options ) {
 
@@ -646,7 +654,7 @@ sub write_if_needed {
         my $basename = basename($filename);
         ( undef, $tmp_filename ) = File::Temp::tempfile(
             $basename . "XXXX",
-            DIR    => $ENV{TMPDIR} || "/tmp",
+            DIR    => File::Spec->tmpdir(),
             OPEN   => 0,
             UNLINK => 0
         );
@@ -1384,6 +1392,11 @@ sub push_raw {
         $reference =~ s/:\d+//g;
     }
 
+    # If asked to dedup the msgid, append a '_' as long as the string is still a dupplicate
+    while ( defined( $self->{po}{$msgid} ) && $self->{options}{'dedup'} ) {
+        $msgid .= ' ';
+    }
+
     if ( defined( $self->{po}{$msgid} ) ) {
         warn wrap_mod( "po4a::po", dgettext( "po4a", "msgid defined twice: %s" ), $msgid )
           if (0);    # FIXME: put a verbose stuff
@@ -1513,37 +1526,6 @@ in the document, it will be counted multiple times.
 sub count_entries_doc($) {
     my $self = shift;
     return $self->{count_doc};
-}
-
-=item equals_msgid(po)
-
-Returns ($uptodate, $diagnostic) with $uptodate indicating whether all msgid of the current po file are 
-also present in the one passed as parameter (all other fields are ignored in the file comparison).
-Informally, if $uptodate returns false, then the po files would be changed when going through B<po4a-updatepo>.
-
-If $uptodate is false, then $diagnostic contains a diagnostic of why this is so.
-
-=cut
-
-sub equals_msgid($$) {
-    my ( $self, $other ) = ( shift, shift );
-
-    unless ( $self->count_entries() == $other->count_entries() ) {
-        return (
-            0,
-            wrap_msg(
-                dgettext( "po4a", "The amount of entries differ between files: %d is not %d" ),
-                $self->count_entries(),
-                $other->count_entries()
-            )
-        );
-    }
-    foreach my $msgid ( keys %{ $self->{po} } ) {
-        unless ( defined( $self->{po}{$msgid} ) && defined( $other->{po}{$msgid} ) ) {
-            return ( 0, wrap_msg( dgettext( "po4a", "msgid declared in one file only: %s\n" ), $msgid ) );
-        }
-    }
-    return ( 1, "" );
 }
 
 =item msgid($)
@@ -1689,7 +1671,7 @@ sub escape_text {
 #   on the 80th char, but without changing the meaning of the string)
 sub quote_text {
     my $string  = shift;
-    my $do_wrap = shift;    # either 'no' or 'newlines', or column at which we should wrap
+    my $do_wrap = shift // 'no';    # either 'no' or 'newlines', or column at which we should wrap
 
     return '""' unless length($string);
 

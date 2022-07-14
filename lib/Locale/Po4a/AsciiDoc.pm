@@ -142,12 +142,12 @@ The following commands are recognized:
 
 =item B<//po4a: macro >I<name>B<[>I<attribute list>B<]>
 
-This permits to describe in detail the parameters of a B<macro>;
+This describes in detail the parameters of a B<macro>;
 I<name> must be a valid macro name, and it ends with an underscore
 if the target must be translated.
 
 The I<attribute list> argument is a comma separated list which
-contains informations about translatable arguments.  This list contains
+contains information about translatable arguments.  This list contains
 either numbers, to define positional parameters, or named attributes.
 
 If a plus sign (B<+>) is prepended to I<name>, then the macro and its
@@ -156,11 +156,11 @@ attribute list in this case, but brackets must be present.
 
 =item B<//po4a: style >B<[>I<attribute list>B<]>
 
-This permits to describe in detail which attributes of a style must
+This describes in detail which attributes of a style must
 be translated.
 
 The I<attribute list> argument is a comma separated list which
-contains informations about translatable arguments.  This list contains
+contains information about translatable arguments.  This list contains
 either numbers, to define positional parameters, or named attributes.
 The first attribute is the style name, it will not be translated.
 
@@ -349,6 +349,7 @@ BEGIN {
     my $UnicodeGCString_available = 0;
     $UnicodeGCString_available = 1 if ( eval { require Unicode::GCString } );
     eval {
+
         sub chars($$$) {
             my $text    = shift;
             my $encoder = shift;
@@ -370,6 +371,22 @@ BEGIN {
             }
         }
     };
+}
+
+sub translate {
+    my ( $self, $str, $ref, $type ) = @_;
+    my (%options) = @_;
+    if ( ($options{'wrap'}==1) && ($str =~ / \+\n/) ) {
+        $options{'wrap'} = 0;
+        $str =~ s/([^+])\n/$1 /g;
+	$str =~ s/ \+\n/\n/g;
+        $str = $self->SUPER::translate( $str, $ref, $type, %options);
+	$str =~ s/\n/ +\n/g;
+	$options{'wrap'} = 1;
+    } else {
+        $str = $self->SUPER::translate( $str, $ref, $type, %options );
+    }
+    return $str;
 }
 
 sub parse {
@@ -439,7 +456,7 @@ sub parse {
             and ( $self->{type} eq "Table" )
             and ( $line !~ m/^\|===/ )
             and ( $self->{options}{"tablecells"} )
-			and (not defined $self->{disabletablecells}))
+            and ( not defined $self->{disabletablecells} ) )
         {
             # inside a table, and we should split per cell
             my $new_line = "";
@@ -463,8 +480,10 @@ sub parse {
             my @parts = map { ( $_, shift @texts ) } @seps;
             foreach my $part (@parts) {
                 if ( not defined $part ) {
-					# allows concatenation and will be stripped anyway
-					$part = " "; }
+
+                    # allows concatenation and will be stripped anyway
+                    $part = " ";
+                }
                 if ( $part =~ /\|$/ ) {
 
                     # this is a cell separator. End the previous cell
@@ -695,9 +714,9 @@ sub parse {
                 }
                 print STDERR "Starting verse\n" if $debug{parse};
             }
-            if ((( $line =~ m/^\[format=(['"]?)(csv|tsv|dsv)\1,/ ) ||
-				( $line =~ m/^\[separator=[^\|]/ )) &&
-				$self->{options}{'tablecells'}) {
+            if ( ( ( $line =~ m/^\[format=(['"]?)(csv|tsv|dsv)\1,/ ) || ( $line =~ m/^\[separator=[^\|]/ ) )
+                && $self->{options}{'tablecells'} )
+            {
                 warn wrap_mod(
                     "$ref",
                     dgettext(
@@ -705,7 +724,7 @@ sub parse {
                         "Po4a's tablecells mode only supports PSV formatted tables with '|' separators. Disabling tablecells and falling back to block mode for this table."
                     )
                 );
-				$self->{disabletablecells} = 1;
+                $self->{disabletablecells} = 1;
             }
             undef $self->{bullet};
             undef $self->{indent};
@@ -787,7 +806,7 @@ sub parse {
             }
             @comments = ();
         } elsif ( not defined $self->{verbatim}
-            and ( $line =~ m/^([\w\d][\w\d-]*)(::)(\S*)\[(.*)\]$/ ) )
+            and ( $line =~ m/^([\w\d][\w\d-]*)(::)(\S*|\S*\{.*\}\S*)\[(.*)\]$/ ) )
         {
             my $macroname   = $1;
             my $macrotype   = $2;
@@ -852,7 +871,7 @@ sub parse {
             $self->{indent} = $indent;
             $self->{bullet} = $bullet;
         } elsif ( not defined $self->{verbatim}
-            and ( $line =~ m/^((?:<?[0-9]+)?> +)(.*)$/ ) )
+            and ( $line =~ m/^((?:<?(?:[0-9]|\.)+)?> +)(.*)$/ ) )
         {
             my $bullet = $1;
             my $text   = $2;
@@ -966,8 +985,9 @@ sub parse {
             } else {
 
                 # End the Table
-                if ( $self->{options}{'tablecells'} and
-					 not defined  $self->{disabletablecells} ) {
+                if ( $self->{options}{'tablecells'}
+                    and not defined $self->{disabletablecells} )
+                {
                     do_stripped_unwrapped_paragraph( $self, $paragraph, $wrapped_mode );
                     $self->pushline("\n");
                 } else {
@@ -975,7 +995,7 @@ sub parse {
                 }
                 undef $self->{verbatim};
                 undef $self->{type};
-				undef $self->{disabletablecells};
+                undef $self->{disabletablecells};
                 $paragraph = "";
             }
             $self->pushline( $line . "\n" );
@@ -996,21 +1016,21 @@ sub parse {
                 $wrapped_mode = 0;
             }
 
-            if (   ( $paragraph ne "" && $self->{bullet} && length( $self->{indent} || "" ) == 0 )
-                && ( !$self->{options}{'nolinting'} ) )
+            if (   ( $paragraph ne "" && $self->{bullet} && length( $self->{indent} || "" ) == 0 ) )
             {
-
-                # Second line of an item block is not indented. It is unindented
-                # (and allowed) additional text or a new list item.
-                warn wrap_mod(
-                    "$ref",
-                    dgettext(
-                        "po4a",
-                        "It seems that you are adding unindented content to an item. "
-                          . "The standard allows this, but you may still want to change your document "
-                          . "to use indented text to provide better visual clues to writers."
-                    )
-                );
+		if ( !$self->{options}{'nolinting'} ) {
+		    # Second line of an item block is not indented. It is unindented
+		    # (and allowed) additional text or a new list item.
+		    warn wrap_mod(
+			"$ref",
+			dgettext(
+			    "po4a",
+			    "It seems that you are adding unindented content to an item. "
+			    . "The standard allows this, but you may still want to change your document "
+			    . "to use indented text to provide better visual clues to writers."
+			)
+			);
+		}
             } else {
                 undef $self->{bullet};
                 undef $self->{indent};
@@ -1056,7 +1076,7 @@ sub do_paragraph {
     #    }
     #    $type .= " verbatim: '".($self->{verbatim}||"NONE")."' bullet: '$b' indent: '".($self->{indent}||"NONE")."' type: '".($self->{type}||"NONE")."'";
 
-    if ( not $wrap and not defined $self->{verbatim} ) {
+    if ( not defined $self->{verbatim} ) {
 
         # Detect bullets
         # |        * blah blah
@@ -1121,8 +1141,10 @@ sub do_paragraph {
         "comment" => join( "\n", @comments ),
         "wrap"    => $wrap
     );
+    my $bullet = $self->{bullet} || "";
+    # print STDERR "translated: '$t', $bullet\n";
 
-    my $unwrap_result = !$self->{options}{'forcewrap'} && $wrap;
+    my $unwrap_result = !$self->{options}{'forcewrap'} && $wrap && (! ($t =~ /\+\n/) ) ;
     if ($unwrap_result) {
         $t =~ s/(\n| )+/ /g;
     }
@@ -1318,3 +1340,7 @@ Tested successfully on simple AsciiDoc files.
 
 This program is free software; you may redistribute it and/or modify it
 under the terms of GPL (see the COPYING file).
+
+__END__
+
+#  LocalWords: Charset charset AsciiDoc tablecells po UTF gettext msgid nostrip

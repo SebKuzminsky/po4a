@@ -44,7 +44,7 @@
 #   setup          (opt): array of shell commands to run before running the test
 #   teardown       (opt): array of shell commands to run after running the test
 #   closed_path    (opt): a shell pattern to pass to chmod to close the other directories.
-#                         If provided, setup/teardown commands are generated to:
+#                         If provided, setup/teardown commands are generated to (unless on windows):
 #                           - 'chmod 0' the directories marked 'closed_path'
 #                           - 'chmod +r-w+x' the test directory
 #                           - 'chmod +r-w' all files in the test directory
@@ -82,6 +82,7 @@ use strict;
 use warnings;
 use Test::More 'no_plan';
 use File::Path qw(make_path remove_tree);
+use File::Copy;
 use Cwd qw(cwd);
 
 use Exporter qw(import);
@@ -143,6 +144,16 @@ sub system_failed {
     }
 }
 
+# Remove that directory if it exists, and rebuild it fresh
+sub remake_path {
+    my $path = shift;
+    if ( -e $path ) {
+        remove_tree("$path") || die "Cannot cleanup $path/ on startup: $!";
+    }
+
+    make_path($path) || die "Cannot create $path/: $!";
+}
+
 sub teardown {
     my $ref  = shift;
     my @cmds = @{$ref};
@@ -196,7 +207,7 @@ sub run_one_po4aconf {
 
     fail("Broken test: path $path does not exist") unless -e $path;
 
-    if ($closed_path) {
+    if ( $closed_path && $^O ne 'MSWin32' ) {
         push @setup,    "chmod -r-w-x " . $closed_path;    # Don't even look at the closed path
         push @teardown, "chmod +r+w+x " . $closed_path;    # Restore permissions
         push @setup,    "chmod +r+x    $path";             # Look into the path of this test
@@ -222,14 +233,13 @@ sub run_one_po4aconf {
     } elsif ( $mode eq 'curdir' ) {
         $tmppath .= '-cur';
         push @setup, "cp -r $path/* $tmppath";
-        push @setup, "chmod +w -R $tmppath";
+        push @setup, "chmod +w -R $tmppath" unless $^O eq 'MSWin32';
         $run_from = $tmppath;
     } else {
         die "Malformed test: mode $mode unknown\n";
     }
 
-    system("rm -rf $tmppath/")   && die "Cannot cleanup $tmppath/ on startup: $!";
-    system("mkdir -p $tmppath/") && die "Cannot create $tmppath/: $!";
+    remake_path($tmppath);
     unless ( setup( \@setup ) ) {    # Failed
         teardown( \@teardown );
         return;
@@ -388,7 +398,7 @@ sub run_one_format {
         }
     }
 
-    system("mkdir -p tmp/$path/") && die "Cannot create tmp/$path/: $!";
+    remake_path("tmp/$path");
     my $tmpbase = "tmp/$path/$basename";
     my $cwd     = cwd();
     $execpath = defined $ENV{AUTOPKGTEST_TMP} ? "/usr/bin" : "perl $cwd/..";
@@ -424,7 +434,7 @@ sub run_one_format {
 
     }
 
-    push @tests, "diff -uN $norm_stderr $real_stderr";
+    push @tests, "diff -uNwB $norm_stderr $real_stderr";
     push @tests, "PODIFF  $potfile  $tmpbase.pot"  unless $error;
     push @tests, "diff -u $output   $tmpbase.norm" unless $error;
 
@@ -444,11 +454,11 @@ sub run_one_format {
             }
             note("(end of command output)\n");
         }
-        push @tests, "diff -uN $trans_stderr $tmpbase.trans.stderr";
+        push @tests, "diff -uNwB $trans_stderr $tmpbase.trans.stderr";
         push @tests, "diff -uN $transfile $tmpbase.trans";
 
         # Update PO
-        system("cp $cwd/$pofile $cwd/${tmpbase}.po_updated") && fail "Cannot copy $pofile before updating it";
+        copy( "$cwd/$pofile", "$cwd/${tmpbase}.po_updated" ) || fail "Cannot copy $pofile before updating it";
         $cmd =
             "${execpath}/po4a-updatepo -f $format $options "
           . "--master $basename.$ext --po $cwd/${tmpbase}.po_updated"
@@ -493,7 +503,7 @@ sub run_all_tests {
     # Change into test directory and create a temporary directory
     chdir "t" or die "Can't chdir to test directory t\n";
 
-    make_path("tmp");
+    remake_path("tmp");
 
   TEST: foreach my $test (@cases) {
         if ( exists $test->{'format'} ) {

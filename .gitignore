@@ -1,0 +1,10 @@
+*~
+Build
+META.yml
+META.json
+MYMETA.json
+MYMETA.yml
+_build/
+blib/
+t/tmp/
+.tidyall.d/
