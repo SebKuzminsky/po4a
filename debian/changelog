@@ -1,10 +1,10 @@
-po4a (0.67-1) UNRELEASED; urgency=medium
+po4a (0.67-1) unstable; urgency=medium
 
   * New upstream release. Many bug fixes and improvements to AsciiDoc,
     Man, Markdown, xHTML, etc.
   * Update Standards-Version to 4.6.1, no changes needed.
 
- -- Martin Quinson <mquinson@debian.org>  Thu, 14 Jul 2022 15:32:38 +0200
+ -- Martin Quinson <mquinson@debian.org>  Thu, 14 Jul 2022 15:42:45 +0200
 
 po4a (0.66-1) unstable; urgency=medium
 
