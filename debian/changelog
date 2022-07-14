@@ -1,3 +1,10 @@
+po4a (0.67-1) UNRELEASED; urgency=medium
+
+  * New upstream release. Many bug fixes and improvements to AsciiDoc,
+    Man, Markdown, xHTML, etc.
+
+ -- Martin Quinson <mquinson@debian.org>  Thu, 14 Jul 2022 15:32:38 +0200
+
 po4a (0.66-1) unstable; urgency=medium
 
   * New upstream release.
