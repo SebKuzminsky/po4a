@@ -35,6 +35,7 @@ Multi-Arch: foreign
 Depends: gettext,
          libpod-parser-perl (>= 1.63),
          libsgmls-perl,
+         libsyntax-keyword-try-perl,
          libyaml-tiny-perl,
          opensp,
          ${misc:Depends},

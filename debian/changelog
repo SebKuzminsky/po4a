@@ -1,3 +1,9 @@
+po4a (0.67-2) unstable; urgency=medium
+
+  * Add libsyntax-keyword-try-perl as a runtime dependency too.
+
+ -- Martin Quinson <mquinson@debian.org>  Fri, 15 Jul 2022 19:52:35 +0200
+
 po4a (0.67-1) unstable; urgency=medium
 
   * New upstream release. Many bug fixes and improvements to AsciiDoc,
